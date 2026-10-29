@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Resources Culture="en-US">
+	<Group Type="String">
+		<Items>
+			<Item Name="AddonConfig.Rules.0a4f9d23-fdbb-ffa5-23e8-28bdb00062c4.Caption" Value="Filter source versions by contract" />
+			<Item Name="AddonConfig.Rules.0e10689c-9e29-edf7-fdaa-8bb94f0574b3.Caption" Value="ChildRule-0a4f9d23-fdbb-ffa5-23e8-28bdb00062c4-ClearValue" />
+			<Item Name="AddonConfig.Rules.b43e30aa-b2d4-56d9-1f2b-f297da97e6fa.Caption" Value="ChildRule-0a4f9d23-fdbb-ffa5-23e8-28bdb00062c4-PopulateValue" />
+			<Item Name="Caption" Value="Contract Configuration Version (Business rules)" />
+		</Items>
+	</Group>
+</Resources>

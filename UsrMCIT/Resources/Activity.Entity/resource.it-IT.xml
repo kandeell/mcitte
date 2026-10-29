@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Resources Culture="it-IT">
+	<Group Type="String">
+		<Items>
+			<Item Name="EventsProcessSchema.BaseElements.SynchronizeSubjectRemindingAuthor.Parameters.Active.Caption" Value="Azione attiva" />
+			<Item Name="EventsProcessSchema.BaseElements.SynchronizeSubjectRemindingAuthor.Parameters.Author.Caption" Value="Creato da" />
+			<Item Name="EventsProcessSchema.BaseElements.SynchronizeSubjectRemindingAuthor.Parameters.Contact.Caption" Value="Destinatario" />
+			<Item Name="EventsProcessSchema.BaseElements.SynchronizeSubjectRemindingAuthor.Parameters.Description.Caption" Value="Commenti alla notifica" />
+			<Item Name="EventsProcessSchema.BaseElements.SynchronizeSubjectRemindingAuthor.Parameters.IsListSubjectReminds.Caption" Value="Lavora con diverse notifiche per oggetto" />
+			<Item Name="EventsProcessSchema.BaseElements.SynchronizeSubjectRemindingAuthor.Parameters.IsSingleReminder.Caption" Value="Un unico promemoria" />
+			<Item Name="EventsProcessSchema.BaseElements.SynchronizeSubjectRemindingAuthor.Parameters.IsSubjectDelete.Caption" Value="Il record della notifica è stato cancellato" />
+			<Item Name="EventsProcessSchema.BaseElements.SynchronizeSubjectRemindingAuthor.Parameters.NotificationType.Caption" Value="Tipo di notifiche" />
+			<Item Name="EventsProcessSchema.BaseElements.SynchronizeSubjectRemindingAuthor.Parameters.PopupTitle.Caption" Value="PopupTitle" />
+			<Item Name="EventsProcessSchema.BaseElements.SynchronizeSubjectRemindingAuthor.Parameters.RemindTime.Caption" Value="Tempo di notifica" />
+			<Item Name="EventsProcessSchema.BaseElements.SynchronizeSubjectRemindingAuthor.Parameters.Source.Caption" Value="Ruolo del destinatario nell'oggetto" />
+			<Item Name="EventsProcessSchema.BaseElements.SynchronizeSubjectRemindingAuthor.Parameters.SubjectPrimaryColumnValue.Caption" Value="Oggetto notifica" />
+			<Item Name="EventsProcessSchema.BaseElements.SynchronizeSubjectRemindingAuthor.Parameters.SysEntitySchema.Caption" Value="Oggetto che contiene il record oggetto della notifica" />
+			<Item Name="EventsProcessSchema.BaseElements.SynchronizeSubjectRemindingOwner.Parameters.Active.Caption" Value="Azione attiva" />
+			<Item Name="EventsProcessSchema.BaseElements.SynchronizeSubjectRemindingOwner.Parameters.Author.Caption" Value="Creato da" />
+			<Item Name="EventsProcessSchema.BaseElements.SynchronizeSubjectRemindingOwner.Parameters.Contact.Caption" Value="Destinatario" />
+			<Item Name="EventsProcessSchema.BaseElements.SynchronizeSubjectRemindingOwner.Parameters.Description.Caption" Value="Commenti alla notifica" />
+			<Item Name="EventsProcessSchema.BaseElements.SynchronizeSubjectRemindingOwner.Parameters.IsListSubjectReminds.Caption" Value="Lavora con diverse notifiche per oggetto" />
+			<Item Name="EventsProcessSchema.BaseElements.SynchronizeSubjectRemindingOwner.Parameters.IsSingleReminder.Caption" Value="Un unico promemoria" />
+			<Item Name="EventsProcessSchema.BaseElements.SynchronizeSubjectRemindingOwner.Parameters.IsSubjectDelete.Caption" Value="Il record della notifica è stato cancellato" />
+			<Item Name="EventsProcessSchema.BaseElements.SynchronizeSubjectRemindingOwner.Parameters.NotificationType.Caption" Value="Tipo di notifiche" />
+			<Item Name="EventsProcessSchema.BaseElements.SynchronizeSubjectRemindingOwner.Parameters.PopupTitle.Caption" Value="PopupTitle" />
+			<Item Name="EventsProcessSchema.BaseElements.SynchronizeSubjectRemindingOwner.Parameters.RemindTime.Caption" Value="Tempo di notifica" />
+			<Item Name="EventsProcessSchema.BaseElements.SynchronizeSubjectRemindingOwner.Parameters.Source.Caption" Value="Ruolo del destinatario nell'oggetto" />
+			<Item Name="EventsProcessSchema.BaseElements.SynchronizeSubjectRemindingOwner.Parameters.SubjectPrimaryColumnValue.Caption" Value="Oggetto notifica" />
+			<Item Name="EventsProcessSchema.BaseElements.SynchronizeSubjectRemindingOwner.Parameters.SysEntitySchema.Caption" Value="Oggetto che contiene il record oggetto della notifica" />
+		</Items>
+	</Group>
+</Resources>

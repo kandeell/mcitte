@@ -1,0 +1,14 @@
+﻿{
+  "Descriptor": {
+    "UId": "5a1382dd-b713-4b7e-9891-d9217f0788ae",
+    "Name": "UsrMCITResourceContract",
+    "ModifiedOnUtc": "\/Date(1792969720000)\/",
+    "Parent": {
+      "UId": "1bab9dcf-17d5-49f8-9536-8e0064f1dce0",
+      "Name": "BaseEntity"
+    },
+    "ManagerName": "EntitySchemaManager",
+    "Caption": "MCIT Resource Contract",
+    "DependsOn": []
+  }
+}

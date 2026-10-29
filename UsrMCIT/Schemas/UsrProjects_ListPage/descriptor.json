@@ -1,0 +1,13 @@
+﻿{
+  "Descriptor": {
+    "UId": "305521c1-8cc2-414a-8b5f-d3b78b2fa7bc",
+    "Name": "UsrProjects_ListPage",
+    "ModifiedOnUtc": "\/Date(1792520452000)\/",
+    "Parent": {
+      "UId": "b7b898d0-8c77-4953-c097-23fa6800da02",
+      "Name": "ListPageV3Template"
+    },
+    "ManagerName": "ClientUnitSchemaManager",
+    "Caption": "Projects list page"
+  }
+}

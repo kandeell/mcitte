@@ -1,0 +1,14 @@
+﻿{
+  "Descriptor": {
+    "UId": "fe5e48c3-05a1-4d86-952b-86ae5cca006b",
+    "Name": "UsrRequestValidationFinding",
+    "ModifiedOnUtc": "\/Date(1791996645000)\/",
+    "Parent": {
+      "UId": "1bab9dcf-17d5-49f8-9536-8e0064f1dce0",
+      "Name": "BaseEntity"
+    },
+    "ManagerName": "EntitySchemaManager",
+    "Caption": "Request Validation Finding",
+    "DependsOn": []
+  }
+}

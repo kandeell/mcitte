@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Resources Culture="sq-AL">
+	<Group Type="String">
+		<Items>
+			<Item Name="EventsProcessSchema.BaseElements.SynchronizeSubjectRemindingAuthor.Parameters.Active.Caption" Value="Veprimi aktiv" />
+			<Item Name="EventsProcessSchema.BaseElements.SynchronizeSubjectRemindingAuthor.Parameters.Author.Caption" Value="Krijuar nga" />
+			<Item Name="EventsProcessSchema.BaseElements.SynchronizeSubjectRemindingAuthor.Parameters.Contact.Caption" Value="Marrësi" />
+			<Item Name="EventsProcessSchema.BaseElements.SynchronizeSubjectRemindingAuthor.Parameters.Description.Caption" Value="Shënimet e njoftimeve" />
+			<Item Name="EventsProcessSchema.BaseElements.SynchronizeSubjectRemindingAuthor.Parameters.IsListSubjectReminds.Caption" Value="Puno me disa njoftime për objektin" />
+			<Item Name="EventsProcessSchema.BaseElements.SynchronizeSubjectRemindingAuthor.Parameters.IsSingleReminder.Caption" Value="Kujtesë e vetme" />
+			<Item Name="EventsProcessSchema.BaseElements.SynchronizeSubjectRemindingAuthor.Parameters.IsSubjectDelete.Caption" Value="Të dhënat e njoftimit janë fshirë" />
+			<Item Name="EventsProcessSchema.BaseElements.SynchronizeSubjectRemindingAuthor.Parameters.NotificationType.Caption" Value="Lloji i njoftimeve" />
+			<Item Name="EventsProcessSchema.BaseElements.SynchronizeSubjectRemindingAuthor.Parameters.PopupTitle.Caption" Value="PopupTitle" />
+			<Item Name="EventsProcessSchema.BaseElements.SynchronizeSubjectRemindingAuthor.Parameters.RemindTime.Caption" Value="Koha e njoftimit" />
+			<Item Name="EventsProcessSchema.BaseElements.SynchronizeSubjectRemindingAuthor.Parameters.Source.Caption" Value="Roli i marrësit në objekt" />
+			<Item Name="EventsProcessSchema.BaseElements.SynchronizeSubjectRemindingAuthor.Parameters.SubjectPrimaryColumnValue.Caption" Value="Objekti i njoftimit" />
+			<Item Name="EventsProcessSchema.BaseElements.SynchronizeSubjectRemindingAuthor.Parameters.SysEntitySchema.Caption" Value="Objekti që përmban të dhënat për të cilat po njoftohet" />
+			<Item Name="EventsProcessSchema.BaseElements.SynchronizeSubjectRemindingOwner.Parameters.Active.Caption" Value="Veprimi aktiv" />
+			<Item Name="EventsProcessSchema.BaseElements.SynchronizeSubjectRemindingOwner.Parameters.Author.Caption" Value="Krijuar nga" />
+			<Item Name="EventsProcessSchema.BaseElements.SynchronizeSubjectRemindingOwner.Parameters.Contact.Caption" Value="Marrësi" />
+			<Item Name="EventsProcessSchema.BaseElements.SynchronizeSubjectRemindingOwner.Parameters.Description.Caption" Value="Shënimet e njoftimeve" />
+			<Item Name="EventsProcessSchema.BaseElements.SynchronizeSubjectRemindingOwner.Parameters.IsListSubjectReminds.Caption" Value="Puno me disa njoftime për objektin" />
+			<Item Name="EventsProcessSchema.BaseElements.SynchronizeSubjectRemindingOwner.Parameters.IsSingleReminder.Caption" Value="Kujtesë e vetme" />
+			<Item Name="EventsProcessSchema.BaseElements.SynchronizeSubjectRemindingOwner.Parameters.IsSubjectDelete.Caption" Value="Të dhënat e njoftimit janë fshirë" />
+			<Item Name="EventsProcessSchema.BaseElements.SynchronizeSubjectRemindingOwner.Parameters.NotificationType.Caption" Value="Lloji i njoftimeve" />
+			<Item Name="EventsProcessSchema.BaseElements.SynchronizeSubjectRemindingOwner.Parameters.PopupTitle.Caption" Value="PopupTitle" />
+			<Item Name="EventsProcessSchema.BaseElements.SynchronizeSubjectRemindingOwner.Parameters.RemindTime.Caption" Value="Koha e njoftimit" />
+			<Item Name="EventsProcessSchema.BaseElements.SynchronizeSubjectRemindingOwner.Parameters.Source.Caption" Value="Roli i marrësit në objekt" />
+			<Item Name="EventsProcessSchema.BaseElements.SynchronizeSubjectRemindingOwner.Parameters.SubjectPrimaryColumnValue.Caption" Value="Objekti i njoftimit" />
+			<Item Name="EventsProcessSchema.BaseElements.SynchronizeSubjectRemindingOwner.Parameters.SysEntitySchema.Caption" Value="Objekti që përmban të dhënat për të cilat po njoftohet" />
+		</Items>
+	</Group>
+</Resources>

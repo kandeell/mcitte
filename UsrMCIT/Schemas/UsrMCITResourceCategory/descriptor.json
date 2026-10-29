@@ -1,0 +1,14 @@
+﻿{
+  "Descriptor": {
+    "UId": "d4afbbd7-f804-456f-ac79-b13dd7ba6610",
+    "Name": "UsrMCITResourceCategory",
+    "ModifiedOnUtc": "\/Date(1792968854000)\/",
+    "Parent": {
+      "UId": "11ab4bcb-9b23-4b6d-9c86-520fae925d75",
+      "Name": "BaseLookup"
+    },
+    "ManagerName": "EntitySchemaManager",
+    "Caption": "MCIT Resource Category",
+    "DependsOn": []
+  }
+}

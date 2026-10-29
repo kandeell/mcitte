@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Resources Culture="pt-PT">
+	<Group Type="String">
+		<Items>
+			<Item Name="EventsProcessSchema.BaseElements.SynchronizeSubjectRemindingAuthor.Parameters.Active.Caption" Value="Ação ativa" />
+			<Item Name="EventsProcessSchema.BaseElements.SynchronizeSubjectRemindingAuthor.Parameters.Author.Caption" Value="Criado por" />
+			<Item Name="EventsProcessSchema.BaseElements.SynchronizeSubjectRemindingAuthor.Parameters.Contact.Caption" Value="Destinatário" />
+			<Item Name="EventsProcessSchema.BaseElements.SynchronizeSubjectRemindingAuthor.Parameters.Description.Caption" Value="Notas de notificação" />
+			<Item Name="EventsProcessSchema.BaseElements.SynchronizeSubjectRemindingAuthor.Parameters.IsListSubjectReminds.Caption" Value="Trabalho com algumas notificações para o objeto" />
+			<Item Name="EventsProcessSchema.BaseElements.SynchronizeSubjectRemindingAuthor.Parameters.IsSingleReminder.Caption" Value="Lembrete único" />
+			<Item Name="EventsProcessSchema.BaseElements.SynchronizeSubjectRemindingAuthor.Parameters.IsSubjectDelete.Caption" Value="Registo de notificações foi excluído" />
+			<Item Name="EventsProcessSchema.BaseElements.SynchronizeSubjectRemindingAuthor.Parameters.NotificationType.Caption" Value="Tipo de notificações" />
+			<Item Name="EventsProcessSchema.BaseElements.SynchronizeSubjectRemindingAuthor.Parameters.PopupTitle.Caption" Value="PopupTitle" />
+			<Item Name="EventsProcessSchema.BaseElements.SynchronizeSubjectRemindingAuthor.Parameters.RemindTime.Caption" Value="Tempo da notificação" />
+			<Item Name="EventsProcessSchema.BaseElements.SynchronizeSubjectRemindingAuthor.Parameters.Source.Caption" Value="Papel do destinatário no objeto" />
+			<Item Name="EventsProcessSchema.BaseElements.SynchronizeSubjectRemindingAuthor.Parameters.SubjectPrimaryColumnValue.Caption" Value="Objeto de notificação" />
+			<Item Name="EventsProcessSchema.BaseElements.SynchronizeSubjectRemindingAuthor.Parameters.SysEntitySchema.Caption" Value="Objeto contendo registo sendo notificado sobre isto" />
+			<Item Name="EventsProcessSchema.BaseElements.SynchronizeSubjectRemindingOwner.Parameters.Active.Caption" Value="Ação ativa" />
+			<Item Name="EventsProcessSchema.BaseElements.SynchronizeSubjectRemindingOwner.Parameters.Author.Caption" Value="Criado por" />
+			<Item Name="EventsProcessSchema.BaseElements.SynchronizeSubjectRemindingOwner.Parameters.Contact.Caption" Value="Destinatário" />
+			<Item Name="EventsProcessSchema.BaseElements.SynchronizeSubjectRemindingOwner.Parameters.Description.Caption" Value="Notas de notificação" />
+			<Item Name="EventsProcessSchema.BaseElements.SynchronizeSubjectRemindingOwner.Parameters.IsListSubjectReminds.Caption" Value="Trabalho com algumas notificações para o objeto" />
+			<Item Name="EventsProcessSchema.BaseElements.SynchronizeSubjectRemindingOwner.Parameters.IsSingleReminder.Caption" Value="Lembrete único" />
+			<Item Name="EventsProcessSchema.BaseElements.SynchronizeSubjectRemindingOwner.Parameters.IsSubjectDelete.Caption" Value="Registo de notificações foi excluído" />
+			<Item Name="EventsProcessSchema.BaseElements.SynchronizeSubjectRemindingOwner.Parameters.NotificationType.Caption" Value="Tipo de notificações" />
+			<Item Name="EventsProcessSchema.BaseElements.SynchronizeSubjectRemindingOwner.Parameters.PopupTitle.Caption" Value="PopupTitle" />
+			<Item Name="EventsProcessSchema.BaseElements.SynchronizeSubjectRemindingOwner.Parameters.RemindTime.Caption" Value="Tempo da notificação" />
+			<Item Name="EventsProcessSchema.BaseElements.SynchronizeSubjectRemindingOwner.Parameters.Source.Caption" Value="Papel do destinatário no objeto" />
+			<Item Name="EventsProcessSchema.BaseElements.SynchronizeSubjectRemindingOwner.Parameters.SubjectPrimaryColumnValue.Caption" Value="Objeto de notificação" />
+			<Item Name="EventsProcessSchema.BaseElements.SynchronizeSubjectRemindingOwner.Parameters.SysEntitySchema.Caption" Value="Objeto contendo registo sendo notificado sobre isto" />
+		</Items>
+	</Group>
+</Resources>

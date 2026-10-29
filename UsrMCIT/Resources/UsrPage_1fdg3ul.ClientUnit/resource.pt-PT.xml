@@ -1,0 +1,9 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Resources Culture="pt-PT">
+	<Group Type="String">
+		<Items>
+			<Item Name="LocalizableStrings.Button_spbhdwfCaption.Value" Value="Atualizar" />
+			<Item Name="LocalizableStrings.Button_tbioevjCaption.Value" Value="Carregar" />
+		</Items>
+	</Group>
+</Resources>

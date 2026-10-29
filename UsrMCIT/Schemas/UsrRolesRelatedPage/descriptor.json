@@ -1,0 +1,10 @@
+﻿{
+  "Descriptor": {
+    "UId": "9da9090f-9da7-49cb-a6c8-0349866415bb",
+    "Name": "UsrRolesRelatedPage",
+    "ModifiedOnUtc": "\/Date(1792773801000)\/",
+    "ManagerName": "AddonSchemaManager",
+    "Caption": "MCIT Role (Page settings)",
+    "DependsOn": []
+  }
+}

@@ -1,0 +1,44 @@
+﻿{
+  "MetaData": {
+    "Schema": {
+      "ManagerName": "AddonSchemaManager",
+      "UId": "89e27f75-ee93-40a4-8673-35be8b4ec26e",
+      "A2": "UsrContractConfigVersionRelatedPage",
+      "A5": "3daa8e4e-2a22-4e20-af21-674c5227b6dc",
+      "B1": [],
+      "B2": [],
+      "B3": [],
+      "B6": "5dcca910-bc4c-42b7-bfe0-2ad5c8cc3965",
+      "B8": "10.0.0.858",
+      "AD1": "904eeb3b-849e-4a1e-8653-ce6cb09e62fe",
+      "AD2": "EntitySchemaManager",
+      "AD3": "RelatedPage",
+      "AD5": "3a2d6f51-1bfc-4c17-aacb-b53de4866b7c",
+      "AD4": {
+  "Pages": [
+    {
+      "UId": "06f581cb-87f6-9fd8-d5c7-01929315f498",
+      "PageSchemaUId": "ae70a739-62d5-4fa3-8e03-f6bc3a8a1851",
+      "IsDefault": false,
+      "IsSspDefault": false,
+      "Actions": {
+        "Add": true
+      },
+      "Role": "a29a3ba5-4b0d-de11-9a51-005056c00008",
+      "TypeColumnValue": null
+    },
+    {
+      "UId": "c04d70a9-3928-77b5-b4fb-ad4c09e43ed6",
+      "PageSchemaUId": "ae70a739-62d5-4fa3-8e03-f6bc3a8a1851",
+      "IsDefault": true,
+      "IsSspDefault": false,
+      "Actions": null,
+      "Role": "a29a3ba5-4b0d-de11-9a51-005056c00008",
+      "TypeColumnValue": null
+    }
+  ],
+  "TypeColumnUId": null
+}
+    }
+  }
+}

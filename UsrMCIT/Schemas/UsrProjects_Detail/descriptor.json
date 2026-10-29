@@ -1,0 +1,14 @@
+﻿{
+  "Descriptor": {
+    "UId": "0a6582cd-bf9f-4819-8833-5121a1dd3875",
+    "Name": "UsrProjects_Detail",
+    "ModifiedOnUtc": "\/Date(1792520199000)\/",
+    "Parent": {
+      "UId": "01eb38ee-668a-42f0-999d-c2534f979089",
+      "Name": "BaseGridDetailV2"
+    },
+    "ManagerName": "ClientUnitSchemaManager",
+    "Caption": "Projects detail",
+    "DependsOn": []
+  }
+}

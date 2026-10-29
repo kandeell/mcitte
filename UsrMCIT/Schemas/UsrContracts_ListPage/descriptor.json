@@ -1,0 +1,13 @@
+﻿{
+  "Descriptor": {
+    "UId": "1d8a7917-d329-4fc9-a521-fa053adb292f",
+    "Name": "UsrContracts_ListPage",
+    "ModifiedOnUtc": "\/Date(1792435040000)\/",
+    "Parent": {
+      "UId": "b7b898d0-8c77-4953-c097-23fa6800da02",
+      "Name": "ListPageV3Template"
+    },
+    "ManagerName": "ClientUnitSchemaManager",
+    "Caption": "Contracts list page"
+  }
+}

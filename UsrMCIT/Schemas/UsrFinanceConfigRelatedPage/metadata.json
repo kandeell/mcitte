@@ -1,0 +1,28 @@
+{
+  "MetaData": {
+    "Schema": {
+      "ManagerName": "AddonSchemaManager",
+      "UId": "4c9a6a70-1c90-4580-8c54-054a0b209f1f",
+      "A2": "UsrFinanceConfigRelatedPage",
+      "A5": "6f71e54c-1960-40c9-94f6-073fd67699ab",
+      "B1": [],
+      "B2": [],
+      "B3": [],
+      "B6": "5530927f-22ea-e7c9-4ccf-506d3a6c2ed2",
+      "B8": "0.0.0.0",
+      "AD1": "8ba4eeb7-5acd-4cbf-91c9-86a485f68cf6",
+      "AD2": "EntitySchemaManager",
+      "AD3": "RelatedPage",
+      "AD5": "3a2d6f51-1bfc-4c17-aacb-b53de4866b7c",
+      "AD4": {
+        "Pages": [
+          {
+            "UId": "1aadfe1b-b265-48b6-861d-ad2efab3af99",
+            "PageSchemaUId": "a18df6f4-38e0-482f-8937-f27e48221084",
+            "IsDefault": true
+          }
+        ]
+      }
+    }
+  }
+}

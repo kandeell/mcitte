@@ -1,0 +1,34 @@
+@import url("https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;600;700&display=swap");
+
+/* Apply Rubik to labels and button captions */
+body crt-label,
+body crt-label label,
+body crt-label span,
+body crt-label p,
+body .crt-button-caption {
+    font-family: "Rubik", Arial, sans-serif !important;
+}@import url("https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;600;700&display=swap");
+
+/* Default page font */
+html,
+body {
+    font-family: "Rubik", Arial, sans-serif !important;
+}
+
+/* Apply to page elements while excluding common icon elements */
+body *:not(mat-icon)
+      :not(crt-icon)
+      :not(i)
+      :not(svg)
+      :not(path)
+      :not([class*="icon"])
+      :not([class*="Icon"])
+      :not([class*="symbol"]) {
+    font-family: "Rubik", Arial, sans-serif !important;
+}
+
+/* Input placeholder text */
+body input::placeholder,
+body textarea::placeholder {
+    font-family: "Rubik", Arial, sans-serif !important;
+}

@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Resources Culture="en-US">
+	<Group Type="String">
+		<Items>
+			<Item Name="Caption" Value="MCIT Role Administrative Permission" />
+			<Item Name="Columns.UsrCanExportAuditLog.Caption" Value="Export Audit Log" />
+			<Item Name="Columns.UsrCanManageRoles.Caption" Value="Manage Roles" />
+			<Item Name="Columns.UsrCanManageSLAPolicies.Caption" Value="Manage SLA Policies" />
+			<Item Name="Columns.UsrCanManageUsers.Caption" Value="Manage Users" />
+			<Item Name="Columns.UsrCanManageWorkflows.Caption" Value="Manage Workflows" />
+			<Item Name="Columns.UsrCanSystemConfigure.Caption" Value="System Configuration" />
+			<Item Name="Columns.UsrCanViewAuditLog.Caption" Value="View Audit Log" />
+			<Item Name="Columns.UsrMCITRole.Caption" Value="MCIT Role" />
+			<Item Name="EventsProcessSchema.Caption" Value="Business process" />
+		</Items>
+	</Group>
+</Resources>

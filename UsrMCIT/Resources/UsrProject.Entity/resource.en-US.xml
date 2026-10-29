@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Resources Culture="en-US">
+	<Group Type="String">
+		<Items>
+			<Item Name="Caption" Value="Project" />
+			<Item Name="Columns.UsrActive.Caption" Value="Active" />
+			<Item Name="Columns.UsrAuthority.Caption" Value="Authority" />
+			<Item Name="Columns.UsrCode.Caption" Value="Code" />
+			<Item Name="Columns.UsrDescription.Caption" Value="Description" />
+			<Item Name="Columns.UsrDisplayOrder.Caption" Value="Display order" />
+			<Item Name="Columns.UsrName.Caption" Value="Name" />
+			<Item Name="EventsProcessSchema.Caption" Value="Business process" />
+		</Items>
+	</Group>
+</Resources>

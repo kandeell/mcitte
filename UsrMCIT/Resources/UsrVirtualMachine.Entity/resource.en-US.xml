@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Resources Culture="en-US">
+	<Group Type="String">
+		<Items>
+			<Item Name="Caption" Value="Virtual Machine" />
+			<Item Name="Columns.UsrAccount.Caption" Value="Government authority" />
+			<Item Name="Columns.UsrCPU.Caption" Value="vCPU count" />
+			<Item Name="Columns.UsrContract.Caption" Value="Contract" />
+			<Item Name="Columns.UsrDescription.Caption" Value="Description" />
+			<Item Name="Columns.UsrIPAddress.Caption" Value="Primary IP address" />
+			<Item Name="Columns.UsrInfrastructureId.Caption" Value="Infrastructure VM ID" />
+			<Item Name="Columns.UsrName.Caption" Value="VM name" />
+			<Item Name="Columns.UsrOperatingSystem.Caption" Value="Operating system" />
+			<Item Name="Columns.UsrProject.Caption" Value="Project" />
+			<Item Name="Columns.UsrProvisionedOn.Caption" Value="Provisioned on" />
+			<Item Name="Columns.UsrRAMGB.Caption" Value="RAM (GB)" />
+			<Item Name="Columns.UsrSourceRequestItem.Caption" Value="Original request item" />
+			<Item Name="Columns.UsrStatus.Caption" Value="Status" />
+			<Item Name="Columns.UsrStorageGB.Caption" Value="Storage (GB)" />
+			<Item Name="Columns.UsrTargetVM.Caption" Value="Target VM" />
+			<Item Name="Columns.UsrTerminatedOn.Caption" Value="Terminated on" />
+		</Items>
+	</Group>
+</Resources>

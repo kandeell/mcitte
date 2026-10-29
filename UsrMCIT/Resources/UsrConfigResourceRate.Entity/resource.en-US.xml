@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Resources Culture="en-US">
+	<Group Type="String">
+		<Items>
+			<Item Name="Caption" Value="Configuration Resource Rate" />
+			<Item Name="Columns.UsrAmountPerUnit.Caption" Value="Financial amount per unit" />
+			<Item Name="Columns.UsrConfigVersion.Caption" Value="Configuration version" />
+			<Item Name="Columns.UsrCurrency.Caption" Value="Currency" />
+			<Item Name="Columns.UsrDescription.Caption" Value="Description" />
+			<Item Name="Columns.UsrName.Caption" Value="Rate name" />
+			<Item Name="Columns.UsrPointsPerUnit.Caption" Value="Points per unit" />
+			<Item Name="Columns.UsrPricingUnitLookup.Caption" Value="Pricing unit" />
+			<Item Name="Columns.UsrResourceType.Caption" Value="Resource type" />
+		</Items>
+	</Group>
+</Resources>

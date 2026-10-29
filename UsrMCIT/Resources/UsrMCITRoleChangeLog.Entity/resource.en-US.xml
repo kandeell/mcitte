@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Resources Culture="en-US">
+	<Group Type="String">
+		<Items>
+			<Item Name="Caption" Value="MCIT Role Change Log" />
+			<Item Name="Columns.UsrChangeArea.Caption" Value="Change Area" />
+			<Item Name="Columns.UsrChangeStatus.Caption" Value="Change Status" />
+			<Item Name="Columns.UsrChangeType.Caption" Value="Change Type" />
+			<Item Name="Columns.UsrFieldName.Caption" Value="Field Name" />
+			<Item Name="Columns.UsrMCITRole.Caption" Value="MCIT Role" />
+			<Item Name="Columns.UsrNewValue.Caption" Value="New Value" />
+			<Item Name="Columns.UsrOldValue.Caption" Value="Old Value" />
+			<Item Name="EventsProcessSchema.Caption" Value="Business process" />
+		</Items>
+	</Group>
+</Resources>

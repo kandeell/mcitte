@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Resources Culture="hu-HU">
+	<Group Type="String">
+		<Items>
+			<Item Name="EventsProcessSchema.BaseElements.SynchronizeSubjectRemindingAuthor.Parameters.Active.Caption" Value="Aktív cselekvés" />
+			<Item Name="EventsProcessSchema.BaseElements.SynchronizeSubjectRemindingAuthor.Parameters.Author.Caption" Value="Készítette" />
+			<Item Name="EventsProcessSchema.BaseElements.SynchronizeSubjectRemindingAuthor.Parameters.Contact.Caption" Value="Címzett" />
+			<Item Name="EventsProcessSchema.BaseElements.SynchronizeSubjectRemindingAuthor.Parameters.Description.Caption" Value="Értesítési megjegyzések" />
+			<Item Name="EventsProcessSchema.BaseElements.SynchronizeSubjectRemindingAuthor.Parameters.IsListSubjectReminds.Caption" Value="Az objektum több értesítésének használata" />
+			<Item Name="EventsProcessSchema.BaseElements.SynchronizeSubjectRemindingAuthor.Parameters.IsSingleReminder.Caption" Value="Egyetlen emlékeztető" />
+			<Item Name="EventsProcessSchema.BaseElements.SynchronizeSubjectRemindingAuthor.Parameters.IsSubjectDelete.Caption" Value="Az értesítési rekord törlődik" />
+			<Item Name="EventsProcessSchema.BaseElements.SynchronizeSubjectRemindingAuthor.Parameters.NotificationType.Caption" Value="Értesítések típusa" />
+			<Item Name="EventsProcessSchema.BaseElements.SynchronizeSubjectRemindingAuthor.Parameters.PopupTitle.Caption" Value="PopupTitle" />
+			<Item Name="EventsProcessSchema.BaseElements.SynchronizeSubjectRemindingAuthor.Parameters.RemindTime.Caption" Value="Az értesítés időpontja" />
+			<Item Name="EventsProcessSchema.BaseElements.SynchronizeSubjectRemindingAuthor.Parameters.Source.Caption" Value="Címzett szerepkör az objektumban" />
+			<Item Name="EventsProcessSchema.BaseElements.SynchronizeSubjectRemindingAuthor.Parameters.SubjectPrimaryColumnValue.Caption" Value="Értesítési objektum" />
+			<Item Name="EventsProcessSchema.BaseElements.SynchronizeSubjectRemindingAuthor.Parameters.SysEntitySchema.Caption" Value="Értesítést kapó bejegyzést tartalmazó objektum" />
+			<Item Name="EventsProcessSchema.BaseElements.SynchronizeSubjectRemindingOwner.Parameters.Active.Caption" Value="Aktív cselekvés" />
+			<Item Name="EventsProcessSchema.BaseElements.SynchronizeSubjectRemindingOwner.Parameters.Author.Caption" Value="Készítette" />
+			<Item Name="EventsProcessSchema.BaseElements.SynchronizeSubjectRemindingOwner.Parameters.Contact.Caption" Value="Címzett" />
+			<Item Name="EventsProcessSchema.BaseElements.SynchronizeSubjectRemindingOwner.Parameters.Description.Caption" Value="Értesítési megjegyzések" />
+			<Item Name="EventsProcessSchema.BaseElements.SynchronizeSubjectRemindingOwner.Parameters.IsListSubjectReminds.Caption" Value="Az objektum több értesítésének használata" />
+			<Item Name="EventsProcessSchema.BaseElements.SynchronizeSubjectRemindingOwner.Parameters.IsSingleReminder.Caption" Value="Egyetlen emlékeztető" />
+			<Item Name="EventsProcessSchema.BaseElements.SynchronizeSubjectRemindingOwner.Parameters.IsSubjectDelete.Caption" Value="Az értesítési rekord törlődik" />
+			<Item Name="EventsProcessSchema.BaseElements.SynchronizeSubjectRemindingOwner.Parameters.NotificationType.Caption" Value="Értesítések típusa" />
+			<Item Name="EventsProcessSchema.BaseElements.SynchronizeSubjectRemindingOwner.Parameters.PopupTitle.Caption" Value="PopupTitle" />
+			<Item Name="EventsProcessSchema.BaseElements.SynchronizeSubjectRemindingOwner.Parameters.RemindTime.Caption" Value="Az értesítés időpontja" />
+			<Item Name="EventsProcessSchema.BaseElements.SynchronizeSubjectRemindingOwner.Parameters.Source.Caption" Value="Címzett szerepkör az objektumban" />
+			<Item Name="EventsProcessSchema.BaseElements.SynchronizeSubjectRemindingOwner.Parameters.SubjectPrimaryColumnValue.Caption" Value="Értesítési objektum" />
+			<Item Name="EventsProcessSchema.BaseElements.SynchronizeSubjectRemindingOwner.Parameters.SysEntitySchema.Caption" Value="Értesítést kapó bejegyzést tartalmazó objektum" />
+		</Items>
+	</Group>
+</Resources>

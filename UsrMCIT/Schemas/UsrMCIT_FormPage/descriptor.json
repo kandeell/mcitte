@@ -1,0 +1,14 @@
+﻿{
+  "Descriptor": {
+    "UId": "4ca95b6f-e960-4e01-b11a-477a74375757",
+    "Name": "UsrMCIT_FormPage",
+    "ModifiedOnUtc": "\/Date(1791930629000)\/",
+    "Parent": {
+      "UId": "3b2e117f-8c6b-4ca5-80a2-7ebb497cddf9",
+      "Name": "PageWithTabsFreedomTemplate"
+    },
+    "ManagerName": "ClientUnitSchemaManager",
+    "Caption": "MCIT form page",
+    "DependsOn": []
+  }
+}

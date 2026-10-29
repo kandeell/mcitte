@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Resources Culture="en-US">
+	<Group Type="String">
+		<Items>
+			<Item Name="Caption" Value="MCIT Permission Queue" />
+			<Item Name="Columns.UsrDescription.Caption" Value="Description" />
+			<Item Name="Columns.UsrIsActive.Caption" Value="Is Active" />
+			<Item Name="Columns.UsrQueueCode.Caption" Value="Queue Code" />
+			<Item Name="Columns.UsrQueueName.Caption" Value="Queue Name" />
+			<Item Name="Columns.UsrSortOrder.Caption" Value="Sort Order" />
+			<Item Name="EventsProcessSchema.Caption" Value="Business process" />
+		</Items>
+	</Group>
+</Resources>

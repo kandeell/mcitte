@@ -1,0 +1,14 @@
+﻿{
+  "Descriptor": {
+    "UId": "98f852a7-7c30-4bfe-bd63-57d886afcc0d",
+    "Name": "UsrMCIT_MobileFormPage",
+    "ModifiedOnUtc": "\/Date(1791930629000)\/",
+    "Parent": {
+      "UId": "019c694a-1a3b-4812-b2e5-219b326061ae",
+      "Name": "MobilePageWithTabsFreedomTemplate"
+    },
+    "ManagerName": "ClientUnitSchemaManager",
+    "Caption": "MCIT mobile form page",
+    "DependsOn": []
+  }
+}

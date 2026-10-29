@@ -1,0 +1,10 @@
+﻿{
+  "Descriptor": {
+    "UId": "e26276e4-e3f8-46ea-9091-61d73ff01c74",
+    "Name": "UsrMCITResourceCatalogRelatedPage",
+    "ModifiedOnUtc": "\/Date(1792970098000)\/",
+    "ManagerName": "AddonSchemaManager",
+    "Caption": "Resource Catalog (Page settings)",
+    "DependsOn": []
+  }
+}

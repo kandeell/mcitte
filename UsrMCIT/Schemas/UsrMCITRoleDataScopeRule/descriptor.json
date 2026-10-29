@@ -1,0 +1,14 @@
+﻿{
+  "Descriptor": {
+    "UId": "89526ff1-0357-4a62-a4ba-d3e74c7e268b",
+    "Name": "UsrMCITRoleDataScopeRule",
+    "ModifiedOnUtc": "\/Date(1792878225000)\/",
+    "Parent": {
+      "UId": "1bab9dcf-17d5-49f8-9536-8e0064f1dce0",
+      "Name": "BaseEntity"
+    },
+    "ManagerName": "EntitySchemaManager",
+    "Caption": "MCIT Role Data Scope Rule",
+    "DependsOn": []
+  }
+}

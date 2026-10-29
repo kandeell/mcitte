@@ -1,0 +1,10 @@
+﻿{
+  "Descriptor": {
+    "UId": "3afca088-f367-44d8-9fde-e82ab634ac59",
+    "Name": "UsrContractConfigVersionBusinessRule",
+    "ModifiedOnUtc": "\/Date(1792484379000)\/",
+    "ManagerName": "AddonSchemaManager",
+    "Caption": "Contract Configuration Version (Business rules)",
+    "DependsOn": []
+  }
+}

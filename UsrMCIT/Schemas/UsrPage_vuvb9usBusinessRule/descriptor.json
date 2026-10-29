@@ -1,0 +1,10 @@
+﻿{
+  "Descriptor": {
+    "UId": "0ea01047-b076-43cb-8ac3-d35daefcd44c",
+    "Name": "UsrPage_vuvb9usBusinessRule",
+    "ModifiedOnUtc": "\/Date(1792481560000)\/",
+    "ManagerName": "AddonSchemaManager",
+    "Caption": "Contract Configuration Version form page (Business rules)",
+    "DependsOn": []
+  }
+}

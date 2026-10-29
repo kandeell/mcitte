@@ -1,0 +1,63 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Resources Culture="en-US">
+	<Group Type="String">
+		<Items>
+			<Item Name="Caption" Value="MCIT Contract form page" />
+			<Item Name="LocalizableStrings.Button_spbhdwfCaption.Value" Value="Refresh" />
+			<Item Name="LocalizableStrings.Button_tbioevjCaption.Value" Value="Upload" />
+			<Item Name="LocalizableStrings.ExpansionPanel_c4o5u6o_title.Value" Value="VM Request" />
+			<Item Name="LocalizableStrings.ExpansionPanel_pburjeo_title.Value" Value="Contract configuration versions" />
+			<Item Name="LocalizableStrings.ExpansionPanel_ylyirfv_title.Value" Value="Virtual Machine" />
+			<Item Name="LocalizableStrings.ExpansionPanel_zrdtks4_title.Value" Value="Point Transaction" />
+			<Item Name="LocalizableStrings.GridDetailAddBtn_ce2j3rh_caption.Value" Value="New" />
+			<Item Name="LocalizableStrings.GridDetailAddBtn_opvbbzb_caption.Value" Value="New" />
+			<Item Name="LocalizableStrings.GridDetailAddBtn_so8ylrh_caption.Value" Value="New" />
+			<Item Name="LocalizableStrings.GridDetailAddBtn_xhib4wg_caption.Value" Value="New" />
+			<Item Name="LocalizableStrings.GridDetailExportDataBtn_2mu5j6j_caption.Value" Value="Export to Excel" />
+			<Item Name="LocalizableStrings.GridDetailExportDataBtn_bcrnmg5_caption.Value" Value="Export to Excel" />
+			<Item Name="LocalizableStrings.GridDetailExportDataBtn_bt5ta49_caption.Value" Value="Export to Excel" />
+			<Item Name="LocalizableStrings.GridDetailExportDataBtn_ews0mon_caption.Value" Value="Export to Excel" />
+			<Item Name="LocalizableStrings.GridDetailImportDataBtn_35mdjgq_caption.Value" Value="Data import" />
+			<Item Name="LocalizableStrings.GridDetailImportDataBtn_cswicsn_caption.Value" Value="Data import" />
+			<Item Name="LocalizableStrings.GridDetailImportDataBtn_ftclr36_caption.Value" Value="Data import" />
+			<Item Name="LocalizableStrings.GridDetailImportDataBtn_mi7u109_caption.Value" Value="Data import" />
+			<Item Name="LocalizableStrings.GridDetailRefreshBtn_0ozai0w_caption.Value" Value="Refresh" />
+			<Item Name="LocalizableStrings.GridDetailRefreshBtn_6ac4hak_caption.Value" Value="Refresh" />
+			<Item Name="LocalizableStrings.GridDetailRefreshBtn_7v3tzew_caption.Value" Value="Refresh" />
+			<Item Name="LocalizableStrings.GridDetailRefreshBtn_kx4zxdd_caption.Value" Value="Refresh" />
+			<Item Name="LocalizableStrings.GridDetailSearchFilter_68oyfbz_placeholder.Value" Value="Search" />
+			<Item Name="LocalizableStrings.GridDetailSearchFilter_6m356c3_placeholder.Value" Value="Search" />
+			<Item Name="LocalizableStrings.GridDetailSearchFilter_7usie6t_placeholder.Value" Value="Search" />
+			<Item Name="LocalizableStrings.GridDetailSearchFilter_p820pws_placeholder.Value" Value="Search" />
+			<Item Name="LocalizableStrings.GridDetailSettingsBtn_diakm1l_caption.Value" Value="Actions" />
+			<Item Name="LocalizableStrings.GridDetailSettingsBtn_f17ps63_caption.Value" Value="Actions" />
+			<Item Name="LocalizableStrings.GridDetailSettingsBtn_hrsx8qv_caption.Value" Value="Actions" />
+			<Item Name="LocalizableStrings.GridDetailSettingsBtn_tz72vkq_caption.Value" Value="Actions" />
+			<Item Name="LocalizableStrings.IndicatorWidget_47fbb88_config_text_template.Value" Value="{0}" />
+			<Item Name="LocalizableStrings.IndicatorWidget_47fbb88_hint.Value" Value="Components.IndicatorWidget.Hint" />
+			<Item Name="LocalizableStrings.IndicatorWidget_47fbb88_title.Value" Value="New metric" />
+			<Item Name="LocalizableStrings.IndicatorWidget_c7lr18k_config_text_template.Value" Value="{0}" />
+			<Item Name="LocalizableStrings.IndicatorWidget_c7lr18k_hint.Value" Value="Components.IndicatorWidget.Hint" />
+			<Item Name="LocalizableStrings.IndicatorWidget_c7lr18k_title.Value" Value="Add-on Charges" />
+			<Item Name="LocalizableStrings.IndicatorWidget_lqmx8vv_config_text_template.Value" Value="{0}" />
+			<Item Name="LocalizableStrings.IndicatorWidget_lqmx8vv_hint.Value" Value="Components.IndicatorWidget.Hint" />
+			<Item Name="LocalizableStrings.IndicatorWidget_lqmx8vv_title.Value" Value="Contract Value" />
+			<Item Name="LocalizableStrings.IndicatorWidget_pls0lz2_config_text_template.Value" Value="{0}" />
+			<Item Name="LocalizableStrings.IndicatorWidget_pls0lz2_hint.Value" Value="Components.IndicatorWidget.Hint" />
+			<Item Name="LocalizableStrings.IndicatorWidget_pls0lz2_title.Value" Value="Contract Value" />
+			<Item Name="LocalizableStrings.IndicatorWidget_v1hpa7j_config_text_template.Value" Value="{0}" />
+			<Item Name="LocalizableStrings.IndicatorWidget_v1hpa7j_hint.Value" Value="Components.IndicatorWidget.Hint" />
+			<Item Name="LocalizableStrings.IndicatorWidget_v1hpa7j_title.Value" Value="New metric" />
+			<Item Name="LocalizableStrings.IndicatorWidget_wk1kcsw_config_text_template.Value" Value="{0}" />
+			<Item Name="LocalizableStrings.IndicatorWidget_wk1kcsw_hint.Value" Value="Components.IndicatorWidget.Hint" />
+			<Item Name="LocalizableStrings.IndicatorWidget_wk1kcsw_title.Value" Value="Total Financial Commitment" />
+			<Item Name="LocalizableStrings.Label_9j2qyrf_caption.Value" Value="Contract Description" />
+			<Item Name="LocalizableStrings.Label_vvaeqvy_caption.Value" Value="Financial Summary" />
+			<Item Name="LocalizableStrings.TabContainer_91fz9dg_caption.Value" Value="Point Balances" />
+			<Item Name="LocalizableStrings.TabContainer_h354xra_caption.Value" Value="Configuration Versions" />
+			<Item Name="LocalizableStrings.addRecord_05o2u1d_caption.Value" Value="Add new" />
+			<Item Name="LocalizableStrings.addRecord_b6lsl8b_caption.Value" Value="Add new" />
+			<Item Name="Parameters.da1fba5d-0acf-a95a-e7c0-10e066249e52.Caption" Value="IsBalancesInfoVisible" />
+		</Items>
+	</Group>
+</Resources>

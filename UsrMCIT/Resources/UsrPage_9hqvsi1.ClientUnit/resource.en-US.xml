@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Resources Culture="en-US">
+	<Group Type="String">
+		<Items>
+			<Item Name="Caption" Value="New dashboard" />
+			<Item Name="LocalizableStrings.IndicatorWidget_a4tohl1_config_text_template.Value" Value="{0}" />
+			<Item Name="LocalizableStrings.IndicatorWidget_a4tohl1_hint.Value" Value="Components.IndicatorWidget.Hint" />
+			<Item Name="LocalizableStrings.IndicatorWidget_a4tohl1_title.Value" Value="Add-on Charges" />
+			<Item Name="LocalizableStrings.IndicatorWidget_afshmjl_config_text_template.Value" Value="{0}" />
+			<Item Name="LocalizableStrings.IndicatorWidget_afshmjl_hint.Value" Value="Components.IndicatorWidget.Hint" />
+			<Item Name="LocalizableStrings.IndicatorWidget_afshmjl_title.Value" Value="Contract Value" />
+			<Item Name="LocalizableStrings.IndicatorWidget_zxw8gfj_config_text_template.Value" Value="{0}" />
+			<Item Name="LocalizableStrings.IndicatorWidget_zxw8gfj_hint.Value" Value="Components.IndicatorWidget.Hint" />
+			<Item Name="LocalizableStrings.IndicatorWidget_zxw8gfj_title.Value" Value="Total Financial Commitment" />
+		</Items>
+	</Group>
+</Resources>

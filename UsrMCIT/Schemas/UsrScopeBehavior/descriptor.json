@@ -1,0 +1,14 @@
+﻿{
+  "Descriptor": {
+    "UId": "f5e9a565-4ba4-410b-b76f-4731f136d31f",
+    "Name": "UsrScopeBehavior",
+    "ModifiedOnUtc": "\/Date(1792685337000)\/",
+    "Parent": {
+      "UId": "11ab4bcb-9b23-4b6d-9c86-520fae925d75",
+      "Name": "BaseLookup"
+    },
+    "ManagerName": "EntitySchemaManager",
+    "Caption": "Scope Behavior",
+    "DependsOn": []
+  }
+}
