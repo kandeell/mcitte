@@ -346,6 +346,11 @@
 			<SpecificVersion>False</SpecificVersion>
 			<Private>False</Private>
 		</Reference>
+		<Reference Include="CrtBfUtilities">
+			<HintPath>$(RelativePkgFolderPath)/CrtBfUtilities/$(StandalonePackageAssemblyPath)/CrtBfUtilities.dll</HintPath>
+			<SpecificVersion>False</SpecificVersion>
+			<Private>False</Private>
+		</Reference>
 		<Reference Include="CrtC360InUiV2">
 			<HintPath>$(RelativePkgFolderPath)/CrtC360InUiV2/$(StandalonePackageAssemblyPath)/CrtC360InUiV2.dll</HintPath>
 			<SpecificVersion>False</SpecificVersion>
@@ -376,6 +381,11 @@
 			<SpecificVersion>False</SpecificVersion>
 			<Private>False</Private>
 		</Reference>
+		<Reference Include="CrtContentDesigner">
+			<HintPath>$(RelativePkgFolderPath)/CrtContentDesigner/$(StandalonePackageAssemblyPath)/CrtContentDesigner.dll</HintPath>
+			<SpecificVersion>False</SpecificVersion>
+			<Private>False</Private>
+		</Reference>
 		<Reference Include="CrtCopilot">
 			<HintPath>$(RelativePkgFolderPath)/CrtCopilot/$(StandalonePackageAssemblyPath)/CrtCopilot.dll</HintPath>
 			<SpecificVersion>False</SpecificVersion>
@@ -393,6 +403,11 @@
 		</Reference>
 		<Reference Include="CrtCoreBase">
 			<HintPath>$(RelativePkgFolderPath)/CrtCoreBase/$(StandalonePackageAssemblyPath)/CrtCoreBase.dll</HintPath>
+			<SpecificVersion>False</SpecificVersion>
+			<Private>False</Private>
+		</Reference>
+		<Reference Include="CrtCoreFileEngine">
+			<HintPath>$(RelativePkgFolderPath)/CrtCoreFileEngine/$(StandalonePackageAssemblyPath)/CrtCoreFileEngine.dll</HintPath>
 			<SpecificVersion>False</SpecificVersion>
 			<Private>False</Private>
 		</Reference>
@@ -463,6 +478,11 @@
 		</Reference>
 		<Reference Include="CrtGeminiApiIntegraion">
 			<HintPath>$(RelativePkgFolderPath)/CrtGeminiApiIntegraion/$(StandalonePackageAssemblyPath)/CrtGeminiApiIntegraion.dll</HintPath>
+			<SpecificVersion>False</SpecificVersion>
+			<Private>False</Private>
+		</Reference>
+		<Reference Include="CrtHTMLPageDesigner">
+			<HintPath>$(RelativePkgFolderPath)/CrtHTMLPageDesigner/$(StandalonePackageAssemblyPath)/CrtHTMLPageDesigner.dll</HintPath>
 			<SpecificVersion>False</SpecificVersion>
 			<Private>False</Private>
 		</Reference>
@@ -601,6 +621,11 @@
 			<SpecificVersion>False</SpecificVersion>
 			<Private>False</Private>
 		</Reference>
+		<Reference Include="CrtTemplateDesigner">
+			<HintPath>$(RelativePkgFolderPath)/CrtTemplateDesigner/$(StandalonePackageAssemblyPath)/CrtTemplateDesigner.dll</HintPath>
+			<SpecificVersion>False</SpecificVersion>
+			<Private>False</Private>
+		</Reference>
 		<Reference Include="CrtTouchPointBase">
 			<HintPath>$(RelativePkgFolderPath)/CrtTouchPointBase/$(StandalonePackageAssemblyPath)/CrtTouchPointBase.dll</HintPath>
 			<SpecificVersion>False</SpecificVersion>
@@ -702,7 +727,128 @@
 			<Private>False</Private>
 		</Reference>
 	</ItemGroup>
-	<ItemGroup Label="Standalone package external assembly references" />
+	<ItemGroup Label="Standalone package external assembly references">
+		<Reference Include="$(RelativePkgFolderPath)/../Lib/CreatioTelegramConnector.OmnichannelMessaging.dll">
+			<SpecificVersion>False</SpecificVersion>
+			<Private>False</Private>
+		</Reference>
+		<Reference Include="$(RelativePkgFolderPath)/../Lib/DeduplicationElastic.Domain.CrtDeduplication.dll">
+			<SpecificVersion>False</SpecificVersion>
+			<Private>False</Private>
+		</Reference>
+		<Reference Include="$(RelativePkgFolderPath)/../Lib/DeduplicationElastic.WebApi.Contracts.CrtDeduplication.dll">
+			<SpecificVersion>False</SpecificVersion>
+			<Private>False</Private>
+		</Reference>
+		<Reference Include="$(RelativePkgFolderPath)/../Lib/ExchangeApi.Exchange.dll">
+			<SpecificVersion>False</SpecificVersion>
+			<Private>False</Private>
+		</Reference>
+		<Reference Include="$(RelativePkgFolderPath)/../Lib/Facebook.SocialNetworkIntegration.dll">
+			<SpecificVersion>False</SpecificVersion>
+			<Private>False</Private>
+		</Reference>
+		<Reference Include="$(RelativePkgFolderPath)/../Lib/FileConverter.Client.Http.Reports.dll">
+			<SpecificVersion>False</SpecificVersion>
+			<Private>False</Private>
+		</Reference>
+		<Reference Include="$(RelativePkgFolderPath)/../Lib/FileConverter.Client.Reports.dll">
+			<SpecificVersion>False</SpecificVersion>
+			<Private>False</Private>
+		</Reference>
+		<Reference Include="$(RelativePkgFolderPath)/../Lib/Google.Apis.Authentication.OAuth2.OldGoogleIntegration.dll">
+			<SpecificVersion>False</SpecificVersion>
+			<Private>False</Private>
+		</Reference>
+		<Reference Include="$(RelativePkgFolderPath)/../Lib/Google.Apis.OldGoogleIntegration.dll">
+			<SpecificVersion>False</SpecificVersion>
+			<Private>False</Private>
+		</Reference>
+		<Reference Include="$(RelativePkgFolderPath)/../Lib/Google.GData.Client.OldGoogleIntegration.dll">
+			<SpecificVersion>False</SpecificVersion>
+			<Private>False</Private>
+		</Reference>
+		<Reference Include="$(RelativePkgFolderPath)/../Lib/Google.GData.Contacts.OldGoogleIntegration.dll">
+			<SpecificVersion>False</SpecificVersion>
+			<Private>False</Private>
+		</Reference>
+		<Reference Include="$(RelativePkgFolderPath)/../Lib/Google.GData.Extensions.OldGoogleIntegration.dll">
+			<SpecificVersion>False</SpecificVersion>
+			<Private>False</Private>
+		</Reference>
+		<Reference Include="$(RelativePkgFolderPath)/../Lib/Microsoft.CSharp.FacebookIntegration.dll">
+			<SpecificVersion>False</SpecificVersion>
+			<Private>False</Private>
+		</Reference>
+		<Reference Include="$(RelativePkgFolderPath)/../Lib/Microsoft.Exchange.WebServices.NETStandard.Exchange.dll">
+			<SpecificVersion>False</SpecificVersion>
+			<Private>False</Private>
+		</Reference>
+		<Reference Include="$(RelativePkgFolderPath)/../Lib/OmnichannelMessaging.OmnichannelMessaging.dll">
+			<SpecificVersion>False</SpecificVersion>
+			<Private>False</Private>
+		</Reference>
+		<Reference Include="$(RelativePkgFolderPath)/../Lib/OmnichannelProviders.OmnichannelMessaging.dll">
+			<SpecificVersion>False</SpecificVersion>
+			<Private>False</Private>
+		</Reference>
+		<Reference Include="$(RelativePkgFolderPath)/../Lib/System.DirectoryServices.Protocols.LDAP.dll">
+			<SpecificVersion>False</SpecificVersion>
+			<Private>False</Private>
+		</Reference>
+		<Reference Include="$(RelativePkgFolderPath)/../Lib/System.Web.Services.CrtProcessDesigner.dll">
+			<SpecificVersion>False</SpecificVersion>
+			<Private>False</Private>
+		</Reference>
+		<Reference Include="$(RelativePkgFolderPath)/../Lib/Telegram.Bot.OmnichannelMessaging.dll">
+			<SpecificVersion>False</SpecificVersion>
+			<Private>False</Private>
+		</Reference>
+		<Reference Include="$(RelativePkgFolderPath)/../Lib/Terrasoft.Enrichment.Interfaces.Enrichment.dll">
+			<SpecificVersion>False</SpecificVersion>
+			<Private>False</Private>
+		</Reference>
+		<Reference Include="$(RelativePkgFolderPath)/../Lib/Terrasoft.Extensions.Validation.Reports.dll">
+			<SpecificVersion>False</SpecificVersion>
+			<Private>False</Private>
+		</Reference>
+		<Reference Include="$(RelativePkgFolderPath)/../Lib/Terrasoft.GlobalSearch.Interfaces.GlobalSearch.dll">
+			<SpecificVersion>False</SpecificVersion>
+			<Private>False</Private>
+		</Reference>
+		<Reference Include="$(RelativePkgFolderPath)/../Lib/Terrasoft.Reporting.Abstractions.Reports.dll">
+			<SpecificVersion>False</SpecificVersion>
+			<Private>False</Private>
+		</Reference>
+		<Reference Include="$(RelativePkgFolderPath)/../Lib/Twilio.OmnichannelMessaging.dll">
+			<SpecificVersion>False</SpecificVersion>
+			<Private>False</Private>
+		</Reference>
+		<Reference Include="$(RelativePkgFolderPath)/../Lib/WorkplaceApi.Workplace.dll">
+			<SpecificVersion>False</SpecificVersion>
+			<Private>False</Private>
+		</Reference>
+		<Reference Include="$(RelativePkgFolderPath)/CrtBaseConsts/Autogenerated/Lib/IntegrationApi.CrtBaseConsts.dll">
+			<SpecificVersion>False</SpecificVersion>
+			<Private>False</Private>
+		</Reference>
+		<Reference Include="$(RelativePkgFolderPath)/CrtCoreBase/Autogenerated/Lib/DocumentFormat.OpenXml.CrtCoreBase.dll">
+			<SpecificVersion>False</SpecificVersion>
+			<Private>False</Private>
+		</Reference>
+		<Reference Include="$(RelativePkgFolderPath)/CrtCoreBase/Autogenerated/Lib/EmailContract.CrtCoreBase.dll">
+			<SpecificVersion>False</SpecificVersion>
+			<Private>False</Private>
+		</Reference>
+		<Reference Include="$(RelativePkgFolderPath)/CrtCoreBase/Autogenerated/Lib/System.IO.Packaging.CrtCoreBase.dll">
+			<SpecificVersion>False</SpecificVersion>
+			<Private>False</Private>
+		</Reference>
+		<Reference Include="$(RelativePkgFolderPath)/CrtML/Autogenerated/Lib/Terrasoft.ML.Interfaces.CrtML.dll">
+			<SpecificVersion>False</SpecificVersion>
+			<Private>False</Private>
+		</Reference>
+	</ItemGroup>
 	<ItemGroup Label="Entity Files">
 		<Compile Remove="$(RelativePkgFolderPath)/UsrMCIT/Schemas/Account/Account.cs" Condition="Exists('$(RelativePkgFolderPath)/UsrMCIT/Schemas/Account/Account.cs')" />
 		<Compile Remove="$(RelativePkgFolderPath)/UsrMCIT/Schemas/Activity/Activity.cs" Condition="Exists('$(RelativePkgFolderPath)/UsrMCIT/Schemas/Activity/Activity.cs')" />
