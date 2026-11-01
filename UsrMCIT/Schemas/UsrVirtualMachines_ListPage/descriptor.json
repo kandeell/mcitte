@@ -1,0 +1,14 @@
+﻿{
+  "Descriptor": {
+    "UId": "1c31a193-8e6c-4ac6-958d-aa14907dda95",
+    "Name": "UsrVirtualMachines_ListPage",
+    "ModifiedOnUtc": "\/Date(1792514420000)\/",
+    "Parent": {
+      "UId": "b7b898d0-8c77-4953-c097-23fa6800da02",
+      "Name": "ListPageV3Template"
+    },
+    "ManagerName": "ClientUnitSchemaManager",
+    "Caption": "Virtual Machines list page",
+    "DependsOn": []
+  }
+}

@@ -1,0 +1,14 @@
+﻿{
+  "Descriptor": {
+    "UId": "415bfa2d-d3b8-4e06-80f6-ae98b2122852",
+    "Name": "UsrMCITDashboardPage",
+    "ModifiedOnUtc": "\/Date(1792516242000)\/",
+    "Parent": {
+      "UId": "0c5cfb7a-1ed9-41b8-905e-9a38c6915550",
+      "Name": "BaseHomePage"
+    },
+    "ManagerName": "ClientUnitSchemaManager",
+    "Caption": "MCIT Dashboard Page",
+    "DependsOn": []
+  }
+}

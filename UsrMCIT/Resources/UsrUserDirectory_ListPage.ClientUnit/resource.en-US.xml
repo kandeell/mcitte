@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Resources Culture="en-US">
+	<Group Type="String">
+		<Items>
+			<Item Name="Caption" Value="User Directory list page" />
+			<Item Name="LocalizableStrings.AddButton_caption.Value" Value="New" />
+			<Item Name="LocalizableStrings.DataImportButton_caption.Value" Value="Import" />
+			<Item Name="LocalizableStrings.IndicatorWidget_avk9f4s_config_text_template.Value" Value="{0}Deactivated" />
+			<Item Name="LocalizableStrings.IndicatorWidget_avk9f4s_hint.Value" Value="Components.IndicatorWidget.Hint" />
+			<Item Name="LocalizableStrings.IndicatorWidget_avk9f4s_title.Value" Value="Deactivated" />
+			<Item Name="LocalizableStrings.IndicatorWidget_kx5qlxn_config_text_template.Value" Value="{0}Inactive" />
+			<Item Name="LocalizableStrings.IndicatorWidget_kx5qlxn_hint.Value" Value="Components.IndicatorWidget.Hint" />
+			<Item Name="LocalizableStrings.IndicatorWidget_kx5qlxn_title.Value" Value="Inactive" />
+			<Item Name="LocalizableStrings.IndicatorWidget_qwwh5i9_config_text_template.Value" Value="{0}Active" />
+			<Item Name="LocalizableStrings.IndicatorWidget_qwwh5i9_hint.Value" Value="Components.IndicatorWidget.Hint" />
+			<Item Name="LocalizableStrings.IndicatorWidget_qwwh5i9_title.Value" Value="Active" />
+			<Item Name="LocalizableStrings.Label_2o5y9a4_caption.Value" Value="Portal access provisioned from corporate Active Directory" />
+			<Item Name="LocalizableStrings.PDS_UsrUser.Value" Value="Display Name" />
+			<Item Name="LocalizableStrings.PDS_UsrUser_Contact_Account.Value" Value="Organization" />
+		</Items>
+	</Group>
+</Resources>

@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Resources Culture="en-US">
+	<Group Type="String">
+		<Items>
+			<Item Name="Caption" Value="User Profile" />
+			<Item Name="LocalizableStrings.GeneralInfoTab_caption.Value" Value="Profile" />
+			<Item Name="LocalizableStrings.TabContainer_4qlnazl_caption.Value" Value="Activity &amp; Audit" />
+			<Item Name="LocalizableStrings.TabContainer_a97xogw_caption.Value" Value="Queue Assignments" />
+			<Item Name="LocalizableStrings.TabContainer_gwvqxri_caption.Value" Value="Access Scopes" />
+			<Item Name="LocalizableStrings.TabContainer_np9tzi9_caption.Value" Value="Roles" />
+			<Item Name="LocalizableStrings.TabContainer_zeklni2_caption.Value" Value="Effective Permissions" />
+			<Item Name="LocalizableStrings.addRecord_8ugsy8q_caption.Value" Value="Add new" />
+			<Item Name="LocalizableStrings.addRecord_xs3kfpk_caption.Value" Value="Add new" />
+		</Items>
+	</Group>
+</Resources>

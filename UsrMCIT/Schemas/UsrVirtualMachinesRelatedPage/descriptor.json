@@ -1,0 +1,10 @@
+﻿{
+  "Descriptor": {
+    "UId": "02b7e359-a47b-43cd-89b2-b5fc58299ad8",
+    "Name": "UsrVirtualMachinesRelatedPage",
+    "ModifiedOnUtc": "\/Date(1792511003000)\/",
+    "ManagerName": "AddonSchemaManager",
+    "Caption": "Virtual Machines (Page settings)",
+    "DependsOn": []
+  }
+}

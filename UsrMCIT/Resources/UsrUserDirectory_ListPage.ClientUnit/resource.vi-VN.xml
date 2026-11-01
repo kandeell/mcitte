@@ -1,0 +1,10 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Resources Culture="vi-VN">
+	<Group Type="String">
+		<Items>
+			<Item Name="Caption" Value="User Directory list page" />
+			<Item Name="LocalizableStrings.AddButton_caption.Value" Value="Hợp đồng mới" />
+			<Item Name="LocalizableStrings.DataImportButton_caption.Value" Value="Data import" />
+		</Items>
+	</Group>
+</Resources>

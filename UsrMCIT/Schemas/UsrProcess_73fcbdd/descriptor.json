@@ -1,0 +1,10 @@
+﻿{
+  "Descriptor": {
+    "UId": "ba68f800-8f5c-459a-8acd-2ce4311e1f81",
+    "Name": "UsrProcess_73fcbdd",
+    "ModifiedOnUtc": "\/Date(1792674418000)\/",
+    "ManagerName": "ProcessSchemaManager",
+    "Caption": "Initialize Portal User Status test",
+    "DependsOn": []
+  }
+}
