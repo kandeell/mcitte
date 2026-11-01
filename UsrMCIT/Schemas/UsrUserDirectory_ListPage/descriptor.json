@@ -1,0 +1,14 @@
+﻿{
+  "Descriptor": {
+    "UId": "cb81f5ba-e78a-43db-a06a-8402745aa97d",
+    "Name": "UsrUserDirectory_ListPage",
+    "ModifiedOnUtc": "\/Date(1792891221000)\/",
+    "Parent": {
+      "UId": "b7b898d0-8c77-4953-c097-23fa6800da02",
+      "Name": "ListPageV3Template"
+    },
+    "ManagerName": "ClientUnitSchemaManager",
+    "Caption": "User Directory list page",
+    "DependsOn": []
+  }
+}

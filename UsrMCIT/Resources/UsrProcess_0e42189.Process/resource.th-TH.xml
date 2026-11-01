@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Resources Culture="th-TH">
+	<Group Type="String">
+		<Items>
+			<Item Name="BaseElements.ReadDataUserTask3.Parameters.AggregationColumnName.Caption" Value="ชื่อของคอลัมน์ฟังชั่นรวม" />
+			<Item Name="BaseElements.ReadDataUserTask3.Parameters.CanReadUncommitedData.Caption" Value="อ่านข้อมูลที่ไม่มีข้อผูกมัด" />
+			<Item Name="BaseElements.ReadDataUserTask3.Parameters.ConsiderTimeInFilter.Caption" Value="พิจารณาเวลาที่ใช้ในการกรอง" />
+			<Item Name="BaseElements.ReadDataUserTask3.Parameters.DataSourceFilters.Caption" Value="แหล่งข้อมูลของตัวกรอง" />
+			<Item Name="BaseElements.ReadDataUserTask3.Parameters.EntityColumnMetaPathes.Caption" Value="คอลัมน์ที่จะอ่าน" />
+			<Item Name="BaseElements.ReadDataUserTask3.Parameters.FunctionType.Caption" Value="ประเภทฟังชั่นราวม" />
+			<Item Name="BaseElements.ReadDataUserTask3.Parameters.IgnoreDisplayValues.Caption" Value="อย่าอ่านค่าที่แสดงของคอลัมน์การค้นหา" />
+			<Item Name="BaseElements.ReadDataUserTask3.Parameters.NumberOfRecords.Caption" Value="จำนวนของบันทึกที่จะอ่าน" />
+			<Item Name="BaseElements.ReadDataUserTask3.Parameters.OrderInfo.Caption" Value="ลำดับของคอลัมน์" />
+			<Item Name="BaseElements.ReadDataUserTask3.Parameters.ReadSomeTopRecords.Caption" Value="อ่านก่อน" />
+			<Item Name="BaseElements.ReadDataUserTask3.Parameters.ResultCompositeObjectList.Caption" Value="การรวบรวมบันทึก" />
+			<Item Name="BaseElements.ReadDataUserTask3.Parameters.ResultCount.Caption" Value="จำนวนของบันทึก" />
+			<Item Name="BaseElements.ReadDataUserTask3.Parameters.ResultDateTimeFunction.Caption" Value="Function result (Date/Time)" />
+			<Item Name="BaseElements.ReadDataUserTask3.Parameters.ResultEntity.Caption" Value="รายการแรกของคอลเลคชั่นที่ส่งผล" />
+			<Item Name="BaseElements.ReadDataUserTask3.Parameters.ResultEntityCollection.Caption" Value="คอลเลกชั่นที่ส่งผล" />
+			<Item Name="BaseElements.ReadDataUserTask3.Parameters.ResultFloatFunction.Caption" Value="Function result (Decimal)" />
+			<Item Name="BaseElements.ReadDataUserTask3.Parameters.ResultIntegerFunction.Caption" Value="Function result (Integer)" />
+			<Item Name="BaseElements.ReadDataUserTask3.Parameters.ResultRowsCount.Caption" Value="จำนวนของบันทึกที่อ่านแล้ว" />
+			<Item Name="BaseElements.ReadDataUserTask3.Parameters.ResultType.Caption" Value="ประเภทของผลลัพธ์" />
+			<Item Name="Caption" Value="Refresh MCIT User Scope" />
+		</Items>
+	</Group>
+</Resources>

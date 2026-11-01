@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Resources Culture="en-US">
+	<Group Type="String">
+		<Items>
+			<Item Name="Caption" Value="Contract Configuration Version" />
+			<Item Name="Columns.UsrCPUPerPoint.Caption" Value="vCPU per point" />
+			<Item Name="Columns.UsrChangeReason.Caption" Value="Change reason" />
+			<Item Name="Columns.UsrContract.Caption" Value="Contract" />
+			<Item Name="Columns.UsrEffectiveFrom.Caption" Value="Effective from" />
+			<Item Name="Columns.UsrName.Caption" Value="Configuration name" />
+			<Item Name="Columns.UsrPreviousVersion.Caption" Value="Previous version" />
+			<Item Name="Columns.UsrRAMGBPerPoint.Caption" Value="RAM per point (GB)" />
+			<Item Name="Columns.UsrStorageGBPerPoint.Caption" Value="Storage per point (GB)" />
+			<Item Name="Columns.UsrVersionNumber.Caption" Value="Version number" />
+		</Items>
+	</Group>
+</Resources>

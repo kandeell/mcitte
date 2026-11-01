@@ -1,0 +1,14 @@
+﻿{
+  "Descriptor": {
+    "UId": "d3acc91e-61b5-43b9-9d91-23d7e8b91fe2",
+    "Name": "UsrMCITContractStatus",
+    "ModifiedOnUtc": "\/Date(1791924118000)\/",
+    "Parent": {
+      "UId": "11ab4bcb-9b23-4b6d-9c86-520fae925d75",
+      "Name": "BaseLookup"
+    },
+    "ManagerName": "EntitySchemaManager",
+    "Caption": "MCIT Contract Status",
+    "DependsOn": []
+  }
+}

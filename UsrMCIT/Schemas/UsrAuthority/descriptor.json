@@ -1,0 +1,14 @@
+﻿{
+  "Descriptor": {
+    "UId": "54d04de0-2230-4bc0-9979-cfd08583c33a",
+    "Name": "UsrAuthority",
+    "ModifiedOnUtc": "\/Date(1791912727000)\/",
+    "Parent": {
+      "UId": "1bab9dcf-17d5-49f8-9536-8e0064f1dce0",
+      "Name": "BaseEntity"
+    },
+    "ManagerName": "EntitySchemaManager",
+    "Caption": "Authority",
+    "DependsOn": []
+  }
+}

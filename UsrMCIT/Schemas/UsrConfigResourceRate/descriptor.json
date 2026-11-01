@@ -1,0 +1,14 @@
+﻿{
+  "Descriptor": {
+    "UId": "1238a393-cadb-4e0f-9e8b-575dae5a87ec",
+    "Name": "UsrConfigResourceRate",
+    "ModifiedOnUtc": "\/Date(1792001222000)\/",
+    "Parent": {
+      "UId": "1bab9dcf-17d5-49f8-9536-8e0064f1dce0",
+      "Name": "BaseEntity"
+    },
+    "ManagerName": "EntitySchemaManager",
+    "Caption": "Configuration Resource Rate",
+    "DependsOn": []
+  }
+}

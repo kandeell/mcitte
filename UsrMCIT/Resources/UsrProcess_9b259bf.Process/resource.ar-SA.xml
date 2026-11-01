@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Resources Culture="ar-SA">
+	<Group Type="String">
+		<Items>
+			<Item Name="BaseElements.AddDataUserTask2.Parameters.ConsiderTimeInFilter.Caption" Value="مراعاة الوقت في الفلتر" />
+			<Item Name="BaseElements.AddDataUserTask2.Parameters.DataSourceFilters.Caption" Value="ترشيحات مصدر البيانات" />
+			<Item Name="BaseElements.AddDataUserTask2.Parameters.EntitySchemaId.Caption" Value="الكائن" />
+			<Item Name="BaseElements.AddDataUserTask2.Parameters.FilterEntitySchemaId.Caption" Value="الكائن" />
+			<Item Name="BaseElements.AddDataUserTask2.Parameters.RecordAddMode.Caption" Value="وضع إضافة السجل" />
+			<Item Name="BaseElements.AddDataUserTask2.Parameters.RecordDefValues.Caption" Value="تعيين قيم العمود" />
+			<Item Name="BaseElements.AddDataUserTask2.Parameters.RecordId.Caption" Value="معرف السجل الذي تم إنشاؤه" />
+			<Item Name="Caption" Value="Track MCIT Role Assignments" />
+		</Items>
+	</Group>
+</Resources>

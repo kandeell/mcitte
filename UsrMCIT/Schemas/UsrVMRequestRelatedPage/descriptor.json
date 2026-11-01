@@ -1,0 +1,10 @@
+﻿{
+  "Descriptor": {
+    "UId": "2c749580-d851-42b7-8f4e-2519413de1c4",
+    "Name": "UsrVMRequestRelatedPage",
+    "ModifiedOnUtc": "\/Date(1792490194000)\/",
+    "ManagerName": "AddonSchemaManager",
+    "Caption": "VM Request (Page settings)",
+    "DependsOn": []
+  }
+}

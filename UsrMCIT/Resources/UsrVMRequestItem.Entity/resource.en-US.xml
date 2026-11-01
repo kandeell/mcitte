@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Resources Culture="en-US">
+	<Group Type="String">
+		<Items>
+			<Item Name="Caption" Value="VM Request Item" />
+			<Item Name="Columns.UsrAmountPerUnitSnapshot.Caption" Value="Amount per unit at submission" />
+			<Item Name="Columns.UsrBillableUnits.Caption" Value="Billable units" />
+			<Item Name="Columns.UsrCPU.Caption" Value="vCPU count" />
+			<Item Name="Columns.UsrColumn27.Caption" Value="Number Input" />
+			<Item Name="Columns.UsrColumn28.Caption" Value="Number 2" />
+			<Item Name="Columns.UsrColumn29.Caption" Value="Number 3" />
+			<Item Name="Columns.UsrColumn30.Caption" Value="Number 4" />
+			<Item Name="Columns.UsrCurrency.Caption" Value="Currency" />
+			<Item Name="Columns.UsrDisplayOrder.Caption" Value="Display order" />
+			<Item Name="Columns.UsrEnvironment.Caption" Value="Environment" />
+			<Item Name="Columns.UsrEstimatedPoints.Caption" Value="Estimated points" />
+			<Item Name="Columns.UsrName.Caption" Value="VM name" />
+			<Item Name="Columns.UsrOperatingSystem.Caption" Value="Operating system" />
+			<Item Name="Columns.UsrPointsPerUnitSnapshot.Caption" Value="Points per unit at submission" />
+			<Item Name="Columns.UsrPricingCapturedOn.Caption" Value="Pricing captured on" />
+			<Item Name="Columns.UsrPricingUnitSnapshot.Caption" Value="Pricing unit at submission" />
+			<Item Name="Columns.UsrPurpose.Caption" Value="VM purpose" />
+			<Item Name="Columns.UsrRAMGB.Caption" Value="RAM (GB)" />
+			<Item Name="Columns.UsrRequest.Caption" Value="VM request" />
+			<Item Name="Columns.UsrResourceRate.Caption" Value="Resource rate" />
+			<Item Name="Columns.UsrStorageGB.Caption" Value="Storage (GB)" />
+			<Item Name="Columns.UsrTotalAmountSnapshot.Caption" Value="Total amount at submission" />
+			<Item Name="Columns.UsrTotalPointsSnapshot.Caption" Value="Total points at submission" />
+			<Item Name="Columns.UsrVMNetworkZone.Caption" Value="VM Network Zone" />
+		</Items>
+	</Group>
+</Resources>

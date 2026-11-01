@@ -1,0 +1,14 @@
+﻿{
+  "Descriptor": {
+    "UId": "12afd69f-ad1b-44ac-8d94-2c4caafe414a",
+    "Name": "UsrMCITApprovalDecision",
+    "ModifiedOnUtc": "\/Date(1791995620000)\/",
+    "Parent": {
+      "UId": "11ab4bcb-9b23-4b6d-9c86-520fae925d75",
+      "Name": "BaseLookup"
+    },
+    "ManagerName": "EntitySchemaManager",
+    "Caption": "MCIT Approval Decision",
+    "DependsOn": []
+  }
+}

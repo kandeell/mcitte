@@ -1,0 +1,30 @@
+﻿{
+  "Descriptor": {
+    "UId": "5dcca910-bc4c-42b7-bfe0-2ad5c8cc3965",
+    "Name": "UsrMCIT",
+    "Type": 1,
+    "ModifiedOnUtc": "\/Date(1791922605000)\/",
+    "Maintainer": "Customer",
+    "ProjectPath": "Files/UsrMCIT.csproj",
+    "DependsOn": [
+      {
+        "UId": "012e2e14-082b-ac2b-da5a-2fc87bad41d4",
+        "PackageVersion": "7.8.0",
+        "Name": "CrtCore",
+        "Type": 1
+      },
+      {
+        "UId": "2ecba2bd-b810-47a5-a1b1-08c888529d6c",
+        "PackageVersion": "7.8.0",
+        "Name": "CrtCustomer360App",
+        "Type": 1
+      },
+      {
+        "UId": "70ff4e5f-d0af-6a9b-e063-f7171aac2c42",
+        "PackageVersion": "7.8.0",
+        "Name": "CrtUIPlatform",
+        "Type": 1
+      }
+    ]
+  }
+}

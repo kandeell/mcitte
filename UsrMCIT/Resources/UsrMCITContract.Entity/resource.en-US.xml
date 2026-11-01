@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Resources Culture="en-US">
+	<Group Type="String">
+		<Items>
+			<Item Name="Caption" Value="MCIT Contract" />
+			<Item Name="Columns.UsrAccount.Caption" Value="Account" />
+			<Item Name="Columns.UsrCurrency.Caption" Value="Currency" />
+			<Item Name="Columns.UsrDescription.Caption" Value="Description" />
+			<Item Name="Columns.UsrEndDate.Caption" Value="End Date" />
+			<Item Name="Columns.UsrInitialBudget.Caption" Value="Initial financial budget" />
+			<Item Name="Columns.UsrInitialPoints.Caption" Value="Initial contract points" />
+			<Item Name="Columns.UsrName.Caption" Value="Name" />
+			<Item Name="Columns.UsrNumber.Caption" Value="Contract number" />
+			<Item Name="Columns.UsrReference.Caption" Value="Contract reference" />
+			<Item Name="Columns.UsrStartDate.Caption" Value="Start date" />
+		</Items>
+	</Group>
+</Resources>

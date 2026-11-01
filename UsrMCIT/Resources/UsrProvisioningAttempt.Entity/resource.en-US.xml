@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Resources Culture="en-US">
+	<Group Type="String">
+		<Items>
+			<Item Name="Caption" Value="Provisioning Attempt" />
+			<Item Name="Columns.UsrAssignedTo.Caption" Value="Assigned operator" />
+			<Item Name="Columns.UsrAttemptNumber.Caption" Value="Attempt number" />
+			<Item Name="Columns.UsrCompletedOn.Caption" Value="Completed on" />
+			<Item Name="Columns.UsrExecutionNotes.Caption" Value="Execution notes" />
+			<Item Name="Columns.UsrFailureDetails.Caption" Value="Failure details" />
+			<Item Name="Columns.UsrIsCompleted.Caption" Value="Completed" />
+			<Item Name="Columns.UsrIsSuccessful.Caption" Value="Successful" />
+			<Item Name="Columns.UsrName.Caption" Value="Attempt reference" />
+			<Item Name="Columns.UsrPerformedBy.Caption" Value="Performed By" />
+			<Item Name="Columns.UsrRequestItem.Caption" Value="VM request item" />
+			<Item Name="Columns.UsrStartedOn.Caption" Value="Started on" />
+			<Item Name="Columns.UsrVirtualMachine.Caption" Value="Virtual machine" />
+		</Items>
+	</Group>
+</Resources>

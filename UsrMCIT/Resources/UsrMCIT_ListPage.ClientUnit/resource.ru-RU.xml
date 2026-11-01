@@ -1,0 +1,9 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Resources Culture="ru-RU">
+	<Group Type="String">
+		<Items>
+			<Item Name="Caption" Value="Страница с реестром MCIT" />
+			<Item Name="LocalizableStrings.AddButton_caption.Value" Value="Добавить" />
+		</Items>
+	</Group>
+</Resources>

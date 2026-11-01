@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Resources Culture="he-IL">
+	<Group Type="String">
+		<Items>
+			<Item Name="BaseElements.AddDataUserTask2.Parameters.ConsiderTimeInFilter.Caption" Value="שקול זמן במסנן" />
+			<Item Name="BaseElements.AddDataUserTask2.Parameters.DataSourceFilters.Caption" Value="מסנני מקור נתונים" />
+			<Item Name="BaseElements.AddDataUserTask2.Parameters.EntitySchemaId.Caption" Value="אובייקט" />
+			<Item Name="BaseElements.AddDataUserTask2.Parameters.FilterEntitySchemaId.Caption" Value="אובייקט" />
+			<Item Name="BaseElements.AddDataUserTask2.Parameters.RecordAddMode.Caption" Value="מצב הוספת רשומות" />
+			<Item Name="BaseElements.AddDataUserTask2.Parameters.RecordDefValues.Caption" Value="הגדר ערכי עמודה" />
+			<Item Name="BaseElements.AddDataUserTask2.Parameters.RecordId.Caption" Value="מזהה הרשומה שנוצרה" />
+			<Item Name="Caption" Value="Track MCIT Role Assignments" />
+		</Items>
+	</Group>
+</Resources>

@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Resources Culture="zh-TW">
+	<Group Type="String">
+		<Items>
+			<Item Name="BaseElements.AddDataUserTask2.Parameters.ConsiderTimeInFilter.Caption" Value="考慮篩選器中的時間" />
+			<Item Name="BaseElements.AddDataUserTask2.Parameters.DataSourceFilters.Caption" Value="資料來源篩選器" />
+			<Item Name="BaseElements.AddDataUserTask2.Parameters.EntitySchemaId.Caption" Value="物件" />
+			<Item Name="BaseElements.AddDataUserTask2.Parameters.FilterEntitySchemaId.Caption" Value="物件" />
+			<Item Name="BaseElements.AddDataUserTask2.Parameters.RecordAddMode.Caption" Value="記錄新增模式" />
+			<Item Name="BaseElements.AddDataUserTask2.Parameters.RecordDefValues.Caption" Value="設定欄值" />
+			<Item Name="BaseElements.AddDataUserTask2.Parameters.RecordId.Caption" Value="已建立記錄 ID" />
+			<Item Name="Caption" Value="Track MCIT Role Assignments" />
+		</Items>
+	</Group>
+</Resources>

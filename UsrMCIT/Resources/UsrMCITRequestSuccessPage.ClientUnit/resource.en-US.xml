@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Resources Culture="en-US">
+	<Group Type="String">
+		<Items>
+			<Item Name="Caption" Value="MCIT Request Success Page" />
+			<Item Name="LocalizableStrings.Button_15lz1yf_caption.Value" Value="Return to Dashboard" />
+			<Item Name="LocalizableStrings.Button_sbwy3ve_caption.Value" Value="View Request" />
+			<Item Name="LocalizableStrings.Label_g0nrwd9_caption.Value" Value="Your request is now under Telecom Egypt review." />
+			<Item Name="LocalizableStrings.Label_uneed8v_caption.Value" Value="Request Submitted Successfully" />
+		</Items>
+	</Group>
+</Resources>

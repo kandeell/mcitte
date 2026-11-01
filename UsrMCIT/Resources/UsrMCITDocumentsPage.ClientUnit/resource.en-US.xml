@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Resources Culture="en-US">
+	<Group Type="String">
+		<Items>
+			<Item Name="Caption" Value="MCIT Documents Page" />
+			<Item Name="LocalizableStrings.Button_gutu5rf_caption.Value" Value="Back" />
+			<Item Name="LocalizableStrings.Button_koko7zt_caption.Value" Value="Save as Draft" />
+			<Item Name="LocalizableStrings.Button_p1sejyg_caption.Value" Value="Run Validation" />
+			<Item Name="LocalizableStrings.ExpansionPanel_aglvm0r_title.Value" Value="Attachments" />
+			<Item Name="LocalizableStrings.GridDetailAddBtn_a3w339q_caption.Value" Value="Upload" />
+			<Item Name="LocalizableStrings.GridDetailRefreshBtn_obdiogb_caption.Value" Value="Refresh" />
+			<Item Name="LocalizableStrings.GridDetailSearchFilter_tkpwd0f_placeholder.Value" Value="Search" />
+			<Item Name="LocalizableStrings.Label_03cqawa_caption.Value" Value="Create New Request · طلب جديد" />
+			<Item Name="LocalizableStrings.Label_dvh7viw_caption.Value" Value="New VM Provisioning Request – Documents" />
+			<Item Name="LocalizableStrings.Label_w29rwfm_caption.Value" Value="Supporting Documents" />
+			<Item Name="LocalizableStrings.Label_wmeeup8_caption.Value" Value="A &quot;Signed Acceptance Form&quot; document may be required before provisioning. Please attach it if available." />
+		</Items>
+	</Group>
+</Resources>

@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Resources Culture="en-US">
+	<Group Type="String">
+		<Items>
+			<Item Name="Caption" Value="Point Transaction" />
+			<Item Name="Columns.UsrActor.Caption" Value="Actor" />
+			<Item Name="Columns.UsrConfigVersion.Caption" Value="Configuration version" />
+			<Item Name="Columns.UsrContract.Caption" Value="Contract" />
+			<Item Name="Columns.UsrName.Caption" Value="Transaction reference" />
+			<Item Name="Columns.UsrOriginTransaction.Caption" Value="Originating transaction" />
+			<Item Name="Columns.UsrQuantity.Caption" Value="Points quantity" />
+			<Item Name="Columns.UsrReason.Caption" Value="Reason" />
+			<Item Name="Columns.UsrRequest.Caption" Value="VM request" />
+			<Item Name="Columns.UsrRequestItem.Caption" Value="VM request item" />
+			<Item Name="Columns.UsrSourceBalance.Caption" Value="Source balance" />
+			<Item Name="Columns.UsrTransactionDate.Caption" Value="Transaction date" />
+			<Item Name="Columns.UsrTransactionType.Caption" Value="Transaction type" />
+			<Item Name="Columns.UsrVirtualMachine.Caption" Value="Virtual machine" />
+		</Items>
+	</Group>
+</Resources>

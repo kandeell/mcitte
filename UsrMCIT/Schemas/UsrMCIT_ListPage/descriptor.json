@@ -1,0 +1,14 @@
+﻿{
+  "Descriptor": {
+    "UId": "3af35fe0-ef2e-48e1-a4f2-06ec133e422a",
+    "Name": "UsrMCIT_ListPage",
+    "ModifiedOnUtc": "\/Date(1792515926000)\/",
+    "Parent": {
+      "UId": "b7b898d0-8c77-4953-c097-23fa6800da02",
+      "Name": "ListPageV3Template"
+    },
+    "ManagerName": "ClientUnitSchemaManager",
+    "Caption": "MCIT list page",
+    "DependsOn": []
+  }
+}

@@ -1,0 +1,14 @@
+﻿{
+  "Descriptor": {
+    "UId": "904eeb3b-849e-4a1e-8653-ce6cb09e62fe",
+    "Name": "UsrContractConfigVersion",
+    "ModifiedOnUtc": "\/Date(1791925239000)\/",
+    "Parent": {
+      "UId": "1bab9dcf-17d5-49f8-9536-8e0064f1dce0",
+      "Name": "BaseEntity"
+    },
+    "ManagerName": "EntitySchemaManager",
+    "Caption": "Contract Configuration Version",
+    "DependsOn": []
+  }
+}

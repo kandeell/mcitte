@@ -1,0 +1,14 @@
+﻿{
+  "Descriptor": {
+    "UId": "44d2cb04-f5b9-428b-9c23-c7cbb3cbb6ee",
+    "Name": "UsrPointTransaction",
+    "ModifiedOnUtc": "\/Date(1792003330000)\/",
+    "Parent": {
+      "UId": "1bab9dcf-17d5-49f8-9536-8e0064f1dce0",
+      "Name": "BaseEntity"
+    },
+    "ManagerName": "EntitySchemaManager",
+    "Caption": "Point Transaction",
+    "DependsOn": []
+  }
+}

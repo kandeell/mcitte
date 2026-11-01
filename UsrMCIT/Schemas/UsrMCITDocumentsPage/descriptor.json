@@ -1,0 +1,14 @@
+﻿{
+  "Descriptor": {
+    "UId": "7be56bc6-8222-4e46-bff3-dbe628679835",
+    "Name": "UsrMCITDocumentsPage",
+    "ModifiedOnUtc": "\/Date(1792425272000)\/",
+    "Parent": {
+      "UId": "f691e828-0b36-42a7-898f-c337e9af67d0",
+      "Name": "BlankPageTemplate"
+    },
+    "ManagerName": "ClientUnitSchemaManager",
+    "Caption": "MCIT Documents Page",
+    "DependsOn": []
+  }
+}

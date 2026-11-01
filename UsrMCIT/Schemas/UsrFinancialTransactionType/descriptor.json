@@ -1,0 +1,14 @@
+﻿{
+  "Descriptor": {
+    "UId": "26665276-fdd1-4812-bcf6-a9f991cd1253",
+    "Name": "UsrFinancialTransactionType",
+    "ModifiedOnUtc": "\/Date(1792003889000)\/",
+    "Parent": {
+      "UId": "11ab4bcb-9b23-4b6d-9c86-520fae925d75",
+      "Name": "BaseLookup"
+    },
+    "ManagerName": "EntitySchemaManager",
+    "Caption": "MCIT Financial Transaction Type",
+    "DependsOn": []
+  }
+}

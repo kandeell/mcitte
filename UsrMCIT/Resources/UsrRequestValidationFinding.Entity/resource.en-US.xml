@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Resources Culture="en-US">
+	<Group Type="String">
+		<Items>
+			<Item Name="Caption" Value="Request Validation Finding" />
+			<Item Name="Columns.UsrDetails.Caption" Value="Issue details" />
+			<Item Name="Columns.UsrFieldCode.Caption" Value="Affected field code" />
+			<Item Name="Columns.UsrIsBlocking.Caption" Value="Blocks submission" />
+			<Item Name="Columns.UsrIsResolved.Caption" Value="Resolved" />
+			<Item Name="Columns.UsrName.Caption" Value="Issue title" />
+			<Item Name="Columns.UsrRequest.Caption" Value="VM request" />
+			<Item Name="Columns.UsrRequestItem.Caption" Value="VM request item" />
+			<Item Name="Columns.UsrResolutionNotes.Caption" Value="Resolution notes" />
+			<Item Name="Columns.UsrResolvedBy.Caption" Value="Resolved by" />
+			<Item Name="Columns.UsrResolvedOn.Caption" Value="Resolved on" />
+			<Item Name="EventsProcessSchema.Caption" Value="Business process" />
+		</Items>
+	</Group>
+</Resources>

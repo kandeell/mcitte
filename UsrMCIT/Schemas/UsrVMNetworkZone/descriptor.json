@@ -1,0 +1,14 @@
+﻿{
+  "Descriptor": {
+    "UId": "a947f9a9-90ed-42ff-a10f-0602a06a81b3",
+    "Name": "UsrVMNetworkZone",
+    "ModifiedOnUtc": "\/Date(1792402799000)\/",
+    "Parent": {
+      "UId": "11ab4bcb-9b23-4b6d-9c86-520fae925d75",
+      "Name": "BaseLookup"
+    },
+    "ManagerName": "EntitySchemaManager",
+    "Caption": "VM Network Zone",
+    "DependsOn": []
+  }
+}

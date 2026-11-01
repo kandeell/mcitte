@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Resources Culture="en-US">
+	<Group Type="String">
+		<Items>
+			<Item Name="Caption" Value="MCIT VM Items Page" />
+			<Item Name="LocalizableStrings.Button_574msw6_caption.Value" Value="+ Add VM Item - إضافة الخادم للطلب" />
+			<Item Name="LocalizableStrings.Button_lmc29jl_caption.Value" Value="Save as draft" />
+			<Item Name="LocalizableStrings.Button_p8bqeeb_caption.Value" Value="Back" />
+			<Item Name="LocalizableStrings.Button_v07wijg_caption.Value" Value="Countinue to Documents" />
+			<Item Name="LocalizableStrings.DataGrid_clgb2icDS_UsrFinancialTransactionUsrRequestItem_UsrAmount_xtlblbr.Value" Value="Amount Sum of values" />
+			<Item Name="LocalizableStrings.Label_i8swzd4_caption.Value" Value="يتم احتساب وتتبع نقاط الخدمة والتكاليف المالية بشكل منفصل." />
+			<Item Name="LocalizableStrings.Label_icy2l4i_caption.Value" Value="New VM Provisioning Request – VM Items" />
+			<Item Name="LocalizableStrings.Label_ig5fpt9_caption.Value" Value="Add all virtual machines required in this request" />
+			<Item Name="LocalizableStrings.Label_kkkc0yw_caption.Value" Value="FINANCIAL SUMMARY - الملخص المالي" />
+			<Item Name="LocalizableStrings.Label_kpfxxe6_caption.Value" Value="Available Points Used" />
+			<Item Name="LocalizableStrings.Label_o1447wx_caption.Value" Value="POINT SUMMARY - ملخص النقاط" />
+			<Item Name="LocalizableStrings.Label_q1jej94_caption.Value" Value="Create New Request · طلب جديد" />
+			<Item Name="LocalizableStrings.Label_rec62ka_caption.Value" Value="Total Add-on Charges" />
+			<Item Name="LocalizableStrings.Label_rxab62g_caption.Value" Value="Total VM Items" />
+			<Item Name="LocalizableStrings.Label_tfvc8c6_caption.Value" Value="Total Points" />
+			<Item Name="LocalizableStrings.Label_xjq19hk_caption.Value" Value="VM Items" />
+		</Items>
+	</Group>
+</Resources>
