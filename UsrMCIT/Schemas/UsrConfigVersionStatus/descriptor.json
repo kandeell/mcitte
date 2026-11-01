@@ -1,0 +1,14 @@
+﻿{
+  "Descriptor": {
+    "UId": "0b00bfef-129e-4e9e-a049-4cfdf27efb7f",
+    "Name": "UsrConfigVersionStatus",
+    "ModifiedOnUtc": "\/Date(1792437608000)\/",
+    "Parent": {
+      "UId": "11ab4bcb-9b23-4b6d-9c86-520fae925d75",
+      "Name": "BaseLookup"
+    },
+    "ManagerName": "EntitySchemaManager",
+    "Caption": "Configuration Version Status",
+    "DependsOn": []
+  }
+}

@@ -4,6 +4,7 @@
 		<Items>
 			<Item Name="Caption" Value="MCIT Contract" />
 			<Item Name="Columns.UsrAccount.Caption" Value="Account" />
+			<Item Name="Columns.UsrBusinessContact.Caption" Value="Business contact" />
 			<Item Name="Columns.UsrCurrency.Caption" Value="Currency" />
 			<Item Name="Columns.UsrDescription.Caption" Value="Description" />
 			<Item Name="Columns.UsrEndDate.Caption" Value="End Date" />
@@ -11,8 +12,10 @@
 			<Item Name="Columns.UsrInitialPoints.Caption" Value="Initial contract points" />
 			<Item Name="Columns.UsrName.Caption" Value="Name" />
 			<Item Name="Columns.UsrNumber.Caption" Value="Contract number" />
+			<Item Name="Columns.UsrOperationalContact.Caption" Value="Operational contact" />
 			<Item Name="Columns.UsrReference.Caption" Value="Contract reference" />
 			<Item Name="Columns.UsrStartDate.Caption" Value="Start date" />
+			<Item Name="Columns.UsrStatus.Caption" Value="Status" />
 		</Items>
 	</Group>
 </Resources>

@@ -1,0 +1,9 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Resources Culture="bg-BG">
+	<Group Type="String">
+		<Items>
+			<Item Name="LocalizableStrings.Button_spbhdwfCaption.Value" Value="Опресни" />
+			<Item Name="LocalizableStrings.Button_tbioevjCaption.Value" Value="Качи" />
+		</Items>
+	</Group>
+</Resources>

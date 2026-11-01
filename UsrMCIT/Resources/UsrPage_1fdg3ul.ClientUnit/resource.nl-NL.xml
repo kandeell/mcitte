@@ -1,0 +1,9 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Resources Culture="nl-NL">
+	<Group Type="String">
+		<Items>
+			<Item Name="LocalizableStrings.Button_spbhdwfCaption.Value" Value="Verversen" />
+			<Item Name="LocalizableStrings.Button_tbioevjCaption.Value" Value="Uploaden" />
+		</Items>
+	</Group>
+</Resources>

@@ -1,0 +1,10 @@
+﻿{
+  "Descriptor": {
+    "UId": "e2a90cb2-b2d8-4d0a-845a-1c57790e2796",
+    "Name": "UsrActivateConfigurationVersion",
+    "ModifiedOnUtc": "\/Date(1792528451000)\/",
+    "ManagerName": "ProcessSchemaManager",
+    "Caption": "Activate Configuration Version",
+    "DependsOn": []
+  }
+}

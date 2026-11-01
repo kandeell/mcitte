@@ -1,0 +1,13 @@
+﻿{
+  "Descriptor": {
+    "UId": "ae70a739-62d5-4fa3-8e03-f6bc3a8a1851",
+    "Name": "UsrPage_vuvb9us",
+    "ModifiedOnUtc": "\/Date(1792531241000)\/",
+    "Parent": {
+      "UId": "3b2e117f-8c6b-4ca5-80a2-7ebb497cddf9",
+      "Name": "PageWithTabsFreedomTemplate"
+    },
+    "ManagerName": "ClientUnitSchemaManager",
+    "Caption": "Contract Configuration Version form page"
+  }
+}

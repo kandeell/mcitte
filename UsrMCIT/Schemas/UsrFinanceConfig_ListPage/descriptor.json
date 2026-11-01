@@ -1,0 +1,13 @@
+﻿{
+  "Descriptor": {
+    "UId": "22d99214-a576-43f2-ad3e-1a9a12402276",
+    "Name": "UsrFinanceConfig_ListPage",
+    "ModifiedOnUtc": "\/Date(1792498252000)\/",
+    "Parent": {
+      "UId": "b7b898d0-8c77-4953-c097-23fa6800da02",
+      "Name": "ListPageV3Template"
+    },
+    "ManagerName": "ClientUnitSchemaManager",
+    "Caption": "Finance Configuration list page"
+  }
+}

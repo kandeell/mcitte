@@ -186,64 +186,6 @@
   "E17": "UsrResourceRateId",
   "E18": "UsrResourceRateUsrName"
 }
-+ MetaData.Schema.D2 {
-  "UId": "ce0f34f1-5e69-978a-a576-d4b3609ab21a",
-  "A2": "UsrEnvironment",
-  "A3": "ceeffdfa-6997-452c-bb44-2d2ebc9ce07e",
-  "A4": "ceeffdfa-6997-452c-bb44-2d2ebc9ce07e",
-  "A5": "742d6898-a0fa-4d2e-ae5a-84dc21971c5e",
-  "S2": "b295071f-7ea9-4e62-8d1a-919bf3732ff2",
-  "S4": "4d5c71cb-6f0b-4470-a008-fa3709d05b91",
-  "E6": true,
-  "E20": true,
-  "E17": "UsrEnvironmentId",
-  "E18": "UsrEnvironmentName"
-}
-+ MetaData.Schema.D2 {
-  "UId": "0d2d3ff5-752c-2f5c-e181-72f12276a508",
-  "A2": "UsrVMNetworkZone",
-  "A3": "ceeffdfa-6997-452c-bb44-2d2ebc9ce07e",
-  "A4": "ceeffdfa-6997-452c-bb44-2d2ebc9ce07e",
-  "A5": "742d6898-a0fa-4d2e-ae5a-84dc21971c5e",
-  "S2": "b295071f-7ea9-4e62-8d1a-919bf3732ff2",
-  "S4": "a947f9a9-90ed-42ff-a10f-0602a06a81b3",
-  "E6": true,
-  "E20": true,
-  "E17": "UsrVMNetworkZoneId",
-  "E18": "UsrVMNetworkZoneName"
-}
-+ MetaData.Schema.D2 {
-  "UId": "e4740e70-2a9b-f58f-6fe2-a82fb7ba9192",
-  "A2": "UsrColumn27",
-  "A3": "ceeffdfa-6997-452c-bb44-2d2ebc9ce07e",
-  "A4": "ceeffdfa-6997-452c-bb44-2d2ebc9ce07e",
-  "A5": "742d6898-a0fa-4d2e-ae5a-84dc21971c5e",
-  "S2": "6b6b74e2-820d-490e-a017-2b73d4ccf2b0"
-}
-+ MetaData.Schema.D2 {
-  "UId": "cafba140-67ee-20b9-b92a-7f79a704fd16",
-  "A2": "UsrColumn29",
-  "A3": "ceeffdfa-6997-452c-bb44-2d2ebc9ce07e",
-  "A4": "ceeffdfa-6997-452c-bb44-2d2ebc9ce07e",
-  "A5": "742d6898-a0fa-4d2e-ae5a-84dc21971c5e",
-  "S2": "6b6b74e2-820d-490e-a017-2b73d4ccf2b0"
-}
-+ MetaData.Schema.D2 {
-  "UId": "b779d86e-486f-e9dd-d046-41961eed1841",
-  "A2": "UsrColumn28",
-  "A3": "ceeffdfa-6997-452c-bb44-2d2ebc9ce07e",
-  "A4": "ceeffdfa-6997-452c-bb44-2d2ebc9ce07e",
-  "A5": "742d6898-a0fa-4d2e-ae5a-84dc21971c5e",
-  "S2": "6b6b74e2-820d-490e-a017-2b73d4ccf2b0"
-}
-+ MetaData.Schema.D2 {
-  "UId": "5ff3bf15-7fb5-6dbc-c415-754a0356d1f5",
-  "A2": "UsrColumn30",
-  "A3": "ceeffdfa-6997-452c-bb44-2d2ebc9ce07e",
-  "A4": "ceeffdfa-6997-452c-bb44-2d2ebc9ce07e",
-  "A5": "742d6898-a0fa-4d2e-ae5a-84dc21971c5e",
-  "S2": "6b6b74e2-820d-490e-a017-2b73d4ccf2b0"
-}
 ~ MetaData.Schema.D2 [
   "ae0e45ca-c495-4fe7-a39d-3ab7278e1617",
   "e80190a5-03b2-4095-90f7-a193a960adee",
@@ -268,13 +210,7 @@
   "91d867da-3006-df0f-6d29-d712b6b9c65d",
   "d668f505-f110-accc-b339-2c945b6a3dc6",
   "5aa8c4fe-c1fb-03b8-ed19-874abf4773c1",
-  "2b5fc476-4c88-9bb2-46f2-da55cace9647",
-  "ce0f34f1-5e69-978a-a576-d4b3609ab21a",
-  "0d2d3ff5-752c-2f5c-e181-72f12276a508",
-  "e4740e70-2a9b-f58f-6fe2-a82fb7ba9192",
-  "cafba140-67ee-20b9-b92a-7f79a704fd16",
-  "b779d86e-486f-e9dd-d046-41961eed1841",
-  "5ff3bf15-7fb5-6dbc-c415-754a0356d1f5"
+  "2b5fc476-4c88-9bb2-46f2-da55cace9647"
 ]
 = MetaData.Schema.D20.A2 "UsrVMRequestItemEvents"
 + MetaData.Schema.D20.FA1 false

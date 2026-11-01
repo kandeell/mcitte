@@ -1,0 +1,10 @@
+﻿{
+  "Descriptor": {
+    "UId": "d8d7949e-1164-4e5f-b44f-a3fd29ed5580",
+    "Name": "UsrPage_k837yjwBusinessRule",
+    "ModifiedOnUtc": "\/Date(1792804425000)\/",
+    "ManagerName": "AddonSchemaManager",
+    "Caption": "MCIT Role form page (Business rules)",
+    "DependsOn": []
+  }
+}

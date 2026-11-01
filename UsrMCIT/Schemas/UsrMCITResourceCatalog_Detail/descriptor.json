@@ -1,0 +1,14 @@
+﻿{
+  "Descriptor": {
+    "UId": "e512b525-dac3-4e60-a8d2-239942f1540b",
+    "Name": "UsrMCITResourceCatalog_Detail",
+    "ModifiedOnUtc": "\/Date(1792970098000)\/",
+    "Parent": {
+      "UId": "01eb38ee-668a-42f0-999d-c2534f979089",
+      "Name": "BaseGridDetailV2"
+    },
+    "ManagerName": "ClientUnitSchemaManager",
+    "Caption": "Resource Catalog detail",
+    "DependsOn": []
+  }
+}

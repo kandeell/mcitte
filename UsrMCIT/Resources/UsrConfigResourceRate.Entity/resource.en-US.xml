@@ -9,7 +9,7 @@
 			<Item Name="Columns.UsrDescription.Caption" Value="Description" />
 			<Item Name="Columns.UsrName.Caption" Value="Rate name" />
 			<Item Name="Columns.UsrPointsPerUnit.Caption" Value="Points per unit" />
-			<Item Name="Columns.UsrPricingUnit.Caption" Value="Pricing unit" />
+			<Item Name="Columns.UsrPricingUnitLookup.Caption" Value="Pricing unit" />
 			<Item Name="Columns.UsrResourceType.Caption" Value="Resource type" />
 		</Items>
 	</Group>

@@ -1,0 +1,399 @@
+
+/* MCIT Roles — responsive Freedom UI styles */
+
+/* One full-width column for all page elements */
+.mcit-roles-page {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: stretch !important;
+    gap: 0 !important;
+    width: 90% !important;
+    max-width: 100% !important;
+    min-width: 0 !important;
+    padding: 44px 24px 24px !important;
+    box-sizing: border-box !important;
+	  margin-left: auto !important;
+    margin-right: auto !important;
+	margin-top: 10px !important;
+}
+
+/* Header */
+.mcit-roles-header {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: space-between !important;
+    gap: 80px !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    min-width: 0 !important;
+    box-sizing: border-box !important;
+}
+
+.mcit-create-role,
+.mcit-create-role button,
+button.mcit-create-role {
+    background: #5B21A5 !important;
+    background-color: #5B21A5 !important;
+    color: #FFFFFF !important;
+    border: none !important;
+    border-radius: 8px !important;
+}
+
+/* Hover effect */
+
+.mcit-create-role:hover,
+.mcit-create-role button:hover,
+button.mcit-create-role:hover {
+    background: #4C1D95 !important;
+    background-color: #4C1D95 !important;
+}
+
+/* Full-width white filter card */
+.mcit-role-filter-card {
+    display: block !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    min-width: 0 !important;
+    margin: 100px 0 18px !important;
+    padding: 16px 18px !important;
+    background: #fff !important;
+    border: 1px solid #dfe3ed !important;
+    border-radius: 14px !important;
+    box-shadow: none !important;
+    box-sizing: border-box !important;
+}
+
+/* Search and Type row */
+.mcit-roles-filter-row {
+    display: flex !important;
+    flex-direction: row !important;
+    align-items: center !important;
+    justify-content: space-between !important;
+    gap: 12px !important;
+    flex-wrap: nowrap !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    min-width: 0 !important;
+    box-sizing: border-box !important;
+}
+
+/* Search field */
+.mcit-role-search {
+    display: block !important;
+    flex: 1 1 0 !important;
+    width: auto !important;
+    min-width: 0 !important;
+    max-width: 100% !important;
+    min-height: 44px !important;
+    background: #fff !important;
+    border: 1px solid #e0e4ec !important;
+    border-radius: 11px !important;
+    box-sizing: border-box !important;
+}
+
+.mcit-role-search:focus-within {
+    border-color: #7024c6 !important;
+    box-shadow: 0 0 0 2px
+        rgba(112, 36, 198, 0.14) !important;
+}
+
+.mcit-role-search input {
+    width: 100% !important;
+    min-width: 0 !important;
+    min-height: 42px !important;
+    box-sizing: border-box !important;
+}
+
+/* Type Quick Filter */
+.mcit-role-type-filter {
+    display: block !important;
+    flex: 0 0 200px !important;
+    width: 200px !important;
+    min-width: 0 !important;
+    max-width: 200px !important;
+    min-height: 44px !important;
+    background: #fff !important;
+    border: 1px solid #e0e4ec !important;
+    border-radius: 11px !important;
+    box-sizing: border-box !important;
+}
+
+.mcit-role-type-filter button,
+.mcit-role-type-filter select {
+    min-height: 42px !important;
+    border-radius: 11px !important;
+}
+
+/* Default status chips */
+.mcit-status-chip,
+.mcit-status-chip button {
+    min-height: 32px !important;
+    padding: 5px 14px !important;
+    border: 1px solid #dfe3ed !important;
+    border-radius: 999px !important;
+    background: #f8fafc !important;
+    color: #475569 !important;
+    box-shadow: none !important;
+    font-size: 13px !important;
+    font-weight: 500 !important;
+    box-sizing: border-box !important;
+}
+
+.mcit-status-chip:hover,
+.mcit-status-chip button:hover {
+    background: #f2ebff !important;
+}
+
+/* Selected status — purple */
+.mcit-role-status-all .mcit-chip-all,
+.mcit-role-status-all .mcit-chip-all button,
+.mcit-role-status-active .mcit-chip-active,
+.mcit-role-status-active .mcit-chip-active button,
+.mcit-role-status-inactive .mcit-chip-inactive,
+.mcit-role-status-inactive .mcit-chip-inactive button,
+.mcit-role-status-draft .mcit-chip-draft,
+.mcit-role-status-draft .mcit-chip-draft button {
+    background: #f5edff !important;
+    color: #6320aa !important;
+    border-color: #7726d0 !important;
+}
+
+/* Full-width Roles table */
+.mcit-roles-list {
+    display: block !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    min-width: 0 !important;
+    margin: 0 !important;
+    background: #fff !important;
+    border: 1px solid #e2e6ef !important;
+    border-radius: 12px !important;
+    box-sizing: border-box !important;
+
+    /* Scroll only inside the table if needed */
+    overflow-x: auto !important;
+    overflow-y: hidden !important;
+}
+
+/* Small screens */
+@media (max-width: 720px) {
+    .mcit-roles-page {
+        padding: 32px 12px 12px !important;
+    }
+
+    .mcit-roles-header {
+        flex-wrap: wrap !important;
+    }
+
+    .mcit-role-filter-card {
+        margin-top: 16px !important;
+        padding: 12px !important;
+    }
+
+    .mcit-roles-filter-row {
+        flex-wrap: wrap !important;
+    }
+
+    .mcit-role-search,
+    .mcit-role-type-filter {
+        flex: 1 1 100% !important;
+        width: 100% !important;
+        max-width: 100% !important;
+    }
+}
+
+/* ========================================
+   MCIT HEADER & FILTER HEIGHT CORRECTION
+   ======================================== */
+
+/* Main layout */
+.mcit-roles-page {
+    height: auto !important;
+    max-height: none !important;
+    min-height: 0 !important;
+    overflow: visible !important;
+    align-items: stretch !important;
+}
+
+/* Show full header and Create Role button */
+.mcit-roles-header {
+    height: auto !important;
+    min-height: 84px !important;
+    max-height: none !important;
+    overflow: visible !important;
+
+    display: flex !important;
+    align-items: center !important;
+    justify-content: space-between !important;
+
+    flex-shrink: 0 !important;
+    margin-bottom: 12px !important;
+}
+
+/* Give filter card enough vertical space */
+.mcit-role-filter-card {
+    height: auto !important;
+    min-height: 124px !important;
+    max-height: none !important;
+    overflow: visible !important;
+
+    flex-shrink: 0 !important;
+
+    width: 100% !important;
+    max-width: 100% !important;
+    box-sizing: border-box !important;
+
+    padding: 16px 18px !important;
+    margin: 0 0 18px !important;
+
+    background: #ffffff !important;
+    border: 1px solid #dfe3ed !important;
+    border-radius: 14px !important;
+}
+
+/* Search + Type row */
+.mcit-roles-filter-row {
+    height: auto !important;
+    min-height: 48px !important;
+    max-height: none !important;
+    overflow: visible !important;
+
+    display: flex !important;
+    align-items: center !important;
+    gap: 12px !important;
+}
+
+/* Preserve correct table dimensions */
+.mcit-roles-list {
+    width: 100% !important;
+    max-width: 100% !important;
+    min-width: 0 !important;
+    box-sizing: border-box !important;
+}
+
+/* =====================================
+   MCIT SEARCH BAR WIDTH FIX
+   ===================================== */
+
+/* Full-width row */
+.mcit-roles-filter-row {
+    display: flex !important;
+    flex-direction: row !important;
+    align-items: center !important;
+    justify-content: flex-start !important;
+    flex-wrap: nowrap !important;
+    gap: 12px !important;
+    width: 100% !important;
+    min-width: 0 !important;
+}
+
+/* Expand Creatio Search component */
+#SearchFilter_7irptcm,
+.mcit-role-search,
+.mcit-roles-filter-row > :first-child {
+    flex: 1 1 0% !important;
+    flex-grow: 1 !important;
+    width: auto !important;
+    min-width: 0 !important;
+    max-width: none !important;
+}
+
+/* Expand internal wrappers containing the input */
+.mcit-role-search div:has(input) {
+    flex: 1 1 auto !important;
+    width: 100% !important;
+    max-width: none !important;
+    min-width: 0 !important;
+}
+
+/* Search input */
+.mcit-role-search input {
+    flex: 1 1 auto !important;
+    width: 100% !important;
+    max-width: none !important;
+    min-width: 0 !important;
+}
+
+/* Keep Type filter fixed on the right */
+#QuickFilter_4d1u24e,
+.mcit-role-type-filter {
+    flex: 0 0 200px !important;
+    width: 200px !important;
+    max-width: 200px !important;
+    min-width: 0 !important;
+}
+
+/* Search bar rounded border */
+
+.mcit-role-search {
+    border: 1px solid #DFE3ED !important;
+    border-radius: 12px !important;
+    background-color: #FFFFFF !important;
+    height: 40px !important;
+    min-height: 40px !important;
+    padding: 0 12px !important;
+    box-sizing: border-box !important;
+}
+
+/* Remove native input border */
+
+.mcit-role-search input {
+    border: none !important;
+    outline: none !important;
+    box-shadow: none !important;
+    background: transparent !important;
+}
+
+/* Purple border when searching */
+
+.mcit-role-search:focus-within {
+    border: 2px solid #7C3AED !important;
+    box-shadow: 0 0 0 2px
+        rgba(124, 58, 237, 0.10) !important;
+}
+
+/* MCIT Administrative Permissions */
+
+.usr-mcit-check-tile {
+    display: flex !important;
+    align-items: center !important;
+    width: 100%;
+    min-height: 42px !important;
+    padding: 10px 14px !important;
+    background: #ffffff !important;
+    border: 1px solid #e0e6ef !important;
+    border-radius: 8px !important;
+    box-sizing: border-box;
+    font-family: Rubik, Arial, sans-serif !important;
+    font-size: 12px !important;
+    color: #344054 !important;
+}
+
+/* Permission checkbox labels */
+
+.usr-mcit-check-tile label {
+    font-family: Rubik, Arial, sans-serif !important;
+    font-size: 12px !important;
+    font-weight: 400 !important;
+    color: #344054 !important;
+}
+
+/* Checkbox colors */
+
+.usr-mcit-check-tile input[type="checkbox"] {
+    accent-color: #6d28d9;
+    margin-right: 10px;
+}
+
+/* Two-column Figma layout */
+
+.usr-mcit-choices {
+    gap: 10px 12px !important;
+}
+
+/* Administrative Permissions container */
+
+#UsrMCITAdminCheckboxGrid {
+    width: 100%;
+    padding: 8px 0;
+}

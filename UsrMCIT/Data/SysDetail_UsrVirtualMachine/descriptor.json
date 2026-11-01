@@ -1,8 +1,8 @@
 ﻿{
   "Descriptor": {
-    "UId": "5d142924-6a70-41b6-b05d-18c270ddbcf5",
+    "UId": "b0fbf0d6-f755-45da-ae04-1e51439d09b4",
     "Name": "SysDetail_UsrVirtualMachine",
-    "ModifiedOnUtc": "\/Date(1792511003000)\/",
+    "ModifiedOnUtc": "\/Date(1792485844000)\/",
     "InstallType": 0,
     "Schema": {
       "UId": "363c2008-c733-407d-9b01-9e6a7cd9a77a",

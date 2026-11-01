@@ -3,7 +3,6 @@
 	<Group Type="String">
 		<Items>
 			<Item Name="Caption" Value="Страница с реестром MCIT" />
-			<Item Name="LocalizableStrings.AddButton_caption.Value" Value="Добавить" />
 		</Items>
 	</Group>
 </Resources>

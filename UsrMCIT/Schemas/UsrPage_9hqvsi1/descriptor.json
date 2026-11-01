@@ -1,0 +1,13 @@
+﻿{
+  "Descriptor": {
+    "UId": "54262302-cbb4-4c69-b9d7-889c0dc494b7",
+    "Name": "UsrPage_9hqvsi1",
+    "ModifiedOnUtc": "\/Date(1792347184000)\/",
+    "Parent": {
+      "UId": "eb4d4a67-25d8-fcfa-7851-c4c91efb7b9c",
+      "Name": "BaseDashboardTemplate"
+    },
+    "ManagerName": "ClientUnitSchemaManager",
+    "Caption": "New dashboard"
+  }
+}

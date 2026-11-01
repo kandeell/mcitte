@@ -114,6 +114,45 @@
   "A5": "3daa8e4e-2a22-4e20-af21-674c5227b6dc",
   "S2": "07ba84ce-0bf7-44b4-9f2c-7b15032eb98c"
 }
++ MetaData.Schema.D2 {
+  "UId": "db9acec1-698b-00a4-e8bc-334bf4c76828",
+  "A2": "UsrStatus",
+  "A3": "a2445055-744b-4856-9ac6-fe8ab4ad5954",
+  "A4": "a2445055-744b-4856-9ac6-fe8ab4ad5954",
+  "A5": "3daa8e4e-2a22-4e20-af21-674c5227b6dc",
+  "S2": "b295071f-7ea9-4e62-8d1a-919bf3732ff2",
+  "S4": "d3acc91e-61b5-43b9-9d91-23d7e8b91fe2",
+  "E6": true,
+  "E20": true,
+  "E17": "UsrStatusId",
+  "E18": "UsrStatusName"
+}
++ MetaData.Schema.D2 {
+  "UId": "1c9ce085-7a25-681c-70d1-1ebd34efa0fa",
+  "A2": "UsrOperationalContact",
+  "A3": "a2445055-744b-4856-9ac6-fe8ab4ad5954",
+  "A4": "a2445055-744b-4856-9ac6-fe8ab4ad5954",
+  "A5": "3daa8e4e-2a22-4e20-af21-674c5227b6dc",
+  "S2": "b295071f-7ea9-4e62-8d1a-919bf3732ff2",
+  "S4": "16be3651-8fe2-4159-8dd0-a803d4683dd3",
+  "E6": true,
+  "E20": true,
+  "E17": "UsrOperationalContactId",
+  "E18": "UsrOperationalContactName"
+}
++ MetaData.Schema.D2 {
+  "UId": "fdd9a26e-43e6-aa5c-5c2c-411932493849",
+  "A2": "UsrBusinessContact",
+  "A3": "a2445055-744b-4856-9ac6-fe8ab4ad5954",
+  "A4": "a2445055-744b-4856-9ac6-fe8ab4ad5954",
+  "A5": "3daa8e4e-2a22-4e20-af21-674c5227b6dc",
+  "S2": "b295071f-7ea9-4e62-8d1a-919bf3732ff2",
+  "S4": "16be3651-8fe2-4159-8dd0-a803d4683dd3",
+  "E6": true,
+  "E20": true,
+  "E17": "UsrBusinessContactId",
+  "E18": "UsrBusinessContactName"
+}
 ~ MetaData.Schema.D2 [
   "ae0e45ca-c495-4fe7-a39d-3ab7278e1617",
   "e80190a5-03b2-4095-90f7-a193a960adee",
@@ -130,7 +169,10 @@
   "3b319493-fdde-5af2-e833-bc35d7cc8ab3",
   "719cf82e-5110-7fce-60ea-0295023184b9",
   "6ba43332-7b32-f99a-8999-ee37e4213c21",
-  "ca94dfee-caee-c7d3-2be7-67fb2f52a60b"
+  "ca94dfee-caee-c7d3-2be7-67fb2f52a60b",
+  "db9acec1-698b-00a4-e8bc-334bf4c76828",
+  "1c9ce085-7a25-681c-70d1-1ebd34efa0fa",
+  "fdd9a26e-43e6-aa5c-5c2c-411932493849"
 ]
 = MetaData.Schema.D20.A2 "UsrMCITContractEvents"
 + MetaData.Schema.D20.FA1 false

@@ -1,0 +1,10 @@
+﻿{
+  "Descriptor": {
+    "UId": "f4bd5364-1b0e-4cfc-93d0-6ad1d38511e4",
+    "Name": "UsrMCITContractRelatedPage",
+    "ModifiedOnUtc": "\/Date(1792333386000)\/",
+    "ManagerName": "AddonSchemaManager",
+    "Caption": "MCIT Contract (Page settings)",
+    "DependsOn": []
+  }
+}

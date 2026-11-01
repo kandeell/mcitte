@@ -100,6 +100,92 @@
   "E20": true,
   "E17": "UsrPreviousVersionId"
 }
++ MetaData.Schema.D2 {
+  "UId": "7f18faf7-c7e0-f253-cab1-e575df9cd062",
+  "A2": "UsrEffectiveTo",
+  "A3": "904eeb3b-849e-4a1e-8653-ce6cb09e62fe",
+  "A4": "904eeb3b-849e-4a1e-8653-ce6cb09e62fe",
+  "A5": "3daa8e4e-2a22-4e20-af21-674c5227b6dc",
+  "S2": "603d4960-a1a2-45e9-b232-206a54421b01"
+}
++ MetaData.Schema.D2 {
+  "UId": "5a0a4170-f2ea-faf7-f658-2af6a6444f59",
+  "A2": "UsrMinPointsPerVM",
+  "A3": "904eeb3b-849e-4a1e-8653-ce6cb09e62fe",
+  "A4": "904eeb3b-849e-4a1e-8653-ce6cb09e62fe",
+  "A5": "3daa8e4e-2a22-4e20-af21-674c5227b6dc",
+  "S2": "07ba84ce-0bf7-44b4-9f2c-7b15032eb98c",
+  "E12": {
+    "FB1": 1,
+    "FB2": "1"
+  }
+}
++ MetaData.Schema.D2 {
+  "UId": "36f76626-13b1-e207-a8fd-ab3ef124c9d6",
+  "A2": "UsrMaxPointsPerVM",
+  "A3": "904eeb3b-849e-4a1e-8653-ce6cb09e62fe",
+  "A4": "904eeb3b-849e-4a1e-8653-ce6cb09e62fe",
+  "A5": "3daa8e4e-2a22-4e20-af21-674c5227b6dc",
+  "S2": "07ba84ce-0bf7-44b4-9f2c-7b15032eb98c"
+}
++ MetaData.Schema.D2 {
+  "UId": "32218832-12d0-00e6-d526-318c903e0aeb",
+  "A2": "UsrPointIncrement",
+  "A3": "904eeb3b-849e-4a1e-8653-ce6cb09e62fe",
+  "A4": "904eeb3b-849e-4a1e-8653-ce6cb09e62fe",
+  "A5": "3daa8e4e-2a22-4e20-af21-674c5227b6dc",
+  "S2": "07ba84ce-0bf7-44b4-9f2c-7b15032eb98c",
+  "E12": {
+    "FB1": 1,
+    "FB2": "1"
+  }
+}
++ MetaData.Schema.D2 {
+  "UId": "8bac939c-06fe-9a1c-f948-b144fde09bf0",
+  "A2": "UsrNotes",
+  "A3": "904eeb3b-849e-4a1e-8653-ce6cb09e62fe",
+  "A4": "904eeb3b-849e-4a1e-8653-ce6cb09e62fe",
+  "A5": "3daa8e4e-2a22-4e20-af21-674c5227b6dc",
+  "S2": "c0f04627-4620-4bc0-84e5-9419dc8516b1"
+}
++ MetaData.Schema.D2 {
+  "UId": "ead4c62b-804d-0269-0771-5761826526fa",
+  "A2": "UsrActivatedBy",
+  "A3": "904eeb3b-849e-4a1e-8653-ce6cb09e62fe",
+  "A4": "904eeb3b-849e-4a1e-8653-ce6cb09e62fe",
+  "A5": "3daa8e4e-2a22-4e20-af21-674c5227b6dc",
+  "S2": "b295071f-7ea9-4e62-8d1a-919bf3732ff2",
+  "S4": "16be3651-8fe2-4159-8dd0-a803d4683dd3",
+  "E6": true,
+  "E20": true,
+  "E17": "UsrActivatedById",
+  "E18": "UsrActivatedByName"
+}
++ MetaData.Schema.D2 {
+  "UId": "7df28ed7-223e-fb77-740a-efa42453bb7c",
+  "A2": "UsrActivatedOn",
+  "A3": "904eeb3b-849e-4a1e-8653-ce6cb09e62fe",
+  "A4": "904eeb3b-849e-4a1e-8653-ce6cb09e62fe",
+  "A5": "3daa8e4e-2a22-4e20-af21-674c5227b6dc",
+  "S2": "d21e9ef4-c064-4012-b286-fa1a8171da44"
+}
++ MetaData.Schema.D2 {
+  "UId": "15a3eea1-c30d-54df-cb2c-ff0929b9432a",
+  "A2": "UsrConfigVersionStatus",
+  "A3": "904eeb3b-849e-4a1e-8653-ce6cb09e62fe",
+  "A4": "904eeb3b-849e-4a1e-8653-ce6cb09e62fe",
+  "A5": "3daa8e4e-2a22-4e20-af21-674c5227b6dc",
+  "S2": "b295071f-7ea9-4e62-8d1a-919bf3732ff2",
+  "S4": "0b00bfef-129e-4e9e-a049-4cfdf27efb7f",
+  "E6": true,
+  "E20": true,
+  "E12": {
+    "FB1": 1,
+    "FB2": "d153cb20-1a9c-44bf-8ced-1a53f88eed22"
+  },
+  "E17": "UsrConfigVersionStatusId",
+  "E18": "UsrConfigVersionStatusName"
+}
 ~ MetaData.Schema.D2 [
   "ae0e45ca-c495-4fe7-a39d-3ab7278e1617",
   "e80190a5-03b2-4095-90f7-a193a960adee",
@@ -115,7 +201,15 @@
   "4402f99c-97e2-bac3-4ab4-389821ce495e",
   "a91fbeee-7cf8-4046-46a8-4facd019f241",
   "dc0d3243-c839-5159-7a38-9e659ebed8f2",
-  "55e0a4d9-8c5f-f8b3-6ef7-ae8c80f73bbf"
+  "55e0a4d9-8c5f-f8b3-6ef7-ae8c80f73bbf",
+  "7f18faf7-c7e0-f253-cab1-e575df9cd062",
+  "5a0a4170-f2ea-faf7-f658-2af6a6444f59",
+  "36f76626-13b1-e207-a8fd-ab3ef124c9d6",
+  "32218832-12d0-00e6-d526-318c903e0aeb",
+  "8bac939c-06fe-9a1c-f948-b144fde09bf0",
+  "ead4c62b-804d-0269-0771-5761826526fa",
+  "7df28ed7-223e-fb77-740a-efa42453bb7c",
+  "15a3eea1-c30d-54df-cb2c-ff0929b9432a"
 ]
 = MetaData.Schema.D20.A2 "UsrContractConfigVersionEvents"
 + MetaData.Schema.D20.FA1 false

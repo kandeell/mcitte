@@ -4,7 +4,7 @@
       "Row": [
         {
           "SchemaColumnUId": "ae0e45ca-c495-4fe7-a39d-3ab7278e1617",
-          "Value": "7879a97e-c79f-495b-a143-90459e51c335"
+          "Value": "5564cc5d-1e87-4ba8-a8e0-51ca9ddc056e"
         },
         {
           "SchemaColumnUId": "1e4741cc-9a6e-446f-9865-5f5910fadd67",
@@ -12,7 +12,7 @@
         },
         {
           "SchemaColumnUId": "327a0dc4-df63-4f6e-9d33-bc403d284cb6",
-          "Value": "10eaf8ca-014d-4c3f-89a4-dd75fc29a0cc"
+          "Value": "7ea19ae8-cd84-447d-8568-8f6aeb4d6273"
         },
         {
           "SchemaColumnUId": "34dfc288-1b25-4d53-bdf3-16b58a84e276",
@@ -25,17 +25,17 @@
         },
         {
           "SchemaColumnUId": "3f098e0d-6cbd-4e8f-bc3e-00709f2d8d82",
-          "Value": "308a2a11-cfe2-4e2a-b67f-770aa08c6433",
+          "Value": "4bcc5886-6cf7-4b22-af2c-8911d208e716",
           "DisplayValue": "null"
         },
         {
           "SchemaColumnUId": "48ed5be5-6dcd-44ba-6294-a29c8daef880",
-          "Value": "#B87CCF"
+          "Value": "#08857E"
         },
         {
           "SchemaColumnUId": "63f1eb37-455a-4a53-ace2-fa5ef4c3d10f",
-          "Value": "15b6b7b5-8cc8-4243-8a26-7adc09350b71",
-          "DisplayValue": "SectionIcon_UsrVirtualMachines.svg"
+          "Value": "ba7f4a88-4831-49c6-b9bb-ae7a58407a86",
+          "DisplayValue": "SectionIcon_UsrVMInventory.svg"
         },
         {
           "SchemaColumnUId": "6d827ba7-a622-47cc-8f11-b40b91c7441a",
@@ -59,7 +59,7 @@
         },
         {
           "SchemaColumnUId": "af5bbb5e-9c78-44b7-8fdd-2bfc4353b4a8",
-          "Value": "1c31a193-8e6c-4ac6-958d-aa14907dda95"
+          "Value": "71cfb9cf-9220-458e-bbaf-5c837e7f7c3a"
         },
         {
           "SchemaColumnUId": "b3fefb7f-2aab-4b16-97aa-6ca3f3bd7ac2",

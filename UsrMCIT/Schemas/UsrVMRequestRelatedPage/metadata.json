@@ -17,22 +17,13 @@
       "AD4": {
   "Pages": [
     {
-      "UId": "9a0a34e5-fa3b-3198-1adc-ca21bbf6e9ab",
-      "PageSchemaUId": "e9a3d545-97a6-4635-be7a-740407763ae6",
+      "UId": "a9ce1dc0-29de-1f8c-2cd8-05a3fc97d746",
+      "PageSchemaUId": "763bb462-5ecd-4d43-b432-537fe1f71a06",
       "IsDefault": false,
       "IsSspDefault": false,
       "Actions": {
         "Add": true
       },
-      "Role": "a29a3ba5-4b0d-de11-9a51-005056c00008",
-      "TypeColumnValue": null
-    },
-    {
-      "UId": "2950e6f3-ed39-5b8a-935b-4946ca987386",
-      "PageSchemaUId": "fb40a5eb-508b-4de5-b2c5-916384c70998",
-      "IsDefault": true,
-      "IsSspDefault": false,
-      "Actions": null,
       "Role": "a29a3ba5-4b0d-de11-9a51-005056c00008",
       "TypeColumnValue": null
     }

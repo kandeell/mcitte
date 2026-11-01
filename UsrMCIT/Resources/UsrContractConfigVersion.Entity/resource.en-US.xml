@@ -3,11 +3,19 @@
 	<Group Type="String">
 		<Items>
 			<Item Name="Caption" Value="Contract Configuration Version" />
+			<Item Name="Columns.UsrActivatedBy.Caption" Value="Activated By" />
+			<Item Name="Columns.UsrActivatedOn.Caption" Value="Activation Date" />
 			<Item Name="Columns.UsrCPUPerPoint.Caption" Value="vCPU per point" />
-			<Item Name="Columns.UsrChangeReason.Caption" Value="Change reason" />
+			<Item Name="Columns.UsrChangeReason.Caption" Value="Change Summary " />
+			<Item Name="Columns.UsrConfigVersionStatus.Caption" Value="Configuration Version Status" />
 			<Item Name="Columns.UsrContract.Caption" Value="Contract" />
 			<Item Name="Columns.UsrEffectiveFrom.Caption" Value="Effective from" />
+			<Item Name="Columns.UsrEffectiveTo.Caption" Value="Effective To" />
+			<Item Name="Columns.UsrMaxPointsPerVM.Caption" Value="Maximum Points per VM" />
+			<Item Name="Columns.UsrMinPointsPerVM.Caption" Value="Minimum Points per VM" />
 			<Item Name="Columns.UsrName.Caption" Value="Configuration name" />
+			<Item Name="Columns.UsrNotes.Caption" Value="Notes" />
+			<Item Name="Columns.UsrPointIncrement.Caption" Value="Point Increment" />
 			<Item Name="Columns.UsrPreviousVersion.Caption" Value="Previous version" />
 			<Item Name="Columns.UsrRAMGBPerPoint.Caption" Value="RAM per point (GB)" />
 			<Item Name="Columns.UsrStorageGBPerPoint.Caption" Value="Storage per point (GB)" />

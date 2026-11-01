@@ -5,18 +5,12 @@
 			<Item Name="Caption" Value="VM Request" />
 			<Item Name="Columns.UsrAccount.Caption" Value="Authority" />
 			<Item Name="Columns.UsrBusinessJustification.Caption" Value="Business justification" />
-			<Item Name="Columns.UsrColumn20.Caption" Value="Email" />
-			<Item Name="Columns.UsrColumn21.Caption" Value="I have reviewed and acknowledge the warnings above." />
-			<Item Name="Columns.UsrColumn22.Caption" Value="Submission Acknowledgement" />
 			<Item Name="Columns.UsrConfigVersion.Caption" Value="Configuration version" />
 			<Item Name="Columns.UsrContract.Caption" Value="Contract" />
 			<Item Name="Columns.UsrEstimatedPoints.Caption" Value="Estimated points" />
-			<Item Name="Columns.UsrFullName.Caption" Value="Full Name" />
-			<Item Name="Columns.UsrName.Caption" Value="Request Title" />
+			<Item Name="Columns.UsrName.Caption" Value="Name" />
 			<Item Name="Columns.UsrNumber.Caption" Value="Number" />
 			<Item Name="Columns.UsrProject.Caption" Value="Project" />
-			<Item Name="Columns.UsrRequestType.Caption" Value="Request Type" />
-			<Item Name="Columns.UsrRequestedDeliveryDate.Caption" Value="Requested Delivery Date" />
 			<Item Name="Columns.UsrRequester.Caption" Value="Requester" />
 			<Item Name="Columns.UsrStatus.Caption" Value="Status" />
 		</Items>

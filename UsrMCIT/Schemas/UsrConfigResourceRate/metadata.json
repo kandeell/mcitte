@@ -57,15 +57,11 @@
   "A3": "1238a393-cadb-4e0f-9e8b-575dae5a87ec",
   "A4": "1238a393-cadb-4e0f-9e8b-575dae5a87ec",
   "A5": "3daa8e4e-2a22-4e20-af21-674c5227b6dc",
-  "S2": "07ba84ce-0bf7-44b4-9f2c-7b15032eb98c"
-}
-+ MetaData.Schema.D2 {
-  "UId": "6237fcd1-7232-a80e-30be-408afc86d077",
-  "A2": "UsrPricingUnit",
-  "A3": "1238a393-cadb-4e0f-9e8b-575dae5a87ec",
-  "A4": "1238a393-cadb-4e0f-9e8b-575dae5a87ec",
-  "A5": "3daa8e4e-2a22-4e20-af21-674c5227b6dc",
-  "S2": "325a73b8-0f47-44a0-8412-7606f78003ac"
+  "S2": "07ba84ce-0bf7-44b4-9f2c-7b15032eb98c",
+  "E12": {
+    "FB1": 1,
+    "FB2": "0"
+  }
 }
 + MetaData.Schema.D2 {
   "UId": "c3451d5d-2af9-9d01-9209-5c182a653401",
@@ -101,6 +97,19 @@
   "S2": "ddb3a1ee-07e8-4d62-b7a9-d0e618b00fbd",
   "E2": 1
 }
++ MetaData.Schema.D2 {
+  "UId": "36ce28c9-5736-f86a-52cd-6f73a53aefbe",
+  "A2": "UsrPricingUnitLookup",
+  "A3": "1238a393-cadb-4e0f-9e8b-575dae5a87ec",
+  "A4": "1238a393-cadb-4e0f-9e8b-575dae5a87ec",
+  "A5": "3daa8e4e-2a22-4e20-af21-674c5227b6dc",
+  "S2": "b295071f-7ea9-4e62-8d1a-919bf3732ff2",
+  "S4": "bff93ad8-283c-4daa-854d-1b3b48d1987b",
+  "E6": true,
+  "E20": true,
+  "E17": "UsrPricingUnitLookupId",
+  "E18": "UsrPricingUnitLookupName"
+}
 ~ MetaData.Schema.D2 [
   "ae0e45ca-c495-4fe7-a39d-3ab7278e1617",
   "e80190a5-03b2-4095-90f7-a193a960adee",
@@ -112,10 +121,10 @@
   "5adadeff-60d3-6f4d-2152-abf734cb9df3",
   "78e4d1ed-bab8-bd2f-88a2-8a162756d514",
   "faa8a396-ec7f-50f8-e061-e8c516c81e5e",
-  "6237fcd1-7232-a80e-30be-408afc86d077",
   "c3451d5d-2af9-9d01-9209-5c182a653401",
   "479df410-3971-1aa6-3e89-f833ff9e60d9",
-  "992b22fc-4d21-4a8b-7850-22a917b641ce"
+  "992b22fc-4d21-4a8b-7850-22a917b641ce",
+  "36ce28c9-5736-f86a-52cd-6f73a53aefbe"
 ]
 = MetaData.Schema.D20.A2 "UsrConfigResourceRateEvents"
 + MetaData.Schema.D20.FA1 false

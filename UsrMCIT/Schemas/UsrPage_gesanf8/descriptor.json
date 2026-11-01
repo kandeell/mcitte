@@ -1,0 +1,13 @@
+﻿{
+  "Descriptor": {
+    "UId": "f52e3b59-3f21-4f1f-a227-0ccfeabf5091",
+    "Name": "UsrPage_gesanf8",
+    "ModifiedOnUtc": "\/Date(1792340107000)\/",
+    "Parent": {
+      "UId": "b7b898d0-8c77-4953-c097-23fa6800da02",
+      "Name": "ListPageV3Template"
+    },
+    "ManagerName": "ClientUnitSchemaManager",
+    "Caption": "MCIT Contracts"
+  }
+}

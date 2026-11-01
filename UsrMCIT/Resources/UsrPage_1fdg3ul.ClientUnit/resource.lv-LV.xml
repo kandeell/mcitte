@@ -1,0 +1,9 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Resources Culture="lv-LV">
+	<Group Type="String">
+		<Items>
+			<Item Name="LocalizableStrings.Button_spbhdwfCaption.Value" Value="Atjaunot" />
+			<Item Name="LocalizableStrings.Button_tbioevjCaption.Value" Value="Augšupielādēt" />
+		</Items>
+	</Group>
+</Resources>

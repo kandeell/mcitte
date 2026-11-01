@@ -3,6 +3,8 @@
 	<Group Type="String">
 		<Items>
 			<Item Name="Caption" Value="MCIT Contract form page" />
+			<Item Name="LocalizableStrings.Button_spbhdwfCaption.Value" Value="Обновить" />
+			<Item Name="LocalizableStrings.Button_tbioevjCaption.Value" Value="Загрузить" />
 		</Items>
 	</Group>
 </Resources>

@@ -1,0 +1,8 @@
+= MetaData.Schema.UId "a18df6f4-38e0-482f-8937-f27e48221084"
+= MetaData.Schema.A2 "UsrFinanceConfig_FormPage"
+= MetaData.Schema.A5 "6f71e54c-1960-40c9-94f6-073fd67699ab"
+~ MetaData.Schema.B2 ["65c9aa0d-307c-463f-87d0-df4be73b3566","2f0d242a-4b7f-4acb-86e0-08773e2464d5","9ff29641-8508-4a4c-9de9-5e904e0b16ce","5d28f484-cbc9-4faf-9e21-0d051acaceb2"]
+= MetaData.Schema.B6 "5530927f-22ea-e7c9-4ccf-506d3a6c2ed2"
+= MetaData.Schema.HD1 "3b2e117f-8c6b-4ca5-80a2-7ebb497cddf9"
+- MetaData.Schema.B7
++ MetaData.Schema.B7 false

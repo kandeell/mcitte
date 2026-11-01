@@ -1,0 +1,14 @@
+﻿{
+  "Descriptor": {
+    "UId": "c49c5a69-63b3-41f5-a377-78ad30fd1edd",
+    "Name": "UsrVMInventory_Detail",
+    "ModifiedOnUtc": "\/Date(1792485844000)\/",
+    "Parent": {
+      "UId": "01eb38ee-668a-42f0-999d-c2534f979089",
+      "Name": "BaseGridDetailV2"
+    },
+    "ManagerName": "ClientUnitSchemaManager",
+    "Caption": "VM Inventory detail",
+    "DependsOn": []
+  }
+}

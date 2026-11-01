@@ -1,10 +1,12 @@
 <Project>
 	<ItemGroup Label="Entity Files" Condition="'$(PkgPath)' != ''">
 		<Compile Include="$(PkgPath)/UsrMCIT/Schemas/Account/Account.cs" Condition="Exists('$(PkgPath)/UsrMCIT/Schemas/Account/Account.cs')" />
-		<Compile Include="$(PkgPath)/UsrMCIT/Schemas/UsrAdministrationHome/UsrAdministrationHome.cs" Condition="Exists('$(PkgPath)/UsrMCIT/Schemas/UsrAdministrationHome/UsrAdministrationHome.cs')" />
+		<Compile Include="$(PkgPath)/UsrMCIT/Schemas/Activity/Activity.cs" Condition="Exists('$(PkgPath)/UsrMCIT/Schemas/Activity/Activity.cs')" />
 		<Compile Include="$(PkgPath)/UsrMCIT/Schemas/UsrAuthority/UsrAuthority.cs" Condition="Exists('$(PkgPath)/UsrMCIT/Schemas/UsrAuthority/UsrAuthority.cs')" />
 		<Compile Include="$(PkgPath)/UsrMCIT/Schemas/UsrConfigResourceRate/UsrConfigResourceRate.cs" Condition="Exists('$(PkgPath)/UsrMCIT/Schemas/UsrConfigResourceRate/UsrConfigResourceRate.cs')" />
+		<Compile Include="$(PkgPath)/UsrMCIT/Schemas/UsrConfigVersionStatus/UsrConfigVersionStatus.cs" Condition="Exists('$(PkgPath)/UsrMCIT/Schemas/UsrConfigVersionStatus/UsrConfigVersionStatus.cs')" />
 		<Compile Include="$(PkgPath)/UsrMCIT/Schemas/UsrContractConfigVersion/UsrContractConfigVersion.cs" Condition="Exists('$(PkgPath)/UsrMCIT/Schemas/UsrContractConfigVersion/UsrContractConfigVersion.cs')" />
+		<Compile Include="$(PkgPath)/UsrMCIT/Schemas/UsrFinanceConfig/UsrFinanceConfig.cs" Condition="Exists('$(PkgPath)/UsrMCIT/Schemas/UsrFinanceConfig/UsrFinanceConfig.cs')" />
 		<Compile Include="$(PkgPath)/UsrMCIT/Schemas/UsrFinancialTransaction/UsrFinancialTransaction.cs" Condition="Exists('$(PkgPath)/UsrMCIT/Schemas/UsrFinancialTransaction/UsrFinancialTransaction.cs')" />
 		<Compile Include="$(PkgPath)/UsrMCIT/Schemas/UsrFinancialTransactionType/UsrFinancialTransactionType.cs" Condition="Exists('$(PkgPath)/UsrMCIT/Schemas/UsrFinancialTransactionType/UsrFinancialTransactionType.cs')" />
 		<Compile Include="$(PkgPath)/UsrMCIT/Schemas/UsrMCIT/UsrMCIT.cs" Condition="Exists('$(PkgPath)/UsrMCIT/Schemas/UsrMCIT/UsrMCIT.cs')" />
@@ -13,31 +15,37 @@
 		<Compile Include="$(PkgPath)/UsrMCIT/Schemas/UsrMCITContract/UsrMCITContract.cs" Condition="Exists('$(PkgPath)/UsrMCIT/Schemas/UsrMCITContract/UsrMCITContract.cs')" />
 		<Compile Include="$(PkgPath)/UsrMCIT/Schemas/UsrMCITContractStatus/UsrMCITContractStatus.cs" Condition="Exists('$(PkgPath)/UsrMCIT/Schemas/UsrMCITContractStatus/UsrMCITContractStatus.cs')" />
 		<Compile Include="$(PkgPath)/UsrMCIT/Schemas/UsrMCITOperatingSystem/UsrMCITOperatingSystem.cs" Condition="Exists('$(PkgPath)/UsrMCIT/Schemas/UsrMCITOperatingSystem/UsrMCITOperatingSystem.cs')" />
-		<Compile Include="$(PkgPath)/UsrMCIT/Schemas/UsrMCITPortalUserAccess/UsrMCITPortalUserAccess.cs" Condition="Exists('$(PkgPath)/UsrMCIT/Schemas/UsrMCITPortalUserAccess/UsrMCITPortalUserAccess.cs')" />
-		<Compile Include="$(PkgPath)/UsrMCIT/Schemas/UsrMCITQueueRoleMapping/UsrMCITQueueRoleMapping.cs" Condition="Exists('$(PkgPath)/UsrMCIT/Schemas/UsrMCITQueueRoleMapping/UsrMCITQueueRoleMapping.cs')" />
+		<Compile Include="$(PkgPath)/UsrMCIT/Schemas/UsrMCITPermissionQueue/UsrMCITPermissionQueue.cs" Condition="Exists('$(PkgPath)/UsrMCIT/Schemas/UsrMCITPermissionQueue/UsrMCITPermissionQueue.cs')" />
+		<Compile Include="$(PkgPath)/UsrMCIT/Schemas/UsrMCITPermissionReport/UsrMCITPermissionReport.cs" Condition="Exists('$(PkgPath)/UsrMCIT/Schemas/UsrMCITPermissionReport/UsrMCITPermissionReport.cs')" />
+		<Compile Include="$(PkgPath)/UsrMCIT/Schemas/UsrMCITPermissionScreen/UsrMCITPermissionScreen.cs" Condition="Exists('$(PkgPath)/UsrMCIT/Schemas/UsrMCITPermissionScreen/UsrMCITPermissionScreen.cs')" />
 		<Compile Include="$(PkgPath)/UsrMCIT/Schemas/UsrMCITRequestStatus/UsrMCITRequestStatus.cs" Condition="Exists('$(PkgPath)/UsrMCIT/Schemas/UsrMCITRequestStatus/UsrMCITRequestStatus.cs')" />
 		<Compile Include="$(PkgPath)/UsrMCIT/Schemas/UsrMCITRequestType/UsrMCITRequestType.cs" Condition="Exists('$(PkgPath)/UsrMCIT/Schemas/UsrMCITRequestType/UsrMCITRequestType.cs')" />
+		<Compile Include="$(PkgPath)/UsrMCIT/Schemas/UsrMCITResourceCategory/UsrMCITResourceCategory.cs" Condition="Exists('$(PkgPath)/UsrMCIT/Schemas/UsrMCITResourceCategory/UsrMCITResourceCategory.cs')" />
+		<Compile Include="$(PkgPath)/UsrMCIT/Schemas/UsrMCITResourceContract/UsrMCITResourceContract.cs" Condition="Exists('$(PkgPath)/UsrMCIT/Schemas/UsrMCITResourceContract/UsrMCITResourceContract.cs')" />
 		<Compile Include="$(PkgPath)/UsrMCIT/Schemas/UsrMCITResourceType/UsrMCITResourceType.cs" Condition="Exists('$(PkgPath)/UsrMCIT/Schemas/UsrMCITResourceType/UsrMCITResourceType.cs')" />
-		<Compile Include="$(PkgPath)/UsrMCIT/Schemas/UsrMCITRoleAssignment/UsrMCITRoleAssignment.cs" Condition="Exists('$(PkgPath)/UsrMCIT/Schemas/UsrMCITRoleAssignment/UsrMCITRoleAssignment.cs')" />
-		<Compile Include="$(PkgPath)/UsrMCIT/Schemas/UsrMCITRoleAssignmentSource/UsrMCITRoleAssignmentSource.cs" Condition="Exists('$(PkgPath)/UsrMCIT/Schemas/UsrMCITRoleAssignmentSource/UsrMCITRoleAssignmentSource.cs')" />
-		<Compile Include="$(PkgPath)/UsrMCIT/Schemas/UsrMCITRoleMetadata/UsrMCITRoleMetadata.cs" Condition="Exists('$(PkgPath)/UsrMCIT/Schemas/UsrMCITRoleMetadata/UsrMCITRoleMetadata.cs')" />
-		<Compile Include="$(PkgPath)/UsrMCIT/Schemas/UsrMCITRoleType/UsrMCITRoleType.cs" Condition="Exists('$(PkgPath)/UsrMCIT/Schemas/UsrMCITRoleType/UsrMCITRoleType.cs')" />
-		<Compile Include="$(PkgPath)/UsrMCIT/Schemas/UsrMCITUserAuthorityAccess/UsrMCITUserAuthorityAccess.cs" Condition="Exists('$(PkgPath)/UsrMCIT/Schemas/UsrMCITUserAuthorityAccess/UsrMCITUserAuthorityAccess.cs')" />
-		<Compile Include="$(PkgPath)/UsrMCIT/Schemas/UsrMCITUserContractAccess/UsrMCITUserContractAccess.cs" Condition="Exists('$(PkgPath)/UsrMCIT/Schemas/UsrMCITUserContractAccess/UsrMCITUserContractAccess.cs')" />
-		<Compile Include="$(PkgPath)/UsrMCIT/Schemas/UsrMCITUserStatus/UsrMCITUserStatus.cs" Condition="Exists('$(PkgPath)/UsrMCIT/Schemas/UsrMCITUserStatus/UsrMCITUserStatus.cs')" />
+		<Compile Include="$(PkgPath)/UsrMCIT/Schemas/UsrMCITRole/UsrMCITRole.cs" Condition="Exists('$(PkgPath)/UsrMCIT/Schemas/UsrMCITRole/UsrMCITRole.cs')" />
+		<Compile Include="$(PkgPath)/UsrMCIT/Schemas/UsrMCITRoleAdministrativePermission/UsrMCITRoleAdministrativePermission.cs" Condition="Exists('$(PkgPath)/UsrMCIT/Schemas/UsrMCITRoleAdministrativePermission/UsrMCITRoleAdministrativePermission.cs')" />
+		<Compile Include="$(PkgPath)/UsrMCIT/Schemas/UsrMCITRoleCategory/UsrMCITRoleCategory.cs" Condition="Exists('$(PkgPath)/UsrMCIT/Schemas/UsrMCITRoleCategory/UsrMCITRoleCategory.cs')" />
+		<Compile Include="$(PkgPath)/UsrMCIT/Schemas/UsrMCITRoleChangeLog/UsrMCITRoleChangeLog.cs" Condition="Exists('$(PkgPath)/UsrMCIT/Schemas/UsrMCITRoleChangeLog/UsrMCITRoleChangeLog.cs')" />
+		<Compile Include="$(PkgPath)/UsrMCIT/Schemas/UsrMCITRoleDataScopeRule/UsrMCITRoleDataScopeRule.cs" Condition="Exists('$(PkgPath)/UsrMCIT/Schemas/UsrMCITRoleDataScopeRule/UsrMCITRoleDataScopeRule.cs')" />
+		<Compile Include="$(PkgPath)/UsrMCIT/Schemas/UsrMCITRolePermission/UsrMCITRolePermission.cs" Condition="Exists('$(PkgPath)/UsrMCIT/Schemas/UsrMCITRolePermission/UsrMCITRolePermission.cs')" />
+		<Compile Include="$(PkgPath)/UsrMCIT/Schemas/UsrMCITRoleQueuePermission/UsrMCITRoleQueuePermission.cs" Condition="Exists('$(PkgPath)/UsrMCIT/Schemas/UsrMCITRoleQueuePermission/UsrMCITRoleQueuePermission.cs')" />
+		<Compile Include="$(PkgPath)/UsrMCIT/Schemas/UsrMCITRoleReportingPermission/UsrMCITRoleReportingPermission.cs" Condition="Exists('$(PkgPath)/UsrMCIT/Schemas/UsrMCITRoleReportingPermission/UsrMCITRoleReportingPermission.cs')" />
+		<Compile Include="$(PkgPath)/UsrMCIT/Schemas/UsrMCITRoleScreenPermission/UsrMCITRoleScreenPermission.cs" Condition="Exists('$(PkgPath)/UsrMCIT/Schemas/UsrMCITRoleScreenPermission/UsrMCITRoleScreenPermission.cs')" />
+		<Compile Include="$(PkgPath)/UsrMCIT/Schemas/UsrMCITRoleStatus/UsrMCITRoleStatus.cs" Condition="Exists('$(PkgPath)/UsrMCIT/Schemas/UsrMCITRoleStatus/UsrMCITRoleStatus.cs')" />
 		<Compile Include="$(PkgPath)/UsrMCIT/Schemas/UsrMCITVMStatus/UsrMCITVMStatus.cs" Condition="Exists('$(PkgPath)/UsrMCIT/Schemas/UsrMCITVMStatus/UsrMCITVMStatus.cs')" />
 		<Compile Include="$(PkgPath)/UsrMCIT/Schemas/UsrPointAllocation/UsrPointAllocation.cs" Condition="Exists('$(PkgPath)/UsrMCIT/Schemas/UsrPointAllocation/UsrPointAllocation.cs')" />
 		<Compile Include="$(PkgPath)/UsrMCIT/Schemas/UsrPointBalanceType/UsrPointBalanceType.cs" Condition="Exists('$(PkgPath)/UsrMCIT/Schemas/UsrPointBalanceType/UsrPointBalanceType.cs')" />
 		<Compile Include="$(PkgPath)/UsrMCIT/Schemas/UsrPointTransaction/UsrPointTransaction.cs" Condition="Exists('$(PkgPath)/UsrMCIT/Schemas/UsrPointTransaction/UsrPointTransaction.cs')" />
 		<Compile Include="$(PkgPath)/UsrMCIT/Schemas/UsrPointTransactionType/UsrPointTransactionType.cs" Condition="Exists('$(PkgPath)/UsrMCIT/Schemas/UsrPointTransactionType/UsrPointTransactionType.cs')" />
+		<Compile Include="$(PkgPath)/UsrMCIT/Schemas/UsrPricingUnit/UsrPricingUnit.cs" Condition="Exists('$(PkgPath)/UsrMCIT/Schemas/UsrPricingUnit/UsrPricingUnit.cs')" />
 		<Compile Include="$(PkgPath)/UsrMCIT/Schemas/UsrProject/UsrProject.cs" Condition="Exists('$(PkgPath)/UsrMCIT/Schemas/UsrProject/UsrProject.cs')" />
 		<Compile Include="$(PkgPath)/UsrMCIT/Schemas/UsrProvisioningAttempt/UsrProvisioningAttempt.cs" Condition="Exists('$(PkgPath)/UsrMCIT/Schemas/UsrProvisioningAttempt/UsrProvisioningAttempt.cs')" />
 		<Compile Include="$(PkgPath)/UsrMCIT/Schemas/UsrRequestApproval/UsrRequestApproval.cs" Condition="Exists('$(PkgPath)/UsrMCIT/Schemas/UsrRequestApproval/UsrRequestApproval.cs')" />
 		<Compile Include="$(PkgPath)/UsrMCIT/Schemas/UsrRequestStatusHistory/UsrRequestStatusHistory.cs" Condition="Exists('$(PkgPath)/UsrMCIT/Schemas/UsrRequestStatusHistory/UsrRequestStatusHistory.cs')" />
 		<Compile Include="$(PkgPath)/UsrMCIT/Schemas/UsrRequestValidationFinding/UsrRequestValidationFinding.cs" Condition="Exists('$(PkgPath)/UsrMCIT/Schemas/UsrRequestValidationFinding/UsrRequestValidationFinding.cs')" />
+		<Compile Include="$(PkgPath)/UsrMCIT/Schemas/UsrScopeBehavior/UsrScopeBehavior.cs" Condition="Exists('$(PkgPath)/UsrMCIT/Schemas/UsrScopeBehavior/UsrScopeBehavior.cs')" />
 		<Compile Include="$(PkgPath)/UsrMCIT/Schemas/UsrVirtualMachine/UsrVirtualMachine.cs" Condition="Exists('$(PkgPath)/UsrMCIT/Schemas/UsrVirtualMachine/UsrVirtualMachine.cs')" />
-		<Compile Include="$(PkgPath)/UsrMCIT/Schemas/UsrVMEnvironment/UsrVMEnvironment.cs" Condition="Exists('$(PkgPath)/UsrMCIT/Schemas/UsrVMEnvironment/UsrVMEnvironment.cs')" />
-		<Compile Include="$(PkgPath)/UsrMCIT/Schemas/UsrVMNetworkZone/UsrVMNetworkZone.cs" Condition="Exists('$(PkgPath)/UsrMCIT/Schemas/UsrVMNetworkZone/UsrVMNetworkZone.cs')" />
 		<Compile Include="$(PkgPath)/UsrMCIT/Schemas/UsrVMRequest/UsrVMRequest.cs" Condition="Exists('$(PkgPath)/UsrMCIT/Schemas/UsrVMRequest/UsrVMRequest.cs')" />
 		<Compile Include="$(PkgPath)/UsrMCIT/Schemas/UsrVMRequestItem/UsrVMRequestItem.cs" Condition="Exists('$(PkgPath)/UsrMCIT/Schemas/UsrVMRequestItem/UsrVMRequestItem.cs')" />
 	</ItemGroup>

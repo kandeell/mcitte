@@ -1,0 +1,85 @@
+= MetaData.Schema.UId "54262302-cbb4-4c69-b9d7-889c0dc494b7"
+= MetaData.Schema.A2 "UsrPage_9hqvsi1"
+= MetaData.Schema.A5 "3daa8e4e-2a22-4e20-af21-674c5227b6dc"
++ MetaData.Schema.B2 {
+  "UId": "95307f30-b728-2a62-4807-c228eef66aa2",
+  "A2": "IndicatorWidget_zxw8gfj_config_text_template",
+  "A3": "54262302-cbb4-4c69-b9d7-889c0dc494b7",
+  "A4": "54262302-cbb4-4c69-b9d7-889c0dc494b7",
+  "A5": "3daa8e4e-2a22-4e20-af21-674c5227b6dc"
+}
++ MetaData.Schema.B2 {
+  "UId": "2d877973-81b8-8da8-870f-4e97f7667e5c",
+  "A2": "IndicatorWidget_zxw8gfj_hint",
+  "A3": "54262302-cbb4-4c69-b9d7-889c0dc494b7",
+  "A4": "54262302-cbb4-4c69-b9d7-889c0dc494b7",
+  "A5": "3daa8e4e-2a22-4e20-af21-674c5227b6dc"
+}
++ MetaData.Schema.B2 {
+  "UId": "f12aa70a-c3c2-6c35-8899-7b57e02b89ed",
+  "A2": "IndicatorWidget_zxw8gfj_title",
+  "A3": "54262302-cbb4-4c69-b9d7-889c0dc494b7",
+  "A4": "54262302-cbb4-4c69-b9d7-889c0dc494b7",
+  "A5": "3daa8e4e-2a22-4e20-af21-674c5227b6dc"
+}
++ MetaData.Schema.B2 {
+  "UId": "77125b41-3777-5e4e-966f-3f517b4f2b29",
+  "A2": "IndicatorWidget_a4tohl1_config_text_template",
+  "A3": "54262302-cbb4-4c69-b9d7-889c0dc494b7",
+  "A4": "54262302-cbb4-4c69-b9d7-889c0dc494b7",
+  "A5": "3daa8e4e-2a22-4e20-af21-674c5227b6dc"
+}
++ MetaData.Schema.B2 {
+  "UId": "9870ea47-db20-e8e9-ea11-5d8b2dbdbbb3",
+  "A2": "IndicatorWidget_a4tohl1_hint",
+  "A3": "54262302-cbb4-4c69-b9d7-889c0dc494b7",
+  "A4": "54262302-cbb4-4c69-b9d7-889c0dc494b7",
+  "A5": "3daa8e4e-2a22-4e20-af21-674c5227b6dc"
+}
++ MetaData.Schema.B2 {
+  "UId": "a03c70be-2ff7-6414-1d30-d7ee79889e68",
+  "A2": "IndicatorWidget_a4tohl1_title",
+  "A3": "54262302-cbb4-4c69-b9d7-889c0dc494b7",
+  "A4": "54262302-cbb4-4c69-b9d7-889c0dc494b7",
+  "A5": "3daa8e4e-2a22-4e20-af21-674c5227b6dc"
+}
++ MetaData.Schema.B2 {
+  "UId": "30fc1aa7-ff5f-fbbc-732d-872b3a28471c",
+  "A2": "IndicatorWidget_afshmjl_config_text_template",
+  "A3": "54262302-cbb4-4c69-b9d7-889c0dc494b7",
+  "A4": "54262302-cbb4-4c69-b9d7-889c0dc494b7",
+  "A5": "3daa8e4e-2a22-4e20-af21-674c5227b6dc"
+}
++ MetaData.Schema.B2 {
+  "UId": "a7426a36-a5ee-c2bf-a137-16803311beca",
+  "A2": "IndicatorWidget_afshmjl_hint",
+  "A3": "54262302-cbb4-4c69-b9d7-889c0dc494b7",
+  "A4": "54262302-cbb4-4c69-b9d7-889c0dc494b7",
+  "A5": "3daa8e4e-2a22-4e20-af21-674c5227b6dc"
+}
++ MetaData.Schema.B2 {
+  "UId": "f8665eb7-24d6-394a-06f1-647879ac27b0",
+  "A2": "IndicatorWidget_afshmjl_title",
+  "A3": "54262302-cbb4-4c69-b9d7-889c0dc494b7",
+  "A4": "54262302-cbb4-4c69-b9d7-889c0dc494b7",
+  "A5": "3daa8e4e-2a22-4e20-af21-674c5227b6dc"
+}
+~ MetaData.Schema.B2 [
+  "95307f30-b728-2a62-4807-c228eef66aa2",
+  "2d877973-81b8-8da8-870f-4e97f7667e5c",
+  "f12aa70a-c3c2-6c35-8899-7b57e02b89ed",
+  "77125b41-3777-5e4e-966f-3f517b4f2b29",
+  "9870ea47-db20-e8e9-ea11-5d8b2dbdbbb3",
+  "a03c70be-2ff7-6414-1d30-d7ee79889e68",
+  "30fc1aa7-ff5f-fbbc-732d-872b3a28471c",
+  "a7426a36-a5ee-c2bf-a137-16803311beca",
+  "f8665eb7-24d6-394a-06f1-647879ac27b0"
+]
+= MetaData.Schema.B6 "5dcca910-bc4c-42b7-bfe0-2ad5c8cc3965"
+= MetaData.Schema.B8 "10.0.0.858"
++ MetaData.Schema.B10 "{\"DashboardsClientUnitSchemaUId\":\"826de05f-f107-4df8-9427-f1a1e32ae4be\",\"DashboardsElementName\":\"Dashboards_3blmb24\"}"
+= MetaData.Schema.HD1 "eb4d4a67-25d8-fcfa-7851-c4c91efb7b9c"
++ MetaData.Schema.HD15 1
+= MetaData.Schema.HD6 "define('{0}Structure', ['{0}Resources'], function(resources) {{return {{schemaUId:'{2}',schemaName:'{3}',parentSchemaUId:'{4}',extendParent:{5},type:Terrasoft.SchemaType.ANGULAR_SCHEMA,entitySchema:'',name:'',extend:'Terrasoft.model.BaseViewModel',schema:{{leftPanel:[],rightPanel:[],actions:[],analytics:[]}},methods:{{}},controlsConfig:{{}},customBindings:{{}},bindings:{{}},parameters:{{}},schemaVersion:1,optionalProperties:{{}},schemaDifferences:function(){{\n{1}\n}}}};}});"
+- MetaData.Schema.HD2
++ MetaData.Schema.B7 false
