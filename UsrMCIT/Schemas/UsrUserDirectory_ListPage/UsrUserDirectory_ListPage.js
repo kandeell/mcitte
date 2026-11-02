@@ -1,3 +1,6 @@
+/* V22 MCITLU safe fix: live Functional Roles + nonempty/empty Organization label.
+   Based on user's V21; same page design, metric widgets, filters, actions, CSS.
+   Read-only SDK queries; no schema or record writes by this patch. */
 define("UsrUserDirectory_ListPage", /**SCHEMA_DEPS*/["@creatio-devkit/common"]/**SCHEMA_DEPS*/, function/**SCHEMA_ARGS*/(sdk)/**SCHEMA_ARGS*/ {
 	return {
 		viewConfigDiff: /**SCHEMA_VIEW_CONFIG_DIFF*/[
@@ -5,11 +8,9 @@ define("UsrUserDirectory_ListPage", /**SCHEMA_DEPS*/["@creatio-devkit/common"]/*
 				"operation": "merge",
 				"name": "TitleContainer",
 				"values": {
+                    "classes": ["usr-directory-title"],
 					"direction": "column",
 					"alignItems": "flex-start",
-					"classes": [
-						"usr-directory-title"
-					],
 					"visible": true,
 					"padding": {
 						"top": "none",
@@ -55,18 +56,9 @@ define("UsrUserDirectory_ListPage", /**SCHEMA_DEPS*/["@creatio-devkit/common"]/*
 			},
 			{
 				"operation": "merge",
-				"name": "MainContainer",
-				"values": {
-					"classes": [
-						"usr-dir-page-frame"
-					]
-				}
-			},
-			{
-				"operation": "merge",
 				"name": "MainFilterContainer",
 				"values": {
-					"visible": false,
+                    "visible": false,
 					"alignItems": "stretch"
 				}
 			},
@@ -137,15 +129,6 @@ define("UsrUserDirectory_ListPage", /**SCHEMA_DEPS*/["@creatio-devkit/common"]/*
 			},
 			{
 				"operation": "merge",
-				"name": "ContentContainer",
-				"values": {
-					"classes": [
-						"usr-dir-content-zone"
-					]
-				}
-			},
-			{
-				"operation": "merge",
 				"name": "FolderTree",
 				"values": {
 					"rootSchemaName": "UsrMCITPortalUserAccess"
@@ -153,24 +136,9 @@ define("UsrUserDirectory_ListPage", /**SCHEMA_DEPS*/["@creatio-devkit/common"]/*
 			},
 			{
 				"operation": "merge",
-				"name": "SectionContentWrapper",
-				"values": {
-					"classes": [
-						"usr-dir-view-layout"
-					]
-				}
-			},
-			{
-				"operation": "move",
-				"name": "SectionContentWrapper",
-				"parentName": "ContentContainer",
-				"propertyName": "items",
-				"index": 0
-			},
-			{
-				"operation": "merge",
 				"name": "DataTable",
 				"values": {
+					"visible": false,
 					"columns": [
 						{
 							"id": "4f03b106-97db-83cc-2dea-cf9656d5db1f",
@@ -220,8 +188,7 @@ define("UsrUserDirectory_ListPage", /**SCHEMA_DEPS*/["@creatio-devkit/common"]/*
 							"caption": "#ResourceString(PDS_UsrLastSignIn)#",
 							"dataValueType": 7
 						}
-					],
-					"visible": false
+					]
 				}
 			},
 			{
@@ -264,9 +231,7 @@ define("UsrUserDirectory_ListPage", /**SCHEMA_DEPS*/["@creatio-devkit/common"]/*
 				"name": "GridContainer_b4lsi4n",
 				"values": {
 					"type": "crt.GridContainer",
-					"classes": [
-						"usr-dir-kpi-layout"
-					],
+                    "classes": ["usr-dir-kpi-layout"],
 					"columns": [
 						"minmax(32px, 1fr)"
 					],
@@ -329,10 +294,7 @@ define("UsrUserDirectory_ListPage", /**SCHEMA_DEPS*/["@creatio-devkit/common"]/*
 				"name": "IndicatorWidget_qwwh5i9",
 				"values": {
 					"type": "crt.IndicatorWidget",
-					"classes": [
-						"usr-mcit-native-kpi",
-						"usr-mcit-native-kpi-active"
-					],
+                    "classes": ["usr-mcit-native-kpi", "usr-mcit-native-kpi-active"],
 					"config": {
 						"title": "#ResourceString(IndicatorWidget_qwwh5i9_title)#",
 						"theme": "without-fill",
@@ -432,10 +394,7 @@ define("UsrUserDirectory_ListPage", /**SCHEMA_DEPS*/["@creatio-devkit/common"]/*
 				"name": "IndicatorWidget_kx5qlxn",
 				"values": {
 					"type": "crt.IndicatorWidget",
-					"classes": [
-						"usr-mcit-native-kpi",
-						"usr-mcit-native-kpi-inactive"
-					],
+                    "classes": ["usr-mcit-native-kpi", "usr-mcit-native-kpi-inactive"],
 					"config": {
 						"title": "#ResourceString(IndicatorWidget_kx5qlxn_title)#",
 						"theme": "without-fill",
@@ -535,10 +494,7 @@ define("UsrUserDirectory_ListPage", /**SCHEMA_DEPS*/["@creatio-devkit/common"]/*
 				"name": "IndicatorWidget_avk9f4s",
 				"values": {
 					"type": "crt.IndicatorWidget",
-					"classes": [
-						"usr-mcit-native-kpi",
-						"usr-mcit-native-kpi-deactivated"
-					],
+                    "classes": ["usr-mcit-native-kpi", "usr-mcit-native-kpi-deactivated"],
 					"config": {
 						"title": "#ResourceString(IndicatorWidget_avk9f4s_title)#",
 						"theme": "without-fill",
@@ -686,411 +642,373 @@ define("UsrUserDirectory_ListPage", /**SCHEMA_DEPS*/["@creatio-devkit/common"]/*
 				"index": 2
 			},
 			{
-				"operation": "insert",
-				"name": "UsrDirectoryHeader",
-				"values": {
-					"classes": [
-						"usr-directory-header"
-					],
-					"type": "crt.GridContainer",
-					"columns": [
-						"minmax(100px,0.95fr)",
-						"minmax(105px,0.90fr)",
-						"minmax(110px,0.95fr)",
-						"minmax(170px,1.35fr)",
-						"minmax(195px,1.65fr)",
-						"minmax(108px,0.85fr)",
-						"minmax(110px,0.95fr)",
-						"236px"
-					],
-					"rows": "minmax(max-content, 30px)",
-					"gap": {
-						"columnGap": "small",
-						"rowGap": "none"
-					},
-					"fitContent": false,
-					"alignItems": "center",
-					"padding": {
-						"top": "small",
-						"right": "small",
-						"bottom": "small",
-						"left": "small"
-					},
-					"items": [
-						{
-							"type": "crt.Label",
-							"layoutConfig": {
-								"column": 1,
-								"row": 1,
-								"colSpan": 1,
-								"rowSpan": 1
-							},
-							"caption": "Display Name",
-							"labelType": "caption",
-							"labelThickness": "bold",
-							"labelColor": "auto",
-							"labelTextAlign": "start"
-						},
-						{
-							"type": "crt.Label",
-							"layoutConfig": {
-								"column": 2,
-								"row": 1,
-								"colSpan": 1,
-								"rowSpan": 1
-							},
-							"caption": "Email",
-							"labelType": "caption",
-							"labelThickness": "bold",
-							"labelColor": "auto",
-							"labelTextAlign": "start"
-						},
-						{
-							"type": "crt.Label",
-							"layoutConfig": {
-								"column": 3,
-								"row": 1,
-								"colSpan": 1,
-								"rowSpan": 1
-							},
-							"caption": "Organization",
-							"labelType": "caption",
-							"labelThickness": "bold",
-							"labelColor": "auto",
-							"labelTextAlign": "start"
-						},
-						{
-							"type": "crt.Label",
-							"layoutConfig": {
-								"column": 4,
-								"row": 1,
-								"colSpan": 1,
-								"rowSpan": 1
-							},
-							"caption": "Assigned Roles",
-							"labelType": "caption",
-							"labelThickness": "bold",
-							"labelColor": "auto",
-							"labelTextAlign": "start"
-						},
-						{
-							"type": "crt.Label",
-							"layoutConfig": {
-								"column": 5,
-								"row": 1,
-								"colSpan": 1,
-								"rowSpan": 1
-							},
-							"caption": "Scope Summary",
-							"labelType": "caption",
-							"labelThickness": "bold",
-							"labelColor": "auto",
-							"labelTextAlign": "start"
-						},
-						{
-							"type": "crt.Label",
-							"layoutConfig": {
-								"column": 6,
-								"row": 1,
-								"colSpan": 1,
-								"rowSpan": 1
-							},
-							"caption": "Status",
-							"labelType": "caption",
-							"labelThickness": "bold",
-							"labelColor": "auto",
-							"labelTextAlign": "start"
-						},
-						{
-							"type": "crt.Label",
-							"layoutConfig": {
-								"column": 7,
-								"row": 1,
-								"colSpan": 1,
-								"rowSpan": 1
-							},
-							"caption": "Last Sign-in",
-							"labelType": "caption",
-							"labelThickness": "bold",
-							"labelColor": "auto",
-							"labelTextAlign": "start"
-						},
-						{
-							"type": "crt.Label",
-							"layoutConfig": {
-								"column": 8,
-								"row": 1,
-								"colSpan": 1,
-								"rowSpan": 1
-							},
-							"caption": "Actions",
-							"labelType": "caption",
-							"labelThickness": "bold",
-							"labelColor": "auto"
-						}
-					]
-				},
-				"parentName": "SectionContentWrapper",
-				"propertyName": "items",
-				"index": 0
+			    "operation": "insert",
+			    "name": "UsrDirectoryHeader",
+			    "values": {
+                    "classes": ["usr-directory-header"],
+			        "type": "crt.GridContainer",
+			        "columns": [
+			            
+			            "minmax(100px,0.95fr)",
+                        "minmax(105px,0.90fr)",
+                        "minmax(110px,0.95fr)",
+                        "minmax(170px,1.35fr)",
+                        "minmax(195px,1.65fr)",
+                        "minmax(108px,0.85fr)",
+                        "minmax(110px,0.95fr)",
+                        "236px"
+			        ],
+			        "rows": "minmax(max-content, 30px)",
+			        "gap": {
+			            "columnGap": "small",
+			            "rowGap": "none"
+			        },
+			        "fitContent": false,
+			        "alignItems": "center",
+			        "padding": {
+			            "top": "small",
+			            "right": "small",
+			            "bottom": "small",
+			            "left": "small"
+			        },
+			        "items": [
+			            {
+			                "type": "crt.Label",
+			                "layoutConfig": {
+			                    "column": 1,
+			                    "row": 1,
+			                    "colSpan": 1,
+			                    "rowSpan": 1
+			                },
+			                "caption": "Display Name",
+			                "labelType": "caption",
+			                "labelThickness": "bold",
+			                "labelColor": "auto",
+			                "labelTextAlign": "start"
+			            },
+			            {
+			                "type": "crt.Label",
+			                "layoutConfig": {
+			                    "column": 2,
+			                    "row": 1,
+			                    "colSpan": 1,
+			                    "rowSpan": 1
+			                },
+			                "caption": "Email",
+			                "labelType": "caption",
+			                "labelThickness": "bold",
+			                "labelColor": "auto",
+			                "labelTextAlign": "start"
+			            },
+			            {
+			                "type": "crt.Label",
+			                "layoutConfig": {
+			                    "column": 3,
+			                    "row": 1,
+			                    "colSpan": 1,
+			                    "rowSpan": 1
+			                },
+			                "caption": "Organization",
+			                "labelType": "caption",
+			                "labelThickness": "bold",
+			                "labelColor": "auto",
+			                "labelTextAlign": "start"
+			            },
+			            {
+			                "type": "crt.Label",
+			                "layoutConfig": {
+			                    "column": 4,
+			                    "row": 1,
+			                    "colSpan": 1,
+			                    "rowSpan": 1
+			                },
+			                "caption": "Assigned Roles",
+			                "labelType": "caption",
+			                "labelThickness": "bold",
+			                "labelColor": "auto",
+			                "labelTextAlign": "start"
+			            },
+			            {
+			                "type": "crt.Label",
+			                "layoutConfig": {
+			                    "column": 5,
+			                    "row": 1,
+			                    "colSpan": 1,
+			                    "rowSpan": 1
+			                },
+			                "caption": "Scope Summary",
+			                "labelType": "caption",
+			                "labelThickness": "bold",
+			                "labelColor": "auto",
+			                "labelTextAlign": "start"
+			            },
+			            {
+			                "type": "crt.Label",
+			                "layoutConfig": {
+			                    "column": 6,
+			                    "row": 1,
+			                    "colSpan": 1,
+			                    "rowSpan": 1
+			                },
+			                "caption": "Status",
+			                "labelType": "caption",
+			                "labelThickness": "bold",
+			                "labelColor": "auto",
+			                "labelTextAlign": "start"
+			            },
+			            {
+			                "type": "crt.Label",
+			                "layoutConfig": {
+			                    "column": 7,
+			                    "row": 1,
+			                    "colSpan": 1,
+			                    "rowSpan": 1
+			                },
+			                "caption": "Last Sign-in",
+			                "labelType": "caption",
+			                "labelThickness": "bold",
+			                "labelColor": "auto",
+			                "labelTextAlign": "start"
+			            },
+			            {
+			                "type": "crt.Label",
+			                "layoutConfig": {
+			                    "column": 8,
+			                    "row": 1,
+			                    "colSpan": 1,
+			                    "rowSpan": 1
+			                },
+			                "caption": "Actions",
+			                "labelType": "caption",
+			                "labelThickness": "bold",
+			                "labelColor": "auto"
+			            }
+			        ]
+			    },
+			    "parentName": "SectionContentWrapper",
+			    "propertyName": "items",
+			    "index": 0
 			},
 			{
-				"operation": "insert",
-				"name": "UsrDirectoryActions",
-				"values": {
-					"type": "crt.TemplateList",
-					"classes": [
-						"usr-dir-row-list"
-					],
-					"items": "$Items",
-					"direction": "column",
-					"gap": 0,
-					"template": [
-						{
-							"type": "crt.GridContainer",
-							"classes": [
-								"usr-directory-row"
-							],
-							"columns": [
-								"minmax(100px,0.95fr)",
-								"minmax(105px,0.90fr)",
-								"minmax(110px,0.95fr)",
-								"minmax(170px,1.35fr)",
-								"minmax(195px,1.65fr)",
-								"minmax(108px,0.85fr)",
-								"minmax(110px,0.95fr)",
-								"236px"
-							],
-							"rows": "minmax(max-content, 42px)",
-							"gap": {
-								"columnGap": "small",
-								"rowGap": "none"
-							},
-							"fitContent": false,
-							"alignItems": "center",
-							"padding": {
-								"top": "small",
-								"right": "small",
-								"bottom": "small",
-								"left": "small"
-							},
-							"items": [
-								{
-									"type": "crt.Button",
-									"displayType": "text",
-									"color": "primary",
-									"size": "small",
-									"iconPosition": "only-text",
-									"clicked": {
-										"request": "crt.UpdateRecordRequest",
-										"params": {
-											"itemsAttributeName": "Items",
-											"recordId": "$Items.PDS_Id"
-										}
-									},
-									"layoutConfig": {
-										"column": 1,
-										"row": 1,
-										"colSpan": 1,
-										"rowSpan": 1
-									},
-									"classes": "$Items.PDS_UsrUser | usr.MCITUserClasses",
-									"caption": "$Items.PDS_UsrUser | usr.LookupText",
-									"labelType": "body",
-									"labelThickness": "default",
-									"labelEllipsis": false,
-									"visible": true
-								},
-								{
-									"type": "crt.Label",
-									"layoutConfig": {
-										"column": 2,
-										"row": 1,
-										"colSpan": 1,
-										"rowSpan": 1
-									},
-									"classes": [
-										"usr-dir-col-email"
-									],
-									"caption": "$Items.PDS_UsrUser_Contact_Email",
-									"labelType": "body",
-									"labelThickness": "default",
-									"labelEllipsis": false,
-									"visible": true
-								},
-								{
-									"type": "crt.FlexContainer",
-									"layoutConfig": {
-										"column": 3,
-										"row": 1,
-										"colSpan": 1,
-										"rowSpan": 1
-									},
-									"classes": [
-										"usr-dir-col-org"
-									],
-									"direction": "row",
-									"alignItems": "center",
-									"fitContent": true,
-									"items": [
-										{
-											"type": "crt.Label",
-											"caption": "$Items.PDS_UsrUser_Contact_Account | usr.LookupText",
-											"labelType": "body",
-											"labelThickness": "default",
-											"labelEllipsis": false,
-											"visible": true
-										}
-									]
-								},
-								{
-									"type": "crt.FlexContainer",
-									"layoutConfig": {
-										"column": 4,
-										"row": 1,
-										"colSpan": 1,
-										"rowSpan": 1
-									},
-									"classes": [
-										"usr-dir-col-roles"
-									],
-									"direction": "column",
-									"alignItems": "flex-start",
-									"fitContent": true,
-									"items": [
-										{
-											"type": "crt.Label",
-											"classes": [
-												"usr-dir-role-raw"
-											],
-											"caption": "$Items.PDS_UsrAssignedRolesSummary",
-											"labelType": "body",
-											"labelThickness": "default",
-											"labelEllipsis": false,
-											"visible": true
-										}
-									]
-								},
-								{
-									"type": "crt.FlexContainer",
-									"layoutConfig": {
-										"column": 5,
-										"row": 1,
-										"colSpan": 1,
-										"rowSpan": 1
-									},
-									"classes": [
-										"usr-dir-col-scope"
-									],
-									"direction": "column",
-									"alignItems": "stretch",
-									"fitContent": true,
-									"items": [
-										{
-											"type": "crt.Label",
-											"caption": "$Items.PDS_UsrScopeSummary",
-											"labelType": "body",
-											"labelThickness": "default",
-											"labelEllipsis": false,
-											"visible": true
-										}
-									]
-								},
-								{
-									"type": "crt.FlexContainer",
-									"layoutConfig": {
-										"column": 6,
-										"row": 1,
-										"colSpan": 1,
-										"rowSpan": 1
-									},
-									"classes": "$Items.PDS_UsrUserStatus | usr.MCITBadgeClasses",
-									"direction": "row",
-									"fitContent": true,
-									"items": [
-										{
-											"type": "crt.Label",
-											"caption": "$Items.PDS_UsrUserStatus | usr.LookupText",
-											"labelType": "body"
-										}
-									]
-								},
-								{
-									"type": "crt.Label",
-									"layoutConfig": {
-										"column": 7,
-										"row": 1,
-										"colSpan": 1,
-										"rowSpan": 1
-									},
-									"classes": [
-										"usr-dir-col-signin"
-									],
-									"caption": "$Items.PDS_UsrLastSignIn | crt.AdaptiveDateTimeFormat",
-									"labelType": "body",
-									"labelThickness": "default",
-									"labelEllipsis": false,
-									"visible": true
-								},
-								{
-									"type": "crt.FlexContainer",
-									"classes": [
-										"usr-dir-col-actions"
-									],
-									"layoutConfig": {
-										"column": 8,
-										"row": 1,
-										"colSpan": 1,
-										"rowSpan": 1
-									},
-									"direction": "row",
-									"alignItems": "center",
-									"justifyContent": "start",
-									"wrap": "nowrap",
-									"gap": "small",
-									"fitContent": true,
-									"items": [
-										{
-											"type": "crt.Button",
-											"caption": "View Profile",
-											"color": "outline",
-											"displayType": "contained",
-											"size": "small",
-											"iconPosition": "only-text",
-											"clicked": {
-												"request": "crt.UpdateRecordRequest",
-												"params": {
-													"itemsAttributeName": "Items",
-													"recordId": "$Items.PDS_Id"
-												}
-											}
-										},
-										{
-											"type": "crt.Button",
-											"caption": "$Items.PDS_UsrUserStatus | usr.StatusActionCaption",
-											"color": "$Items.PDS_UsrUserStatus | usr.MCITActionColor",
-											"displayType": "contained",
-											"size": "small",
-											"iconPosition": "only-text",
-											"disabled": "$Items.PDS_UsrUserStatus | usr.MCITActionDisabled",
-											"clicked": {
-												"request": "usr.ChangeMCITUserStatus",
-												"params": {
-													"recordId": "$Items.PDS_Id",
-													"currentStatus": "$Items.PDS_UsrUserStatus",
-													"targetUser": "$Items.PDS_UsrUser"
-												}
-											}
-										}
-									]
-								}
-							]
-						}
-					]
-				},
-				"parentName": "SectionContentWrapper",
-				"propertyName": "items",
-				"index": 1
+			    "operation": "insert",
+			    "name": "UsrDirectoryActions",
+			    "values": {
+			        "type": "crt.TemplateList",
+                "classes": ["usr-dir-row-list"],
+			        "items": "$Items",
+			        "direction": "column",
+			        "gap": 0,
+			        "template": [
+			            {
+			                "type": "crt.GridContainer",
+                            "classes": ["usr-directory-row"],
+			                "columns": [
+			                    
+			                    "minmax(100px,0.95fr)",
+                        "minmax(105px,0.90fr)",
+                        "minmax(110px,0.95fr)",
+                        "minmax(170px,1.35fr)",
+                        "minmax(195px,1.65fr)",
+                        "minmax(108px,0.85fr)",
+                        "minmax(110px,0.95fr)",
+                        "236px"
+			                ],
+			                "rows": "minmax(max-content, 42px)",
+			                "gap": {
+			                    "columnGap": "small",
+			                    "rowGap": "none"
+			                },
+			                "fitContent": false,
+			                "alignItems": "center",
+			                "padding": {
+			                    "top": "small",
+			                    "right": "small",
+			                    "bottom": "small",
+			                    "left": "small"
+			                },
+			                "items": [
+			                    {
+			                        "type": "crt.Button",
+                                "displayType": "text",
+                                "color": "primary",
+                                "size": "small",
+                                "iconPosition": "only-text",
+                                "clicked": {
+                                    "request": "crt.UpdateRecordRequest",
+                                    "params": {
+                                        "itemsAttributeName": "Items",
+                                        "recordId": "$Items.PDS_Id"
+                                    }
+                                },
+			                        "layoutConfig": {
+			                            "column": 1,
+			                            "row": 1,
+			                            "colSpan": 1,
+			                            "rowSpan": 1
+			                        },
+			                        "classes": "$Items.PDS_UsrUser | usr.MCITUserClasses",
+			                        "caption": "$Items.PDS_UsrUser | usr.LookupText",
+			                        "labelType": "body",
+			                        "labelThickness": "default",
+			                        "labelEllipsis": false,
+			                        "visible": true
+			                    },
+			                    {
+			                        "type": "crt.Label",
+			                        "layoutConfig": {
+			                            "column": 2,
+			                            "row": 1,
+			                            "colSpan": 1,
+			                            "rowSpan": 1
+			                        },
+			                        "classes": ["usr-dir-col-email"],
+			                        "caption": "$Items.PDS_UsrUser_Contact_Email",
+			                        "labelType": "body",
+			                        "labelThickness": "default",
+			                        "labelEllipsis": false,
+			                        "visible": true
+			                    },
+			                    {
+			                        "type": "crt.FlexContainer",
+			                        "layoutConfig": {
+			                            "column": 3,
+			                            "row": 1,
+			                            "colSpan": 1,
+			                            "rowSpan": 1
+			                        },
+			                        "classes": ["usr-dir-col-org"],
+			                        "direction": "row",
+			                        "alignItems": "center",
+			                        "fitContent": true,
+			                        "items": [{
+			                            "type": "crt.Label",
+			                            "caption": "$Items.PDS_UsrUser_Contact_Account | usr.LookupText",
+			                            "labelType": "body",
+			                            "labelThickness": "default",
+			                            "labelEllipsis": false,
+			                            "visible": true
+			                        }]
+			                    },
+                            {
+                                // Wrap bound label in a stable class-bearing Creatio container.
+                                "type": "crt.FlexContainer",
+                                "layoutConfig": {"column": 4, "row": 1, "colSpan": 1, "rowSpan": 1},
+                                "classes": ["usr-dir-col-roles"],
+                                "direction": "column",
+                                "alignItems": "flex-start",
+                                "fitContent": true,
+                                "items": [{
+                                    "type": "crt.Label",
+                                    "classes": ["usr-dir-role-raw"],
+                                    "caption": "$Items.PDS_UsrAssignedRolesSummary",
+                                    "labelType": "body",
+                                    "labelThickness": "default",
+                                    "labelEllipsis": false,
+                                    "visible": true
+                                }]
+                            },
+                            {
+                                "type": "crt.FlexContainer",
+                                "layoutConfig": {"column": 5, "row": 1, "colSpan": 1, "rowSpan": 1},
+                                "classes": ["usr-dir-col-scope"],
+                                "direction": "column",
+                                "alignItems": "stretch",
+                                "fitContent": true,
+                                "items": [{
+                                    "type": "crt.Label",
+                                    "caption": "$Items.PDS_UsrScopeSummary",
+                                    "labelType": "body",
+                                    "labelThickness": "default",
+                                    "labelEllipsis": false,
+                                    "visible": true
+                                }]
+                            },
+			                    {
+                                "type": "crt.FlexContainer",
+                                "layoutConfig": { "column": 6, "row": 1, "colSpan": 1, "rowSpan": 1 },
+                                "classes": "$Items.PDS_UsrUserStatus | usr.MCITBadgeClasses",
+                                "direction": "row",
+                                "fitContent": true,
+                                "items": [
+                                    {
+                                        "type": "crt.Label",
+                                        "caption": "$Items.PDS_UsrUserStatus | usr.LookupText",
+                                        "labelType": "body"
+                                    }
+                                ]
+                            },
+			                    {
+			                        "type": "crt.Label",
+			                        "layoutConfig": {
+			                            "column": 7,
+			                            "row": 1,
+			                            "colSpan": 1,
+			                            "rowSpan": 1
+			                        },
+			                        "classes": ["usr-dir-col-signin"],
+			                        "caption": "$Items.PDS_UsrLastSignIn | crt.AdaptiveDateTimeFormat",
+			                        "labelType": "body",
+			                        "labelThickness": "default",
+			                        "labelEllipsis": false,
+			                        "visible": true
+			                    },
+			                    {
+			                        "type": "crt.FlexContainer",
+			                        "classes": ["usr-dir-col-actions"],
+			                        "layoutConfig": {
+			                            "column": 8,
+			                            "row": 1,
+			                            "colSpan": 1,
+			                            "rowSpan": 1
+			                        },
+			                        "direction": "row",
+			                        "alignItems": "center",
+			                        "justifyContent": "start",
+			                        "wrap": "nowrap",
+			                        "gap": "small",
+			                        "fitContent": true,
+			                        "items": [
+			                            {
+			                                "type": "crt.Button",
+			                                "caption": "View Profile",
+			                                "color": "outline",
+			                                "displayType": "contained",
+			                                "size": "small",
+			                                "iconPosition": "only-text",
+			                                "clicked": {
+			                                    "request": "crt.UpdateRecordRequest",
+			                                    "params": {
+			                                        "itemsAttributeName": "Items",
+			                                        "recordId": "$Items.PDS_Id"
+			                                    }
+			                                }
+			                            },
+			                            {
+			                                "type": "crt.Button",
+			                                "caption": "$Items.PDS_UsrUserStatus | usr.StatusActionCaption",
+                                        "color": "$Items.PDS_UsrUserStatus | usr.MCITActionColor",
+                                        "displayType": "contained",
+                                        "size": "small",
+                                        "iconPosition": "only-text",
+                                        "disabled": "$Items.PDS_UsrUserStatus | usr.MCITActionDisabled",
+                                        "clicked": {
+                                            "request": "usr.ChangeMCITUserStatus",
+                                            "params": {
+                                                "recordId": "$Items.PDS_Id",
+                                                "currentStatus": "$Items.PDS_UsrUserStatus",
+                                                "targetUser": "$Items.PDS_UsrUser"
+                                            }
+                                        }
+			                            }
+			                        ]
+			                    }
+			                ]
+			            }
+			        ]
+			    },
+			    "parentName": "SectionContentWrapper",
+			    "propertyName": "items",
+			    "index": 1
 			},
 			{
 				"operation": "move",
@@ -1105,18 +1023,46 @@ define("UsrUserDirectory_ListPage", /**SCHEMA_DEPS*/["@creatio-devkit/common"]/*
 				"parentName": "ContentContainer",
 				"propertyName": "items",
 				"index": 1
-			}
+			},
+			{
+				"operation": "move",
+				"name": "SectionContentWrapper",
+				"parentName": "ContentContainer",
+				"propertyName": "items",
+				"index": 0
+			},
+            {
+                "operation": "merge",
+                "name": "MainContainer",
+                "values": { "classes": ["usr-dir-page-frame"] }
+            },
+            {
+                "operation": "merge",
+                "name": "ContentContainer",
+                "values": { "classes": ["usr-dir-content-zone"] }
+            },
+            {
+                "operation": "merge",
+                "name": "SectionContentWrapper",
+                "values": { "classes": ["usr-dir-view-layout"] }
+            },
+            {
+                "operation": "move",
+                "name": "GridContainer_b4lsi4n",
+                "parentName": "SectionContentWrapper",
+                "propertyName": "items",
+                "index": 0
+            }
 		]/**SCHEMA_VIEW_CONFIG_DIFF*/,
 		viewModelConfigDiff: /**SCHEMA_VIEW_MODEL_CONFIG_DIFF*/[
-			{
-				"operation": "merge",
-				"path": [
-					"attributes"
-				],
-				"values": {
-					"UsrDirectoryMetricsVisible": {}
-				}
-			},
+            {
+                "operation": "merge",
+                "path": ["attributes"],
+                "values": {
+                    // Virtual visibility switch, not a PDS attribute and not saved.
+                    "UsrDirectoryMetricsVisible": {}
+                }
+            },
 			{
 				"operation": "merge",
 				"path": [
@@ -1267,6 +1213,14 @@ define("UsrUserDirectory_ListPage", /**SCHEMA_DEPS*/["@creatio-devkit/common"]/*
                             .usr-dir-col-roles {
                                 line-height: 1.6 !important;
                             }
+                            .usr-dir-col-org[data-mcit-org-resolved="true"] crt-label {
+                                display: none !important;
+                            }
+                            .usr-dir-org-live {
+                                font-size: 12px; line-height: 1.5; color: inherit;
+                                white-space: normal; overflow-wrap: anywhere;
+                            }
+                            .usr-dir-role-empty {color:#8793a9;font-size:12px;}
                             .usr-dir-role-chips {
                                 display: flex !important;
                                 flex-wrap: wrap;
@@ -1329,7 +1283,10 @@ define("UsrUserDirectory_ListPage", /**SCHEMA_DEPS*/["@creatio-devkit/common"]/*
                             style: null, disposed: false, sequence: 0, activeRole: null,
                             // Organizational roles are resolved for DISPLAY ONLY.
                             orgNameByUser: new Map(), orgPendingUsers: new Set(),
-                            orgRoleListPromise: null
+                            orgRoleListPromise: null,
+                            // Verified native Functional Role memberships for the displayed user.
+                            functionalNamesByUser: new Map(), functionalPending: new Set(),
+                            functionalRoleDefsPromise: null
                         };
                         document[key] = runtime;
                         const guid = (x) => String(x?.value ?? x?.Id ?? x?.id ?? x ?? "").toLowerCase();
@@ -1427,16 +1384,20 @@ define("UsrUserDirectory_ListPage", /**SCHEMA_DEPS*/["@creatio-devkit/common"]/*
                                 const id = recordId(row);
                                 const orgName = runtime.orgNameByUser.get(id);
                                 if (!orgName) continue;
-                                const label = row.querySelector('.usr-dir-col-org');
-                                if (label && asText(label.textContent) !== orgName) {
-                                    // Preserve Creatio's component DOM instead of replacing
-                                    // the FlexContainer and nested crt.Label elements.
-                                    const target = label.querySelector('crt-label') || label;
-                                    const walker = document.createTreeWalker(target, NodeFilter.SHOW_TEXT);
-                                    let node = walker.nextNode();
-                                    while (node && !asText(node.nodeValue)) node = walker.nextNode();
-                                    if (node) node.nodeValue = orgName;
+                                const cell = row.querySelector('.usr-dir-col-org');
+                                if (!cell) continue;
+                                // In MCITLU the Account label may be COMPLETELY empty.
+                                // Replacing the first nonempty text node then does nothing.
+                                // Render the verified organizational role as an unobtrusive
+                                // text node beside (not inside) the Creatio bound Label.
+                                let resolved = cell.querySelector('.usr-dir-org-live');
+                                if (!resolved) {
+                                    resolved = document.createElement('span');
+                                    resolved.className = 'usr-dir-org-live';
+                                    cell.appendChild(resolved);
                                 }
+                                if (resolved.textContent !== orgName) resolved.textContent = orgName;
+                                cell.dataset.mcitOrgResolved = 'true';
                             }
                         };
 
@@ -1447,33 +1408,36 @@ define("UsrUserDirectory_ListPage", /**SCHEMA_DEPS*/["@creatio-devkit/common"]/*
                             for (const row of rowsNow()) {
                                 const cell = row.querySelector('.usr-dir-col-roles');
                                 if (!cell) continue;
+                                const id = recordId(row);
+                                const verified = runtime.functionalNamesByUser.has(id);
+                                const liveNames = verified ? runtime.functionalNamesByUser.get(id) : null;
                                 const native = cell.querySelector('crt-label') ||
                                     cell.querySelector('.usr-dir-role-raw');
                                 const nativeValue = asText(native?.innerText) ||
                                     asText(native?.textContent);
                                 const priorValue = asText(cell.dataset.mcitOriginalRoles);
-                                const raw = nativeValue || priorValue;
-                                if (!raw) continue;
-                                const roles = raw.split(/\s*,\s*/).map(x => x.trim()).filter(Boolean);
-                                if (!roles.length) continue;
+                                // Read-only computed membership takes priority. The summary
+                                // remains a safe fallback while membership is loading or denied.
+                                const roles = verified ? liveNames :
+                                    (nativeValue || priorValue).split(/\s*,\s*/).map(x=>x.trim()).filter(Boolean);
+                                if (!roles.length && !verified) continue;
                                 const normalized = roles.join(', ');
                                 let chips = cell.querySelector('.usr-dir-role-chips');
-                                if (chips && priorValue === normalized &&
-                                    chips.children.length === roles.length) continue;
+                                if (chips && cell.dataset.mcitOriginalRoles === normalized &&
+                                    chips.children.length === (roles.length || 1)) continue;
                                 if (!chips) {
                                     chips = document.createElement('div');
                                     chips.className = 'usr-dir-role-chips';
                                     cell.appendChild(chips);
                                 }
-                                // textContent ONLY: no HTML injection or PDS mutation.
-                                const nodes = roles.map(role => {
+                                const nodes = (roles.length ? roles : ['—']).map(role => {
                                     const item = document.createElement('span');
-                                    item.className = 'usr-dir-role-chip';
+                                    item.className = role === '—' ? 'usr-dir-role-empty' : 'usr-dir-role-chip';
                                     item.textContent = role;
                                     return item;
                                 });
                                 chips.replaceChildren(...nodes);
-                                chips.setAttribute('aria-label', normalized);
+                                chips.setAttribute('aria-label', normalized || 'No directly assigned functional roles');
                                 cell.dataset.mcitOriginalRoles = normalized;
                                 cell.dataset.mcitRolesReady = 'true';
                             }
@@ -1665,6 +1629,82 @@ define("UsrUserDirectory_ListPage", /**SCHEMA_DEPS*/["@creatio-devkit/common"]/*
                             }
                         };
 
+                        // V22: live Assigned Roles from Creatio, not a manually typed
+                        // UsrAssignedRolesSummary snapshot. Does NOT create or edit roles.
+                        const functionalDefinitions = () => {
+                            if (runtime.functionalRoleDefsPromise) return runtime.functionalRoleDefsPromise;
+                            runtime.functionalRoleDefsPromise = (async () => {
+                                const f = await filterValue('SysAdminUnitTypeValue', 6);
+                                const rows = await fetchModel('SysAdminUnit', ['Id','Name'], f, 501);
+                                if (rows.length >= 501) throw new Error('More than 500 functional roles');
+                                return rows.map(r => ({id:guid(r.Id), name:asText(r.Name)}))
+                                    .filter(r => validGuid(r.id) && r.name);
+                            })().catch(e => {
+                                runtime.functionalRoleDefsPromise = null;
+                                console.warn('MCIT Directory: cannot read functional role definitions',e);
+                                return null; // preserve stored summary rather than invent roles
+                            });
+                            return runtime.functionalRoleDefsPromise;
+                        };
+                        const updateFunctionalRoles = async () => {
+                            if (runtime.disposed) return;
+                            const ids = [...new Set(rowsNow().map(recordId).filter(validGuid))]
+                                .filter(id => !runtime.functionalNamesByUser.has(id) &&
+                                    !runtime.functionalPending.has(id));
+                            if (!ids.length) { decorateRoles(); return; }
+                            ids.forEach(id => runtime.functionalPending.add(id));
+                            try {
+                                const definitions = await functionalDefinitions();
+                                if (runtime.disposed || !definitions) return;
+                                const byId = new Map(definitions.map(r => [r.id,r.name]));
+                                const membershipModel = await sdk.Model.create('SysUserInRole');
+                                for (let offset=0;offset<ids.length && !runtime.disposed;offset+=3) {
+                                    await Promise.all(ids.slice(offset,offset+3).map(async userId => {
+                                        try {
+                                            let assigned = null;
+                                            // Prefer one query per user. Some Creatio builds
+                                            // do not project SysRole from SysUserInRole.
+                                            try {
+                                                const f = await filterValue('SysUser',userId);
+                                                const rows = await membershipModel.load({
+                                                    attributes:['Id','SysRole'],
+                                                    parameters:[{type:sdk.ModelParameterType.Filter,value:f}],
+                                                    options:{pagingConfig:{rowsOffset:0,rowCount:501}}
+                                                });
+                                                if (rows.length >= 501) throw new Error('Role membership exceeds 500');
+                                                const idsFound = rows.map(r=>guid(r.SysRole)).filter(validGuid);
+                                                if (rows.length && !idsFound.length) throw new Error('SysRole lookup projection unavailable');
+                                                assigned = [...new Set(idsFound)].filter(id=>byId.has(id)).map(id=>byId.get(id));
+                                            } catch (bulkError) {
+                                                // Same proven exact SysUserInRole filter used
+                                                // by the Profile Roles tab and Directory role filter.
+                                                const found = [];
+                                                for (let i=0;i<definitions.length;i+=6) {
+                                                    const checks = await Promise.all(definitions.slice(i,i+6).map(async role => {
+                                                        const filter = await filterValue('SysRole',role.id,['SysUser',userId]);
+                                                        const matches = await membershipModel.load({
+                                                            attributes:['Id'],
+                                                            parameters:[{type:sdk.ModelParameterType.Filter,value:filter}],
+                                                            options:{pagingConfig:{rowsOffset:0,rowCount:1}}
+                                                        });
+                                                        return matches.length ? role.name : null;
+                                                    }));
+                                                    found.push(...checks.filter(Boolean));
+                                                }
+                                                assigned = [...new Set(found)];
+                                            }
+                                            if (!runtime.disposed && assigned !== null) {
+                                                runtime.functionalNamesByUser.set(userId, assigned.sort((a,b)=>a.localeCompare(b)));
+                                            }
+                                        } catch(e) {
+                                            console.warn('MCIT Directory: functional membership unavailable for user',userId,e);
+                                            // Keep original snapshot if native role query fails.
+                                        } finally { runtime.functionalPending.delete(userId); }
+                                    }));
+                                    if (!runtime.disposed) decorateRoles();
+                                }
+                            } finally { ids.forEach(id=>runtime.functionalPending.delete(id)); }
+                        };
                         const loadRoles = async (select) => {
                             select.disabled = true;
                             try {
@@ -2216,6 +2256,7 @@ define("UsrUserDirectory_ListPage", /**SCHEMA_DEPS*/["@creatio-devkit/common"]/*
                                 if (relevant) {
                                     updateLogins();
                                     updateOrganizations();
+                                    updateFunctionalRoles();
                                 }
                                 if (relevant && runtime.roleId) loadRoleMembers(runtime.roleId);
                             } else if (rolesRepainted) {
@@ -2241,6 +2282,7 @@ define("UsrUserDirectory_ListPage", /**SCHEMA_DEPS*/["@creatio-devkit/common"]/*
                         getCurrentUser().then(id=>{if (!runtime.disposed){runtime.currentUserId=id;apply();}});
                         updateLogins();
                         updateOrganizations();
+                        updateFunctionalRoles();
                     } catch(e) {
                         // Never interrupt page initialization on toolbar failure.
                         console.error("MCIT V10 toolbar init failed; original V6 remains available",e);

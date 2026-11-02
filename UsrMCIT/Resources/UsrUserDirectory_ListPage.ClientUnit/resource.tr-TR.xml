@@ -2,6 +2,7 @@
 <Resources Culture="tr-TR">
 	<Group Type="String">
 		<Items>
+			<Item Name="Caption" Value="User Directory list page" />
 			<Item Name="LocalizableStrings.AddButton_caption.Value" Value="Yeni" />
 			<Item Name="LocalizableStrings.DataImportButton_caption.Value" Value="İthalat" />
 		</Items>
