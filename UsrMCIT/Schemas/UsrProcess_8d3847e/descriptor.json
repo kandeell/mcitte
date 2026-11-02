@@ -4,6 +4,7 @@
     "Name": "UsrProcess_8d3847e",
     "ModifiedOnUtc": "\/Date(1793617681000)\/",
     "ManagerName": "ProcessSchemaManager",
-    "Caption": "MCIT Sync Portal Users"
+    "Caption": "MCIT Sync Portal Users",
+    "DependsOn": []
   }
 }

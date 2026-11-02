@@ -4,6 +4,7 @@
     "Name": "UsrProcess_e66223c",
     "ModifiedOnUtc": "\/Date(1793560747000)\/",
     "ManagerName": "ProcessSchemaManager",
-    "Caption": "MCIT Assigned Roles"
+    "Caption": "MCIT Assigned Roles",
+    "DependsOn": []
   }
 }

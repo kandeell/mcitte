@@ -4,6 +4,7 @@
     "Name": "UsrProcess_61ec310",
     "ModifiedOnUtc": "\/Date(1793618734000)\/",
     "ManagerName": "ProcessSchemaManager",
-    "Caption": "MCIT Auto Sync Scheduler"
+    "Caption": "MCIT Auto Sync Scheduler",
+    "DependsOn": []
   }
 }

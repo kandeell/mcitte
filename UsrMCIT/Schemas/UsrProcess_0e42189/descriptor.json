@@ -2,8 +2,9 @@
   "Descriptor": {
     "UId": "f0307d03-9a38-48b3-a942-795c1d83ecf6",
     "Name": "UsrProcess_0e42189",
-    "ModifiedOnUtc": "\/Date(1793561475000)\/",
+    "ModifiedOnUtc": "\/Date(1793561476000)\/",
     "ManagerName": "ProcessSchemaManager",
-    "Caption": "Refresh MCIT User Scope"
+    "Caption": "Refresh MCIT User Scope",
+    "DependsOn": []
   }
 }

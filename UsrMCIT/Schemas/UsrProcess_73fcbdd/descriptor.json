@@ -4,6 +4,7 @@
     "Name": "UsrProcess_73fcbdd",
     "ModifiedOnUtc": "\/Date(1793564797000)\/",
     "ManagerName": "ProcessSchemaManager",
-    "Caption": "MCIT Auto Provision User Access"
+    "Caption": "MCIT Auto Provision User Access",
+    "DependsOn": []
   }
 }
