@@ -1,0 +1,14 @@
+﻿{
+  "Descriptor": {
+    "UId": "43dd43bd-4844-46b9-8d27-8677063e0ee7",
+    "Name": "UsrAdministrationHome",
+    "ModifiedOnUtc": "\/Date(1792930221000)\/",
+    "Parent": {
+      "UId": "1bab9dcf-17d5-49f8-9536-8e0064f1dce0",
+      "Name": "BaseEntity"
+    },
+    "ManagerName": "EntitySchemaManager",
+    "Caption": "Administration Home",
+    "DependsOn": []
+  }
+}

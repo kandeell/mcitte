@@ -1,0 +1,14 @@
+﻿{
+  "Descriptor": {
+    "UId": "83499325-8982-4e4a-a799-90357f2df540",
+    "Name": "UsrPage_3f0eyo5",
+    "ModifiedOnUtc": "\/Date(1792740302000)\/",
+    "Parent": {
+      "UId": "b7b898d0-8c77-4953-c097-23fa6800da02",
+      "Name": "ListPageV3Template"
+    },
+    "ManagerName": "ClientUnitSchemaManager",
+    "Caption": "Admin User Directory",
+    "DependsOn": []
+  }
+}

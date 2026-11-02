@@ -1,0 +1,9 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Resources Culture="uk-UA">
+	<Group Type="String">
+		<Items>
+			<Item Name="LocalizableStrings.AddButton_caption.Value" Value="Додати" />
+			<Item Name="LocalizableStrings.DataImportButton_caption.Value" Value="Імпорт" />
+		</Items>
+	</Group>
+</Resources>

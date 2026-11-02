@@ -1,0 +1,14 @@
+﻿{
+  "Descriptor": {
+    "UId": "10eaf8ca-014d-4c3f-89a4-dd75fc29a0cc",
+    "Name": "UsrVirtualMachines_FormPage",
+    "ModifiedOnUtc": "\/Date(1792511003000)\/",
+    "Parent": {
+      "UId": "3b2e117f-8c6b-4ca5-80a2-7ebb497cddf9",
+      "Name": "PageWithTabsFreedomTemplate"
+    },
+    "ManagerName": "ClientUnitSchemaManager",
+    "Caption": "Virtual Machines form page",
+    "DependsOn": []
+  }
+}

@@ -2,7 +2,7 @@
   "Descriptor": {
     "UId": "712747c8-4da4-3782-d20c-27bcc9d7ad74",
     "Name": "SysModuleInWorkplace_MyApplications",
-    "ModifiedOnUtc": "\/Date(1793278164000)\/",
+    "ModifiedOnUtc": "\/Date(1793301229000)\/",
     "InstallType": 0,
     "Schema": {
       "UId": "a8b20179-02be-4a13-8908-9fc51cb9f66d",
@@ -11,15 +11,15 @@
     "Columns": [
       {
         "ColumnUId": "0e3d3857-2203-40e4-b1ec-8e972007650e",
-        "IsForceUpdate": false,
-        "IsKey": true,
+        "IsForceUpdate": true,
+        "IsKey": false,
         "ColumnName": "SysWorkplace",
         "DataTypeValueUId": "b295071f-7ea9-4e62-8d1a-919bf3732ff2"
       },
       {
         "ColumnUId": "991cf5ef-ffb8-49a5-add3-074a595f6c43",
-        "IsForceUpdate": false,
-        "IsKey": true,
+        "IsForceUpdate": true,
+        "IsKey": false,
         "ColumnName": "SysModule",
         "DataTypeValueUId": "b295071f-7ea9-4e62-8d1a-919bf3732ff2"
       },
@@ -33,7 +33,7 @@
       {
         "ColumnUId": "ae0e45ca-c495-4fe7-a39d-3ab7278e1617",
         "IsForceUpdate": false,
-        "IsKey": false,
+        "IsKey": true,
         "ColumnName": "Id",
         "DataTypeValueUId": "23018567-a13c-4320-8687-fd6f9e3699bd"
       },

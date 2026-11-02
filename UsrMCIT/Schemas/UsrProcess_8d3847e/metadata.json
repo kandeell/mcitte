@@ -1,0 +1,157 @@
+{
+  "MetaData": {
+    "Schema": {
+      "ManagerName": "ProcessSchemaManager",
+      "UId": "7cc5ed0d-2f5f-4870-aeba-8323980ff4d5",
+      "A2": "UsrProcess_8d3847e",
+      "A5": "65028ea3-626f-4465-8b2e-544849e5d8c6",
+      "B1": [],
+      "B2": [],
+      "B3": [],
+      "B6": "5dcca910-bc4c-42b7-bfe0-2ad5c8cc3965",
+      "B8": "10.1.796.0",
+      "FJ1": [],
+      "IJ1": true,
+      "BK8": "bb4d6607-026b-4b27-b640-8f5c77c1e89d",
+      "IJ10": true,
+      "BK15": [],
+      "BK37": {
+        "BL1": "Terrasoft.Core.Process.ProcessSchemaParameter",
+        "UId": "cdd58be7-2dba-4a5e-869b-1ad5d6d7513a",
+        "A2": "NotificationCaption",
+        "A3": "7cc5ed0d-2f5f-4870-aeba-8323980ff4d5",
+        "A4": "7cc5ed0d-2f5f-4870-aeba-8323980ff4d5",
+        "L1": "8b3f29bb-ea14-4ce5-a5c5-293a929b6ba2",
+        "L8": {
+          "GS1": 3,
+          "GS2": "[#[PropertyValue:Caption]#]"
+        }
+      },
+      "BK1": "FFFFFFFF",
+      "BK2": "FFBBBBBB",
+      "BK3": [
+        {
+          "BL1": "Terrasoft.Core.Process.ProcessSchemaLaneSet",
+          "UId": "be286f77-b9be-4e97-a80a-b3dce4e2e861",
+          "A2": "LaneSet1",
+          "A3": "7cc5ed0d-2f5f-4870-aeba-8323980ff4d5",
+          "A4": "7cc5ed0d-2f5f-4870-aeba-8323980ff4d5",
+          "A5": "a00051f4-cde3-4f3f-b08e-c5ad1a5c735a",
+          "BL7": "11a47caf-a0d5-41fa-a274-a0b11f77447a",
+          "BL8": "7cc5ed0d-2f5f-4870-aeba-8323980ff4d5",
+          "BM1": 0,
+          "BM4": [
+            {
+              "BL1": "Terrasoft.Core.Process.ProcessSchemaLane",
+              "UId": "cb55a738-09d0-48c0-b9ea-adc57dacb34a",
+              "A2": "Lane1",
+              "A3": "7cc5ed0d-2f5f-4870-aeba-8323980ff4d5",
+              "A4": "7cc5ed0d-2f5f-4870-aeba-8323980ff4d5",
+              "A5": "a00051f4-cde3-4f3f-b08e-c5ad1a5c735a",
+              "IL2": "be286f77-b9be-4e97-a80a-b3dce4e2e861",
+              "BL7": "abcd74b9-5912-414b-82ac-f1aa4dcd554e",
+              "BL8": "7cc5ed0d-2f5f-4870-aeba-8323980ff4d5",
+              "CD1": [],
+              "CD2": [],
+              "CD4": "be286f77-b9be-4e97-a80a-b3dce4e2e861",
+              "CD7": []
+            }
+          ]
+        }
+      ],
+      "BK5": [],
+      "BK4": [
+        {
+          "BL1": "Terrasoft.Core.Process.ProcessSchemaStartEvent",
+          "UId": "2788ff08-19fa-4152-8b7d-6f04f18f4c6f",
+          "A2": "StartEvent1",
+          "A3": "7cc5ed0d-2f5f-4870-aeba-8323980ff4d5",
+          "A4": "7cc5ed0d-2f5f-4870-aeba-8323980ff4d5",
+          "A5": "a00051f4-cde3-4f3f-b08e-c5ad1a5c735a",
+          "IL2": "cb55a738-09d0-48c0-b9ea-adc57dacb34a",
+          "BL3": "50;184",
+          "BL7": "53818048-7868-48f6-ada0-0ebaa65af628",
+          "BL8": "7cc5ed0d-2f5f-4870-aeba-8323980ff4d5",
+          "BN2": "31;31",
+          "BO3": true,
+          "FC1": [],
+          "ED1": false
+        },
+        {
+          "BL1": "Terrasoft.Core.Process.ProcessSchemaTerminateEvent",
+          "UId": "7bf8ea3c-0123-4ede-8e0c-ef406a90e7d0",
+          "A2": "TerminateEvent1",
+          "A3": "7cc5ed0d-2f5f-4870-aeba-8323980ff4d5",
+          "A4": "7cc5ed0d-2f5f-4870-aeba-8323980ff4d5",
+          "A5": "a00051f4-cde3-4f3f-b08e-c5ad1a5c735a",
+          "IL2": "cb55a738-09d0-48c0-b9ea-adc57dacb34a",
+          "BL3": "549;184",
+          "BL7": "1bd93619-0574-454e-bb4e-cf53b9eb9470",
+          "BL8": "7cc5ed0d-2f5f-4870-aeba-8323980ff4d5",
+          "BN2": "31;31",
+          "BO3": true,
+          "FC1": []
+        },
+        {
+          "BL1": "Terrasoft.Core.Process.ProcessSchemaScriptTask",
+          "UId": "e595b750-c163-4412-8164-6ace2eb6c880",
+          "A2": "ScriptTask1",
+          "A3": "7cc5ed0d-2f5f-4870-aeba-8323980ff4d5",
+          "A4": "7cc5ed0d-2f5f-4870-aeba-8323980ff4d5",
+          "A5": "a00051f4-cde3-4f3f-b08e-c5ad1a5c735a",
+          "IL2": "cb55a738-09d0-48c0-b9ea-adc57dacb34a",
+          "BL3": "310;172",
+          "BL7": "0e490dda-e140-4441-b600-6f5c64d024df",
+          "BL8": "7cc5ed0d-2f5f-4870-aeba-8323980ff4d5",
+          "BN2": "69;55",
+          "BO3": true,
+          "BP2": [],
+          "CL2": "FFFFFFFF",
+          "CH1": "// MCIT Sync Portal Users — paste into a Creatio Script task (NOT a C# source file class).\n// Source: SysAdminUnit (internal users, SysAdminUnitTypeValue = 4).\n// Destination: UsrMCITPortalUserAccess (one row per UsrUser).\n// Idempotent: never changes existing Portal User Access rows.\n// Run only in an authorized environment as a user with read/write access.\n\nvar manager = UserConnection.EntitySchemaManager;\n\n// 1. Resolve Portal status lookup records by name instead of assuming IDs.\nvar statusQuery = new Terrasoft.Core.Entities.EntitySchemaQuery(manager, \"UsrMCITUserStatus\");\nstatusQuery.PrimaryQueryColumn.IsAlwaysSelect = true;\nvar statusNameColumn = statusQuery.AddColumn(\"Name\");\nvar statusIds = new System.Collections.Generic.Dictionary<string, System.Guid>(\n    System.StringComparer.OrdinalIgnoreCase);\nforeach (var status in statusQuery.GetEntityCollection(UserConnection)) {\n    var name = status.GetTypedColumnValue<string>(statusNameColumn.Name);\n    if (!System.String.IsNullOrWhiteSpace(name)) {\n        statusIds[name.Trim()] = status.PrimaryColumnValue;\n    }\n}\nif (!statusIds.ContainsKey(\"Active\") || !statusIds.ContainsKey(\"Inactive\")) {\n    throw new System.Exception(\"MCIT User Status lookup needs Active and Inactive rows.\");\n}\n\n// 2. Read the SysAdminUnit user IDs that already have a Portal Access row.\nvar existingQuery = new Terrasoft.Core.Entities.EntitySchemaQuery(\n    manager, \"UsrMCITPortalUserAccess\");\nexistingQuery.PrimaryQueryColumn.IsAlwaysSelect = true;\nvar existingUserColumn = existingQuery.AddColumn(\"UsrUser.Id\");\nvar existingUserIds = new System.Collections.Generic.HashSet<System.Guid>();\nforeach (var access in existingQuery.GetEntityCollection(UserConnection)) {\n    var linkedId = access.GetTypedColumnValue<System.Guid>(existingUserColumn.Name);\n    if (linkedId != System.Guid.Empty) existingUserIds.Add(linkedId);\n}\n\n// 3. Read real Creatio internal users, including Supervisor.\nvar userQuery = new Terrasoft.Core.Entities.EntitySchemaQuery(manager, \"SysAdminUnit\");\nuserQuery.PrimaryQueryColumn.IsAlwaysSelect = true;\nvar userNameColumn = userQuery.AddColumn(\"Name\");\nvar userActiveColumn = userQuery.AddColumn(\"Active\");\nuserQuery.Filters.Add(userQuery.CreateFilterWithParameters(\n    Terrasoft.Core.Entities.FilterComparisonType.Equal,\n    \"SysAdminUnitTypeValue\", 4));\n\nvar portalSchema = manager.GetInstanceByName(\"UsrMCITPortalUserAccess\");\nvar displayNameColumn = portalSchema.Columns.FindByName(\"UsrDisplayName\")\n    ?? portalSchema.Columns.FindByCaption(\"Display Name\");\n\nint created = 0;\nint alreadyExisted = 0;\nint excluded = 0;\n\nforeach (var user in userQuery.GetEntityCollection(UserConnection)) {\n    var userId = user.PrimaryColumnValue;\n    var userName = user.GetTypedColumnValue<string>(userNameColumn.Name);\n    var isActive = user.GetTypedColumnValue<bool>(userActiveColumn.Name);\n\n    if (userId == System.Guid.Empty || System.String.IsNullOrWhiteSpace(userName)) {\n        excluded++;\n        continue;\n    }\n    userName = userName.Trim();\n    // Service-only integration account is not a human user in the MCIT directory.\n    if (userName.Equals(\"SysPortalConnection\", System.StringComparison.OrdinalIgnoreCase)) {\n        excluded++;\n        continue;\n    }\n    if (existingUserIds.Contains(userId)) {\n        alreadyExisted++;\n        continue;\n    }\n\n    // 4. Collect directly assigned functional roles for the new user's summary.\n    var rolesQuery = new Terrasoft.Core.Entities.EntitySchemaQuery(manager, \"SysUserInRole\");\n    var roleNameColumn = rolesQuery.AddColumn(\"SysRole.Name\");\n    rolesQuery.Filters.Add(rolesQuery.CreateFilterWithParameters(\n        Terrasoft.Core.Entities.FilterComparisonType.Equal, \"SysUser\", userId));\n    rolesQuery.Filters.Add(rolesQuery.CreateFilterWithParameters(\n        Terrasoft.Core.Entities.FilterComparisonType.Equal,\n        \"SysRole.SysAdminUnitTypeValue\", 6));\n    var assignedRoles = new System.Collections.Generic.SortedSet<string>(\n        System.StringComparer.OrdinalIgnoreCase);\n    foreach (var member in rolesQuery.GetEntityCollection(UserConnection)) {\n        var roleName = member.GetTypedColumnValue<string>(roleNameColumn.Name);\n        if (!System.String.IsNullOrWhiteSpace(roleName)) assignedRoles.Add(roleName.Trim());\n    }\n    var roleSummary = System.String.Join(\", \", assignedRoles);\n    if (roleSummary.Length > 500) {\n        throw new System.Exception(\"Assigned roles summary is longer than 500 characters for \" + userName);\n    }\n\n    // 5. Add a missing row. Crucially: UsrUserId is the SysAdminUnit.Id,\n    //    NOT the display name, and NOT the Portal Access row Id.\n    var accessEntity = portalSchema.CreateEntity(UserConnection);\n    accessEntity.SetDefColumnValues();\n    accessEntity.SetColumnValue(\"UsrUserId\", userId);\n    accessEntity.SetColumnValue(\"UsrName\", userName);\n    if (displayNameColumn != null && displayNameColumn.Name != \"Name\") {\n        accessEntity.SetColumnValue(displayNameColumn.Name, userName);\n    }\n    accessEntity.SetColumnValue(\"UsrUserStatusId\", statusIds[isActive ? \"Active\" : \"Inactive\"]);\n    accessEntity.SetColumnValue(\"UsrScopeSummary\", \"Contracts: 0, Authorities: 0\");\n    accessEntity.SetColumnValue(\"UsrAssignedRolesSummary\", roleSummary);\n    // Last Sign-in is intentionally left blank until the actual session sync runs.\n    if (!accessEntity.Save()) {\n        throw new System.Exception(\"Failed to create MCIT Portal Access for \" + userName);\n    }\n    existingUserIds.Add(userId);\n    created++;\n}\n\nSystem.Diagnostics.Trace.WriteLine(\n    \"MCIT Sync Portal Users: created=\" + created +\n    \", already existed=\" + alreadyExisted + \", excluded=\" + excluded);\nreturn true;\n",
+          "CH2": true
+        },
+        {
+          "BL1": "Terrasoft.Core.Process.ProcessSchemaSequenceFlow",
+          "UId": "672d6b40-8504-43e1-a0bf-2590ac8064cc",
+          "A2": "SequenceFlow1",
+          "A3": "7cc5ed0d-2f5f-4870-aeba-8323980ff4d5",
+          "A4": "7cc5ed0d-2f5f-4870-aeba-8323980ff4d5",
+          "A5": "a00051f4-cde3-4f3f-b08e-c5ad1a5c735a",
+          "BL7": "0d8351f6-c2f4-4737-bdd9-6fbfe0837fec",
+          "BL8": "7cc5ed0d-2f5f-4870-aeba-8323980ff4d5",
+          "CI1": "2788ff08-19fa-4152-8b7d-6f04f18f4c6f",
+          "CI2": "e595b750-c163-4412-8164-6ace2eb6c880",
+          "CI3": "null",
+          "CI5": "FF939598",
+          "CI6": 1,
+          "CI11": "81;200",
+          "CI12": "310;200"
+        },
+        {
+          "BL1": "Terrasoft.Core.Process.ProcessSchemaSequenceFlow",
+          "UId": "ff92af54-e7d3-4cf4-a70a-3f3e75b92448",
+          "A2": "SequenceFlow2",
+          "A3": "7cc5ed0d-2f5f-4870-aeba-8323980ff4d5",
+          "A4": "7cc5ed0d-2f5f-4870-aeba-8323980ff4d5",
+          "A5": "a00051f4-cde3-4f3f-b08e-c5ad1a5c735a",
+          "BL7": "0d8351f6-c2f4-4737-bdd9-6fbfe0837fec",
+          "BL8": "7cc5ed0d-2f5f-4870-aeba-8323980ff4d5",
+          "CI1": "e595b750-c163-4412-8164-6ace2eb6c880",
+          "CI2": "7bf8ea3c-0123-4ede-8e0c-ef406a90e7d0",
+          "CI3": "null",
+          "CI5": "FF939598",
+          "CI6": 1,
+          "CI11": "379;200",
+          "CI12": "549;200"
+        }
+      ],
+      "BK9": [],
+      "BK18": "Business Process",
+      "BK29": true,
+      "BK30": true,
+      "BK34": "en-US",
+      "Labels": [],
+      "BK24": []
+    }
+  }
+}

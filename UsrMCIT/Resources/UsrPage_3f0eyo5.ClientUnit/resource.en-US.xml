@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Resources Culture="en-US">
+	<Group Type="String">
+		<Items>
+			<Item Name="Caption" Value="Admin User Directory" />
+			<Item Name="LocalizableStrings.AddButton_caption.Value" Value="New" />
+			<Item Name="LocalizableStrings.DataImportButton_caption.Value" Value="Import" />
+			<Item Name="LocalizableStrings.IndicatorWidget_e8yjyso_config_text_template.Value" Value="{0}Inactive" />
+			<Item Name="LocalizableStrings.IndicatorWidget_e8yjyso_hint.Value" Value="Components.IndicatorWidget.Hint" />
+			<Item Name="LocalizableStrings.IndicatorWidget_e8yjyso_title.Value" Value="Inactive" />
+			<Item Name="LocalizableStrings.IndicatorWidget_mz0vlo4_config_text_template.Value" Value="{0}Deactivated" />
+			<Item Name="LocalizableStrings.IndicatorWidget_mz0vlo4_hint.Value" Value="Components.IndicatorWidget.Hint" />
+			<Item Name="LocalizableStrings.IndicatorWidget_mz0vlo4_title.Value" Value="Deactivated" />
+			<Item Name="LocalizableStrings.IndicatorWidget_ta4h473_config_text_template.Value" Value="{0} Active" />
+			<Item Name="LocalizableStrings.IndicatorWidget_ta4h473_hint.Value" Value="Components.IndicatorWidget.Hint" />
+			<Item Name="LocalizableStrings.IndicatorWidget_ta4h473_title.Value" Value="Active" />
+			<Item Name="LocalizableStrings.Label_lg8st5b_caption.Value" Value="Portal access provisioned from corporate Active Directory" />
+			<Item Name="LocalizableStrings.PDS_Contact.Value" Value="Display Name" />
+			<Item Name="LocalizableStrings.PDS_Contact_Account.Value" Value="Organization" />
+			<Item Name="LocalizableStrings.PDS_UsrMCITPortalUserAccessUsrUser_UsrUserStatus_Name_qjjwmj6.Value" Value="Status" />
+			<Item Name="LocalizableStrings.PDS_UsrUser.Value" Value="Display Name" />
+			<Item Name="LocalizableStrings.PDS_UsrUser_Account.Value" Value="Organization" />
+			<Item Name="LocalizableStrings.PDS_UsrUser_Contact_Account.Value" Value="Organization" />
+			<Item Name="LocalizableStrings.PDS_UsrUser_Name.Value" Value="Display Name" />
+			<Item Name="LocalizableStrings.PageTitle_caption.Value" Value="User Directory" />
+		</Items>
+	</Group>
+</Resources>

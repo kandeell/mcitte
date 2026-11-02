@@ -1,0 +1,14 @@
+﻿{
+  "Descriptor": {
+    "UId": "aca020b0-a059-4d4d-bf2b-469210374b60",
+    "Name": "UsrMCITUserContractAccess",
+    "ModifiedOnUtc": "\/Date(1792741040000)\/",
+    "Parent": {
+      "UId": "1bab9dcf-17d5-49f8-9536-8e0064f1dce0",
+      "Name": "BaseEntity"
+    },
+    "ManagerName": "EntitySchemaManager",
+    "Caption": "MCIT User Contract Access",
+    "DependsOn": []
+  }
+}
