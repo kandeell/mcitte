@@ -125,7 +125,13 @@
 			    var accessEntity = portalSchema.CreateEntity(UserConnection);
 			    accessEntity.SetDefColumnValues();
 			    accessEntity.SetColumnValue("UsrUserId", userId);
-			    accessEntity.SetColumnValue("UsrName", userName);
+			    // Resolve the actual schema column code (custom columns can be prefixed).
+			    var nameColumn = portalSchema.Columns.FindByName("UsrName")
+			        ?? portalSchema.Columns.FindByName("Name")
+			        ?? portalSchema.Columns.FindByCaption("Name");
+			    if (nameColumn != null) {
+			        accessEntity.SetColumnValue(nameColumn.Name, userName);
+			    }
 			    if (displayNameColumn != null && displayNameColumn.Name != "Name") {
 			        accessEntity.SetColumnValue(displayNameColumn.Name, userName);
 			    }
@@ -139,6 +145,77 @@
 			    existingUserIds.Add(userId);
 			    created++;
 			}
+			
+			
+			// -----------------------------------------------------------------------------
+			// 6. LAST SIGN-IN SYNC (safe extension; no changes to roles/status/scope).
+			// Source: SysUserSession.SysUserId + SysUserSession.SessionStartDate.
+			// Destination: UsrMCITPortalUserAccess.UsrLastSignIn.
+			// Syncs only strictly newer real session timestamps. Never writes DateTime.Now.
+			// -----------------------------------------------------------------------------
+			int signInsUpdated = 0;
+			int portalUsersWithoutSession = 0;
+			int signInsAlreadyCurrent = 0;
+			
+			var signInAccessQuery = new Terrasoft.Core.Entities.EntitySchemaQuery(
+			    manager, "UsrMCITPortalUserAccess");
+			signInAccessQuery.PrimaryQueryColumn.IsAlwaysSelect = true;
+			var linkedUserCol = signInAccessQuery.AddColumn("UsrUser.Id");
+			var savedSignInCol = signInAccessQuery.AddColumn("UsrLastSignIn");
+			
+			foreach (var access in signInAccessQuery.GetEntityCollection(UserConnection)) {
+			    var linkedUserId = access.GetTypedColumnValue<System.Guid>(linkedUserCol.Name);
+			    if (linkedUserId == System.Guid.Empty) {
+			        portalUsersWithoutSession++;
+			        continue;
+			    }
+			
+			    // Directly read the physical session table. This avoids relying on a
+			    // non-firing 'User session created' object signal or on the UI being open.
+			    // Top(1) + ORDER BY desc reads the most recent session for that exact user.
+			    var lastSessionQuery = new Terrasoft.Core.DB.Select(UserConnection)
+			        .Top(1)
+			        .Column("SessionStartDate")
+			        .From("SysUserSession")
+			        .Where("SysUserId").IsEqual(
+			            Terrasoft.Core.DB.Column.Parameter(linkedUserId))
+			        .OrderByDesc("SessionStartDate") as Terrasoft.Core.DB.Select;
+			
+			    System.DateTime lastRealSession = System.DateTime.MinValue;
+			    using (var dbExecutor = UserConnection.EnsureDBConnection()) {
+			        using (var reader = lastSessionQuery.ExecuteReader(dbExecutor)) {
+			            if (reader.Read() && !reader.IsDBNull(0)) {
+			                lastRealSession = reader.GetDateTime(0);
+			            }
+			        }
+			    }
+			    if (lastRealSession == System.DateTime.MinValue) {
+			        portalUsersWithoutSession++;
+			        continue;
+			    }
+			
+			    var oldValue = access.GetColumnValue(savedSignInCol.Name);
+			    var previousSignIn = (oldValue == null || oldValue == System.DBNull.Value)
+			        ? System.DateTime.MinValue
+			        : System.Convert.ToDateTime(oldValue);
+			
+			    if (lastRealSession <= previousSignIn) {
+			        signInsAlreadyCurrent++;
+			        continue;
+			    }
+			
+			    access.SetColumnValue("UsrLastSignIn", lastRealSession);
+			    if (!access.Save()) {
+			        throw new System.Exception(
+			            "MCIT Last Sign-in: failed to save record for user ID " + linkedUserId);
+			    }
+			    signInsUpdated++;
+			}
+			
+			System.Diagnostics.Trace.WriteLine(
+			    "MCIT Last Sign-in: updated=" + signInsUpdated +
+			    ", no session=" + portalUsersWithoutSession +
+			    ", already current=" + signInsAlreadyCurrent);
 			
 			System.Diagnostics.Trace.WriteLine(
 			    "MCIT Sync Portal Users: created=" + created +

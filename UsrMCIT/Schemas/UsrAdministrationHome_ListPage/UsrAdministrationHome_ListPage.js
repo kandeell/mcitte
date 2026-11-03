@@ -33,7 +33,7 @@ function/**SCHEMA_ARGS*/(sdk)/**SCHEMA_ARGS*/ {
         {id:"sla",         title:"SLA & Escalations",   desc:"SLA policies and escalation rules",icon:"clock",     tint:"orange", route:null},
         {id:"notifications",title:"Notifications",     desc:"Events, templates & delivery",   icon:"bell",      tint:"red",    route:null},
         {id:"lookups",     title:"Lookup Data",         desc:"Reference lists & enumerations", icon:"filter",    tint:"gray",   route:null},
-        {id:"resources",   title:"Resource Catalog",    desc:"VM specs & billing options",     icon:"monitor",   tint:"cyan",   route:null},
+        {id:"resources",   title:"Resource Catalog",    desc:"VM specs & billing options",     icon:"monitor",   tint:"cyan",   route:"Section/UsrMCITResourceCatalog_ListPage"},
         {id:"reports",     title:"Report Catalog",      desc:"Managed reports & exports",      icon:"file",      tint:"purple", route:null},
         {id:"audit",       title:"Audit Log",           desc:"Full administrative audit trail", icon:"history",   tint:"gray",   route:null},
         {id:"signin",      title:"Sign-in Screen",      desc:"Auth screen configuration",      icon:"link",      tint:"purple", route:null},
