@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Resources Culture="en-US">
+	<Group Type="String">
+		<Items>
+			<Item Name="Caption" Value="Projects form page" />
+			<Item Name="LocalizableStrings.ExpansionPanel_84661rt_title.Value" Value="Virtual Machine" />
+			<Item Name="LocalizableStrings.ExpansionPanel_jhv7afm_title.Value" Value="VM Request" />
+			<Item Name="LocalizableStrings.GridDetailAddBtn_fax27k8_caption.Value" Value="New" />
+			<Item Name="LocalizableStrings.GridDetailAddBtn_s2wbltm_caption.Value" Value="New" />
+			<Item Name="LocalizableStrings.GridDetailExportDataBtn_byy2khd_caption.Value" Value="Export to Excel" />
+			<Item Name="LocalizableStrings.GridDetailExportDataBtn_zsw087z_caption.Value" Value="Export to Excel" />
+			<Item Name="LocalizableStrings.GridDetailImportDataBtn_jko4h2r_caption.Value" Value="Data import" />
+			<Item Name="LocalizableStrings.GridDetailImportDataBtn_z19pgtv_caption.Value" Value="Data import" />
+			<Item Name="LocalizableStrings.GridDetailRefreshBtn_8t8klss_caption.Value" Value="Refresh" />
+			<Item Name="LocalizableStrings.GridDetailRefreshBtn_vjpn2v7_caption.Value" Value="Refresh" />
+			<Item Name="LocalizableStrings.GridDetailSearchFilter_f888jdp_placeholder.Value" Value="Search" />
+			<Item Name="LocalizableStrings.GridDetailSearchFilter_quism62_placeholder.Value" Value="Search" />
+			<Item Name="LocalizableStrings.GridDetailSettingsBtn_2jgbo3k_caption.Value" Value="Actions" />
+			<Item Name="LocalizableStrings.GridDetailSettingsBtn_flrkzef_caption.Value" Value="Actions" />
+			<Item Name="LocalizableStrings.Label_nnbtcca_caption.Value" Value="Project Information" />
+			<Item Name="LocalizableStrings.Label_pdzjr41_caption.Value" Value="Project Settings" />
+			<Item Name="LocalizableStrings.addRecord_72n7zl5_caption.Value" Value="Add new" />
+		</Items>
+	</Group>
+</Resources>

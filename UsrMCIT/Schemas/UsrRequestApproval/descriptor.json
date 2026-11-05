@@ -1,0 +1,14 @@
+﻿{
+  "Descriptor": {
+    "UId": "5409771a-4a5d-42c6-9027-bf3d9fcaf745",
+    "Name": "UsrRequestApproval",
+    "ModifiedOnUtc": "\/Date(1791996250000)\/",
+    "Parent": {
+      "UId": "1bab9dcf-17d5-49f8-9536-8e0064f1dce0",
+      "Name": "BaseEntity"
+    },
+    "ManagerName": "EntitySchemaManager",
+    "Caption": "Request Approval",
+    "DependsOn": []
+  }
+}

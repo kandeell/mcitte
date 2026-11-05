@@ -1,0 +1,13 @@
+﻿{
+  "Descriptor": {
+    "UId": "6be46927-b327-4df5-b641-94bc314e595f",
+    "Name": "UsrMCITRequestDetail_Page",
+    "ModifiedOnUtc": "\/Date(1793795964000)\/",
+    "Parent": {
+      "UId": "27e1b215-163a-4b82-b0a6-9872a8dde6e4",
+      "Name": "PageWithTopAreaAndTabsFreedomTemplate"
+    },
+    "ManagerName": "ClientUnitSchemaManager",
+    "Caption": "Request Detail"
+  }
+}

@@ -1,0 +1,10 @@
+﻿{
+  "Descriptor": {
+    "UId": "91765b51-3cb5-42fe-99cb-f2e5512a45d1",
+    "Name": "UsrMCITRelatedPage",
+    "ModifiedOnUtc": "\/Date(1791930629000)\/",
+    "ManagerName": "AddonSchemaManager",
+    "Caption": "MCIT (Page settings)",
+    "DependsOn": []
+  }
+}

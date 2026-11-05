@@ -1,0 +1,368 @@
+/* MCIT Resource Catalog RC11 — scoped, Designer-friendly styling.
+   No DOM injection, body scaling, hiding Designer controls, or duplicate
+   HTML input borders. The List is a real crt.DataGrid component. */
+.rc11-page {
+  --rc-accent:#5b21a5; --rc-violet:#7027f5;
+  --rc-text:#20283a; --rc-muted:#747a89; --rc-border:#e5e6ed;
+  width:100%; max-width:100%; min-width:0;
+  padding:24px 22px 28px!important;
+  box-sizing:border-box; display:flex; flex-direction:column;
+  gap:0!important; background:#f8f7ff;
+  font-family:"Rubik",Arial,sans-serif; color:var(--rc-text);
+}
+.rc11-page *, .rc11-page *:before, .rc11-page *:after {box-sizing:border-box;}
+.rc11-page :is(button,input,select,textarea){font-family:"Rubik",Arial,sans-serif!important;}
+.rc11-header{width:100%; display:flex; justify-content:space-between; align-items:center;gap:16px!important;margin-bottom:20px;}
+.rc11-headings{min-width:0;gap:2px!important;}
+.rc11-page .rc3-title, .rc11-page .rc3-title * {font-size:20px!important;font-weight:650!important;line-height:28px!important;color:#17202d!important;}
+.rc11-page .rc3-subtitle, .rc11-page .rc3-subtitle *{font-size:13px!important;line-height:20px!important;color:#818491!important;}
+.rc11-page .rc11-primary button, .rc11-page button.rc11-primary{background:linear-gradient(105deg,#54209c,#7027eb)!important;color:white!important;border:0!important;border-radius:11px!important;min-height:36px!important;padding:8px 16px!important;box-shadow:none!important;font-size:13px!important;font-weight:600!important;text-transform:none!important;}
+.rc11-page .rc11-primary :is(span,.caption){color:white!important;}
+.rc11-page .rc11-secondary button,.rc11-page button.rc11-secondary{border:1px solid var(--rc-border)!important;border-radius:10px!important;background:#fff!important;color:#495064!important;}
+.rc11-stats{display:flex;align-items:center;gap:4px!important;margin-bottom:20px;flex-wrap:wrap;}
+.rc11-page .rc3-stat-number,.rc11-page .rc3-stat-number *{font-size:13px!important;font-weight:600!important;color:#1c2331!important;}
+.rc11-page .rc3-stat-text,.rc11-page .rc3-stat-text *{font-size:13px!important;color:#535967!important;}
+.rc11-page .rc3-stat-dot{margin:0 10px;color:#c6c7d0;}
+.rc11-filters{display:flex;align-items:center;gap:10px!important;flex-wrap:wrap!important;width:100%;margin-bottom:20px;}
+.rc11-page .rc11-search{width:218px!important;min-width:180px;flex:0 0 218px!important;--mdc-outlined-text-field-container-shape:11px;--mdc-outlined-text-field-outline-color:#e0e1e9;--mdc-outlined-text-field-hover-outline-color:#bbb7cc;--mdc-outlined-text-field-focus-outline-color:#7b39e9;}
+.rc11-page .rc11-search input{font-size:12px!important;}
+.rc11-page .rc11-search .mat-mdc-form-field-subscript-wrapper{display:none!important;}
+.rc11-filter-group{display:flex;flex-direction:row;gap:2px!important;align-items:center;background:#f0f0f4;border-radius:12px;padding:4px!important;flex-wrap:wrap!important;}
+.rc11-page .rc11-filter-button button,.rc11-page button.rc11-filter-button{padding:4px 11px!important;min-height:27px!important;height:27px!important;min-width:32px!important;border-radius:8px!important;border:0!important;box-shadow:none!important;background:transparent!important;color:#626979!important;font-size:12px!important;font-weight:500!important;text-transform:none!important;}
+/* The button's color is also bound to its selected state in the schema. */
+.rc11-page .rc11-filter-button button[aria-pressed="true"],
+.rc11-page button.rc11-filter-button[aria-pressed="true"],
+.rc11-page .rc11-filter-button:has([aria-pressed="true"]) button{background:#eadffa!important;color:#5b21a5!important;font-weight:700!important;box-shadow:inset 0 0 0 1px #cfb4ee!important;}
+.rc11-page .rc11-filter-button button:hover{background:#e7e2f0!important;}
+.rc11-page .rc11-filter-button button[aria-pressed="true"] :is(span,.caption){color:#5b21a5!important;}
+.rc11-list-panel{width:100%;min-width:0;background:#fff;border:1px solid var(--rc-border);border-radius:5px;overflow:auto;margin:0 0 20px;gap:0!important;}
+.rc11-page .rc11-datagrid{min-width:920px;width:100%;font-size:13px;}
+.rc11-list-panel :is(.datatable-header,.crt-data-grid-header,.data-grid-header){background:#f9fafc;}
+.rc11-list-panel :is(.datatable-row,.data-grid-row){min-height:54px;border-bottom:1px solid #f3f3f5;}
+.rc11-list-panel :is(.datatable-row,.data-grid-row):hover{background:#fbf9ff;}
+.rc11-editor{background:white;width:100%;padding:22px!important;border:1px solid var(--rc-border);border-radius:14px;margin:0 0 22px;gap:16px!important;box-shadow:0 4px 15px #31245d0a;}
+.rc11-editor-header{display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid #ececf1;padding-bottom:10px;}
+.rc11-editor-title,.rc11-editor-title *{font-size:17px!important;font-weight:650!important;color:#273043!important;}
+.rc11-page .rc11-close button{min-width:28px!important;width:28px!important;height:28px!important;border:0!important;background:transparent!important;color:#9395a3!important;font-size:22px!important;}
+.rc11-info{padding:12px 14px;background:#ecf4ff;border:1px solid #c6ddff;border-radius:11px;color:#2863bd;}
+.rc11-info *{font-size:12px!important;color:#2863bd!important;}
+.rc11-fields{width:100%;min-width:0;gap:16px!important;}
+.rc11-page .rc11-field{width:100%;min-width:0;--mdc-outlined-text-field-container-shape:12px;--mdc-outlined-text-field-outline-color:#dfe2e9;--mdc-outlined-text-field-hover-outline-color:#bdc0ce;--mdc-outlined-text-field-focus-outline-color:#7027f5;}
+.rc11-page .rc11-field :is(.mat-mdc-text-field-wrapper,.mdc-text-field){border-radius:12px;}
+.rc11-page .rc11-field input{font-size:13px!important;}
+.rc11-page .rc11-field :is(label,.crt-input-label){font-size:13px!important;font-weight:500!important;color:#3e4759!important;}
+.rc11-page .rc3-contracts,.rc11-page .rc3-contract-chips,.rc11-page .rc3-status-buttons{gap:8px!important;flex-wrap:wrap!important;}
+.rc11-page .rc3-chip button{border:1px solid #e1e4ea!important;border-radius:10px!important;background:white!important;color:#656c7a!important;padding:5px 11px!important;box-shadow:none!important;}
+.rc11-page .rc3-chip button[aria-pressed="true"]{border-color:#7027f5!important;background:#f4efff!important;color:#5b21a5!important;}
+.rc11-form-actions{border-top:1px solid #eeeff2;padding-top:14px;gap:8px!important;justify-content:flex-end;}
+.rc11-footer{margin-top:0;margin-bottom:22px;}
+.rc11-page .rc3-error{background:#fff1f1;color:#b42318!important;border:1px solid #ffcccb;padding:10px;border-radius:10px;}
+.rc11-page .rc3-warning{background:#fff8e7;color:#975600!important;border:1px solid #ffe4a0;padding:10px;border-radius:10px;}
+@media(max-width:950px){.rc11-page{padding:18px!important;}.rc11-header{flex-wrap:wrap!important;}.rc11-filters{gap:8px!important;}}
+@media(max-width:700px){.rc11-page{padding:12px!important;}.rc11-search{flex:1 1 100%!important;width:100%!important;}.rc11-fields{grid-template-columns:minmax(0,1fr)!important;}.rc11-fields>*{grid-column:1/-1!important;grid-row:auto!important;}.rc11-editor{padding:14px!important;}}
+
+
+/* RC14: conservative appearance-only refinement of RC11.
+   No extra containers or data sources are introduced. */
+.rc11-page .rc11-search {
+  border-radius: 18px !important;
+  --mdc-outlined-text-field-container-shape: 18px;
+  --mdc-outlined-text-field-outline-color: #dfe1e8;
+  --mdc-outlined-text-field-focus-outline-color: #7027f5;
+}
+.rc11-page .rc11-search :is(.mat-mdc-text-field-wrapper, .mdc-text-field) {
+  border-radius: 18px !important;
+}
+.rc11-page .rc11-field {
+  --mdc-outlined-text-field-container-shape: 14px;
+  --mdc-outlined-text-field-focus-outline-color: #7027f5;
+}
+.rc11-page .rc11-field :is(.mat-mdc-text-field-wrapper, .mdc-text-field, .mat-mdc-select-trigger) {
+  border-radius: 14px !important;
+}
+.rc11-page .rc11-editor { border-radius: 16px !important; }
+
+
+/* ==============================================================
+   RC15 — search and numeric fields. Native Designer components.
+   The visible search border is on OUR FlexContainer, not the
+   internal Material field; this avoids a CSS-dependent input shape.
+   ================================================================ */
+
+body .rc11-page .rc15-search-shell {
+  position: relative !important;
+  display: flex !important;
+  flex-direction: row !important;
+  align-items: center !important;
+  box-sizing: border-box !important;
+  width: 240px !important;
+  min-width: 240px !important;
+  flex: 0 0 240px !important;
+  height: 40px !important;
+  padding: 0 12px !important;
+  gap: 9px !important;
+  border: 1px solid #e2e3ec !important;
+  border-radius: 16px !important;
+  background: #fbfaff !important;
+  box-shadow: none !important;
+}
+body .rc11-page .rc15-search-shell:focus-within {
+  border-color: #8b5cf6 !important;
+  box-shadow: 0 0 0 2px rgba(112,39,245,.10) !important;
+}
+body .rc11-page .rc15-search-icon,
+body .rc11-page .rc15-search-icon * {
+  flex: 0 0 15px !important;
+  width: 15px !important;
+  min-width: 15px !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  color: #9aa0ae !important;
+  font-size: 21px !important;
+  line-height: 20px !important;
+  font-family: Arial, sans-serif !important;
+  text-align: center !important;
+}
+body .rc11-page .rc15-search-control {
+  flex: 1 1 auto !important;
+  min-width: 0 !important;
+  width: 100% !important;
+  max-width: 100% !important;
+  height: 36px !important;
+  border: 0 !important;
+  background: transparent !important;
+  box-shadow: none !important;
+  padding: 0 !important;
+  margin: 0 !important;
+}
+/* Creatio versions render Input with different internal wrappers. */
+body .rc11-page .rc15-search-shell :is(
+  crt-input, .crt-input, .crt-input-container, .crt-input-control,
+  .mat-mdc-form-field, .mat-mdc-text-field-wrapper,
+  .mat-form-field-wrapper, .mat-form-field-flex, .mat-form-field-infix,
+  .mdc-text-field, .mat-mdc-form-field-infix,
+  .input-container, .input-wrapper, .input-control,
+  input
+) {
+  max-width: 100% !important;
+  background: transparent !important;
+  border: 0 !important;
+  box-shadow: none !important;
+  outline: none !important;
+  border-radius: 0 !important;
+}
+body .rc11-page .rc15-search-shell input {
+  width: 100% !important;
+  min-width: 0 !important;
+  height: 34px !important;
+  min-height: 0 !important;
+  padding: 0 !important;
+  font-size: 13px !important;
+  color: #283043 !important;
+}
+body .rc11-page .rc15-search-shell input::placeholder {
+  font-size: 13px !important;
+  color: #9298a7 !important;
+  opacity: 1 !important;
+}
+body .rc11-page .rc15-search-shell :is(
+  .mat-mdc-form-field-subscript-wrapper, .mat-form-field-subscript-wrapper,
+  .mat-form-field-underline, .mdc-line-ripple, .mat-input-underline,
+  .crt-input-underline, .input-underline
+) { display: none !important; }
+body .rc11-page .rc15-search-shell .mdc-notched-outline,
+body .rc11-page .rc15-search-shell .mdc-notched-outline__leading,
+body .rc11-page .rc15-search-shell .mdc-notched-outline__notch,
+body .rc11-page .rc15-search-shell .mdc-notched-outline__trailing {
+  border: 0 !important;
+  opacity: 0 !important;
+}
+
+/* Numeric fields use crt.Input in RC15, just like the already working
+   Resource Code/Unit text boxes. Save still converts/validates numbers. */
+body .rc11-page .rc15-number-field {
+  width: 100% !important;
+  min-width: 0 !important;
+  --mdc-outlined-text-field-container-shape: 14px;
+  --mdc-outlined-text-field-outline-color: #dfe1e8;
+  --mdc-outlined-text-field-hover-outline-color: #c6c9d3;
+  --mdc-outlined-text-field-focus-outline-color: #7027f5;
+}
+body .rc11-page .rc15-number-field :is(
+  .crt-input, .crt-input-container, .crt-input-control,
+  .mdc-text-field, .mat-mdc-text-field-wrapper, .mat-form-field-flex,
+  .mat-form-field-outline, input
+) {
+  border-radius: 14px !important;
+}
+body .rc11-page .rc15-number-field input {
+  min-height: 36px !important;
+  padding-left: 12px !important;
+  padding-right: 12px !important;
+  font-size: 13px !important;
+  color: #1f2937 !important;
+}
+body .rc11-page .rc15-number-field .mdc-notched-outline__leading {
+  border-radius: 14px 0 0 14px !important;
+}
+body .rc11-page .rc15-number-field .mdc-notched-outline__trailing {
+  border-radius: 0 14px 14px 0 !important;
+}
+/* For the versions of crt.Input that put their outline on the input itself. */
+body .rc11-page .rc15-number-field input:not([type=hidden]) {
+  border-radius: 14px !important;
+}
+
+@media (max-width: 700px) {
+  body .rc11-page .rc15-search-shell {
+    width: 100% !important;
+    flex: 1 1 100% !important;
+    min-width: 0 !important;
+  }
+}
+
+
+/* ================================================================
+   RC16 - Figma rounded resource editor inputs
+
+   The round outline lives on an ordinary FlexContainer, the same
+   structural method that fixed RC15's search field.  Native Creatio
+   text, numeric-text, lookup and date inputs stay inside the shells.
+   All selectors are SCOPED to the Resource Catalog editor. The search
+   shell, DataGrid, other pages and Designer chrome are not affected.
+   ================================================================ */
+body .rc11-page .rc11-editor .rc16-field-group {
+  width: 100% !important;
+  min-width: 0 !important;
+  gap: 6px !important;
+  padding: 0 !important;
+  margin: 0 !important;
+  align-items: stretch !important;
+}
+body .rc11-page .rc11-editor .rc16-field-label,
+body .rc11-page .rc11-editor .rc16-field-label * {
+  display: block;
+  font-family: "Rubik", Arial, sans-serif !important;
+  font-size: 13px !important;
+  font-weight: 500 !important;
+  line-height: 19px !important;
+  color: #394151 !important;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+body .rc11-page .rc11-editor .rc16-field-shell {
+  box-sizing: border-box !important;
+  width: 100% !important;
+  min-width: 0 !important;
+  min-height: 41px !important;
+  height: 41px !important;
+  flex: 1 1 auto !important;
+  padding: 0 12px !important;
+  margin: 0 !important;
+  display: flex !important;
+  flex-direction: row !important;
+  align-items: center !important;
+  border: 1px solid #dfe2e9 !important;
+  border-radius: 14px !important;
+  background: #fff !important;
+  box-shadow: none !important;
+  transition: border-color .15s ease, box-shadow .15s ease;
+  /* Intentionally don't use overflow:hidden: dropdowns/calendar must open. */
+}
+body .rc11-page .rc11-editor .rc16-field-shell:hover {
+  border-color: #c7cad4 !important;
+}
+body .rc11-page .rc11-editor .rc16-field-shell:focus-within {
+  border-color: #7027f5 !important;
+  box-shadow: 0 0 0 2px rgba(112,39,245,.10) !important;
+}
+body .rc11-page .rc11-editor .rc16-field-control {
+  display: block !important;
+  flex: 1 1 auto !important;
+  min-width: 0 !important;
+  width: 100% !important;
+  height: auto !important;
+  max-width: 100% !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  border: 0 !important;
+  border-radius: 0 !important;
+  background: transparent !important;
+  box-shadow: none !important;
+  --mdc-outlined-text-field-outline-color: transparent;
+  --mdc-outlined-text-field-hover-outline-color: transparent;
+  --mdc-outlined-text-field-focus-outline-color: transparent;
+}
+body .rc11-page .rc11-editor .rc16-field-shell :is(
+  .crt-input, .crt-input-container, .crt-input-control,
+  .mat-mdc-form-field, .mat-mdc-text-field-wrapper,
+  .mat-form-field-wrapper, .mat-form-field-flex, .mat-form-field-infix,
+  .mat-mdc-form-field-infix, .mdc-text-field,
+  .crt-combobox, .crt-combobox-control, .crt-date-time-picker,
+  .input-container, .input-wrapper, .input-control
+) {
+  box-sizing: border-box !important;
+  min-width: 0 !important;
+  max-width: 100% !important;
+  width: 100% !important;
+  min-height: 0 !important;
+  border: 0 !important;
+  background: transparent !important;
+  border-radius: 0 !important;
+  box-shadow: none !important;
+  padding-top: 0 !important;
+  padding-bottom: 0 !important;
+}
+body .rc11-page .rc11-editor .rc16-field-shell :is(
+  input, textarea, select
+) {
+  box-sizing: border-box !important;
+  height: 37px !important;
+  min-height: 0 !important;
+  width: 100% !important;
+  padding: 0 !important;
+  margin: 0 !important;
+  border: 0 !important;
+  outline: 0 !important;
+  border-radius: 0 !important;
+  box-shadow: none !important;
+  background: transparent !important;
+  color: #202839 !important;
+  font-size: 13px !important;
+  font-family: "Rubik", Arial, sans-serif !important;
+}
+body .rc11-page .rc11-editor .rc16-field-shell :is(input, textarea)::placeholder {
+  color: #9aa0ad !important;
+  opacity: 1;
+}
+/* Remove legacy underlines and the native outline only inside the shells. */
+body .rc11-page .rc11-editor .rc16-field-shell :is(
+  .mat-mdc-form-field-subscript-wrapper,
+  .mat-form-field-subscript-wrapper,
+  .mat-form-field-underline, .mdc-line-ripple,
+  .mat-input-underline, .crt-input-underline, .input-underline
+) { display: none !important; }
+body .rc11-page .rc11-editor .rc16-field-shell :is(
+  .mdc-notched-outline, .mdc-notched-outline__leading,
+  .mdc-notched-outline__notch, .mdc-notched-outline__trailing,
+  .mat-form-field-outline, .mat-form-field-outline-start,
+  .mat-form-field-outline-gap, .mat-form-field-outline-end
+) {
+  border-color: transparent !important;
+  opacity: 0 !important;
+}
+/* Preserve the dropdown and calendar affordances, value and popups. */
+body .rc11-page .rc11-editor .rc16-field-select,
+body .rc11-page .rc11-editor .rc16-field-date {
+  width: 100% !important;
+  background: transparent !important;
+}
+body .rc11-page .rc11-editor .rc16-field-shell :is(
+  .mat-mdc-select-arrow, .mat-select-arrow,
+  .crt-combobox-arrow, .crt-combobox-toggle
+) { color: #939aaa !important; }
+@media (max-width:700px) {
+  body .rc11-page .rc11-fields .rc16-field-group {
+    width: 100% !important;
+  }
+}

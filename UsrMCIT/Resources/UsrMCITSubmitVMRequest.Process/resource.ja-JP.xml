@@ -1,0 +1,70 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Resources Culture="ja-JP">
+	<Group Type="String">
+		<Items>
+			<Item Name="BaseElements.ActivityUserTask1.Parameters.Account.Caption" Value="企業" />
+			<Item Name="BaseElements.ActivityUserTask1.Parameters.ActivityCategory.Caption" Value="カテゴリ" />
+			<Item Name="BaseElements.ActivityUserTask1.Parameters.ActivityPriority.Caption" Value="優先度" />
+			<Item Name="BaseElements.ActivityUserTask1.Parameters.ActivityResult.Caption" Value="アクティビティ結果" />
+			<Item Name="BaseElements.ActivityUserTask1.Parameters.Application.Caption" Value="アプリケーション" />
+			<Item Name="BaseElements.ActivityUserTask1.Parameters.Case.Caption" Value="ケース" />
+			<Item Name="BaseElements.ActivityUserTask1.Parameters.Change.Caption" Value="変更" />
+			<Item Name="BaseElements.ActivityUserTask1.Parameters.Contact.Caption" Value="連絡先" />
+			<Item Name="BaseElements.ActivityUserTask1.Parameters.Contract.Caption" Value="契約" />
+			<Item Name="BaseElements.ActivityUserTask1.Parameters.CurrentActivityId.Caption" Value="タスクId" />
+			<Item Name="BaseElements.ActivityUserTask1.Parameters.Document.Caption" Value="ドキュメント" />
+			<Item Name="BaseElements.ActivityUserTask1.Parameters.Duration.Caption" Value="期間" />
+			<Item Name="BaseElements.ActivityUserTask1.Parameters.DurationPeriod.Caption" Value="期間" />
+			<Item Name="BaseElements.ActivityUserTask1.Parameters.ExecutionContext.Caption" Value="実行状況" />
+			<Item Name="BaseElements.ActivityUserTask1.Parameters.FinApplication.Caption" Value="アプリケーション" />
+			<Item Name="BaseElements.ActivityUserTask1.Parameters.Incident.Caption" Value="インシデント" />
+			<Item Name="BaseElements.ActivityUserTask1.Parameters.InformationOnStep.Caption" Value="ステップに関する情報" />
+			<Item Name="BaseElements.ActivityUserTask1.Parameters.Invoice.Caption" Value="請求書" />
+			<Item Name="BaseElements.ActivityUserTask1.Parameters.IsActivityCompleted.Caption" Value="完了済みの活動" />
+			<Item Name="BaseElements.ActivityUserTask1.Parameters.Lead.Caption" Value="リード" />
+			<Item Name="BaseElements.ActivityUserTask1.Parameters.Listing.Caption" Value="一覧表示" />
+			<Item Name="BaseElements.ActivityUserTask1.Parameters.Opportunity.Caption" Value="商談" />
+			<Item Name="BaseElements.ActivityUserTask1.Parameters.Order.Caption" Value="受注" />
+			<Item Name="BaseElements.ActivityUserTask1.Parameters.OwnerId.Caption" Value="担当者" />
+			<Item Name="BaseElements.ActivityUserTask1.Parameters.Problem.Caption" Value="問題" />
+			<Item Name="BaseElements.ActivityUserTask1.Parameters.Project.Caption" Value="プロジェクト" />
+			<Item Name="BaseElements.ActivityUserTask1.Parameters.Property.Caption" Value="プロパティ" />
+			<Item Name="BaseElements.ActivityUserTask1.Parameters.QueueItem.Caption" Value="キューアイテム" />
+			<Item Name="BaseElements.ActivityUserTask1.Parameters.Recommendation.Caption" Value="推奨" />
+			<Item Name="BaseElements.ActivityUserTask1.Parameters.Release.Caption" Value="リリース" />
+			<Item Name="BaseElements.ActivityUserTask1.Parameters.RemindBefore.Caption" Value="事前に担当者に通知する" />
+			<Item Name="BaseElements.ActivityUserTask1.Parameters.RemindBeforePeriod.Caption" Value="担当者に事前に通知する (期間)" />
+			<Item Name="BaseElements.ActivityUserTask1.Parameters.Requests.Caption" Value="リクエスト" />
+			<Item Name="BaseElements.ActivityUserTask1.Parameters.ShowExecutionPage.Caption" Value="実行ページを自動的に表示" />
+			<Item Name="BaseElements.ActivityUserTask1.Parameters.ShowInScheduler.Caption" Value="カレンダーで表示" />
+			<Item Name="BaseElements.ActivityUserTask1.Parameters.StartIn.Caption" Value="次で実行を開始" />
+			<Item Name="BaseElements.ActivityUserTask1.Parameters.StartInPeriod.Caption" Value="(期間) で実行を開始" />
+			<Item Name="BaseElements.ChangeDataUserTask1.Parameters.ConsiderTimeInFilter.Caption" Value="フィルターの時間を考慮" />
+			<Item Name="BaseElements.ChangeDataUserTask1.Parameters.DataSourceFilters.Caption" Value="データソースフィルター" />
+			<Item Name="BaseElements.ChangeDataUserTask1.Parameters.EntitySchemaUId.Caption" Value="オブジェクト" />
+			<Item Name="BaseElements.ChangeDataUserTask1.Parameters.IgnoreErrors.Caption" Value="エラー時に実行を続ける" />
+			<Item Name="BaseElements.ChangeDataUserTask1.Parameters.IsMatchConditions.Caption" Value="オブジェクトが以下の条件を満たす場合" />
+			<Item Name="BaseElements.ChangeDataUserTask1.Parameters.RecordColumnValues.Caption" Value="列の値を設定" />
+			<Item Name="BaseElements.ReadDataUserTask1.Parameters.AggregationColumnName.Caption" Value="集計関数列の名前" />
+			<Item Name="BaseElements.ReadDataUserTask1.Parameters.CanReadUncommitedData.Caption" Value="コミットしていないデータを読み込む" />
+			<Item Name="BaseElements.ReadDataUserTask1.Parameters.ConsiderTimeInFilter.Caption" Value="フィルターの時間を考慮" />
+			<Item Name="BaseElements.ReadDataUserTask1.Parameters.DataSourceFilters.Caption" Value="フィルターのデータソース" />
+			<Item Name="BaseElements.ReadDataUserTask1.Parameters.EntityColumnMetaPathes.Caption" Value="読み込む列" />
+			<Item Name="BaseElements.ReadDataUserTask1.Parameters.FunctionType.Caption" Value="集計関数タイプ" />
+			<Item Name="BaseElements.ReadDataUserTask1.Parameters.IgnoreDisplayValues.Caption" Value="ルックアップ列の表示値を読み込まない" />
+			<Item Name="BaseElements.ReadDataUserTask1.Parameters.NumberOfRecords.Caption" Value="読み込むレコード数" />
+			<Item Name="BaseElements.ReadDataUserTask1.Parameters.OrderInfo.Caption" Value="列の順序" />
+			<Item Name="BaseElements.ReadDataUserTask1.Parameters.ReadSomeTopRecords.Caption" Value="最初に読み込む" />
+			<Item Name="BaseElements.ReadDataUserTask1.Parameters.ResultCompositeObjectList.Caption" Value="レコードコレクション" />
+			<Item Name="BaseElements.ReadDataUserTask1.Parameters.ResultCount.Caption" Value="レコード数" />
+			<Item Name="BaseElements.ReadDataUserTask1.Parameters.ResultDateTimeFunction.Caption" Value="関数の結果(Date/Time)" />
+			<Item Name="BaseElements.ReadDataUserTask1.Parameters.ResultEntity.Caption" Value="結果コレクションの最初のアイテム" />
+			<Item Name="BaseElements.ReadDataUserTask1.Parameters.ResultEntityCollection.Caption" Value="結果コレクション" />
+			<Item Name="BaseElements.ReadDataUserTask1.Parameters.ResultFloatFunction.Caption" Value="関数の結果(Decimal)" />
+			<Item Name="BaseElements.ReadDataUserTask1.Parameters.ResultIntegerFunction.Caption" Value="関数の結果(Integer)" />
+			<Item Name="BaseElements.ReadDataUserTask1.Parameters.ResultRowsCount.Caption" Value="読み込んだレコード数" />
+			<Item Name="BaseElements.ReadDataUserTask1.Parameters.ResultType.Caption" Value="結果タイプ" />
+			<Item Name="Caption" Value="MCIT VM Request Submission" />
+		</Items>
+	</Group>
+</Resources>

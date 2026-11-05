@@ -1,0 +1,14 @@
+﻿{
+  "Descriptor": {
+    "UId": "4e54a87c-9e21-4302-9402-aa05b79b2f5a",
+    "Name": "UsrMCITPermissionScreen",
+    "ModifiedOnUtc": "\/Date(1792874127000)\/",
+    "Parent": {
+      "UId": "1bab9dcf-17d5-49f8-9536-8e0064f1dce0",
+      "Name": "BaseEntity"
+    },
+    "ManagerName": "EntitySchemaManager",
+    "Caption": "MCIT Permission Screen",
+    "DependsOn": []
+  }
+}

@@ -1,0 +1,14 @@
+﻿{
+  "Descriptor": {
+    "UId": "2ce71541-7489-49cf-8c67-42bfc2a5a287",
+    "Name": "UsrPointBalanceType",
+    "ModifiedOnUtc": "\/Date(1792001913000)\/",
+    "Parent": {
+      "UId": "11ab4bcb-9b23-4b6d-9c86-520fae925d75",
+      "Name": "BaseLookup"
+    },
+    "ManagerName": "EntitySchemaManager",
+    "Caption": "MCIT Point Balance Type",
+    "DependsOn": []
+  }
+}

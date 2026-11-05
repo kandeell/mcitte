@@ -1,0 +1,42 @@
+﻿{
+  "Descriptor": {
+    "UId": "41a2de1a-c317-4789-8ac0-4dccf6b42ee9",
+    "Name": "EntityConnection_8551ded72e664021973c845ca0d1dd3d",
+    "ModifiedOnUtc": "\/Date(1792482360000)\/",
+    "InstallType": 0,
+    "Schema": {
+      "UId": "187a8e9a-6f0e-465d-aeb0-9556dfa93b7d",
+      "Name": "EntityConnection"
+    },
+    "Columns": [
+      {
+        "ColumnUId": "2d2a1d06-fa97-4bb5-b37c-6af8782f7a07",
+        "IsForceUpdate": false,
+        "IsKey": false,
+        "ColumnName": "SysEntitySchemaUId",
+        "DataTypeValueUId": "23018567-a13c-4320-8687-fd6f9e3699bd"
+      },
+      {
+        "ColumnUId": "a79438c7-070f-4f50-b9c4-509c94770c82",
+        "IsForceUpdate": false,
+        "IsKey": false,
+        "ColumnName": "ColumnUId",
+        "DataTypeValueUId": "23018567-a13c-4320-8687-fd6f9e3699bd"
+      },
+      {
+        "ColumnUId": "ae0e45ca-c495-4fe7-a39d-3ab7278e1617",
+        "IsForceUpdate": false,
+        "IsKey": true,
+        "ColumnName": "Id",
+        "DataTypeValueUId": "23018567-a13c-4320-8687-fd6f9e3699bd"
+      },
+      {
+        "ColumnUId": "c1ab9d0a-ff01-456b-bc0f-d11cd879b870",
+        "IsForceUpdate": false,
+        "IsKey": false,
+        "ColumnName": "Position",
+        "DataTypeValueUId": "6b6b74e2-820d-490e-a017-2b73d4ccf2b0"
+      }
+    ]
+  }
+}

@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Resources Culture="en-US">
+	<Group Type="String">
+		<Items>
+			<Item Name="Caption" Value="MCIT Role form page" />
+			<Item Name="LocalizableStrings.BackButton_caption.Value" Value="Back to Role Managment" />
+			<Item Name="LocalizableStrings.Button_n3lharv_caption.Value" Value="Add User" />
+			<Item Name="LocalizableStrings.Button_n3lharv_clicked_params_notificationText.Value" Value="User Added" />
+			<Item Name="LocalizableStrings.Button_tg337p6_caption.Value" Value="Refresh" />
+			<Item Name="LocalizableStrings.DataGrid_1yq715aDS_UsrCanActivate.Value" Value="Activate" />
+			<Item Name="LocalizableStrings.DataGrid_1yq715aDS_UsrCanApprove.Value" Value="Approve" />
+			<Item Name="LocalizableStrings.DataGrid_1yq715aDS_UsrCanAssign.Value" Value="Assign" />
+			<Item Name="LocalizableStrings.DataGrid_1yq715aDS_UsrCanConfigure.Value" Value="Configure" />
+			<Item Name="LocalizableStrings.DataGrid_1yq715aDS_UsrCanCreate.Value" Value="Create" />
+			<Item Name="LocalizableStrings.DataGrid_1yq715aDS_UsrCanEdit.Value" Value="Edit" />
+			<Item Name="LocalizableStrings.DataGrid_1yq715aDS_UsrCanExport.Value" Value="Export" />
+			<Item Name="LocalizableStrings.DataGrid_1yq715aDS_UsrCanView.Value" Value="View" />
+			<Item Name="LocalizableStrings.ExpansionPanel_qovsgf3_title.Value" Value="Expansion panel" />
+			<Item Name="LocalizableStrings.TabContainer_0wqwdih_caption.Value" Value="ASSIGNED USERS" />
+			<Item Name="LocalizableStrings.TabContainer_5194hoo_caption.Value" Value="Administrative Permissions " />
+			<Item Name="LocalizableStrings.TabContainer_8h8i8hs_caption.Value" Value="Screen Permissions" />
+			<Item Name="LocalizableStrings.TabContainer_mdfdx0c_caption.Value" Value="Reporting Permission" />
+			<Item Name="LocalizableStrings.TabContainer_w4rpe7i_caption.Value" Value="Queue Permissions" />
+			<Item Name="LocalizableStrings.TabContainer_wsi30mm_caption.Value" Value="Change summary" />
+			<Item Name="LocalizableStrings.TabContainer_ymxsxk9_caption.Value" Value="DATA SCOPE RULES" />
+			<Item Name="LocalizableStrings.UsrMCITRoleActiveWarning_caption.Value" Value="Active role: changes require a new draft version." />
+			<Item Name="LocalizableStrings.addRecord_1i1shkh_caption.Value" Value="Add new" />
+			<Item Name="LocalizableStrings.addRecord_dzs0x8m_caption.Value" Value="Add new" />
+			<Item Name="LocalizableStrings.addRecord_ftyzwdd_caption.Value" Value="Add new" />
+			<Item Name="LocalizableStrings.addRecord_yk2si3o_caption.Value" Value="Add new" />
+		</Items>
+	</Group>
+</Resources>

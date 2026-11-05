@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Resources Culture="en-US">
+	<Group Type="String">
+		<Items>
+			<Item Name="Caption" Value="MCIT Portal User Access" />
+			<Item Name="Columns.UsrActivatedAt.Caption" Value="Activated At" />
+			<Item Name="Columns.UsrActivatedBy.Caption" Value="Activated By" />
+			<Item Name="Columns.UsrAssignedRolesSummary.Caption" Value="Assigned Roles" />
+			<Item Name="Columns.UsrLastSignIn.Caption" Value="Last Sign-in" />
+			<Item Name="Columns.UsrName.Caption" Value="Name" />
+			<Item Name="Columns.UsrReason.Caption" Value="Reason" />
+			<Item Name="Columns.UsrScopeSummary.Caption" Value="Scope Summary" />
+			<Item Name="Columns.UsrUser.Caption" Value="Display Name" />
+			<Item Name="Columns.UsrUserStatus.Caption" Value="Status" />
+		</Items>
+	</Group>
+</Resources>

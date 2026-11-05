@@ -1,0 +1,8 @@
+= MetaData.Schema.UId "10eaf8ca-014d-4c3f-89a4-dd75fc29a0cc"
+= MetaData.Schema.A2 "UsrVirtualMachines_FormPage"
+= MetaData.Schema.A5 "6f71e54c-1960-40c9-94f6-073fd67699ab"
+~ MetaData.Schema.B2 ["08e4f558-70a7-4691-a9ea-991558e2d61f","7e8a59ed-db6d-4be0-aab2-7b5c073f9613","b2e0c540-7837-4f48-a18f-93d9db669422","d2f815e0-f3e7-476a-aa4c-3cc5f6017c82"]
+= MetaData.Schema.B6 "5530927f-22ea-e7c9-4ccf-506d3a6c2ed2"
+= MetaData.Schema.HD1 "3b2e117f-8c6b-4ca5-80a2-7ebb497cddf9"
+- MetaData.Schema.B7
++ MetaData.Schema.B7 false

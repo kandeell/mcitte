@@ -1,0 +1,9 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Resources Culture="ko-KR">
+	<Group Type="String">
+		<Items>
+			<Item Name="LocalizableStrings.Button_spbhdwfCaption.Value" Value="새로 고침" />
+			<Item Name="LocalizableStrings.Button_tbioevjCaption.Value" Value="업로드" />
+		</Items>
+	</Group>
+</Resources>

@@ -1,0 +1,14 @@
+﻿{
+  "Descriptor": {
+    "UId": "5c886218-e5cb-4b84-9fe2-9c2a50dd3acc",
+    "Name": "UsrMCITValidationPage",
+    "ModifiedOnUtc": "\/Date(1792428319000)\/",
+    "Parent": {
+      "UId": "f691e828-0b36-42a7-898f-c337e9af67d0",
+      "Name": "BlankPageTemplate"
+    },
+    "ManagerName": "ClientUnitSchemaManager",
+    "Caption": "MCIT Validation Page",
+    "DependsOn": []
+  }
+}

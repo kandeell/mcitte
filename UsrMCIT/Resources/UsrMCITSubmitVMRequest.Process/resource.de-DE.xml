@@ -1,0 +1,70 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Resources Culture="de-DE">
+	<Group Type="String">
+		<Items>
+			<Item Name="BaseElements.ActivityUserTask1.Parameters.Account.Caption" Value="Unternehmen" />
+			<Item Name="BaseElements.ActivityUserTask1.Parameters.ActivityCategory.Caption" Value="Kategorie" />
+			<Item Name="BaseElements.ActivityUserTask1.Parameters.ActivityPriority.Caption" Value="Priorität" />
+			<Item Name="BaseElements.ActivityUserTask1.Parameters.ActivityResult.Caption" Value="Ergebnis der Aktivität" />
+			<Item Name="BaseElements.ActivityUserTask1.Parameters.Application.Caption" Value="Anwenden" />
+			<Item Name="BaseElements.ActivityUserTask1.Parameters.Case.Caption" Value="Fall" />
+			<Item Name="BaseElements.ActivityUserTask1.Parameters.Change.Caption" Value="Ändern" />
+			<Item Name="BaseElements.ActivityUserTask1.Parameters.Contact.Caption" Value="Kontakt" />
+			<Item Name="BaseElements.ActivityUserTask1.Parameters.Contract.Caption" Value="Vertrag" />
+			<Item Name="BaseElements.ActivityUserTask1.Parameters.CurrentActivityId.Caption" Value="Aufgaben-ID" />
+			<Item Name="BaseElements.ActivityUserTask1.Parameters.Document.Caption" Value="Dokument" />
+			<Item Name="BaseElements.ActivityUserTask1.Parameters.Duration.Caption" Value="Dauer" />
+			<Item Name="BaseElements.ActivityUserTask1.Parameters.DurationPeriod.Caption" Value="Dauer (Periode)" />
+			<Item Name="BaseElements.ActivityUserTask1.Parameters.ExecutionContext.Caption" Value="Ausführungskontext" />
+			<Item Name="BaseElements.ActivityUserTask1.Parameters.FinApplication.Caption" Value="Anwenden" />
+			<Item Name="BaseElements.ActivityUserTask1.Parameters.Incident.Caption" Value="Zwischenfall" />
+			<Item Name="BaseElements.ActivityUserTask1.Parameters.InformationOnStep.Caption" Value="Information über Schritt" />
+			<Item Name="BaseElements.ActivityUserTask1.Parameters.Invoice.Caption" Value="Rechnung" />
+			<Item Name="BaseElements.ActivityUserTask1.Parameters.IsActivityCompleted.Caption" Value="Aktivität abgeschlossen" />
+			<Item Name="BaseElements.ActivityUserTask1.Parameters.Lead.Caption" Value="Lead" />
+			<Item Name="BaseElements.ActivityUserTask1.Parameters.Listing.Caption" Value="Verzeichnisse" />
+			<Item Name="BaseElements.ActivityUserTask1.Parameters.Opportunity.Caption" Value="Opportunity" />
+			<Item Name="BaseElements.ActivityUserTask1.Parameters.Order.Caption" Value="Bestellung" />
+			<Item Name="BaseElements.ActivityUserTask1.Parameters.OwnerId.Caption" Value="Eigentümer" />
+			<Item Name="BaseElements.ActivityUserTask1.Parameters.Problem.Caption" Value="Probleme" />
+			<Item Name="BaseElements.ActivityUserTask1.Parameters.Project.Caption" Value="Projekt" />
+			<Item Name="BaseElements.ActivityUserTask1.Parameters.Property.Caption" Value="Eigenschaften" />
+			<Item Name="BaseElements.ActivityUserTask1.Parameters.QueueItem.Caption" Value="Queue-Item" />
+			<Item Name="BaseElements.ActivityUserTask1.Parameters.Recommendation.Caption" Value="Empfehlung" />
+			<Item Name="BaseElements.ActivityUserTask1.Parameters.Release.Caption" Value="Freigeben" />
+			<Item Name="BaseElements.ActivityUserTask1.Parameters.RemindBefore.Caption" Value="Besitzer vorab erinnern" />
+			<Item Name="BaseElements.ActivityUserTask1.Parameters.RemindBeforePeriod.Caption" Value="Besitzer vor informieren (Periode)" />
+			<Item Name="BaseElements.ActivityUserTask1.Parameters.Requests.Caption" Value="Anforderung" />
+			<Item Name="BaseElements.ActivityUserTask1.Parameters.ShowExecutionPage.Caption" Value="Ausführungsseite automatisch zeigen" />
+			<Item Name="BaseElements.ActivityUserTask1.Parameters.ShowInScheduler.Caption" Value="In Kalender anzeigen" />
+			<Item Name="BaseElements.ActivityUserTask1.Parameters.StartIn.Caption" Value="Ausführung starten in" />
+			<Item Name="BaseElements.ActivityUserTask1.Parameters.StartInPeriod.Caption" Value="Ausführung starten in (Periode)" />
+			<Item Name="BaseElements.ChangeDataUserTask1.Parameters.ConsiderTimeInFilter.Caption" Value="Zeit im Filter berücksichtigen" />
+			<Item Name="BaseElements.ChangeDataUserTask1.Parameters.DataSourceFilters.Caption" Value="Filter Datenquelle" />
+			<Item Name="BaseElements.ChangeDataUserTask1.Parameters.EntitySchemaUId.Caption" Value="Objekt" />
+			<Item Name="BaseElements.ChangeDataUserTask1.Parameters.IgnoreErrors.Caption" Value="Ausführung bei Fehlern fortsetzen" />
+			<Item Name="BaseElements.ChangeDataUserTask1.Parameters.IsMatchConditions.Caption" Value="Wenn das Objekt die folgenden Bedingungen erfüllt" />
+			<Item Name="BaseElements.ChangeDataUserTask1.Parameters.RecordColumnValues.Caption" Value="Spaltenwerte setzen" />
+			<Item Name="BaseElements.ReadDataUserTask1.Parameters.AggregationColumnName.Caption" Value="Name der Aggregatsfunktionsspalte" />
+			<Item Name="BaseElements.ReadDataUserTask1.Parameters.CanReadUncommitedData.Caption" Value="Nicht committete Daten lesen" />
+			<Item Name="BaseElements.ReadDataUserTask1.Parameters.ConsiderTimeInFilter.Caption" Value="Zeit im Filter berücksichtigen" />
+			<Item Name="BaseElements.ReadDataUserTask1.Parameters.DataSourceFilters.Caption" Value="Datenquelle der Filter" />
+			<Item Name="BaseElements.ReadDataUserTask1.Parameters.EntityColumnMetaPathes.Caption" Value="Zu lesende Spalten" />
+			<Item Name="BaseElements.ReadDataUserTask1.Parameters.FunctionType.Caption" Value="Aggregatesfunktionstyp" />
+			<Item Name="BaseElements.ReadDataUserTask1.Parameters.IgnoreDisplayValues.Caption" Value="Angezeigte Werte von Nachschlagewert-Spalten nicht lesen" />
+			<Item Name="BaseElements.ReadDataUserTask1.Parameters.NumberOfRecords.Caption" Value="Anzahl zu lesender Sätze" />
+			<Item Name="BaseElements.ReadDataUserTask1.Parameters.OrderInfo.Caption" Value="Spaltensortiierung" />
+			<Item Name="BaseElements.ReadDataUserTask1.Parameters.ReadSomeTopRecords.Caption" Value="Zuerst lesen" />
+			<Item Name="BaseElements.ReadDataUserTask1.Parameters.ResultCompositeObjectList.Caption" Value="Datensatz-Auswahl" />
+			<Item Name="BaseElements.ReadDataUserTask1.Parameters.ResultCount.Caption" Value="Anzahl Sätze" />
+			<Item Name="BaseElements.ReadDataUserTask1.Parameters.ResultDateTimeFunction.Caption" Value="Funktionsresultat (Datum/Zeit)" />
+			<Item Name="BaseElements.ReadDataUserTask1.Parameters.ResultEntity.Caption" Value="Erstes Item der Ergebniskollektion" />
+			<Item Name="BaseElements.ReadDataUserTask1.Parameters.ResultEntityCollection.Caption" Value="Ergenissammlung" />
+			<Item Name="BaseElements.ReadDataUserTask1.Parameters.ResultFloatFunction.Caption" Value="Funktionsresultat (Dezimal)" />
+			<Item Name="BaseElements.ReadDataUserTask1.Parameters.ResultIntegerFunction.Caption" Value="Funktionsresultat (Ganzzahl)" />
+			<Item Name="BaseElements.ReadDataUserTask1.Parameters.ResultRowsCount.Caption" Value="Anzahl gelesener Sätze" />
+			<Item Name="BaseElements.ReadDataUserTask1.Parameters.ResultType.Caption" Value="Ergebnistyp" />
+			<Item Name="Caption" Value="MCIT VM Request Submission" />
+		</Items>
+	</Group>
+</Resources>

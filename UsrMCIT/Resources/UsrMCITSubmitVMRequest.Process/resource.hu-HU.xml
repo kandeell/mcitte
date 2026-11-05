@@ -1,0 +1,70 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Resources Culture="hu-HU">
+	<Group Type="String">
+		<Items>
+			<Item Name="BaseElements.ActivityUserTask1.Parameters.Account.Caption" Value="Fiók" />
+			<Item Name="BaseElements.ActivityUserTask1.Parameters.ActivityCategory.Caption" Value="Kategória" />
+			<Item Name="BaseElements.ActivityUserTask1.Parameters.ActivityPriority.Caption" Value="Prioritás" />
+			<Item Name="BaseElements.ActivityUserTask1.Parameters.ActivityResult.Caption" Value="A tevékenység eredménye" />
+			<Item Name="BaseElements.ActivityUserTask1.Parameters.Application.Caption" Value="Alkalmazás" />
+			<Item Name="BaseElements.ActivityUserTask1.Parameters.Case.Caption" Value="Eset" />
+			<Item Name="BaseElements.ActivityUserTask1.Parameters.Change.Caption" Value="Változtatás" />
+			<Item Name="BaseElements.ActivityUserTask1.Parameters.Contact.Caption" Value="Kapcsolat" />
+			<Item Name="BaseElements.ActivityUserTask1.Parameters.Contract.Caption" Value="Szerződés" />
+			<Item Name="BaseElements.ActivityUserTask1.Parameters.CurrentActivityId.Caption" Value="Feladat azonosítója" />
+			<Item Name="BaseElements.ActivityUserTask1.Parameters.Document.Caption" Value="Dokumentum" />
+			<Item Name="BaseElements.ActivityUserTask1.Parameters.Duration.Caption" Value="Időtartam" />
+			<Item Name="BaseElements.ActivityUserTask1.Parameters.DurationPeriod.Caption" Value="Időtartam" />
+			<Item Name="BaseElements.ActivityUserTask1.Parameters.ExecutionContext.Caption" Value="Végrehajtási környezet" />
+			<Item Name="BaseElements.ActivityUserTask1.Parameters.FinApplication.Caption" Value="Alkalmazás" />
+			<Item Name="BaseElements.ActivityUserTask1.Parameters.Incident.Caption" Value="Beeső" />
+			<Item Name="BaseElements.ActivityUserTask1.Parameters.InformationOnStep.Caption" Value="Információ a lépésről" />
+			<Item Name="BaseElements.ActivityUserTask1.Parameters.Invoice.Caption" Value="Számla" />
+			<Item Name="BaseElements.ActivityUserTask1.Parameters.IsActivityCompleted.Caption" Value="Tevékenység befejezve" />
+			<Item Name="BaseElements.ActivityUserTask1.Parameters.Lead.Caption" Value="Érdeklődő" />
+			<Item Name="BaseElements.ActivityUserTask1.Parameters.Listing.Caption" Value="Hirdetések" />
+			<Item Name="BaseElements.ActivityUserTask1.Parameters.Opportunity.Caption" Value="Lehetőség" />
+			<Item Name="BaseElements.ActivityUserTask1.Parameters.Order.Caption" Value="Rendezés" />
+			<Item Name="BaseElements.ActivityUserTask1.Parameters.OwnerId.Caption" Value="Tulajdonos" />
+			<Item Name="BaseElements.ActivityUserTask1.Parameters.Problem.Caption" Value="Probléma" />
+			<Item Name="BaseElements.ActivityUserTask1.Parameters.Project.Caption" Value="Projekt" />
+			<Item Name="BaseElements.ActivityUserTask1.Parameters.Property.Caption" Value="Tulajdonságok" />
+			<Item Name="BaseElements.ActivityUserTask1.Parameters.QueueItem.Caption" Value="Várólista elem" />
+			<Item Name="BaseElements.ActivityUserTask1.Parameters.Recommendation.Caption" Value="Ajánlásod" />
+			<Item Name="BaseElements.ActivityUserTask1.Parameters.Release.Caption" Value="Kiadás" />
+			<Item Name="BaseElements.ActivityUserTask1.Parameters.RemindBefore.Caption" Value="Emlékeztesse előre a tulajdonost" />
+			<Item Name="BaseElements.ActivityUserTask1.Parameters.RemindBeforePeriod.Caption" Value="Emlékeztesse előre a tulajdonost (időszak)" />
+			<Item Name="BaseElements.ActivityUserTask1.Parameters.Requests.Caption" Value="Kérés" />
+			<Item Name="BaseElements.ActivityUserTask1.Parameters.ShowExecutionPage.Caption" Value="Végrehajtási oldal automatikus megjelenítése" />
+			<Item Name="BaseElements.ActivityUserTask1.Parameters.ShowInScheduler.Caption" Value="Megjelenítés a naptárban" />
+			<Item Name="BaseElements.ActivityUserTask1.Parameters.StartIn.Caption" Value="Végrehajtás indítása" />
+			<Item Name="BaseElements.ActivityUserTask1.Parameters.StartInPeriod.Caption" Value="Végrehajtás indítása (pont)" />
+			<Item Name="BaseElements.ChangeDataUserTask1.Parameters.ConsiderTimeInFilter.Caption" Value="Vegye figyelembe az időt a szűrőben" />
+			<Item Name="BaseElements.ChangeDataUserTask1.Parameters.DataSourceFilters.Caption" Value="Adatforrás-szűrők" />
+			<Item Name="BaseElements.ChangeDataUserTask1.Parameters.EntitySchemaUId.Caption" Value="Tárgy" />
+			<Item Name="BaseElements.ChangeDataUserTask1.Parameters.IgnoreErrors.Caption" Value="Folytassa a végrehajtást a hibákkal" />
+			<Item Name="BaseElements.ChangeDataUserTask1.Parameters.IsMatchConditions.Caption" Value="Ha az objektum megfelel az alábbi feltételeknek" />
+			<Item Name="BaseElements.ChangeDataUserTask1.Parameters.RecordColumnValues.Caption" Value="Oszlopértékek beállítása" />
+			<Item Name="BaseElements.ReadDataUserTask1.Parameters.AggregationColumnName.Caption" Value="Az összesítő függvényoszlop neve" />
+			<Item Name="BaseElements.ReadDataUserTask1.Parameters.CanReadUncommitedData.Caption" Value="Nem véglegesített adatok olvasása" />
+			<Item Name="BaseElements.ReadDataUserTask1.Parameters.ConsiderTimeInFilter.Caption" Value="Vegye figyelembe az időt a szűrőben" />
+			<Item Name="BaseElements.ReadDataUserTask1.Parameters.DataSourceFilters.Caption" Value="A szűrők adatforrása" />
+			<Item Name="BaseElements.ReadDataUserTask1.Parameters.EntityColumnMetaPathes.Caption" Value="Olvasandó oszlopok" />
+			<Item Name="BaseElements.ReadDataUserTask1.Parameters.FunctionType.Caption" Value="Összesítő függvény típusa" />
+			<Item Name="BaseElements.ReadDataUserTask1.Parameters.IgnoreDisplayValues.Caption" Value="Ne olvassa be a keresőoszlopok megjelenített értékeit" />
+			<Item Name="BaseElements.ReadDataUserTask1.Parameters.NumberOfRecords.Caption" Value="Olvasandó rekordok száma" />
+			<Item Name="BaseElements.ReadDataUserTask1.Parameters.OrderInfo.Caption" Value="Oszlopok sorrendje" />
+			<Item Name="BaseElements.ReadDataUserTask1.Parameters.ReadSomeTopRecords.Caption" Value="Először olvassa el" />
+			<Item Name="BaseElements.ReadDataUserTask1.Parameters.ResultCompositeObjectList.Caption" Value="Nyilvántartások gyűjtése" />
+			<Item Name="BaseElements.ReadDataUserTask1.Parameters.ResultCount.Caption" Value="Rekordok száma" />
+			<Item Name="BaseElements.ReadDataUserTask1.Parameters.ResultDateTimeFunction.Caption" Value="Függvény eredménye (dátum/idő)" />
+			<Item Name="BaseElements.ReadDataUserTask1.Parameters.ResultEntity.Caption" Value="Az eredményül kapott gyűjtemény első eleme" />
+			<Item Name="BaseElements.ReadDataUserTask1.Parameters.ResultEntityCollection.Caption" Value="Eredményül kapott gyűjtemény" />
+			<Item Name="BaseElements.ReadDataUserTask1.Parameters.ResultFloatFunction.Caption" Value="Függvény eredménye (decimális)" />
+			<Item Name="BaseElements.ReadDataUserTask1.Parameters.ResultIntegerFunction.Caption" Value="Függvény eredménye (egész szám)" />
+			<Item Name="BaseElements.ReadDataUserTask1.Parameters.ResultRowsCount.Caption" Value="Olvasott rekordok száma" />
+			<Item Name="BaseElements.ReadDataUserTask1.Parameters.ResultType.Caption" Value="Az eredmény típusa" />
+			<Item Name="Caption" Value="MCIT VM Request Submission" />
+		</Items>
+	</Group>
+</Resources>

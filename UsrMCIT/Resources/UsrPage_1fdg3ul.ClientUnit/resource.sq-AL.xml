@@ -1,0 +1,9 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Resources Culture="sq-AL">
+	<Group Type="String">
+		<Items>
+			<Item Name="LocalizableStrings.Button_spbhdwfCaption.Value" Value="Rifresko" />
+			<Item Name="LocalizableStrings.Button_tbioevjCaption.Value" Value="Ngarko" />
+		</Items>
+	</Group>
+</Resources>

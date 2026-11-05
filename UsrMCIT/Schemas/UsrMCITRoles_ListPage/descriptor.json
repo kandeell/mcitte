@@ -1,0 +1,13 @@
+﻿{
+  "Descriptor": {
+    "UId": "92774250-738a-4be1-8082-2244dc7b0193",
+    "Name": "UsrMCITRoles_ListPage",
+    "ModifiedOnUtc": "\/Date(1792810162000)\/",
+    "Parent": {
+      "UId": "b7b898d0-8c77-4953-c097-23fa6800da02",
+      "Name": "ListPageV3Template"
+    },
+    "ManagerName": "ClientUnitSchemaManager",
+    "Caption": "Roles list page"
+  }
+}

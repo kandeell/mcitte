@@ -1,0 +1,14 @@
+﻿{
+  "Descriptor": {
+    "UId": "bff93ad8-283c-4daa-854d-1b3b48d1987b",
+    "Name": "UsrPricingUnit",
+    "ModifiedOnUtc": "\/Date(1792452666000)\/",
+    "Parent": {
+      "UId": "11ab4bcb-9b23-4b6d-9c86-520fae925d75",
+      "Name": "BaseLookup"
+    },
+    "ManagerName": "EntitySchemaManager",
+    "Caption": "Pricing Unit",
+    "DependsOn": []
+  }
+}

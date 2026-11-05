@@ -1,0 +1,14 @@
+﻿{
+  "Descriptor": {
+    "UId": "802fea84-02ef-46c9-ab25-0a2a514a4c46",
+    "Name": "UsrAdministrationHome_Detail",
+    "ModifiedOnUtc": "\/Date(1792930221000)\/",
+    "Parent": {
+      "UId": "01eb38ee-668a-42f0-999d-c2534f979089",
+      "Name": "BaseGridDetailV2"
+    },
+    "ManagerName": "ClientUnitSchemaManager",
+    "Caption": "Administration Home detail",
+    "DependsOn": []
+  }
+}

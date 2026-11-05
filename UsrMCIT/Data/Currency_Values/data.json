@@ -1,0 +1,84 @@
+﻿{
+  "PackageData": [
+    {
+      "Row": [
+        {
+          "SchemaColumnUId": "ae0e45ca-c495-4fe7-a39d-3ab7278e1617",
+          "Value": "5703bd36-cf82-48d5-bd0c-83c83bcbd9ee"
+        },
+        {
+          "SchemaColumnUId": "13aad544-ec30-4e76-a373-f0cff3202e24",
+          "Value": "845"
+        },
+        {
+          "SchemaColumnUId": "81913c21-afcb-4a38-9164-af361a45d80f",
+          "Value": "EGP"
+        },
+        {
+          "SchemaColumnUId": "9928edec-4272-425a-93bb-48743fee4b04",
+          "Value": "\/Date(1792452481516+0300)\/"
+        },
+        {
+          "SchemaColumnUId": "aa202f22-3aa0-441e-b192-5e03e7e8090d",
+          "Value": 0
+        },
+        {
+          "SchemaColumnUId": "b13238af-3645-4799-8cf7-063a08194804",
+          "Value": 0.00000000
+        },
+        {
+          "SchemaColumnUId": "df51504c-ae63-42e8-964d-8a30ceff0a7c",
+          "Value": 0
+        },
+        {
+          "SchemaColumnUId": "e80190a5-03b2-4095-90f7-a193a960adee",
+          "Value": "\/Date(1792452481515+0300)\/"
+        },
+        {
+          "SchemaColumnUId": "e8667452-cecb-4735-acf7-428ea8d62e50",
+          "Value": 1
+        }
+      ]
+    },
+    {
+      "Row": [
+        {
+          "SchemaColumnUId": "ae0e45ca-c495-4fe7-a39d-3ab7278e1617",
+          "Value": "915e8a55-98d6-df11-9b2a-001d60e938c6"
+        },
+        {
+          "SchemaColumnUId": "13aad544-ec30-4e76-a373-f0cff3202e24",
+          "Value": "840"
+        },
+        {
+          "SchemaColumnUId": "81913c21-afcb-4a38-9164-af361a45d80f",
+          "Value": "USD"
+        },
+        {
+          "SchemaColumnUId": "9928edec-4272-425a-93bb-48743fee4b04",
+          "Value": "\/Date(1662426645743+0200)\/"
+        },
+        {
+          "SchemaColumnUId": "aa202f22-3aa0-441e-b192-5e03e7e8090d",
+          "Value": 0
+        },
+        {
+          "SchemaColumnUId": "b13238af-3645-4799-8cf7-063a08194804",
+          "Value": 0.00000000
+        },
+        {
+          "SchemaColumnUId": "df51504c-ae63-42e8-964d-8a30ceff0a7c",
+          "Value": 0
+        },
+        {
+          "SchemaColumnUId": "e80190a5-03b2-4095-90f7-a193a960adee",
+          "Value": "\/Date(1563224699014+0200)\/"
+        },
+        {
+          "SchemaColumnUId": "e8667452-cecb-4735-acf7-428ea8d62e50",
+          "Value": 1
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,10 @@
+﻿{
+  "Descriptor": {
+    "UId": "ebe6a4f8-6d1c-43c3-ae0d-5943dcd1889a",
+    "Name": "UsrMCITAssignUserToRole",
+    "ModifiedOnUtc": "\/Date(1792814679000)\/",
+    "ManagerName": "ProcessSchemaManager",
+    "Caption": "MCIT Assign User to Role",
+    "DependsOn": []
+  }
+}

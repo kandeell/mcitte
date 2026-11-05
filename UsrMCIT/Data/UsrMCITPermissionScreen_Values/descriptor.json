@@ -1,0 +1,70 @@
+﻿{
+  "Descriptor": {
+    "UId": "4e54a87c-9e21-4302-9402-aa05b79b2f5a",
+    "Name": "UsrMCITPermissionScreen_Values",
+    "ModifiedOnUtc": "\/Date(1792874497000)\/",
+    "InstallType": 0,
+    "Schema": {
+      "UId": "4e54a87c-9e21-4302-9402-aa05b79b2f5a",
+      "Name": "UsrMCITPermissionScreen"
+    },
+    "Columns": [
+      {
+        "ColumnUId": "04b4eafa-a7bc-62f0-b0be-8f59e6f4b4bf",
+        "IsForceUpdate": false,
+        "IsKey": false,
+        "ColumnName": "UsrScreenName",
+        "DataTypeValueUId": "ddb3a1ee-07e8-4d62-b7a9-d0e618b00fbd"
+      },
+      {
+        "ColumnUId": "40e883d8-eed7-54f4-22a5-a990a7ba4586",
+        "IsForceUpdate": false,
+        "IsKey": false,
+        "ColumnName": "UsrSortOrder",
+        "DataTypeValueUId": "6b6b74e2-820d-490e-a017-2b73d4ccf2b0"
+      },
+      {
+        "ColumnUId": "4c43c96e-c4f7-1842-1cce-9e1209e1505a",
+        "IsForceUpdate": false,
+        "IsKey": false,
+        "ColumnName": "UsrCGroup",
+        "DataTypeValueUId": "ddb3a1ee-07e8-4d62-b7a9-d0e618b00fbd"
+      },
+      {
+        "ColumnUId": "95ad8270-89bd-21fc-9304-1acd09e42c33",
+        "IsForceUpdate": false,
+        "IsKey": false,
+        "ColumnName": "UsrScreenCode",
+        "DataTypeValueUId": "ddb3a1ee-07e8-4d62-b7a9-d0e618b00fbd"
+      },
+      {
+        "ColumnUId": "9928edec-4272-425a-93bb-48743fee4b04",
+        "IsForceUpdate": false,
+        "IsKey": false,
+        "ColumnName": "ModifiedOn",
+        "DataTypeValueUId": "d21e9ef4-c064-4012-b286-fa1a8171da44"
+      },
+      {
+        "ColumnUId": "a1ce70fd-5ae5-8bf2-7de9-266361dfa8bb",
+        "IsForceUpdate": false,
+        "IsKey": false,
+        "ColumnName": "UsrIsActive",
+        "DataTypeValueUId": "90b65bf8-0ffc-4141-8779-2420877af907"
+      },
+      {
+        "ColumnUId": "ae0e45ca-c495-4fe7-a39d-3ab7278e1617",
+        "IsForceUpdate": false,
+        "IsKey": true,
+        "ColumnName": "Id",
+        "DataTypeValueUId": "23018567-a13c-4320-8687-fd6f9e3699bd"
+      },
+      {
+        "ColumnUId": "e80190a5-03b2-4095-90f7-a193a960adee",
+        "IsForceUpdate": false,
+        "IsKey": false,
+        "ColumnName": "CreatedOn",
+        "DataTypeValueUId": "d21e9ef4-c064-4012-b286-fa1a8171da44"
+      }
+    ]
+  }
+}

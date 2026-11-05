@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Resources Culture="en-US">
+	<Group Type="String">
+		<Items>
+			<Item Name="Caption" Value="MCIT Role Permission" />
+			<Item Name="Columns.UsrCanCreate.Caption" Value="Can Create" />
+			<Item Name="Columns.UsrCanDelete.Caption" Value="Can Delete" />
+			<Item Name="Columns.UsrCanEdit.Caption" Value="Can Edit" />
+			<Item Name="Columns.UsrCanRead.Caption" Value="Can Read" />
+			<Item Name="Columns.UsrGroup.Caption" Value="Screen Group" />
+			<Item Name="Columns.UsrIsActive.Caption" Value="Active" />
+			<Item Name="Columns.UsrMCITRole.Caption" Value="MCIT Role" />
+			<Item Name="Columns.UsrObjectCode.Caption" Value="Object Code" />
+			<Item Name="Columns.UsrScreenCode.Caption" Value="Screen Code" />
+			<Item Name="Columns.UsrScreenName.Caption" Value="Screen Name" />
+		</Items>
+	</Group>
+</Resources>

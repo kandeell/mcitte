@@ -1,0 +1,10 @@
+﻿{
+  "Descriptor": {
+    "UId": "e0440df4-cae5-4249-914d-aec98bb48b8a",
+    "Name": "UsrMCITConfigurationVersionLifecycle",
+    "ModifiedOnUtc": "\/Date(1792482861000)\/",
+    "ManagerName": "DcmSchemaManager",
+    "Caption": "MCIT Configuration Version Lifecycle",
+    "DependsOn": []
+  }
+}

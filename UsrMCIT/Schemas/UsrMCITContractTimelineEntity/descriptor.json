@@ -1,0 +1,10 @@
+﻿{
+  "Descriptor": {
+    "UId": "14c39152-b773-4253-919b-562c07abb6ee",
+    "Name": "UsrMCITContractTimelineEntity",
+    "ModifiedOnUtc": "\/Date(1792324818000)\/",
+    "ManagerName": "AddonSchemaManager",
+    "Caption": "MCIT Contract (TimelineEntity)",
+    "DependsOn": []
+  }
+}

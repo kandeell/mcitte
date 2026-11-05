@@ -1,0 +1,9 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Resources Culture="zh-TW">
+	<Group Type="String">
+		<Items>
+			<Item Name="LocalizableStrings.Button_spbhdwfCaption.Value" Value="刷新" />
+			<Item Name="LocalizableStrings.Button_tbioevjCaption.Value" Value="上傳" />
+		</Items>
+	</Group>
+</Resources>

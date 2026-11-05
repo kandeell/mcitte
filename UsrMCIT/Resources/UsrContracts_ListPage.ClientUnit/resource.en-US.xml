@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Resources Culture="en-US">
+	<Group Type="String">
+		<Items>
+			<Item Name="Caption" Value="Contracts list page" />
+			<Item Name="LocalizableStrings.IndicatorWidget_42xyo1n_config_text_template.Value" Value="{0}" />
+			<Item Name="LocalizableStrings.IndicatorWidget_42xyo1n_hint.Value" Value="Components.IndicatorWidget.Hint" />
+			<Item Name="LocalizableStrings.IndicatorWidget_42xyo1n_title.Value" Value="Expiring Soon" />
+			<Item Name="LocalizableStrings.IndicatorWidget_g7hve3d_config_text_template.Value" Value="{0}" />
+			<Item Name="LocalizableStrings.IndicatorWidget_g7hve3d_hint.Value" Value="Components.IndicatorWidget.Hint" />
+			<Item Name="LocalizableStrings.IndicatorWidget_g7hve3d_title.Value" Value="Total Available" />
+			<Item Name="LocalizableStrings.IndicatorWidget_rs0tsr7_config_text_template.Value" Value="{0}" />
+			<Item Name="LocalizableStrings.IndicatorWidget_rs0tsr7_hint.Value" Value="Components.IndicatorWidget.Hint" />
+			<Item Name="LocalizableStrings.IndicatorWidget_rs0tsr7_title.Value" Value="Active Contracts" />
+			<Item Name="LocalizableStrings.IndicatorWidget_utpntv2_config_text_template.Value" Value="{0}" />
+			<Item Name="LocalizableStrings.IndicatorWidget_utpntv2_hint.Value" Value="Components.IndicatorWidget.Hint" />
+			<Item Name="LocalizableStrings.IndicatorWidget_utpntv2_title.Value" Value="Total Restored" />
+			<Item Name="LocalizableStrings.IndicatorWidget_vk3knbn_config_text_template.Value" Value="{0}" />
+			<Item Name="LocalizableStrings.IndicatorWidget_vk3knbn_hint.Value" Value="Components.IndicatorWidget.Hint" />
+			<Item Name="LocalizableStrings.IndicatorWidget_vk3knbn_title.Value" Value="Total Consumed" />
+		</Items>
+	</Group>
+</Resources>

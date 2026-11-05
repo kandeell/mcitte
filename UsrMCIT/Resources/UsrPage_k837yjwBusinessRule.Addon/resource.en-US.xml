@@ -1,0 +1,9 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Resources Culture="en-US">
+	<Group Type="String">
+		<Items>
+			<Item Name="AddonConfig.Rules.43e63a83-6895-38f0-b717-216b4022c344.Caption" Value="Show elements: Provisioning Error" />
+			<Item Name="Caption" Value="MCIT Role form page (Business rules)" />
+		</Items>
+	</Group>
+</Resources>

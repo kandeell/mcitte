@@ -1,0 +1,70 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Resources Culture="he-IL">
+	<Group Type="String">
+		<Items>
+			<Item Name="BaseElements.ActivityUserTask1.Parameters.Account.Caption" Value="חברה" />
+			<Item Name="BaseElements.ActivityUserTask1.Parameters.ActivityCategory.Caption" Value="קטגוריה" />
+			<Item Name="BaseElements.ActivityUserTask1.Parameters.ActivityPriority.Caption" Value="עדיפות" />
+			<Item Name="BaseElements.ActivityUserTask1.Parameters.ActivityResult.Caption" Value="תוצאת פעילות" />
+			<Item Name="BaseElements.ActivityUserTask1.Parameters.Application.Caption" Value="יישם" />
+			<Item Name="BaseElements.ActivityUserTask1.Parameters.Case.Caption" Value="מקרה" />
+			<Item Name="BaseElements.ActivityUserTask1.Parameters.Change.Caption" Value="שינוי" />
+			<Item Name="BaseElements.ActivityUserTask1.Parameters.Contact.Caption" Value="איש קשר" />
+			<Item Name="BaseElements.ActivityUserTask1.Parameters.Contract.Caption" Value="חוזה" />
+			<Item Name="BaseElements.ActivityUserTask1.Parameters.CurrentActivityId.Caption" Value="מזהה משימה" />
+			<Item Name="BaseElements.ActivityUserTask1.Parameters.Document.Caption" Value="מסמך" />
+			<Item Name="BaseElements.ActivityUserTask1.Parameters.Duration.Caption" Value="משך" />
+			<Item Name="BaseElements.ActivityUserTask1.Parameters.DurationPeriod.Caption" Value="משך (תקופה)" />
+			<Item Name="BaseElements.ActivityUserTask1.Parameters.ExecutionContext.Caption" Value="הקשר ביצוע" />
+			<Item Name="BaseElements.ActivityUserTask1.Parameters.FinApplication.Caption" Value="יישם" />
+			<Item Name="BaseElements.ActivityUserTask1.Parameters.Incident.Caption" Value="תקרית" />
+			<Item Name="BaseElements.ActivityUserTask1.Parameters.InformationOnStep.Caption" Value="מידע על שלב" />
+			<Item Name="BaseElements.ActivityUserTask1.Parameters.Invoice.Caption" Value="חשבונית" />
+			<Item Name="BaseElements.ActivityUserTask1.Parameters.IsActivityCompleted.Caption" Value="פעילות הושלמה" />
+			<Item Name="BaseElements.ActivityUserTask1.Parameters.Lead.Caption" Value="הפניה" />
+			<Item Name="BaseElements.ActivityUserTask1.Parameters.Listing.Caption" Value="רשימות" />
+			<Item Name="BaseElements.ActivityUserTask1.Parameters.Opportunity.Caption" Value="הזדמנות עסקית" />
+			<Item Name="BaseElements.ActivityUserTask1.Parameters.Order.Caption" Value="הזמנה" />
+			<Item Name="BaseElements.ActivityUserTask1.Parameters.OwnerId.Caption" Value="בעלים" />
+			<Item Name="BaseElements.ActivityUserTask1.Parameters.Problem.Caption" Value="בעיה" />
+			<Item Name="BaseElements.ActivityUserTask1.Parameters.Project.Caption" Value="פרויקט" />
+			<Item Name="BaseElements.ActivityUserTask1.Parameters.Property.Caption" Value="תכונות" />
+			<Item Name="BaseElements.ActivityUserTask1.Parameters.QueueItem.Caption" Value="פריט בתור" />
+			<Item Name="BaseElements.ActivityUserTask1.Parameters.Recommendation.Caption" Value="המלצה" />
+			<Item Name="BaseElements.ActivityUserTask1.Parameters.Release.Caption" Value="שחרור גרסה" />
+			<Item Name="BaseElements.ActivityUserTask1.Parameters.RemindBefore.Caption" Value="הזכר לבעלים מראש" />
+			<Item Name="BaseElements.ActivityUserTask1.Parameters.RemindBeforePeriod.Caption" Value="הזכר לבעלים מראש (תקופה)" />
+			<Item Name="BaseElements.ActivityUserTask1.Parameters.Requests.Caption" Value="בקשה" />
+			<Item Name="BaseElements.ActivityUserTask1.Parameters.ShowExecutionPage.Caption" Value="הצג את דף הביצוע אוטומטית" />
+			<Item Name="BaseElements.ActivityUserTask1.Parameters.ShowInScheduler.Caption" Value="הצג בלוח השנה" />
+			<Item Name="BaseElements.ActivityUserTask1.Parameters.StartIn.Caption" Value="התחל בביצוע תוך" />
+			<Item Name="BaseElements.ActivityUserTask1.Parameters.StartInPeriod.Caption" Value="התחל בביצוע תוך (תקופה)" />
+			<Item Name="BaseElements.ChangeDataUserTask1.Parameters.ConsiderTimeInFilter.Caption" Value="שקול זמן במסנן" />
+			<Item Name="BaseElements.ChangeDataUserTask1.Parameters.DataSourceFilters.Caption" Value="מסנני מקור הנתונים" />
+			<Item Name="BaseElements.ChangeDataUserTask1.Parameters.EntitySchemaUId.Caption" Value="אובייקט" />
+			<Item Name="BaseElements.ChangeDataUserTask1.Parameters.IgnoreErrors.Caption" Value="המשך ביצוע בהודעות שגיאה" />
+			<Item Name="BaseElements.ChangeDataUserTask1.Parameters.IsMatchConditions.Caption" Value="אם האובייקט עומד בתנאים הבאים" />
+			<Item Name="BaseElements.ChangeDataUserTask1.Parameters.RecordColumnValues.Caption" Value="הגדר ערכי עמודה" />
+			<Item Name="BaseElements.ReadDataUserTask1.Parameters.AggregationColumnName.Caption" Value="שם עמודת פונקציית אגרגציה" />
+			<Item Name="BaseElements.ReadDataUserTask1.Parameters.CanReadUncommitedData.Caption" Value="קרא נתונים שלא אושרו" />
+			<Item Name="BaseElements.ReadDataUserTask1.Parameters.ConsiderTimeInFilter.Caption" Value="שקול זמן במסנן" />
+			<Item Name="BaseElements.ReadDataUserTask1.Parameters.DataSourceFilters.Caption" Value="מקור נתונים של פילטרים" />
+			<Item Name="BaseElements.ReadDataUserTask1.Parameters.EntityColumnMetaPathes.Caption" Value="עמודות לקרוא" />
+			<Item Name="BaseElements.ReadDataUserTask1.Parameters.FunctionType.Caption" Value="סוג פונקציה מצטברת" />
+			<Item Name="BaseElements.ReadDataUserTask1.Parameters.IgnoreDisplayValues.Caption" Value="אל תקרא ערכים המוצגים של עמודות חיפוש" />
+			<Item Name="BaseElements.ReadDataUserTask1.Parameters.NumberOfRecords.Caption" Value="מספר רשומות לקריאה" />
+			<Item Name="BaseElements.ReadDataUserTask1.Parameters.OrderInfo.Caption" Value="סדר עמודות" />
+			<Item Name="BaseElements.ReadDataUserTask1.Parameters.ReadSomeTopRecords.Caption" Value="קרא ראשון" />
+			<Item Name="BaseElements.ReadDataUserTask1.Parameters.ResultCompositeObjectList.Caption" Value="אוסף רשומות" />
+			<Item Name="BaseElements.ReadDataUserTask1.Parameters.ResultCount.Caption" Value="מספר רשומות" />
+			<Item Name="BaseElements.ReadDataUserTask1.Parameters.ResultDateTimeFunction.Caption" Value="תוצאת פונקציה (תאריך/שעה)" />
+			<Item Name="BaseElements.ReadDataUserTask1.Parameters.ResultEntity.Caption" Value="הפריט הראשון של האוסף התוצאו" />
+			<Item Name="BaseElements.ReadDataUserTask1.Parameters.ResultEntityCollection.Caption" Value="אוסף תוצאות" />
+			<Item Name="BaseElements.ReadDataUserTask1.Parameters.ResultFloatFunction.Caption" Value="תוצאת פונקציה (שבר)" />
+			<Item Name="BaseElements.ReadDataUserTask1.Parameters.ResultIntegerFunction.Caption" Value="תוצאת פונקציה (מספר שלם)" />
+			<Item Name="BaseElements.ReadDataUserTask1.Parameters.ResultRowsCount.Caption" Value="מספר הרשומות שנקראו" />
+			<Item Name="BaseElements.ReadDataUserTask1.Parameters.ResultType.Caption" Value="Result type" />
+			<Item Name="Caption" Value="MCIT VM Request Submission" />
+		</Items>
+	</Group>
+</Resources>

@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Resources Culture="en-US">
+	<Group Type="String">
+		<Items>
+			<Item Name="Caption" Value="Financial Transaction" />
+			<Item Name="Columns.UsrActor.Caption" Value="Actor" />
+			<Item Name="Columns.UsrAmount.Caption" Value="Amount" />
+			<Item Name="Columns.UsrConfigVersion.Caption" Value="Configuration version" />
+			<Item Name="Columns.UsrContract.Caption" Value="Contract" />
+			<Item Name="Columns.UsrCurrency.Caption" Value="Currency" />
+			<Item Name="Columns.UsrName.Caption" Value="Transaction reference" />
+			<Item Name="Columns.UsrReason.Caption" Value="Reason" />
+			<Item Name="Columns.UsrRequest.Caption" Value="VM request" />
+			<Item Name="Columns.UsrRequestItem.Caption" Value="VM request item" />
+			<Item Name="Columns.UsrResourceRate.Caption" Value="Resource rate" />
+			<Item Name="Columns.UsrTransactionDate.Caption" Value="Transaction date" />
+			<Item Name="Columns.UsrTransactionType.Caption" Value="Transaction type" />
+			<Item Name="Columns.UsrVirtualMachine.Caption" Value="Virtual machine" />
+		</Items>
+	</Group>
+</Resources>

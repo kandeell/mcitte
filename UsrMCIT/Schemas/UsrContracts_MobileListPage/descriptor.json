@@ -1,0 +1,14 @@
+﻿{
+  "Descriptor": {
+    "UId": "51c18d63-ac50-4832-b153-a11f82995382",
+    "Name": "UsrContracts_MobileListPage",
+    "ModifiedOnUtc": "\/Date(1792346768000)\/",
+    "Parent": {
+      "UId": "011e7dda-a763-4535-9b9a-e09eddd047be",
+      "Name": "BaseMobileListTemplate"
+    },
+    "ManagerName": "ClientUnitSchemaManager",
+    "Caption": "Contracts mobile list page",
+    "DependsOn": []
+  }
+}

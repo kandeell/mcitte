@@ -1,0 +1,10 @@
+﻿{
+  "Descriptor": {
+    "UId": "7fbd776e-b9a5-46f3-8501-e10b8d09094a",
+    "Name": "UsrMCITNewRequestPageBusinessRule",
+    "ModifiedOnUtc": "\/Date(1792332825000)\/",
+    "ManagerName": "AddonSchemaManager",
+    "Caption": "MCIT New Request Page (Business rules)",
+    "DependsOn": []
+  }
+}

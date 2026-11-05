@@ -1,0 +1,9 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Resources Culture="lv-LV">
+	<Group Type="String">
+		<Items>
+			<Item Name="LocalizableStrings.AddButton_caption.Value" Value="Jauns" />
+			<Item Name="LocalizableStrings.DataImportButton_caption.Value" Value="Importēt" />
+		</Items>
+	</Group>
+</Resources>

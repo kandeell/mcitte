@@ -1,0 +1,14 @@
+﻿{
+  "Descriptor": {
+    "UId": "20a12fef-ec06-406e-a789-58c547573c6e",
+    "Name": "UsrUserDirectoryUserProfile",
+    "ModifiedOnUtc": "\/Date(1792886333000)\/",
+    "Parent": {
+      "UId": "3b2e117f-8c6b-4ca5-80a2-7ebb497cddf9",
+      "Name": "PageWithTabsFreedomTemplate"
+    },
+    "ManagerName": "ClientUnitSchemaManager",
+    "Caption": "User Profile",
+    "DependsOn": []
+  }
+}

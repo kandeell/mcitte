@@ -1,0 +1,14 @@
+﻿{
+  "Descriptor": {
+    "UId": "2f9fa84c-2ae4-4991-9a01-c6ab41ea786a",
+    "Name": "UsrMCITRoleQueuePermission",
+    "ModifiedOnUtc": "\/Date(1792879818000)\/",
+    "Parent": {
+      "UId": "1bab9dcf-17d5-49f8-9536-8e0064f1dce0",
+      "Name": "BaseEntity"
+    },
+    "ManagerName": "EntitySchemaManager",
+    "Caption": "MCIT Role Queue Permission",
+    "DependsOn": []
+  }
+}

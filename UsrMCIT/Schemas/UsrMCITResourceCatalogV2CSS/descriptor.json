@@ -1,0 +1,10 @@
+﻿{
+  "Descriptor": {
+    "UId": "b2c0728e-7d79-4d74-ab03-aff00bd0cd9f",
+    "Name": "UsrMCITResourceCatalogV2CSS",
+    "ModifiedOnUtc": "\/Date(1793058694000)\/",
+    "ManagerName": "ClientUnitSchemaManager",
+    "Caption": "MCIT Resource Catalog V2 CSS",
+    "DependsOn": []
+  }
+}

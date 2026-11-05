@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Resources Culture="en-US">
+	<Group Type="String">
+		<Items>
+			<Item Name="Caption" Value="Roles list page" />
+			<Item Name="LocalizableStrings.Button_1od23cq_caption.Value" Value="Draft" />
+			<Item Name="LocalizableStrings.Button_2urezgq_caption.Value" Value="Inactive" />
+			<Item Name="LocalizableStrings.Button_3utviwt_caption.Value" Value="Active" />
+			<Item Name="LocalizableStrings.Button_51m9doe_caption.Value" Value="All" />
+			<Item Name="LocalizableStrings.Button_zce85wm_caption.Value" Value="Create Role" />
+			<Item Name="LocalizableStrings.DataGrid_l3ofv19DS_UsrPermissionsCount.Value" Value="Permissions" />
+			<Item Name="LocalizableStrings.Label_n5j0lca_caption.Value" Value="Dynamic, configuration-driven roles and permissions" />
+			<Item Name="LocalizableStrings.Label_xa4l2d7_caption.Value" Value="Role Management" />
+			<Item Name="LocalizableStrings.QuickFilter_4d1u24e_caption.Value" Value="Quick filter" />
+			<Item Name="LocalizableStrings.SearchFilter_7irptcm_placeholder.Value" Value="Search" />
+		</Items>
+	</Group>
+</Resources>

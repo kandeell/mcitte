@@ -1,0 +1,10 @@
+﻿{
+  "Descriptor": {
+    "UId": "c936de30-28ea-4126-9400-9cb63a11e434",
+    "Name": "UsrContractsMobileRelatedPage",
+    "ModifiedOnUtc": "\/Date(1792346768000)\/",
+    "ManagerName": "AddonSchemaManager",
+    "Caption": "Contracts (Mobile page settings)",
+    "DependsOn": []
+  }
+}

@@ -1,0 +1,1364 @@
+
+/*
+MCIT Role Editor - Figma Theme
+Package: UsrMCIT
+Schema: UsrPage_k837yjw
+Styles are visual only; they do not enforce permissions.
+*/
+
+#Tabs.usr-mcit-role-tabs,
+.usr-mcit-role-tabs {
+    --mcit-violet: #6424b9;
+    --mcit-deep-purple: #35135d;
+    --mcit-text: #182436;
+    --mcit-muted: #64748b;
+    --mcit-border: #e1e4ec;
+    --mcit-bg: #f8f7ff;
+    --mcit-positive: #179357;
+
+    color: var(--mcit-text);
+    font-family: Rubik, Inter, Arial, sans-serif;
+    width: 100%;
+}
+
+/* Main Role Header */
+
+#TopAreaProfileContainer.usr-mcit-page-hero,
+.usr-mcit-page-hero {
+    background-color: #ffffff;
+    border: 1px solid #e2e6ee;
+    border-radius: 13px;
+    box-shadow: none;
+    padding: 16px 20px;
+    margin-bottom: 18px;
+}
+
+#TopAreaProfileContainer.usr-mcit-page-hero .crt-input,
+.usr-mcit-page-hero .crt-input {
+    font-family: Rubik, Inter, Arial, sans-serif;
+}
+
+/* Tabs */
+
+.usr-mcit-role-tabs .mat-mdc-tab-header,
+#Tabs .mat-mdc-tab-header,
+.usr-mcit-role-tabs .crt-tab-panel-header,
+#Tabs .crt-tab-panel-header {
+    border-bottom: 1px solid #e0e4ec;
+    background-color: transparent;
+}
+
+.usr-mcit-role-tabs .mdc-tab__text-label,
+#Tabs .mdc-tab__text-label {
+    color: #64748b;
+    font-size: 12.5px;
+    font-weight: 500;
+    white-space: nowrap;
+}
+
+.usr-mcit-role-tabs .mdc-tab--active .mdc-tab__text-label,
+#Tabs .mdc-tab--active .mdc-tab__text-label {
+    color: #6326b7;
+    font-weight: 700;
+}
+
+.usr-mcit-role-tabs .mdc-tab-indicator__content--underline,
+#Tabs .mdc-tab-indicator__content--underline {
+    border-color: #6424b9;
+    border-top-width: 2px;
+}
+
+/* Figma Content Cards */
+
+.usr-mcit-card,
+#UsrMCITScreenPanel,
+#UsrDataScopePanel,
+#UsrMCITQueuePanel,
+#UsrMCITReportingPanel,
+#UsrMCITAdminPanel,
+#UsrMCITChangeSummaryPanel {
+    background: #ffffff;
+    border: 1px solid var(--mcit-border, #e1e4ec);
+    border-radius: 13px;
+    box-shadow: none;
+    margin-top: 18px;
+    overflow: hidden;
+    padding: 4px 14px 12px;
+}
+
+/* Card Headings */
+
+.usr-mcit-card .crt-expansion-panel-header,
+#UsrDataScopePanel .crt-expansion-panel-header,
+#UsrMCITQueuePanel .crt-expansion-panel-header,
+#UsrMCITAdminPanel .crt-expansion-panel-header {
+    padding: 12px 4px;
+    border-bottom: 1px solid #edf0f5;
+}
+
+.usr-mcit-card .crt-expansion-panel-header-title,
+.usr-mcit-card .crt-expansion-panel-title {
+    color: #172234;
+    font-weight: 700;
+    font-size: 14px;
+}
+
+/* Information Banner */
+
+.usr-mcit-note,
+#UsrMCITScreenNote,
+#UsrMCITReportingNote {
+    display: block;
+    background: #eef5ff;
+    border: 1px solid #bfd7ff;
+    border-radius: 9px;
+    color: #2454ae;
+    font-weight: 500;
+    font-size: 12px;
+    padding: 11px 13px;
+    margin: 10px 0 14px;
+    line-height: 1.55;
+}
+
+/* Data Scope Banner */
+
+.usr-mcit-scope-banner,
+#UsrScopeBanner {
+    background: #f5efff !important;
+    border: 1px solid #dbbdf8 !important;
+    border-radius: 9px !important;
+    padding: 14px 15px !important;
+    margin: 10px 0 16px;
+}
+
+#UsrScopeBannerTitleLabel,
+.usr-mcit-banner-title {
+    color: #5b21a5;
+    font-size: 12px;
+    font-weight: 700;
+}
+
+#UsrScopeBannerDescriptionLabel {
+    color: #667085;
+    font-size: 12px;
+    line-height: 1.5;
+}
+
+/* Permission Tables */
+
+.usr-mcit-table,
+.usr-mcit-permissions-table,
+#DataGrid_1yq715a,
+#UsrDataScopeGrid,
+#DataGrid_cjsl4aj,
+#DataGrid_6bdu0ha {
+    border: 1px solid #e2e7f0;
+    border-radius: 9px;
+    overflow: hidden;
+    margin-top: 8px;
+    margin-bottom: 8px;
+    background: #ffffff;
+}
+
+.usr-mcit-table .crt-data-table-header-cell-container,
+.usr-mcit-permissions-table .crt-data-table-header-cell-container,
+#DataGrid_1yq715a .crt-data-table-header-cell-container,
+#UsrDataScopeGrid .crt-data-table-header-cell-container {
+    background-color: #f8fafc;
+    border-bottom: 1px solid #e2e7f0;
+    min-height: 38px;
+}
+
+.usr-mcit-table .crt-header-cell-caption,
+.usr-mcit-permissions-table .crt-header-cell-caption,
+#DataGrid_1yq715a .crt-header-cell-caption,
+#UsrDataScopeGrid .crt-header-cell-caption {
+    font-family: Rubik, Inter, Arial, sans-serif;
+    color: #475569;
+    font-size: 11px;
+    font-weight: 700;
+}
+
+.usr-mcit-table .crt-data-table-row,
+.usr-mcit-permissions-table .crt-data-table-row {
+    min-height: 38px;
+    border-bottom: 1px solid #edf0f5;
+}
+
+.usr-mcit-table .crt-data-table-cell,
+.usr-mcit-permissions-table .crt-data-table-cell {
+    font-family: Rubik, Inter, Arial, sans-serif;
+    color: #29384b;
+    font-size: 11.5px;
+}
+
+/* Read-only Checkboxes */
+
+.usr-mcit-permissions-table input[type='checkbox'][disabled],
+.usr-mcit-choices input[type='checkbox'][disabled] {
+    accent-color: #b7bdc8;
+    opacity: 0.82;
+}
+
+/* Two-column Permission Cards */
+
+.usr-mcit-choices,
+#UsrMCITReportingPreview,
+#UsrMCITAdminCheckboxGrid {
+    gap: 10px 12px;
+    margin-top: 12px;
+    margin-bottom: 6px;
+}
+
+.usr-mcit-check-tile,
+#UsrMCITAdminCheckboxGrid crt-checkbox,
+#UsrMCITReportingPreview crt-checkbox {
+    display: flex;
+    align-items: center;
+    background: #ffffff;
+    border: 1px solid #e2e7f0;
+    border-radius: 8px;
+    padding: 11px 12px;
+    min-height: 42px;
+    box-sizing: border-box;
+    font-size: 12px;
+}
+
+/* Change Summary Empty State */
+
+.usr-mcit-empty-state,
+#UsrMCITChangeSummaryEmpty {
+    min-height: 145px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 36px 16px;
+    text-align: center;
+    color: #94a3b8;
+}
+
+.usr-mcit-empty-title,
+#UsrMCITChangeEmptyTitle {
+    font-weight: 700;
+    color: #94a3b8;
+    font-size: 14px;
+}
+
+.usr-mcit-empty-description,
+#UsrMCITChangeEmptyDescription {
+    color: #9aa6b9;
+    font-size: 11px;
+    max-width: 520px;
+    line-height: 1.5;
+}
+
+/* Assigned Users Buttons */
+
+.usr-mcit-action button,
+#Button_n3lharv button {
+    border-radius: 8px;
+    background: #6928be;
+    color: #ffffff;
+}
+
+.usr-mcit-action-secondary button,
+#Button_tg337p6 button {
+    border-radius: 8px;
+}
+
+/* Role Header */
+
+.usr-mcit-role-overview,
+#UsrMCITRoleHero {
+    display: flex;
+    flex-direction: column;
+    gap: 7px;
+    width: 100%;
+    padding: 5px 2px 2px;
+}
+
+.usr-mcit-hero-name,
+#UsrMCITRoleHeroName {
+    font-family: Rubik, Inter, Arial, sans-serif;
+    font-size: 21px;
+    line-height: 1.3;
+    font-weight: 700;
+    color: #172237;
+}
+
+.usr-mcit-hero-description,
+#UsrMCITRoleHeroDescription {
+    font-size: 12px;
+    color: #64748b;
+    line-height: 1.5;
+}
+
+.usr-mcit-hero-badges,
+#UsrMCITRoleHeroBadges {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: 5px;
+}
+
+/* Role Category and Status */
+
+.usr-mcit-hero-category,
+#UsrMCITRoleHeroCategory,
+.usr-mcit-hero-status,
+#UsrMCITRoleHeroStatus {
+    display: inline-flex;
+    width: max-content;
+    padding: 4px 9px;
+    border-radius: 100px;
+    font-size: 11px;
+    font-weight: 700;
+}
+
+.usr-mcit-hero-category,
+#UsrMCITRoleHeroCategory {
+    background: #edf5ff;
+    color: #245bb4;
+}
+
+.usr-mcit-hero-status,
+#UsrMCITRoleHeroStatus {
+    background: #e8faef;
+    color: #16824b;
+}
+
+/* Active Role Warning */
+
+.usr-mcit-active-warning,
+#UsrMCITRoleActiveWarning {
+    display: block;
+    background: #fffbeb;
+    border: 1px solid #f8e49a;
+    color: #9a551e;
+    border-radius: 9px;
+    padding: 10px 13px;
+    font-size: 12px;
+/* =====================================================
+   MCIT ROLE EDITOR - FIGMA DESIGN
+   Package: UsrMCIT
+   Schema: UsrPage_k837yjw
+   ===================================================== */
+
+/* DESIGN TOKENS */
+
+.usr-mcit-page-hero,
+.usr-mcit-role-tabs {
+    --mcit-purple: #5b21a5;
+    --mcit-purple-light: #f3e8ff;
+    --mcit-text: #14213b;
+    --mcit-muted: #667085;
+    --mcit-border: #e2e6ee;
+    --mcit-background: #f8f7ff;
+    --mcit-blue: #2563b8;
+    --mcit-green: #16834b;
+
+    font-family: Rubik, Inter, Arial, sans-serif;
+    box-sizing: border-box;
+}
+
+/* =====================================================
+   1. MAIN PAGE WIDTH
+   ===================================================== */
+
+.usr-mcit-page-hero,
+.usr-mcit-role-tabs {
+    width: calc(100% - 48px) !important;
+    max-width: 1160px !important;
+    min-width: 0 !important;
+
+    margin-left: auto !important;
+    margin-right: auto !important;
+
+    position: static !important;
+    left: auto !important;
+    right: auto !important;
+    transform: none !important;
+
+    box-sizing: border-box !important;
+}
+
+/* =====================================================
+   2. ROLE HEADER
+   ===================================================== */
+
+#TopAreaProfileContainer.usr-mcit-page-hero,
+.usr-mcit-page-hero {
+    background-color: #ffffff !important;
+
+    border: 1px solid #e2e6ee !important;
+    border-radius: 13px !important;
+
+    box-shadow: none !important;
+
+    padding: 22px 24px !important;
+
+    margin-top: 22px !important;
+    margin-bottom: 22px !important;
+
+    min-height: 175px !important;
+}
+
+/* Role overview */
+
+.usr-mcit-role-overview,
+#UsrMCITRoleHero {
+    display: flex !important;
+    flex-direction: column !important;
+
+    align-items: flex-start !important;
+
+    gap: 9px !important;
+
+    width: 100% !important;
+    min-width: 0 !important;
+
+    padding: 0 !important;
+}
+
+/* Role name */
+
+.usr-mcit-hero-name,
+.usr-mcit-hero-name *,
+#UsrMCITRoleHeroName {
+    color: #14213b !important;
+
+    font-family: Rubik, Inter, Arial, sans-serif !important;
+
+    font-size: 23px !important;
+    font-weight: 700 !important;
+    line-height: 1.35 !important;
+
+    letter-spacing: -0.35px !important;
+}
+
+/* Description */
+
+.usr-mcit-hero-description,
+.usr-mcit-hero-description *,
+#UsrMCITRoleHeroDescription {
+    color: #667085 !important;
+
+    font-family: Rubik, Inter, Arial, sans-serif !important;
+
+    font-size: 12px !important;
+    font-weight: 400 !important;
+
+    line-height: 1.55 !important;
+}
+
+/* =====================================================
+   3. ROLE CATEGORY AND STATUS BADGES
+   ===================================================== */
+
+.usr-mcit-hero-badges,
+#UsrMCITRoleHeroBadges {
+    display: flex !important;
+    flex-direction: row !important;
+
+    align-items: center !important;
+
+    flex-wrap: wrap !important;
+    gap: 8px !important;
+
+    width: 100% !important;
+
+    margin-top: 5px !important;
+}
+
+/* Base badge */
+
+.usr-mcit-hero-category,
+.usr-mcit-hero-status {
+    display: inline-flex !important;
+
+    align-items: center !important;
+    justify-content: center !important;
+
+    width: fit-content !important;
+    max-width: 100% !important;
+
+    padding: 4px 10px !important;
+
+    border-radius: 999px !important;
+
+    font-size: 11px !important;
+    font-weight: 600 !important;
+
+    line-height: 1.2 !important;
+    white-space: nowrap !important;
+
+    box-sizing: border-box !important;
+}
+
+/* Business - blue */
+
+.usr-mcit-hero-category,
+.usr-mcit-hero-category *,
+#UsrMCITRoleHeroCategory {
+    color: #2563b8 !important;
+}
+
+.usr-mcit-hero-category,
+#UsrMCITRoleHeroCategory {
+    background-color: #eaf3ff !important;
+    border: 1px solid #dbeafe !important;
+}
+
+/* Draft - purple */
+
+.usr-mcit-hero-status,
+.usr-mcit-hero-status *,
+#UsrMCITRoleHeroStatus {
+    color: #7e22ce !important;
+}
+
+.usr-mcit-hero-status,
+#UsrMCITRoleHeroStatus {
+    background-color: #f3e8ff !important;
+    border: 1px solid #ead7ff !important;
+}
+
+/* Optional Active-specific class */
+
+.usr-mcit-hero-status.is-active {
+    background: #e8f9ef !important;
+    border-color: #ccefd9 !important;
+}
+
+.usr-mcit-hero-status.is-active,
+.usr-mcit-hero-status.is-active * {
+    color: #16834b !important;
+}
+
+/* =====================================================
+   4. ACTIVE ROLE WARNING
+   ===================================================== */
+
+.usr-mcit-active-warning,
+#UsrMCITRoleActiveWarning {
+    display: block;
+
+    width: 100% !important;
+
+    padding: 12px 15px !important;
+    margin: 0 0 12px !important;
+
+    background: #fffbeb !important;
+    border: 1px solid #f3df95 !important;
+    border-radius: 9px !important;
+
+    color: #99551b !important;
+
+    font-size: 12px !important;
+    font-weight: 500 !important;
+
+    line-height: 1.5 !important;
+
+    box-sizing: border-box !important;
+}
+
+/* =====================================================
+   5. TABS
+   ===================================================== */
+
+#Tabs.usr-mcit-role-tabs,
+.usr-mcit-role-tabs {
+    margin-top: 0 !important;
+    margin-bottom: 0 !important;
+
+    background: transparent !important;
+
+    border: none !important;
+    padding: 0 !important;
+
+    overflow: visible !important;
+}
+
+/* Tab navigation */
+
+.usr-mcit-role-tabs .mat-mdc-tab-header,
+.usr-mcit-role-tabs .crt-tab-panel-header {
+    width: 100% !important;
+
+    background: transparent !important;
+
+    border-bottom: 1px solid #dce2eb !important;
+
+    margin-bottom: 22px !important;
+}
+
+/* Normal tab text */
+
+.usr-mcit-role-tabs .mdc-tab__text-label {
+    color: #667085 !important;
+
+    font-family: Rubik, Inter, Arial, sans-serif !important;
+
+    font-size: 12px !important;
+    font-weight: 500 !important;
+
+    white-space: nowrap !important;
+}
+
+/* Selected tab */
+
+.usr-mcit-role-tabs
+.mdc-tab--active
+.mdc-tab__text-label {
+    color: #6424b9 !important;
+    font-weight: 700 !important;
+}
+
+/* Selected purple underline */
+
+.usr-mcit-role-tabs
+.mdc-tab-indicator__content--underline {
+    border-color: #6424b9 !important;
+    border-top-width: 2px !important;
+}
+
+/* =====================================================
+   6. ROLE INFORMATION TAB
+   ===================================================== */
+
+/* Full-width white form card */
+
+.usr-mcit-role-info-tab,
+#GeneralInfoTab.usr-mcit-role-info-tab {
+    display: block;
+
+    width: 100% !important;
+    max-width: 100% !important;
+    min-width: 0 !important;
+
+    background: #ffffff !important;
+
+    border: 1px solid #e2e6ee !important;
+    border-radius: 13px !important;
+
+    padding: 22px 24px !important;
+
+    margin-top: 0 !important;
+
+    box-sizing: border-box !important;
+}
+
+/* Ensure nested fields can stretch */
+
+.usr-mcit-role-info-tab
+#GridContainer_uxln7d4,
+.usr-mcit-role-info-tab
+#GridContainer_gxbrod6 {
+    width: 100% !important;
+    max-width: 100% !important;
+    min-width: 0 !important;
+
+    box-sizing: border-box !important;
+}
+
+/* Inputs and lookups */
+
+.usr-mcit-role-info-tab input,
+.usr-mcit-role-info-tab textarea {
+    font-family: Rubik, Inter, Arial, sans-serif !important;
+
+    color: #17243b !important;
+    font-size: 12px !important;
+}
+
+/* Field labels */
+
+.usr-mcit-role-info-tab label {
+    color: #344054 !important;
+
+    font-family: Rubik, Inter, Arial, sans-serif !important;
+
+    font-size: 12px !important;
+    font-weight: 500 !important;
+}
+
+/* Editable controls */
+
+.usr-mcit-role-info-tab input:not([type="checkbox"]),
+.usr-mcit-role-info-tab textarea {
+    border-radius: 8px !important;
+}
+
+/* Focus */
+
+.usr-mcit-role-info-tab input:focus,
+.usr-mcit-role-info-tab textarea:focus {
+    outline-color: #7c3aed !important;
+}
+
+/* =====================================================
+   7. MAIN PERMISSION CARDS
+   ===================================================== */
+
+.usr-mcit-card,
+#UsrMCITScreenPanel,
+#UsrDataScopePanel,
+#UsrMCITQueuePanel,
+#UsrMCITReportingPanel,
+#UsrMCITAdminPanel,
+#UsrMCITChangeSummaryPanel {
+    width: 100% !important;
+    max-width: 100% !important;
+    min-width: 0 !important;
+
+    background: #ffffff !important;
+
+    border: 1px solid #e2e6ee !important;
+    border-radius: 13px !important;
+
+    box-shadow: none !important;
+
+    margin-top: 0 !important;
+    margin-bottom: 18px !important;
+
+    padding: 10px 18px 18px !important;
+
+    box-sizing: border-box !important;
+
+    overflow: visible !important;
+}
+
+/* Card heading */
+
+.usr-mcit-card
+.crt-expansion-panel-header {
+    padding: 12px 0 14px !important;
+
+    border-bottom: 1px solid #edf0f5 !important;
+
+    margin-bottom: 16px !important;
+}
+
+.usr-mcit-card
+.crt-expansion-panel-header-title,
+.usr-mcit-card
+.crt-expansion-panel-title {
+    color: #17243b !important;
+
+    font-family: Rubik, Inter, Arial, sans-serif !important;
+
+    font-size: 13px !important;
+    font-weight: 700 !important;
+}
+
+/* =====================================================
+   8. INFORMATION BANNERS
+   ===================================================== */
+
+.usr-mcit-note,
+#UsrMCITScreenNote,
+#UsrMCITReportingNote {
+    display: block !important;
+
+    width: 100% !important;
+
+    background: #edf5ff !important;
+
+    border: 1px solid #c6dcff !important;
+    border-radius: 9px !important;
+
+    color: #2454ae !important;
+
+    padding: 12px 14px !important;
+
+    margin: 8px 0 18px !important;
+
+    font-family: Rubik, Inter, Arial, sans-serif !important;
+
+    font-size: 12px !important;
+    font-weight: 500 !important;
+    line-height: 1.5 !important;
+
+    box-sizing: border-box !important;
+}
+
+/* =====================================================
+   9. DATA SCOPE BANNER
+   ===================================================== */
+
+.usr-mcit-scope-banner,
+#UsrScopeBanner {
+    width: 100% !important;
+
+    display: flex !important;
+    flex-direction: column !important;
+
+    gap: 5px !important;
+
+    background: #f5efff !important;
+
+    border: 1px solid #dcc3f7 !important;
+    border-radius: 9px !important;
+
+    padding: 14px 16px !important;
+
+    margin: 8px 0 20px !important;
+
+    box-sizing: border-box !important;
+}
+
+.usr-mcit-banner-title,
+#UsrScopeBannerTitleLabel {
+    color: #5b21a5 !important;
+
+    font-size: 12px !important;
+    font-weight: 700 !important;
+}
+
+#UsrScopeBannerDescriptionLabel {
+    color: #667085 !important;
+
+    font-size: 12px !important;
+    line-height: 1.5 !important;
+}
+
+/* =====================================================
+   10. PERMISSION TABLES
+   ===================================================== */
+
+.usr-mcit-table,
+.usr-mcit-permissions-table,
+#DataGrid_1yq715a,
+#UsrDataScopeGrid,
+#DataGrid_cjsl4aj,
+#DataGrid_6bdu0ha {
+    width: 100% !important;
+    max-width: 100% !important;
+
+    background: #ffffff !important;
+
+    border: 1px solid #e2e7f0 !important;
+    border-radius: 9px !important;
+
+    overflow-x: auto !important;
+
+    margin: 8px 0 12px !important;
+
+    box-sizing: border-box !important;
+}
+
+/* Table headers */
+
+.usr-mcit-table
+.crt-data-table-header-cell-container,
+.usr-mcit-permissions-table
+.crt-data-table-header-cell-container {
+    background: #f8fafc !important;
+
+    border-bottom: 1px solid #e2e7f0 !important;
+
+    min-height: 38px !important;
+}
+
+/* Header text */
+
+.usr-mcit-table .crt-header-cell-caption,
+.usr-mcit-permissions-table .crt-header-cell-caption {
+    color: #475569 !important;
+
+    font-family: Rubik, Inter, Arial, sans-serif !important;
+
+    font-size: 11px !important;
+    font-weight: 700 !important;
+}
+
+/* Table rows */
+
+.usr-mcit-table .crt-data-table-row,
+.usr-mcit-permissions-table .crt-data-table-row {
+    min-height: 40px !important;
+    border-bottom: 1px solid #edf0f5 !important;
+}
+
+/* Table cells */
+
+.usr-mcit-table .crt-data-table-cell,
+.usr-mcit-permissions-table .crt-data-table-cell {
+    color: #29384b !important;
+
+    font-family: Rubik, Inter, Arial, sans-serif !important;
+
+    font-size: 11.5px !important;
+}
+
+/* =====================================================
+   11. REPORTING AND ADMIN PERMISSIONS
+   ===================================================== */
+
+.usr-mcit-choices,
+#UsrMCITReportingPreview,
+#UsrMCITAdminCheckboxGrid {
+    width: 100% !important;
+
+    min-width: 0 !important;
+
+    gap: 10px 12px !important;
+
+    margin-top: 12px !important;
+    margin-bottom: 6px !important;
+
+    box-sizing: border-box !important;
+}
+
+/* Permission tiles */
+
+.usr-mcit-choices > *,
+.usr-mcit-check-tile {
+    display: flex !important;
+
+    align-items: center !important;
+
+    min-width: 0 !important;
+    min-height: 43px !important;
+
+    background: #ffffff !important;
+
+    border: 1px solid #e2e7f0 !important;
+    border-radius: 8px !important;
+
+    padding: 10px 12px !important;
+
+    color: #344054 !important;
+
+    font-family: Rubik, Inter, Arial, sans-serif !important;
+
+    font-size: 12px !important;
+
+    box-sizing: border-box !important;
+}
+
+/* Read-only visual labels */
+
+.usr-mcit-readonly-permission,
+.usr-mcit-readonly-permission * {
+    color: #344054 !important;
+
+    font-family: Rubik, Inter, Arial, sans-serif !important;
+
+    font-size: 12px !important;
+    font-weight: 400 !important;
+}
+
+/* Native disabled checkboxes */
+
+.usr-mcit-choices input[type="checkbox"],
+.usr-mcit-check-tile input[type="checkbox"] {
+    accent-color: #aab1bc !important;
+
+    width: 14px !important;
+    height: 14px !important;
+
+    margin-right: 8px !important;
+}
+
+.usr-mcit-choices input[type="checkbox"]:disabled {
+    opacity: 0.8 !important;
+}
+
+/* =====================================================
+   12. ASSIGNED USERS ACTIONS
+   ===================================================== */
+
+.usr-mcit-action button,
+#Button_n3lharv button {
+    background: #6d28d9 !important;
+
+    color: #ffffff !important;
+
+    border-radius: 8px !important;
+
+    font-weight: 600 !important;
+}
+
+.usr-mcit-action-secondary button,
+#Button_tg337p6 button {
+    border-radius: 8px !important;
+}
+
+/* =====================================================
+   13. CHANGE SUMMARY
+   ===================================================== */
+
+.usr-mcit-empty-state,
+#UsrMCITChangeSummaryEmpty {
+    min-height: 165px !important;
+
+    display: flex !important;
+    flex-direction: column !important;
+
+    justify-content: center !important;
+    align-items: center !important;
+
+    padding: 36px 16px !important;
+
+    gap: 8px !important;
+
+    text-align: center !important;
+}
+
+.usr-mcit-empty-title,
+#UsrMCITChangeEmptyTitle {
+    color: #94a3b8 !important;
+
+    font-size: 14px !important;
+    font-weight: 700 !important;
+}
+
+.usr-mcit-empty-description,
+#UsrMCITChangeEmptyDescription {
+    color: #9aa6b9 !important;
+
+    font-size: 11px !important;
+    line-height: 1.5 !important;
+}
+
+/* =====================================================
+   14. RESPONSIVE
+   ===================================================== */
+
+@media (max-width: 1000px) {
+
+    .usr-mcit-page-hero,
+    .usr-mcit-role-tabs {
+        width: calc(100% - 24px) !important;
+    }
+
+    .usr-mcit-page-hero {
+        padding: 18px !important;
+    }
+
+    .usr-mcit-role-info-tab {
+        padding: 16px !important;
+    }
+}
+
+@media (max-width: 700px) {
+
+    .usr-mcit-page-hero,
+    .usr-mcit-role-tabs {
+        width: 100% !important;
+        max-width: 100% !important;
+    }
+
+    .usr-mcit-page-hero {
+        padding: 14px !important;
+        margin-top: 12px !important;
+    }
+
+    .usr-mcit-hero-name,
+    #UsrMCITRoleHeroName {
+        font-size: 19px !important;
+    }
+
+    .usr-mcit-card {
+        padding: 10px !important;
+    }
+}
+
+    font-weight: 600;
+    margin-bottom: 7px;
+}
+
+/* Responsive Layout */
+
+@media (max-width: 820px) {
+
+    #UsrMCITAdminCheckboxGrid,
+    #UsrMCITReportingPreview {
+        grid-template-columns: minmax(0, 1fr) !important;
+    }
+
+    #UsrMCITScreenPanel,
+    #UsrDataScopePanel,
+    #UsrMCITQueuePanel,
+    #UsrMCITReportingPanel,
+    #UsrMCITAdminPanel,
+    #UsrMCITChangeSummaryPanel {
+        padding-left: 8px;
+        padding-right: 8px;
+    }
+
+    .usr-mcit-role-tabs {
+        overflow-x: auto;
+    }
+}
+
+/* ============================================
+   MCIT ROLE EDITOR - FULL WIDTH SPACING FIX
+   ============================================ */
+
+/* Restore the full-width tab layout */
+
+#Tabs.usr-mcit-role-tabs,
+.usr-mcit-role-tabs {
+    width: 100% !important;
+    max-width: none !important;
+    min-width: 0 !important;
+
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+    margin-top: 24px !important;
+
+    padding: 0 32px 32px !important;
+
+    position: static !important;
+    transform: none !important;
+
+    align-self: stretch !important;
+    justify-self: stretch !important;
+
+    box-sizing: border-box !important;
+}
+
+/* Header spacing */
+
+#TopAreaProfileContainer.usr-mcit-page-hero,
+.usr-mcit-page-hero {
+    width: 100% !important;
+    max-width: none !important;
+    min-width: 0 !important;
+
+    margin-top: 24px !important;
+    margin-bottom: 20px !important;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+
+    padding: 24px 32px !important;
+
+    box-sizing: border-box !important;
+}
+
+/* Allow tab bodies to occupy the available width */
+
+#Tabs .mat-mdc-tab-body-wrapper,
+#Tabs .mat-mdc-tab-body-content,
+#Tabs .mat-tab-body-wrapper,
+#Tabs .mat-tab-body-content,
+#Tabs .crt-tab-container,
+#Tabs .crt-tab-content,
+#Tabs [role="tabpanel"] {
+    width: 100% !important;
+    max-width: none !important;
+    min-width: 0 !important;
+
+    box-sizing: border-box !important;
+}
+
+/* Permission cards */
+
+.usr-mcit-card,
+#UsrMCITScreenPanel,
+#UsrDataScopePanel,
+#UsrMCITQueuePanel,
+#UsrMCITReportingPanel,
+#UsrMCITAdminPanel,
+#UsrMCITChangeSummaryPanel {
+    width: 100% !important;
+    max-width: none !important;
+    min-width: 0 !important;
+
+    box-sizing: border-box !important;
+}
+
+/* Tables inside cards */
+
+.usr-mcit-table,
+.usr-mcit-permissions-table,
+#UsrDataScopeGrid {
+    width: 100% !important;
+    max-width: 100% !important;
+    min-width: 0 !important;
+
+    box-sizing: border-box !important;
+}
+
+/* Responsive spacing */
+
+@media (max-width: 850px) {
+    #Tabs.usr-mcit-role-tabs,
+    .usr-mcit-role-tabs {
+        padding: 0 12px 20px !important;
+    }
+
+    #TopAreaProfileContainer.usr-mcit-page-hero,
+    .usr-mcit-page-hero {
+        padding: 16px !important;
+        margin-top: 16px !important;
+    }
+}
+
+/* ============================================
+   MCIT ROLE EDITOR - HEADER ALIGNMENT FIX
+   ============================================ */
+
+/* Match header width with tabs and content */
+
+#TopAreaProfileContainer,
+#TopAreaProfileContainer.usr-mcit-page-hero,
+.usr-mcit-page-hero {
+    width: calc(100% - 64px) !important;
+    max-width: none !important;
+    min-width: 0 !important;
+
+    margin-left: auto !important;
+    margin-right: auto !important;
+
+    margin-top: 24px !important;
+    margin-bottom: 22px !important;
+
+    padding: 24px !important;
+
+    background-color: #ffffff !important;
+    border: 1px solid #e2e6ee !important;
+    border-radius: 13px !important;
+
+    box-sizing: border-box !important;
+
+    position: relative !important;
+    left: auto !important;
+    right: auto !important;
+    transform: none !important;
+
+    align-self: center !important;
+}
+
+/* Ensure header content uses available width */
+
+#TopAreaProfileContainer > *,
+.usr-mcit-page-hero > * {
+    max-width: 100% !important;
+    min-width: 0 !important;
+    box-sizing: border-box !important;
+}
+
+/* Keep title in Figma navy */
+
+.usr-mcit-hero-name,
+#UsrMCITRoleHeroName {
+    color: #14213b !important;
+    font-size: 23px !important;
+    font-weight: 700 !important;
+}
+
+/* Responsive spacing */
+
+@media (max-width: 850px) {
+    #TopAreaProfileContainer,
+    #TopAreaProfileContainer.usr-mcit-page-hero,
+    .usr-mcit-page-hero {
+        width: calc(100% - 24px) !important;
+
+        margin-top: 16px !important;
+        margin-bottom: 16px !important;
+
+        padding: 16px !important;
+    }
+}
+
+/* ==========================================
+   MCIT ROLE EDITOR - SAFE CENTERED LAYOUT
+   ========================================== */
+
+/* 1. HEADER PARENT
+   Keep natural width with equal margins */
+
+#GridContainer_f3cjmcs {
+    width: auto !important;
+    max-width: none !important;
+    min-width: 0 !important;
+
+    margin-top: 25px !important;
+    margin-bottom: 24px !important;
+
+    margin-left: 80px !important;
+    margin-right: 80px !important;
+
+    padding-top: 20px;
+    padding-right: 20px;
+    padding-left: 20px;
+    padding-bottom: 20px;
+	
+    box-sizing: border-box !important;
+    justify-self: stretch !important;
+}
+
+/* 2. WHITE HEADER */
+
+#TopAreaProfileContainer.usr-mcit-page-hero,
+.usr-mcit-page-hero {
+    width: 100% !important;
+    max-width: none !important;
+    min-width: 0 !important;
+
+    margin: 0 !important;
+
+    padding: 24px !important;
+
+    background: #ffffff !important;
+    border: 1px solid #e2e6ee !important;
+    border-radius: 12px !important;
+
+    box-sizing: border-box !important;
+}
+
+/* 3. TABS WITH SAME SIDE SPACING */
+
+#Tabs.usr-mcit-role-tabs,
+.usr-mcit-role-tabs {
+    width: 100% !important;
+    max-width: none !important;
+    min-width: 0 !important;
+
+    margin: 0 !important;
+
+    padding: 0 80px 32px !important;
+
+    box-sizing: border-box !important;
+    align-self: stretch !important;
+}
+
+/* 4. KEEP TAB CONTENT FULL WIDTH */
+
+.usr-mcit-card,
+.usr-mcit-role-info-tab {
+    width: 100% !important;
+    max-width: 100% !important;
+    min-width: 0 !important;
+
+    box-sizing: border-box !important;
+}
+
+/* 5. RESPONSIVE */
+
+@media (max-width: 900px) {
+    #GridContainer_f3cjmcs {
+        margin-top: 20px !important;
+        margin-left: 16px !important;
+        margin-right: 16px !important;
+    }
+
+    #Tabs.usr-mcit-role-tabs,
+    .usr-mcit-role-tabs {
+        padding: 0 16px 24px !important;
+    }
+}
+#GridContainer_yphet7j
+{
+	        margin-top: 20px !important;
+
+}
+#Button_tg337p6 button {
+    border-radius: 8px;
+    background: #6928be;
+    color: #ffffff;
+}

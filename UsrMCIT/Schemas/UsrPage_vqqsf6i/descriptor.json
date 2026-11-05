@@ -1,0 +1,14 @@
+﻿{
+  "Descriptor": {
+    "UId": "5e6421d6-da73-4141-8293-bcbbf4be63d2",
+    "Name": "UsrPage_vqqsf6i",
+    "ModifiedOnUtc": "\/Date(1792699763000)\/",
+    "Parent": {
+      "UId": "7ed23be6-71df-4ad3-b56a-caa77b9881ce",
+      "Name": "PageWithTabsAndProgressBarTemplate"
+    },
+    "ManagerName": "ClientUnitSchemaManager",
+    "Caption": "MCIT User Profile",
+    "DependsOn": []
+  }
+}

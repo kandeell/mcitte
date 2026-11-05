@@ -1,0 +1,10 @@
+﻿{
+  "Descriptor": {
+    "UId": "6db49209-9a7e-492e-a1fa-edca30735658",
+    "Name": "UsrProjectsRelatedPage",
+    "ModifiedOnUtc": "\/Date(1792520199000)\/",
+    "ManagerName": "AddonSchemaManager",
+    "Caption": "Projects (Page settings)",
+    "DependsOn": []
+  }
+}

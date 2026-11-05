@@ -1,0 +1,13 @@
+﻿{
+  "Descriptor": {
+    "UId": "e96b438d-ab78-4004-85c3-2487dad46afd",
+    "Name": "UsrPage_cya0kef",
+    "ModifiedOnUtc": "\/Date(1792515438000)\/",
+    "Parent": {
+      "UId": "7ed23be6-71df-4ad3-b56a-caa77b9881ce",
+      "Name": "PageWithTabsAndProgressBarTemplate"
+    },
+    "ManagerName": "ClientUnitSchemaManager",
+    "Caption": "VM Details"
+  }
+}

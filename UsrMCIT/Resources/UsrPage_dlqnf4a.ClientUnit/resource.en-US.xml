@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Resources Culture="en-US">
+	<Group Type="String">
+		<Items>
+			<Item Name="Caption" Value="VM Request modal page" />
+			<Item Name="LocalizableStrings.addRecord_2it048r_caption.Value" Value="Add new" />
+			<Item Name="LocalizableStrings.addRecord_4haxihm_caption.Value" Value="Add new" />
+			<Item Name="LocalizableStrings.addRecord_btiwnle_caption.Value" Value="Add new" />
+			<Item Name="LocalizableStrings.addRecord_dxu8ezu_caption.Value" Value="Add new" />
+			<Item Name="LocalizableStrings.addRecord_mk94rrh_caption.Value" Value="Add new" />
+			<Item Name="LocalizableStrings.addRecord_xnqiuti_caption.Value" Value="Add new" />
+		</Items>
+	</Group>
+</Resources>

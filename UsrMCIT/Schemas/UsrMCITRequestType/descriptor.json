@@ -1,0 +1,14 @@
+﻿{
+  "Descriptor": {
+    "UId": "7210209d-58d5-47f2-a7b6-b85284ad4dac",
+    "Name": "UsrMCITRequestType",
+    "ModifiedOnUtc": "\/Date(1791926628000)\/",
+    "Parent": {
+      "UId": "11ab4bcb-9b23-4b6d-9c86-520fae925d75",
+      "Name": "BaseLookup"
+    },
+    "ManagerName": "EntitySchemaManager",
+    "Caption": "MCIT Request Type",
+    "DependsOn": []
+  }
+}

@@ -1,0 +1,13 @@
+﻿{
+  "Descriptor": {
+    "UId": "71cfb9cf-9220-458e-bbaf-5c837e7f7c3a",
+    "Name": "UsrVMInventory_ListPage",
+    "ModifiedOnUtc": "\/Date(1792570111000)\/",
+    "Parent": {
+      "UId": "b7b898d0-8c77-4953-c097-23fa6800da02",
+      "Name": "ListPageV3Template"
+    },
+    "ManagerName": "ClientUnitSchemaManager",
+    "Caption": "VM Inventory list page"
+  }
+}

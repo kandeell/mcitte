@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Resources Culture="en-US">
+	<Group Type="String">
+		<Items>
+			<Item Name="Caption" Value="MCIT Role Assignment" />
+			<Item Name="Columns.UsrAssignedAt.Caption" Value="Assigned At" />
+			<Item Name="Columns.UsrAssignedBy.Caption" Value="Assigned By" />
+			<Item Name="Columns.UsrAssignmentSource.Caption" Value="AssignmentSource" />
+			<Item Name="Columns.UsrIsCurrent.Caption" Value="Is Current" />
+			<Item Name="Columns.UsrRole.Caption" Value="Role" />
+			<Item Name="Columns.UsrUser.Caption" Value="User" />
+			<Item Name="EventsProcessSchema.Caption" Value="Business process" />
+		</Items>
+	</Group>
+</Resources>

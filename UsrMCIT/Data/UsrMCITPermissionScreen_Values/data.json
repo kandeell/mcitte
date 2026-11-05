@@ -1,0 +1,40 @@
+﻿{
+  "PackageData": [
+    {
+      "Row": [
+        {
+          "SchemaColumnUId": "ae0e45ca-c495-4fe7-a39d-3ab7278e1617",
+          "Value": "78793f4f-6598-4424-8abd-c78fe82e08f2"
+        },
+        {
+          "SchemaColumnUId": "04b4eafa-a7bc-62f0-b0be-8f59e6f4b4bf",
+          "Value": "Request Queue"
+        },
+        {
+          "SchemaColumnUId": "40e883d8-eed7-54f4-22a5-a990a7ba4586",
+          "Value": 10
+        },
+        {
+          "SchemaColumnUId": "4c43c96e-c4f7-1842-1cce-9e1209e1505a",
+          "Value": "Requests"
+        },
+        {
+          "SchemaColumnUId": "95ad8270-89bd-21fc-9304-1acd09e42c33",
+          "Value": "REQUEST_QUEUE"
+        },
+        {
+          "SchemaColumnUId": "9928edec-4272-425a-93bb-48743fee4b04",
+          "Value": "\/Date(1792874450960+0300)\/"
+        },
+        {
+          "SchemaColumnUId": "a1ce70fd-5ae5-8bf2-7de9-266361dfa8bb",
+          "Value": true
+        },
+        {
+          "SchemaColumnUId": "e80190a5-03b2-4095-90f7-a193a960adee",
+          "Value": "\/Date(1792874374740+0300)\/"
+        }
+      ]
+    }
+  ]
+}

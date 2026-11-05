@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Resources Culture="en-US">
+	<Group Type="String">
+		<Items>
+			<Item Name="Caption" Value="MCIT Request Details Page" />
+			<Item Name="LocalizableStrings.ExpansionPanel_xdckgdl_title.Value" Value="DOCUMENTS" />
+			<Item Name="LocalizableStrings.GeneralInfoTab_caption.Value" Value="Overview" />
+			<Item Name="LocalizableStrings.GridDetailAddBtn_ryu6fbw_caption.Value" Value="Upload" />
+			<Item Name="LocalizableStrings.GridDetailRefreshBtn_108g0qg_caption.Value" Value="Refresh" />
+			<Item Name="LocalizableStrings.GridDetailSearchFilter_s4jv5u5_placeholder.Value" Value="Search" />
+			<Item Name="LocalizableStrings.Label_a0bmjqy_caption.Value" Value="Request Information" />
+			<Item Name="LocalizableStrings.Label_cmkncnp_caption.Value" Value="Business Justification" />
+			<Item Name="LocalizableStrings.TabContainer_0imyljb_caption.Value" Value="VM Items" />
+			<Item Name="LocalizableStrings.TabContainer_52snqlp_caption.Value" Value=" Activity &amp; Audit" />
+			<Item Name="LocalizableStrings.TabContainer_8alzhew_caption.Value" Value="Workflow" />
+			<Item Name="LocalizableStrings.TabContainer_t9pzmgz_caption.Value" Value="Documents" />
+			<Item Name="LocalizableStrings.Timeline_wyrhh6j_caption.Value" Value="Timeline" />
+			<Item Name="LocalizableStrings.Timeline_wyrhh6j_label.Value" Value="Timeline" />
+			<Item Name="LocalizableStrings.addRecord_0cnaeh0_caption.Value" Value="Add new" />
+			<Item Name="LocalizableStrings.addRecord_90ttnr3_caption.Value" Value="Add new" />
+			<Item Name="LocalizableStrings.addRecord_fb9biqv_caption.Value" Value="Add new" />
+			<Item Name="LocalizableStrings.addRecord_hjr1zvq_caption.Value" Value="Add new" />
+			<Item Name="LocalizableStrings.addRecord_kdaw1fh_caption.Value" Value="Add new" />
+			<Item Name="LocalizableStrings.addRecord_lblsji3_caption.Value" Value="Add new" />
+			<Item Name="LocalizableStrings.addRecord_mapa8pl_caption.Value" Value="Add new" />
+			<Item Name="LocalizableStrings.addRecord_qsf4pn1_caption.Value" Value="Add new" />
+			<Item Name="LocalizableStrings.addRecord_v94czwh_caption.Value" Value="Add new" />
+		</Items>
+	</Group>
+</Resources>

@@ -1,0 +1,10 @@
+﻿{
+  "Descriptor": {
+    "UId": "89e27f75-ee93-40a4-8673-35be8b4ec26e",
+    "Name": "UsrContractConfigVersionRelatedPage",
+    "ModifiedOnUtc": "\/Date(1792258278000)\/",
+    "ManagerName": "AddonSchemaManager",
+    "Caption": "Contract Configuration Version (Page settings)",
+    "DependsOn": []
+  }
+}

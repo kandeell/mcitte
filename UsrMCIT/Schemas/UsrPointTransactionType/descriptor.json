@@ -1,0 +1,14 @@
+﻿{
+  "Descriptor": {
+    "UId": "50b3c6b1-f0a9-4995-a6c8-b6ef68719eeb",
+    "Name": "UsrPointTransactionType",
+    "ModifiedOnUtc": "\/Date(1792001607000)\/",
+    "Parent": {
+      "UId": "11ab4bcb-9b23-4b6d-9c86-520fae925d75",
+      "Name": "BaseLookup"
+    },
+    "ManagerName": "EntitySchemaManager",
+    "Caption": "MCIT Point Transaction Type",
+    "DependsOn": []
+  }
+}
