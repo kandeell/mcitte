@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Resources Culture="en-US">
+	<Group Type="String">
+		<Items>
+			<Item Name="Caption" Value="Request Status History" />
+			<Item Name="Columns.UsrChangedBy.Caption" Value="Changed by" />
+			<Item Name="Columns.UsrChangedOn.Caption" Value="Changed on" />
+			<Item Name="Columns.UsrIsAutomatic.Caption" Value="Automatic change" />
+			<Item Name="Columns.UsrName.Caption" Value="History reference" />
+			<Item Name="Columns.UsrNewStatus.Caption" Value="New Status" />
+			<Item Name="Columns.UsrPreviousStatus.Caption" Value="Previous status" />
+			<Item Name="Columns.UsrReason.Caption" Value="Change reason" />
+			<Item Name="Columns.UsrRequest.Caption" Value="VM request" />
+			<Item Name="EventsProcessSchema.Caption" Value="Business process" />
+		</Items>
+	</Group>
+</Resources>

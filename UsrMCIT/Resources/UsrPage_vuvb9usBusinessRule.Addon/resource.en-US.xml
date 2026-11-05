@@ -1,0 +1,10 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Resources Culture="en-US">
+	<Group Type="String">
+		<Items>
+			<Item Name="AddonConfig.Rules.6976be7b-897d-7e42-79d8-c00c512369fb.Caption" Value="Require draft configuration fields" />
+			<Item Name="AddonConfig.Rules.716c4e5d-dea1-53b6-301f-9f5530dfeb9a.Caption" Value="Allow editing draft configuration" />
+			<Item Name="Caption" Value="Contract Configuration Version form page (Business rules)" />
+		</Items>
+	</Group>
+</Resources>

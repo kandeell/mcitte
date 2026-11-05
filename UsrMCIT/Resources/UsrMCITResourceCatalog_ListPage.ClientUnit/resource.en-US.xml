@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Resources Culture="en-US">
+	<Group Type="String">
+		<Items>
+			<Item Name="Caption" Value="Resource Catalog list page" />
+			<Item Name="LocalizableStrings.AddButton_caption.Value" Value="Add Resource" />
+			<Item Name="LocalizableStrings.Button_5997q0d_caption.Value" Value="Button" />
+			<Item Name="LocalizableStrings.Button_5hb5dth_caption.Value" Value="Button" />
+			<Item Name="LocalizableStrings.Button_6kx6sj9_caption.Value" Value="Button" />
+			<Item Name="LocalizableStrings.Button_6mn3e02_caption.Value" Value="Button" />
+			<Item Name="LocalizableStrings.Button_79y53ba_caption.Value" Value="Button" />
+			<Item Name="LocalizableStrings.Button_cwug7wg_caption.Value" Value="Button" />
+			<Item Name="LocalizableStrings.Button_k35gcub_caption.Value" Value="Button" />
+			<Item Name="LocalizableStrings.Button_nwxmun1_caption.Value" Value="Button" />
+			<Item Name="LocalizableStrings.Button_s5dghlb_caption.Value" Value="Button" />
+			<Item Name="LocalizableStrings.Button_usvoj1p_caption.Value" Value="Button" />
+			<Item Name="LocalizableStrings.Button_v6h9rne_caption.Value" Value="Button" />
+			<Item Name="LocalizableStrings.Label_r0msw0s_caption.Value" Value="Configurable VM resource specifications for request forms and point rule calculation" />
+			<Item Name="LocalizableStrings.Label_tx00ksc_caption.Value" Value="Configurable VM resource specifications for request forms and point rule calculation" />
+			<Item Name="LocalizableStrings.PDS_UsrStartDate.Value" Value="Creation Date" />
+			<Item Name="LocalizableStrings.PageTitle_caption.Value" Value="Resource Catalog" />
+			<Item Name="LocalizableStrings.RC3_FieldCode_label.Value" Value="Resource Code *" />
+			<Item Name="LocalizableStrings.RC3_FieldCode_placeholder.Value" Value="e.g. CPU-VCPU" />
+			<Item Name="LocalizableStrings.SearchFilter_5yg217z_placeholder.Value" Value="Search" />
+			<Item Name="LocalizableStrings.SearchFilter_oyeci5d_placeholder.Value" Value="Search" />
+			<Item Name="LocalizableStrings.SearchFilter_tbqp4ck_placeholder.Value" Value="Search" />
+			<Item Name="LocalizableStrings.addRecord_6raneq8_caption.Value" Value="Add new" />
+			<Item Name="LocalizableStrings.addRecord_ftfy1zk_caption.Value" Value="Add new" />
+			<Item Name="LocalizableStrings.addRecord_gzj0crs_caption.Value" Value="Add new" />
+			<Item Name="LocalizableStrings.addRecord_u104d5f_caption.Value" Value="Add new" />
+		</Items>
+	</Group>
+</Resources>

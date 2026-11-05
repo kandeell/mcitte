@@ -1,0 +1,10 @@
+﻿{
+  "Descriptor": {
+    "UId": "df427c4a-6e3e-43d3-aa0d-280b01bc8d59",
+    "Name": "UsrMCITMobileRelatedPage",
+    "ModifiedOnUtc": "\/Date(1791930629000)\/",
+    "ManagerName": "AddonSchemaManager",
+    "Caption": "MCIT (Mobile page settings)",
+    "DependsOn": []
+  }
+}

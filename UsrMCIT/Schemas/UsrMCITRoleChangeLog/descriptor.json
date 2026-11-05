@@ -1,0 +1,14 @@
+﻿{
+  "Descriptor": {
+    "UId": "260caefb-ef39-4ffb-b391-2e750a9d06a5",
+    "Name": "UsrMCITRoleChangeLog",
+    "ModifiedOnUtc": "\/Date(1792880485000)\/",
+    "Parent": {
+      "UId": "1bab9dcf-17d5-49f8-9536-8e0064f1dce0",
+      "Name": "BaseEntity"
+    },
+    "ManagerName": "EntitySchemaManager",
+    "Caption": "MCIT Role Change Log",
+    "DependsOn": []
+  }
+}

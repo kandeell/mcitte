@@ -1,0 +1,10 @@
+﻿{
+  "Descriptor": {
+    "UId": "72ff50ea-fc4c-4db9-be6b-f6ff27f23638",
+    "Name": "UsrProcess_61ec310",
+    "ModifiedOnUtc": "\/Date(1793618734000)\/",
+    "ManagerName": "ProcessSchemaManager",
+    "Caption": "MCIT Auto Sync Scheduler",
+    "DependsOn": []
+  }
+}

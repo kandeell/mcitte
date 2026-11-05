@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Resources Culture="en-US">
+	<Group Type="String">
+		<Items>
+			<Item Name="Caption" Value="MCIT Role Queue Permission" />
+			<Item Name="Columns.UsrIsEnabled.Caption" Value="Is Enabled" />
+			<Item Name="Columns.UsrMCITRole.Caption" Value="MCIT Role" />
+			<Item Name="Columns.UsrQueue.Caption" Value="Queue" />
+			<Item Name="EventsProcessSchema.Caption" Value="Business process" />
+		</Items>
+	</Group>
+</Resources>

@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Resources Culture="en-US">
+	<Group Type="String">
+		<Items>
+			<Item Name="Caption" Value="MCIT Request Type" />
+			<Item Name="Columns.UsrActive.Caption" Value="Active" />
+			<Item Name="Columns.UsrArabicName.Caption" Value="Arabic Name" />
+			<Item Name="Columns.UsrCode.Caption" Value="Code" />
+			<Item Name="Columns.UsrName.Caption" Value="Name" />
+			<Item Name="Columns.UsrParent.Caption" Value="Parent" />
+			<Item Name="Columns.UsrSortOrder.Caption" Value="Sort Order" />
+		</Items>
+	</Group>
+</Resources>

@@ -1,0 +1,14 @@
+﻿{
+  "Descriptor": {
+    "UId": "b3cae571-2e04-44a6-9960-992f3ac3e3e0",
+    "Name": "UsrMCIT_MobileListPage",
+    "ModifiedOnUtc": "\/Date(1791930629000)\/",
+    "Parent": {
+      "UId": "011e7dda-a763-4535-9b9a-e09eddd047be",
+      "Name": "BaseMobileListTemplate"
+    },
+    "ManagerName": "ClientUnitSchemaManager",
+    "Caption": "MCIT mobile list page",
+    "DependsOn": []
+  }
+}

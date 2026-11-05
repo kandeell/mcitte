@@ -1,0 +1,14 @@
+﻿{
+  "Descriptor": {
+    "UId": "8dc44923-8800-45d6-82fa-21e3109971e9",
+    "Name": "UsrRequestStatusHistory",
+    "ModifiedOnUtc": "\/Date(1792005287000)\/",
+    "Parent": {
+      "UId": "1bab9dcf-17d5-49f8-9536-8e0064f1dce0",
+      "Name": "BaseEntity"
+    },
+    "ManagerName": "EntitySchemaManager",
+    "Caption": "Request Status History",
+    "DependsOn": []
+  }
+}

@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Resources Culture="en-US">
+	<Group Type="String">
+		<Items>
+			<Item Name="Caption" Value="MCIT Permission Report" />
+			<Item Name="Columns.UsrDescription.Caption" Value="Description" />
+			<Item Name="Columns.UsrIsActive.Caption" Value="Is Active" />
+			<Item Name="Columns.UsrReportCode.Caption" Value="Report Code" />
+			<Item Name="Columns.UsrReportName.Caption" Value="Report Name" />
+			<Item Name="Columns.UsrSortOrder.Caption" Value="Sort Order" />
+		</Items>
+	</Group>
+</Resources>

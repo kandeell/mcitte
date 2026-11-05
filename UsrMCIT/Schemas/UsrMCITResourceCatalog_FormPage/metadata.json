@@ -1,0 +1,8 @@
+= MetaData.Schema.UId "be63aabb-fe6b-4362-bf83-312a34bbdb37"
+= MetaData.Schema.A2 "UsrMCITResourceCatalog_FormPage"
+= MetaData.Schema.A5 "6f71e54c-1960-40c9-94f6-073fd67699ab"
+~ MetaData.Schema.B2 ["bac72348-5bf6-4a41-9343-88c6065b28a4","d1a95b6d-8ee5-4414-b19a-3a7c316af6fc","3c8b9513-87c5-4c09-8de5-c994b8aac07c","4d9f1759-b4ab-466e-9825-895c15131f02"]
+= MetaData.Schema.B6 "5530927f-22ea-e7c9-4ccf-506d3a6c2ed2"
+= MetaData.Schema.HD1 "3b2e117f-8c6b-4ca5-80a2-7ebb497cddf9"
+- MetaData.Schema.B7
++ MetaData.Schema.B7 false

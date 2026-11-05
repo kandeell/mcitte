@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Resources Culture="en-US">
+	<Group Type="String">
+		<Items>
+			<Item Name="Caption" Value="MCIT Role Screen Permission" />
+			<Item Name="Columns.UsrCanActivate.Caption" Value="Can Activate" />
+			<Item Name="Columns.UsrCanApprove.Caption" Value="Can Approve" />
+			<Item Name="Columns.UsrCanAssign.Caption" Value="Can Assign" />
+			<Item Name="Columns.UsrCanConfigure.Caption" Value="Can Configure" />
+			<Item Name="Columns.UsrCanCreate.Caption" Value="Can Create" />
+			<Item Name="Columns.UsrCanEdit.Caption" Value="Can Edit" />
+			<Item Name="Columns.UsrCanExport.Caption" Value="Can Export" />
+			<Item Name="Columns.UsrCanView.Caption" Value="Can View" />
+			<Item Name="Columns.UsrMCITPermissionScreen.Caption" Value="MCIT Permission Screen" />
+			<Item Name="Columns.UsrMCITRole.Caption" Value="MCIT Role" />
+			<Item Name="Columns.UsrScreen.Caption" Value="Screen" />
+		</Items>
+	</Group>
+</Resources>

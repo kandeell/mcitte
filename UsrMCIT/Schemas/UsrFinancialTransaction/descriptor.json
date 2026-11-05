@@ -1,0 +1,14 @@
+﻿{
+  "Descriptor": {
+    "UId": "4c0d4480-6e09-44de-9f70-88b5a5beff40",
+    "Name": "UsrFinancialTransaction",
+    "ModifiedOnUtc": "\/Date(1792004547000)\/",
+    "Parent": {
+      "UId": "1bab9dcf-17d5-49f8-9536-8e0064f1dce0",
+      "Name": "BaseEntity"
+    },
+    "ManagerName": "EntitySchemaManager",
+    "Caption": "Financial Transaction",
+    "DependsOn": []
+  }
+}

@@ -1,0 +1,31 @@
+*
+<<<<<<< HEAD
+
+!UsrMCIT/
+
+!!UsrMCIT/**
+
+!.gitignore
+ 
+.vs
+
+Release
+
+Debug
+
+obj
+
+[Bb]in
+
+ 
+=======
+!UsrMCIT/
+!UsrMCIT/**
+!.gitignore
+
+.vs
+Release
+Debug
+obj
+[Bb]in
+>>>>>>> origin/main

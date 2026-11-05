@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Resources Culture="en-US">
+	<Group Type="String">
+		<Items>
+			<Item Name="Caption" Value="Request Approval" />
+			<Item Name="Columns.UsrAssignedOn.Caption" Value="Assigned on" />
+			<Item Name="Columns.UsrAssignedTo.Caption" Value="Assigned reviewer" />
+			<Item Name="Columns.UsrComments.Caption" Value="Reviewer comments" />
+			<Item Name="Columns.UsrDecidedBy.Caption" Value="Decided by" />
+			<Item Name="Columns.UsrDecidedOn.Caption" Value="Decided on" />
+			<Item Name="Columns.UsrDecision.Caption" Value="Decision" />
+			<Item Name="Columns.UsrDueOn.Caption" Value="Due on" />
+			<Item Name="Columns.UsrIsCompleted.Caption" Value="Completed" />
+			<Item Name="Columns.UsrName.Caption" Value="Review name" />
+			<Item Name="Columns.UsrRequest.Caption" Value="VM request" />
+			<Item Name="Columns.UsrReviewRound.Caption" Value="Review round" />
+			<Item Name="Columns.UsrSequence.Caption" Value="Sequence" />
+			<Item Name="Columns.UsrStage.Caption" Value="Approval stage" />
+			<Item Name="EventsProcessSchema.Caption" Value="Business process" />
+		</Items>
+	</Group>
+</Resources>

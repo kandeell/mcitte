@@ -1,0 +1,13 @@
+﻿{
+  "Descriptor": {
+    "UId": "280df1f8-2abf-4c90-bf71-1fc5b603ab0d",
+    "Name": "UsrAdministrationHome_ListPage",
+    "ModifiedOnUtc": "\/Date(1793542798000)\/",
+    "Parent": {
+      "UId": "b7b898d0-8c77-4953-c097-23fa6800da02",
+      "Name": "ListPageV3Template"
+    },
+    "ManagerName": "ClientUnitSchemaManager",
+    "Caption": "Administration Home list page"
+  }
+}

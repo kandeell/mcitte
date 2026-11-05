@@ -1,0 +1,14 @@
+﻿{
+  "Descriptor": {
+    "UId": "0ab343b1-82cc-41fc-a4ac-2f411807b9c4",
+    "Name": "UsrMCIT_Detail",
+    "ModifiedOnUtc": "\/Date(1791930629000)\/",
+    "Parent": {
+      "UId": "01eb38ee-668a-42f0-999d-c2534f979089",
+      "Name": "BaseGridDetailV2"
+    },
+    "ManagerName": "ClientUnitSchemaManager",
+    "Caption": "MCIT detail",
+    "DependsOn": []
+  }
+}

@@ -1,0 +1,8 @@
+= MetaData.Schema.UId "7ea19ae8-cd84-447d-8568-8f6aeb4d6273"
+= MetaData.Schema.A2 "UsrVMInventory_FormPage"
+= MetaData.Schema.A5 "6f71e54c-1960-40c9-94f6-073fd67699ab"
+~ MetaData.Schema.B2 ["7671ef95-f03d-422e-a584-1559c195292f","7e9ec12d-e7c6-46f0-aafc-830bf42f2f9a","fc68a880-7277-4be8-8079-fd99a2164db5","6c66088e-fdf5-4005-88bc-b96743394ab7"]
+= MetaData.Schema.B6 "5530927f-22ea-e7c9-4ccf-506d3a6c2ed2"
+= MetaData.Schema.HD1 "3b2e117f-8c6b-4ca5-80a2-7ebb497cddf9"
+- MetaData.Schema.B7
++ MetaData.Schema.B7 false

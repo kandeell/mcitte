@@ -1,0 +1,136 @@
+﻿{
+  "MetaData": {
+    "Schema": {
+      "ManagerName": "AddonSchemaManager",
+      "UId": "0ea01047-b076-43cb-8ac3-d35daefcd44c",
+      "A2": "UsrPage_vuvb9usBusinessRule",
+      "A5": "3daa8e4e-2a22-4e20-af21-674c5227b6dc",
+      "B1": [],
+      "B2": [],
+      "B3": [],
+      "B6": "5dcca910-bc4c-42b7-bfe0-2ad5c8cc3965",
+      "B8": "10.0.0.858",
+      "AD1": "ae70a739-62d5-4fa3-8e03-f6bc3a8a1851",
+      "AD2": "ClientUnitSchemaManager",
+      "AD3": "BusinessRule",
+      "AD5": "3a2d6f51-1bfc-4c17-aacb-b53de4866b7c",
+      "AD4": {
+        "JI0": "Terrasoft.Core.BusinessRules.BusinessRules",
+        "BRS1": [
+          {
+            "JI0": "Terrasoft.Core.BusinessRules.BusinessRule",
+            "UId": "716c4e5d-dea1-53b6-301f-9f5530dfeb9a",
+            "BR1": [
+              {
+                "JI0": "Terrasoft.Core.BusinessRules.Models.BusinessRuleCase",
+                "UId": "c9d2e07b-fc88-23fc-0a1b-c962c5460e5e",
+                "BRC1": {
+                  "JI0": "Terrasoft.Core.BusinessRules.Models.Conditions.BusinessRuleGroupCondition",
+                  "UId": "71bbb356-9346-c227-7fb2-7a193345e483",
+                  "BGC1": 1,
+                  "BGC2": [
+                    {
+                      "JI0": "Terrasoft.Core.BusinessRules.Models.Conditions.BusinessRuleCondition",
+                      "UId": "b9c4ffd8-b9c5-27ed-6f39-d14bd15fbfb9",
+                      "BCO1": {
+                        "JI0": "Terrasoft.Core.BusinessRules.Models.Expressions.BusinessRuleAttributeExpression",
+                        "UId": "e4e2a28c-7bb2-cd2d-7339-4606a1a9ea62",
+                        "BRE1": "Lookup",
+                        "BRE2": "AttributeValue",
+                        "BRX1": "UsrContractConfigVersionDS_UsrConfigVersionStatus_fhrzbc7"
+                      },
+                      "BCO2": {
+                        "JI0": "Terrasoft.Core.BusinessRules.Models.Expressions.BusinessRuleValueExpression",
+                        "UId": "b24d5917-57f0-ccdd-c7d0-e084c1770241",
+                        "BRE1": "Lookup",
+                        "BRE3": "UsrConfigVersionStatus",
+                        "BVE1": "d153cb20-1a9c-44bf-8ced-1a53f88eed22"
+                      },
+                      "BCO3": 2
+                    }
+                  ]
+                },
+                "BRC2": [
+                  {
+                    "JI0": "Terrasoft.Core.BusinessRules.Models.Actions.BusinessRuleActionEditableElement",
+                    "UId": "6033ede9-df8e-c4fa-5ead-0b04fd110fbd",
+                    "BRA4": "MCITSourceContractLookup,MCITContractLookup,MCITConfigurationNameInput,Input_cxnqg1m,DateTimePicker_8gl0ljd,DateTimePicker_4bh5kzn,NumberInput_6w9ommr,NumberInput_78kbnyg,NumberInput_k68cbjb,NumberInput_j42d6ox,NumberInput_q5t104y,NumberInput_znkgcfd,Input_uqm2orw,Input_yctlx5r"
+                  }
+                ]
+              }
+            ],
+            "BR2": [
+              {
+                "JI0": "Terrasoft.Core.BusinessRules.Models.Trigger",
+                "UId": "e84a96d5-6a0a-0c4d-fea3-7b0f95e7e01f",
+                "BRT2": 2
+              },
+              {
+                "JI0": "Terrasoft.Core.BusinessRules.Models.Trigger",
+                "UId": "bcd2035e-3946-e16b-448b-e95fc2b78f89",
+                "BRT1": "UsrContractConfigVersionDS_UsrConfigVersionStatus_fhrzbc7"
+              }
+            ],
+            "BR3": "BusinessRule_0d8a916"
+          },
+          {
+            "JI0": "Terrasoft.Core.BusinessRules.BusinessRule",
+            "UId": "6976be7b-897d-7e42-79d8-c00c512369fb",
+            "BR1": [
+              {
+                "JI0": "Terrasoft.Core.BusinessRules.Models.BusinessRuleCase",
+                "UId": "2c0aac89-e0fb-96fb-e608-2579841fe55c",
+                "BRC1": {
+                  "JI0": "Terrasoft.Core.BusinessRules.Models.Conditions.BusinessRuleGroupCondition",
+                  "UId": "63a0aee2-fb9c-d5a1-c3ca-517bf77be560",
+                  "BGC1": 1,
+                  "BGC2": [
+                    {
+                      "JI0": "Terrasoft.Core.BusinessRules.Models.Conditions.BusinessRuleCondition",
+                      "UId": "29cb90aa-c88a-0532-bc42-21a4a94fcd74",
+                      "BCO1": {
+                        "JI0": "Terrasoft.Core.BusinessRules.Models.Expressions.BusinessRuleAttributeExpression",
+                        "UId": "6ba172aa-5737-cb81-d3ab-a96b81ce5c2d",
+                        "BRE1": "Lookup",
+                        "BRE2": "AttributeValue",
+                        "BRX1": "UsrContractConfigVersionDS_UsrConfigVersionStatus_fhrzbc7"
+                      },
+                      "BCO2": {
+                        "JI0": "Terrasoft.Core.BusinessRules.Models.Expressions.BusinessRuleValueExpression",
+                        "UId": "f96fe783-0dae-a74a-cbcb-0700a8227840",
+                        "BRE1": "Lookup",
+                        "BRE3": "UsrConfigVersionStatus",
+                        "BVE1": "d153cb20-1a9c-44bf-8ced-1a53f88eed22"
+                      },
+                      "BCO3": 2
+                    }
+                  ]
+                },
+                "BRC2": [
+                  {
+                    "JI0": "Terrasoft.Core.BusinessRules.Models.Actions.BusinessRuleActionRequiredElement",
+                    "UId": "ef71cd03-2d33-df3f-00bd-bd6954ccd3e1",
+                    "BRA4": "MCITContractLookup,MCITSourceContractLookup,MCITConfigurationNameInput,NumberInput_78kbnyg,NumberInput_k68cbjb,NumberInput_6w9ommr,NumberInput_znkgcfd,NumberInput_q5t104y,NumberInput_j42d6ox,Input_cxnqg1m,DateTimePicker_8gl0ljd"
+                  }
+                ]
+              }
+            ],
+            "BR2": [
+              {
+                "JI0": "Terrasoft.Core.BusinessRules.Models.Trigger",
+                "UId": "86b1a492-c4d0-b8e1-9143-513c2b8c7cc9",
+                "BRT2": 2
+              },
+              {
+                "JI0": "Terrasoft.Core.BusinessRules.Models.Trigger",
+                "UId": "d80fffea-3db6-3cc1-081e-73dc2e86fefa",
+                "BRT1": "UsrContractConfigVersionDS_UsrConfigVersionStatus_fhrzbc7"
+              }
+            ],
+            "BR3": "BusinessRule_862b63b"
+          }
+        ]
+      }
+    }
+  }
+}

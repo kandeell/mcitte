@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Resources Culture="en-US">
+	<Group Type="String">
+		<Items>
+			<Item Name="Caption" Value="Finance Configuration list page" />
+			<Item Name="LocalizableStrings.IndicatorWidget_2df1nqy_config_text_template.Value" Value="{0}" />
+			<Item Name="LocalizableStrings.IndicatorWidget_2df1nqy_hint.Value" Value="Components.IndicatorWidget.Hint" />
+			<Item Name="LocalizableStrings.IndicatorWidget_2df1nqy_title.Value" Value="Draft Versions" />
+			<Item Name="LocalizableStrings.IndicatorWidget_hzkxiee_config_text_template.Value" Value="{0}" />
+			<Item Name="LocalizableStrings.IndicatorWidget_hzkxiee_hint.Value" Value="Components.IndicatorWidget.Hint" />
+			<Item Name="LocalizableStrings.IndicatorWidget_hzkxiee_title.Value" Value="Scheduled Versions" />
+			<Item Name="LocalizableStrings.IndicatorWidget_so5fw0r_config_text_template.Value" Value="{0}" />
+			<Item Name="LocalizableStrings.IndicatorWidget_so5fw0r_hint.Value" Value="Components.IndicatorWidget.Hint" />
+			<Item Name="LocalizableStrings.IndicatorWidget_so5fw0r_title.Value" Value="Active Versions" />
+			<Item Name="LocalizableStrings.QuickFilter_g9wucbw_caption.Value" Value="Quick filter" />
+			<Item Name="LocalizableStrings.QuickFilter_g9wucbw_config_caption.Value" Value="Configuration Version Status" />
+			<Item Name="LocalizableStrings.QuickFilter_ghstixv_caption.Value" Value="Quick filter" />
+			<Item Name="LocalizableStrings.QuickFilter_ghstixv_config_caption.Value" Value="Contract" />
+		</Items>
+	</Group>
+</Resources>

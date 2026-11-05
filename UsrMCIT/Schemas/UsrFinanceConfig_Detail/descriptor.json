@@ -1,0 +1,14 @@
+﻿{
+  "Descriptor": {
+    "UId": "3b85398c-a708-4b96-9843-f0d9743a2d0e",
+    "Name": "UsrFinanceConfig_Detail",
+    "ModifiedOnUtc": "\/Date(1792433749000)\/",
+    "Parent": {
+      "UId": "01eb38ee-668a-42f0-999d-c2534f979089",
+      "Name": "BaseGridDetailV2"
+    },
+    "ManagerName": "ClientUnitSchemaManager",
+    "Caption": "Finance Configuration detail",
+    "DependsOn": []
+  }
+}

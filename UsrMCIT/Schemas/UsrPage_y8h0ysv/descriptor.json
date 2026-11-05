@@ -1,0 +1,13 @@
+﻿{
+  "Descriptor": {
+    "UId": "def04cc4-adba-4bd4-ba7a-7745096e2c71",
+    "Name": "UsrPage_y8h0ysv",
+    "ModifiedOnUtc": "\/Date(1792531143000)\/",
+    "Parent": {
+      "UId": "ecdcc8ff-272c-4957-9381-7d74ce17e140",
+      "Name": "BaseMiniPageTemplate"
+    },
+    "ManagerName": "ClientUnitSchemaManager",
+    "Caption": "Configuration Resource Rate modal page"
+  }
+}

@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Resources Culture="en-US">
+	<Group Type="String">
+		<Items>
+			<Item Name="Caption" Value="Point Allocation" />
+			<Item Name="Columns.UsrName.Caption" Value="Allocation reference" />
+			<Item Name="Columns.UsrQuantity.Caption" Value="Allocated points" />
+			<Item Name="Columns.UsrSourceTransaction.Caption" Value="Source restoration transaction" />
+			<Item Name="Columns.UsrUsageTransaction.Caption" Value="Consumption or expiry transaction" />
+		</Items>
+	</Group>
+</Resources>

@@ -1,0 +1,10 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Resources Culture="en-US">
+	<Group Type="String">
+		<Items>
+			<Item Name="AddonConfig.Rules.004e9474-2c07-77ea-a76e-0e4b0205a4cb.Caption" Value="Set Initial Draft Status" />
+			<Item Name="AddonConfig.Rules.cffdfa91-d92a-4262-9ec3-988289e4230d.Caption" Value="Email with full name" />
+			<Item Name="Caption" Value="VM Request (Business rules)" />
+		</Items>
+	</Group>
+</Resources>

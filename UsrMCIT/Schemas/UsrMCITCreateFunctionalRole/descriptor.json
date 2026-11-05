@@ -1,0 +1,10 @@
+﻿{
+  "Descriptor": {
+    "UId": "3553f8ed-90a5-4b04-8529-be12a64edbbb",
+    "Name": "UsrMCITCreateFunctionalRole",
+    "ModifiedOnUtc": "\/Date(1792798776000)\/",
+    "ManagerName": "ProcessSchemaManager",
+    "Caption": "MCIT Create Functional Role",
+    "DependsOn": []
+  }
+}

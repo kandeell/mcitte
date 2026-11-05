@@ -1,0 +1,14 @@
+﻿{
+  "Descriptor": {
+    "UId": "0e3ef2f1-c97a-4e38-a1ef-c7b924a7f3fb",
+    "Name": "UsrMCITRoleAssignmentSource",
+    "ModifiedOnUtc": "\/Date(1792848377000)\/",
+    "Parent": {
+      "UId": "11ab4bcb-9b23-4b6d-9c86-520fae925d75",
+      "Name": "BaseLookup"
+    },
+    "ManagerName": "EntitySchemaManager",
+    "Caption": "MCIT Role Assignment Source",
+    "DependsOn": []
+  }
+}

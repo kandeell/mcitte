@@ -1,0 +1,14 @@
+﻿{
+  "Descriptor": {
+    "UId": "6a842bff-f21e-4233-a537-04f7bb1ca324",
+    "Name": "UsrVMLifecycle",
+    "ModifiedOnUtc": "\/Date(1793793579000)\/",
+    "Parent": {
+      "UId": "1bab9dcf-17d5-49f8-9536-8e0064f1dce0",
+      "Name": "BaseEntity"
+    },
+    "ManagerName": "EntitySchemaManager",
+    "Caption": "VM Lifecycle",
+    "DependsOn": []
+  }
+}

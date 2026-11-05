@@ -1,0 +1,138 @@
+{
+  "MetaData": {
+    "Schema": {
+      "ManagerName": "ProcessSchemaManager",
+      "UId": "48065972-7b22-47ef-bd8b-dc1102252aa4",
+      "A2": "UsrProcess_e66223c",
+      "A5": "528cbae4-7503-4191-983e-8bdb50ae51a9",
+      "B1": [],
+      "B2": [],
+      "B3": [],
+      "B6": "5dcca910-bc4c-42b7-bfe0-2ad5c8cc3965",
+      "B8": "10.0.0.858",
+      "FJ1": [],
+      "IJ1": true,
+      "BK8": "bb4d6607-026b-4b27-b640-8f5c77c1e89d",
+      "IJ10": true,
+      "BK15": [],
+      "BK37": {
+        "BL1": "Terrasoft.Core.Process.ProcessSchemaParameter",
+        "UId": "cdd58be7-2dba-4a5e-869b-1ad5d6d7513a",
+        "A2": "NotificationCaption",
+        "A3": "48065972-7b22-47ef-bd8b-dc1102252aa4",
+        "A4": "48065972-7b22-47ef-bd8b-dc1102252aa4",
+        "L1": "8b3f29bb-ea14-4ce5-a5c5-293a929b6ba2",
+        "L8": {
+          "GS1": 3,
+          "GS2": "[#[PropertyValue:Caption]#]"
+        }
+      },
+      "BK1": "FFFFFFFF",
+      "BK2": "FFBBBBBB",
+      "BK3": [
+        {
+          "BL1": "Terrasoft.Core.Process.ProcessSchemaLaneSet",
+          "UId": "a2cc7683-5c57-4abc-9d50-236129aaa5b9",
+          "A2": "LaneSet1",
+          "A3": "48065972-7b22-47ef-bd8b-dc1102252aa4",
+          "A4": "48065972-7b22-47ef-bd8b-dc1102252aa4",
+          "A5": "a00051f4-cde3-4f3f-b08e-c5ad1a5c735a",
+          "BL7": "11a47caf-a0d5-41fa-a274-a0b11f77447a",
+          "BL8": "48065972-7b22-47ef-bd8b-dc1102252aa4",
+          "BM1": 0,
+          "BM4": [
+            {
+              "BL1": "Terrasoft.Core.Process.ProcessSchemaLane",
+              "UId": "7411a0d3-3d82-40cd-9f18-7abd7d3068e8",
+              "A2": "Lane1",
+              "A3": "48065972-7b22-47ef-bd8b-dc1102252aa4",
+              "A4": "48065972-7b22-47ef-bd8b-dc1102252aa4",
+              "A5": "a00051f4-cde3-4f3f-b08e-c5ad1a5c735a",
+              "IL2": "a2cc7683-5c57-4abc-9d50-236129aaa5b9",
+              "BL7": "abcd74b9-5912-414b-82ac-f1aa4dcd554e",
+              "BL8": "48065972-7b22-47ef-bd8b-dc1102252aa4",
+              "CD1": [],
+              "CD2": [],
+              "CD4": "a2cc7683-5c57-4abc-9d50-236129aaa5b9",
+              "CD7": []
+            }
+          ]
+        }
+      ],
+      "BK5": [],
+      "BK4": [
+        {
+          "BL1": "Terrasoft.Core.Process.ProcessSchemaStartEvent",
+          "UId": "99999100-2d06-4ada-8777-c3e0c2a58f2e",
+          "A2": "StartEvent1",
+          "A3": "48065972-7b22-47ef-bd8b-dc1102252aa4",
+          "A4": "48065972-7b22-47ef-bd8b-dc1102252aa4",
+          "A5": "a00051f4-cde3-4f3f-b08e-c5ad1a5c735a",
+          "IL2": "7411a0d3-3d82-40cd-9f18-7abd7d3068e8",
+          "BL3": "50;184",
+          "BL7": "53818048-7868-48f6-ada0-0ebaa65af628",
+          "BL8": "48065972-7b22-47ef-bd8b-dc1102252aa4",
+          "BN2": "31;31",
+          "BO3": true,
+          "FC1": [],
+          "ED1": false
+        },
+        {
+          "BL1": "Terrasoft.Core.Process.ProcessSchemaTerminateEvent",
+          "UId": "7c70c288-b8fe-4598-a14d-61e5a717f073",
+          "A2": "TerminateEvent1",
+          "A3": "48065972-7b22-47ef-bd8b-dc1102252aa4",
+          "A4": "48065972-7b22-47ef-bd8b-dc1102252aa4",
+          "A5": "a00051f4-cde3-4f3f-b08e-c5ad1a5c735a",
+          "IL2": "7411a0d3-3d82-40cd-9f18-7abd7d3068e8",
+          "BL3": "600;184",
+          "BL7": "1bd93619-0574-454e-bb4e-cf53b9eb9470",
+          "BL8": "48065972-7b22-47ef-bd8b-dc1102252aa4",
+          "BN2": "31;31",
+          "BO3": true,
+          "FC1": []
+        },
+        {
+          "BL1": "Terrasoft.Core.Process.ProcessSchemaScriptTask",
+          "UId": "f2293bf3-3681-417d-830f-638bd1bfd82d",
+          "A2": "ScriptTask1",
+          "A3": "48065972-7b22-47ef-bd8b-dc1102252aa4",
+          "A4": "48065972-7b22-47ef-bd8b-dc1102252aa4",
+          "A5": "a00051f4-cde3-4f3f-b08e-c5ad1a5c735a",
+          "IL2": "7411a0d3-3d82-40cd-9f18-7abd7d3068e8",
+          "BL3": "282;182",
+          "BL7": "0e490dda-e140-4441-b600-6f5c64d024df",
+          "BL8": "48065972-7b22-47ef-bd8b-dc1102252aa4",
+          "BN2": "69;55",
+          "BO3": true,
+          "BP2": [],
+          "CL2": "FFFFFFFF",
+          "CH1": "\r\nvar accessQuery = new Terrasoft.Core.Entities.EntitySchemaQuery(\r\n    UserConnection.EntitySchemaManager,\r\n    \"UsrMCITPortalUserAccess\"\r\n);\r\n\r\naccessQuery.PrimaryQueryColumn.IsAlwaysSelect = true;\r\n\r\nvar userCol = accessQuery.AddColumn(\"UsrUser.Id\");\r\nvar summaryCol = accessQuery.AddColumn(\"UsrAssignedRolesSummary\");\r\n\r\nvar accessRecords = accessQuery.GetEntityCollection(UserConnection);\r\n\r\nforeach (var access in accessRecords)\r\n{\r\n    var userId = access.GetTypedColumnValue<System.Guid>(userCol.Name);\r\n\r\n    if (userId == System.Guid.Empty)\r\n        continue;\r\n\r\n    // Read directly assigned functional roles\r\n    var roleQuery = new Terrasoft.Core.Entities.EntitySchemaQuery(\r\n        UserConnection.EntitySchemaManager,\r\n        \"SysUserInRole\"\r\n    );\r\n\r\n    var roleNameCol = roleQuery.AddColumn(\"SysRole.Name\");\r\n\r\n    roleQuery.Filters.Add(\r\n        roleQuery.CreateFilterWithParameters(\r\n            Terrasoft.Core.Entities.FilterComparisonType.Equal,\r\n            \"SysUser\",\r\n            userId\r\n        )\r\n    );\r\n\r\n    // Functional roles have type 6\r\n    roleQuery.Filters.Add(\r\n        roleQuery.CreateFilterWithParameters(\r\n            Terrasoft.Core.Entities.FilterComparisonType.Equal,\r\n            \"SysRole.SysAdminUnitTypeValue\",\r\n            6\r\n        )\r\n    );\r\n\r\n    var roles = new System.Collections.Generic.SortedSet<string>(\r\n        System.StringComparer.OrdinalIgnoreCase\r\n    );\r\n\r\n    foreach (var role in roleQuery.GetEntityCollection(UserConnection))\r\n    {\r\n        var name = role.GetTypedColumnValue<string>(roleNameCol.Name);\r\n\r\n        if (!string.IsNullOrWhiteSpace(name))\r\n            roles.Add(name);\r\n    }\r\n\r\n    var summary = string.Join(\", \", roles);\r\n\r\n    if (summary.Length > 500)\r\n        throw new System.Exception(\"Assigned roles exceed 500 characters.\");\r\n\r\n    var oldSummary =\r\n        access.GetTypedColumnValue<string>(summaryCol.Name) ?? \"\";\r\n\r\n    if (oldSummary != summary)\r\n    {\r\n        access.SetColumnValue(\"UsrAssignedRolesSummary\", summary);\r\n        access.Save();\r\n    }\r\n}\r\n\r\nreturn true;\r\n",
+          "CH2": true
+        },
+        {
+          "BL1": "Terrasoft.Core.Process.ProcessSchemaSequenceFlow",
+          "UId": "d7e57eec-0d7b-423c-a5d5-86ce5ff544a1",
+          "A2": "SequenceFlow1",
+          "A3": "48065972-7b22-47ef-bd8b-dc1102252aa4",
+          "A4": "48065972-7b22-47ef-bd8b-dc1102252aa4",
+          "A5": "a00051f4-cde3-4f3f-b08e-c5ad1a5c735a",
+          "BL7": "0d8351f6-c2f4-4737-bdd9-6fbfe0837fec",
+          "BL8": "48065972-7b22-47ef-bd8b-dc1102252aa4",
+          "CI1": "99999100-2d06-4ada-8777-c3e0c2a58f2e",
+          "CI2": "7c70c288-b8fe-4598-a14d-61e5a717f073",
+          "CI3": "null",
+          "CI5": "FF939598",
+          "CI6": 1
+        }
+      ],
+      "BK9": [],
+      "BK18": "Business Process",
+      "BK29": true,
+      "BK30": true,
+      "BK34": "null",
+      "Labels": [],
+      "BK24": []
+    }
+  }
+}

@@ -1,0 +1,14 @@
+﻿{
+  "Descriptor": {
+    "UId": "8ba4eeb7-5acd-4cbf-91c9-86a485f68cf6",
+    "Name": "UsrFinanceConfig",
+    "ModifiedOnUtc": "\/Date(1792433749000)\/",
+    "Parent": {
+      "UId": "1bab9dcf-17d5-49f8-9536-8e0064f1dce0",
+      "Name": "BaseEntity"
+    },
+    "ManagerName": "EntitySchemaManager",
+    "Caption": "Finance Configuration",
+    "DependsOn": []
+  }
+}

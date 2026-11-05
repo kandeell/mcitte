@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Resources Culture="en-US">
+	<Group Type="String">
+		<Items>
+			<Item Name="Caption" Value="MCIT Resource Type" />
+			<Item Name="Columns.Name.Caption" Value="English Name" />
+			<Item Name="Columns.UsrActive.Caption" Value="Active" />
+			<Item Name="Columns.UsrAllContracts.Caption" Value="All Contracts" />
+			<Item Name="Columns.UsrArabicName.Caption" Value="Arabic Name" />
+			<Item Name="Columns.UsrCategory.Caption" Value="Category" />
+			<Item Name="Columns.UsrCode.Caption" Value="Resource code" />
+			<Item Name="Columns.UsrEndDate.Caption" Value="End Date" />
+			<Item Name="Columns.UsrIncrement.Caption" Value="Increment" />
+			<Item Name="Columns.UsrMaxValue.Caption" Value="Max Value" />
+			<Item Name="Columns.UsrMinValue.Caption" Value="Min Value" />
+			<Item Name="Columns.UsrStartDate.Caption" Value="Start Date" />
+			<Item Name="Columns.UsrUnit.Caption" Value="Unit" />
+		</Items>
+	</Group>
+</Resources>

@@ -1,0 +1,14 @@
+﻿{
+  "Descriptor": {
+    "UId": "5e98ecb5-23d2-4073-9046-e688670cd38d",
+    "Name": "UsrVMLifecycle_MobileFormPage",
+    "ModifiedOnUtc": "\/Date(1793783172000)\/",
+    "Parent": {
+      "UId": "019c694a-1a3b-4812-b2e5-219b326061ae",
+      "Name": "MobilePageWithTabsFreedomTemplate"
+    },
+    "ManagerName": "ClientUnitSchemaManager",
+    "Caption": "VM Lifecycle mobile form page",
+    "DependsOn": []
+  }
+}

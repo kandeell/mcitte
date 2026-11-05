@@ -1,0 +1,10 @@
+﻿{
+  "Descriptor": {
+    "UId": "ba68f800-8f5c-459a-8acd-2ce4311e1f81",
+    "Name": "UsrProcess_73fcbdd",
+    "ModifiedOnUtc": "\/Date(1793564797000)\/",
+    "ManagerName": "ProcessSchemaManager",
+    "Caption": "MCIT Auto Provision User Access",
+    "DependsOn": []
+  }
+}

@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Resources Culture="en-US">
+	<Group Type="String">
+		<Items>
+			<Item Name="Caption" Value="MCIT Role" />
+			<Item Name="Columns.UsrCreatioFunctionalRole.Caption" Value="Creatio Functional Role" />
+			<Item Name="Columns.UsrDescription.Caption" Value="Description" />
+			<Item Name="Columns.UsrMCITRoleStatuses.Caption" Value="Status" />
+			<Item Name="Columns.UsrName.Caption" Value="Role Name" />
+			<Item Name="Columns.UsrPermissionsCount.Caption" Value="Permissions" />
+			<Item Name="Columns.UsrProvisioningError.Caption" Value="Provisioning Error" />
+			<Item Name="Columns.UsrRole.Caption" Value="Linked Creatio Role" />
+			<Item Name="Columns.UsrRoleCategory.Caption" Value="Role category" />
+			<Item Name="Columns.UsrScopeBehavior.Caption" Value="Scope Behavior" />
+			<Item Name="Columns.UsrUsersCount.Caption" Value="Users" />
+		</Items>
+	</Group>
+</Resources>

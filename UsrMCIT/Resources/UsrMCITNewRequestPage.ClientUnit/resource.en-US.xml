@@ -1,0 +1,39 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Resources Culture="en-US">
+	<Group Type="String">
+		<Items>
+			<Item Name="Caption" Value="MCIT New Request Page" />
+			<Item Name="LocalizableStrings.Button_oudlpht_caption.Value" Value="Continue to VM items" />
+			<Item Name="LocalizableStrings.Button_u6ctj86_caption.Value" Value="Cancel" />
+			<Item Name="LocalizableStrings.ComboBox_5vr2kw5_label.Value" Value="s" />
+			<Item Name="LocalizableStrings.ComboBox_5vr2kw5_placeholder.Value" Value="Select request type " />
+			<Item Name="LocalizableStrings.ComboBox_aa0tk36_placeholder.Value" Value="Select contract" />
+			<Item Name="LocalizableStrings.ComboBox_fsjs1xk_placeholder.Value" Value="Select project" />
+			<Item Name="LocalizableStrings.ComboBox_lhujgot_placeholder.Value" Value="Ministry of Education" />
+			<Item Name="LocalizableStrings.ComboBox_nnq7xp7_placeholder.Value" Value="Request Creator" />
+			<Item Name="LocalizableStrings.ComboBox_uc2cslf_placeholder.Value" Value="Select authority" />
+			<Item Name="LocalizableStrings.DateTimePicker_f84ch27_placeholder.Value" Value="mm / dd / yyyy" />
+			<Item Name="LocalizableStrings.GeneralInfoTab_caption.Value" Value="Request Information" />
+			<Item Name="LocalizableStrings.Input_htr1f42_placeholder.Value" Value="Explain the business need , intended use, and impact on goverment services" />
+			<Item Name="LocalizableStrings.Input_tkj86hi_placeholder.Value" Value="Brief, descriptive title for this request" />
+			<Item Name="LocalizableStrings.Label_56e3k5n_caption.Value" Value="Create New Request · طلب جديد" />
+			<Item Name="LocalizableStrings.Label_5k3lktg_caption.Value" Value="Requester Information" />
+			<Item Name="LocalizableStrings.Label_88gq2vp_caption.Value" Value="1. New VM Provisioning Request – Request Information" />
+			<Item Name="LocalizableStrings.Label_9oohkz6_caption.Value" Value="From your authenticated profile — read-only" />
+			<Item Name="LocalizableStrings.Label_ergxtur_caption.Value" Value="Request Details" />
+			<Item Name="LocalizableStrings.Label_o8b3bwl_caption.Value" Value="Request Type &amp; Scope" />
+			<Item Name="LocalizableStrings.Label_okk8qas_caption.Value" Value="Optional. if the service has a deadline, provide it here." />
+			<Item Name="LocalizableStrings.Label_pyrsohp_caption.Value" Value="Contract Summary" />
+			<Item Name="LocalizableStrings.SaveAsDraftButton_caption.Value" Value="Save as Draft" />
+			<Item Name="LocalizableStrings.SaveAsDraftButton_clicked_params_messageTextAfterCompletion.Value" Value="Request saved as draft successfully" />
+			<Item Name="LocalizableStrings.addRecord_1r2xbbb_caption.Value" Value="Add new" />
+			<Item Name="LocalizableStrings.addRecord_3saaf8p_caption.Value" Value="Add new" />
+			<Item Name="LocalizableStrings.addRecord_50oqngl_caption.Value" Value="Add new" />
+			<Item Name="LocalizableStrings.addRecord_6u3gj87_caption.Value" Value="Add new" />
+			<Item Name="LocalizableStrings.addRecord_j4m9sl4_caption.Value" Value="Add new" />
+			<Item Name="LocalizableStrings.addRecord_m8moakj_caption.Value" Value="Add new" />
+			<Item Name="LocalizableStrings.addRecord_yerridn_caption.Value" Value="Add new" />
+			<Item Name="LocalizableStrings.addRecord_yufr56n_caption.Value" Value="Add new" />
+		</Items>
+	</Group>
+</Resources>

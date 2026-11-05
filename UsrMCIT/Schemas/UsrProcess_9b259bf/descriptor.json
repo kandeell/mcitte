@@ -1,0 +1,10 @@
+﻿{
+  "Descriptor": {
+    "UId": "6033b6d3-7a6f-4bab-83d6-5c88fb8c71fd",
+    "Name": "UsrProcess_9b259bf",
+    "ModifiedOnUtc": "\/Date(1792874181000)\/",
+    "ManagerName": "ProcessSchemaManager",
+    "Caption": "Track MCIT Role Assignments",
+    "DependsOn": []
+  }
+}

@@ -1,0 +1,10 @@
+﻿{
+  "Descriptor": {
+    "UId": "061d1185-4b0f-4750-bc07-bb50a9cf95e7",
+    "Name": "UsrVMLifecycleRelatedPage",
+    "ModifiedOnUtc": "\/Date(1793783172000)\/",
+    "ManagerName": "AddonSchemaManager",
+    "Caption": "VM Lifecycle (Page settings)",
+    "DependsOn": []
+  }
+}

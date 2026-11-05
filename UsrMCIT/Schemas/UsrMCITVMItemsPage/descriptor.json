@@ -1,0 +1,14 @@
+﻿{
+  "Descriptor": {
+    "UId": "e091598a-dc09-4229-a10b-d3763e86e067",
+    "Name": "UsrMCITVMItemsPage",
+    "ModifiedOnUtc": "\/Date(1792423698000)\/",
+    "Parent": {
+      "UId": "f691e828-0b36-42a7-898f-c337e9af67d0",
+      "Name": "BlankPageTemplate"
+    },
+    "ManagerName": "ClientUnitSchemaManager",
+    "Caption": "MCIT VM Items Page",
+    "DependsOn": []
+  }
+}
