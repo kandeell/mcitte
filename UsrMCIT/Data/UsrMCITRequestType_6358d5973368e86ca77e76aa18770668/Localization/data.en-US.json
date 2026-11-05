@@ -15,7 +15,7 @@
         {
           "SchemaColumnUId": "9e53fd7c-dde4-4502-a64c-b9e34148108b",
           "ColumnName": "Description",
-          "Value": "Request new virtual machines"
+          "Value": "Request termination of existing virtual machines"
         }
       ]
     },
@@ -34,7 +34,7 @@
         {
           "SchemaColumnUId": "9e53fd7c-dde4-4502-a64c-b9e34148108b",
           "ColumnName": "Description",
-          "Value": "Request termination of existing virtual machines"
+          "Value": "Request new virtual machines"
         }
       ]
     },

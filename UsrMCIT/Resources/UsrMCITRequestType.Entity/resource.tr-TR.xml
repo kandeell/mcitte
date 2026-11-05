@@ -3,6 +3,7 @@
 	<Group Type="String">
 		<Items>
 			<Item Name="Caption" Value="Nesne" />
+			<Item Name="EventsProcessSchema.Caption" Value="Temel nesne" />
 		</Items>
 	</Group>
 </Resources>

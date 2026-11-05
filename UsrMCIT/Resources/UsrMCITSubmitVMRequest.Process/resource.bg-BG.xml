@@ -1,0 +1,70 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Resources Culture="bg-BG">
+	<Group Type="String">
+		<Items>
+			<Item Name="BaseElements.ActivityUserTask1.Parameters.Account.Caption" Value="Юридическо Лице" />
+			<Item Name="BaseElements.ActivityUserTask1.Parameters.ActivityCategory.Caption" Value="Категория" />
+			<Item Name="BaseElements.ActivityUserTask1.Parameters.ActivityPriority.Caption" Value="Приоритет" />
+			<Item Name="BaseElements.ActivityUserTask1.Parameters.ActivityResult.Caption" Value="Резултат от дейността" />
+			<Item Name="BaseElements.ActivityUserTask1.Parameters.Application.Caption" Value="Приложение" />
+			<Item Name="BaseElements.ActivityUserTask1.Parameters.Case.Caption" Value="Случай" />
+			<Item Name="BaseElements.ActivityUserTask1.Parameters.Change.Caption" Value="Промени" />
+			<Item Name="BaseElements.ActivityUserTask1.Parameters.Contact.Caption" Value="Контакт" />
+			<Item Name="BaseElements.ActivityUserTask1.Parameters.Contract.Caption" Value="Договор" />
+			<Item Name="BaseElements.ActivityUserTask1.Parameters.CurrentActivityId.Caption" Value="Идентификатор на задача" />
+			<Item Name="BaseElements.ActivityUserTask1.Parameters.Document.Caption" Value="Документ" />
+			<Item Name="BaseElements.ActivityUserTask1.Parameters.Duration.Caption" Value="Продължителност" />
+			<Item Name="BaseElements.ActivityUserTask1.Parameters.DurationPeriod.Caption" Value="Продължителност (период)" />
+			<Item Name="BaseElements.ActivityUserTask1.Parameters.ExecutionContext.Caption" Value="Контекст на изпълнение" />
+			<Item Name="BaseElements.ActivityUserTask1.Parameters.FinApplication.Caption" Value="Приложение" />
+			<Item Name="BaseElements.ActivityUserTask1.Parameters.Incident.Caption" Value="Инцидент" />
+			<Item Name="BaseElements.ActivityUserTask1.Parameters.InformationOnStep.Caption" Value="Информация за стъпка" />
+			<Item Name="BaseElements.ActivityUserTask1.Parameters.Invoice.Caption" Value="Фактура" />
+			<Item Name="BaseElements.ActivityUserTask1.Parameters.IsActivityCompleted.Caption" Value="Дейността е завършена" />
+			<Item Name="BaseElements.ActivityUserTask1.Parameters.Lead.Caption" Value="Нужда" />
+			<Item Name="BaseElements.ActivityUserTask1.Parameters.Listing.Caption" Value="Обяви" />
+			<Item Name="BaseElements.ActivityUserTask1.Parameters.Opportunity.Caption" Value="Възможност" />
+			<Item Name="BaseElements.ActivityUserTask1.Parameters.Order.Caption" Value="Поръчка" />
+			<Item Name="BaseElements.ActivityUserTask1.Parameters.OwnerId.Caption" Value="Собственик" />
+			<Item Name="BaseElements.ActivityUserTask1.Parameters.Problem.Caption" Value="Проблем" />
+			<Item Name="BaseElements.ActivityUserTask1.Parameters.Project.Caption" Value="Проект" />
+			<Item Name="BaseElements.ActivityUserTask1.Parameters.Property.Caption" Value="Характеристики" />
+			<Item Name="BaseElements.ActivityUserTask1.Parameters.QueueItem.Caption" Value="Елемент на опашка" />
+			<Item Name="BaseElements.ActivityUserTask1.Parameters.Recommendation.Caption" Value="Препоръка" />
+			<Item Name="BaseElements.ActivityUserTask1.Parameters.Release.Caption" Value="Издание" />
+			<Item Name="BaseElements.ActivityUserTask1.Parameters.RemindBefore.Caption" Value="Напомни на собственика предварително" />
+			<Item Name="BaseElements.ActivityUserTask1.Parameters.RemindBeforePeriod.Caption" Value="Напомни на собственика предварително (период)" />
+			<Item Name="BaseElements.ActivityUserTask1.Parameters.Requests.Caption" Value="Заявка" />
+			<Item Name="BaseElements.ActivityUserTask1.Parameters.ShowExecutionPage.Caption" Value="Покажи автоматично страницата за изпълнение" />
+			<Item Name="BaseElements.ActivityUserTask1.Parameters.ShowInScheduler.Caption" Value="Покажи в календара" />
+			<Item Name="BaseElements.ActivityUserTask1.Parameters.StartIn.Caption" Value="Започни изпълняването след" />
+			<Item Name="BaseElements.ActivityUserTask1.Parameters.StartInPeriod.Caption" Value="Започни изпълнение след (период)" />
+			<Item Name="BaseElements.ChangeDataUserTask1.Parameters.ConsiderTimeInFilter.Caption" Value="Помисли за времето във филтъра" />
+			<Item Name="BaseElements.ChangeDataUserTask1.Parameters.DataSourceFilters.Caption" Value="Филтри за източници на данни" />
+			<Item Name="BaseElements.ChangeDataUserTask1.Parameters.EntitySchemaUId.Caption" Value="Обект" />
+			<Item Name="BaseElements.ChangeDataUserTask1.Parameters.IgnoreErrors.Caption" Value="Продължи изпълнението с грешки" />
+			<Item Name="BaseElements.ChangeDataUserTask1.Parameters.IsMatchConditions.Caption" Value="Ако обектът отговаря на следните условия" />
+			<Item Name="BaseElements.ChangeDataUserTask1.Parameters.RecordColumnValues.Caption" Value="Задай стойности на колоните" />
+			<Item Name="BaseElements.ReadDataUserTask1.Parameters.AggregationColumnName.Caption" Value="Име на колоната с агрегатна функция" />
+			<Item Name="BaseElements.ReadDataUserTask1.Parameters.CanReadUncommitedData.Caption" Value="Прочети некачените данни" />
+			<Item Name="BaseElements.ReadDataUserTask1.Parameters.ConsiderTimeInFilter.Caption" Value="Помисли за времето във филтъра" />
+			<Item Name="BaseElements.ReadDataUserTask1.Parameters.DataSourceFilters.Caption" Value="Филтри за източници на данни" />
+			<Item Name="BaseElements.ReadDataUserTask1.Parameters.EntityColumnMetaPathes.Caption" Value="Колони за четене" />
+			<Item Name="BaseElements.ReadDataUserTask1.Parameters.FunctionType.Caption" Value="Тип агрегатна функция" />
+			<Item Name="BaseElements.ReadDataUserTask1.Parameters.IgnoreDisplayValues.Caption" Value="Не чети показаните стойности на търсещите колони" />
+			<Item Name="BaseElements.ReadDataUserTask1.Parameters.NumberOfRecords.Caption" Value="Брой записи за четене" />
+			<Item Name="BaseElements.ReadDataUserTask1.Parameters.OrderInfo.Caption" Value="Ред на колоните" />
+			<Item Name="BaseElements.ReadDataUserTask1.Parameters.ReadSomeTopRecords.Caption" Value="Прочети първо" />
+			<Item Name="BaseElements.ReadDataUserTask1.Parameters.ResultCompositeObjectList.Caption" Value="Колекция от записи" />
+			<Item Name="BaseElements.ReadDataUserTask1.Parameters.ResultCount.Caption" Value="Брой записи" />
+			<Item Name="BaseElements.ReadDataUserTask1.Parameters.ResultDateTimeFunction.Caption" Value="Резултат от функцията (Дата/Час)" />
+			<Item Name="BaseElements.ReadDataUserTask1.Parameters.ResultEntity.Caption" Value="Първи елемент от получената колекция" />
+			<Item Name="BaseElements.ReadDataUserTask1.Parameters.ResultEntityCollection.Caption" Value="Получена колекция" />
+			<Item Name="BaseElements.ReadDataUserTask1.Parameters.ResultFloatFunction.Caption" Value="Резултат от функцията (Десетично число)" />
+			<Item Name="BaseElements.ReadDataUserTask1.Parameters.ResultIntegerFunction.Caption" Value="Резултат от функцията (Цяло число)" />
+			<Item Name="BaseElements.ReadDataUserTask1.Parameters.ResultRowsCount.Caption" Value="Брой прочетени записи" />
+			<Item Name="BaseElements.ReadDataUserTask1.Parameters.ResultType.Caption" Value="Тип резултат" />
+			<Item Name="Caption" Value="MCIT VM Request Submission" />
+		</Items>
+	</Group>
+</Resources>
