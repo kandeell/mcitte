@@ -2,12 +2,13 @@
   "Descriptor": {
     "UId": "ceeffdfa-6997-452c-bb44-2d2ebc9ce07e",
     "Name": "UsrVMRequestItem",
-    "ModifiedOnUtc": "\/Date(1793831981000)\/",
+    "ModifiedOnUtc": "\/Date(1793831984000)\/",
     "Parent": {
       "UId": "1bab9dcf-17d5-49f8-9536-8e0064f1dce0",
       "Name": "BaseEntity"
     },
     "ManagerName": "EntitySchemaManager",
-    "Caption": "VM Request Item"
+    "Caption": "VM Request Item",
+    "DependsOn": []
   }
 }
