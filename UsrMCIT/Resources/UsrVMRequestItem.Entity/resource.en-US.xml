@@ -3,13 +3,19 @@
 	<Group Type="String">
 		<Items>
 			<Item Name="Caption" Value="VM Request Item" />
+			<Item Name="Columns.UsrAdditionalRAMGB.Caption" Value="AdditionalRAMGB" />
+			<Item Name="Columns.UsrAdditionalStorageGB.Caption" Value="AdditionalStorageGB" />
 			<Item Name="Columns.UsrAmountPerUnitSnapshot.Caption" Value="Amount per unit at submission" />
 			<Item Name="Columns.UsrBillableUnits.Caption" Value="Billable units" />
 			<Item Name="Columns.UsrCPU.Caption" Value="vCPU count" />
+			<Item Name="Columns.UsrConfigVersion.Caption" Value="ConfigVersion" />
 			<Item Name="Columns.UsrCurrency.Caption" Value="Currency" />
 			<Item Name="Columns.UsrDisplayOrder.Caption" Value="Display order" />
+			<Item Name="Columns.UsrEnvironment.Caption" Value="Environment" />
 			<Item Name="Columns.UsrEstimatedPoints.Caption" Value="Estimated points" />
+			<Item Name="Columns.UsrInternetMbps.Caption" Value="InternetMbps" />
 			<Item Name="Columns.UsrName.Caption" Value="VM name" />
+			<Item Name="Columns.UsrNetworkZone.Caption" Value="NetworkZone" />
 			<Item Name="Columns.UsrOperatingSystem.Caption" Value="Operating system" />
 			<Item Name="Columns.UsrPointsPerUnitSnapshot.Caption" Value="Points per unit at submission" />
 			<Item Name="Columns.UsrPricingCapturedOn.Caption" Value="Pricing captured on" />
@@ -21,6 +27,7 @@
 			<Item Name="Columns.UsrStorageGB.Caption" Value="Storage (GB)" />
 			<Item Name="Columns.UsrTotalAmountSnapshot.Caption" Value="Total amount at submission" />
 			<Item Name="Columns.UsrTotalPointsSnapshot.Caption" Value="Total points at submission" />
+			<Item Name="Columns.UsrVPNMbps.Caption" Value="VPNMbps" />
 		</Items>
 	</Group>
 </Resources>

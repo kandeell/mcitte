@@ -186,6 +186,76 @@
   "E17": "UsrResourceRateId",
   "E18": "UsrResourceRateUsrName"
 }
++ MetaData.Schema.D2 {
+  "UId": "4923fd0a-8a49-8e45-e470-b0c81968797c",
+  "A2": "UsrConfigVersion",
+  "A3": "ceeffdfa-6997-452c-bb44-2d2ebc9ce07e",
+  "A4": "ceeffdfa-6997-452c-bb44-2d2ebc9ce07e",
+  "A5": "65028ea3-626f-4465-8b2e-544849e5d8c6",
+  "S2": "b295071f-7ea9-4e62-8d1a-919bf3732ff2",
+  "S4": "904eeb3b-849e-4a1e-8653-ce6cb09e62fe",
+  "E6": true,
+  "E20": true,
+  "E17": "UsrConfigVersionId"
+}
++ MetaData.Schema.D2 {
+  "UId": "85ee1987-f2da-bf41-fdbe-9f517e641d57",
+  "A2": "UsrInternetMbps",
+  "A3": "ceeffdfa-6997-452c-bb44-2d2ebc9ce07e",
+  "A4": "ceeffdfa-6997-452c-bb44-2d2ebc9ce07e",
+  "A5": "65028ea3-626f-4465-8b2e-544849e5d8c6",
+  "S2": "5cc8060d-6d10-4773-89fc-8c12d6f659a6"
+}
++ MetaData.Schema.D2 {
+  "UId": "0bcd7a56-7f76-6629-43ca-70725d785174",
+  "A2": "UsrVPNMbps",
+  "A3": "ceeffdfa-6997-452c-bb44-2d2ebc9ce07e",
+  "A4": "ceeffdfa-6997-452c-bb44-2d2ebc9ce07e",
+  "A5": "65028ea3-626f-4465-8b2e-544849e5d8c6",
+  "S2": "5cc8060d-6d10-4773-89fc-8c12d6f659a6"
+}
++ MetaData.Schema.D2 {
+  "UId": "20c5eb5f-20db-f1a7-9b05-15c924d1fe5d",
+  "A2": "UsrAdditionalStorageGB",
+  "A3": "ceeffdfa-6997-452c-bb44-2d2ebc9ce07e",
+  "A4": "ceeffdfa-6997-452c-bb44-2d2ebc9ce07e",
+  "A5": "65028ea3-626f-4465-8b2e-544849e5d8c6",
+  "S2": "5cc8060d-6d10-4773-89fc-8c12d6f659a6"
+}
++ MetaData.Schema.D2 {
+  "UId": "7710f195-67be-fa8d-c8cb-68d8b0b70d99",
+  "A2": "UsrAdditionalRAMGB",
+  "A3": "ceeffdfa-6997-452c-bb44-2d2ebc9ce07e",
+  "A4": "ceeffdfa-6997-452c-bb44-2d2ebc9ce07e",
+  "A5": "65028ea3-626f-4465-8b2e-544849e5d8c6",
+  "S2": "5cc8060d-6d10-4773-89fc-8c12d6f659a6"
+}
++ MetaData.Schema.D2 {
+  "UId": "3f2a2f69-1865-e7b2-0676-5f81248ea43d",
+  "A2": "UsrNetworkZone",
+  "A3": "ceeffdfa-6997-452c-bb44-2d2ebc9ce07e",
+  "A4": "ceeffdfa-6997-452c-bb44-2d2ebc9ce07e",
+  "A5": "65028ea3-626f-4465-8b2e-544849e5d8c6",
+  "S2": "b295071f-7ea9-4e62-8d1a-919bf3732ff2",
+  "S4": "a947f9a9-90ed-42ff-a10f-0602a06a81b3",
+  "E6": true,
+  "E20": true,
+  "E17": "UsrNetworkZoneId",
+  "E18": "UsrNetworkZoneName"
+}
++ MetaData.Schema.D2 {
+  "UId": "0fea01e5-888f-11e7-c3af-7b212f02f0ce",
+  "A2": "UsrEnvironment",
+  "A3": "ceeffdfa-6997-452c-bb44-2d2ebc9ce07e",
+  "A4": "ceeffdfa-6997-452c-bb44-2d2ebc9ce07e",
+  "A5": "65028ea3-626f-4465-8b2e-544849e5d8c6",
+  "S2": "b295071f-7ea9-4e62-8d1a-919bf3732ff2",
+  "S4": "4d5c71cb-6f0b-4470-a008-fa3709d05b91",
+  "E6": true,
+  "E20": true,
+  "E17": "UsrEnvironmentId",
+  "E18": "UsrEnvironmentName"
+}
 ~ MetaData.Schema.D2 [
   "ae0e45ca-c495-4fe7-a39d-3ab7278e1617",
   "e80190a5-03b2-4095-90f7-a193a960adee",
@@ -210,7 +280,14 @@
   "91d867da-3006-df0f-6d29-d712b6b9c65d",
   "d668f505-f110-accc-b339-2c945b6a3dc6",
   "5aa8c4fe-c1fb-03b8-ed19-874abf4773c1",
-  "2b5fc476-4c88-9bb2-46f2-da55cace9647"
+  "2b5fc476-4c88-9bb2-46f2-da55cace9647",
+  "4923fd0a-8a49-8e45-e470-b0c81968797c",
+  "85ee1987-f2da-bf41-fdbe-9f517e641d57",
+  "0bcd7a56-7f76-6629-43ca-70725d785174",
+  "20c5eb5f-20db-f1a7-9b05-15c924d1fe5d",
+  "7710f195-67be-fa8d-c8cb-68d8b0b70d99",
+  "3f2a2f69-1865-e7b2-0676-5f81248ea43d",
+  "0fea01e5-888f-11e7-c3af-7b212f02f0ce"
 ]
 = MetaData.Schema.D20.A2 "UsrVMRequestItemEvents"
 + MetaData.Schema.D20.FA1 false

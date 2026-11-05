@@ -1126,6 +1126,12 @@ define("UsrPage_vuvb9us", /**SCHEMA_DEPS*/["css!UsrRubikFontCSS"]/**SCHEMA_DEPS*
 							"code": "DataGrid_wskxcupDS_UsrPricingUnitLookup",
 							"caption": "Pricing unit",
 							"dataValueType": 10
+						},
+						{
+							"id": "a9eea340-52be-523b-b741-133390a1d36b",
+							"code": "DataGrid_wskxcupDS_UsrPointsPerUnit",
+							"caption": "Points per unit",
+							"dataValueType": 31
 						}
 					],
 					"layoutConfig": {
@@ -1138,313 +1144,6 @@ define("UsrPage_vuvb9us", /**SCHEMA_DEPS*/["css!UsrRubikFontCSS"]/**SCHEMA_DEPS*
 				"parentName": "GridContainer_ewqysfs",
 				"propertyName": "items",
 				"index": 1
-			},
-			{
-				"operation": "insert",
-				"name": "ExpansionPanel_5dphlae",
-				"values": {
-					"type": "crt.ExpansionPanel",
-					"tools": [],
-					"items": [],
-					"title": "#ResourceString(ExpansionPanel_5dphlae_title)#",
-					"toggleType": "material",
-					"togglePosition": "before",
-					"expanded": true,
-					"labelColor": "auto",
-					"fullWidthHeader": false,
-					"titleWidth": 20,
-					"padding": {
-						"top": "small",
-						"bottom": "small",
-						"left": "none",
-						"right": "none"
-					},
-					"fitContent": true,
-					"visible": true,
-					"alignItems": "stretch"
-				},
-				"parentName": "TabContainer_onmyly9",
-				"propertyName": "items",
-				"index": 1
-			},
-			{
-				"operation": "insert",
-				"name": "GridContainer_q72ydfb",
-				"values": {
-					"type": "crt.GridContainer",
-					"rows": "minmax(max-content, 24px)",
-					"columns": [
-						"minmax(32px, 1fr)"
-					],
-					"gap": {
-						"columnGap": "large",
-						"rowGap": 0
-					},
-					"styles": {
-						"overflow-x": "hidden"
-					},
-					"items": []
-				},
-				"parentName": "ExpansionPanel_5dphlae",
-				"propertyName": "tools",
-				"index": 0
-			},
-			{
-				"operation": "insert",
-				"name": "FlexContainer_y683jvq",
-				"values": {
-					"type": "crt.FlexContainer",
-					"direction": "row",
-					"gap": "none",
-					"alignItems": "center",
-					"items": [],
-					"layoutConfig": {
-						"colSpan": 1,
-						"column": 1,
-						"row": 1,
-						"rowSpan": 1
-					}
-				},
-				"parentName": "GridContainer_q72ydfb",
-				"propertyName": "items",
-				"index": 0
-			},
-			{
-				"operation": "insert",
-				"name": "GridDetailAddBtn_sq24o0x",
-				"values": {
-					"type": "crt.Button",
-					"caption": "#ResourceString(GridDetailAddBtn_sq24o0x_caption)#",
-					"icon": "add-button-icon",
-					"iconPosition": "only-icon",
-					"color": "default",
-					"size": "medium",
-					"clicked": {
-						"request": "crt.CreateRecordRequest",
-						"params": {
-							"entityName": "UsrConfigResourceRate"
-						}
-					}
-				},
-				"parentName": "FlexContainer_y683jvq",
-				"propertyName": "items",
-				"index": 0
-			},
-			{
-				"operation": "insert",
-				"name": "GridDetailRefreshBtn_pg4ckll",
-				"values": {
-					"type": "crt.Button",
-					"caption": "#ResourceString(GridDetailRefreshBtn_pg4ckll_caption)#",
-					"icon": "reload-icon",
-					"iconPosition": "only-icon",
-					"color": "default",
-					"size": "medium",
-					"clicked": {
-						"request": "crt.LoadDataRequest",
-						"params": {
-							"config": {
-								"loadType": "reload"
-							},
-							"dataSourceName": "GridDetail_33vgql3DS"
-						}
-					}
-				},
-				"parentName": "FlexContainer_y683jvq",
-				"propertyName": "items",
-				"index": 1
-			},
-			{
-				"operation": "insert",
-				"name": "GridDetailSettingsBtn_dcby4k8",
-				"values": {
-					"type": "crt.Button",
-					"caption": "#ResourceString(GridDetailSettingsBtn_dcby4k8_caption)#",
-					"icon": "actions-button-icon",
-					"iconPosition": "only-icon",
-					"color": "default",
-					"size": "medium",
-					"clickMode": "menu",
-					"menuItems": []
-				},
-				"parentName": "FlexContainer_y683jvq",
-				"propertyName": "items",
-				"index": 2
-			},
-			{
-				"operation": "insert",
-				"name": "GridDetailExportDataBtn_isppakh",
-				"values": {
-					"type": "crt.MenuItem",
-					"caption": "#ResourceString(GridDetailExportDataBtn_isppakh_caption)#",
-					"icon": "export-button-icon",
-					"color": "default",
-					"size": "medium",
-					"clicked": {
-						"request": "crt.ExportDataGridToExcelRequest",
-						"params": {
-							"viewName": "GridDetail_33vgql3"
-						}
-					}
-				},
-				"parentName": "GridDetailSettingsBtn_dcby4k8",
-				"propertyName": "menuItems",
-				"index": 0
-			},
-			{
-				"operation": "insert",
-				"name": "GridDetailImportDataBtn_chflxcd",
-				"values": {
-					"type": "crt.MenuItem",
-					"caption": "#ResourceString(GridDetailImportDataBtn_chflxcd_caption)#",
-					"icon": "import-button-icon",
-					"color": "default",
-					"size": "medium",
-					"clicked": {
-						"request": "crt.ImportDataRequest",
-						"params": {
-							"entitySchemaName": "UsrConfigResourceRate"
-						}
-					}
-				},
-				"parentName": "GridDetailSettingsBtn_dcby4k8",
-				"propertyName": "menuItems",
-				"index": 1
-			},
-			{
-				"operation": "insert",
-				"name": "GridDetailSearchFilter_jqfctem",
-				"values": {
-					"type": "crt.SearchFilter",
-					"placeholder": "#ResourceString(GridDetailSearchFilter_jqfctem_placeholder)#",
-					"iconOnly": true,
-					"_filterOptions": {
-						"expose": [
-							{
-								"attribute": "GridDetailSearchFilter_jqfctem_GridDetail_33vgql3",
-								"converters": [
-									{
-										"converter": "crt.SearchFilterAttributeConverter",
-										"args": [
-											"GridDetail_33vgql3"
-										]
-									}
-								]
-							}
-						],
-						"from": [
-							"GridDetailSearchFilter_jqfctem_SearchValue",
-							"GridDetailSearchFilter_jqfctem_FilteredColumnsGroups"
-						]
-					}
-				},
-				"parentName": "FlexContainer_y683jvq",
-				"propertyName": "items",
-				"index": 3
-			},
-			{
-				"operation": "insert",
-				"name": "GridContainer_y74ehnm",
-				"values": {
-					"type": "crt.GridContainer",
-					"rows": "minmax(max-content, 32px)",
-					"columns": [
-						"minmax(32px, 1fr)",
-						"minmax(32px, 1fr)"
-					],
-					"gap": {
-						"columnGap": "large",
-						"rowGap": null
-					},
-					"styles": {
-						"overflow-x": "hidden"
-					},
-					"items": [],
-					"visible": true,
-					"padding": {
-						"top": "none",
-						"right": "none",
-						"bottom": "none",
-						"left": "none"
-					},
-					"color": "transparent",
-					"borderRadius": "none",
-					"alignItems": "stretch"
-				},
-				"parentName": "ExpansionPanel_5dphlae",
-				"propertyName": "items",
-				"index": 0
-			},
-			{
-				"operation": "insert",
-				"name": "GridDetail_33vgql3",
-				"values": {
-					"type": "crt.DataGrid",
-					"layoutConfig": {
-						"colSpan": 2,
-						"column": 1,
-						"row": 1,
-						"rowSpan": 6
-					},
-					"features": {
-						"rows": {
-							"selection": {
-								"enable": true,
-								"multiple": true
-							}
-						}
-					},
-					"items": "$GridDetail_33vgql3",
-					"primaryColumnName": "GridDetail_33vgql3DS_Id",
-					"columns": [
-						{
-							"id": "f4a3eff8-d6fb-8cf9-bfd6-d504b00d84c2",
-							"code": "GridDetail_33vgql3DS_UsrName",
-							"caption": "#ResourceString(GridDetail_33vgql3DS_UsrName)#",
-							"dataValueType": 28
-						},
-						{
-							"id": "997856db-12dd-2ad8-7759-1226c8fe6c78",
-							"code": "GridDetail_33vgql3DS_UsrCurrency",
-							"caption": "#ResourceString(GridDetail_33vgql3DS_UsrCurrency)#",
-							"dataValueType": 10
-						},
-						{
-							"id": "1c4075ea-ca2a-8a65-42ee-cf423e56de2f",
-							"code": "GridDetail_33vgql3DS_UsrConfigVersion",
-							"caption": "#ResourceString(GridDetail_33vgql3DS_UsrConfigVersion)#",
-							"dataValueType": 10
-						},
-						{
-							"id": "f5eff769-06f0-a819-a8dd-59eaf27b706e",
-							"code": "GridDetail_33vgql3DS_UsrPricingUnitLookup",
-							"caption": "#ResourceString(GridDetail_33vgql3DS_UsrPricingUnitLookup)#",
-							"dataValueType": 10
-						},
-						{
-							"id": "4a62fb59-5bb3-0100-4754-a4aa34a7735a",
-							"code": "GridDetail_33vgql3DS_UsrResourceType",
-							"caption": "#ResourceString(GridDetail_33vgql3DS_UsrResourceType)#",
-							"dataValueType": 10
-						},
-						{
-							"id": "4e476382-2dd2-5491-9506-6d1ac8b8d8b9",
-							"code": "GridDetail_33vgql3DS_UsrAmountPerUnit",
-							"caption": "#ResourceString(GridDetail_33vgql3DS_UsrAmountPerUnit)#",
-							"dataValueType": 31
-						},
-						{
-							"id": "32c327a0-9c18-7f3b-187a-9de5ee2f28ab",
-							"code": "GridDetail_33vgql3DS_UsrPointsPerUnit",
-							"caption": "#ResourceString(GridDetail_33vgql3DS_UsrPointsPerUnit)#",
-							"dataValueType": 31
-						}
-					],
-					"placeholder": false
-				},
-				"parentName": "GridContainer_y74ehnm",
-				"propertyName": "items",
-				"index": 0
 			}
 		]/**SCHEMA_VIEW_CONFIG_DIFF*/,
 		viewModelConfigDiff: /**SCHEMA_VIEW_MODEL_CONFIG_DIFF*/[
@@ -1684,6 +1383,11 @@ define("UsrPage_vuvb9us", /**SCHEMA_DEPS*/["css!UsrRubikFontCSS"]/**SCHEMA_DEPS*
 									"modelConfig": {
 										"path": "DataGrid_wskxcupDS.UsrConfigVersion"
 									}
+								},
+								"DataGrid_wskxcupDS_UsrPointsPerUnit": {
+									"modelConfig": {
+										"path": "DataGrid_wskxcupDS.UsrPointsPerUnit"
+									}
 								}
 							}
 						}
@@ -1703,62 +1407,6 @@ define("UsrPage_vuvb9us", /**SCHEMA_DEPS*/["css!UsrRubikFontCSS"]/**SCHEMA_DEPS*
 										"direction": "asc"
 									}
 								]
-							}
-						}
-					},
-					"GridDetail_33vgql3": {
-						"isCollection": true,
-						"modelConfig": {
-							"path": "GridDetail_33vgql3DS",
-							"filterAttributes": [
-								{
-									"name": "GridDetailSearchFilter_jqfctem_GridDetail_33vgql3",
-									"loadOnChange": true
-								}
-							]
-						},
-						"viewModelConfig": {
-							"attributes": {
-								"GridDetail_33vgql3DS_UsrName": {
-									"modelConfig": {
-										"path": "GridDetail_33vgql3DS.UsrName"
-									}
-								},
-								"GridDetail_33vgql3DS_UsrCurrency": {
-									"modelConfig": {
-										"path": "GridDetail_33vgql3DS.UsrCurrency"
-									}
-								},
-								"GridDetail_33vgql3DS_UsrConfigVersion": {
-									"modelConfig": {
-										"path": "GridDetail_33vgql3DS.UsrConfigVersion"
-									}
-								},
-								"GridDetail_33vgql3DS_UsrPricingUnitLookup": {
-									"modelConfig": {
-										"path": "GridDetail_33vgql3DS.UsrPricingUnitLookup"
-									}
-								},
-								"GridDetail_33vgql3DS_UsrResourceType": {
-									"modelConfig": {
-										"path": "GridDetail_33vgql3DS.UsrResourceType"
-									}
-								},
-								"GridDetail_33vgql3DS_UsrAmountPerUnit": {
-									"modelConfig": {
-										"path": "GridDetail_33vgql3DS.UsrAmountPerUnit"
-									}
-								},
-								"GridDetail_33vgql3DS_UsrPointsPerUnit": {
-									"modelConfig": {
-										"path": "GridDetail_33vgql3DS.UsrPointsPerUnit"
-									}
-								},
-								"GridDetail_33vgql3DS_Id": {
-									"modelConfig": {
-										"path": "GridDetail_33vgql3DS.Id"
-									}
-								}
 							}
 						}
 					}
@@ -1883,33 +1531,6 @@ define("UsrPage_vuvb9us", /**SCHEMA_DEPS*/["css!UsrRubikFontCSS"]/**SCHEMA_DEPS*
 								},
 								"UsrConfigVersion": {
 									"path": "UsrConfigVersion"
-								}
-							}
-						}
-					},
-					"GridDetail_33vgql3DS": {
-						"type": "crt.EntityDataSource",
-						"scope": "viewElement",
-						"config": {
-							"entitySchemaName": "UsrConfigResourceRate",
-							"attributes": {
-								"UsrName": {
-									"path": "UsrName"
-								},
-								"UsrCurrency": {
-									"path": "UsrCurrency"
-								},
-								"UsrConfigVersion": {
-									"path": "UsrConfigVersion"
-								},
-								"UsrPricingUnitLookup": {
-									"path": "UsrPricingUnitLookup"
-								},
-								"UsrResourceType": {
-									"path": "UsrResourceType"
-								},
-								"UsrAmountPerUnit": {
-									"path": "UsrAmountPerUnit"
 								},
 								"UsrPointsPerUnit": {
 									"path": "UsrPointsPerUnit"
