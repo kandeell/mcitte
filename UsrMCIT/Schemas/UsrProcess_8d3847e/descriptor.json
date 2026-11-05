@@ -1,0 +1,10 @@
+﻿{
+  "Descriptor": {
+    "UId": "7cc5ed0d-2f5f-4870-aeba-8323980ff4d5",
+    "Name": "UsrProcess_8d3847e",
+    "ModifiedOnUtc": "\/Date(1793710126000)\/",
+    "ManagerName": "ProcessSchemaManager",
+    "Caption": "MCIT Sync Portal Users",
+    "DependsOn": []
+  }
+}

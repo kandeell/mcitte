@@ -1,3 +1,8 @@
+/* V32: Keep V30 search/filter + live data, reserve KPI height and scroll whole directory.
+   Preserves Cairo timestamps, system roles, status workflows and filters.
+   V22 MCITLU safe fix: live Functional Roles + nonempty/empty Organization label.
+   Based on user's V21; same page design, metric widgets, filters, actions, CSS.
+   Read-only SDK queries; no schema or record writes by this patch. */
 define("UsrUserDirectory_ListPage", /**SCHEMA_DEPS*/["@creatio-devkit/common"]/**SCHEMA_DEPS*/, function/**SCHEMA_ARGS*/(sdk)/**SCHEMA_ARGS*/ {
 	return {
 		viewConfigDiff: /**SCHEMA_VIEW_CONFIG_DIFF*/[
@@ -5,11 +10,9 @@ define("UsrUserDirectory_ListPage", /**SCHEMA_DEPS*/["@creatio-devkit/common"]/*
 				"operation": "merge",
 				"name": "TitleContainer",
 				"values": {
+                    "classes": ["usr-directory-title"],
 					"direction": "column",
 					"alignItems": "flex-start",
-					"classes": [
-						"usr-directory-title"
-					],
 					"visible": true,
 					"padding": {
 						"top": "none",
@@ -55,18 +58,9 @@ define("UsrUserDirectory_ListPage", /**SCHEMA_DEPS*/["@creatio-devkit/common"]/*
 			},
 			{
 				"operation": "merge",
-				"name": "MainContainer",
-				"values": {
-					"classes": [
-						"usr-dir-page-frame"
-					]
-				}
-			},
-			{
-				"operation": "merge",
 				"name": "MainFilterContainer",
 				"values": {
-					"visible": false,
+                    "visible": false,
 					"alignItems": "stretch"
 				}
 			},
@@ -137,15 +131,6 @@ define("UsrUserDirectory_ListPage", /**SCHEMA_DEPS*/["@creatio-devkit/common"]/*
 			},
 			{
 				"operation": "merge",
-				"name": "ContentContainer",
-				"values": {
-					"classes": [
-						"usr-dir-content-zone"
-					]
-				}
-			},
-			{
-				"operation": "merge",
 				"name": "FolderTree",
 				"values": {
 					"rootSchemaName": "UsrMCITPortalUserAccess"
@@ -153,24 +138,9 @@ define("UsrUserDirectory_ListPage", /**SCHEMA_DEPS*/["@creatio-devkit/common"]/*
 			},
 			{
 				"operation": "merge",
-				"name": "SectionContentWrapper",
-				"values": {
-					"classes": [
-						"usr-dir-view-layout"
-					]
-				}
-			},
-			{
-				"operation": "move",
-				"name": "SectionContentWrapper",
-				"parentName": "ContentContainer",
-				"propertyName": "items",
-				"index": 0
-			},
-			{
-				"operation": "merge",
 				"name": "DataTable",
 				"values": {
+					"visible": false,
 					"columns": [
 						{
 							"id": "4f03b106-97db-83cc-2dea-cf9656d5db1f",
@@ -220,8 +190,7 @@ define("UsrUserDirectory_ListPage", /**SCHEMA_DEPS*/["@creatio-devkit/common"]/*
 							"caption": "#ResourceString(PDS_UsrLastSignIn)#",
 							"dataValueType": 7
 						}
-					],
-					"visible": false
+					]
 				}
 			},
 			{
@@ -264,9 +233,7 @@ define("UsrUserDirectory_ListPage", /**SCHEMA_DEPS*/["@creatio-devkit/common"]/*
 				"name": "GridContainer_b4lsi4n",
 				"values": {
 					"type": "crt.GridContainer",
-					"classes": [
-						"usr-dir-kpi-layout"
-					],
+                    "classes": ["usr-dir-kpi-layout"],
 					"columns": [
 						"minmax(32px, 1fr)"
 					],
@@ -329,10 +296,7 @@ define("UsrUserDirectory_ListPage", /**SCHEMA_DEPS*/["@creatio-devkit/common"]/*
 				"name": "IndicatorWidget_qwwh5i9",
 				"values": {
 					"type": "crt.IndicatorWidget",
-					"classes": [
-						"usr-mcit-native-kpi",
-						"usr-mcit-native-kpi-active"
-					],
+                    "classes": ["usr-mcit-native-kpi", "usr-mcit-native-kpi-active"],
 					"config": {
 						"title": "#ResourceString(IndicatorWidget_qwwh5i9_title)#",
 						"theme": "without-fill",
@@ -432,10 +396,7 @@ define("UsrUserDirectory_ListPage", /**SCHEMA_DEPS*/["@creatio-devkit/common"]/*
 				"name": "IndicatorWidget_kx5qlxn",
 				"values": {
 					"type": "crt.IndicatorWidget",
-					"classes": [
-						"usr-mcit-native-kpi",
-						"usr-mcit-native-kpi-inactive"
-					],
+                    "classes": ["usr-mcit-native-kpi", "usr-mcit-native-kpi-inactive"],
 					"config": {
 						"title": "#ResourceString(IndicatorWidget_kx5qlxn_title)#",
 						"theme": "without-fill",
@@ -535,10 +496,7 @@ define("UsrUserDirectory_ListPage", /**SCHEMA_DEPS*/["@creatio-devkit/common"]/*
 				"name": "IndicatorWidget_avk9f4s",
 				"values": {
 					"type": "crt.IndicatorWidget",
-					"classes": [
-						"usr-mcit-native-kpi",
-						"usr-mcit-native-kpi-deactivated"
-					],
+                    "classes": ["usr-mcit-native-kpi", "usr-mcit-native-kpi-deactivated"],
 					"config": {
 						"title": "#ResourceString(IndicatorWidget_avk9f4s_title)#",
 						"theme": "without-fill",
@@ -685,412 +643,393 @@ define("UsrUserDirectory_ListPage", /**SCHEMA_DEPS*/["@creatio-devkit/common"]/*
 				"propertyName": "items",
 				"index": 2
 			},
+            {
+                "operation": "insert",
+                "name": "UsrDirectoryTableViewport",
+                "values": {
+                    "type": "crt.FlexContainer",
+                    "classes": ["usr-dir-table-viewport"],
+                    "direction": "column",
+                    "wrap": "nowrap",
+                    "fitContent": false,
+                    "alignItems": "stretch",
+                    "visible": true,
+                    "items": [],
+                    "padding": {"top":"none","right":"none","bottom":"none","left":"none"},
+                    "gap": "none"
+                },
+                "parentName": "SectionContentWrapper",
+                "propertyName": "items",
+                "index": 1
+            },
 			{
-				"operation": "insert",
-				"name": "UsrDirectoryHeader",
-				"values": {
-					"classes": [
-						"usr-directory-header"
-					],
-					"type": "crt.GridContainer",
-					"columns": [
-						"minmax(100px,0.95fr)",
-						"minmax(105px,0.90fr)",
-						"minmax(110px,0.95fr)",
-						"minmax(170px,1.35fr)",
-						"minmax(195px,1.65fr)",
-						"minmax(108px,0.85fr)",
-						"minmax(110px,0.95fr)",
-						"236px"
-					],
-					"rows": "minmax(max-content, 30px)",
-					"gap": {
-						"columnGap": "small",
-						"rowGap": "none"
-					},
-					"fitContent": false,
-					"alignItems": "center",
-					"padding": {
-						"top": "small",
-						"right": "small",
-						"bottom": "small",
-						"left": "small"
-					},
-					"items": [
-						{
-							"type": "crt.Label",
-							"layoutConfig": {
-								"column": 1,
-								"row": 1,
-								"colSpan": 1,
-								"rowSpan": 1
-							},
-							"caption": "Display Name",
-							"labelType": "caption",
-							"labelThickness": "bold",
-							"labelColor": "auto",
-							"labelTextAlign": "start"
-						},
-						{
-							"type": "crt.Label",
-							"layoutConfig": {
-								"column": 2,
-								"row": 1,
-								"colSpan": 1,
-								"rowSpan": 1
-							},
-							"caption": "Email",
-							"labelType": "caption",
-							"labelThickness": "bold",
-							"labelColor": "auto",
-							"labelTextAlign": "start"
-						},
-						{
-							"type": "crt.Label",
-							"layoutConfig": {
-								"column": 3,
-								"row": 1,
-								"colSpan": 1,
-								"rowSpan": 1
-							},
-							"caption": "Organization",
-							"labelType": "caption",
-							"labelThickness": "bold",
-							"labelColor": "auto",
-							"labelTextAlign": "start"
-						},
-						{
-							"type": "crt.Label",
-							"layoutConfig": {
-								"column": 4,
-								"row": 1,
-								"colSpan": 1,
-								"rowSpan": 1
-							},
-							"caption": "Assigned Roles",
-							"labelType": "caption",
-							"labelThickness": "bold",
-							"labelColor": "auto",
-							"labelTextAlign": "start"
-						},
-						{
-							"type": "crt.Label",
-							"layoutConfig": {
-								"column": 5,
-								"row": 1,
-								"colSpan": 1,
-								"rowSpan": 1
-							},
-							"caption": "Scope Summary",
-							"labelType": "caption",
-							"labelThickness": "bold",
-							"labelColor": "auto",
-							"labelTextAlign": "start"
-						},
-						{
-							"type": "crt.Label",
-							"layoutConfig": {
-								"column": 6,
-								"row": 1,
-								"colSpan": 1,
-								"rowSpan": 1
-							},
-							"caption": "Status",
-							"labelType": "caption",
-							"labelThickness": "bold",
-							"labelColor": "auto",
-							"labelTextAlign": "start"
-						},
-						{
-							"type": "crt.Label",
-							"layoutConfig": {
-								"column": 7,
-								"row": 1,
-								"colSpan": 1,
-								"rowSpan": 1
-							},
-							"caption": "Last Sign-in",
-							"labelType": "caption",
-							"labelThickness": "bold",
-							"labelColor": "auto",
-							"labelTextAlign": "start"
-						},
-						{
-							"type": "crt.Label",
-							"layoutConfig": {
-								"column": 8,
-								"row": 1,
-								"colSpan": 1,
-								"rowSpan": 1
-							},
-							"caption": "Actions",
-							"labelType": "caption",
-							"labelThickness": "bold",
-							"labelColor": "auto"
-						}
-					]
-				},
-				"parentName": "SectionContentWrapper",
-				"propertyName": "items",
-				"index": 0
+			    "operation": "insert",
+			    "name": "UsrDirectoryHeader",
+			    "values": {
+                    "classes": ["usr-directory-header"],
+			        "type": "crt.GridContainer",
+			        "columns": [
+			            
+			            "minmax(80px,9fr)",
+                        "minmax(95px,10fr)",
+                        "minmax(85px,9fr)",
+                        "minmax(120px,14fr)",
+                        "minmax(120px,13fr)",
+                        "minmax(64px,7fr)",
+                        "minmax(120px,13fr)",
+                        "minmax(224px,25fr)"
+			        ],
+			        "rows": "minmax(max-content, 30px)",
+			        "gap": {
+			            "columnGap": "small",
+			            "rowGap": "none"
+			        },
+			        "fitContent": false,
+			        "alignItems": "center",
+			        "padding": {
+			            "top": "small",
+			            "right": "small",
+			            "bottom": "small",
+			            "left": "small"
+			        },
+			        "items": [
+			            {
+			                "type": "crt.Label",
+			                "layoutConfig": {
+			                    "column": 1,
+			                    "row": 1,
+			                    "colSpan": 1,
+			                    "rowSpan": 1
+			                },
+			                "caption": "Display Name",
+			                "labelType": "caption",
+			                "labelThickness": "bold",
+			                "labelColor": "auto",
+			                "labelTextAlign": "start"
+			            },
+			            {
+			                "type": "crt.Label",
+			                "layoutConfig": {
+			                    "column": 2,
+			                    "row": 1,
+			                    "colSpan": 1,
+			                    "rowSpan": 1
+			                },
+			                "caption": "Email",
+			                "labelType": "caption",
+			                "labelThickness": "bold",
+			                "labelColor": "auto",
+			                "labelTextAlign": "start"
+			            },
+			            {
+			                "type": "crt.Label",
+			                "layoutConfig": {
+			                    "column": 3,
+			                    "row": 1,
+			                    "colSpan": 1,
+			                    "rowSpan": 1
+			                },
+			                "caption": "Organization",
+			                "labelType": "caption",
+			                "labelThickness": "bold",
+			                "labelColor": "auto",
+			                "labelTextAlign": "start"
+			            },
+			            {
+			                "type": "crt.Label",
+			                "layoutConfig": {
+			                    "column": 4,
+			                    "row": 1,
+			                    "colSpan": 1,
+			                    "rowSpan": 1
+			                },
+			                "caption": "Assigned Roles",
+			                "labelType": "caption",
+			                "labelThickness": "bold",
+			                "labelColor": "auto",
+			                "labelTextAlign": "start"
+			            },
+			            {
+			                "type": "crt.Label",
+			                "layoutConfig": {
+			                    "column": 5,
+			                    "row": 1,
+			                    "colSpan": 1,
+			                    "rowSpan": 1
+			                },
+			                "caption": "Scope Summary",
+			                "labelType": "caption",
+			                "labelThickness": "bold",
+			                "labelColor": "auto",
+			                "labelTextAlign": "start"
+			            },
+			            {
+			                "type": "crt.Label",
+			                "layoutConfig": {
+			                    "column": 6,
+			                    "row": 1,
+			                    "colSpan": 1,
+			                    "rowSpan": 1
+			                },
+			                "caption": "Status",
+			                "labelType": "caption",
+			                "labelThickness": "bold",
+			                "labelColor": "auto",
+			                "labelTextAlign": "start"
+			            },
+			            {
+			                "type": "crt.Label",
+			                "layoutConfig": {
+			                    "column": 7,
+			                    "row": 1,
+			                    "colSpan": 1,
+			                    "rowSpan": 1
+			                },
+			                "caption": "Last Sign-in",
+			                "labelType": "caption",
+			                "labelThickness": "bold",
+			                "labelColor": "auto",
+			                "labelTextAlign": "start"
+			            },
+			            {
+			                "type": "crt.Label",
+			                "layoutConfig": {
+			                    "column": 8,
+			                    "row": 1,
+			                    "colSpan": 1,
+			                    "rowSpan": 1
+			                },
+			                "caption": "Actions",
+			                "labelType": "caption",
+			                "labelThickness": "bold",
+			                "labelColor": "auto"
+			            }
+			        ]
+			    },
+			    "parentName": "UsrDirectoryTableViewport",
+			    "propertyName": "items",
+			    "index": 0
 			},
 			{
-				"operation": "insert",
-				"name": "UsrDirectoryActions",
-				"values": {
-					"type": "crt.TemplateList",
-					"classes": [
-						"usr-dir-row-list"
-					],
-					"items": "$Items",
-					"direction": "column",
-					"gap": 0,
-					"template": [
-						{
-							"type": "crt.GridContainer",
-							"classes": [
-								"usr-directory-row"
-							],
-							"columns": [
-								"minmax(100px,0.95fr)",
-								"minmax(105px,0.90fr)",
-								"minmax(110px,0.95fr)",
-								"minmax(170px,1.35fr)",
-								"minmax(195px,1.65fr)",
-								"minmax(108px,0.85fr)",
-								"minmax(110px,0.95fr)",
-								"236px"
-							],
-							"rows": "minmax(max-content, 42px)",
-							"gap": {
-								"columnGap": "small",
-								"rowGap": "none"
-							},
-							"fitContent": false,
-							"alignItems": "center",
-							"padding": {
-								"top": "small",
-								"right": "small",
-								"bottom": "small",
-								"left": "small"
-							},
-							"items": [
-								{
-									"type": "crt.Button",
-									"displayType": "text",
-									"color": "primary",
-									"size": "small",
-									"iconPosition": "only-text",
-									"clicked": {
-										"request": "crt.UpdateRecordRequest",
-										"params": {
-											"itemsAttributeName": "Items",
-											"recordId": "$Items.PDS_Id"
-										}
-									},
-									"layoutConfig": {
-										"column": 1,
-										"row": 1,
-										"colSpan": 1,
-										"rowSpan": 1
-									},
-									"classes": "$Items.PDS_UsrUser | usr.MCITUserClasses",
-									"caption": "$Items.PDS_UsrUser | usr.LookupText",
-									"labelType": "body",
-									"labelThickness": "default",
-									"labelEllipsis": false,
-									"visible": true
-								},
-								{
-									"type": "crt.Label",
-									"layoutConfig": {
-										"column": 2,
-										"row": 1,
-										"colSpan": 1,
-										"rowSpan": 1
-									},
-									"classes": [
-										"usr-dir-col-email"
-									],
-									"caption": "$Items.PDS_UsrUser_Contact_Email",
-									"labelType": "body",
-									"labelThickness": "default",
-									"labelEllipsis": false,
-									"visible": true
-								},
-								{
-									"type": "crt.FlexContainer",
-									"layoutConfig": {
-										"column": 3,
-										"row": 1,
-										"colSpan": 1,
-										"rowSpan": 1
-									},
-									"classes": [
-										"usr-dir-col-org"
-									],
-									"direction": "row",
-									"alignItems": "center",
-									"fitContent": true,
-									"items": [
-										{
-											"type": "crt.Label",
-											"caption": "$Items.PDS_UsrUser_Contact_Account | usr.LookupText",
-											"labelType": "body",
-											"labelThickness": "default",
-											"labelEllipsis": false,
-											"visible": true
-										}
-									]
-								},
-								{
-									"type": "crt.FlexContainer",
-									"layoutConfig": {
-										"column": 4,
-										"row": 1,
-										"colSpan": 1,
-										"rowSpan": 1
-									},
-									"classes": [
-										"usr-dir-col-roles"
-									],
-									"direction": "column",
-									"alignItems": "flex-start",
-									"fitContent": true,
-									"items": [
-										{
-											"type": "crt.Label",
-											"classes": [
-												"usr-dir-role-raw"
-											],
-											"caption": "$Items.PDS_UsrAssignedRolesSummary",
-											"labelType": "body",
-											"labelThickness": "default",
-											"labelEllipsis": false,
-											"visible": true
-										}
-									]
-								},
-								{
-									"type": "crt.FlexContainer",
-									"layoutConfig": {
-										"column": 5,
-										"row": 1,
-										"colSpan": 1,
-										"rowSpan": 1
-									},
-									"classes": [
-										"usr-dir-col-scope"
-									],
-									"direction": "column",
-									"alignItems": "stretch",
-									"fitContent": true,
-									"items": [
-										{
-											"type": "crt.Label",
-											"caption": "$Items.PDS_UsrScopeSummary",
-											"labelType": "body",
-											"labelThickness": "default",
-											"labelEllipsis": false,
-											"visible": true
-										}
-									]
-								},
-								{
-									"type": "crt.FlexContainer",
-									"layoutConfig": {
-										"column": 6,
-										"row": 1,
-										"colSpan": 1,
-										"rowSpan": 1
-									},
-									"classes": "$Items.PDS_UsrUserStatus | usr.MCITBadgeClasses",
-									"direction": "row",
-									"fitContent": true,
-									"items": [
-										{
-											"type": "crt.Label",
-											"caption": "$Items.PDS_UsrUserStatus | usr.LookupText",
-											"labelType": "body"
-										}
-									]
-								},
-								{
-									"type": "crt.Label",
-									"layoutConfig": {
-										"column": 7,
-										"row": 1,
-										"colSpan": 1,
-										"rowSpan": 1
-									},
-									"classes": [
-										"usr-dir-col-signin"
-									],
-									"caption": "$Items.PDS_UsrLastSignIn | crt.AdaptiveDateTimeFormat",
-									"labelType": "body",
-									"labelThickness": "default",
-									"labelEllipsis": false,
-									"visible": true
-								},
-								{
-									"type": "crt.FlexContainer",
-									"classes": [
-										"usr-dir-col-actions"
-									],
-									"layoutConfig": {
-										"column": 8,
-										"row": 1,
-										"colSpan": 1,
-										"rowSpan": 1
-									},
-									"direction": "row",
-									"alignItems": "center",
-									"justifyContent": "start",
-									"wrap": "nowrap",
-									"gap": "small",
-									"fitContent": true,
-									"items": [
-										{
-											"type": "crt.Button",
-											"caption": "View Profile",
-											"color": "outline",
-											"displayType": "contained",
-											"size": "small",
-											"iconPosition": "only-text",
-											"clicked": {
-												"request": "crt.UpdateRecordRequest",
-												"params": {
-													"itemsAttributeName": "Items",
-													"recordId": "$Items.PDS_Id"
-												}
-											}
-										},
-										{
-											"type": "crt.Button",
-											"caption": "$Items.PDS_UsrUserStatus | usr.StatusActionCaption",
-											"color": "$Items.PDS_UsrUserStatus | usr.MCITActionColor",
-											"displayType": "contained",
-											"size": "small",
-											"iconPosition": "only-text",
-											"disabled": "$Items.PDS_UsrUserStatus | usr.MCITActionDisabled",
-											"clicked": {
-												"request": "usr.ChangeMCITUserStatus",
-												"params": {
-													"recordId": "$Items.PDS_Id",
-													"currentStatus": "$Items.PDS_UsrUserStatus",
-													"targetUser": "$Items.PDS_UsrUser"
-												}
-											}
-										}
-									]
-								}
-							]
-						}
-					]
-				},
-				"parentName": "SectionContentWrapper",
-				"propertyName": "items",
-				"index": 1
+			    "operation": "insert",
+			    "name": "UsrDirectoryActions",
+			    "values": {
+			        "type": "crt.TemplateList",
+                "classes": ["usr-dir-row-list"],
+			        "items": "$Items",
+			        "direction": "column",
+			        "gap": 0,
+			        "template": [
+			            {
+			                "type": "crt.GridContainer",
+                            "classes": ["usr-directory-row"],
+			                "columns": [
+			                    
+			                    "minmax(80px,9fr)",
+                        "minmax(95px,10fr)",
+                        "minmax(85px,9fr)",
+                        "minmax(120px,14fr)",
+                        "minmax(120px,13fr)",
+                        "minmax(64px,7fr)",
+                        "minmax(120px,13fr)",
+                        "minmax(224px,25fr)"
+			                ],
+			                "rows": "minmax(max-content, 42px)",
+			                "gap": {
+			                    "columnGap": "small",
+			                    "rowGap": "none"
+			                },
+			                "fitContent": false,
+			                "alignItems": "center",
+			                "padding": {
+			                    "top": "small",
+			                    "right": "small",
+			                    "bottom": "small",
+			                    "left": "small"
+			                },
+			                "items": [
+			                    {
+			                        "type": "crt.Button",
+                                "displayType": "text",
+                                "color": "primary",
+                                "size": "small",
+                                "iconPosition": "only-text",
+                                "clicked": {
+                                    "request": "crt.UpdateRecordRequest",
+                                    "params": {
+                                        "itemsAttributeName": "Items",
+                                        "recordId": "$Items.PDS_Id"
+                                    }
+                                },
+			                        "layoutConfig": {
+			                            "column": 1,
+			                            "row": 1,
+			                            "colSpan": 1,
+			                            "rowSpan": 1
+			                        },
+			                        "classes": "$Items.PDS_UsrUser | usr.MCITUserClasses",
+			                        "caption": "$Items.PDS_UsrUser | usr.LookupText",
+			                        "labelType": "body",
+			                        "labelThickness": "default",
+			                        "labelEllipsis": false,
+			                        "visible": true
+			                    },
+			                    {
+			                        "type": "crt.Label",
+			                        "layoutConfig": {
+			                            "column": 2,
+			                            "row": 1,
+			                            "colSpan": 1,
+			                            "rowSpan": 1
+			                        },
+			                        "classes": ["usr-dir-col-email"],
+			                        "caption": "$Items.PDS_UsrUser_Contact_Email",
+			                        "labelType": "body",
+			                        "labelThickness": "default",
+			                        "labelEllipsis": false,
+			                        "visible": true
+			                    },
+			                    {
+			                        "type": "crt.FlexContainer",
+			                        "layoutConfig": {
+			                            "column": 3,
+			                            "row": 1,
+			                            "colSpan": 1,
+			                            "rowSpan": 1
+			                        },
+			                        "classes": ["usr-dir-col-org"],
+			                        "direction": "row",
+			                        "alignItems": "center",
+			                        "fitContent": true,
+			                        "items": [{
+			                            "type": "crt.Label",
+			                            "caption": "$Items.PDS_UsrUser_Contact_Account | usr.LookupText",
+			                            "labelType": "body",
+			                            "labelThickness": "default",
+			                            "labelEllipsis": false,
+			                            "visible": true
+			                        }]
+			                    },
+                            {
+                                // Wrap bound label in a stable class-bearing Creatio container.
+                                "type": "crt.FlexContainer",
+                                "layoutConfig": {"column": 4, "row": 1, "colSpan": 1, "rowSpan": 1},
+                                "classes": ["usr-dir-col-roles"],
+                                "direction": "column",
+                                "alignItems": "flex-start",
+                                "fitContent": true,
+                                "items": [{
+                                    "type": "crt.Label",
+                                    "classes": ["usr-dir-role-raw"],
+                                    "caption": "$Items.PDS_UsrAssignedRolesSummary",
+                                    "labelType": "body",
+                                    "labelThickness": "default",
+                                    "labelEllipsis": false,
+                                    "visible": true
+                                }]
+                            },
+                            {
+                                "type": "crt.FlexContainer",
+                                "layoutConfig": {"column": 5, "row": 1, "colSpan": 1, "rowSpan": 1},
+                                "classes": ["usr-dir-col-scope"],
+                                "direction": "column",
+                                "alignItems": "stretch",
+                                "fitContent": true,
+                                "items": [{
+                                    "type": "crt.Label",
+                                    "caption": "$Items.PDS_UsrScopeSummary",
+                                    "labelType": "body",
+                                    "labelThickness": "default",
+                                    "labelEllipsis": false,
+                                    "visible": true
+                                }]
+                            },
+			                    {
+                                "type": "crt.FlexContainer",
+                                "layoutConfig": { "column": 6, "row": 1, "colSpan": 1, "rowSpan": 1 },
+                                "classes": "$Items.PDS_UsrUserStatus | usr.MCITBadgeClasses",
+                                "direction": "row",
+                                "fitContent": true,
+                                "items": [
+                                    {
+                                        "type": "crt.Label",
+                                        "caption": "$Items.PDS_UsrUserStatus | usr.LookupText",
+                                        "labelType": "body"
+                                    }
+                                ]
+                            },
+			                    {
+			                        "type": "crt.Label",
+			                        "layoutConfig": {
+			                            "column": 7,
+			                            "row": 1,
+			                            "colSpan": 1,
+			                            "rowSpan": 1
+			                        },
+			                        "classes": ["usr-dir-col-signin"],
+			                        "caption": "$Items.PDS_UsrLastSignIn | usr.MCITCairoTimestamp",
+			                        "labelType": "body",
+			                        "labelThickness": "default",
+			                        "labelEllipsis": false,
+			                        "visible": true
+			                    },
+			                    {
+			                        "type": "crt.FlexContainer",
+			                        "classes": ["usr-dir-col-actions"],
+			                        "layoutConfig": {
+			                            "column": 8,
+			                            "row": 1,
+			                            "colSpan": 1,
+			                            "rowSpan": 1
+			                        },
+			                        "direction": "row",
+			                        "alignItems": "center",
+			                        "justifyContent": "start",
+			                        "wrap": "nowrap",
+			                        "gap": "small",
+			                        "fitContent": true,
+			                        "items": [
+			                            {
+			                                "type": "crt.Button",
+			                                "caption": "View Profile",
+			                                "color": "outline",
+			                                "displayType": "contained",
+			                                "size": "medium",
+			                                "iconPosition": "only-text",
+			                                "clicked": {
+			                                    "request": "crt.UpdateRecordRequest",
+			                                    "params": {
+			                                        "itemsAttributeName": "Items",
+			                                        "recordId": "$Items.PDS_Id"
+			                                    }
+			                                }
+			                            },
+			                            {
+			                                "type": "crt.Button",
+			                                "caption": "$Items.PDS_UsrUserStatus | usr.StatusActionCaption",
+                                        "color": "$Items.PDS_UsrUserStatus | usr.MCITActionColor",
+                                        "displayType": "contained",
+                                        "size": "medium",
+                                        "iconPosition": "only-text",
+                                        "disabled": "$Items.PDS_UsrUserStatus | usr.MCITActionDisabled",
+                                        "clicked": {
+                                            "request": "usr.ChangeMCITUserStatus",
+                                            "params": {
+                                                "recordId": "$Items.PDS_Id",
+                                                "currentStatus": "$Items.PDS_UsrUserStatus",
+                                                "targetUser": "$Items.PDS_UsrUser"
+                                            }
+                                        }
+			                            }
+			                        ]
+			                    }
+			                ]
+			            }
+			        ]
+			    },
+			    "parentName": "UsrDirectoryTableViewport",
+			    "propertyName": "items",
+			    "index": 1
 			},
 			{
 				"operation": "move",
@@ -1105,18 +1044,46 @@ define("UsrUserDirectory_ListPage", /**SCHEMA_DEPS*/["@creatio-devkit/common"]/*
 				"parentName": "ContentContainer",
 				"propertyName": "items",
 				"index": 1
-			}
+			},
+			{
+				"operation": "move",
+				"name": "SectionContentWrapper",
+				"parentName": "ContentContainer",
+				"propertyName": "items",
+				"index": 0
+			},
+            {
+                "operation": "merge",
+                "name": "MainContainer",
+                "values": { "classes": ["usr-dir-page-frame"] }
+            },
+            {
+                "operation": "merge",
+                "name": "ContentContainer",
+                "values": { "classes": ["usr-dir-content-zone"] }
+            },
+            {
+                "operation": "merge",
+                "name": "SectionContentWrapper",
+                "values": { "classes": ["usr-dir-view-layout"] }
+            },
+            {
+                "operation": "move",
+                "name": "GridContainer_b4lsi4n",
+                "parentName": "SectionContentWrapper",
+                "propertyName": "items",
+                "index": 0
+            }
 		]/**SCHEMA_VIEW_CONFIG_DIFF*/,
 		viewModelConfigDiff: /**SCHEMA_VIEW_MODEL_CONFIG_DIFF*/[
-			{
-				"operation": "merge",
-				"path": [
-					"attributes"
-				],
-				"values": {
-					"UsrDirectoryMetricsVisible": {}
-				}
-			},
+            {
+                "operation": "merge",
+                "path": ["attributes"],
+                "values": {
+                    // Virtual visibility switch, not a PDS attribute and not saved.
+                    "UsrDirectoryMetricsVisible": {}
+                }
+            },
 			{
 				"operation": "merge",
 				"path": [
@@ -1267,6 +1234,14 @@ define("UsrUserDirectory_ListPage", /**SCHEMA_DEPS*/["@creatio-devkit/common"]/*
                             .usr-dir-col-roles {
                                 line-height: 1.6 !important;
                             }
+                            .usr-dir-col-org[data-mcit-org-resolved="true"] crt-label {
+                                display: none !important;
+                            }
+                            .usr-dir-org-live {
+                                font-size: 12px; line-height: 1.5; color: inherit;
+                                white-space: normal; overflow-wrap: anywhere;
+                            }
+                            .usr-dir-role-empty {color:#8793a9;font-size:12px;}
                             .usr-dir-role-chips {
                                 display: flex !important;
                                 flex-wrap: wrap;
@@ -1329,7 +1304,10 @@ define("UsrUserDirectory_ListPage", /**SCHEMA_DEPS*/["@creatio-devkit/common"]/*
                             style: null, disposed: false, sequence: 0, activeRole: null,
                             // Organizational roles are resolved for DISPLAY ONLY.
                             orgNameByUser: new Map(), orgPendingUsers: new Set(),
-                            orgRoleListPromise: null
+                            orgRoleListPromise: null,
+                            // Verified native Functional Role memberships for the displayed user.
+                            functionalNamesByUser: new Map(), functionalPending: new Set(),
+                            functionalRoleDefsPromise: null
                         };
                         document[key] = runtime;
                         const guid = (x) => String(x?.value ?? x?.Id ?? x?.id ?? x ?? "").toLowerCase();
@@ -1427,16 +1405,20 @@ define("UsrUserDirectory_ListPage", /**SCHEMA_DEPS*/["@creatio-devkit/common"]/*
                                 const id = recordId(row);
                                 const orgName = runtime.orgNameByUser.get(id);
                                 if (!orgName) continue;
-                                const label = row.querySelector('.usr-dir-col-org');
-                                if (label && asText(label.textContent) !== orgName) {
-                                    // Preserve Creatio's component DOM instead of replacing
-                                    // the FlexContainer and nested crt.Label elements.
-                                    const target = label.querySelector('crt-label') || label;
-                                    const walker = document.createTreeWalker(target, NodeFilter.SHOW_TEXT);
-                                    let node = walker.nextNode();
-                                    while (node && !asText(node.nodeValue)) node = walker.nextNode();
-                                    if (node) node.nodeValue = orgName;
+                                const cell = row.querySelector('.usr-dir-col-org');
+                                if (!cell) continue;
+                                // In MCITLU the Account label may be COMPLETELY empty.
+                                // Replacing the first nonempty text node then does nothing.
+                                // Render the verified organizational role as an unobtrusive
+                                // text node beside (not inside) the Creatio bound Label.
+                                let resolved = cell.querySelector('.usr-dir-org-live');
+                                if (!resolved) {
+                                    resolved = document.createElement('span');
+                                    resolved.className = 'usr-dir-org-live';
+                                    cell.appendChild(resolved);
                                 }
+                                if (resolved.textContent !== orgName) resolved.textContent = orgName;
+                                cell.dataset.mcitOrgResolved = 'true';
                             }
                         };
 
@@ -1447,33 +1429,36 @@ define("UsrUserDirectory_ListPage", /**SCHEMA_DEPS*/["@creatio-devkit/common"]/*
                             for (const row of rowsNow()) {
                                 const cell = row.querySelector('.usr-dir-col-roles');
                                 if (!cell) continue;
+                                const id = recordId(row);
+                                const verified = runtime.functionalNamesByUser.has(id);
+                                const liveNames = verified ? runtime.functionalNamesByUser.get(id) : null;
                                 const native = cell.querySelector('crt-label') ||
                                     cell.querySelector('.usr-dir-role-raw');
                                 const nativeValue = asText(native?.innerText) ||
                                     asText(native?.textContent);
                                 const priorValue = asText(cell.dataset.mcitOriginalRoles);
-                                const raw = nativeValue || priorValue;
-                                if (!raw) continue;
-                                const roles = raw.split(/\s*,\s*/).map(x => x.trim()).filter(Boolean);
-                                if (!roles.length) continue;
+                                // Read-only computed membership takes priority. The summary
+                                // remains a safe fallback while membership is loading or denied.
+                                const roles = verified ? liveNames :
+                                    (nativeValue || priorValue).split(/\s*,\s*/).map(x=>x.trim()).filter(Boolean);
+                                if (!roles.length && !verified) continue;
                                 const normalized = roles.join(', ');
                                 let chips = cell.querySelector('.usr-dir-role-chips');
-                                if (chips && priorValue === normalized &&
-                                    chips.children.length === roles.length) continue;
+                                if (chips && cell.dataset.mcitOriginalRoles === normalized &&
+                                    chips.children.length === (roles.length || 1)) continue;
                                 if (!chips) {
                                     chips = document.createElement('div');
                                     chips.className = 'usr-dir-role-chips';
                                     cell.appendChild(chips);
                                 }
-                                // textContent ONLY: no HTML injection or PDS mutation.
-                                const nodes = roles.map(role => {
+                                const nodes = (roles.length ? roles : ['—']).map(role => {
                                     const item = document.createElement('span');
-                                    item.className = 'usr-dir-role-chip';
+                                    item.className = role === '—' ? 'usr-dir-role-empty' : 'usr-dir-role-chip';
                                     item.textContent = role;
                                     return item;
                                 });
                                 chips.replaceChildren(...nodes);
-                                chips.setAttribute('aria-label', normalized);
+                                chips.setAttribute('aria-label', normalized || 'No directly assigned functional roles');
                                 cell.dataset.mcitOriginalRoles = normalized;
                                 cell.dataset.mcitRolesReady = 'true';
                             }
@@ -1524,6 +1509,8 @@ define("UsrUserDirectory_ListPage", /**SCHEMA_DEPS*/["@creatio-devkit/common"]/*
                             if (!runtime.roleId && !runtime.query && runtime.status === "All")
                                 setNotice(`${items.length} loaded user(s)`);
                             else setNotice(`${visible} matching of ${items.length} loaded user(s)`);
+                            // Stabilize toolbar position even when the filter shows zero rows.
+                            scheduleCompact();
                         };
                         const csvCell = (input) => {
                             let text = asText(input).replace(/\r?\n/g," ");
@@ -1665,6 +1652,82 @@ define("UsrUserDirectory_ListPage", /**SCHEMA_DEPS*/["@creatio-devkit/common"]/*
                             }
                         };
 
+                        // V22: live Assigned Roles from Creatio, not a manually typed
+                        // UsrAssignedRolesSummary snapshot. Does NOT create or edit roles.
+                        const functionalDefinitions = () => {
+                            if (runtime.functionalRoleDefsPromise) return runtime.functionalRoleDefsPromise;
+                            runtime.functionalRoleDefsPromise = (async () => {
+                                const f = await filterValue('SysAdminUnitTypeValue', 6);
+                                const rows = await fetchModel('SysAdminUnit', ['Id','Name'], f, 501);
+                                if (rows.length >= 501) throw new Error('More than 500 functional roles');
+                                return rows.map(r => ({id:guid(r.Id), name:asText(r.Name)}))
+                                    .filter(r => validGuid(r.id) && r.name);
+                            })().catch(e => {
+                                runtime.functionalRoleDefsPromise = null;
+                                console.warn('MCIT Directory: cannot read functional role definitions',e);
+                                return null; // preserve stored summary rather than invent roles
+                            });
+                            return runtime.functionalRoleDefsPromise;
+                        };
+                        const updateFunctionalRoles = async () => {
+                            if (runtime.disposed) return;
+                            const ids = [...new Set(rowsNow().map(recordId).filter(validGuid))]
+                                .filter(id => !runtime.functionalNamesByUser.has(id) &&
+                                    !runtime.functionalPending.has(id));
+                            if (!ids.length) { decorateRoles(); return; }
+                            ids.forEach(id => runtime.functionalPending.add(id));
+                            try {
+                                const definitions = await functionalDefinitions();
+                                if (runtime.disposed || !definitions) return;
+                                const byId = new Map(definitions.map(r => [r.id,r.name]));
+                                const membershipModel = await sdk.Model.create('SysUserInRole');
+                                for (let offset=0;offset<ids.length && !runtime.disposed;offset+=3) {
+                                    await Promise.all(ids.slice(offset,offset+3).map(async userId => {
+                                        try {
+                                            let assigned = null;
+                                            // Prefer one query per user. Some Creatio builds
+                                            // do not project SysRole from SysUserInRole.
+                                            try {
+                                                const f = await filterValue('SysUser',userId);
+                                                const rows = await membershipModel.load({
+                                                    attributes:['Id','SysRole'],
+                                                    parameters:[{type:sdk.ModelParameterType.Filter,value:f}],
+                                                    options:{pagingConfig:{rowsOffset:0,rowCount:501}}
+                                                });
+                                                if (rows.length >= 501) throw new Error('Role membership exceeds 500');
+                                                const idsFound = rows.map(r=>guid(r.SysRole)).filter(validGuid);
+                                                if (rows.length && !idsFound.length) throw new Error('SysRole lookup projection unavailable');
+                                                assigned = [...new Set(idsFound)].filter(id=>byId.has(id)).map(id=>byId.get(id));
+                                            } catch (bulkError) {
+                                                // Same proven exact SysUserInRole filter used
+                                                // by the Profile Roles tab and Directory role filter.
+                                                const found = [];
+                                                for (let i=0;i<definitions.length;i+=6) {
+                                                    const checks = await Promise.all(definitions.slice(i,i+6).map(async role => {
+                                                        const filter = await filterValue('SysRole',role.id,['SysUser',userId]);
+                                                        const matches = await membershipModel.load({
+                                                            attributes:['Id'],
+                                                            parameters:[{type:sdk.ModelParameterType.Filter,value:filter}],
+                                                            options:{pagingConfig:{rowsOffset:0,rowCount:1}}
+                                                        });
+                                                        return matches.length ? role.name : null;
+                                                    }));
+                                                    found.push(...checks.filter(Boolean));
+                                                }
+                                                assigned = [...new Set(found)];
+                                            }
+                                            if (!runtime.disposed && assigned !== null) {
+                                                runtime.functionalNamesByUser.set(userId, assigned.sort((a,b)=>a.localeCompare(b)));
+                                            }
+                                        } catch(e) {
+                                            console.warn('MCIT Directory: functional membership unavailable for user',userId,e);
+                                            // Keep original snapshot if native role query fails.
+                                        } finally { runtime.functionalPending.delete(userId); }
+                                    }));
+                                    if (!runtime.disposed) decorateRoles();
+                                }
+                            } finally { ids.forEach(id=>runtime.functionalPending.delete(id)); }
+                        };
                         const loadRoles = async (select) => {
                             select.disabled = true;
                             try {
@@ -1776,7 +1839,10 @@ define("UsrUserDirectory_ListPage", /**SCHEMA_DEPS*/["@creatio-devkit/common"]/*
                             for (const status of ["All","Active","Inactive","Deactivated"]) {
                                 const b=document.createElement("button");b.type="button";
                                 b.dataset.mcitStatus=status;b.textContent=status;
-                                b.addEventListener("click",()=>{runtime.status=status;apply();});
+                                b.addEventListener("click",()=>{
+                                    runtime.status=status;apply();
+                                    requestAnimationFrame(()=>{if(!runtime.disposed)scheduleCompact();});
+                                });
                                 chips.appendChild(b);
                             }
                             const feedback=document.createElement("div");
@@ -1791,22 +1857,28 @@ define("UsrUserDirectory_ListPage", /**SCHEMA_DEPS*/["@creatio-devkit/common"]/*
                         // from Figma pixel positions or based on the number of users.
                         let compactFrame = 0;
                         const compactDirectory = () => {
+                            // V32: fixed-height measurements made the KPI widget collapse
+                            // before the native indicators had painted. This caused the
+                            // Search/Filters panel to overlap the cards. NEVER set an
+                            // explicit KPI height from the previous layout pass.
                             if (runtime.disposed || !runtime.panel?.isConnected) return;
-                            const cards = metricKeys.map(nativeKpi).filter(Boolean)
-                                .map(el=>el.getBoundingClientRect()).filter(r=>r.height>0);
-                            const grid = document.querySelector('.usr-dir-kpi-layout');
-                            const cardBottom = cards.length ? Math.max(...cards.map(r=>r.bottom))
-                                : grid?.getBoundingClientRect().bottom;
-                            if (!Number.isFinite(cardBottom)) return;
-                            const toolbar=runtime.panel;
-                            const gap=toolbar.getBoundingClientRect().top-cardBottom;
-                            const desired=15;
-                            if (!Number.isFinite(gap) || gap<0 || Math.abs(gap-desired)<3) return;
-                            const current=parseFloat(getComputedStyle(toolbar).marginTop) || 0;
-                            const nextMargin=Math.max(-500,Math.min(18,current+desired-gap));
-                            if (Math.abs(nextMargin-current)>2) {
-                                toolbar.style.setProperty('margin-top',nextMargin+'px','important');
-                            }
+                            const root=document.querySelector('.usr-dir-view-layout');
+                            const kpi=root?.querySelector('.usr-dir-kpi-layout');
+                            if (!kpi?.isConnected) return;
+                            kpi.style.removeProperty('height');
+                            kpi.style.removeProperty('max-height');
+                            const holderTop=kpi.getBoundingClientRect().top;
+                            const cards=[...kpi.querySelectorAll('.usr-mcit-native-kpi')]
+                                .map(el=>el.getBoundingClientRect())
+                                .filter(rect=>rect.width>0 && rect.height>0);
+                            // Reserve at least a complete native KPI row (and some air),
+                            // including when indicators paint asynchronously.
+                            const bottom=cards.length?Math.max(...cards.map(r=>r.bottom)):holderTop;
+                            const natural=Math.ceil(bottom-holderTop+10);
+                            const reserved=Math.max(82, Math.min(220, natural));
+                            kpi.style.setProperty('min-height',reserved+'px','important');
+                            kpi.style.setProperty('flex-shrink','0','important');
+                            runtime.panel.style.setProperty('margin-top','10px','important');
                         };
                         const scheduleCompact = () => {
                             if (runtime.disposed || compactFrame) return;
@@ -1820,17 +1892,23 @@ define("UsrUserDirectory_ListPage", /**SCHEMA_DEPS*/["@creatio-devkit/common"]/*
                         const compactTimers=[140,550,1250].map(delay=>
                             window.setTimeout(()=>{
                                 if (!runtime.disposed) {
-                                    compactDirectory();
+                                    mount();
                                     decorateRoles();
                                 }
                             },delay));
                         const mount=()=>{
                             if (runtime.disposed) return;
-                            const header=document.querySelector(".usr-directory-header");
-                            if (!header?.parentElement) return;
-                            if (!runtime.panel || !runtime.panel.isConnected) {
-                                if (!runtime.panel) runtime.panel=createPanel();
-                                header.parentElement.insertBefore(runtime.panel,header);
+                            const tableHost=document.querySelector(".usr-dir-table-viewport");
+                            const header=tableHost?.querySelector(".usr-directory-header") ||
+                                document.querySelector(".usr-directory-header");
+                            const list=document.querySelector(".usr-dir-row-list");
+                            const beforeNode=tableHost || header;
+                            const host=beforeNode?.parentElement;
+                            if (!header || !list || !host) return;
+                            // Toolbar must be outside the scrolling viewport: never clip Search/Filters.
+                            if (!runtime.panel) runtime.panel=createPanel();
+                            if (runtime.panel.parentElement!==host || runtime.panel.nextElementSibling!==beforeNode) {
+                                host.insertBefore(runtime.panel,beforeNode);
                             }
                             const title=document.querySelector(".usr-directory-title");
                             if (title && (!runtime.exportButton || !runtime.exportButton.isConnected)) {
@@ -2148,26 +2226,19 @@ define("UsrUserDirectory_ListPage", /**SCHEMA_DEPS*/["@creatio-devkit/common"]/*
                           body .usr-dir-view-layout .usr-directory-row:last-child {
                             border-radius:0!important;
                           }
-                          /* V21: Creatio TemplateList can leave a faint 5px white
-                             renderer strip BELOW the list's actual bottom border.
-                             Mask only that strip with the page colour and redraw
-                             its 1px edge. No list data, row or button is changed. */
-                          body .usr-dir-view-layout:has(.usr-dir-row-list .usr-directory-row) {
-                            position:relative!important;
-                            isolation:isolate!important;
+                          /* V30: do not draw pseudo separators under KPI cards.
+                             Only these wrappers are targeted, never the Search or table. */
+                          body .usr-dir-view-layout::before,
+                          body .usr-dir-view-layout::after,
+                          body .usr-dir-view-layout .usr-dir-kpi-layout::before,
+                          body .usr-dir-view-layout .usr-dir-kpi-layout::after {
+                            content:none!important;
+                            display:none!important;
                           }
-                          body .usr-dir-view-layout:has(.usr-dir-row-list .usr-directory-row)::after {
-                            content:"";
-                            position:absolute!important;
-                            bottom:0!important;
-                            left:0!important;
-                            right:0!important;
-                            height:6px!important;
-                            box-sizing:border-box!important;
-                            border-top:1px solid #e0e7f1!important;
-                            background:#f8f7fd!important;
-                            pointer-events:none!important;
-                            z-index:2!important;
+                          body .usr-dir-view-layout .usr-dir-kpi-layout {
+                            grid-auto-rows:max-content!important;
+                            align-content:start!important;
+                            flex-grow:0!important;
                           }
                           body .usr-directory-title .usr-dir-export {
                             right:0!important;
@@ -2184,8 +2255,317 @@ define("UsrUserDirectory_ListPage", /**SCHEMA_DEPS*/["@creatio-devkit/common"]/*
                               position:static!important;margin:9px 0 0!important;
                             }
                           }
+                          /* V26: ensure toolbar precedes the complete table, not its row list. */
+                          body .usr-dir-view-layout > .usr-dir-toolbar {order:1!important;}
+                          body .usr-dir-view-layout > .usr-dir-table-viewport {order:2!important;}
+                          body .usr-dir-view-layout .usr-dir-kpi-layout {order:0!important;}
+                          body .usr-dir-view-layout .usr-dir-table-viewport .usr-directory-header {order:0!important;}
+                          body .usr-dir-view-layout .usr-dir-table-viewport .usr-dir-row-list {order:1!important;}
+                          /* Remove embedded horizontal scrollbar from Email only. */
+                          body .usr-dir-col-email,
+                          body .usr-dir-col-email crt-label,
+                          body .usr-dir-col-email crt-input,
+                          body .usr-dir-col-email .crt-label,
+                          body .usr-dir-col-email * {
+                            overflow-x:hidden!important;
+                            scrollbar-width:none!important;
+                            text-overflow:ellipsis!important;
+                          }
+                          body .usr-dir-col-email::-webkit-scrollbar,
+                          body .usr-dir-col-email *::-webkit-scrollbar {display:none!important;height:0!important;}
+                          /* V31: only HORIZONTAL movement belongs to the table viewport.
+                             VERTICAL scrolling must move the whole Creatio section page. */
+                          body .usr-dir-view-layout {
+                            overflow:visible!important;
+                          }
+                          body .usr-dir-view-layout .usr-dir-table-viewport {
+                            display:flex!important;
+                            flex-direction:column!important;
+                            align-items:stretch!important;
+                            flex:0 0 auto!important;
+                            width:100%!important;
+                            min-width:0!important;
+                            max-width:100%!important;
+                            min-height:0!important;
+                            height:auto!important;
+                            margin:0!important;
+                            padding:0!important;
+                            box-sizing:border-box!important;
+                            overflow-x:auto!important;
+                            overflow-y:hidden!important;
+                            scrollbar-width:none!important;
+                            -ms-overflow-style:none!important;
+                            overscroll-behavior-x:contain;
+                          }
+                          body .usr-dir-view-layout .usr-dir-table-viewport::-webkit-scrollbar {
+                            width:0!important;height:0!important;display:none!important;
+                          }
+                          body .usr-dir-view-layout .usr-dir-table-viewport .usr-directory-header,
+                          body .usr-dir-view-layout .usr-dir-table-viewport .usr-dir-row-list {
+                            flex:0 0 auto!important;
+                            width:max(100%,1300px)!important;
+                            min-width:1300px!important;
+                            max-width:none!important;
+                            box-sizing:border-box!important;
+                          }
+                          body .usr-dir-view-layout .usr-dir-table-viewport .usr-directory-row {
+                            width:100%!important;
+                            min-width:1300px!important;
+                            max-width:none!important;
+                          }
+                          /* V28: whole desktop table fits while keeping enough
+                             physical width for both real (unmodified) actions. */
+                          body .usr-dir-view-layout .usr-dir-table-viewport.usr-dir-fit-grid .usr-directory-header,
+                          body .usr-dir-view-layout .usr-dir-table-viewport.usr-dir-fit-grid .usr-dir-row-list,
+                          body .usr-dir-view-layout .usr-dir-table-viewport.usr-dir-fit-grid .usr-directory-row {
+                            width:100%!important;
+                            min-width:0!important;
+                            max-width:100%!important;
+                          }
+                          body .usr-dir-view-layout .usr-dir-table-viewport.usr-dir-fit-grid .usr-directory-header,
+                          body .usr-dir-view-layout .usr-dir-table-viewport.usr-dir-fit-grid .usr-directory-row {
+                            grid-template-columns:
+                                minmax(80px,9fr) minmax(95px,10fr) minmax(85px,9fr)
+                                minmax(120px,14fr) minmax(120px,13fr) minmax(64px,7fr)
+                                minmax(120px,13fr) minmax(224px,25fr)!important;
+                            column-gap:6px!important;
+                          }
+                          body .usr-dir-view-layout .usr-dir-table-viewport.usr-dir-fit-grid .usr-directory-row > * {
+                            min-width:0!important;
+                            box-sizing:border-box!important;
+                          }
+                          body .usr-dir-view-layout .usr-directory-row .usr-dir-col-actions {
+                            display:flex!important;
+                            align-items:center!important;
+                            flex-wrap:nowrap!important;
+                            justify-content:space-between!important;
+                            gap:8px!important;
+                            min-width:0!important;
+                            max-width:100%!important;
+                            overflow:visible!important;
+                          }
+                          body .usr-dir-view-layout .usr-directory-row .usr-dir-col-actions > crt-button,
+                          body .usr-dir-view-layout .usr-directory-row .usr-dir-col-actions > button {
+                            display:inline-flex!important;
+                            align-items:center!important;
+                            justify-content:center!important;
+                            flex:1 0 104px!important;
+                            width:calc(50% - 4px)!important;
+                            min-width:104px!important;
+                            max-width:none!important;
+                            min-height:34px!important;
+                            overflow:visible!important;
+                            white-space:nowrap!important;
+                            font-size:12px!important;
+                            text-overflow:clip!important;
+                          }
+                          body .usr-dir-view-layout .usr-directory-row .usr-dir-col-actions crt-button::part(button) {
+                            display:inline-flex!important;
+                            align-items:center!important;
+                            justify-content:center!important;
+                            min-height:34px!important;
+                            min-width:100%!important;
+                            width:100%!important;
+                            max-width:none!important;
+                            padding:6px 9px!important;
+                            font-size:12px!important;
+                            white-space:nowrap!important;
+                            text-overflow:clip!important;
+                            overflow:visible!important;
+                          }
+                          body .usr-dir-view-layout .usr-directory-row .usr-dir-col-actions button {
+                            padding:6px 9px!important;
+                            font-size:12px!important;
+                            white-space:nowrap!important;
+                            text-overflow:clip!important;
+                          }
+                          body .usr-dir-view-layout .usr-dir-table-viewport.usr-dir-fit-grid .usr-dir-col-org,
+                          body .usr-dir-view-layout .usr-dir-table-viewport.usr-dir-fit-grid .usr-dir-col-email {
+                            min-width:0!important;
+                            overflow:hidden!important;
+                            text-overflow:ellipsis!important;
+                          }
+                          /* Filter toolbar stays in document flow, BELOW real KPI height. */
+                          body .usr-dir-view-layout .usr-dir-toolbar {
+                            position:relative!important;
+                            z-index:auto!important;
+                            margin-bottom:14px!important;
+                          }
+                          body .usr-dir-view-layout .usr-dir-table-viewport {
+                            position:relative!important;
+                            z-index:2!important;
+                          }
+                          /* Date AND time are a single non-wrapping value with a wider grid track. */
+                          body .usr-dir-view-layout .usr-dir-col-signin,
+                          body .usr-dir-view-layout .usr-dir-col-signin *,
+                          body .usr-dir-view-layout .usr-dir-col-signin crt-label {
+                            white-space:nowrap!important;
+                            overflow-wrap:normal!important;
+                            word-break:normal!important;
+                            line-height:1.35!important;
+                          }
+                          body .usr-dir-view-layout .usr-dir-table-viewport .usr-dir-row-list:has(.usr-directory-row) {
+                            overflow:visible!important;
+                          }
+                          .usr-dir-v24-page-rail {
+                            position:fixed!important;
+                            bottom:0!important;
+                            height:19px!important;
+                            overflow-x:scroll!important;
+                            overflow-y:hidden!important;
+                            background:#f8f7fd!important;
+                            border-top:1px solid #dfe5ed!important;
+                            box-sizing:border-box!important;
+                            z-index:1500!important;
+                            scrollbar-width:auto!important;
+                            overscroll-behavior-x:contain;
+                          }
+                          .usr-dir-v24-page-rail > div {
+                            height:1px!important;
+                            pointer-events:none!important;
+                          }
+                          @media(max-width:800px) {
+                            body .usr-dir-view-layout {overflow:visible!important;}
+                            body .usr-dir-view-layout .usr-dir-table-viewport {overflow-x:auto!important;overflow-y:hidden!important;}
+                          }
+                          /* V32: KPI and toolbar must occupy separate rows in normal flow.
+                             The native indicator components can draw later than the grid;
+                             reserve the real height rather than let them sit under Search. */
+                          body .usr-dir-view-layout > .usr-dir-kpi-layout {
+                            position:relative!important;
+                            order:0!important;
+                            flex:0 0 auto!important;
+                            height:auto!important;
+                            max-height:none!important;
+                            min-height:82px!important;
+                            overflow:visible!important;
+                            border:0!important;
+                            background:transparent!important;
+                            box-shadow:none!important;
+                            padding:0!important;
+                            margin:0!important;
+                          }
+                          body .usr-dir-view-layout > .usr-dir-toolbar {
+                            position:relative!important;
+                            order:1!important;
+                            flex:0 0 auto!important;
+                            clear:both!important;
+                            height:auto!important;
+                            min-height:0!important;
+                            margin:10px 0 14px!important;
+                          }
+                          body .usr-dir-page-frame,
+                          body .usr-dir-content-zone,
+                          body .usr-dir-view-layout {
+                            max-height:none!important;
+                            height:auto!important;
+                            min-height:0!important;
+                            overflow-y:visible!important;
+                            flex-shrink:0!important;
+                          }
+                          /* The table is NOT an independent vertical scroll viewport.
+                             Its rows contribute to the height of the parent page. */
+                          body .usr-dir-view-layout > .usr-dir-table-viewport {
+                            position:relative!important;
+                            order:2!important;
+                            flex:0 0 auto!important;
+                            height:auto!important;
+                            max-height:none!important;
+                            min-height:0!important;
+                            overflow-x:auto!important;
+                            overflow-y:clip!important;
+                          }
+                          body .usr-dir-view-layout .usr-dir-row-list,
+                          body .usr-dir-view-layout .usr-directory-row {
+                            height:auto!important;
+                            max-height:none!important;
+                            overflow-y:visible!important;
+                          }
+                          /* Prevent any hidden/overlay spacer in the native KPI grid. */
+                          body .usr-dir-view-layout > .usr-dir-kpi-layout::before,
+                          body .usr-dir-view-layout > .usr-dir-kpi-layout::after {
+                            content:none!important;
+                            display:none!important;
+                          }
                         `;
                         document.head.appendChild(sheet);runtime.style=sheet;
+                        // V24: a page-bottom scrollbar, not a second scrollable row list.
+                        // The table-only viewport clips header and rows together; Search & KPIs stay visible.
+                        // The native short scrollbar is hidden.
+                        const pageRail=document.createElement('div');
+                        pageRail.className='usr-dir-v24-page-rail';
+                        pageRail.setAttribute('aria-label','Scroll the User Directory table horizontally');
+                        pageRail.setAttribute('role','region');
+                        pageRail.tabIndex=0;
+                        const pageRailInner=document.createElement('div');
+                        pageRail.appendChild(pageRailInner);
+                        document.body.appendChild(pageRail);
+                        let tableViewport=null, railFrame=0, railBusy=false;
+                        const syncToViewport=()=>{
+                            if (railBusy || !tableViewport) return;
+                            railBusy=true;
+                            const railMax=Math.max(0,pageRail.scrollWidth-pageRail.clientWidth);
+                            const tableMax=Math.max(0,tableViewport.scrollWidth-tableViewport.clientWidth);
+                            tableViewport.scrollLeft=railMax>0 ? pageRail.scrollLeft*tableMax/railMax : 0;
+                            railBusy=false;
+                        };
+                        const syncToRail=()=>{
+                            if (railBusy || !tableViewport) return;
+                            railBusy=true;
+                            const railMax=Math.max(0,pageRail.scrollWidth-pageRail.clientWidth);
+                            const tableMax=Math.max(0,tableViewport.scrollWidth-tableViewport.clientWidth);
+                            pageRail.scrollLeft=tableMax>0 ? tableViewport.scrollLeft*railMax/tableMax : 0;
+                            railBusy=false;
+                        };
+                        const positionPageRail=()=>{
+                            if (runtime.disposed) return;
+                            const frame=document.querySelector('.usr-dir-page-frame');
+                            const layout=document.querySelector('.usr-dir-table-viewport');
+                            // Fit the real table on wide desktop canvases, not viewport pixels.
+                            // Narrow canvases keep the pre-existing page-bottom scrollbar.
+                            if (layout?.isConnected) {
+                                layout.classList.toggle('usr-dir-fit-grid',layout.clientWidth>=1020);
+                            }
+                            const header=layout?.querySelector('.usr-directory-header');
+                            const list=layout?.querySelector('.usr-dir-row-list');
+                            if (!frame?.isConnected || !layout?.isConnected || !header || !list) {
+                                pageRail.style.display='none';
+                                return;
+                            }
+                            if (tableViewport!==layout) {
+                                tableViewport?.removeEventListener('scroll',syncToRail);
+                                tableViewport=layout;
+                                tableViewport.addEventListener('scroll',syncToRail,{passive:true});
+                            }
+                            const widthOfContent=Math.max(header.scrollWidth, list.scrollWidth,
+                                tableViewport.scrollWidth);
+                            const tableClientWidth=tableViewport.clientWidth;
+                            const maxTableScroll=Math.max(0,widthOfContent-tableClientWidth);
+                            const frameRect=frame.getBoundingClientRect();
+                            const left=Math.max(0,Math.round(frameRect.left));
+                            // Span the complete main page to the right edge, not the
+                            // small table footprint or an individual final record.
+                            const visibleWidth=Math.max(0,Math.round(window.innerWidth-left-4));
+                            const enabled=maxTableScroll>4 && visibleWidth>100;
+                            pageRail.style.display=enabled?'block':'none';
+                            if (!enabled) return;
+                            pageRail.style.left=left+'px';
+                            pageRail.style.width=visibleWidth+'px';
+                            pageRailInner.style.width=Math.ceil(visibleWidth+maxTableScroll)+'px';
+                            syncToRail();
+                        };
+                        const schedulePageRail=()=>{
+                            if (runtime.disposed || railFrame) return;
+                            railFrame=requestAnimationFrame(()=>{
+                                railFrame=0;
+                                positionPageRail();
+                            });
+                        };
+                        pageRail.addEventListener('scroll',syncToViewport,{passive:true});
+                        window.addEventListener('resize',schedulePageRail);
+                        const railTimers=[100,350,900,1700].map(ms=>
+                            window.setTimeout(schedulePageRail,ms));
+                        runtime.schedulePageRail=schedulePageRail;
                         runtime.dispose=()=>{
                             runtime.disposed=true;
                             runtime.sequence++;
@@ -2193,10 +2573,17 @@ define("UsrUserDirectory_ListPage", /**SCHEMA_DEPS*/["@creatio-devkit/common"]/*
                             runtime.metricObserver?.disconnect();
                             if (compactFrame) cancelAnimationFrame(compactFrame);
                             window.removeEventListener('resize',onDirectoryResize);
+                            window.removeEventListener('resize',schedulePageRail);
+                            if (railFrame) cancelAnimationFrame(railFrame);
+                            railTimers.forEach(id=>window.clearTimeout(id));
+                            tableViewport?.removeEventListener('scroll',syncToRail);
+                            pageRail.removeEventListener('scroll',syncToViewport);
+                            pageRail.remove();
                             compactTimers.forEach(id=>window.clearTimeout(id));
                             runtime.panel?.remove();runtime.exportButton?.remove();runtime.style?.remove();
                         };
                         mount();
+                        schedulePageRail();
                         // Observe ONLY inserted/removed directory rows/header. Changing filter
                         // styles never triggers this watcher, avoiding V9's infinite loop.
                         runtime.observer=new MutationObserver(mutations=>{
@@ -2213,9 +2600,11 @@ define("UsrUserDirectory_ListPage", /**SCHEMA_DEPS*/["@creatio-devkit/common"]/*
                             });
                             if (relevant || !runtime.panel?.isConnected) {
                                 mount();
+                                schedulePageRail();
                                 if (relevant) {
                                     updateLogins();
                                     updateOrganizations();
+                                    updateFunctionalRoles();
                                 }
                                 if (relevant && runtime.roleId) loadRoleMembers(runtime.roleId);
                             } else if (rolesRepainted) {
@@ -2241,6 +2630,7 @@ define("UsrUserDirectory_ListPage", /**SCHEMA_DEPS*/["@creatio-devkit/common"]/*
                         getCurrentUser().then(id=>{if (!runtime.disposed){runtime.currentUserId=id;apply();}});
                         updateLogins();
                         updateOrganizations();
+                        updateFunctionalRoles();
                     } catch(e) {
                         // Never interrupt page initialization on toolbar failure.
                         console.error("MCIT V10 toolbar init failed; original V6 remains available",e);
@@ -2438,6 +2828,61 @@ define("UsrUserDirectory_ListPage", /**SCHEMA_DEPS*/["@creatio-devkit/common"]/*
     if (!value) return "";
     if (typeof value === "string") return value;
     return value.displayValue || value.Name || "";
+},
+// Show the real saved login instant with FULL date + time in Cairo,
+// not the adaptive Date-only / Time-only label. No changes to the database.
+"usr.MCITCairoTimestamp": (value) => {
+    if (value === null || value === undefined || value === "") return "—";
+    try {
+        const raw=value?.value ?? value?.Value ?? value;
+        let instant;
+        if (raw instanceof Date) {
+            // MCIT Sync copied SysUserSession.SessionStartDate (stored UTC) into
+            // UsrLastSignIn. In this environment Creatio exposes that DB DateTime
+            // as a JS Date with the UTC wall-clock in *local* components.
+            // Reinterpret those components as UTC once, then display Cairo.
+            // Example: native 10:30 => Cairo 12:30 on 03 Nov 2026.
+            instant=new Date(Date.UTC(raw.getFullYear(),raw.getMonth(),raw.getDate(),
+                raw.getHours(),raw.getMinutes(),raw.getSeconds(),raw.getMilliseconds()));
+        } else if (typeof raw === "number") {
+            instant=new Date(raw);
+        } else if (typeof raw === "string") {
+            let input=raw.trim();
+            if (!input) return "—";
+            const net=/^\/Date\((-?\d+)(?:[+-]\d{4})?\)\/$/.exec(input);
+            if (net) {
+                instant=new Date(Number(net[1]));
+            } else {
+                // Some Creatio versions pass an en-US wall-clock string.
+                // With no timezone information, interpret it as UTC session time.
+                const us=/^(\d{1,2})\/(\d{1,2})\/(\d{4}),?\s+(\d{1,2}):(\d{2})(?::(\d{2}))?\s*(AM|PM)$/i.exec(input);
+                if (us) {
+                    let hour=Number(us[4])%12;
+                    if (us[7].toUpperCase()==='PM') hour+=12;
+                    instant=new Date(Date.UTC(Number(us[3]),Number(us[1])-1,Number(us[2]),
+                        hour,Number(us[5]),Number(us[6]||0)));
+                } else {
+                // MCIT session source is DB DateTime; an ISO value with no
+                // zone is assumed to be stored in UTC. Offset-aware values are
+                // NEVER shifted again. Confirm the backend data convention.
+                input=input.replace(/^(\d{4}-\d{2}-\d{2}) (\d{2}:)/,'$1T$2');
+                if (/^\d{4}-\d{2}-\d{2}T\d{2}:\d{2}/.test(input) &&
+                    !/(?:Z|[+-]\d{2}:?\d{2})$/i.test(input)) input+='Z';
+                instant=new Date(input);
+                }
+            }
+        } else {
+            return "—";
+        }
+        if (!Number.isFinite(instant.getTime())) return "—";
+        return new Intl.DateTimeFormat('en-US', {
+            timeZone:'Africa/Cairo', year:'numeric', month:'numeric', day:'numeric',
+            hour:'2-digit', minute:'2-digit', hour12:true
+        }).format(instant);
+    } catch (error) {
+        console.warn('MCIT Directory Last Sign-in format failed',error);
+        return '—';
+    }
 }
 
 

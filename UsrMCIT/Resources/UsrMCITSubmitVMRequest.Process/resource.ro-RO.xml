@@ -1,0 +1,70 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Resources Culture="ro-RO">
+	<Group Type="String">
+		<Items>
+			<Item Name="BaseElements.ActivityUserTask1.Parameters.Account.Caption" Value="Cont" />
+			<Item Name="BaseElements.ActivityUserTask1.Parameters.ActivityCategory.Caption" Value="Categorie" />
+			<Item Name="BaseElements.ActivityUserTask1.Parameters.ActivityPriority.Caption" Value="Prioritate" />
+			<Item Name="BaseElements.ActivityUserTask1.Parameters.ActivityResult.Caption" Value="Rezultatul activitatii" />
+			<Item Name="BaseElements.ActivityUserTask1.Parameters.Application.Caption" Value="Aplicatie" />
+			<Item Name="BaseElements.ActivityUserTask1.Parameters.Case.Caption" Value="Caz" />
+			<Item Name="BaseElements.ActivityUserTask1.Parameters.Change.Caption" Value="Modificati" />
+			<Item Name="BaseElements.ActivityUserTask1.Parameters.Contact.Caption" Value="Contact" />
+			<Item Name="BaseElements.ActivityUserTask1.Parameters.Contract.Caption" Value="Contract" />
+			<Item Name="BaseElements.ActivityUserTask1.Parameters.CurrentActivityId.Caption" Value="Id sarcina" />
+			<Item Name="BaseElements.ActivityUserTask1.Parameters.Document.Caption" Value="Document" />
+			<Item Name="BaseElements.ActivityUserTask1.Parameters.Duration.Caption" Value="Durata" />
+			<Item Name="BaseElements.ActivityUserTask1.Parameters.DurationPeriod.Caption" Value="Durata (perioada)" />
+			<Item Name="BaseElements.ActivityUserTask1.Parameters.ExecutionContext.Caption" Value="Context executare" />
+			<Item Name="BaseElements.ActivityUserTask1.Parameters.FinApplication.Caption" Value="Aplicatie" />
+			<Item Name="BaseElements.ActivityUserTask1.Parameters.Incident.Caption" Value="Incident" />
+			<Item Name="BaseElements.ActivityUserTask1.Parameters.InformationOnStep.Caption" Value="Informatie la pas" />
+			<Item Name="BaseElements.ActivityUserTask1.Parameters.Invoice.Caption" Value="Factura" />
+			<Item Name="BaseElements.ActivityUserTask1.Parameters.IsActivityCompleted.Caption" Value="Activitate finalizata" />
+			<Item Name="BaseElements.ActivityUserTask1.Parameters.Lead.Caption" Value="Conducator" />
+			<Item Name="BaseElements.ActivityUserTask1.Parameters.Listing.Caption" Value="Listari" />
+			<Item Name="BaseElements.ActivityUserTask1.Parameters.Opportunity.Caption" Value="Oportunitate" />
+			<Item Name="BaseElements.ActivityUserTask1.Parameters.Order.Caption" Value="Comanda" />
+			<Item Name="BaseElements.ActivityUserTask1.Parameters.OwnerId.Caption" Value="Proprietar" />
+			<Item Name="BaseElements.ActivityUserTask1.Parameters.Problem.Caption" Value="Problema" />
+			<Item Name="BaseElements.ActivityUserTask1.Parameters.Project.Caption" Value="Proiect" />
+			<Item Name="BaseElements.ActivityUserTask1.Parameters.Property.Caption" Value="Propietati" />
+			<Item Name="BaseElements.ActivityUserTask1.Parameters.QueueItem.Caption" Value="Item coada" />
+			<Item Name="BaseElements.ActivityUserTask1.Parameters.Recommendation.Caption" Value="Recomandare" />
+			<Item Name="BaseElements.ActivityUserTask1.Parameters.Release.Caption" Value="Diseminare" />
+			<Item Name="BaseElements.ActivityUserTask1.Parameters.RemindBefore.Caption" Value="Reaminteste propietar in avans" />
+			<Item Name="BaseElements.ActivityUserTask1.Parameters.RemindBeforePeriod.Caption" Value="Reaminteste propietar in avans (perioada)" />
+			<Item Name="BaseElements.ActivityUserTask1.Parameters.Requests.Caption" Value="Solicitare" />
+			<Item Name="BaseElements.ActivityUserTask1.Parameters.ShowExecutionPage.Caption" Value="Arata pagina executare automat" />
+			<Item Name="BaseElements.ActivityUserTask1.Parameters.ShowInScheduler.Caption" Value="Aratati in calendar" />
+			<Item Name="BaseElements.ActivityUserTask1.Parameters.StartIn.Caption" Value="Incepe executarea in" />
+			<Item Name="BaseElements.ActivityUserTask1.Parameters.StartInPeriod.Caption" Value="Incepe executarea in (perioada)" />
+			<Item Name="BaseElements.ChangeDataUserTask1.Parameters.ConsiderTimeInFilter.Caption" Value="Luați în considerare timpul în filtru" />
+			<Item Name="BaseElements.ChangeDataUserTask1.Parameters.DataSourceFilters.Caption" Value="Filtre sursa date" />
+			<Item Name="BaseElements.ChangeDataUserTask1.Parameters.EntitySchemaUId.Caption" Value="Obiect" />
+			<Item Name="BaseElements.ChangeDataUserTask1.Parameters.IgnoreErrors.Caption" Value="Continuă executarea erorilor" />
+			<Item Name="BaseElements.ChangeDataUserTask1.Parameters.IsMatchConditions.Caption" Value="Daca obiectul indeplineste urmatoarele conditii" />
+			<Item Name="BaseElements.ChangeDataUserTask1.Parameters.RecordColumnValues.Caption" Value="Seteaza valorile coloana" />
+			<Item Name="BaseElements.ReadDataUserTask1.Parameters.AggregationColumnName.Caption" Value="Nume de coloana functie agregata" />
+			<Item Name="BaseElements.ReadDataUserTask1.Parameters.CanReadUncommitedData.Caption" Value="Citeste date necombinate" />
+			<Item Name="BaseElements.ReadDataUserTask1.Parameters.ConsiderTimeInFilter.Caption" Value="Luați în considerare timpul în filtru" />
+			<Item Name="BaseElements.ReadDataUserTask1.Parameters.DataSourceFilters.Caption" Value="Sursa date pentru filtre" />
+			<Item Name="BaseElements.ReadDataUserTask1.Parameters.EntityColumnMetaPathes.Caption" Value="Coloane pentru citire" />
+			<Item Name="BaseElements.ReadDataUserTask1.Parameters.FunctionType.Caption" Value="Aduna tip functie" />
+			<Item Name="BaseElements.ReadDataUserTask1.Parameters.IgnoreDisplayValues.Caption" Value="Nu citi valorile afisate ale coloanelor de respectat" />
+			<Item Name="BaseElements.ReadDataUserTask1.Parameters.NumberOfRecords.Caption" Value="Numar de inregistrari de citit" />
+			<Item Name="BaseElements.ReadDataUserTask1.Parameters.OrderInfo.Caption" Value="Ordine coloane" />
+			<Item Name="BaseElements.ReadDataUserTask1.Parameters.ReadSomeTopRecords.Caption" Value="Citeste intai" />
+			<Item Name="BaseElements.ReadDataUserTask1.Parameters.ResultCompositeObjectList.Caption" Value="Colecție de înregistrări" />
+			<Item Name="BaseElements.ReadDataUserTask1.Parameters.ResultCount.Caption" Value="Numar de inregistrari" />
+			<Item Name="BaseElements.ReadDataUserTask1.Parameters.ResultDateTimeFunction.Caption" Value="Rezultat funcție (Dată/Oră)" />
+			<Item Name="BaseElements.ReadDataUserTask1.Parameters.ResultEntity.Caption" Value="Primul item al colectiei rezultante" />
+			<Item Name="BaseElements.ReadDataUserTask1.Parameters.ResultEntityCollection.Caption" Value="Colectia care rezulta" />
+			<Item Name="BaseElements.ReadDataUserTask1.Parameters.ResultFloatFunction.Caption" Value="Rezultatul funcției (zecimal)" />
+			<Item Name="BaseElements.ReadDataUserTask1.Parameters.ResultIntegerFunction.Caption" Value="Rezultatul funcţiei (Întreg)" />
+			<Item Name="BaseElements.ReadDataUserTask1.Parameters.ResultRowsCount.Caption" Value="Numar de inregistrari citite" />
+			<Item Name="BaseElements.ReadDataUserTask1.Parameters.ResultType.Caption" Value="Tip de rezultat" />
+			<Item Name="Caption" Value="MCIT VM Request Submission" />
+		</Items>
+	</Group>
+</Resources>

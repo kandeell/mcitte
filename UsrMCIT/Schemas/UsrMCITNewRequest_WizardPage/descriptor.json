@@ -1,0 +1,13 @@
+﻿{
+  "Descriptor": {
+    "UId": "47a8891b-c030-4cec-aaa9-ba3834c79b8f",
+    "Name": "UsrMCITNewRequest_WizardPage",
+    "ModifiedOnUtc": "\/Date(1793864736000)\/",
+    "Parent": {
+      "UId": "7ed23be6-71df-4ad3-b56a-caa77b9881ce",
+      "Name": "PageWithTabsAndProgressBarTemplate"
+    },
+    "ManagerName": "ClientUnitSchemaManager",
+    "Caption": "New Request Wizard"
+  }
+}

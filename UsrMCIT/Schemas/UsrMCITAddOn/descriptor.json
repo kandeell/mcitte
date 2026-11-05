@@ -1,0 +1,14 @@
+﻿{
+  "Descriptor": {
+    "UId": "291bb86f-99f2-44df-9256-2ced7fac1fef",
+    "Name": "UsrMCITAddOn",
+    "ModifiedOnUtc": "\/Date(1793568896000)\/",
+    "Parent": {
+      "UId": "1bab9dcf-17d5-49f8-9536-8e0064f1dce0",
+      "Name": "BaseEntity"
+    },
+    "ManagerName": "EntitySchemaManager",
+    "Caption": "MCIT Add-on",
+    "DependsOn": []
+  }
+}

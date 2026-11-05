@@ -1,0 +1,14 @@
+﻿{
+  "Descriptor": {
+    "UId": "a482b2b5-462d-4937-a46b-8c981adb94bc",
+    "Name": "UsrVMLifecycle_MobileListPage",
+    "ModifiedOnUtc": "\/Date(1793783172000)\/",
+    "Parent": {
+      "UId": "011e7dda-a763-4535-9b9a-e09eddd047be",
+      "Name": "BaseMobileListTemplate"
+    },
+    "ManagerName": "ClientUnitSchemaManager",
+    "Caption": "VM Lifecycle mobile list page",
+    "DependsOn": []
+  }
+}
