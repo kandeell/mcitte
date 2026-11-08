@@ -1,8 +1,0 @@
-= MetaData.Schema.UId "65795ee1-d391-42db-81e8-87606792f6f1"
-= MetaData.Schema.A2 "UsrVMLifecycle_FormPage"
-= MetaData.Schema.A5 "6f71e54c-1960-40c9-94f6-073fd67699ab"
-~ MetaData.Schema.B2 ["721375c0-11d8-443d-8d01-f1c219b847c1","99d007fa-7c43-4847-85a7-6e653bcd3808","5d6bbb56-474a-4ac9-9d53-ceb7236c1a54","e5ddd415-0131-4f06-a10d-7f3e84c6bde4"]
-= MetaData.Schema.B6 "5530927f-22ea-e7c9-4ccf-506d3a6c2ed2"
-= MetaData.Schema.HD1 "3b2e117f-8c6b-4ca5-80a2-7ebb497cddf9"
-- MetaData.Schema.B7
-+ MetaData.Schema.B7 false
