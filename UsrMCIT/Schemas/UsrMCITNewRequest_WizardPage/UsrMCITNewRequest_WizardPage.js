@@ -23,49 +23,114 @@ define("UsrMCITNewRequest_WizardPage", /**SCHEMA_DEPS*/["@creatio-devkit/common"
             d.toLocaleDateString("en-GB", { year: "numeric", month: "2-digit", day: "2-digit" });
     }
 
+    // Step 1: show only records verified against the selected Contract.
+    // The live point balance must come from a reconciled ledger service: no fake numbers.
     async function refreshContract(context) {
         const contract = await context.WZ_Contract;
         const id = selectedId(contract);
-        context.WZ_ShowContractSummary = !!id;
-        if (!id) {
+        const reset = () => {
             context.WZ_ContractName = "—";
-            context.WZ_ContractReference = "Reference: —";
-            context.WZ_ContractPeriod = "Validity: —";
-            context.WZ_InitialPoints = "Initial points: —";
+            context.WZ_ContractNumber = "—";
+            context.WZ_ContractReference = "—";
+            context.WZ_ContractPeriod = "—";
+            context.WZ_ContractStatus = "—";
+            context.WZ_ContractMeta = "";
+            context.WZ_ContractIsActive = false;
+            context.WZ_ContractIsNotActive = false;
+            context.WZ_ContractVersionLabel = "No verified configuration version";
+            context.WZ_ContractVersionNote = "Select a contract to load its configuration.";
+            context.WZ_InitialPoints = "—";
+            context.WZ_InitialPointsNote = "Initial contract points: —";
             context.WZ_ContractInitialPointsValue = null;
-            context.WZ_ContractLedgerNote = "Point balances are calculated from the ledger (not connected yet).";
-            return;
-        }
+            context.WZ_AvailablePoints = "Not verified";
+            context.WZ_ConsumedPoints = "Not verified";
+            context.WZ_RestoredPoints = "Not verified";
+            context.WZ_ContractLedgerNote =
+                "Not verified — ledger pending";
+        };
+        reset();
+        context.WZ_ShowContractSummary = !!id;
+        if (!id) { return; }
+        const stillSelected = async () => selectedId(await context.WZ_Contract) === id;
         try {
-            // All these column codes are visible in the supplied UsrMCITContract screenshot.
+            // Known columns from the existing UsrMCITContract object.
             const row = await readRecord("UsrMCITContract", id,
-                ["Id", "UsrName", "UsrNumber", "UsrReference", "UsrStartDate", "UsrEndDate", "UsrInitialPoints"]);
+                ["Id", "UsrName", "UsrNumber", "UsrReference", "UsrStartDate", "UsrEndDate",
+                 "UsrInitialPoints", "UsrStatus"]);
+            if (!(await stillSelected())) { return; }
             if (!row) {
-                context.WZ_ShowContractSummary = false;
+                context.WZ_ContractName = "Contract not available";
+                context.WZ_ContractVersionNote = "The selected Contract could not be read. Check record permissions.";
                 return;
             }
-            // Ignore a stale asynchronous reply if the user selected a different contract.
-            if (selectedId(await context.WZ_Contract) !== id) { return; }
-            context.WZ_ContractName = row.UsrName || contract.displayValue || "—";
-            context.WZ_ContractReference = "Number: " + (row.UsrNumber || "—") +
-                " | Reference: " + (row.UsrReference || "—");
-            context.WZ_ContractPeriod = "Validity: " + formatDate(row.UsrStartDate) +
-                " to " + formatDate(row.UsrEndDate);
-            context.WZ_InitialPoints = "Initial points: " +
-                (row.UsrInitialPoints == null ? "—" : Number(row.UsrInitialPoints).toLocaleString("en-US"));
-            context.WZ_ContractInitialPointsValue = row.UsrInitialPoints == null ? null : Number(row.UsrInitialPoints);
-            context.WZ_ContractLedgerNote =
-                "Available / Consumed / Restored: pending point-ledger integration";
+            const display = value => {
+                if (value == null) { return ""; }
+                if (typeof value === "object") { return String(value.displayValue || value.Name || ""); }
+                return String(value);
+            };
+            const status = display(row.UsrStatus) || "Not specified";
+            context.WZ_ContractName = display(row.UsrName) || display(contract) || "—";
+            context.WZ_ContractNumber = display(row.UsrNumber) || "—";
+            context.WZ_ContractReference = display(row.UsrReference) || "—";
+            context.WZ_ContractPeriod = formatDate(row.UsrStartDate) + " to " + formatDate(row.UsrEndDate);
+            context.WZ_ContractStatus = status;
+            context.WZ_ContractMeta = "Status: " + status +
+                (row.UsrEndDate ? "  ·  Valid until " + formatDate(row.UsrEndDate) : "");
+            context.WZ_ContractIsActive = status.trim().toLowerCase() === "active";
+            context.WZ_ContractIsNotActive = !context.WZ_ContractIsActive;
+            const points = row.UsrInitialPoints == null ? null : Number(row.UsrInitialPoints);
+            context.WZ_InitialPoints = points == null || !Number.isFinite(points)
+                ? "—" : points.toLocaleString("en-US") + " pts";
+            context.WZ_InitialPointsNote = "Initial contract points: " + context.WZ_InitialPoints;
+            context.WZ_ContractInitialPointsValue = Number.isFinite(points) ? points : null;
         } catch (error) {
-            console.error("MCIT Wizard: unable to load contract summary", error);
-            context.WZ_ContractName = contract.displayValue || "—";
-            context.WZ_ContractReference = "Contract summary unavailable — check access rights";
-            context.WZ_ContractPeriod = "Validity: —";
-            context.WZ_InitialPoints = "Initial points: —";
-            context.WZ_ContractInitialPointsValue = null;
+            if (!(await stillSelected())) { return; }
+            console.error("MCIT Wizard: unable to load Contract fields", error);
+            context.WZ_ContractName = contract?.displayValue || "—";
+            context.WZ_ContractVersionNote = "Unable to read Contract data — check object columns and permissions.";
+            return;
+        }
+        // Version belongs to the very same contract. Drafts are shown as a PREVIEW only;
+        // never mark them as Active and never authorize production submission here.
+        try {
+            const versions = await vmLoadRows("UsrContractConfigVersion", [
+                "Id", "UsrContract", "UsrName", "UsrVersionNumber", "UsrConfigVersionStatus",
+                "UsrEffectiveFrom", "UsrEffectiveTo"
+            ], [["UsrContract", id]], 250);
+            if (!(await stillSelected())) { return; }
+            const text = value => String(value?.displayValue || value?.Name || value || "").trim();
+            const eligible = versions.filter(v => vmDateIsActive(v)).sort((a,b) =>
+                new Date(b.UsrEffectiveFrom || 0).getTime() - new Date(a.UsrEffectiveFrom || 0).getTime());
+            const active = eligible.filter(v => text(v.UsrConfigVersionStatus).toLowerCase() === "active");
+            if (active.length > 1) {
+                context.WZ_ContractVersionLabel = "Configuration conflict";
+                context.WZ_ContractVersionNote =
+                    "Multiple effective Active versions exist. Resolve overlapping versions in Finance Configuration.";
+                return;
+            }
+            const draft = eligible.find(v => text(v.UsrConfigVersionStatus).toLowerCase() === "draft");
+            const version = active[0] || draft;
+            if (!version) {
+                context.WZ_ContractVersionLabel = "No effective configuration";
+                context.WZ_ContractVersionNote =
+                    "Set up an effective version under Contracts → Configuration Versions.";
+                return;
+            }
+            const state = text(version.UsrConfigVersionStatus) || "Unknown";
+            const code = String(version.UsrVersionNumber || "").trim();
+            context.WZ_ContractVersionLabel =
+                (code ? "Config " + code : String(version.UsrName || "Configuration")) + " · " + state;
+            context.WZ_ContractVersionNote = state.toLowerCase() === "active"
+                ? "This is the effective Active configuration linked to this contract."
+                : "Draft configuration — permitted for draft preparation, not final submission.";
+        } catch (error) {
+            if (!(await stillSelected())) { return; }
+            console.warn("MCIT Wizard: Contract configuration summary unavailable", error);
+            context.WZ_ContractVersionLabel = "Configuration not available";
+            context.WZ_ContractVersionNote =
+                "Unable to read version data; check Finance Configuration and access rights.";
         }
     }
-
 
     // Project is the existing UsrVMRequest.UsrProject -> UsrProject lookup.
     // Project data uses UsrProject.UsrAuthority (a DIRECT lookup column).
@@ -2734,6 +2799,44 @@ define("UsrMCITNewRequest_WizardPage", /**SCHEMA_DEPS*/["@creatio-devkit/common"
                 .usr-wz-contract-summary crt-grid-container{background:transparent!important;}
                 .usr-wz-contract-summary crt-label{color:#392071!important;}
                 .usr-wz-contract-summary [class*="title"]{color:#6121bb!important;font-weight:700!important;}
+                /* STEP 1 v3: DO NOT constrain the internal combo input.
+                   Leave Creatio's autocomplete, flex sizing, selection and its
+                   lookup overlay intact; only skin the outside shell below. */
+                .usr-wz-root .usr-wz-caption-row{margin-bottom:3px!important;}
+                .usr-wz-root .usr-wz-validation-wrap{gap:5px!important;}
+                .usr-wz-root .usr-wz-contract-meta{font-size:10px!important;line-height:1.45!important;
+                    padding-left:7px!important;white-space:normal!important;}
+                .usr-wz-root .usr-wz-contract-meta-active{color:#15924d!important;}
+                .usr-wz-root .usr-wz-contract-meta-other{color:#b16a0c!important;}
+                /* Figma-style content, native designer-visible controls, real contract data. */
+                .usr-wz-root .usr-wz-contract-summary{
+                    border:1px solid #cbb7ff!important;border-radius:13px!important;
+                    background:#f4f0ff!important;--crt-color-background-container:#f4f0ff!important;}
+                .usr-wz-root .usr-wz-summary-contents{padding:4px 2px 8px!important;gap:11px!important;}
+                .usr-wz-root .usr-wz-summary-topgrid{width:100%!important;min-width:0!important;}
+                .usr-wz-root .usr-wz-summary-field,
+                .usr-wz-root .usr-wz-summary-point{min-width:0!important;gap:4px!important;}
+                .usr-wz-root .usr-wz-summary-field-label,
+                .usr-wz-root .usr-wz-summary-point-label{font-size:10px!important;font-weight:550!important;
+                    color:#786598!important;}
+                .usr-wz-root .usr-wz-summary-field-value{font-size:12px!important;
+                    color:#1b2f50!important;font-weight:700!important;overflow-wrap:anywhere!important;}
+                .usr-wz-root .usr-wz-summary-field-sub{font-size:10px!important;color:#79859a!important;}
+                .usr-wz-root .usr-wz-summary-version{color:#6720ba!important;
+                    font-size:11px!important;font-weight:700!important;padding:7px 10px!important;
+                    background:#e9dfff!important;border-radius:7px!important;align-self:flex-start!important;}
+                .usr-wz-root .usr-wz-summary-points-grid{width:100%!important;
+                    border-top:1px solid #d7c6fe!important;padding-top:12px!important;}
+                .usr-wz-root .usr-wz-summary-point-value{font-size:13px!important;
+                    font-weight:800!important;color:#07874b!important;}
+                .usr-wz-root .usr-wz-summary-point-unverified{color:#786a91!important;
+                    font-size:10px!important;line-height:1.4!important;}
+                .usr-wz-root .usr-wz-summary-footer{color:#6d549c!important;
+                    font-size:10px!important;line-height:1.45!important;}
+                @media(max-width:700px){
+                    .usr-wz-root .usr-wz-summary-topgrid,
+                    .usr-wz-root .usr-wz-summary-points-grid{grid-template-columns:1fr!important;}
+                }
                 .usr-wz-panel{border-radius:14px!important;border:1px solid #e2e5ed!important;
                     overflow:clip!important;background:#fff!important;}
                 /* Figma-style footer buttons; CSS is scoped to this Wizard only. */
@@ -2791,6 +2894,677 @@ define("UsrMCITNewRequest_WizardPage", /**SCHEMA_DEPS*/["@creatio-devkit/common"
                 }`;
             document.head.appendChild(tag);
         }
+        // Step 1 v6: Figma rounded native controls: deep input frame fix.
+        // Keep real designer-created Creatio controls, lookup bindings and handlers.
+        // The Angular Material form-field wrapper reserves a hint/error gutter below
+        // the actual control; styling the parent created a second, square rectangle.
+        // This CSS rounds the VISIBLE field and removes only that unused gutter.
+        const figmaStep1StylesId = "usr-mcit-step1-native-round-v6";
+        if (!document.getElementById(figmaStep1StylesId)) {
+            const css = document.createElement("style");
+            css.id = figmaStep1StylesId;
+            css.textContent = `
+              /* All rules are scoped to this Wizard's Step 1. */
+              .usr-wz-root .usr-wz-step1-form{gap:16px!important;}
+              .usr-wz-root :is(.usr-wz-step1-scope,.usr-wz-step1-details,.usr-wz-step1-requester){
+                  background:#fff!important;border:1px solid #e1e5ed!important;
+                  border-radius:13px!important;box-shadow:none!important;}
+              .usr-wz-root .usr-wz-step1-form .usr-wz-caption-text{
+                  color:#182d4a!important;font-size:11px!important;font-weight:650!important;}
+              .usr-wz-root .usr-wz-step1-form .usr-wz-required-star{color:#ef4444!important;}
+              .usr-wz-root .usr-wz-step1-scope .usr-wz-validation-wrap{
+                  min-width:0!important;gap:4px!important;}
+              .usr-wz-root .usr-wz-step1-form .usr-wz-caption-row{margin-bottom:3px!important;}
+
+              /* One rounded box per native lookup. Do NOT replace crt.ComboBox or
+                 turn it into a fake HTML select. The autocomplete keeps its events. */
+              .usr-wz-root .usr-wz-step1-scope .usr-wz-figma-select{
+                  min-width:0!important;max-width:100%!important;
+                  width:100%!important;box-sizing:border-box!important;
+                  border-radius:10px!important;background:transparent!important;}
+              .usr-wz-root .usr-wz-step1-scope .usr-wz-figma-select
+                  :is(.crt-combobox-container,crt-autocomplete){
+                  width:100%!important;min-width:0!important;max-width:100%!important;
+                  box-sizing:border-box!important;}
+              /* Non-Material / alternative Creatio builds: field itself owns the border. */
+              .usr-wz-root .usr-wz-step1-scope .usr-wz-figma-select .crt-combobox-field-container{
+                  width:100%!important;min-width:0!important;box-sizing:border-box!important;
+                  border:1px solid #dce2eb!important;border-radius:10px!important;
+                  background:#fff!important;box-shadow:none!important;}
+              /* Angular Material builds: removing the extra *outer* border and
+                 reserved subscript gutter eliminates the second blank rectangle. */
+              .usr-wz-root .usr-wz-step1-scope .usr-wz-figma-select
+                  .crt-combobox-field-container:has(mat-form-field){
+                  border:0!important;border-radius:10px!important;
+                  background:transparent!important;box-shadow:none!important;}
+              .usr-wz-root .usr-wz-step1-scope .usr-wz-figma-select
+                  mat-form-field .mat-form-field-wrapper{padding-bottom:0!important;}
+              .usr-wz-root .usr-wz-step1-scope .usr-wz-figma-select
+                  mat-form-field .mat-form-field-subscript-wrapper{
+                  height:0!important;min-height:0!important;overflow:hidden!important;}
+              .usr-wz-root .usr-wz-step1-scope .usr-wz-figma-select
+                  mat-form-field .mat-form-field-outline,
+              .usr-wz-root .usr-wz-step1-scope .usr-wz-figma-select
+                  mat-form-field .mat-form-field-outline-thick{display:none!important;}
+              .usr-wz-root .usr-wz-step1-scope .usr-wz-figma-select
+                  mat-form-field .mat-form-field-flex{
+                  border:1px solid #dce2eb!important;border-radius:10px!important;
+                  background:#fff!important;box-shadow:none!important;
+                  box-sizing:border-box!important;min-width:0!important;}
+              /* Angular Material MDC variant. */
+              .usr-wz-root .usr-wz-step1-scope .usr-wz-figma-select
+                  .mat-mdc-text-field-wrapper{
+                  border:1px solid #dce2eb!important;border-radius:10px!important;
+                  background:#fff!important;box-shadow:none!important;}
+              .usr-wz-root .usr-wz-step1-scope .usr-wz-figma-select
+                  .mat-mdc-form-field-subscript-wrapper{display:none!important;}
+              .usr-wz-root .usr-wz-step1-scope .usr-wz-figma-select
+                  :is(.mdc-notched-outline,.mdc-line-ripple){display:none!important;}
+              /* Keep natural Material/Creatio input height, selection, caret,
+                 prefixes and dropdown popup untouched. */
+              .usr-wz-root .usr-wz-step1-scope .usr-wz-figma-select
+                  :is(input,input[role="combobox"]){
+                  min-width:0!important;max-width:100%!important;
+                  font-size:12px!important;color:#1b2d49!important;}
+              .usr-wz-root .usr-wz-step1-scope .usr-wz-figma-select input::placeholder{
+                  color:#93a0b4!important;opacity:1!important;}
+              .usr-wz-root .usr-wz-step1-scope .usr-wz-figma-select:focus-within
+                  :is(.mat-form-field-flex,.mat-mdc-text-field-wrapper){
+                  border-color:#7530d9!important;box-shadow:0 0 0 2px rgba(110,48,217,.12)!important;}
+              .usr-wz-root .usr-wz-step1-scope .usr-wz-figma-select:focus-within
+                  .crt-combobox-field-container:not(:has(mat-form-field)){
+                  border-color:#7530d9!important;box-shadow:0 0 0 2px rgba(110,48,217,.12)!important;}
+              .usr-wz-root .usr-wz-step1-scope .usr-wz-validation-wrap.usr-wz-invalid
+                  .usr-wz-figma-select{outline:none!important;}
+              .usr-wz-root .usr-wz-step1-scope .usr-wz-validation-wrap.usr-wz-invalid
+                  .usr-wz-figma-select :is(.mat-form-field-flex,.mat-mdc-text-field-wrapper,
+                      .crt-combobox-field-container:not(:has(mat-form-field))){
+                  border-color:#ef6671!important;}
+
+              /* STEP 1 v5 — Request Details / Requester Information.
+                 Match the v4 rounded lookup field without replacing native Creatio
+                 editors, losing their bindings, or interfering with the date popup. */
+              .usr-wz-root .usr-wz-step1-details
+                :is(.usr-wz-figma-title,.usr-wz-figma-justification,.usr-wz-figma-date),
+              .usr-wz-root .usr-wz-step1-requester .usr-wz-readonly-input{
+                  width:100%!important;min-width:0!important;box-sizing:border-box!important;
+                  border-radius:10px!important;overflow:clip!important;}
+              /* Some Creatio versions paint the square border on the field host,
+                 and others paint it on a nested field container. Round both. */
+              .usr-wz-root .usr-wz-step1-details
+                :is(.usr-wz-figma-title,.usr-wz-figma-justification,.usr-wz-figma-date)
+                :is(input,textarea),
+              .usr-wz-root .usr-wz-step1-details
+                :is(.usr-wz-figma-title,.usr-wz-figma-justification,.usr-wz-figma-date)
+                :is(.crt-input-field-container,.crt-textarea-field-container,
+                    .crt-input-container,.crt-input-wrapper,.crt-date-time-picker-field-container,
+                    .crt-datetime-picker-field-container,.crt-datepicker-field-container,
+                    .mat-form-field-flex,.mat-form-field-infix,.mat-mdc-text-field-wrapper),
+              .usr-wz-root .usr-wz-step1-requester .usr-wz-readonly-input
+                :is(input,.crt-input-field-container,.crt-input-container,
+                    .crt-input-wrapper,.mat-form-field-flex,.mat-form-field-infix,
+                    .mat-mdc-text-field-wrapper){
+                  box-sizing:border-box!important;min-width:0!important;
+                  border-radius:10px!important;box-shadow:none!important;}
+              /* Non-Material Creatio: apply the frame to the actual field container. */
+              .usr-wz-root .usr-wz-step1-details
+                :is(.usr-wz-figma-title,.usr-wz-figma-justification,.usr-wz-figma-date)
+                :is(.crt-input-field-container,.crt-textarea-field-container,
+                    .crt-date-time-picker-field-container,.crt-datetime-picker-field-container,
+                    .crt-datepicker-field-container),
+              .usr-wz-root .usr-wz-step1-requester .usr-wz-readonly-input
+                :is(.crt-input-field-container,.crt-input-container){
+                  border:1px solid #dce2eb!important;border-radius:10px!important;
+                  background:#fff!important;overflow:clip!important;}
+              /* Material field wrapper owns the outline, not its outer Creatio shell. */
+              .usr-wz-root .usr-wz-step1-details
+                :is(.usr-wz-figma-title,.usr-wz-figma-justification,.usr-wz-figma-date)
+                :is(.crt-input-field-container,.crt-textarea-field-container,
+                    .crt-date-time-picker-field-container,.crt-datetime-picker-field-container)
+                :has(mat-form-field),
+              .usr-wz-root .usr-wz-step1-requester .usr-wz-readonly-input
+                :is(.crt-input-field-container,.crt-input-container):has(mat-form-field){
+                  border:0!important;background:transparent!important;overflow:visible!important;}
+              .usr-wz-root :is(.usr-wz-step1-details,.usr-wz-step1-requester)
+                :is(.usr-wz-figma-title,.usr-wz-figma-justification,
+                    .usr-wz-figma-date,.usr-wz-readonly-input)
+                mat-form-field .mat-form-field-wrapper{padding-bottom:0!important;}
+              .usr-wz-root :is(.usr-wz-step1-details,.usr-wz-step1-requester)
+                :is(.usr-wz-figma-title,.usr-wz-figma-justification,
+                    .usr-wz-figma-date,.usr-wz-readonly-input)
+                mat-form-field .mat-form-field-subscript-wrapper,
+              .usr-wz-root :is(.usr-wz-step1-details,.usr-wz-step1-requester)
+                :is(.usr-wz-figma-title,.usr-wz-figma-justification,
+                    .usr-wz-figma-date,.usr-wz-readonly-input)
+                .mat-mdc-form-field-subscript-wrapper{display:none!important;}
+              .usr-wz-root :is(.usr-wz-step1-details,.usr-wz-step1-requester)
+                :is(.usr-wz-figma-title,.usr-wz-figma-justification,
+                    .usr-wz-figma-date,.usr-wz-readonly-input)
+                :is(.mat-form-field-outline,.mat-form-field-outline-thick,
+                    .mdc-notched-outline,.mdc-line-ripple){display:none!important;}
+              /* The frame is applied to the visible rounded Material field. */
+              .usr-wz-root .usr-wz-step1-details
+                :is(.usr-wz-figma-title,.usr-wz-figma-justification,.usr-wz-figma-date)
+                :is(.mat-form-field-flex,.mat-mdc-text-field-wrapper){
+                  border:1px solid #dce2eb!important;border-radius:10px!important;
+                  background:#fff!important;box-shadow:none!important;}
+              .usr-wz-root .usr-wz-step1-details
+                :is(.usr-wz-figma-title,.usr-wz-figma-justification)
+                :is(input,textarea){
+                  border-radius:10px!important;background:#fff!important;
+                  font-size:12px!important;color:#1b2d49!important;}
+              .usr-wz-root .usr-wz-step1-details
+                :is(.usr-wz-figma-title,.usr-wz-figma-justification)
+                :is(input,textarea)::placeholder{color:#95a2b5!important;opacity:1!important;}
+              /* For multiline editor, keep the textarea editable and scrollable. */
+              .usr-wz-root .usr-wz-step1-details .usr-wz-figma-justification
+                textarea{min-height:64px!important;resize:vertical!important;}
+              .usr-wz-root .usr-wz-figma-date{max-width:380px!important;width:100%!important;}
+              .usr-wz-root .usr-wz-date-hint{color:#8d9ab0!important;font-size:10px!important;}
+              /* Accent only on the focused visible frame, not the input value. */
+              .usr-wz-root .usr-wz-step1-details
+                :is(.usr-wz-figma-title,.usr-wz-figma-justification,.usr-wz-figma-date):focus-within
+                :is(.crt-input-field-container,.crt-textarea-field-container,
+                    .crt-date-time-picker-field-container,.mat-form-field-flex,
+                    .mat-mdc-text-field-wrapper){border-color:#7530d9!important;}
+              .usr-wz-root .usr-wz-step1-details .usr-wz-validation-wrap.usr-wz-invalid
+                :is(.usr-wz-figma-title,.usr-wz-figma-justification)
+                :is(.crt-input-field-container,.crt-textarea-field-container,
+                    .mat-form-field-flex,.mat-mdc-text-field-wrapper){
+                  border-color:#ef6671!important;}
+
+              /* Requester Information: native readonly crt.Input fields, Figma gray fill. */
+              .usr-wz-root .usr-wz-step1-requester .usr-wz-requester-subtitle{
+                  display:block!important;color:#8c98af!important;font-size:10px!important;
+                  line-height:1.5!important;margin:0 0 12px!important;}
+              .usr-wz-root .usr-wz-step1-requester .usr-wz-requester-grid{
+                  width:100%!important;min-width:0!important;}
+              .usr-wz-root .usr-wz-step1-requester .usr-wz-readonly-caption{
+                  color:#6d7e98!important;font-size:10px!important;font-weight:550!important;}
+              .usr-wz-root .usr-wz-step1-requester .usr-wz-readonly-input{
+                  background:#f8f9fc!important;border-radius:10px!important;}
+              .usr-wz-root .usr-wz-step1-requester .usr-wz-readonly-input
+                :is(.crt-input-field-container,.crt-input-container,
+                    .crt-input-wrapper,.mat-form-field-flex,.mat-mdc-text-field-wrapper){
+                  background:#f8f9fc!important;border-radius:10px!important;}
+              .usr-wz-root .usr-wz-step1-requester .usr-wz-readonly-input
+                :is(.mat-form-field-flex,.mat-mdc-text-field-wrapper){
+                  border:1px solid #dfe4ee!important;box-shadow:none!important;}
+              .usr-wz-root .usr-wz-step1-requester .usr-wz-readonly-input
+                :is(input,input[readonly]){
+                  background:#f8f9fc!important;color:#1c2e48!important;
+                  font:600 11px/1.4 Inter,Arial,sans-serif!important;
+                  border-radius:10px!important;width:100%!important;min-width:0!important;
+                  text-overflow:ellipsis!important;}
+              /* Web component versions that expose a field part. */
+              .usr-wz-root .usr-wz-step1-details
+                :is(.usr-wz-figma-title,.usr-wz-figma-justification,.usr-wz-figma-date)::part(field),
+              .usr-wz-root .usr-wz-step1-requester .usr-wz-readonly-input::part(field){
+                  border-radius:10px!important;overflow:clip!important;}
+              .usr-wz-root .usr-wz-step1-requester .usr-wz-readonly-input::part(field){
+                  background:#f8f9fc!important;}
+              /* v6: The v5 rules hit only some possible Creatio field wrappers.
+                 In this Creatio build the square rectangle is painted by a deeper
+                 native input element. Restrict the stronger override to the six
+                 Step 1 field hosts and ALL of their own descendants. Keep the
+                 native crt.Input / crt.DateTimePicker / ViewModel unchanged. */
+              body .usr-wz-root .usr-wz-step1-details
+                :is(.usr-wz-figma-title,.usr-wz-figma-justification,.usr-wz-figma-date),
+              body .usr-wz-root .usr-wz-step1-details
+                :is(.usr-wz-figma-title,.usr-wz-figma-justification,.usr-wz-figma-date) *,
+              body .usr-wz-root .usr-wz-step1-requester .usr-wz-readonly-input,
+              body .usr-wz-root .usr-wz-step1-requester .usr-wz-readonly-input *{
+                  border-radius:11px!important;
+                  box-sizing:border-box!important;
+              }
+              /* Constrain input-field corners to the rounded host; this works
+                 even if Creatio paints a square line on a nested wrapper. The
+                 validation messages remain outside the host and are NOT clipped. */
+              body .usr-wz-root .usr-wz-step1-details
+                :is(.usr-wz-figma-title,.usr-wz-figma-justification),
+              body .usr-wz-root .usr-wz-step1-requester .usr-wz-readonly-input{
+                  position:relative!important;
+                  overflow:hidden!important;
+              }
+              /* Provide one rounded outer outline as a fallback for versions
+                 where the built-in border can't be reached by host CSS. */
+              body .usr-wz-root .usr-wz-step1-details
+                :is(.usr-wz-figma-title,.usr-wz-figma-justification)::after,
+              body .usr-wz-root .usr-wz-step1-requester .usr-wz-readonly-input::after{
+                  content:""!important;
+                  pointer-events:none!important;
+                  position:absolute!important;
+                  inset:0!important;
+                  z-index:1!important;
+                  border:1px solid #dce2eb!important;
+                  border-radius:11px!important;
+                  box-sizing:border-box!important;
+              }
+              body .usr-wz-root .usr-wz-step1-requester .usr-wz-readonly-input::after{
+                  border-color:#dfe4ee!important;
+              }
+              body .usr-wz-root .usr-wz-step1-details
+                :is(.usr-wz-figma-title,.usr-wz-figma-justification):focus-within::after{
+                  border-color:#7530d9!important;
+              }
+              body .usr-wz-root .usr-wz-step1-details .usr-wz-validation-wrap.usr-wz-invalid
+                :is(.usr-wz-figma-title,.usr-wz-figma-justification)::after{
+                  border-color:#f05563!important;
+              }
+              /* Keep the calendar icon, field focus and native date picker. Date
+                 overlays may be anchored in this component, so DON'T clip it. */
+              body .usr-wz-root .usr-wz-step1-details .usr-wz-figma-date{
+                  overflow:visible!important;
+              }
+              body .usr-wz-root .usr-wz-step1-details .usr-wz-figma-date
+                :is(input,.crt-date-time-picker-field-container,.crt-datetime-picker-field-container,
+                    .mat-form-field-flex,.mat-mdc-text-field-wrapper){
+                  border-radius:11px!important;
+              }
+              /* v7 — Core fix: actual native input frame can be rendered inside
+                 a custom element/shadow root. Apply the rounding/clipping to the
+                 OUTERMOST control as well; CSS descendants alone cannot style it. */
+              body .usr-wz-root .usr-wz-step1-details
+                :is(.usr-wz-figma-title,.usr-wz-figma-justification),
+              body .usr-wz-root .usr-wz-step1-requester .usr-wz-readonly-input{
+                  border-radius:12px!important;
+                  clip-path:inset(0 round 12px)!important;
+                  -webkit-clip-path:inset(0 round 12px)!important;
+                  background-clip:padding-box!important;
+              }
+              /* The calendar is a genuine crt.DateTimePicker. Do not replace its
+                 input or its calendar popup; style its field chrome only. */
+              body .usr-wz-root .usr-wz-step1-details .usr-wz-figma-date{
+                  border-radius:12px!important;
+                  clip-path:inset(0 round 12px)!important;
+                  -webkit-clip-path:inset(0 round 12px)!important;
+              }
+              body .usr-wz-root .usr-wz-step1-requester .usr-wz-readonly-input{
+                  background:#f8f9fc!important;
+              }
+              body .usr-wz-root .usr-wz-step1-details
+                .usr-wz-validation-wrap.usr-wz-invalid
+                :is(.usr-wz-figma-title,.usr-wz-figma-justification){
+                  outline:0!important;
+                  box-shadow:inset 0 0 0 1px #ef6671!important;
+              }
+              /* Include the native input in text-entry rounded clipping, without
+                 changing pointer events, value binding, focus or keyboard input. */
+              body .usr-wz-root .usr-wz-step1-details
+                :is(.usr-wz-figma-title,.usr-wz-figma-justification)
+                :is(crt-input,input,textarea,.crt-input-field,.crt-input-field-container),
+              body .usr-wz-root .usr-wz-step1-requester .usr-wz-readonly-input
+                :is(crt-input,input,.crt-input-field,.crt-input-field-container){
+                  border-radius:12px!important;
+                  background-clip:padding-box!important;
+              }
+              @media(max-width:700px){
+                  .usr-wz-root .usr-wz-figma-date{max-width:100%!important;}
+              }
+            `;
+            document.head.appendChild(css);
+        }
+
+        // STEP 1 v9: match the four *working* rounded controls in Request Type &
+        // Scope. Native crt.Input creates a square Angular-painted frame in this
+        // Creatio build. v8 wrongly inserted the facade INSIDE crt.Input, whose
+        // Angular component can discard projected children while rendering.
+        // Insert an HTML editor as its SIBLING in the same FlexContainer instead.
+        // Keep native schema components, models, and all other wizard steps intact.
+        // Only Step 1 fields are affected; validation still uses the SAME context.
+        const wzRoundStep1NativeFields = () => {
+            const styleId = "usr-mcit-step1-round-v9";
+            if (!document.getElementById(styleId)) {
+                const style = document.createElement("style");
+                style.id = styleId;
+                style.textContent = `
+                  .usr-wz-root .usr-wz-step1-details .usr-wz-v9-native-hidden {
+                    display:none!important;
+                  }
+                  .usr-wz-root .usr-wz-step1-details .usr-wz-v9-field {
+                    display:block!important; box-sizing:border-box!important;
+                    width:100%!important; min-width:0!important;
+                    max-width:100%!important; color:#1b2d49!important;
+                    background:#fff!important; border:1px solid #dce2eb!important;
+                    border-radius:11px!important;
+                    box-shadow:none!important; outline:0!important;
+                    font:400 13px/1.45 Inter,Arial,sans-serif!important;
+                    padding:0 12px!important; appearance:none!important;
+                    -webkit-appearance:none!important;
+                  }
+                  .usr-wz-root .usr-wz-step1-details input.usr-wz-v9-field {
+                    height:54px!important; min-height:54px!important;
+                  }
+                  .usr-wz-root .usr-wz-step1-details textarea.usr-wz-v9-field {
+                    height:76px!important; min-height:76px!important;
+                    padding:12px!important; resize:vertical!important;
+                  }
+                  .usr-wz-root .usr-wz-step1-details .usr-wz-v9-field::placeholder {
+                    color:#96a3b7!important; opacity:1!important;
+                  }
+                  .usr-wz-root .usr-wz-step1-details .usr-wz-v9-field:focus {
+                    border-color:#7031e5!important;
+                    box-shadow:0 0 0 1px #7031e5!important;
+                  }
+                  .usr-wz-root .usr-wz-step1-details
+                    .usr-wz-validation-wrap.usr-wz-invalid .usr-wz-v9-field {
+                    border-color:#ef4444!important;
+                  }
+                  .usr-wz-root .usr-wz-step1-details .usr-wz-v9-date-shell {
+                    display:flex!important; flex-direction:column!important;
+                    width:100%!important; max-width:380px!important;
+                    gap:7px!important; min-width:0!important;
+                    box-sizing:border-box!important;
+                  }
+                  .usr-wz-root .usr-wz-step1-details .usr-wz-v9-date-label {
+                    color:#64748b!important; font-size:11px!important;
+                    font-weight:550!important; line-height:17px!important;
+                  }
+                  .usr-wz-root .usr-wz-step1-details input.usr-wz-v9-date-field {
+                    height:44px!important; min-height:44px!important;
+                    color-scheme:light!important;
+                  }
+                  /* Read-only values now use native designer-editable crt.Label
+                     components, so an internal Angular input border cannot win. */
+                  .usr-wz-root .usr-wz-step1-requester .usr-wz-readonly-pill {
+                    display:flex!important; align-items:center!important;
+                    width:100%!important; min-width:0!important;
+                    height:50px!important; min-height:50px!important;
+                    box-sizing:border-box!important;
+                    padding:0 12px!important;
+                    border:1px solid #dfe4ee!important;
+                    border-radius:11px!important;
+                    background:#f8f9fc!important;
+                    color:#1c2e48!important;
+                    font:600 12px/1.4 Inter,Arial,sans-serif!important;
+                    overflow:hidden!important;
+                    text-overflow:ellipsis!important;
+                    white-space:nowrap!important;
+                  }
+                  .usr-wz-root .usr-wz-step1-requester .usr-wz-readonly-pill * {
+                    color:inherit!important; font:inherit!important;
+                    border:0!important; background:transparent!important;
+                    box-shadow:none!important;
+                    min-width:0!important;
+                    overflow:hidden!important; text-overflow:ellipsis!important;
+                    white-space:nowrap!important;
+                  }
+                `;
+                document.head.appendChild(style);
+            }
+            const ctx = document.__usrMCITWizardActiveContext;
+            if (!ctx) { return; }
+            const fields = [
+                {className:'usr-wz-figma-title', attr:'WZ_Title',
+                    kind:'text', title:'Request Title',
+                    placeholder:'Brief, descriptive title for this request',
+                    error:'WZ_ErrTitle'},
+                {className:'usr-wz-figma-justification', attr:'WZ_Justification',
+                    kind:'textarea', title:'Business Justification',
+                    placeholder:'Explain the business need, intended use, and impact on government services',
+                    error:'WZ_ErrJustification'},
+                {className:'usr-wz-figma-date', attr:'WZ_DeliveryDate',
+                    kind:'date', title:'Requested Delivery Date (optional)'}
+            ];
+            const asDateValue = v => {
+                if (!v) {return '';}
+                if (v instanceof Date && !Number.isNaN(v.getTime())) {
+                    const pad=n=>String(n).padStart(2,'0');
+                    return `${v.getFullYear()}-${pad(v.getMonth()+1)}-${pad(v.getDate())}`;
+                }
+                const raw=String(v);
+                return /^\d{4}-\d{2}-\d{2}/.test(raw)?raw.slice(0,10):'';
+            };
+            for (const f of fields) {
+                const panel=document.querySelector('.usr-wz-root .usr-wz-step1-details');
+                if (!panel) {continue;}
+                // Find the actual native view element, NEVER mount inside crt.Input.
+                let native=panel.querySelector('.'+f.className);
+                if (!native && f.kind==='date') {
+                    // DateTimePicker may render outside the ExpansionPanel's
+                    // content subtree in this specific Creatio layout. The
+                    // field's class is unique throughout this wizard.
+                    native=document.querySelector('.usr-wz-root .'+f.className)
+                        || document.querySelector('.'+f.className);
+                }
+                if (!native) {
+                    // Other Creatio builds attach classes to a nested host.
+                    const input=Array.from(panel.querySelectorAll('input,textarea'))
+                        .find(el=>f.kind==='date'
+                            ? el.type==='date' || el.getAttribute('aria-label')===f.title
+                            : el.getAttribute('placeholder')===f.placeholder);
+                    if (input) {native=input.closest('crt-input,crt-date-time-picker')||input;}
+                }
+                if (!native && f.kind==='date') {
+                    // Last resort: locate the actual native field by its
+                    // unique on-screen label; don't hide an entire panel.
+                    const labels=Array.from(panel.querySelectorAll('label,span,div'))
+                        .filter(el=>el.childElementCount===0 &&
+                            String(el.textContent||'').trim()===f.title);
+                    for (const label of labels) {
+                        const host=label.closest('crt-date-time-picker');
+                        if(host){native=host;break;}
+                        let p=label.parentElement;
+                        for(let depth=0;p && p!==panel && depth<5;depth++,p=p.parentElement) {
+                            if(p.querySelectorAll('input').length===1 &&
+                                p.querySelector('input')) {native=p;break;}
+                        }
+                        if(native){break;}
+                    }
+                }
+                if (!native || !native.parentElement) {continue;}
+                const parent=native.parentElement;
+                let wrapper=Array.from(parent.children).find(el=>
+                    el.classList?.contains('usr-wz-v9-editor') && el.dataset?.wzField===f.attr);
+                if (!wrapper) {
+                    wrapper=document.createElement('div');
+                    wrapper.className='usr-wz-v9-editor';
+                    wrapper.dataset.wzField=f.attr;
+                    const field=document.createElement(f.kind==='textarea'?'textarea':'input');
+                    field.className='usr-wz-v9-field';
+                    field.setAttribute('aria-label', f.title);
+                    if (f.kind !== 'textarea') {field.type=f.kind==='date'?'date':'text';}
+                    if (f.placeholder) {field.placeholder=f.placeholder;}
+                    if (f.kind==='date') {
+                        wrapper.classList.add('usr-wz-v9-date-shell');
+                        const label=document.createElement('label');
+                        label.className='usr-wz-v9-date-label';
+                        label.textContent=f.title;
+                        wrapper.appendChild(label);
+                        field.classList.add('usr-wz-v9-date-field');
+                    }
+                    field.addEventListener('input',()=>{
+                        const active=document.__usrMCITWizardActiveContext;
+                        if(!active){return;}
+                        if(f.kind==='date') {
+                            active[f.attr]=field.value?new Date(field.value+'T12:00:00'):null;
+                        } else {
+                            active[f.attr]=field.value;
+                            if(f.error && field.value.trim()) {active[f.error]=false;}
+                        }
+                    });
+                    field.addEventListener('change',()=>{
+                        const active=document.__usrMCITWizardActiveContext;
+                        if(active && f.kind==='date') {
+                            active[f.attr]=field.value?new Date(field.value+'T12:00:00'):null;
+                        }
+                    });
+                    field.addEventListener('blur',()=>{
+                        const active=document.__usrMCITWizardActiveContext;
+                        if(!active || !f.error){return;}
+                        const def=WZ_REQUIRED_FIELDS.find(x=>x.field===f.attr);
+                        if(def){Promise.resolve(updateRequiredField(active,def)).catch(console.warn);}
+                    });
+                    wrapper.appendChild(field);
+                    // Sibling insert uses the very same FlexContainer position.
+                    // Native editor remains part of the real Page Designer schema.
+                    native.insertAdjacentElement('afterend',wrapper);
+                }
+                if (!native.classList.contains('usr-wz-v9-native-hidden')) {
+                    native.classList.add('usr-wz-v9-native-hidden');
+                }
+                // The date component sometimes lives outside the ordinary CSS
+                // panel ancestry. Hide *just this control*, not the row/panel.
+                if (f.kind==='date' && native.style.display!=='none') {
+                    native.style.setProperty('display','none','important');
+                }
+                const field=wrapper.querySelector('.usr-wz-v9-field');
+                // Read the authoritative data source after /add/ or /edit/ hydration.
+                // Never overwrite what the user is currently typing.
+                Promise.resolve(ctx[f.attr]).then(value=>{
+                    if(!field || !field.isConnected || document.activeElement===field){return;}
+                    const displayed=f.kind==='date'?asDateValue(value):String(value??'');
+                    if(field.value!==displayed){field.value=displayed;}
+                }).catch(e=>console.warn('MCIT Step 1 field synchronization',f.attr,e));
+            }
+        };
+
+        // v10: reliable visual completion for the single remaining date field
+        // and all FOUR read-only requester values. In this Creatio build a
+        // crt.Label's classes do not consistently style its rendered content;
+        // use one Figma card bound to the existing ViewModel values instead.
+        // Schema controls are NOT deleted: native readonly labels remain in the
+        // Designer (hidden in runtime only), maintaining the safe hybrid model.
+        const wzFinishStep1Figma = () => {
+            const styleId='usr-mcit-step1-figma-completion-v10';
+            if(!document.getElementById(styleId)){
+                const css=document.createElement('style');
+                css.id=styleId;
+                css.textContent=`
+                  /* Works regardless of which panel owns DateTimePicker's DOM. */
+                  body .usr-wz-root .usr-wz-v9-native-hidden,
+                  body .usr-wz-v9-native-hidden {display:none!important;}
+                  body .usr-wz-v9-date-shell {
+                    box-sizing:border-box!important; display:flex!important;
+                    flex-direction:column!important; gap:7px!important;
+                    width:min(100%, 380px)!important; max-width:100%!important;
+                    min-width:0!important; margin-top:3px!important;
+                  }
+                  body .usr-wz-v9-date-shell .usr-wz-v9-date-label {
+                    display:block!important; color:#5c677c!important;
+                    font:600 11px/1.5 Inter,Arial,sans-serif!important;
+                  }
+                  body input.usr-wz-v9-date-field {
+                    display:block!important; width:100%!important;
+                    box-sizing:border-box!important; min-width:0!important;
+                    height:40px!important; min-height:40px!important;
+                    padding:0 12px!important; background:#fff!important;
+                    border:1px solid #dce2eb!important; border-radius:10px!important;
+                    outline:none!important; box-shadow:none!important;
+                    color:#182d4b!important; font:400 12px Inter,Arial,sans-serif!important;
+                    color-scheme:light!important; appearance:auto!important;
+                    -webkit-appearance:auto!important;
+                  }
+                  body input.usr-wz-v9-date-field:focus {
+                    border-color:#7130e1!important;
+                    box-shadow:0 0 0 1px #7130e1!important;
+                  }
+                  /* Readonly values retain real dynamic requester data, but the
+                     Figma presentation doesn't depend on a crt.Label theme. */
+                  body .usr-wz-v10-profile-native-hidden {display:none!important;}
+                  body .usr-wz-v10-profile {
+                    width:100%!important; box-sizing:border-box!important;
+                    display:grid!important;
+                    grid-template-columns:repeat(3,minmax(0,1fr))!important;
+                    column-gap:14px!important;row-gap:13px!important;
+                    margin:7px 0 3px!important; padding:0!important;
+                    background:transparent!important;
+                  }
+                  body .usr-wz-v10-profile-cell {display:flex!important;
+                    flex-direction:column!important; gap:5px!important;
+                    min-width:0!important; box-sizing:border-box!important;}
+                  body .usr-wz-v10-profile-caption {
+                    display:block!important; color:#73829b!important;
+                    font:500 10px/1.4 Inter,Arial,sans-serif!important;
+                  }
+                  body .usr-wz-v10-profile-value {
+                    display:flex!important; align-items:center!important;
+                    height:38px!important; min-height:38px!important;
+                    border:1px solid #dfe4ec!important; border-radius:10px!important;
+                    background:#f8f9fc!important; padding:0 11px!important;
+                    box-sizing:border-box!important; min-width:0!important;
+                    color:#1c2d4a!important;
+                    font:600 12px/1.4 Inter,Arial,sans-serif!important;
+                    white-space:nowrap!important;overflow:hidden!important;
+                    text-overflow:ellipsis!important;
+                  }
+                  @media(max-width:850px){
+                    body .usr-wz-v10-profile {grid-template-columns:repeat(2,minmax(0,1fr))!important;}
+                  }
+                  @media(max-width:550px){
+                    body .usr-wz-v10-profile {grid-template-columns:minmax(0,1fr)!important;}
+                  }
+                `;
+                document.head.appendChild(css);
+            }
+            const root=document.querySelector('.usr-wz-root');
+            const ctx=document.__usrMCITWizardActiveContext;
+            if(!root||!ctx){return;}
+            // The original four value controls live in the native requester grid.
+            // Query by its own class, not through ExpansionPanel ancestry: some
+            // Creatio versions portal grid items as siblings, not descendants.
+            let grid=root.querySelector('.usr-wz-requester-grid');
+            if(!grid){
+                const labels=Array.from(root.querySelectorAll('.usr-wz-readonly-caption'));
+                if(labels.length>=4){
+                    let candidate=labels[0].parentElement;
+                    for(let i=0;candidate && candidate!==root && i<7;i++,candidate=candidate.parentElement){
+                        const all=String(candidate.textContent||'');
+                        if(['Full Name','Email','Role','Authority'].every(s=>all.includes(s))) {
+                            grid=candidate;break;
+                        }
+                    }
+                }
+            }
+            if(!grid||!grid.parentElement){return;}
+            let profile=Array.from(grid.parentElement.children).find(el=>
+                el.classList?.contains('usr-wz-v10-profile'));
+            if(!profile){
+                profile=document.createElement('div');
+                profile.className='usr-wz-v10-profile';
+                profile.setAttribute('role','group');
+                profile.setAttribute('aria-label','Requester Information — read only');
+                const defs=[
+                    ['Full Name','WZ_CurrentContactName'],
+                    ['Role','WZ_CurrentRoleName'],
+                    ['Authority','WZ_CurrentAuthorityName'],
+                    ['Email','WZ_CurrentEmail']
+                ];
+                for(const [caption,attr] of defs){
+                    const cell=document.createElement('div');
+                    cell.className='usr-wz-v10-profile-cell';
+                    const label=document.createElement('span');
+                    label.className='usr-wz-v10-profile-caption';
+                    label.textContent=caption;
+                    const value=document.createElement('div');
+                    value.className='usr-wz-v10-profile-value';
+                    value.dataset.wzValue=attr;
+                    value.textContent='—';
+                    value.setAttribute('title',caption);
+                    cell.append(label,value);
+                    profile.appendChild(cell);
+                }
+                grid.insertAdjacentElement('afterend',profile);
+            }
+            // Only hide native grid once the substitute is fully mounted.
+            // Designer schema remains unchanged and all fields stay read-only.
+            if(!grid.classList.contains('usr-wz-v10-profile-native-hidden')) {
+                grid.classList.add('usr-wz-v10-profile-native-hidden');
+            }
+            for(const value of profile.querySelectorAll('[data-wz-value]')){
+                const key=value.dataset.wzValue;
+                Promise.resolve(ctx[key]).then(raw=>{
+                    if(!value.isConnected || document.__usrMCITWizardActiveContext!==ctx){return;}
+                    const readable=raw && typeof raw==='object'
+                        ? String(raw.displayValue??raw.Name??'—')
+                        : String(raw??'—');
+                    const next=readable.trim()||'—';
+                    if(value.textContent!==next){value.textContent=next;}
+                    if(value.title!==next){value.title=next;}
+                }).catch(e=>console.warn('MCIT Step1 requester display',key,e));
+            }
+        };
+
         // Mirrors My Requests: use native DOM buttons for reliable theme-independent colors.
         // Designer-visible crt.Button schema nodes stay intact as fallbacks.
         const mountFooterButtons=()=>{
@@ -2934,6 +3708,8 @@ define("UsrMCITNewRequest_WizardPage", /**SCHEMA_DEPS*/["@creatio-devkit/common"
         render();
         mountFooterButtons();
         mountStepTwoAddButtons();
+        wzRoundStep1NativeFields();
+        wzFinishStep1Figma();
         vmRenderItems(ctx);
         docMount(ctx);
         docRenderValidation(ctx);
@@ -2965,6 +3741,8 @@ define("UsrMCITNewRequest_WizardPage", /**SCHEMA_DEPS*/["@creatio-devkit/common"
                 render();
                 mountFooterButtons();
                 mountStepTwoAddButtons();
+                wzRoundStep1NativeFields();
+        wzFinishStep1Figma();
                 const active=document.__usrMCITWizardActiveContext;
                 if(active){
                     vmRenderItems(active);docMount(active);docRenderValidation(active);docRenderReview(active);docRenderSuccess(active);
@@ -3233,6 +4011,7 @@ define("UsrMCITNewRequest_WizardPage", /**SCHEMA_DEPS*/["@creatio-devkit/common"
         "operation": "insert",
         "name": "WZ_FormOne",
         "values": {
+            "classes": ["usr-wz-step1-form"],
             "type": "crt.FlexContainer",
             "direction": "column",
             "items": [],
@@ -3250,7 +4029,7 @@ define("UsrMCITNewRequest_WizardPage", /**SCHEMA_DEPS*/["@creatio-devkit/common"
         "operation": "insert",
         "name": "WZ_RequestScope",
         "values": {
-            "classes": ["usr-wz-panel"],
+            "classes": ["usr-wz-panel", "usr-wz-step1-scope"],
             "type": "crt.ExpansionPanel",
             "title": "Request Type & Scope",
             "expanded": true,
@@ -3368,7 +4147,7 @@ define("UsrMCITNewRequest_WizardPage", /**SCHEMA_DEPS*/["@creatio-devkit/common"
             "ariaLabel": "Request Type required",
             "appearance": "outline",
             "placeholder": "Select request type",
-            "classes": ["usr-wz-field-control"],
+            "classes": ["usr-wz-field-control", "usr-wz-figma-select"],
             "control": "$WZ_RequestType",
             "listActions": [],
             "controlActions": [],
@@ -3484,7 +4263,7 @@ define("UsrMCITNewRequest_WizardPage", /**SCHEMA_DEPS*/["@creatio-devkit/common"
             "ariaLabel": "Contract required",
             "appearance": "outline",
             "placeholder": "Select contract",
-            "classes": ["usr-wz-field-control"],
+            "classes": ["usr-wz-field-control", "usr-wz-figma-select"],
             "control": "$WZ_Contract",
             "listActions": [],
             "controlActions": [],
@@ -3510,7 +4289,35 @@ define("UsrMCITNewRequest_WizardPage", /**SCHEMA_DEPS*/["@creatio-devkit/common"
         },
         "parentName": "WZ_ReqContractGroup",
         "propertyName": "items",
+        "index": 4
+    },
+    {
+        "operation": "insert",
+        "name": "WZ_ContractActiveMeta",
+        "values": {
+            "type": "crt.Label",
+            "caption": "$WZ_ContractMeta",
+            "labelType": "caption",
+            "visible": "$WZ_ContractIsActive",
+            "classes": ["usr-wz-contract-meta", "usr-wz-contract-meta-active"]
+        },
+        "parentName": "WZ_ReqContractGroup",
+        "propertyName": "items",
         "index": 2
+    },
+    {
+        "operation": "insert",
+        "name": "WZ_ContractOtherMeta",
+        "values": {
+            "type": "crt.Label",
+            "caption": "$WZ_ContractMeta",
+            "labelType": "caption",
+            "visible": "$WZ_ContractIsNotActive",
+            "classes": ["usr-wz-contract-meta", "usr-wz-contract-meta-other"]
+        },
+        "parentName": "WZ_ReqContractGroup",
+        "propertyName": "items",
+        "index": 3
     },
     {
         "operation": "insert",
@@ -3600,7 +4407,7 @@ define("UsrMCITNewRequest_WizardPage", /**SCHEMA_DEPS*/["@creatio-devkit/common"
             "ariaLabel": "Government Authority Name required",
             "appearance": "outline",
             "placeholder": "Select authority",
-            "classes": ["usr-wz-field-control"],
+            "classes": ["usr-wz-field-control", "usr-wz-figma-select"],
             "control": "$WZ_AuthorityAccount",
             "listActions": [],
             "controlActions": [],
@@ -3716,7 +4523,7 @@ define("UsrMCITNewRequest_WizardPage", /**SCHEMA_DEPS*/["@creatio-devkit/common"
             "ariaLabel": "Project required",
             "appearance": "outline",
             "placeholder": "Select project",
-            "classes": ["usr-wz-field-control"],
+            "classes": ["usr-wz-field-control", "usr-wz-figma-select"],
             "control": "$WZ_Project",
             "listActions": [],
             "controlActions": [],
@@ -3764,146 +4571,181 @@ define("UsrMCITNewRequest_WizardPage", /**SCHEMA_DEPS*/["@creatio-devkit/common"
         "name": "WZ_SummaryContents",
         "values": {
             "type": "crt.FlexContainer",
-            "direction": "column",
-            "items": [],
-            "gap": "small",
-            "alignItems": "stretch",
-            "justifyContent": "start",
-            "wrap": "nowrap"
+            "direction": "column", "items": [], "gap": "medium",
+            "alignItems": "stretch", "wrap": "nowrap",
+            "classes": ["usr-wz-summary-contents"]
         },
-        "parentName": "WZ_ContractSummary",
-        "propertyName": "items",
-        "index": 0
+        "parentName": "WZ_ContractSummary", "propertyName": "items", "index": 0
     },
     {
-        "operation": "insert",
-        "name": "WZ_ContractNameLabel",
-        "values": {
-            "type": "crt.Label",
-            "caption": "Name",
-            "labelType": "caption",
-            "labelEllipsis": false,
-            "labelColor": "#6d28d9"
-        },
-        "parentName": "WZ_SummaryContents",
-        "propertyName": "items",
-        "index": 0
-    },
-    {
-        "operation": "insert",
-        "name": "WZ_ContractNameValue",
-        "values": {
-            "type": "crt.Label",
-            "caption": "$WZ_ContractName",
-            "labelType": "body",
-            "labelEllipsis": false
-        },
-        "parentName": "WZ_SummaryContents",
-        "propertyName": "items",
-        "index": 1
-    },
-    {
-        "operation": "insert",
-        "name": "WZ_ContractGrid",
+        "operation": "insert", "name": "WZ_ContractSummaryTop",
         "values": {
             "type": "crt.GridContainer",
-            "columns": [
-                "minmax(200px, 1fr)",
-                "minmax(200px, 1fr)"
-            ],
-            "rows": "repeat(2, minmax(64px, max-content))",
-            "gap": {
-                "columnGap": "large",
-                "rowGap": "medium"
-            },
-            "items": []
+            "columns": ["minmax(0, 1fr)", "minmax(0, 1fr)", "minmax(0, 1fr)"],
+            "rows": "minmax(72px, max-content)",
+            "gap": {"columnGap": "medium", "rowGap": "small"},
+            "items": [], "classes": ["usr-wz-summary-topgrid"]
         },
-        "parentName": "WZ_SummaryContents",
-        "propertyName": "items",
-        "index": 2
+        "parentName": "WZ_SummaryContents", "propertyName": "items", "index": 0
     },
     {
-        "operation": "insert",
-        "name": "WZ_ContractRefValue",
-        "values": {
-            "type": "crt.Label",
-            "caption": "$WZ_ContractReference",
-            "labelType": "body",
-            "labelEllipsis": false,
-            "layoutConfig": {
-                "column": 1,
-                "row": 1,
-                "colSpan": 1,
-                "rowSpan": 1
-            }
-        },
-        "parentName": "WZ_ContractGrid",
-        "propertyName": "items",
-        "index": 0
+        "operation": "insert", "name": "WZ_SummaryNameBlock",
+        "values": {"type": "crt.FlexContainer", "direction": "column", "items": [],
+            "gap": "small", "classes": ["usr-wz-summary-field"],
+            "layoutConfig": {"column": 1, "row": 1, "colSpan": 1, "rowSpan": 1}},
+        "parentName": "WZ_ContractSummaryTop", "propertyName": "items", "index": 0
     },
     {
-        "operation": "insert",
-        "name": "WZ_ContractPeriodValue",
-        "values": {
-            "type": "crt.Label",
-            "caption": "$WZ_ContractPeriod",
-            "labelType": "body",
-            "labelEllipsis": false,
-            "layoutConfig": {
-                "column": 2,
-                "row": 1,
-                "colSpan": 1,
-                "rowSpan": 1
-            }
-        },
-        "parentName": "WZ_ContractGrid",
-        "propertyName": "items",
-        "index": 1
+        "operation": "insert", "name": "WZ_ContractNameLabel",
+        "values": {"type": "crt.Label", "caption": "Name", "labelType": "caption",
+            "classes": ["usr-wz-summary-field-label"]},
+        "parentName": "WZ_SummaryNameBlock", "propertyName": "items", "index": 0
     },
     {
-        "operation": "insert",
-        "name": "WZ_InitialPointsValue",
-        "values": {
-            "type": "crt.Label",
-            "caption": "$WZ_InitialPoints",
-            "labelType": "body",
-            "labelEllipsis": false,
-            "layoutConfig": {
-                "column": 1,
-                "row": 2,
-                "colSpan": 1,
-                "rowSpan": 1
-            }
-        },
-        "parentName": "WZ_ContractGrid",
-        "propertyName": "items",
-        "index": 2
+        "operation": "insert", "name": "WZ_ContractNameValue",
+        "values": {"type": "crt.Label", "caption": "$WZ_ContractName", "labelType": "body",
+            "classes": ["usr-wz-summary-field-value"]},
+        "parentName": "WZ_SummaryNameBlock", "propertyName": "items", "index": 1
     },
     {
-        "operation": "insert",
-        "name": "WZ_ConsumptionValue",
-        "values": {
-            "type": "crt.Label",
-            "caption": "$WZ_ContractLedgerNote",
-            "labelType": "caption",
-            "labelEllipsis": false,
-            "labelColor": "#64748b",
-            "layoutConfig": {
-                "column": 2,
-                "row": 2,
-                "colSpan": 1,
-                "rowSpan": 1
-            }
-        },
-        "parentName": "WZ_ContractGrid",
-        "propertyName": "items",
-        "index": 3
+        "operation": "insert", "name": "WZ_ContractRefBlock",
+        "values": {"type": "crt.FlexContainer", "direction": "column", "items": [],
+            "gap": "small", "classes": ["usr-wz-summary-field"],
+            "layoutConfig": {"column": 2, "row": 1, "colSpan": 1, "rowSpan": 1}},
+        "parentName": "WZ_ContractSummaryTop", "propertyName": "items", "index": 1
+    },
+    {
+        "operation": "insert", "name": "WZ_ContractRefCaption",
+        "values": {"type": "crt.Label", "caption": "Reference / Contract No.", "labelType": "caption",
+            "classes": ["usr-wz-summary-field-label"]},
+        "parentName": "WZ_ContractRefBlock", "propertyName": "items", "index": 0
+    },
+    {
+        "operation": "insert", "name": "WZ_ContractRefValue",
+        "values": {"type": "crt.Label", "caption": "$WZ_ContractReference", "labelType": "body",
+            "classes": ["usr-wz-summary-field-value"]},
+        "parentName": "WZ_ContractRefBlock", "propertyName": "items", "index": 1
+    },
+    {
+        "operation": "insert", "name": "WZ_ContractNumberValue",
+        "values": {"type": "crt.Label", "caption": "$WZ_ContractNumber", "labelType": "caption",
+            "classes": ["usr-wz-summary-field-sub"]},
+        "parentName": "WZ_ContractRefBlock", "propertyName": "items", "index": 2
+    },
+    {
+        "operation": "insert", "name": "WZ_ContractValidityBlock",
+        "values": {"type": "crt.FlexContainer", "direction": "column", "items": [],
+            "gap": "small", "classes": ["usr-wz-summary-field"],
+            "layoutConfig": {"column": 3, "row": 1, "colSpan": 1, "rowSpan": 1}},
+        "parentName": "WZ_ContractSummaryTop", "propertyName": "items", "index": 2
+    },
+    {
+        "operation": "insert", "name": "WZ_ContractValidityCaption",
+        "values": {"type": "crt.Label", "caption": "Validity", "labelType": "caption",
+            "classes": ["usr-wz-summary-field-label"]},
+        "parentName": "WZ_ContractValidityBlock", "propertyName": "items", "index": 0
+    },
+    {
+        "operation": "insert", "name": "WZ_ContractPeriodValue",
+        "values": {"type": "crt.Label", "caption": "$WZ_ContractPeriod", "labelType": "body",
+            "classes": ["usr-wz-summary-field-value"]},
+        "parentName": "WZ_ContractValidityBlock", "propertyName": "items", "index": 1
+    },
+    {
+        "operation": "insert", "name": "WZ_ContractVersionValue",
+        "values": {"type": "crt.Label", "caption": "$WZ_ContractVersionLabel", "labelType": "caption",
+            "classes": ["usr-wz-summary-version"]},
+        "parentName": "WZ_SummaryContents", "propertyName": "items", "index": 1
+    },
+    {
+        "operation": "insert", "name": "WZ_ContractGrid",
+        "values": {"type": "crt.GridContainer",
+            "columns": ["minmax(0, 1fr)", "minmax(0, 1fr)", "minmax(0, 1fr)"],
+            "rows": "minmax(52px, max-content)",
+            "gap": {"columnGap": "medium", "rowGap": "small"},
+            "items": [], "classes": ["usr-wz-summary-points-grid"]},
+        "parentName": "WZ_SummaryContents", "propertyName": "items", "index": 2
+    },
+    {
+        "operation": "insert", "name": "WZ_SummaryInitialBlock",
+        "values": {"type": "crt.FlexContainer", "direction": "column", "items": [],
+            "gap": "small", "classes": ["usr-wz-summary-point"],
+            "layoutConfig": {"column": 1, "row": 1, "colSpan": 1, "rowSpan": 1}},
+        "parentName": "WZ_ContractGrid", "propertyName": "items", "index": 0
+    },
+    {
+        "operation": "insert", "name": "WZ_InitialPointsCaption",
+        "values": {"type": "crt.Label", "caption": "Available", "labelType": "caption",
+            "classes": ["usr-wz-summary-point-label"]},
+        "parentName": "WZ_SummaryInitialBlock", "propertyName": "items", "index": 0
+    },
+    {
+        "operation": "insert", "name": "WZ_InitialPointsValue",
+        "values": {"type": "crt.Label", "caption": "$WZ_AvailablePoints", "labelType": "body",
+            "classes": ["usr-wz-summary-point-unverified"]},
+        "parentName": "WZ_SummaryInitialBlock", "propertyName": "items", "index": 1
+    },
+    {
+        "operation": "insert", "name": "WZ_SummaryAvailableBlock",
+        "values": {"type": "crt.FlexContainer", "direction": "column", "items": [],
+            "gap": "small", "classes": ["usr-wz-summary-point"],
+            "layoutConfig": {"column": 2, "row": 1, "colSpan": 1, "rowSpan": 1}},
+        "parentName": "WZ_ContractGrid", "propertyName": "items", "index": 1
+    },
+    {
+        "operation": "insert", "name": "WZ_AvailablePointsCaption",
+        "values": {"type": "crt.Label", "caption": "Consumed", "labelType": "caption",
+            "classes": ["usr-wz-summary-point-label"]},
+        "parentName": "WZ_SummaryAvailableBlock", "propertyName": "items", "index": 0
+    },
+    {
+        "operation": "insert", "name": "WZ_AvailablePointsValue",
+        "values": {"type": "crt.Label", "caption": "$WZ_ConsumedPoints", "labelType": "body",
+            "classes": ["usr-wz-summary-point-unverified"]},
+        "parentName": "WZ_SummaryAvailableBlock", "propertyName": "items", "index": 1
+    },
+    {
+        "operation": "insert", "name": "WZ_SummaryConsumedBlock",
+        "values": {"type": "crt.FlexContainer", "direction": "column", "items": [],
+            "gap": "small", "classes": ["usr-wz-summary-point"],
+            "layoutConfig": {"column": 3, "row": 1, "colSpan": 1, "rowSpan": 1}},
+        "parentName": "WZ_ContractGrid", "propertyName": "items", "index": 2
+    },
+    {
+        "operation": "insert", "name": "WZ_ConsumedPointsCaption",
+        "values": {"type": "crt.Label", "caption": "Restored", "labelType": "caption",
+            "classes": ["usr-wz-summary-point-label"]},
+        "parentName": "WZ_SummaryConsumedBlock", "propertyName": "items", "index": 0
+    },
+    {
+        "operation": "insert", "name": "WZ_ConsumptionValue",
+        "values": {"type": "crt.Label", "caption": "$WZ_RestoredPoints", "labelType": "caption",
+            "classes": ["usr-wz-summary-point-unverified"]},
+        "parentName": "WZ_SummaryConsumedBlock", "propertyName": "items", "index": 1
+    },
+    {
+        "operation": "insert", "name": "WZ_ContractVersionNoteValue",
+        "values": {"type": "crt.Label", "caption": "$WZ_ContractVersionNote", "labelType": "caption",
+            "classes": ["usr-wz-summary-footer"]},
+        "parentName": "WZ_SummaryContents", "propertyName": "items", "index": 3
+    },
+    {
+        "operation": "insert", "name": "WZ_InitialContractPointsNote",
+        "values": {"type": "crt.Label", "caption": "$WZ_InitialPointsNote", "labelType": "caption",
+            "classes": ["usr-wz-summary-footer"]},
+        "parentName": "WZ_SummaryContents", "propertyName": "items", "index": 4
+    },
+    {
+        "operation": "insert", "name": "WZ_LedgerVerificationNote",
+        "values": {"type": "crt.Label", "caption": "$WZ_ContractLedgerNote", "labelType": "caption",
+            "classes": ["usr-wz-summary-footer"]},
+        "parentName": "WZ_SummaryContents", "propertyName": "items", "index": 5
     },
     {
         "operation": "insert",
         "name": "WZ_RequestDetails",
         "values": {
-            "classes": ["usr-wz-panel"],
+            "classes": ["usr-wz-panel", "usr-wz-step1-details"],
             "type": "crt.ExpansionPanel",
             "title": "Request Details",
             "expanded": true,
@@ -4011,7 +4853,7 @@ define("UsrMCITNewRequest_WizardPage", /**SCHEMA_DEPS*/["@creatio-devkit/common"
             "ariaLabel": "Request Title required",
             "appearance": "outline",
             "placeholder": "Brief, descriptive title for this request",
-            "classes": ["usr-wz-field-control"],
+            "classes": ["usr-wz-field-control", "usr-wz-figma-text", "usr-wz-figma-title"],
             "control": "$WZ_Title"
         },
         "parentName": "WZ_ReqTitleGroup",
@@ -4118,7 +4960,7 @@ define("UsrMCITNewRequest_WizardPage", /**SCHEMA_DEPS*/["@creatio-devkit/common"
             "ariaLabel": "Business Justification required",
             "appearance": "outline",
             "placeholder": "Explain the business need, intended use, and impact on government services",
-            "classes": ["usr-wz-field-control"],
+            "classes": ["usr-wz-field-control", "usr-wz-figma-text", "usr-wz-figma-justification"],
             "control": "$WZ_Justification",
             "multiline": true
         },
@@ -4151,6 +4993,8 @@ define("UsrMCITNewRequest_WizardPage", /**SCHEMA_DEPS*/["@creatio-devkit/common"
             "type": "crt.DateTimePicker",
             "label": "Requested Delivery Date (optional)",
             "labelPosition": "above",
+            "appearance": "outline",
+            "classes": ["usr-wz-figma-date"],
             "control": "$WZ_DeliveryDate"
         },
         "parentName": "WZ_RequestDetailsContents",
@@ -4159,11 +5003,25 @@ define("UsrMCITNewRequest_WizardPage", /**SCHEMA_DEPS*/["@creatio-devkit/common"
     },
     {
         "operation": "insert",
+        "name": "WZ_DeliveryHint",
+        "values": {
+            "type": "crt.Label",
+            "caption": "Optional. If the service has a deadline, provide it here.",
+            "labelType": "caption",
+            "labelEllipsis": false,
+            "classes": ["usr-wz-date-hint"]
+        },
+        "parentName": "WZ_RequestDetailsContents",
+        "propertyName": "items",
+        "index": 3
+    },
+    {
+        "operation": "insert",
         "name": "WZ_RequesterInformation",
         "values": {
-            "classes": ["usr-wz-panel"],
+            "classes": ["usr-wz-panel", "usr-wz-step1-requester"],
             "type": "crt.ExpansionPanel",
-            "title": "Requester Information — read-only",
+            "title": "Requester Information",
             "expanded": true,
             "items": []
         },
@@ -4173,8 +5031,23 @@ define("UsrMCITNewRequest_WizardPage", /**SCHEMA_DEPS*/["@creatio-devkit/common"
     },
     {
         "operation": "insert",
+        "name": "WZ_RequesterSubtitle",
+        "values": {
+            "type": "crt.Label",
+            "caption": "From your authenticated profile — read-only",
+            "labelType": "caption",
+            "labelEllipsis": false,
+            "classes": ["usr-wz-requester-subtitle"]
+        },
+        "parentName": "WZ_RequesterInformation",
+        "propertyName": "items",
+        "index": 0
+    },
+    {
+        "operation": "insert",
         "name": "WZ_RequesterGrid",
         "values": {
+            "classes": ["usr-wz-requester-grid"],
             "type": "crt.GridContainer",
             "columns": [
                 "minmax(180px, 1fr)",
@@ -4190,13 +5063,14 @@ define("UsrMCITNewRequest_WizardPage", /**SCHEMA_DEPS*/["@creatio-devkit/common"
         },
         "parentName": "WZ_RequesterInformation",
         "propertyName": "items",
-        "index": 0
+        "index": 1
     },
     {
         "operation": "insert",
         "name": "WZ_RequesterNameCaption",
         "values": {
             "type": "crt.Label",
+            "classes": ["usr-wz-readonly-caption"],
             "caption": "Full Name",
             "labelType": "caption",
             "labelEllipsis": false,
@@ -4219,6 +5093,8 @@ define("UsrMCITNewRequest_WizardPage", /**SCHEMA_DEPS*/["@creatio-devkit/common"
             "caption": "$WZ_CurrentContactName",
             "labelType": "body",
             "labelEllipsis": false,
+            "classes": ["usr-wz-readonly-pill"],
+
             "layoutConfig": {
                 "column": 1,
                 "row": 2,
@@ -4235,6 +5111,7 @@ define("UsrMCITNewRequest_WizardPage", /**SCHEMA_DEPS*/["@creatio-devkit/common"
         "name": "WZ_RequesterEmailCaption",
         "values": {
             "type": "crt.Label",
+            "classes": ["usr-wz-readonly-caption"],
             "caption": "Email",
             "labelType": "caption",
             "labelEllipsis": false,
@@ -4257,6 +5134,8 @@ define("UsrMCITNewRequest_WizardPage", /**SCHEMA_DEPS*/["@creatio-devkit/common"
             "caption": "$WZ_CurrentEmail",
             "labelType": "body",
             "labelEllipsis": false,
+            "classes": ["usr-wz-readonly-pill"],
+
             "layoutConfig": {
                 "column": 1,
                 "row": 4,
@@ -4273,6 +5152,7 @@ define("UsrMCITNewRequest_WizardPage", /**SCHEMA_DEPS*/["@creatio-devkit/common"
         "name": "WZ_RequesterRoleCaption",
         "values": {
             "type": "crt.Label",
+            "classes": ["usr-wz-readonly-caption"],
             "caption": "Role",
             "labelType": "caption",
             "labelEllipsis": false,
@@ -4288,6 +5168,8 @@ define("UsrMCITNewRequest_WizardPage", /**SCHEMA_DEPS*/["@creatio-devkit/common"
             "caption": "$WZ_CurrentRoleName",
             "labelType": "body",
             "labelEllipsis": false,
+            "classes": ["usr-wz-readonly-pill"],
+
             "layoutConfig": {"column": 2, "row": 2, "colSpan": 1, "rowSpan": 1}
         },
         "parentName": "WZ_RequesterGrid", "propertyName": "items", "index": 5
@@ -4297,6 +5179,7 @@ define("UsrMCITNewRequest_WizardPage", /**SCHEMA_DEPS*/["@creatio-devkit/common"
         "name": "WZ_RequesterAuthorityCaption",
         "values": {
             "type": "crt.Label",
+            "classes": ["usr-wz-readonly-caption"],
             "caption": "Authority",
             "labelType": "caption",
             "labelEllipsis": false,
@@ -4312,6 +5195,8 @@ define("UsrMCITNewRequest_WizardPage", /**SCHEMA_DEPS*/["@creatio-devkit/common"
             "caption": "$WZ_CurrentAuthorityName",
             "labelType": "body",
             "labelEllipsis": false,
+            "classes": ["usr-wz-readonly-pill"],
+
             "layoutConfig": {"column": 3, "row": 2, "colSpan": 1, "rowSpan": 1}
         },
         "parentName": "WZ_RequesterGrid", "propertyName": "items", "index": 7
@@ -4328,7 +5213,7 @@ define("UsrMCITNewRequest_WizardPage", /**SCHEMA_DEPS*/["@creatio-devkit/common"
         },
         "parentName": "WZ_RequesterInformation",
         "propertyName": "items",
-        "index": 1
+        "index": 2
     },
     {
         "operation": "insert",
@@ -4949,18 +5834,21 @@ define("UsrMCITNewRequest_WizardPage", /**SCHEMA_DEPS*/["@creatio-devkit/common"
     "WZ_ContractName": {
         "value": "—"
     },
-    "WZ_ContractReference": {
-        "value": "Reference: —"
-    },
-    "WZ_ContractPeriod": {
-        "value": "Validity: —"
-    },
-    "WZ_InitialPoints": {
-        "value": "Initial points: —"
-    },
-    "WZ_ContractLedgerNote": {
-        "value": "Available / Consumed / Restored: pending point-ledger integration"
-    },
+    "WZ_ContractReference": {"value": "—"},
+    "WZ_ContractPeriod": {"value": "—"},
+    "WZ_InitialPoints": {"value": "—"},
+    "WZ_ContractLedgerNote": {"value": "Not verified — ledger pending"},
+    "WZ_ContractNumber": {"value": "—"},
+    "WZ_ContractStatus": {"value": "—"},
+    "WZ_ContractMeta": {"value": ""},
+    "WZ_ContractIsActive": {"value": false},
+    "WZ_ContractIsNotActive": {"value": false},
+    "WZ_ContractVersionLabel": {"value": "No verified configuration version"},
+    "WZ_ContractVersionNote": {"value": "Select a contract to load its configuration."},
+    "WZ_InitialPointsNote": {"value": "Initial contract points: —"},
+    "WZ_AvailablePoints": {"value": "Not verified"},
+    "WZ_ConsumedPoints": {"value": "Not verified"},
+    "WZ_RestoredPoints": {"value": "Not verified"},
     "WZ_CurrentContactName": {
         "value": "—"
     },

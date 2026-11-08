@@ -1,5 +1,6 @@
 /*
   MCIT Portal / My Requests — Figma Layout V3 — purple actions, full-page navigation (2026-11-03)
+  2026-11-08: Page size = 6, matching Figma. Client table + PDS paging + Prev/Next use same constant.
   Existing object: UsrVMRequest. Package: UsrMCIT.
   Native template chrome hidden; custom designer-visible crt.* components.
   Table rows use crt.TemplateList backed by $Items (PDS).
@@ -20,6 +21,8 @@
   UsrMCITNewRequest_WizardPage = full page for new/edit; UsrMCITRequestDetail_Page = full detail page.
 */
 define("UsrMyRequests_ListPage", /**SCHEMA_DEPS*/["@creatio-devkit/common"]/**SCHEMA_DEPS*/, function/**SCHEMA_ARGS*/(sdk)/**SCHEMA_ARGS*/ {
+    // Pagination: six real requests per page, matching MCIT Figma.
+    const PAGE_SIZE = 6;
     return {
         viewConfigDiff: /**SCHEMA_VIEW_CONFIG_DIFF*/[
         {
@@ -1530,7 +1533,7 @@ define("UsrMyRequests_ListPage", /**SCHEMA_DEPS*/["@creatio-devkit/common"]/**SC
                                 "value": 0
                         },
                         "UsrMRPageSize": {
-                                "value": 10
+                                "value": PAGE_SIZE
                         },
                         "UsrMRPageLabel": {
                                 "value": "1"
@@ -1583,7 +1586,7 @@ define("UsrMyRequests_ListPage", /**SCHEMA_DEPS*/["@creatio-devkit/common"]/**SC
                 ],
                 "values": {
                         "rowsOffset": "UsrMRPageOffset",
-                        "rowCount": 10
+                        "rowCount": PAGE_SIZE
                 }
         }
 ]/**SCHEMA_VIEW_MODEL_CONFIG_DIFF*/,
@@ -1719,10 +1722,10 @@ define("UsrMyRequests_ListPage", /**SCHEMA_DEPS*/["@creatio-devkit/common"]/**SC
                                 +(runtime.capped ? '+' : '');
                         }
                         const total=runtime.filtered().length;
-                        const page= Math.floor(runtime.pageOffset/10)+1;
+                        const page= Math.floor(runtime.pageOffset/PAGE_SIZE)+1;
                         ctx.UsrMRPageLabel=String(page);
                         ctx.UsrMRFooterText=total ?
-                            ('Showing '+(runtime.pageOffset+1)+'–'+Math.min(runtime.pageOffset+10,total)+' of '+total+(runtime.capped?'+':'')+' requests'):
+                            ('Showing '+(runtime.pageOffset+1)+'–'+Math.min(runtime.pageOffset+PAGE_SIZE,total)+' of '+total+(runtime.capped?'+':'')+' requests'):
                             'Showing 0 of 0 requests';
                         ctx.UsrMRSubtitleText=runtime.records.length+' total requests across your authority'+(runtime.capped?' (minimum)':'');
                         const correction=runtime.records.filter(r=>display(r.UsrStatus)==='Requires Correction').length;
@@ -1817,6 +1820,13 @@ define("UsrMyRequests_ListPage", /**SCHEMA_DEPS*/["@creatio-devkit/common"]/**SC
                             }catch(e){return false;}
                         };
                         runtime.stageColumns=[];
+                        // Optional real date/time field. Do not infer submission from CreatedOn or ModifiedOn.
+                        // Add UsrSubmittedOn (Date/Time) to UsrVMRequest and populate from the
+                        // process at the first Submitted transition. Keep older schema compatible.
+                        runtime.submissionDateColumn = '';
+                        for (const col of ['UsrSubmittedOn','UsrSubmittedAt','UsrSubmittedDate']) {
+                            if(await supportsColumn(col)) {runtime.submissionDateColumn=col;break;}
+                        }
                         for (const col of ['UsrStage','UsrStageStartedOn','UsrSLADeadline']) {
                             if(await supportsColumn(col)) runtime.stageColumns.push(col);
                         }
@@ -1824,12 +1834,23 @@ define("UsrMyRequests_ListPage", /**SCHEMA_DEPS*/["@creatio-devkit/common"]/**SC
                         for(let offset=0;offset<LIMIT;offset+=SIZE){
                             const attrs=['Id','UsrNumber','UsrName','UsrAccount','UsrAuthority','UsrProject','UsrContract','UsrStatus','CreatedOn'];
                             attrs.push(...runtime.stageColumns);
+                            if(runtime.submissionDateColumn) attrs.push(runtime.submissionDateColumn);
                             if(runtime.typeAvailable)attrs.push('UsrRequestType');
                             const data=await model.load({attributes:attrs,
                                 parameters:[{type:sdk.ModelParameterType.Filter,value:compatible(flt)}],
                                 options:{pagingConfig:{rowsOffset:offset,rowCount:SIZE}}});
                             if(!data?.length)break;
                             runtime.records.push(...data);
+                            // Persisted submission timestamp takes precedence over audit/history.
+                            // This also covers when a process changes Submitted -> Under TE Review
+                            // before My Requests first loads.
+                            if(runtime.submissionDateColumn){
+                                for(const record of data){
+                                    const stamp=safeDateForHistory(record[runtime.submissionDateColumn]);
+                                    const key=id(record.Id);
+                                    if(key && stamp)runtime.submittedDates.set(key,stamp);
+                                }
+                            }
                             if(data.length<SIZE)break;
                             if(offset+SIZE>=LIMIT)runtime.capped=true;
                         }
@@ -1874,7 +1895,11 @@ define("UsrMyRequests_ListPage", /**SCHEMA_DEPS*/["@creatio-devkit/common"]/**SC
                                     if(rid && display(event.UsrNewStatus)==='Submitted' && event.UsrChangedOn){
                                         const date=new Date(event.UsrChangedOn);
                                         const last=runtime.submittedDates.get(rid);
-                                        if(!Number.isNaN(date.getTime()) && (!last || date<last))
+                                        // A persisted field is canonical. History is for
+                                        // legacy requests without a persisted timestamp only.
+                                        if(!Number.isNaN(date.getTime()) && !runtime.records.some(r=>
+                                            id(r.Id)===rid && runtime.submissionDateColumn &&
+                                            safeDateForHistory(r[runtime.submissionDateColumn])) && (!last || date<last))
                                             runtime.submittedDates.set(rid,date);
                                     }
                                 }
@@ -1902,9 +1927,13 @@ define("UsrMyRequests_ListPage", /**SCHEMA_DEPS*/["@creatio-devkit/common"]/**SC
                     };
                     const realStatus = item => display(item?.UsrStatus).trim() || '—';
                     const stageName = record => {
+                        const status=realStatus(record);
+                        // Do not keep displaying a stale TE Review stage on terminal statuses.
+                        // The process must update status, and ideally UsrStage, after task completion.
+                        if(status==='Completed'||status==='Rejected')
+                            return {name:status,derived:true};
                         const stored=display(record.UsrStage).trim();
                         if(stored && stored!=='—') return {name:stored, derived:false};
-                        const status=realStatus(record);
                         const stages={
                             'Draft':'Request Created', 'Submitted':'Submitted',
                             'Requires Correction':'Returned for Correction',
@@ -2008,14 +2037,15 @@ define("UsrMyRequests_ListPage", /**SCHEMA_DEPS*/["@creatio-devkit/common"]/**SC
                         const items=rowsByDate(runtime.filtered());
                         const total=items.length;
                         if(runtime.pageOffset && runtime.pageOffset>=total){
-                            runtime.pageOffset=Math.max(0,Math.floor((total-1)/10)*10);
+                            runtime.pageOffset=Math.max(0,Math.floor((total-1)/PAGE_SIZE)*PAGE_SIZE);
                             ctx.UsrMRPageOffset=runtime.pageOffset;
                         }
-                        const page=items.slice(runtime.pageOffset,runtime.pageOffset+10);
+                        const page=items.slice(runtime.pageOffset,runtime.pageOffset+PAGE_SIZE);
                         const signature=JSON.stringify({ids:page.map(r=>realId(r)),
                             statuses:page.map(realStatus),codes:page.map(r=>runtime.requestCodes.get(realId(r))?.code||r.UsrNumber),
                             counts:page.map(r=>runtime.itemCounts.get(realId(r))),
                             stages:page.map(r=>display(r.UsrStage)),
+                            submitted:page.map(r=>runtime.submittedDates.get(realId(r))?.getTime()||0),
                             stageStarts:page.map(r=>currentStageStart(r)?.getTime()||0),
                             nowMinute:Math.floor(Date.now()/60000),
                             from:runtime.pageOffset,filter:runtime.status,search:runtime.search,
@@ -2111,10 +2141,10 @@ define("UsrMyRequests_ListPage", /**SCHEMA_DEPS*/["@creatio-devkit/common"]/**SC
                             emptyRow.appendChild(emptyCell);body.appendChild(emptyRow);
                         }
                         const shown=total?
-                            `Showing ${runtime.pageOffset+1}–${Math.min(runtime.pageOffset+10,total)} of ${total} requests`:
+                            `Showing ${runtime.pageOffset+1}–${Math.min(runtime.pageOffset+PAGE_SIZE,total)} of ${total} requests`:
                             'Showing 0 of 0 requests';
                         ctx.UsrMRFooterText=shown;
-                        ctx.UsrMRPageLabel=String(Math.floor(runtime.pageOffset/10)+1);
+                        ctx.UsrMRPageLabel=String(Math.floor(runtime.pageOffset/PAGE_SIZE)+1);
                     };
                     const makeStyle=() => {
                         if(typeof document==='undefined')return;
@@ -2472,10 +2502,12 @@ define("UsrMyRequests_ListPage", /**SCHEMA_DEPS*/["@creatio-devkit/common"]/**SC
                             runtime.observer.observe(document.body,{childList:true,subtree:true});
                         }
                         await runtime.recount();
-                        runtime.clock=setInterval(()=>{
-                            if(runtime.disposed)return;
-                            runtime.tableSignature='';
-                            runtime.renderRows?.();
+                        runtime.clock=setInterval(async()=>{
+                            if(runtime.disposed || runtime.recountBusy)return;
+                            runtime.recountBusy=true;
+                            try {await runtime.recount();runtime.renderRows?.();}
+                            catch(error){console.warn('MCIT My Requests automatic refresh failed',error);}
+                            finally {runtime.recountBusy=false;}
                         },60000);
                         runtime.fillContracts?.();
                         runtime.fillTypes?.();
@@ -2563,8 +2595,8 @@ define("UsrMyRequests_ListPage", /**SCHEMA_DEPS*/["@creatio-devkit/common"]/**SC
                     const runtime=typeof document!=='undefined'&&document.__usrMCITMyRequestsFigmaV2;
                     if(!runtime?.refreshGrid)return;
                     const total=runtime.filtered().length;
-                    const last=Math.max(0,Math.floor(Math.max(total-1,0)/10)*10);
-                    runtime.pageOffset=Math.min(last,Math.max(0,runtime.pageOffset+Number(request.step||0)*10));
+                    const last=Math.max(0,Math.floor(Math.max(total-1,0)/PAGE_SIZE)*PAGE_SIZE);
+                    runtime.pageOffset=Math.min(last,Math.max(0,runtime.pageOffset+Number(request.step||0)*PAGE_SIZE));
                     runtime.updateLabels();await runtime.refreshGrid();
                 }
             },
@@ -2613,7 +2645,9 @@ define("UsrMyRequests_ListPage", /**SCHEMA_DEPS*/["@creatio-devkit/common"]/**SC
                 const id=String(v?.value??v??'').toLowerCase();
                 const rt=typeof document!=='undefined'&&document.__usrMCITMyRequestsFigmaV2;
                 const date=rt?.submittedDates?.get(id);
-                return date?date.toLocaleDateString('en-CA',{year:'numeric',month:'2-digit',day:'2-digit'}):'—';
+                if(!date)return '—';
+                const y=date.getFullYear(),m=String(date.getMonth()+1).padStart(2,'0'),d=String(date.getDate()).padStart(2,'0');
+                return `${y}-${m}-${d}`;
             },
             'usr.MRItemsCount':v=>{
                 const id=String(v?.value??v??'').toLowerCase();
