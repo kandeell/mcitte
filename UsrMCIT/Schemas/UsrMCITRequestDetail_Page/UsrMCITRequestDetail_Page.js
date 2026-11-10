@@ -40,6 +40,24 @@ define("UsrMCITRequestDetail_Page", /**SCHEMA_DEPS*/["@creatio-devkit/common"]/*
         "UsrEstimatedPoints", "UsrTotalPointsSnapshot", "UsrDisplayOrder"
     ];
     const FILE_FIELDS = ["Id", "Name", "Size", "CreatedOn", "CreatedBy"];
+    // These are optional installation-specific fields. The page probes them
+    // individually so a missing column cannot break the existing native page.
+    const SUBMITTED_FIELDS = ["UsrSubmittedOn", "UsrSubmittedAt", "UsrSubmittedDate"];
+    const ITEM_PROVISION_STATUS = "UsrProvisioningStatus";
+    // These fields are optional. The current wizard writes ONE VM per item,
+    // and does not currently save a requested VM quantity.
+    const ITEM_QUANTITY_FIELDS = ["UsrQuantity", "UsrVMQuantity", "UsrVMCount"];
+    const ITEM_VM_ID_FIELDS = ["UsrInfrastructureVMId", "UsrVMIdentifier"];
+    const INVENTORY_VM_ID_FIELDS = ["UsrInfrastructureVMId", "UsrVMIdentifier"];
+    const INVENTORY_SCHEMA = "UsrVirtualMachine";
+    // All timestamps are optional: no date is shown unless a readable Creatio
+    // record carries it. The page never writes to customer data.
+    const HEADER_MILESTONE_DATES = [
+        "UsrValidationCompletedOn", "UsrFinancialReviewStartedOn", "UsrFinancialApprovedOn",
+        "UsrTechnicalReviewStartedOn", "UsrTechnicalApprovedOn",
+        "UsrProvisioningStartedOn", "UsrProvisioningCompletedOn", "UsrCompletedOn"
+    ];
+    const ITEM_MILESTONE_DATES = ["UsrProvisionedOn", "UsrProvisioningFailedOn"];
 
     const idOf = v => String(v?.value ?? v?.Id ?? v ?? "");
     const isGuid = v => GUID.test(idOf(v)) && idOf(v).toLowerCase() !== ZERO;
@@ -59,7 +77,7 @@ define("UsrMCITRequestDetail_Page", /**SCHEMA_DEPS*/["@creatio-devkit/common"]/*
         if (!v) return "—";
         const d = new Date(v);
         if (!Number.isFinite(d.getTime())) return "—";
-        const fmt = {year:"numeric", month:"2-digit", day:"2-digit"};
+        const fmt = {year:"numeric", month:"2-digit", day:"2-digit",timeZone:"Africa/Cairo"};
         if (includeTime) { fmt.hour="2-digit"; fmt.minute="2-digit"; }
         // Format in the user's browser local zone; do not claim an unsupported server TZ.
         return new Intl.DateTimeFormat("en-GB", fmt).format(d);
@@ -125,6 +143,137 @@ define("UsrMCITRequestDetail_Page", /**SCHEMA_DEPS*/["@creatio-devkit/common"]/*
                 {type:sdk.ModelParameterType.Filter,value:filterValue(group)}] : [],
             options:{pagingConfig:{rowsOffset:0,rowCount:take}}
         })) || [];
+    }
+    async function loadOptionalColumns(schema, recId, fields) {
+        const output={};
+        for (const field of fields) {
+            try {
+                const value=await loadRecord(schema,recId,["Id",field]);
+                if(value && Object.prototype.hasOwnProperty.call(value,field))output[field]=value[field];
+            } catch (_ignored) { /* Column not installed or not readable. */ }
+        }
+        return output;
+    }
+    // Do not make an entire inventory query fail just because an optional
+    // column (particularly UsrStatus) is absent in the customer's schema.
+    async function loadInventoryForItem(itemId) {
+        const filter=[["UsrOriginalRequestItem",itemId]];
+        const base=await loadRows(INVENTORY_SCHEMA,["Id","UsrOriginalRequestItem"],filter,50);
+        if(!base.length)return [];
+        const mapped=new Map(base.map(vm=>[idOf(vm.Id).toLowerCase(),{...vm}]));
+        for(const field of [...INVENTORY_VM_ID_FIELDS,"UsrStatus","CreatedOn","CreatedBy"]){
+            try {
+                const extra=await loadRows(INVENTORY_SCHEMA,["Id",field],filter,50);
+                for(const vm of extra){const entry=mapped.get(idOf(vm.Id).toLowerCase());
+                    if(entry)entry[field]=vm[field];}
+            }catch(_optionalMissing){/* Column missing; preserve base inventory relation. */}
+        }
+        return [...mapped.values()];
+    }
+    // Read the process-to-record relation using BOTH SDK lookup projections.
+    // A deployment can expose SysProcess (lookup) but not its raw SysProcessId,
+    // or vice versa. Never resolve an execution by name/time alone.
+    async function readLinkedProcessIds(recordId) {
+        let succeeded = false;
+        const ids = new Set();
+        let lastError = null;
+        for (const column of ["SysProcessId", "SysProcess"]) {
+            try {
+                const rows = await loadRows("SysProcessEntity", ["Id", column],
+                    [["EntityId", recordId]], 150);
+                succeeded = true;
+                for (const row of rows) {
+                    const id = idOf(row[column]);
+                    if (isGuid(id)) ids.add(id.toLowerCase());
+                }
+            } catch (e) { lastError = e; }
+            if (ids.size) break;
+        }
+        if (!succeeded) throw lastError || Error("Cannot read process-to-record links");
+        return [...ids];
+    }
+    async function readProcessInstance(processId) {
+        let record;
+        try {
+            record = await loadRecord("SysProcessLog", processId,
+                ["Id", "Name", "StartDate", "CompleteDate", "Status"]);
+        } catch (_unsupportedOptionalColumn) {
+            record = await loadRecord("SysProcessLog", processId, ["Id"]);
+            if (record) Object.assign(record, await loadOptionalColumns("SysProcessLog", processId,
+                ["Name", "SysProcessName", "StartDate", "CompleteDate", "Status", "StatusName"]));
+        }
+        return record;
+    }
+    async function readProcessSteps(processId) {
+        // Some Creatio builds allow filtering by the lookup but others by its
+        // raw FK. Try both; ensure one optional projection cannot hide all steps.
+        let successfullyQueried = false;
+        let lastError;
+        for (const processColumn of ["SysProcess", "SysProcessId"]) {
+            let rows;
+            try {
+                rows = await loadRows("SysProcessElementLog",
+                    ["Id", "Caption", "StartDate", "CompleteDate"],
+                    [[processColumn, processId]], 350);
+                successfullyQueried = true;
+            } catch (e) {
+                lastError = e;
+                try {
+                    rows = await loadRows("SysProcessElementLog", ["Id"],
+                        [[processColumn, processId]], 350);
+                    successfullyQueried = true;
+                    // Keep the query scoped to the same process when probing fields.
+                    const byId = new Map(rows.map(row => [idOf(row.Id).toLowerCase(), row]));
+                    for (const field of ["Caption", "StartDate", "CompleteDate"]) {
+                        try {
+                            const optional = await loadRows("SysProcessElementLog", ["Id", field],
+                                [[processColumn, processId]], 350);
+                            for (const item of optional) {
+                                const target = byId.get(idOf(item.Id).toLowerCase());
+                                if (target) target[field] = item[field];
+                            }
+                        } catch (_missing) {}
+                    }
+                } catch (e2) { lastError = e2; continue; }
+            }
+            if (rows.length) {
+                try {
+                    const owners = await loadRows("SysProcessElementLog", ["Id", "OwnerName"],
+                        [[processColumn, processId]], 350);
+                    const byId = new Map(rows.map(row => [idOf(row.Id).toLowerCase(), row]));
+                    for (const owner of owners) {
+                        const entry = byId.get(idOf(owner.Id).toLowerCase());
+                        if (entry) entry.OwnerName = owner.OwnerName;
+                    }
+                } catch (_missingOwner) {}
+                return rows;
+            }
+        }
+        if (!successfullyQueried && lastError) throw lastError;
+        return [];
+    }
+    // Query optional Audit/Approval rows without declaring guessed columns.
+    // Each projection is tested independently, keeping valid columns readable.
+    async function loadOptionalRows(schema, filterColumn, recordId, extraFields, take=160) {
+        const base=await loadRows(schema,["Id","CreatedOn"],[[filterColumn,recordId]],take);
+        if(!base.length)return [];
+        const byId=new Map(base.map(row=>[idOf(row.Id).toLowerCase(),{...row}]));
+        for(const field of extraFields){
+            try {
+                const result=await loadRows(schema,["Id",field],[[filterColumn,recordId]],take);
+                for(const row of result){const stored=byId.get(idOf(row.Id).toLowerCase());
+                    if(stored)stored[field]=row[field];}
+            }catch(_ignored){/* Optional column absent. */}
+        }
+        return [...byId.values()];
+    }
+    function earliestDate(values) {
+        return values.filter(v=>v&&Number.isFinite(new Date(v).getTime()))
+            .sort((a,b)=>new Date(a)-new Date(b))[0]||null;
+    }
+    function latestDate(values) {
+        return values.filter(v=>v&&Number.isFinite(new Date(v).getTime()))
+            .sort((a,b)=>new Date(b)-new Date(a))[0]||null;
     }
     function fileRoot() {
         const path = location.pathname || "/0/";
@@ -408,8 +557,11 @@ define("UsrMCITRequestDetail_Page", /**SCHEMA_DEPS*/["@creatio-devkit/common"]/*
                 const ctx=request.$context;
                 if (typeof document === "undefined") return result;
                 document.__usrMCITRequestDetailV2?.dispose?.();
-                const rt={ctx,id:"",record:null,items:[],files:[],processes:[],
-                    tab:"Overview",loading:true,parts:{items:"loading",files:"loading",processes:"loading"},
+                const rt={ctx,id:"",record:null,items:[],files:[],processes:[],processElements:[],
+                    inventoryByItem:new Map(),statusHistory:[],approvals:[],submittedAt:null,
+                    submissionSource:"",tab:"Overview",loading:true,
+                    processLink:{status:"loading",linked:0,loaded:0},
+                    parts:{items:"loading",files:"loading",processes:"loading",inventory:"loading",workflow:"loading"},
                     errors:{},disposed:false,live:null,host:null,observer:null,
                     generation:0,timers:[],hiddenNative:new Map(),processMessage:""};
                 document.__usrMCITRequestDetailV2=rt;
@@ -543,7 +695,9 @@ define("UsrMCITRequestDetail_Page", /**SCHEMA_DEPS*/["@creatio-devkit/common"]/*
                         ["Project",display(data.UsrProject)],
                         ["Contract",display(data.UsrContract)],
                         ["Created",date(data.CreatedOn)],
-                        ["Submitted","—"],
+                        ["Submitted",rt.submittedAt ?
+                            ((rt.submissionSource==="process" || rt.submissionSource==="approval")?"≈ ":"")+
+                            date(rt.submittedAt,true) : "—"],
                         ["Estimated Points",pointValue===null ?
                             (rt.parts.items==="error"?"Unavailable":"Loading…") :
                             num(pointValue)+" pts"]
@@ -571,11 +725,31 @@ define("UsrMCITRequestDetail_Page", /**SCHEMA_DEPS*/["@creatio-devkit/common"]/*
                     sorted.forEach((v,i)=>{
                         const tr=element("tr");
                         const pts=number(v.UsrTotalPointsSnapshot) ?? number(v.UsrEstimatedPoints);
+                        const matching=rt.inventoryByItem.get(idOf(v.Id).toLowerCase())||[];
+                        const inventoryStatus=matching.map(vm=>display(vm.UsrStatus)).filter(Boolean);
+                        // Provisioning is the request-item workflow state.  The
+                        // actual VM lifecycle state belongs to Virtual Machine.
+                        // Prefer a readable linked inventory status (e.g. Active),
+                        // otherwise retain the item's Provisioned/Failed status.
+                        // Do not infer Active from a successful workflow alone.
+                        const itemProvisioningStatus=display(v[ITEM_PROVISION_STATUS]);
+                        const vmStatus=inventoryStatus.length ?
+                            [...new Set(inventoryStatus)].join(", ") : (itemProvisioningStatus || "—");
+                        const inventoryIds=[...new Set(matching.flatMap(vm=>INVENTORY_VM_ID_FIELDS
+                            .map(field=>str(vm[field]))).filter(Boolean))];
+                        const itemIds=ITEM_VM_ID_FIELDS.map(field=>str(v[field])).filter(Boolean);
+                        const vmId=[...new Set([...inventoryIds,...itemIds])].join(", ") || "Not yet provisioned";
+                        const configuredQty=ITEM_QUANTITY_FIELDS.map(k=>number(v[k]))
+                            .find(n=>n!==null && Number.isInteger(n) && n>0);
+                        // Existing wizard creates one record for one VM and one child
+                        // process provisions that item. This is a semantic default,
+                        // not the number of Service Points in UsrEstimatedPoints.
+                        const qty=configuredQty??(matching.length>1?matching.length:1);
                         const cells=[String(i+1),display(v.UsrPurpose)||str(v.UsrName)||"—",
                             display(v.UsrEnvironment)||"—",display(v.UsrOperatingSystem)||"—",
                             num(v.UsrCPU),number(v.UsrRAMGB)===null?"—":num(v.UsrRAMGB)+" GB",
                             number(v.UsrStorageGB)===null?"—":num(v.UsrStorageGB)+" GB",
-                            "—",pts===null?"—":num(pts),display(rt.record?.UsrStatus)||"—","—","—"];
+                            String(qty),pts===null?"—":num(pts),display(rt.record?.UsrStatus)||"—",vmStatus,vmId];
                         cells.forEach((val,j)=>{
                             const cls=j===1?"usr-dt-cell-strong":j===8?"usr-dt-cell-points":"";
                             const td=element("td",cls);
@@ -584,6 +758,16 @@ define("UsrMCITRequestDetail_Page", /**SCHEMA_DEPS*/["@creatio-devkit/common"]/*
                                 p.dataset.status=lower(rt.record?.UsrStatus);td.appendChild(p);
                             }else if(j===2 && lower(v.UsrEnvironment)==="production"){
                                 td.appendChild(element("span","usr-dt-production",val));
+                            }else if(j===10 && val!=="—"){
+                                const p=element("span","usr-dt-pill",val);
+                                p.dataset.status=/^(active|provisioned)$/i.test(val) ? "completed" :
+                                    /^(failed|rejected)$/i.test(val) ? "rejected" : "";
+                                td.appendChild(p);
+                            }else if(j===11){
+                                const idText=element("span","",val);
+                                idText.style.color=val==="Not yet provisioned" ? "#94a0b3" : "#6924b9";
+                                if(val!=="Not yet provisioned")idText.style.fontWeight="600";
+                                td.appendChild(idText);
                             }else td.textContent=val;
                             tr.appendChild(td);
                         });
@@ -591,23 +775,207 @@ define("UsrMCITRequestDetail_Page", /**SCHEMA_DEPS*/["@creatio-devkit/common"]/*
                     });
                     append(table,thead,tbody);scroll.appendChild(table);card.appendChild(scroll);
                     const note=element("div","usr-dt-table-note",
-                        "Quantity, VM status and VM ID are not stored in the supplied VM Item mapping; these values are not guessed.");
+                        rt.parts.inventory==="loading" ? "Loading linked VM Inventory records…" :
+                        rt.parts.inventory==="unavailable" ?
+                        "VM Inventory is inaccessible for this user. VM ID is not guessed; check object permissions." :
+                        "VM Status prefers the real linked Virtual Machine lifecycle status (e.g. Active), " +
+                        "and falls back to the VM Request Item provisioning status (e.g. Provisioned). " +
+                        "VM ID is read from the linked Virtual Machine Infrastructure VM ID. " +
+                        "Qty defaults to 1 VM per saved item unless a dedicated quantity field or multiple linked inventory VMs exists.");
                     card.appendChild(note);return card;
                 };
-                rt.renderProcessLogs=()=>{
-                    if(rt.parts.processes!=="ready" || !rt.processes.length)return null;
-                    const block=element("section","usr-dt-card usr-dt-process-card");
-                    block.appendChild(element("div","usr-dt-card-head","Linked Creatio Processes"));
-                    for(const proc of rt.processes){
-                        const row=element("div","usr-dt-process-row");
-                        const left=element("div");
-                        append(left,element("strong","",show(proc.name)),
-                            element("div","usr-dt-event-meta","Started: "+date(proc.started,true)));
-                        const right=element("span","",show(proc.status)+
-                            (proc.completed?" · "+date(proc.completed,true):""));
-                        append(row,left,right);block.appendChild(row);
+                rt.workflowMilestones=()=>{
+                    const map=new Map();
+                    const use=(stage,entry,preferOutcome=false)=>{
+                        if(!entry)return;
+                        const existing=map.get(stage);
+                        if(!existing){map.set(stage,{...entry});return;}
+                        map.set(stage,{
+                            ...existing,
+                            started:earliestDate([existing.started,entry.started]),
+                            completed:latestDate([existing.completed,entry.completed]),
+                            actor:(preferOutcome && entry.actor) || existing.actor || entry.actor,
+                            outcome:(preferOutcome && entry.outcome) || existing.outcome || entry.outcome,
+                            verified:existing.verified || entry.verified,
+                            approximate:existing.approximate && entry.approximate,
+                            inferred:existing.inferred && entry.inferred
+                        });
+                    };
+                    const rec=rt.record||{};
+                    if(rec.CreatedOn)use("Request Created",{started:rec.CreatedOn,
+                        completed:rec.CreatedOn,actor:display(rec.CreatedBy),outcome:"Created",verified:true});
+                    if(rt.submittedAt){
+                        const approx=["process","approval"].includes(rt.submissionSource);
+                        use("Submitted",{started:rt.submittedAt,
+                            completed:approx?null:rt.submittedAt,
+                            approximate:approx,verified:!approx,
+                            outcome:rt.submissionSource==="process" ?
+                                "Submission process started (not exact Submit click)" :
+                                rt.submissionSource==="approval" ?
+                                "Review approval created (Submit time unavailable)" :
+                                "Submitted for review"});
                     }
-                    return block;
+                    for(const event of rt.statusHistory){
+                        const name=lower(event.UsrNewStatus);
+                        const at=event.UsrChangedOn;
+                        if(!at)continue;
+                        if(name==="submitted"){
+                            // The saved status transition is more precise than a
+                            // nearby process/approval creation timestamp.
+                            if(map.get("Submitted")?.approximate)map.delete("Submitted");
+                            use("Submitted",{started:at,completed:at,
+                                actor:display(event.UsrChangedBy),outcome:"Submitted for review",verified:true},true);
+                        }
+                        // A request becoming 'Under TE Review' does NOT itself
+                        // prove a validation element completed at that time.
+                        if(name==="provisioning in progress" || name==="pending provisioning")use("Manual Provisioning",{
+                            started:at,outcome:"Provisioning started",verified:true});
+                        if(name==="completed")use("Completion",{started:at,completed:at,
+                            outcome:"Request fulfilled",verified:true},true);
+                    }
+                    // Optional exact fields written by a customer process, if installed.
+                    for(const [field,stage,edge] of [
+                        ["UsrValidationCompletedOn","Automatic Validation","completed"],
+                        ["UsrFinancialReviewStartedOn","TE Financial Review","started"],
+                        ["UsrFinancialApprovedOn","TE Financial Review","completed"],
+                        ["UsrTechnicalReviewStartedOn","TE Technical Review","started"],
+                        ["UsrTechnicalApprovedOn","TE Technical Review","completed"],
+                        ["UsrProvisioningStartedOn","Manual Provisioning","started"],
+                        ["UsrProvisioningCompletedOn","Manual Provisioning","completed"],
+                        ["UsrCompletedOn","Completion","completed"]
+                    ]){if(rec[field])use(stage,{[edge]:rec[field],verified:true});}
+                    // Only elements belonging to process instances actually linked
+                    // to THIS request via SysProcessEntity are considered.
+                    const stageFor=caption=>{
+                        const c=str(caption).toLowerCase();
+                        if(/financial approval|financial review|finance review/.test(c))return "TE Financial Review";
+                        if(/technical approval|technical review/.test(c))return "TE Technical Review";
+                        if(/validate request status|validate request|automatic validation|request validation/.test(c))return "Automatic Validation";
+                        if(/manual vm provisioning|record provisioning outcome|record provisioning success|mark vm item provisioned|set provisioning success|provision one vm item|count provisioned items/.test(c))return "Manual Provisioning";
+                        if(/mark request completed|complete vm request|request completion/.test(c))return "Completion";
+                        return null;
+                    };
+                    // Process-level timestamps cover nested provisioning processes
+                    // even where their individual elements are not accessible.
+                    for(const proc of rt.processes){
+                        if(/manual provisioning|provision one vm item/i.test(proc.name)){
+                            use("Manual Provisioning",{started:proc.started,completed:proc.completed,
+                                outcome:proc.completed?"Provisioning process completed":"Provisioning process started",
+                                verified:true});
+                        }
+                    }
+                    for(const log of rt.processElements){
+                        const stage=stageFor(display(log.Caption));
+                        if(!stage || (!log.StartDate && !log.CompleteDate))continue;
+                        use(stage,{started:log.StartDate,completed:log.CompleteDate,
+                            actor:display(log.Owner)||str(log.OwnerName),verified:true,
+                            outcome:log.CompleteDate ? "Process step completed" : "Process step started"});
+                    }
+                    // If a BPMN element does not persist its own completion date,
+                    // use the start of the NEXT step as a dated *handoff boundary*.
+                    // This is NOT the exact Submit-click / validation completion time.
+                    // Scope each boundary to its explicitly linked Submission instance;
+                    // do not mix steps from different process runs or VM Item children.
+                    const submissions=rt.processes.filter(proc=>
+                        /\bvm request submission\b|\bsubmit vm request\b/i.test(proc.name));
+                    const validAt=value=>value&&Number.isFinite(new Date(value).getTime());
+                    const atOrAfter=(candidate,start)=>validAt(candidate) &&
+                        (!validAt(start) || new Date(candidate)>=new Date(start));
+                    for(const proc of submissions){
+                        const steps=rt.processElements.filter(step=>
+                            idOf(step.processId).toLowerCase()===idOf(proc.id).toLowerCase());
+                        const validation=steps.filter(step=>
+                            /validate request status|automatic validation|request validation/i
+                                .test(display(step.Caption)));
+                        const nextStep=steps.filter(step=>
+                            /^(modify request|set request under review)$/i
+                                .test(display(step.Caption).trim()));
+                        const validationStart=earliestDate(validation.map(step=>step.StartDate));
+                        const validationEnd=earliestDate(validation.map(step=>step.CompleteDate));
+                        const nextStart=earliestDate(nextStep.map(step=>step.StartDate)
+                            .filter(when=>atOrAfter(when,validationStart)));
+                        // The review/validation process started AFTER the request
+                        // had been submitted. Its validation element beginning is
+                        // the closest recorded proof of the submit-to-review handoff.
+                        const submitted=map.get("Submitted");
+                        if(submitted && !submitted.completed && validationStart &&
+                                atOrAfter(validationStart,proc.started) &&
+                                atOrAfter(validationStart,submitted.started)){
+                            map.set("Submitted",{...submitted,
+                                completed:validationStart,completedApproximate:true,
+                                verified:true,
+                                outcome:"Handed to validation (time inferred from process step)"});
+                        }
+                        // When Creatio has no CompleteDate on Validate Request Status,
+                        // Modify Request starting proves that validation moved on.
+                        // Exact validation completion, if present, always wins.
+                        const current=map.get("Automatic Validation");
+                        if(current && !current.completed && validationStart &&
+                                !validationEnd && nextStart &&
+                                atOrAfter(nextStart,validationStart)){
+                            map.set("Automatic Validation",{...current,
+                                completed:nextStart,completedApproximate:true,
+                                verified:true,
+                                outcome:"Validation advanced to next step (time approximate)"});
+                        }
+                    }
+                    // SysApproval's Purpose is frequently the generic "Record"
+                    // (as seen in the MCIT Audit tab). Infer the *approval type*
+                    // from the exact approval's assigned reviewer/role, not from
+                    // its generic caption or from a request's Completed status.
+                    // Approval timestamps are the same persisted records as Audit.
+                    for(const a of rt.approvals){
+                        const desc=[a.Purpose,a.Subject,a.Name,a.Caption,a.Description,
+                            a.ApprovalPurpose,a.ApprovalStage].map(display).join(" ");
+                        const reviewer=[a.Role,a.Approver,a.Owner,a.VisaOwner].map(display).join(" ");
+                        const hints=(desc+" "+reviewer).toLowerCase();
+                        const stage=/financ|finance/.test(hints) ? "TE Financial Review" :
+                            /techn|engineering/.test(hints) ? "TE Technical Review" : null;
+                        if(!stage)continue; // Never guess which approval was which.
+                        const state=display(a.VisaStatus||a.Result||a.ApprovalStatus||a.Status||a.StatusName);
+                        const accepted=/approv|positive/i.test(state);
+                        const rejected=/reject|negative|denied/i.test(state);
+                        // ModifiedOn may represent an unrelated edit, so only use
+                        // the actual approval decision date already shown by Audit.
+                        const decisionAt=(accepted||rejected) ?
+                            (a.SetOn||a.SetDate||a.ApprovalDate) : null;
+                        const actor=display(a.Approver||a.Owner||a.VisaOwner||a.Role||a.CreatedBy);
+                        use(stage,{started:a.CreatedOn,completed:decisionAt,actor,
+                            outcome:accepted?"Approved":rejected?"Rejected":state||"Awaiting decision",
+                            verified:!!(accepted||rejected)},true);
+                    }
+                    // Item-level creation and provisioning timestamps are real
+                    // when present, but are not substituted for process-start time.
+                    const provisioned=rt.items.map(i=>i.UsrProvisionedOn).filter(Boolean);
+                    const failed=rt.items.map(i=>i.UsrProvisioningFailedOn).filter(Boolean);
+                    if(provisioned.length)use("Manual Provisioning",{completed:latestDate(provisioned),
+                        verified:true,outcome:"VM item provisioning recorded"});
+                    if(failed.length && !provisioned.length)use("Manual Provisioning",{
+                        completed:latestDate(failed),outcome:"VM item provisioning failed",verified:true},true);
+                    const allItemsProvisioned=rt.parts.items==="ready" && rt.items.length>0 &&
+                        rt.items.every(item=>lower(item[ITEM_PROVISION_STATUS])==="provisioned");
+                    if(allItemsProvisioned)use("Manual Provisioning",{
+                        outcome:"All saved VM items are Provisioned",verified:true},true);
+                    if(lower(rec.UsrStatus)==="completed" && !map.has("Completion")){
+                        use("Completion",{outcome:"Completed (timestamp not recorded)",verified:true});
+                    }
+                    // Preserve the completed-path visual treatment requested in
+                    // Figma, but annotate each unlogged milestone as INFERRED.
+                    // Never synthesize a date or individual approval decision.
+                    if(lower(rec.UsrStatus)==="completed"){
+                        for(const stage of STAGES){
+                            const prior=map.get(stage);
+                            if(!prior || (!prior.completed && !prior.verified && stage!=="Completion" &&
+                                   !/reject|fail/i.test(prior.outcome||""))){
+                                map.set(stage,{...prior,inferred:true,verified:true,
+                                    // Preserve actual approximate submission
+                                    // evidence instead of erasing its source.
+                                    outcome:prior?.outcome ||
+                                        "Stage inferred from Completed status — event timestamp unavailable"});
+                            }
+                        }
+                    }
+                    return map;
                 };
                 rt.renderWorkflow=()=>{
                     const wrap=element("div");
@@ -616,30 +984,43 @@ define("UsrMCITRequestDetail_Page", /**SCHEMA_DEPS*/["@creatio-devkit/common"]/*
                     title.appendChild(element("span","usr-dt-work-status",
                         "Current request status: "+show(display(rt.record?.UsrStatus))));
                     card.appendChild(title);
+                    const milestones=rt.workflowMilestones();
                     const timeline=element("div","usr-dt-timeline");
-                    STAGES.forEach((stage,i)=>{
-                        const done=i===0 && !!rt.record?.CreatedOn;
+                    STAGES.forEach(stage=>{
+                        const info=milestones.get(stage);
+                        const done=!!(info?.completed || info?.verified || (stage==="Completion" &&
+                            lower(rt.record?.UsrStatus)==="completed"));
+                        const active=!done && !!info;
                         const step=element("div","usr-dt-step"+(done?" is-done":""));
                         const dot=element("div","usr-dt-step-dot",done?"✓":"");
                         const main=element("div","usr-dt-step-main");
                         const header=element("div","usr-dt-step-header");
                         const section=element("div");
                         section.appendChild(element("div","usr-dt-step-name",stage));
-                        if(done) section.appendChild(element("div","usr-dt-step-actor",
-                            show(display(rt.record.CreatedBy))));
+                        if(info?.actor)section.appendChild(element("div","usr-dt-step-actor",info.actor));
                         const dates=element("div","usr-dt-step-dates");
-                        if(done){dates.textContent="Started: "+date(rt.record.CreatedOn)+
-                            " · Completed: "+date(rt.record.CreatedOn);}
+                        dates.appendChild(element("div","", "Started: "+
+                            (info?.started?(info.approximate?"≈ ":"")+date(info.started,true):"—")));
+                        dates.appendChild(element("div","", "Completed: "+
+                            (info?.completed?(info.completedApproximate?"≈ ":"")+date(info.completed,true):"—")));
                         append(header,section,dates);main.appendChild(header);
-                        if(done)main.appendChild(element("div","usr-dt-outcome","Outcome: Created"));
+                        if(info?.outcome){
+                            const box=element("div","usr-dt-outcome","Outcome: "+info.outcome);
+                            if(/reject|failed/i.test(info.outcome)){
+                                box.style.background="#fff0ef";box.style.borderColor="#efb7b7";
+                                box.style.color="#aa2732";
+                            }else if(!done){
+                                box.style.background="#f8f7fc";box.style.borderColor="#ebe4f4";
+                                box.style.color="#6a5d80";
+                            }
+                            main.appendChild(box);
+                        }else if(active)main.appendChild(element("div","usr-dt-step-actor","In progress"));
                         append(step,dot,main);timeline.appendChild(step);
                     });
                     card.appendChild(timeline);
-                    card.appendChild(element("p","usr-dt-work-note",
-                        "Only the creation milestone has a verified timestamp in the request fields. " +
-                        "Later decisions are not marked complete without their own recorded events."));
+                    // No diagnostic/technical description beneath the timeline.
+                    // Missing process-log timestamps remain blank, not fabricated.
                     wrap.appendChild(card);
-                    const logs=rt.renderProcessLogs();if(logs)wrap.appendChild(logs);
                     return wrap;
                 };
                 rt.renderDocs=()=>{
@@ -674,26 +1055,79 @@ define("UsrMCITRequestDetail_Page", /**SCHEMA_DEPS*/["@creatio-devkit/common"]/*
                 rt.renderAudit=()=>{
                     const wrap=element("div");
                     const events=[];
-                    const data=rt.record||{};
-                    if(data.CreatedOn)events.push({date:data.CreatedOn,
-                        title:"Request created",by:display(data.CreatedBy)||"Creatio"});
-                    if(data.ModifiedOn && Math.abs(new Date(data.ModifiedOn)-new Date(data.CreatedOn))>1000){
-                        events.push({date:data.ModifiedOn,title:"Request last modified",
-                            by:display(data.ModifiedBy)||"Creatio"});
+                    const seen=new Set();
+                    const push=(when,title,actor,source)=>{
+                        if(!when || !Number.isFinite(new Date(when).getTime()))return;
+                        const key=[new Date(when).toISOString(),title,source].join("|");
+                        if(seen.has(key))return;
+                        seen.add(key);
+                        events.push({date:when,title,by:actor||"Creatio",source});
+                    };
+                    const rec=rt.record||{};
+                    push(rec.CreatedOn,"Request created",display(rec.CreatedBy),"VM Request");
+                    if(rec.ModifiedOn && (!rec.CreatedOn ||
+                        Math.abs(new Date(rec.ModifiedOn)-new Date(rec.CreatedOn))>1000))
+                        push(rec.ModifiedOn,"Request last modified",display(rec.ModifiedBy),"VM Request");
+                    if(rt.submittedAt){
+                        const label=rt.submissionSource==="process" ?
+                            "Submission process started (not the Submit-click time)" :
+                            rt.submissionSource==="approval" ?
+                            "Review approval record created (Submit time unavailable)" :
+                            "Request submitted for TE review";
+                        push(rt.submittedAt,label,display(rec.CreatedBy),
+                            ["process","approval"].includes(rt.submissionSource)?"Approximate submission evidence":"Saved submission timestamp");
                     }
-                    if(rt.parts.files==="ready"){
-                        rt.files.forEach(file=>{if(file.CreatedOn)events.push({date:file.CreatedOn,
-                            title:"Document uploaded: "+show(file.Name),
-                            by:display(file.CreatedBy)||"Creatio"});});
+                    for(const evt of rt.statusHistory){
+                        const state=display(evt.UsrNewStatus);
+                        push(evt.UsrChangedOn,"Request status updated to "+show(state),
+                            display(evt.UsrChangedBy),"Status history");
                     }
+                    for(const approval of rt.approvals){
+                        const purpose=[approval.Purpose,approval.Subject,approval.Name,approval.Caption,
+                            approval.ApprovalPurpose,approval.ApprovalStage].map(display).filter(Boolean)[0]||"Record";
+                        const who=display(approval.Approver||approval.Owner||approval.VisaOwner||approval.CreatedBy);
+                        push(approval.CreatedOn,"Approval requested: "+purpose,who,"Approval");
+                        const status=display(approval.VisaStatus||approval.Result||approval.ApprovalStatus||
+                            approval.Status||approval.StatusName);
+                        const decided=/approv|positive|reject|negative|denied/i.test(status);
+                        const at=approval.SetOn||approval.SetDate||approval.ApprovalDate;
+                        if(decided)push(at,"Approval decision: "+purpose+" — "+status,who,"Approval decision");
+                    }
+                    for(const log of rt.processElements){
+                        const name=display(log.Caption)||"Business process step";
+                        const actor=display(log.Owner)||str(log.OwnerName)||"Creatio process";
+                        push(log.StartDate,"Process step started: "+name,actor,"Process step");
+                        push(log.CompleteDate,"Process step completed: "+name,actor,"Process step");
+                    }
+                    for(const proc of rt.processes){
+                        push(proc.started,"Process started: "+show(proc.name),"Creatio process","Process log");
+                        push(proc.completed,"Process completed: "+show(proc.name),"Creatio process","Process log");
+                    }
+                    for(const item of rt.items){
+                        const name=display(item.UsrPurpose)||display(item.UsrName)||"VM item";
+                        push(item.UsrProvisionedOn,"VM item provisioned: "+name,"Actor not recorded","VM Request Item");
+                        push(item.UsrProvisioningFailedOn,"VM item provisioning failed: "+name,
+                            "Actor not recorded","VM Request Item");
+                    }
+                    for(const [itemId,vms] of rt.inventoryByItem){
+                        for(const vm of vms){
+                            const identifier=INVENTORY_VM_ID_FIELDS.map(k=>str(vm[k])).find(Boolean);
+                            push(vm.CreatedOn,"Virtual Machine inventory record created"+
+                                (identifier?": "+identifier:""),display(vm.CreatedBy),"VM Inventory");
+                        }
+                    }
+                    if(rt.parts.files==="ready")rt.files.forEach(file=>{
+                        push(file.CreatedOn,"Document uploaded: "+show(file.Name),
+                            display(file.CreatedBy),"Document");
+                    });
                     events.sort((a,b)=>new Date(b.date)-new Date(a.date));
                     if(!events.length)wrap.appendChild(empty("No activity available",
-                        "There are no verified activity timestamps for this request.","◷"));
+                        "No stored activity timestamps were accessible for this request.","◷"));
                     for(const evt of events){
                         const card=element("div","usr-dt-event");
                         const right=element("div");append(right,
                             element("div","usr-dt-event-text",evt.title),
-                            element("div","usr-dt-event-meta",evt.by+" · "+date(evt.date,true)));
+                            element("div","usr-dt-event-meta",evt.by+" · "+date(evt.date,true)+" · "+evt.source));
                         append(card,element("div","usr-dt-event-dot"),right);
                         wrap.appendChild(card);
                     }
@@ -708,7 +1142,7 @@ define("UsrMCITRequestDetail_Page", /**SCHEMA_DEPS*/["@creatio-devkit/common"]/*
                             rt.notify("Change Log is unavailable. Enable logging for UsrVMRequest and grant CanViewChangeLog permissions.");}
                     });
                     append(controls,action,element("span","usr-dt-hint",
-                        "Field-by-field history requires Change Log to be enabled and accessible."));
+                        "Only persisted Creatio events are listed. Process and approval details need read permissions; field-by-field history needs Change Log."));
                     wrap.appendChild(controls);
                     return wrap;
                 };
@@ -757,12 +1191,37 @@ define("UsrMCITRequestDetail_Page", /**SCHEMA_DEPS*/["@creatio-devkit/common"]/*
                     await Promise.all([
                         (async()=>{
                             try{
-                                const rows=await loadRows(ITEM_SCHEMA,ITEM_FIELDS,[["UsrRequest",rt.id]],300);
+                                let rows;
+                                try{rows=await loadRows(ITEM_SCHEMA,[...ITEM_FIELDS,ITEM_PROVISION_STATUS],[["UsrRequest",rt.id]],300);}
+                                catch(_optionalMissing){rows=await loadRows(ITEM_SCHEMA,ITEM_FIELDS,[["UsrRequest",rt.id]],300);}
+                                if(!stillCurrent())return;
+                                // Probe optional columns once per request, not N times
+                                // per item. A missing column must not break the table.
+                                const byItem=new Map(rows.map(item=>[idOf(item.Id).toLowerCase(),item]));
+                                for(const field of [...ITEM_QUANTITY_FIELDS,...ITEM_VM_ID_FIELDS,...ITEM_MILESTONE_DATES]){
+                                    try{
+                                        const optional=await loadRows(ITEM_SCHEMA,["Id",field],[["UsrRequest",rt.id]],300);
+                                        for(const opt of optional){const item=byItem.get(idOf(opt.Id).toLowerCase());
+                                            if(item)item[field]=opt[field];}
+                                    }catch(_fieldMissing){/* This deployment does not contain this column. */}
+                                }
                                 if(!stillCurrent())return;
                                 rt.items=rows;rt.parts.items="ready";
+                                // A VM Inventory record is related through Original Request Item.
+                                // Query only the saved items belonging to this request, no global scans.
+                                let inventoryErrors=0;
+                                for(const item of rows.slice(0,100)){
+                                    try {
+                                        const vm=await loadInventoryForItem(idOf(item.Id));
+                                        if(!stillCurrent())return;
+                                        rt.inventoryByItem.set(idOf(item.Id).toLowerCase(),vm);
+                                    }catch(err){inventoryErrors++;
+                                        console.info("Linked Virtual Machine details unavailable",err?.message||err);}
+                                }
+                                rt.parts.inventory=inventoryErrors ? "unavailable" : "ready";
                             }catch(e){if(!stillCurrent())return;
                                 console.error("Request Detail VM Items read failed",e);
-                                rt.parts.items="error";rt.errors.items=e?.message||String(e);}
+                                rt.parts.items="error";rt.parts.inventory="unavailable";rt.errors.items=e?.message||String(e);}
                             rt.paint();
                         })(),
                         (async()=>{
@@ -778,28 +1237,138 @@ define("UsrMCITRequestDetail_Page", /**SCHEMA_DEPS*/["@creatio-devkit/common"]/*
                         })(),
                         (async()=>{
                             try{
-                                // Only linked process instances: no unrelated processes or guessed milestones.
-                                const links=await loadRows("SysProcessEntity",["Id","EntityId","SysProcessId"],
-                                    [["EntityId",rt.id]],60);
+                                let rows=[];
+                                try{rows=await loadRows("UsrRequestStatusHistory",
+                                    ["Id","UsrRequest","UsrNewStatus","UsrChangedOn","UsrChangedBy"],
+                                    [["UsrRequest",rt.id]],200);}
+                                catch(_optionalActor){rows=await loadRows("UsrRequestStatusHistory",
+                                    ["Id","UsrRequest","UsrNewStatus","UsrChangedOn"],
+                                    [["UsrRequest",rt.id]],200);}
                                 if(!stillCurrent())return;
-                                const ids=[...new Set(links.map(l=>idOf(l.SysProcessId)).filter(isGuid))];
+                                rt.statusHistory=rows;
+                                if(!rt.submittedAt || ["process","approval"].includes(rt.submissionSource)){
+                                    const submitted=rows.filter(e=>lower(e.UsrNewStatus)==="submitted")
+                                        .map(e=>e.UsrChangedOn);
+                                    const at=earliestDate(submitted);
+                                    if(at){rt.submittedAt=at;rt.submissionSource="history";}
+                                }
+                                rt.parts.workflow="ready";
+                            }catch(err){
+                                if(!stillCurrent())return;
+                                rt.parts.workflow="unavailable";
+                                console.info("Request status event history unavailable",err?.message||err);
+                            }
+                            rt.paint();
+                        })(),
+                        (async()=>{
+                            try{
+                                const rows=await loadOptionalRows("SysApproval","EntityId",rt.id,
+                                    ["Purpose","Subject","Name","Caption","Description","Status",
+                                     "ApprovalStatus","VisaStatus","Result","Approver","Owner","VisaOwner",
+                                     "CreatedBy","SetOn","SetDate","ModifiedOn","ReferenceSchemaName",
+                                     "StatusName","ApprovalPurpose","ApprovalStage","ApprovalDate","Comment","Role"],180);
+                                if(!stillCurrent())return;
+                                rt.approvals=rows;
+                                if(!rt.submittedAt && rows.length){
+                                    const created=earliestDate(rows.map(r=>r.CreatedOn)
+                                        .filter(at=>!rt.record?.CreatedOn || new Date(at)>=new Date(rt.record.CreatedOn)));
+                                    if(created){rt.submittedAt=created;rt.submissionSource="approval";}
+                                }
+                            }catch(err){
+                                if(!stillCurrent())return;
+                                console.info("Native SysApproval data unavailable",err?.message||err);
+                            }
+                            rt.paint();
+                        })(),
+                        (async()=>{
+                            try{
+                                // Resolve only explicit links, first for this request,
+                                // then for its own VM items (child processes can link to
+                                // VM Request Item instead of the VM Request header).
+                                const ids = new Set(await readLinkedProcessIds(rt.id));
+                                let itemsToCheck = rt.items.filter(item => isGuid(item.Id));
+                                // Item loading is parallel: read the exact IDs directly
+                                // when the item task has not completed yet.
+                                if (!itemsToCheck.length) {
+                                    try {
+                                        itemsToCheck = await loadRows(ITEM_SCHEMA, ["Id"],
+                                            [["UsrRequest",rt.id]], 60);
+                                    } catch (_itemPermission) {}
+                                }
+                                for (const item of itemsToCheck.slice(0,50)) {
+                                    if (!stillCurrent()) return;
+                                    try {
+                                        for (const pid of await readLinkedProcessIds(idOf(item.Id))) ids.add(pid);
+                                    } catch (_itemLinkPermission) {
+                                        // A request-level link remains usable.
+                                    }
+                                }
+                                if (!stillCurrent()) return;
+                                const linkedIds = [...ids];
+                                rt.processLink={status:linkedIds.length?"loading":"unlinked",
+                                    linked:linkedIds.length,loaded:0};
                                 const logs=[];
-                                for(const pid of ids.slice(0,25)){
+                                const seenProcesses=new Set();
+                                // Descendant processes inherit their parent process's
+                                // exact request linkage. Limit exploration to prevent
+                                // a large process tree from blocking the page.
+                                const queue=linkedIds.slice(0,45).map(id=>({id,depth:0}));
+                                while(queue.length && seenProcesses.size<45){
+                                    const next=queue.shift();
+                                    const pid=idOf(next.id);
+                                    if(!isGuid(pid)||seenProcesses.has(pid.toLowerCase()))continue;
+                                    seenProcesses.add(pid.toLowerCase());
                                     try{
-                                        const log=await loadRecord("SysProcessLog",pid,
-                                            ["Id","Name","StartDate","CompleteDate","Status"]);
-                                        if(log && stillCurrent())logs.push({name:display(log.Name),
+                                        const log=await readProcessInstance(pid);
+                                        if(log && stillCurrent())logs.push({
+                                            id:pid,
+                                            name:display(log.Name)||display(log.SysProcessName),
                                             started:log.StartDate,completed:log.CompleteDate,
-                                            status:display(log.Status)});
+                                            status:display(log.Status)||display(log.StatusName)});
+                                        try {
+                                            const elements = await readProcessSteps(pid);
+                                            if(stillCurrent())rt.processElements.push(...elements.map(e=>({...e,processId:pid})));
+                                        } catch(err) {
+                                            console.info("Linked process steps unavailable",pid,err?.message||err);
+                                        }
+                                        if(next.depth<2){
+                                            try{
+                                                const children=await loadRows("SysProcessLog",
+                                                    ["Id"],[["ParentId",pid]],30);
+                                                for(const child of children){
+                                                    const childId=idOf(child.Id);
+                                                    if(isGuid(childId)&&!seenProcesses.has(childId.toLowerCase()))
+                                                        queue.push({id:childId,depth:next.depth+1});
+                                                }
+                                            }catch(_noParentRead){/* Parent-child log browsing not available. */}
+                                        }
                                     }catch(error){console.warn("A linked process log is unavailable",pid,error);}
+                                    if(!stillCurrent())return;
                                 }
                                 if(!stillCurrent())return;
                                 rt.processes=logs;rt.parts.processes="ready";
+                                rt.processLink={status:!linkedIds.length?"unlinked":logs.length?"ready":"no-readable-logs",
+                                    linked:linkedIds.length,loaded:logs.length};
+                                if (!linkedIds.length) console.info(
+                                    "MCIT workflow: no process linkage readable for request",rt.id);
+                                // A process instance with an explicit VM Request link is
+                                // stronger submission evidence than the first approval.
+                                // Never override a recorded SubmittedOn / status transition.
+                                if(!rt.submittedAt || rt.submissionSource==="approval"){
+
+                                    const begins=logs.filter(p=>/vm request submission|submit.*vm request/i.test(p.name))
+                                        .map(p=>p.started);
+                                    const when=earliestDate(begins);
+                                    if(when && (!rt.record?.CreatedOn || new Date(when)>=new Date(rt.record.CreatedOn))){
+                                        rt.submittedAt=when;rt.submissionSource="process";
+                                    }
+                                }
                             }catch(e){
                                 if(!stillCurrent())return;
                                 // Some requester roles have no process-log permissions.
                                 // Treat as unknown, never as a definitive no-process result.
                                 rt.parts.processes="unavailable";
+                                rt.processLink={status:"unavailable",linked:0,loaded:0};
                                 console.info("Linked process history not accessible",e?.message||e);
                             }
                             rt.paint();
@@ -811,11 +1380,23 @@ define("UsrMCITRequestDetail_Page", /**SCHEMA_DEPS*/["@creatio-devkit/common"]/*
                     const id=idOf(recId).toLowerCase();
                     if(id===rt.id && rt.record)return;
                     rt.generation++;const token=rt.generation;
-                    rt.id=id;rt.loading=true;rt.record=null;rt.items=[];rt.files=[];rt.processes=[];
-                    rt.errors={};rt.parts={items:"loading",files:"loading",processes:"loading"};
+                    rt.id=id;rt.loading=true;rt.record=null;rt.items=[];rt.files=[];
+                    rt.processes=[];rt.processElements=[];rt.inventoryByItem.clear();
+                    rt.statusHistory=[];rt.approvals=[];rt.submittedAt=null;rt.submissionSource="";
+                    rt.processLink={status:"loading",linked:0,loaded:0};
+                    rt.errors={};rt.parts={items:"loading",files:"loading",processes:"loading",inventory:"loading",workflow:"loading"};
                     rt.paint();
                     try{
                         const record=await loadRecord(HEADER_SCHEMA,id,HEADER_FIELDS);
+                        if(rt.disposed||token!==rt.generation)return;
+                        if(record){
+                            const optional=await loadOptionalColumns(HEADER_SCHEMA,id,[...SUBMITTED_FIELDS,...HEADER_MILESTONE_DATES]);
+                            if(!rt.disposed && token===rt.generation){
+                                Object.assign(record,optional);
+                                const persisted=SUBMITTED_FIELDS.map(k=>record[k]).find(k=>k&&Number.isFinite(new Date(k).getTime()));
+                                if(persisted){rt.submittedAt=persisted;rt.submissionSource="field";}
+                            }
+                        }
                         if(rt.disposed||token!==rt.generation)return;
                         rt.record=record;rt.loading=false;rt.paint();
                         if(record)await rt.loadRelated(token);

@@ -23,6 +23,25 @@
 define("UsrMyRequests_ListPage", /**SCHEMA_DEPS*/["@creatio-devkit/common"]/**SCHEMA_DEPS*/, function/**SCHEMA_ARGS*/(sdk)/**SCHEMA_ARGS*/ {
     // Pagination: six real requests per page, matching MCIT Figma.
     const PAGE_SIZE = 6;
+
+    // Same Page Designer isolation used by UsrMCITRequestDetail_Page.
+    // Keep the existing crt.* layout editable in the native designer, while
+    // enabling the Figma DOM enhancements / scoped queries only at runtime.
+    function isPageDesigner() {
+        if (typeof window === "undefined") return true;
+        const route = /(?:PageDesigner|FreedomUIPageDesigner)/i;
+        try { if (route.test(String(document?.referrer || ""))) return true; } catch (_) {}
+        let current = window;
+        for (let i = 0; i < 8 && current; i++) {
+            try {
+                if (route.test(String(current.location?.href || ""))) return true;
+                if (!current.parent || current.parent === current) break;
+                current = current.parent;
+            } catch (_) { break; }
+        }
+        return false;
+    }
+
     return {
         viewConfigDiff: /**SCHEMA_VIEW_CONFIG_DIFF*/[
         {
@@ -1533,7 +1552,7 @@ define("UsrMyRequests_ListPage", /**SCHEMA_DEPS*/["@creatio-devkit/common"]/**SC
                                 "value": 0
                         },
                         "UsrMRPageSize": {
-                                "value": PAGE_SIZE
+                                "value": 6
                         },
                         "UsrMRPageLabel": {
                                 "value": "1"
@@ -1586,7 +1605,7 @@ define("UsrMyRequests_ListPage", /**SCHEMA_DEPS*/["@creatio-devkit/common"]/**SC
                 ],
                 "values": {
                         "rowsOffset": "UsrMRPageOffset",
-                        "rowCount": PAGE_SIZE
+                        "rowCount": 6
                 }
         }
 ]/**SCHEMA_VIEW_MODEL_CONFIG_DIFF*/,
@@ -1632,6 +1651,7 @@ define("UsrMyRequests_ListPage", /**SCHEMA_DEPS*/["@creatio-devkit/common"]/**SC
             {
                 request: "crt.HandleViewModelInitRequest",
                 handler: async (request, next) => {
+                    if (isPageDesigner()) return next?.handle(request);
                     const result = await next?.handle(request);
                     const ctx = request.$context;
                     const ZERO = "00000000-0000-0000-0000-000000000000";
@@ -1651,7 +1671,7 @@ define("UsrMyRequests_ListPage", /**SCHEMA_DEPS*/["@creatio-devkit/common"]/**SC
                     const key = "__usrMCITMyRequestsFigmaV2";
                     if (typeof document !== "undefined" && document[key]?.dispose) document[key].dispose();
                     const runtime = {context:ctx, disposed:false, authorityId:ZERO, contactId:ZERO, records:[],
-                                     itemCounts:new Map(), itemCountsAvailable:false, submittedDates:new Map(),
+                                     itemCounts:new Map(), itemCountsAvailable:false, submittedDates:new Map(), submissionSources:new Map(), submissionProcessCache:new Map(),
                                      stageChanges:new Map(), stageColumns:[],
                                      rowCount:0, statusCounts:{}, observer:null, clock:null,
                                      style:null, contractId:"", typeId:"", typeAvailable:false, requestTypes:[], search:"", status:"", pageOffset:0, capped:false, tableSignature:"", requestCodes:new Map()};
@@ -1781,7 +1801,7 @@ define("UsrMyRequests_ListPage", /**SCHEMA_DEPS*/["@creatio-devkit/common"]/**SC
                     };
                     runtime.recount=async () => {
                         runtime.records=[];runtime.capped=false;runtime.itemCounts.clear();
-                        runtime.itemCountsAvailable=false;runtime.submittedDates.clear();runtime.stageChanges.clear();
+                        runtime.itemCountsAvailable=false;runtime.submittedDates.clear();runtime.submissionSources.clear();runtime.stageChanges.clear();
                         runtime.requestCodes.clear();runtime.tableSignature="";
                         if (runtime.contactId===ZERO) {runtime.updateLabels();return;}
                         const flt=await scopeFor();
@@ -1827,7 +1847,7 @@ define("UsrMyRequests_ListPage", /**SCHEMA_DEPS*/["@creatio-devkit/common"]/**SC
                         for (const col of ['UsrSubmittedOn','UsrSubmittedAt','UsrSubmittedDate']) {
                             if(await supportsColumn(col)) {runtime.submissionDateColumn=col;break;}
                         }
-                        for (const col of ['UsrStage','UsrStageStartedOn','UsrSLADeadline']) {
+                        for (const col of ['UsrStage','UsrStageStartedOn','UsrSLADeadline','UsrSLADueOn','UsrSlaDeadline']) {
                             if(await supportsColumn(col)) runtime.stageColumns.push(col);
                         }
                         const LIMIT=10000, SIZE=250;
@@ -1848,7 +1868,7 @@ define("UsrMyRequests_ListPage", /**SCHEMA_DEPS*/["@creatio-devkit/common"]/**SC
                                 for(const record of data){
                                     const stamp=safeDateForHistory(record[runtime.submissionDateColumn]);
                                     const key=id(record.Id);
-                                    if(key && stamp)runtime.submittedDates.set(key,stamp);
+                                    if(key && stamp){runtime.submittedDates.set(key,stamp);runtime.submissionSources.set(key,'Saved submission timestamp');}
                                 }
                             }
                             if(data.length<SIZE)break;
@@ -1900,12 +1920,94 @@ define("UsrMyRequests_ListPage", /**SCHEMA_DEPS*/["@creatio-devkit/common"]/**SC
                                         if(!Number.isNaN(date.getTime()) && !runtime.records.some(r=>
                                             id(r.Id)===rid && runtime.submissionDateColumn &&
                                             safeDateForHistory(r[runtime.submissionDateColumn])) && (!last || date<last))
-                                            runtime.submittedDates.set(rid,date);
+                                            {runtime.submittedDates.set(rid,date);runtime.submissionSources.set(rid,'Submitted status history');}
                                     }
                                 }
                                 if(batch.length<250)break;
                             }
                         }catch(err){console.warn('MCIT: Submitted date history unavailable',err);}
+                        // Cache successful process-derived timestamps between automatic
+                        // 60-second refreshes. A missing process is rechecked every 5 minutes.
+                        const cacheNow=Date.now();
+                        for(const rec of runtime.records){
+                            const rid=id(rec.Id),cached=runtime.submissionProcessCache.get(rid);
+                            if(cached && cached.expires>cacheNow && cached.date &&
+                                !runtime.submittedDates.has(rid)){
+                                runtime.submittedDates.set(rid,cached.date);
+                                runtime.submissionSources.set(rid,'Linked submission process start (approximate)');
+                            }
+                        }
+                        // Existing installation changes Submitted to Under TE Review immediately.
+                        // When a dedicated submitted timestamp and status-history table do not
+                        // exist, use only a *linked submission process* StartDate as evidence.
+                        // This timestamp is the process start, not a fabricated exact click time.
+                        const missing = runtime.records.filter(r=>!runtime.submittedDates.has(id(r.Id)) &&
+                            (!runtime.submissionProcessCache.has(id(r.Id)) ||
+                              runtime.submissionProcessCache.get(id(r.Id)).expires<=cacheNow) &&
+                            !['Draft','Requires Correction'].includes(display(r.UsrStatus)));
+                        if(missing.length && missing.length<=150){
+                            const linked=async rec=>{
+                                const rid=id(rec.Id);
+                                try{
+                                    const pm=await sdk.Model.create('SysProcessEntity');
+                                    const pf=new sdk.FilterGroup();
+                                    await pf.addSchemaColumnFilterWithParameter(sdk.ComparisonType.Equal,'EntityId',rid);
+                                    const ties=await pm.load({attributes:['SysProcessId'],
+                                        parameters:[{type:sdk.ModelParameterType.Filter,value:compatible(pf)}],
+                                        options:{pagingConfig:{rowsOffset:0,rowCount:25}}})||[];
+                                    const seen=new Set();
+                                    for(const tie of ties){
+                                        const pid=id(tie.SysProcessId);
+                                        if(!pid || seen.has(pid))continue;seen.add(pid);
+                                        const sm=await sdk.Model.create('SysProcessLog');
+                                        const logs=await sm.load({attributes:['Id','Name','StartDate'],
+                                            parameters:[{type:sdk.ModelParameterType.PrimaryColumnValue,value:pid}],
+                                            options:{pagingConfig:{rowsOffset:0,rowCount:1}}})||[];
+                                        const log=logs[0];
+                                        if(!log || !/vm request submission|submit.*vm request/i.test(display(log.Name)))continue;
+                                        const dt=safeDateForHistory(log.StartDate);
+                                        if(dt && (!safeDateForHistory(rec.CreatedOn) || dt>=safeDateForHistory(rec.CreatedOn))){
+                                            const existing=runtime.submittedDates.get(rid);
+                                            if(!existing || dt<existing){
+                                                runtime.submittedDates.set(rid,dt);
+                                                runtime.submissionSources.set(rid,'Linked submission process start (approximate)');
+                                            }
+                                        }
+                                    }
+                                }catch(err){console.info('MCIT: submission process log unavailable for request',rid,err?.message||err);}
+                                runtime.submissionProcessCache.set(rid,{
+                                    date:runtime.submittedDates.get(rid)||null,
+                                    expires:Date.now()+5*60000});
+                            };
+                            for(let i=0;i<missing.length;i+=5)await Promise.all(missing.slice(i,i+5).map(linked));
+                        }
+                        // Native Freedom UI approvals are stored in SysApproval.
+                        // Their CreatedOn indicates that review was requested, not the
+                        // exact time the user clicked Submit. Mark this fallback ≈.
+                        const noSubmit=runtime.records.filter(r=>!runtime.submittedDates.has(id(r.Id)) &&
+                            !['Draft','Requires Correction'].includes(display(r.UsrStatus)));
+                        if(noSubmit.length && noSubmit.length<=150){
+                            const queryApproval=async record=>{
+                                const rid=id(record.Id);
+                                try{
+                                    const f=new sdk.FilterGroup();
+                                    await f.addSchemaColumnFilterWithParameter(sdk.ComparisonType.Equal,'EntityId',rid);
+                                    const am=await sdk.Model.create('SysApproval');
+                                    const rows=await am.load({attributes:['Id','CreatedOn'],
+                                        parameters:[{type:sdk.ModelParameterType.Filter,value:compatible(f)}],
+                                        options:{pagingConfig:{rowsOffset:0,rowCount:100}}})||[];
+                                    const dates=rows.map(row=>safeDateForHistory(row.CreatedOn)).filter(Boolean)
+                                        .filter(t=>!safeDateForHistory(record.CreatedOn) || t>=safeDateForHistory(record.CreatedOn))
+                                        .sort((a,b)=>a-b);
+                                    if(dates.length && !runtime.submittedDates.has(rid)){
+                                        runtime.submittedDates.set(rid,dates[0]);
+                                        runtime.submissionSources.set(rid,'Approximate: first native approval CreatedOn (NOT exact Submit time)');
+                                    }
+                                }catch(err){console.info('MCIT: approval timestamp unavailable',rid,err?.message||err);}
+                            };
+                            for(let i=0;i<noSubmit.length;i+=5)
+                                await Promise.all(noSubmit.slice(i,i+5).map(queryApproval));
+                        }
                         runtime.rebuildRequestCodes();
                         runtime.updateLabels();runtime.decorate();
                     };
@@ -1924,6 +2026,17 @@ define("UsrMyRequests_ListPage", /**SCHEMA_DEPS*/["@creatio-devkit/common"]/**SC
                         const m = String(date.getMonth() + 1).padStart(2, '0');
                         const d = String(date.getDate()).padStart(2, '0');
                         return `${y}-${m}-${d}`;
+                    };
+                    // An actual timestamp, not only a date. Never use CreatedOn or
+                    // ModifiedOn as a fabricated submission time. Egypt is the project TZ.
+                    const fmtSubmitted = (value,source) => {
+                        const stamp=safeDate(value);
+                        if(!stamp)return '—';
+                        const result=new Intl.DateTimeFormat('en-GB',{
+                            timeZone:'Africa/Cairo',year:'numeric',month:'2-digit',day:'2-digit',
+                            hour:'2-digit',minute:'2-digit',hour12:false
+                        }).format(stamp);
+                        return /approx|process start|approval created/i.test(source||'') ? '≈ '+result : result;
                     };
                     const realStatus = item => display(item?.UsrStatus).trim() || '—';
                     const stageName = record => {
@@ -1953,18 +2066,22 @@ define("UsrMyRequests_ListPage", /**SCHEMA_DEPS*/["@creatio-devkit/common"]/**SC
                     };
                     const slaInfo = record => {
                         const status=realStatus(record).toLowerCase();
-                        if(status==='draft'||status==='rejected')return {text:'—',mode:'na',hint:'No SLA for Draft/Rejected'};
-                        const start=currentStageStart(record);
-                        const explicit=safeDateForHistory(record.UsrSLADeadline);
-                        const deadline=explicit || (start?new Date(start.getTime()+24*60*60*1000):null);
-                        if(!deadline)return {text:'—',mode:'unknown',hint:'No stage start event found; cannot calculate an accurate SLA'};
-                        if(status==='completed')return {text:'Closed',mode:'closed',hint:'Stage completed. Target: 24h from entry.'};
+                        if(status==='draft'||status==='rejected')return {text:'—',mode:'na',hint:'No active SLA for this request status'};
+                        if(status==='completed')return {text:'Closed',mode:'closed',hint:'Request completed; refer to the recorded stage deadline for SLA compliance'};
+                        // There is no universal 24-hour SLA in the customer's SRS.
+                        // Only display a countdown when the process/configuration saved an
+                        // actual deadline on the request. Never compute an invented default.
+                        const deadline=safeDateForHistory(record.UsrSLADeadline) ||
+                            safeDateForHistory(record.UsrSLADueOn) ||
+                            safeDateForHistory(record.UsrSlaDeadline);
+                        if(!deadline)return {text:'Not set',mode:'unknown',
+                            hint:'No persisted SLA deadline. Configure the stage SLA business process to write UsrSLADeadline on UsrVMRequest.'};
                         const hours=(deadline.getTime()-Date.now())/3600000;
                         const left=Math.abs(hours);
                         const text=(left<1?Math.max(1,Math.ceil(left*60))+'m':Math.ceil(left)+'h')+
                             (hours<0?' overdue':' left');
                         return {text,mode:hours<0?'overdue':hours<=6?'warning':'ontrack',
-                            hint:'Default 24h per stage; deadline '+deadline.toLocaleString('en-GB',{timeZone:'Africa/Cairo'})+' Cairo time'};
+                            hint:'Configured SLA deadline: '+deadline.toLocaleString('en-GB',{timeZone:'Africa/Cairo'})+' (Cairo time)'};
                     };
 
                     const realId = item => id(item?.Id);
@@ -2086,7 +2203,9 @@ define("UsrMyRequests_ListPage", /**SCHEMA_DEPS*/["@creatio-devkit/common"]/**SC
                             td(display(record.UsrProject)||'—');
                             td(runtime.itemCountsAvailable?String(runtime.itemCounts.get(rid)||0):'—','usr-mr-live-item-count');
                             td(fmtDate(record.CreatedOn));
-                            td(fmtDate(runtime.submittedDates.get(rid)));
+                            const submittedSource=runtime.submissionSources.get(rid)||'';
+                            const submittedCell=td(fmtSubmitted(runtime.submittedDates.get(rid),submittedSource));
+                            submittedCell.title=submittedSource||'Exact submission time not recorded. Set UsrSubmittedOn when the request is first submitted.';
                             const stage=stageName(record);
                             const stageCell=td(stage.name,'usr-mr-live-stage');
                             if(stage.derived)stageCell.title='Stage label derived from current Status; configure UsrStage for exact TE workflow stage.';
@@ -2102,12 +2221,18 @@ define("UsrMyRequests_ListPage", /**SCHEMA_DEPS*/["@creatio-devkit/common"]/**SC
                             const meter=makeElem('div','usr-mr-live-sla usr-mr-live-sla-'+sla.mode);
                             meter.title=sla.hint;
                             if(sla.mode!=='na'&&sla.mode!=='unknown'&&sla.mode!=='closed'){
+                                const deadline=safeDateForHistory(record.UsrSLADeadline) ||
+                                    safeDateForHistory(record.UsrSLADueOn) ||
+                                    safeDateForHistory(record.UsrSlaDeadline);
+                                const start=currentStageStart(record);
                                 const fill=makeElem('span','usr-mr-live-sla-bar');
-                                const used=Math.max(0,Math.min(100,100-(Math.max(0,
-                                    (currentStageStart(record)?
-                                        (safeDateForHistory(record.UsrSLADeadline)?.getTime()||
-                                         currentStageStart(record).getTime()+86400000)-Date.now():0)))/86400000*100));
-                                fill.style.width=(Number.isFinite(used)?used:100)+'%';
+                                // Do not invent an SLA duration. Percentage requires both
+                                // persisted entry time and deadline; text alone needs deadline.
+                                if(start && deadline && deadline>start){
+                                    const total=deadline.getTime()-start.getTime();
+                                    const elapsed=Math.max(0,Math.min(total,Date.now()-start.getTime()));
+                                    fill.style.width=(100*elapsed/total).toFixed(1)+'%';
+                                }else fill.style.width='0%';
                                 meter.appendChild(fill);
                             }
                             meter.appendChild(makeElem('span','usr-mr-live-sla-text',sla.text));
@@ -2526,6 +2651,7 @@ define("UsrMyRequests_ListPage", /**SCHEMA_DEPS*/["@creatio-devkit/common"]/**SC
             {
                 request:"crt.HandleViewModelResumeRequest",
                 handler: async (request,next)=>{
+                    if (isPageDesigner()) return next?.handle(request);
                     const result=await next?.handle(request);
                     const rt=typeof document!=="undefined" && document.__usrMCITMyRequestsFigmaV2;
                     if(rt && !rt.disposed && rt.context===request.$context && rt.authorityId &&
@@ -2542,6 +2668,7 @@ define("UsrMyRequests_ListPage", /**SCHEMA_DEPS*/["@creatio-devkit/common"]/**SC
             {
                 request:"crt.LoadDataRequest",
                 handler:async(request,next)=>{
+                    if (isPageDesigner()) return next?.handle(request);
                     if(request.dataSourceName!=="PDS")return next?.handle(request);
                     const ctx=request.$context;
                     const filter=new sdk.FilterGroup();
@@ -2581,6 +2708,7 @@ define("UsrMyRequests_ListPage", /**SCHEMA_DEPS*/["@creatio-devkit/common"]/**SC
             {
                 request:'usr.MRSelectStatus',
                 handler:async(request)=>{
+                    if (isPageDesigner()) return;
                     const ctx=request.$context;
                     ctx.UsrMRSelectedStatus=request.status||'';
                     const runtime=typeof document!=='undefined'&&document.__usrMCITMyRequestsFigmaV2;
@@ -2592,6 +2720,7 @@ define("UsrMyRequests_ListPage", /**SCHEMA_DEPS*/["@creatio-devkit/common"]/**SC
             {
                 request:'usr.MRChangePage',
                 handler:async(request)=>{
+                    if (isPageDesigner()) return;
                     const runtime=typeof document!=='undefined'&&document.__usrMCITMyRequestsFigmaV2;
                     if(!runtime?.refreshGrid)return;
                     const total=runtime.filtered().length;
@@ -2603,6 +2732,7 @@ define("UsrMyRequests_ListPage", /**SCHEMA_DEPS*/["@creatio-devkit/common"]/**SC
             {
                 request:'usr.MRNewRequest',
                 handler:async(request)=>{
+                    if (isPageDesigner()) return;
                     // This schema MUST be created as a full Freedom UI page in MCIT Portal.
                     // Never use crt.CreateRecordRequest here: it selects the default popup.
                     await sdk.HandlerChainService.instance.process({
@@ -2617,6 +2747,7 @@ define("UsrMyRequests_ListPage", /**SCHEMA_DEPS*/["@creatio-devkit/common"]/**SC
             {
                 request:'usr.MROpenRecord',
                 handler:async(request)=>{
+                    if (isPageDesigner()) return;
                     const recordId=String(request.recordId?.value??request.recordId??'');
                     if(!/^[0-9a-f]{8}(?:-[0-9a-f]{4}){3}-[0-9a-f]{12}$/i.test(recordId))return;
                     const isEdit=request.mode==='edit';
@@ -2634,6 +2765,7 @@ define("UsrMyRequests_ListPage", /**SCHEMA_DEPS*/["@creatio-devkit/common"]/**SC
             {
                 request:'crt.HandleViewModelDestroyRequest',
                 handler:async(request,next)=>{
+                    if (isPageDesigner()) return next?.handle(request);
                     if(typeof document!=='undefined')document.__usrMCITMyRequestsFigmaV2?.dispose?.();
                     return next?.handle(request);
                 }

@@ -1,0 +1,10 @@
+﻿{
+  "Descriptor": {
+    "UId": "0085c37f-a9d8-4df9-9f99-77eda2f3a3c9",
+    "Name": "UsrMCITManualProvisioning",
+    "ModifiedOnUtc": "\/Date(1794240571000)\/",
+    "ManagerName": "ProcessSchemaManager",
+    "Caption": "MCIT VM Manual Provisioning",
+    "DependsOn": []
+  }
+}

@@ -1,0 +1,14 @@
+﻿{
+  "Descriptor": {
+    "UId": "2b1ebd06-40fd-45f9-b1a2-9b28d669a421",
+    "Name": "UsrMCITVMItemProvisioningStatus",
+    "ModifiedOnUtc": "\/Date(1794226840000)\/",
+    "Parent": {
+      "UId": "11ab4bcb-9b23-4b6d-9c86-520fae925d75",
+      "Name": "BaseLookup"
+    },
+    "ManagerName": "EntitySchemaManager",
+    "Caption": "MCIT VM Item Provisioning Status",
+    "DependsOn": []
+  }
+}
