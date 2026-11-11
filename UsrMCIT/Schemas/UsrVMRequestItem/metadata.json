@@ -196,7 +196,8 @@
   "S4": "904eeb3b-849e-4a1e-8653-ce6cb09e62fe",
   "E6": true,
   "E20": true,
-  "E17": "UsrConfigVersionId"
+  "E17": "UsrConfigVersionId",
+  "E18": "UsrConfigVersionUsrName"
 }
 + MetaData.Schema.D2 {
   "UId": "85ee1987-f2da-bf41-fdbe-9f517e641d57",
@@ -256,6 +257,36 @@
   "E17": "UsrEnvironmentId",
   "E18": "UsrEnvironmentName"
 }
++ MetaData.Schema.D2 {
+  "UId": "608b7b3d-1cd4-cdc3-0193-58b671e79d41",
+  "A2": "UsrProvisioningFailedOn",
+  "A3": "ceeffdfa-6997-452c-bb44-2d2ebc9ce07e",
+  "A4": "ceeffdfa-6997-452c-bb44-2d2ebc9ce07e",
+  "A5": "65028ea3-626f-4465-8b2e-544849e5d8c6",
+  "S2": "d21e9ef4-c064-4012-b286-fa1a8171da44"
+}
++ MetaData.Schema.D2 {
+  "UId": "0f3dbbf1-c54c-7706-181a-dce9c0784d93",
+  "A2": "UsrProvisioningFailureReason",
+  "A3": "ceeffdfa-6997-452c-bb44-2d2ebc9ce07e",
+  "A4": "ceeffdfa-6997-452c-bb44-2d2ebc9ce07e",
+  "A5": "65028ea3-626f-4465-8b2e-544849e5d8c6",
+  "S2": "5ca35f10-a101-4c67-a96a-383da6afacfc"
+}
++ MetaData.Schema.D2 {
+  "UId": "c03d4589-f369-8b3f-c2a0-df9c54d413bc",
+  "A2": "UsrProvisioningStatus",
+  "A3": "ceeffdfa-6997-452c-bb44-2d2ebc9ce07e",
+  "A4": "ceeffdfa-6997-452c-bb44-2d2ebc9ce07e",
+  "A5": "65028ea3-626f-4465-8b2e-544849e5d8c6",
+  "S2": "b295071f-7ea9-4e62-8d1a-919bf3732ff2",
+  "S4": "2b1ebd06-40fd-45f9-b1a2-9b28d669a421",
+  "E5": false,
+  "E6": true,
+  "E20": true,
+  "E17": "UsrProvisioningStatusId",
+  "E18": "UsrProvisioningStatusName"
+}
 ~ MetaData.Schema.D2 [
   "ae0e45ca-c495-4fe7-a39d-3ab7278e1617",
   "e80190a5-03b2-4095-90f7-a193a960adee",
@@ -287,7 +318,10 @@
   "20c5eb5f-20db-f1a7-9b05-15c924d1fe5d",
   "7710f195-67be-fa8d-c8cb-68d8b0b70d99",
   "3f2a2f69-1865-e7b2-0676-5f81248ea43d",
-  "0fea01e5-888f-11e7-c3af-7b212f02f0ce"
+  "0fea01e5-888f-11e7-c3af-7b212f02f0ce",
+  "608b7b3d-1cd4-cdc3-0193-58b671e79d41",
+  "0f3dbbf1-c54c-7706-181a-dce9c0784d93",
+  "c03d4589-f369-8b3f-c2a0-df9c54d413bc"
 ]
 = MetaData.Schema.D20.A2 "UsrVMRequestItemEvents"
 + MetaData.Schema.D20.FA1 false

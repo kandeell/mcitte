@@ -894,6 +894,7 @@
 		<Compile Remove="$(RelativePkgFolderPath)/UsrMCIT/Schemas/UsrMCITUserAuthorityAccess/UsrMCITUserAuthorityAccess.cs" Condition="Exists('$(RelativePkgFolderPath)/UsrMCIT/Schemas/UsrMCITUserAuthorityAccess/UsrMCITUserAuthorityAccess.cs')" />
 		<Compile Remove="$(RelativePkgFolderPath)/UsrMCIT/Schemas/UsrMCITUserContractAccess/UsrMCITUserContractAccess.cs" Condition="Exists('$(RelativePkgFolderPath)/UsrMCIT/Schemas/UsrMCITUserContractAccess/UsrMCITUserContractAccess.cs')" />
 		<Compile Remove="$(RelativePkgFolderPath)/UsrMCIT/Schemas/UsrMCITUserStatus/UsrMCITUserStatus.cs" Condition="Exists('$(RelativePkgFolderPath)/UsrMCIT/Schemas/UsrMCITUserStatus/UsrMCITUserStatus.cs')" />
+		<Compile Remove="$(RelativePkgFolderPath)/UsrMCIT/Schemas/UsrMCITVMItemProvisioningStatus/UsrMCITVMItemProvisioningStatus.cs" Condition="Exists('$(RelativePkgFolderPath)/UsrMCIT/Schemas/UsrMCITVMItemProvisioningStatus/UsrMCITVMItemProvisioningStatus.cs')" />
 		<Compile Remove="$(RelativePkgFolderPath)/UsrMCIT/Schemas/UsrMCITVMStatus/UsrMCITVMStatus.cs" Condition="Exists('$(RelativePkgFolderPath)/UsrMCIT/Schemas/UsrMCITVMStatus/UsrMCITVMStatus.cs')" />
 		<Compile Remove="$(RelativePkgFolderPath)/UsrMCIT/Schemas/UsrPointAllocation/UsrPointAllocation.cs" Condition="Exists('$(RelativePkgFolderPath)/UsrMCIT/Schemas/UsrPointAllocation/UsrPointAllocation.cs')" />
 		<Compile Remove="$(RelativePkgFolderPath)/UsrMCIT/Schemas/UsrPointBalanceType/UsrPointBalanceType.cs" Condition="Exists('$(RelativePkgFolderPath)/UsrMCIT/Schemas/UsrPointBalanceType/UsrPointBalanceType.cs')" />

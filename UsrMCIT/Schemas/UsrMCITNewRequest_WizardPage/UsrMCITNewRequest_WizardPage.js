@@ -431,9 +431,47 @@ define("UsrMCITNewRequest_WizardPage", /**SCHEMA_DEPS*/["@creatio-devkit/common"
         return row;
     }
 
+    // V11: New requests must be ACTIVE by default. The actual record remains
+    // in UsrVMRequest; only an explicit Archive action should mark it archived.
+    // A wrong object-level Boolean default must not silently archive new drafts.
+    function wzArchiveIsFalse(value) {
+        if(value && typeof value === "object" && "value" in value) {
+            return wzArchiveIsFalse(value.value);
+        }
+        return value === false || value === 0 ||
+            (typeof value === "string" && /^(false|0|no)$/i.test(value.trim()));
+    }
+
+    async function wzEnsureNewRequestActive(requestId) {
+        if(!validGuid(requestId)) {
+            throw new Error("Cannot confirm the archive state without a saved Request ID.");
+        }
+        let row=await readRecord("UsrVMRequest",requestId,["Id","UsrIsArchived"]);
+        if(!row) {
+            throw new Error("New request was saved, but its archive flag could not be read. Confirm UsrIsArchived is published.");
+        }
+        if(!wzArchiveIsFalse(row.UsrIsArchived)) {
+            // This runs ONLY on first creation, never when editing an existing
+            // request or opening an intentionally archived record.
+            const model=await sdk.Model.create("UsrVMRequest");
+            const result=await model.update({UsrIsArchived:false},[
+                {type:sdk.ModelParameterType.PrimaryColumnValue,value:requestId}
+            ]);
+            if(result===false || result?.success===false ||
+                result?.isSuccess===false || result?.rowsAffected===0) {
+                throw new Error("Request saved, but Creatio could not set Is Archived = False. Check permissions and object default.");
+            }
+            row=await readRecord("UsrVMRequest",requestId,["Id","UsrIsArchived"]);
+            if(!row || !wzArchiveIsFalse(row.UsrIsArchived)) {
+                throw new Error("Request saved, but its archive flag is still not False. Check UsrVMRequest.UsrIsArchived default and permissions.");
+            }
+        }
+    }
+
     async function persistDraft(context, automaticTitle) {
         // A submitted/under-review request must never be silently reset to Draft.
         const currentId=vmRequestKey(context);
+        const isFirstSave=!validGuid(currentId);
         if(validGuid(currentId)){
             const persisted=await readRecord("UsrVMRequest",currentId,["Id","UsrStatus"]);
             if(persisted){
@@ -458,13 +496,24 @@ define("UsrMCITNewRequest_WizardPage", /**SCHEMA_DEPS*/["@creatio-devkit/common"
             throw new Error("Selected government authority is not a valid Account lookup.");
         }
         await ensureDraftFields(context, automaticTitle);
+        if(isFirstSave) {
+            // Bind to UsrVMRequestDS before native SaveRecordRequest inserts the row.
+            // Double-checked against the database after save below.
+            context.WZ_IsArchived=false;
+        }
         // Ensure field bindings have propagated to the primary page data source.
         const title = String(await context.WZ_Title || "").trim();
         const started = Date.now();
         const saved = await context.executeRequest({type:"crt.SaveRecordRequest",
             preventCardClose:true,$context:context});
         if (saved === false) { throw new Error("Creatio rejected the SaveRecordRequest."); }
-        return await verifySavedRequest(context,title,started);
+        const verified=await verifySavedRequest(context,title,started);
+        if(isFirstSave) {
+            // Protect against an incorrect Boolean default on the object itself.
+            // Existing archived requests must never be reset by this function.
+            await wzEnsureNewRequestActive(selectedId(verified.Id));
+        }
+        return verified;
     }
 
 
@@ -5796,6 +5845,11 @@ define("UsrMCITNewRequest_WizardPage", /**SCHEMA_DEPS*/["@creatio-devkit/common"
     "WZ_Status": {
         "modelConfig": {
             "path": "UsrVMRequestDS.UsrStatus"
+        }
+    },
+    "WZ_IsArchived": {
+        "modelConfig": {
+            "path": "UsrVMRequestDS.UsrIsArchived"
         }
     },
     "WZ_RecordId": {
