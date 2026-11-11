@@ -1,0 +1,10 @@
+﻿{
+  "Descriptor": {
+    "UId": "cc262317-109f-4ecc-9e81-8aa0aedd20f6",
+    "Name": "UsrDashboardMobileRelatedPage",
+    "ModifiedOnUtc": "\/Date(1794131459000)\/",
+    "ManagerName": "AddonSchemaManager",
+    "Caption": "Dashboard (Mobile page settings)",
+    "DependsOn": []
+  }
+}

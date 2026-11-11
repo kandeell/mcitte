@@ -1,0 +1,14 @@
+﻿{
+  "Descriptor": {
+    "UId": "7d611f11-738c-4361-a4e1-7c65c6859c94",
+    "Name": "UsrDashboard",
+    "ModifiedOnUtc": "\/Date(1794131459000)\/",
+    "Parent": {
+      "UId": "1bab9dcf-17d5-49f8-9536-8e0064f1dce0",
+      "Name": "BaseEntity"
+    },
+    "ManagerName": "EntitySchemaManager",
+    "Caption": "Dashboard",
+    "DependsOn": []
+  }
+}

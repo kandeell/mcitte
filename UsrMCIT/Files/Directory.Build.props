@@ -7,6 +7,7 @@
 		<Compile Include="$(PkgPath)/UsrMCIT/Schemas/UsrConfigResourceRate/UsrConfigResourceRate.cs" Condition="Exists('$(PkgPath)/UsrMCIT/Schemas/UsrConfigResourceRate/UsrConfigResourceRate.cs')" />
 		<Compile Include="$(PkgPath)/UsrMCIT/Schemas/UsrConfigVersionStatus/UsrConfigVersionStatus.cs" Condition="Exists('$(PkgPath)/UsrMCIT/Schemas/UsrConfigVersionStatus/UsrConfigVersionStatus.cs')" />
 		<Compile Include="$(PkgPath)/UsrMCIT/Schemas/UsrContractConfigVersion/UsrContractConfigVersion.cs" Condition="Exists('$(PkgPath)/UsrMCIT/Schemas/UsrContractConfigVersion/UsrContractConfigVersion.cs')" />
+		<Compile Include="$(PkgPath)/UsrMCIT/Schemas/UsrDashboard/UsrDashboard.cs" Condition="Exists('$(PkgPath)/UsrMCIT/Schemas/UsrDashboard/UsrDashboard.cs')" />
 		<Compile Include="$(PkgPath)/UsrMCIT/Schemas/UsrFinanceConfig/UsrFinanceConfig.cs" Condition="Exists('$(PkgPath)/UsrMCIT/Schemas/UsrFinanceConfig/UsrFinanceConfig.cs')" />
 		<Compile Include="$(PkgPath)/UsrMCIT/Schemas/UsrFinancialTransaction/UsrFinancialTransaction.cs" Condition="Exists('$(PkgPath)/UsrMCIT/Schemas/UsrFinancialTransaction/UsrFinancialTransaction.cs')" />
 		<Compile Include="$(PkgPath)/UsrMCIT/Schemas/UsrFinancialTransactionType/UsrFinancialTransactionType.cs" Condition="Exists('$(PkgPath)/UsrMCIT/Schemas/UsrFinancialTransactionType/UsrFinancialTransactionType.cs')" />
@@ -51,6 +52,7 @@
 		<Compile Include="$(PkgPath)/UsrMCIT/Schemas/UsrPricingUnit/UsrPricingUnit.cs" Condition="Exists('$(PkgPath)/UsrMCIT/Schemas/UsrPricingUnit/UsrPricingUnit.cs')" />
 		<Compile Include="$(PkgPath)/UsrMCIT/Schemas/UsrProject/UsrProject.cs" Condition="Exists('$(PkgPath)/UsrMCIT/Schemas/UsrProject/UsrProject.cs')" />
 		<Compile Include="$(PkgPath)/UsrMCIT/Schemas/UsrProvisioningAttempt/UsrProvisioningAttempt.cs" Condition="Exists('$(PkgPath)/UsrMCIT/Schemas/UsrProvisioningAttempt/UsrProvisioningAttempt.cs')" />
+		<Compile Include="$(PkgPath)/UsrMCIT/Schemas/UsrReports/UsrReports.cs" Condition="Exists('$(PkgPath)/UsrMCIT/Schemas/UsrReports/UsrReports.cs')" />
 		<Compile Include="$(PkgPath)/UsrMCIT/Schemas/UsrRequestApproval/UsrRequestApproval.cs" Condition="Exists('$(PkgPath)/UsrMCIT/Schemas/UsrRequestApproval/UsrRequestApproval.cs')" />
 		<Compile Include="$(PkgPath)/UsrMCIT/Schemas/UsrRequestStatusHistory/UsrRequestStatusHistory.cs" Condition="Exists('$(PkgPath)/UsrMCIT/Schemas/UsrRequestStatusHistory/UsrRequestStatusHistory.cs')" />
 		<Compile Include="$(PkgPath)/UsrMCIT/Schemas/UsrRequestValidationFinding/UsrRequestValidationFinding.cs" Condition="Exists('$(PkgPath)/UsrMCIT/Schemas/UsrRequestValidationFinding/UsrRequestValidationFinding.cs')" />

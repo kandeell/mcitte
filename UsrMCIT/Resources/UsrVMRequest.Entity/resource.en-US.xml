@@ -9,6 +9,8 @@
 			<Item Name="Columns.UsrConfigVersion.Caption" Value="Configuration version" />
 			<Item Name="Columns.UsrContract.Caption" Value="Contract" />
 			<Item Name="Columns.UsrEstimatedPoints.Caption" Value="Estimated points" />
+			<Item Name="Columns.UsrLifecycleAction.Caption" Value="Lifecycle action" />
+			<Item Name="Columns.UsrLifecycleDetails.Caption" Value="Lifecycle details" />
 			<Item Name="Columns.UsrName.Caption" Value="Name" />
 			<Item Name="Columns.UsrNumber.Caption" Value="Number" />
 			<Item Name="Columns.UsrProject.Caption" Value="Project" />

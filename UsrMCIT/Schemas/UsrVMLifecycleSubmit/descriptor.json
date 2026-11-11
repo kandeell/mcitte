@@ -4,6 +4,7 @@
     "Name": "UsrVMLifecycleSubmit",
     "ModifiedOnUtc": "\/Date(1794262807000)\/",
     "ManagerName": "ProcessSchemaManager",
-    "Caption": "VM Lifecycle — Submit Change"
+    "Caption": "VM Lifecycle — Submit Change",
+    "DependsOn": []
   }
 }

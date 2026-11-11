@@ -857,6 +857,7 @@
 		<Compile Remove="$(RelativePkgFolderPath)/UsrMCIT/Schemas/UsrConfigResourceRate/UsrConfigResourceRate.cs" Condition="Exists('$(RelativePkgFolderPath)/UsrMCIT/Schemas/UsrConfigResourceRate/UsrConfigResourceRate.cs')" />
 		<Compile Remove="$(RelativePkgFolderPath)/UsrMCIT/Schemas/UsrConfigVersionStatus/UsrConfigVersionStatus.cs" Condition="Exists('$(RelativePkgFolderPath)/UsrMCIT/Schemas/UsrConfigVersionStatus/UsrConfigVersionStatus.cs')" />
 		<Compile Remove="$(RelativePkgFolderPath)/UsrMCIT/Schemas/UsrContractConfigVersion/UsrContractConfigVersion.cs" Condition="Exists('$(RelativePkgFolderPath)/UsrMCIT/Schemas/UsrContractConfigVersion/UsrContractConfigVersion.cs')" />
+		<Compile Remove="$(RelativePkgFolderPath)/UsrMCIT/Schemas/UsrDashboard/UsrDashboard.cs" Condition="Exists('$(RelativePkgFolderPath)/UsrMCIT/Schemas/UsrDashboard/UsrDashboard.cs')" />
 		<Compile Remove="$(RelativePkgFolderPath)/UsrMCIT/Schemas/UsrFinanceConfig/UsrFinanceConfig.cs" Condition="Exists('$(RelativePkgFolderPath)/UsrMCIT/Schemas/UsrFinanceConfig/UsrFinanceConfig.cs')" />
 		<Compile Remove="$(RelativePkgFolderPath)/UsrMCIT/Schemas/UsrFinancialTransaction/UsrFinancialTransaction.cs" Condition="Exists('$(RelativePkgFolderPath)/UsrMCIT/Schemas/UsrFinancialTransaction/UsrFinancialTransaction.cs')" />
 		<Compile Remove="$(RelativePkgFolderPath)/UsrMCIT/Schemas/UsrFinancialTransactionType/UsrFinancialTransactionType.cs" Condition="Exists('$(RelativePkgFolderPath)/UsrMCIT/Schemas/UsrFinancialTransactionType/UsrFinancialTransactionType.cs')" />
@@ -901,6 +902,7 @@
 		<Compile Remove="$(RelativePkgFolderPath)/UsrMCIT/Schemas/UsrPricingUnit/UsrPricingUnit.cs" Condition="Exists('$(RelativePkgFolderPath)/UsrMCIT/Schemas/UsrPricingUnit/UsrPricingUnit.cs')" />
 		<Compile Remove="$(RelativePkgFolderPath)/UsrMCIT/Schemas/UsrProject/UsrProject.cs" Condition="Exists('$(RelativePkgFolderPath)/UsrMCIT/Schemas/UsrProject/UsrProject.cs')" />
 		<Compile Remove="$(RelativePkgFolderPath)/UsrMCIT/Schemas/UsrProvisioningAttempt/UsrProvisioningAttempt.cs" Condition="Exists('$(RelativePkgFolderPath)/UsrMCIT/Schemas/UsrProvisioningAttempt/UsrProvisioningAttempt.cs')" />
+		<Compile Remove="$(RelativePkgFolderPath)/UsrMCIT/Schemas/UsrReports/UsrReports.cs" Condition="Exists('$(RelativePkgFolderPath)/UsrMCIT/Schemas/UsrReports/UsrReports.cs')" />
 		<Compile Remove="$(RelativePkgFolderPath)/UsrMCIT/Schemas/UsrRequestApproval/UsrRequestApproval.cs" Condition="Exists('$(RelativePkgFolderPath)/UsrMCIT/Schemas/UsrRequestApproval/UsrRequestApproval.cs')" />
 		<Compile Remove="$(RelativePkgFolderPath)/UsrMCIT/Schemas/UsrRequestStatusHistory/UsrRequestStatusHistory.cs" Condition="Exists('$(RelativePkgFolderPath)/UsrMCIT/Schemas/UsrRequestStatusHistory/UsrRequestStatusHistory.cs')" />
 		<Compile Remove="$(RelativePkgFolderPath)/UsrMCIT/Schemas/UsrRequestValidationFinding/UsrRequestValidationFinding.cs" Condition="Exists('$(RelativePkgFolderPath)/UsrMCIT/Schemas/UsrRequestValidationFinding/UsrRequestValidationFinding.cs')" />
