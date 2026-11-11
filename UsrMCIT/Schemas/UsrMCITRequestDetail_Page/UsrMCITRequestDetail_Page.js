@@ -24,7 +24,7 @@ define("UsrMCITRequestDetail_Page", /**SCHEMA_DEPS*/["@creatio-devkit/common"]/*
     const FILE_SCHEMA = "SysFile";
     const ZERO = "00000000-0000-0000-0000-000000000000";
     const GUID = /^[0-9a-f]{8}(?:-[0-9a-f]{4}){3}-[0-9a-f]{12}$/i;
-    const TABS = ["Overview", "VM Items", "Workflow", "Documents", "Activity & Audit"];
+    const TABS = ["Overview", "VM Items", "Documents", "Activity & Audit"];
     const STAGES = [
         "Request Created", "Submitted", "Automatic Validation", "TE Financial Review",
         "TE Technical Review", "Manual Provisioning", "Completion"
@@ -173,7 +173,7 @@ define("UsrMCITRequestDetail_Page", /**SCHEMA_DEPS*/["@creatio-devkit/common"]/*
         .usr-dt-pill[data-status="rejected"]::before{background:#e14652}
         .usr-dt-pill[data-status="under te review"]{background:#f0e9fc;color:#6731a2}
         .usr-dt-pill[data-status="under te review"]::before{background:#7332b9}
-        .usr-dt-head-title{font-size:14px;line-height:1.35;font-weight:800;color:#111d35;margin:8px 0 7px}
+        .usr-dt-head-title{font-size:14px;line-height:1.35;font-weight:800;color:#111d35;margin:8px 0 7px;overflow-wrap:anywhere}
         .usr-dt-head-caption{display:flex;align-items:center;gap:5px 14px;flex-wrap:wrap;
             color:#6c7690;font-size:10.5px;font-weight:500}
         .usr-dt-head-caption b{color:#192644;font-weight:800}
@@ -260,8 +260,6 @@ define("UsrMCITRequestDetail_Page", /**SCHEMA_DEPS*/["@creatio-devkit/common"]/*
             border-top:1px solid #eef0f5;padding:11px 15px;align-items:center}
         .usr-dt-process-row strong{font-size:11px;color:#1d2a47}
         .usr-dt-process-row span{font-size:10.5px;color:#8291a7}
-        .usr-dt-changelog-wrap{display:flex;align-items:center;gap:13px;margin-top:14px;flex-wrap:wrap}
-        .usr-dt-hint{font-size:11px;color:#8793a8}
         .usr-dt-error{padding:14px 16px;background:#fff8f8;color:#a12a31;
             border:1px solid #f2c5c5;border-radius:10px;font-size:12px}
         .usr-dt-loading{color:#8190a8;padding:24px;background:#fff;border:1px solid #e1e4ea;
@@ -361,15 +359,12 @@ define("UsrMCITRequestDetail_Page", /**SCHEMA_DEPS*/["@creatio-devkit/common"]/*
             {"operation":"insert","name":"DT_DesignerTabItems","values":{
                 "type":"crt.Label","caption":"VM Items","labelType":"body"
             },"parentName":"DT_DesignerTabs","propertyName":"items","index":1},
-            {"operation":"insert","name":"DT_DesignerTabWorkflow","values":{
-                "type":"crt.Label","caption":"Workflow","labelType":"body"
-            },"parentName":"DT_DesignerTabs","propertyName":"items","index":2},
             {"operation":"insert","name":"DT_DesignerTabDocuments","values":{
                 "type":"crt.Label","caption":"Documents","labelType":"body"
-            },"parentName":"DT_DesignerTabs","propertyName":"items","index":3},
+            },"parentName":"DT_DesignerTabs","propertyName":"items","index":2},
             {"operation":"insert","name":"DT_DesignerTabAudit","values":{
                 "type":"crt.Label","caption":"Activity & Audit","labelType":"body"
-            },"parentName":"DT_DesignerTabs","propertyName":"items","index":4},
+            },"parentName":"DT_DesignerTabs","propertyName":"items","index":3},
             {"operation":"insert","name":"DT_DesignerOverviewPanels","values":{
                 "type":"crt.FlexContainer","direction":"row","wrap":"wrap","items":[],
                 "fitContent":false,"gap":"medium"
@@ -697,19 +692,6 @@ define("UsrMCITRequestDetail_Page", /**SCHEMA_DEPS*/["@creatio-devkit/common"]/*
                         append(card,element("div","usr-dt-event-dot"),right);
                         wrap.appendChild(card);
                     }
-                    const controls=element("div","usr-dt-changelog-wrap");
-                    const action=button("View Creatio Change Log","usr-dt-action",async()=>{
-                        if(!isGuid(rt.id))return;
-                        try{
-                            await ctx.executeRequest({type:"crt.OpenChangeLogRequest",
-                                $context:ctx,entitySchemaName:HEADER_SCHEMA,
-                                recordId:rt.id});
-                        }catch(e){console.warn("Cannot open Change Log",e);
-                            rt.notify("Change Log is unavailable. Enable logging for UsrVMRequest and grant CanViewChangeLog permissions.");}
-                    });
-                    append(controls,action,element("span","usr-dt-hint",
-                        "Field-by-field history requires Change Log to be enabled and accessible."));
-                    wrap.appendChild(controls);
                     return wrap;
                 };
                 rt.paint=()=>{
@@ -747,7 +729,7 @@ define("UsrMCITRequestDetail_Page", /**SCHEMA_DEPS*/["@creatio-devkit/common"]/*
                     if(rt.errors.header){body.appendChild(errorBox(rt.errors.header));return;}
                     if(!rt.record){body.appendChild(errorBox("Request not found or access denied. Check the selected record ID and object permissions."));return;}
                     const renderers={"Overview":rt.renderOverview,"VM Items":rt.renderVM,
-                        "Workflow":rt.renderWorkflow,"Documents":rt.renderDocs,
+                        "Documents":rt.renderDocs,
                         "Activity & Audit":rt.renderAudit};
                     body.appendChild(renderers[rt.tab]());
                 };
