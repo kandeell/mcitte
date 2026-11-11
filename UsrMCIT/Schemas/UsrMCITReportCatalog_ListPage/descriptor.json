@@ -1,0 +1,13 @@
+﻿{
+  "Descriptor": {
+    "UId": "1eb100d0-86af-4a8b-b669-558939cc7239",
+    "Name": "UsrMCITReportCatalog_ListPage",
+    "ModifiedOnUtc": "\/Date(1793760551000)\/",
+    "Parent": {
+      "UId": "b7b898d0-8c77-4953-c097-23fa6800da02",
+      "Name": "ListPageV3Template"
+    },
+    "ManagerName": "ClientUnitSchemaManager",
+    "Caption": "Report Catalog list page"
+  }
+}

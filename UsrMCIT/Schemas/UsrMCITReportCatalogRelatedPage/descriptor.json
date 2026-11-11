@@ -1,0 +1,10 @@
+﻿{
+  "Descriptor": {
+    "UId": "ab2fa5ba-d988-4a93-a299-f72e783c4d1c",
+    "Name": "UsrMCITReportCatalogRelatedPage",
+    "ModifiedOnUtc": "\/Date(1793746746000)\/",
+    "ManagerName": "AddonSchemaManager",
+    "Caption": "Report Catalog (Page settings)",
+    "DependsOn": []
+  }
+}

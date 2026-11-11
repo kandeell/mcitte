@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Resources Culture="en-US">
+	<Group Type="String">
+		<Items>
+			<Item Name="Caption" Value="MCIT Report Saved Filter" />
+			<Item Name="Columns.UsrAuthority.Caption" Value="Authority" />
+			<Item Name="Columns.UsrContract.Caption" Value="Contract" />
+			<Item Name="Columns.UsrDateFrom.Caption" Value="Date From" />
+			<Item Name="Columns.UsrDateTo.Caption" Value="Date To" />
+			<Item Name="Columns.UsrName.Caption" Value="Filter Name" />
+			<Item Name="Columns.UsrOwner.Caption" Value="Owner" />
+			<Item Name="Columns.UsrProject.Caption" Value="Project" />
+			<Item Name="Columns.UsrReportCode.Caption" Value="Report Code" />
+			<Item Name="Columns.UsrRequestStatus.Caption" Value="Request Status" />
+			<Item Name="Columns.UsrRequestType.Caption" Value="Request Type" />
+			<Item Name="Columns.UsrSLAStatus.Caption" Value="SLA Status" />
+			<Item Name="EventsProcessSchema.Caption" Value="Business process" />
+		</Items>
+	</Group>
+</Resources>

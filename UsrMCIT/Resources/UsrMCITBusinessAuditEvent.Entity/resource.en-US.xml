@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Resources Culture="en-US">
+	<Group Type="String">
+		<Items>
+			<Item Name="Caption" Value="MCIT Business Audit Event" />
+			<Item Name="Columns.UsrAction.Caption" Value="Action" />
+			<Item Name="Columns.UsrActor.Caption" Value="Actor" />
+			<Item Name="Columns.UsrCorrelationId.Caption" Value="Correlation ID" />
+			<Item Name="Columns.UsrDescription.Caption" Value="Description" />
+			<Item Name="Columns.UsrEventCode.Caption" Value="Event Code" />
+			<Item Name="Columns.UsrFieldName.Caption" Value="Field Name" />
+			<Item Name="Columns.UsrModule.Caption" Value="Module" />
+			<Item Name="Columns.UsrName.Caption" Value="Event Name" />
+			<Item Name="Columns.UsrNewValue.Caption" Value="New Value" />
+			<Item Name="Columns.UsrOldValue.Caption" Value="Old Value" />
+			<Item Name="Columns.UsrOutcome.Caption" Value="Outcome" />
+			<Item Name="Columns.UsrRecordId.Caption" Value="Record ID" />
+			<Item Name="Columns.UsrRecordNumber.Caption" Value="Record Number" />
+			<Item Name="Columns.UsrRecordSchema.Caption" Value="Record Schema" />
+			<Item Name="EventsProcessSchema.Caption" Value="Business process" />
+		</Items>
+	</Group>
+</Resources>
