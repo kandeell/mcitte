@@ -45,6 +45,44 @@
 			<Item Name="BaseElements.ActivityUserTask1.Parameters.StartInPeriod.Caption" Value="Через сколько начать выполнение (период)" />
 			<Item Name="BaseElements.ActivityUserTask1.Parameters.UsrUsrContractConfigVersion.Caption" Value="Базовый объект" />
 			<Item Name="BaseElements.ActivityUserTask1.Parameters.UsrUsrVirtualMachine.Caption" Value="Объект" />
+			<Item Name="BaseElements.ApprovalUserTask1.Parameters.ApprovalSchemaUId.Caption" Value="Объект визы" />
+			<Item Name="BaseElements.ApprovalUserTask1.Parameters.ApproverEmailTemplate.Caption" Value="Шаблон письма визирующего" />
+			<Item Name="BaseElements.ApprovalUserTask1.Parameters.ApproverType.Caption" Value="Тип визирующего" />
+			<Item Name="BaseElements.ApprovalUserTask1.Parameters.AuthorEmailTemplate.Caption" Value="Шаблон письма заявителя" />
+			<Item Name="BaseElements.ApprovalUserTask1.Parameters.CurrentApprovalId.Caption" Value="Идентификатор текущей записи визы" />
+			<Item Name="BaseElements.ApprovalUserTask1.Parameters.EmployeeId.Caption" Value="Сотрудник" />
+			<Item Name="BaseElements.ApprovalUserTask1.Parameters.EntitySchemaUId.Caption" Value="Объект" />
+			<Item Name="BaseElements.ApprovalUserTask1.Parameters.IgnoreEmailErrors.Caption" Value="Игнорировать ошибки отправки почты" />
+			<Item Name="BaseElements.ApprovalUserTask1.Parameters.IgnoreEmailErrors.DisplayValue" Value="true" />
+			<Item Name="BaseElements.ApprovalUserTask1.Parameters.IsAllowedToDelegate.Caption" Value="Можно делегировать визирование" />
+			<Item Name="BaseElements.ApprovalUserTask1.Parameters.IsRequiredDigitalSignature.Caption" Value="Требует ЭЦП" />
+			<Item Name="BaseElements.ApprovalUserTask1.Parameters.IsSendEmailToApprovers.Caption" Value="Отправлять письмо визирующим" />
+			<Item Name="BaseElements.ApprovalUserTask1.Parameters.IsSendEmailToAuthor.Caption" Value="Отправить email заявителю" />
+			<Item Name="BaseElements.ApprovalUserTask1.Parameters.MasterColumnUId.Caption" Value="Колонка раздела" />
+			<Item Name="BaseElements.ApprovalUserTask1.Parameters.Purpose.Caption" Value="Цель визирования" />
+			<Item Name="BaseElements.ApprovalUserTask1.Parameters.RecordId.Caption" Value="Идентификатор записи" />
+			<Item Name="BaseElements.ApprovalUserTask1.Parameters.ResultParameter.Caption" Value="Результирующий параметр" />
+			<Item Name="BaseElements.ApprovalUserTask1.Parameters.RoleId.Caption" Value="Роль" />
+			<Item Name="BaseElements.ApprovalUserTask1.Parameters.SectionId.Caption" Value="Раздел" />
+			<Item Name="BaseElements.ApprovalUserTask2.Parameters.ApprovalSchemaUId.Caption" Value="Объект визы" />
+			<Item Name="BaseElements.ApprovalUserTask2.Parameters.ApproverEmailTemplate.Caption" Value="Шаблон письма визирующего" />
+			<Item Name="BaseElements.ApprovalUserTask2.Parameters.ApproverType.Caption" Value="Тип визирующего" />
+			<Item Name="BaseElements.ApprovalUserTask2.Parameters.AuthorEmailTemplate.Caption" Value="Шаблон письма заявителя" />
+			<Item Name="BaseElements.ApprovalUserTask2.Parameters.CurrentApprovalId.Caption" Value="Идентификатор текущей записи визы" />
+			<Item Name="BaseElements.ApprovalUserTask2.Parameters.EmployeeId.Caption" Value="Сотрудник" />
+			<Item Name="BaseElements.ApprovalUserTask2.Parameters.EntitySchemaUId.Caption" Value="Объект" />
+			<Item Name="BaseElements.ApprovalUserTask2.Parameters.IgnoreEmailErrors.Caption" Value="Игнорировать ошибки отправки почты" />
+			<Item Name="BaseElements.ApprovalUserTask2.Parameters.IgnoreEmailErrors.DisplayValue" Value="true" />
+			<Item Name="BaseElements.ApprovalUserTask2.Parameters.IsAllowedToDelegate.Caption" Value="Можно делегировать визирование" />
+			<Item Name="BaseElements.ApprovalUserTask2.Parameters.IsRequiredDigitalSignature.Caption" Value="Требует ЭЦП" />
+			<Item Name="BaseElements.ApprovalUserTask2.Parameters.IsSendEmailToApprovers.Caption" Value="Отправлять письмо визирующим" />
+			<Item Name="BaseElements.ApprovalUserTask2.Parameters.IsSendEmailToAuthor.Caption" Value="Отправить email заявителю" />
+			<Item Name="BaseElements.ApprovalUserTask2.Parameters.MasterColumnUId.Caption" Value="Колонка раздела" />
+			<Item Name="BaseElements.ApprovalUserTask2.Parameters.Purpose.Caption" Value="Цель визирования" />
+			<Item Name="BaseElements.ApprovalUserTask2.Parameters.RecordId.Caption" Value="Идентификатор записи" />
+			<Item Name="BaseElements.ApprovalUserTask2.Parameters.ResultParameter.Caption" Value="Результирующий параметр" />
+			<Item Name="BaseElements.ApprovalUserTask2.Parameters.RoleId.Caption" Value="Роль" />
+			<Item Name="BaseElements.ApprovalUserTask2.Parameters.SectionId.Caption" Value="Раздел" />
 			<Item Name="BaseElements.ChangeDataUserTask1.Parameters.ConsiderTimeInFilter.Caption" Value="Учитывать время в фильтре" />
 			<Item Name="BaseElements.ChangeDataUserTask1.Parameters.DataSourceFilters.Caption" Value="Фильтры источника данных" />
 			<Item Name="BaseElements.ChangeDataUserTask1.Parameters.EntitySchemaUId.Caption" Value="Объект" />
@@ -52,6 +90,36 @@
 			<Item Name="BaseElements.ChangeDataUserTask1.Parameters.IsMatchConditions.Caption" Value="Если объект соответствует условиям" />
 			<Item Name="BaseElements.ChangeDataUserTask1.Parameters.IsMatchConditions.DisplayValue" Value="true" />
 			<Item Name="BaseElements.ChangeDataUserTask1.Parameters.RecordColumnValues.Caption" Value="Значения полей" />
+			<Item Name="BaseElements.ChangeDataUserTask2.Parameters.ConsiderTimeInFilter.Caption" Value="Учитывать время в фильтре" />
+			<Item Name="BaseElements.ChangeDataUserTask2.Parameters.DataSourceFilters.Caption" Value="Фильтры источника данных" />
+			<Item Name="BaseElements.ChangeDataUserTask2.Parameters.EntitySchemaUId.Caption" Value="Объект" />
+			<Item Name="BaseElements.ChangeDataUserTask2.Parameters.IgnoreErrors.Caption" Value="Продолжить выполнение при ошибках" />
+			<Item Name="BaseElements.ChangeDataUserTask2.Parameters.IsMatchConditions.Caption" Value="Если объект соответствует условиям" />
+			<Item Name="BaseElements.ChangeDataUserTask2.Parameters.IsMatchConditions.DisplayValue" Value="true" />
+			<Item Name="BaseElements.ChangeDataUserTask2.Parameters.RecordColumnValues.Caption" Value="Значения полей" />
+			<Item Name="BaseElements.ChangeDataUserTask3.Parameters.ConsiderTimeInFilter.Caption" Value="Учитывать время в фильтре" />
+			<Item Name="BaseElements.ChangeDataUserTask3.Parameters.DataSourceFilters.Caption" Value="Фильтры источника данных" />
+			<Item Name="BaseElements.ChangeDataUserTask3.Parameters.EntitySchemaUId.Caption" Value="Объект" />
+			<Item Name="BaseElements.ChangeDataUserTask3.Parameters.IgnoreErrors.Caption" Value="Продолжить выполнение при ошибках" />
+			<Item Name="BaseElements.ChangeDataUserTask3.Parameters.IsMatchConditions.Caption" Value="Если объект соответствует условиям" />
+			<Item Name="BaseElements.ChangeDataUserTask3.Parameters.IsMatchConditions.DisplayValue" Value="true" />
+			<Item Name="BaseElements.ChangeDataUserTask3.Parameters.RecordColumnValues.Caption" Value="Значения полей" />
+			<Item Name="BaseElements.ChangeDataUserTask4.Parameters.ConsiderTimeInFilter.Caption" Value="Учитывать время в фильтре" />
+			<Item Name="BaseElements.ChangeDataUserTask4.Parameters.DataSourceFilters.Caption" Value="Фильтры источника данных" />
+			<Item Name="BaseElements.ChangeDataUserTask4.Parameters.EntitySchemaUId.Caption" Value="Объект" />
+			<Item Name="BaseElements.ChangeDataUserTask4.Parameters.IgnoreErrors.Caption" Value="Продолжить выполнение при ошибках" />
+			<Item Name="BaseElements.ChangeDataUserTask4.Parameters.IsMatchConditions.Caption" Value="Если объект соответствует условиям" />
+			<Item Name="BaseElements.ChangeDataUserTask4.Parameters.IsMatchConditions.DisplayValue" Value="true" />
+			<Item Name="BaseElements.ChangeDataUserTask4.Parameters.RecordColumnValues.Caption" Value="Значения полей" />
+			<Item Name="BaseElements.ChangeDataUserTask5.Parameters.ConsiderTimeInFilter.Caption" Value="Учитывать время в фильтре" />
+			<Item Name="BaseElements.ChangeDataUserTask5.Parameters.DataSourceFilters.Caption" Value="Фильтры источника данных" />
+			<Item Name="BaseElements.ChangeDataUserTask5.Parameters.EntitySchemaUId.Caption" Value="Объект" />
+			<Item Name="BaseElements.ChangeDataUserTask5.Parameters.IgnoreErrors.Caption" Value="Продолжить выполнение при ошибках" />
+			<Item Name="BaseElements.ChangeDataUserTask5.Parameters.IsMatchConditions.Caption" Value="Если объект соответствует условиям" />
+			<Item Name="BaseElements.ChangeDataUserTask5.Parameters.IsMatchConditions.DisplayValue" Value="true" />
+			<Item Name="BaseElements.ChangeDataUserTask5.Parameters.RecordColumnValues.Caption" Value="Значения полей" />
+			<Item Name="BaseElements.LinkEntityToProcessUserTask1.Parameters.EntityId.Caption" Value="Объект" />
+			<Item Name="BaseElements.LinkEntityToProcessUserTask1.Parameters.EntitySchemaId.Caption" Value="Схема объекта" />
 			<Item Name="BaseElements.ReadDataUserTask1.Parameters.AggregationColumnName.Caption" Value="Имя колонки для агрегирующей функции" />
 			<Item Name="BaseElements.ReadDataUserTask1.Parameters.CanReadUncommitedData.Caption" Value="Выполнять &quot;грязное чтение&quot;" />
 			<Item Name="BaseElements.ReadDataUserTask1.Parameters.ConsiderTimeInFilter.Caption" Value="Учитывать время в фильтре" />

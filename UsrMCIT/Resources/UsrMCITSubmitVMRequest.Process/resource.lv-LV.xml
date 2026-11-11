@@ -39,31 +39,8 @@
 			<Item Name="BaseElements.ActivityUserTask1.Parameters.ShowInScheduler.Caption" Value="Rādīt kalendārā" />
 			<Item Name="BaseElements.ActivityUserTask1.Parameters.StartIn.Caption" Value="Sākt izpildi" />
 			<Item Name="BaseElements.ActivityUserTask1.Parameters.StartInPeriod.Caption" Value="Sākt izpildi (periods)" />
-			<Item Name="BaseElements.ChangeDataUserTask1.Parameters.ConsiderTimeInFilter.Caption" Value="Ņemt vērā laiku filtrā" />
-			<Item Name="BaseElements.ChangeDataUserTask1.Parameters.DataSourceFilters.Caption" Value="Datu avota filtri" />
-			<Item Name="BaseElements.ChangeDataUserTask1.Parameters.EntitySchemaUId.Caption" Value="Objekts" />
-			<Item Name="BaseElements.ChangeDataUserTask1.Parameters.IgnoreErrors.Caption" Value="Turpināt izpildi kļūdu gadījumā" />
-			<Item Name="BaseElements.ChangeDataUserTask1.Parameters.IsMatchConditions.Caption" Value="Ja objekts atbilst šādiem nosacījumiem" />
-			<Item Name="BaseElements.ChangeDataUserTask1.Parameters.RecordColumnValues.Caption" Value="Iestatīt kolonnu vērtības" />
-			<Item Name="BaseElements.ReadDataUserTask1.Parameters.AggregationColumnName.Caption" Value="Apkopotās funkcijas kolonnas nosaukums" />
-			<Item Name="BaseElements.ReadDataUserTask1.Parameters.CanReadUncommitedData.Caption" Value="Lasīt neapstiprinātus datus" />
-			<Item Name="BaseElements.ReadDataUserTask1.Parameters.ConsiderTimeInFilter.Caption" Value="Ņemt vērā laiku filtrā" />
-			<Item Name="BaseElements.ReadDataUserTask1.Parameters.DataSourceFilters.Caption" Value="Datu avots filtriem" />
-			<Item Name="BaseElements.ReadDataUserTask1.Parameters.EntityColumnMetaPathes.Caption" Value="Kolonnas, kuras lasīt" />
-			<Item Name="BaseElements.ReadDataUserTask1.Parameters.FunctionType.Caption" Value="Apkopotās funkcijas veids" />
-			<Item Name="BaseElements.ReadDataUserTask1.Parameters.IgnoreDisplayValues.Caption" Value="Nelasīt rādītās vērtības saraksta kolonnās" />
-			<Item Name="BaseElements.ReadDataUserTask1.Parameters.NumberOfRecords.Caption" Value="Lasāmo ierakstu skaits" />
-			<Item Name="BaseElements.ReadDataUserTask1.Parameters.OrderInfo.Caption" Value="Kolonnu secība" />
-			<Item Name="BaseElements.ReadDataUserTask1.Parameters.ReadSomeTopRecords.Caption" Value="Lasīt pirmo" />
-			<Item Name="BaseElements.ReadDataUserTask1.Parameters.ResultCompositeObjectList.Caption" Value="Ierakstu kolekcija" />
-			<Item Name="BaseElements.ReadDataUserTask1.Parameters.ResultCount.Caption" Value="Ierakstu skaits" />
-			<Item Name="BaseElements.ReadDataUserTask1.Parameters.ResultDateTimeFunction.Caption" Value="Funkcijas rezultāts (Datums/Laiks)" />
-			<Item Name="BaseElements.ReadDataUserTask1.Parameters.ResultEntity.Caption" Value="Pirmā vienība rezultātu kolekcijā" />
-			<Item Name="BaseElements.ReadDataUserTask1.Parameters.ResultEntityCollection.Caption" Value="Rezultātu kolekcija" />
-			<Item Name="BaseElements.ReadDataUserTask1.Parameters.ResultFloatFunction.Caption" Value="Funkcijas rezultāts (decimālskaitlis)" />
-			<Item Name="BaseElements.ReadDataUserTask1.Parameters.ResultIntegerFunction.Caption" Value="Funkcijas rezultāts (Vesels skaitlis)" />
-			<Item Name="BaseElements.ReadDataUserTask1.Parameters.ResultRowsCount.Caption" Value="Lasāmo ierakstu skaits" />
-			<Item Name="BaseElements.ReadDataUserTask1.Parameters.ResultType.Caption" Value="Rezultāta veids" />
+			<Item Name="BaseElements.LinkEntityToProcessUserTask1.Parameters.EntityId.Caption" Value="Objekts" />
+			<Item Name="BaseElements.LinkEntityToProcessUserTask1.Parameters.EntitySchemaId.Caption" Value="Objekta shēma" />
 			<Item Name="Caption" Value="MCIT VM Request Submission" />
 		</Items>
 	</Group>

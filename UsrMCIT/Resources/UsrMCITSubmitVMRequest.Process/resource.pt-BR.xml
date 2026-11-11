@@ -39,31 +39,8 @@
 			<Item Name="BaseElements.ActivityUserTask1.Parameters.ShowInScheduler.Caption" Value="Mostrar no calendário" />
 			<Item Name="BaseElements.ActivityUserTask1.Parameters.StartIn.Caption" Value="Iniciar a execução em" />
 			<Item Name="BaseElements.ActivityUserTask1.Parameters.StartInPeriod.Caption" Value="Iniciar a execução em (período)" />
-			<Item Name="BaseElements.ChangeDataUserTask1.Parameters.ConsiderTimeInFilter.Caption" Value="Considerar o tempo nos filtros" />
-			<Item Name="BaseElements.ChangeDataUserTask1.Parameters.DataSourceFilters.Caption" Value="Filtros da fonte de dados" />
-			<Item Name="BaseElements.ChangeDataUserTask1.Parameters.EntitySchemaUId.Caption" Value="Objeto" />
-			<Item Name="BaseElements.ChangeDataUserTask1.Parameters.IgnoreErrors.Caption" Value="Continuar a execução em caso de erros" />
-			<Item Name="BaseElements.ChangeDataUserTask1.Parameters.IsMatchConditions.Caption" Value="Se o objeto atender às seguintes condições" />
-			<Item Name="BaseElements.ChangeDataUserTask1.Parameters.RecordColumnValues.Caption" Value="Definir os valores da coluna" />
-			<Item Name="BaseElements.ReadDataUserTask1.Parameters.AggregationColumnName.Caption" Value="Nome da coluna de função agregada" />
-			<Item Name="BaseElements.ReadDataUserTask1.Parameters.CanReadUncommitedData.Caption" Value="Ler os dados não confirmados" />
-			<Item Name="BaseElements.ReadDataUserTask1.Parameters.ConsiderTimeInFilter.Caption" Value="Considerar o tempo nos filtros" />
-			<Item Name="BaseElements.ReadDataUserTask1.Parameters.DataSourceFilters.Caption" Value="Fonte de dados dos filtros" />
-			<Item Name="BaseElements.ReadDataUserTask1.Parameters.EntityColumnMetaPathes.Caption" Value="Colunas a serem lidas" />
-			<Item Name="BaseElements.ReadDataUserTask1.Parameters.FunctionType.Caption" Value="Tipo de função agregada" />
-			<Item Name="BaseElements.ReadDataUserTask1.Parameters.IgnoreDisplayValues.Caption" Value="Não ler os valores exibidos das colunas da pesquisa" />
-			<Item Name="BaseElements.ReadDataUserTask1.Parameters.NumberOfRecords.Caption" Value="Número de registros a serem lidos" />
-			<Item Name="BaseElements.ReadDataUserTask1.Parameters.OrderInfo.Caption" Value="Ordem das colunas" />
-			<Item Name="BaseElements.ReadDataUserTask1.Parameters.ReadSomeTopRecords.Caption" Value="Ler o primeiro" />
-			<Item Name="BaseElements.ReadDataUserTask1.Parameters.ResultCompositeObjectList.Caption" Value="Coleção de registros" />
-			<Item Name="BaseElements.ReadDataUserTask1.Parameters.ResultCount.Caption" Value="Número de registros" />
-			<Item Name="BaseElements.ReadDataUserTask1.Parameters.ResultDateTimeFunction.Caption" Value="Resultado da função (Data/Hora)" />
-			<Item Name="BaseElements.ReadDataUserTask1.Parameters.ResultEntity.Caption" Value="Primeiro item da coleção resultante" />
-			<Item Name="BaseElements.ReadDataUserTask1.Parameters.ResultEntityCollection.Caption" Value="Coleção resultante" />
-			<Item Name="BaseElements.ReadDataUserTask1.Parameters.ResultFloatFunction.Caption" Value="Resultado da função (Decimal)" />
-			<Item Name="BaseElements.ReadDataUserTask1.Parameters.ResultIntegerFunction.Caption" Value="Resultado da função (Inteiro)" />
-			<Item Name="BaseElements.ReadDataUserTask1.Parameters.ResultRowsCount.Caption" Value="Número de registros lidos" />
-			<Item Name="BaseElements.ReadDataUserTask1.Parameters.ResultType.Caption" Value="Tipo de resultado" />
+			<Item Name="BaseElements.LinkEntityToProcessUserTask1.Parameters.EntityId.Caption" Value="Objeto" />
+			<Item Name="BaseElements.LinkEntityToProcessUserTask1.Parameters.EntitySchemaId.Caption" Value="Esquema do objeto" />
 			<Item Name="Caption" Value="MCIT VM Request Submission" />
 		</Items>
 	</Group>

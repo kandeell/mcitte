@@ -20,6 +20,9 @@
 			<Item Name="Columns.UsrPointsPerUnitSnapshot.Caption" Value="Points per unit at submission" />
 			<Item Name="Columns.UsrPricingCapturedOn.Caption" Value="Pricing captured on" />
 			<Item Name="Columns.UsrPricingUnitSnapshot.Caption" Value="Pricing unit at submission" />
+			<Item Name="Columns.UsrProvisioningFailedOn.Caption" Value="Provisioning Failed On" />
+			<Item Name="Columns.UsrProvisioningFailureReason.Caption" Value="Provisioning Failure Reason" />
+			<Item Name="Columns.UsrProvisioningStatus.Caption" Value="Provisioning Status" />
 			<Item Name="Columns.UsrPurpose.Caption" Value="VM purpose" />
 			<Item Name="Columns.UsrRAMGB.Caption" Value="RAM (GB)" />
 			<Item Name="Columns.UsrRequest.Caption" Value="VM request" />

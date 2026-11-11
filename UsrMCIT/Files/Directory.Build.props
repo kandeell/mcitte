@@ -45,6 +45,7 @@
 		<Compile Include="$(PkgPath)/UsrMCIT/Schemas/UsrMCITUserAuthorityAccess/UsrMCITUserAuthorityAccess.cs" Condition="Exists('$(PkgPath)/UsrMCIT/Schemas/UsrMCITUserAuthorityAccess/UsrMCITUserAuthorityAccess.cs')" />
 		<Compile Include="$(PkgPath)/UsrMCIT/Schemas/UsrMCITUserContractAccess/UsrMCITUserContractAccess.cs" Condition="Exists('$(PkgPath)/UsrMCIT/Schemas/UsrMCITUserContractAccess/UsrMCITUserContractAccess.cs')" />
 		<Compile Include="$(PkgPath)/UsrMCIT/Schemas/UsrMCITUserStatus/UsrMCITUserStatus.cs" Condition="Exists('$(PkgPath)/UsrMCIT/Schemas/UsrMCITUserStatus/UsrMCITUserStatus.cs')" />
+		<Compile Include="$(PkgPath)/UsrMCIT/Schemas/UsrMCITVMItemProvisioningStatus/UsrMCITVMItemProvisioningStatus.cs" Condition="Exists('$(PkgPath)/UsrMCIT/Schemas/UsrMCITVMItemProvisioningStatus/UsrMCITVMItemProvisioningStatus.cs')" />
 		<Compile Include="$(PkgPath)/UsrMCIT/Schemas/UsrMCITVMStatus/UsrMCITVMStatus.cs" Condition="Exists('$(PkgPath)/UsrMCIT/Schemas/UsrMCITVMStatus/UsrMCITVMStatus.cs')" />
 		<Compile Include="$(PkgPath)/UsrMCIT/Schemas/UsrPointAllocation/UsrPointAllocation.cs" Condition="Exists('$(PkgPath)/UsrMCIT/Schemas/UsrPointAllocation/UsrPointAllocation.cs')" />
 		<Compile Include="$(PkgPath)/UsrMCIT/Schemas/UsrPointBalanceType/UsrPointBalanceType.cs" Condition="Exists('$(PkgPath)/UsrMCIT/Schemas/UsrPointBalanceType/UsrPointBalanceType.cs')" />
