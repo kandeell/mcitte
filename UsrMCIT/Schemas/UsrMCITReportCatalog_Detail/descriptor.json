@@ -1,0 +1,14 @@
+﻿{
+  "Descriptor": {
+    "UId": "b26ea7f6-f53e-4499-89f5-024ff5e8c7b2",
+    "Name": "UsrMCITReportCatalog_Detail",
+    "ModifiedOnUtc": "\/Date(1793746746000)\/",
+    "Parent": {
+      "UId": "01eb38ee-668a-42f0-999d-c2534f979089",
+      "Name": "BaseGridDetailV2"
+    },
+    "ManagerName": "ClientUnitSchemaManager",
+    "Caption": "Report Catalog detail",
+    "DependsOn": []
+  }
+}

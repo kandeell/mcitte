@@ -1,0 +1,13 @@
+﻿{
+  "Descriptor": {
+    "UId": "7f6984f4-a4eb-404c-a892-0ee57ad74141",
+    "Name": "UsrReportParameters",
+    "ModifiedOnUtc": "\/Date(1793761651000)\/",
+    "Parent": {
+      "UId": "f691e828-0b36-42a7-898f-c337e9af67d0",
+      "Name": "BlankPageTemplate"
+    },
+    "ManagerName": "ClientUnitSchemaManager",
+    "Caption": "Report Parameters"
+  }
+}
