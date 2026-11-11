@@ -1,0 +1,26 @@
+{
+    "PackageData": [
+      {
+        "Row": [
+          {
+            "SchemaColumnUId": "ae0e45ca-c495-4fe7-a39d-3ab7278e1617",
+            "Value": "7e72f438-2646-469a-8798-eb72a961d8d3"
+          },
+          {
+            "SchemaColumnUId": "bd12ea8e-2bc2-42bf-925a-3ab766cc0b9f",
+            "Value": 26
+          },
+          {
+            "SchemaColumnUId": "0e3d3857-2203-40e4-b1ec-8e972007650e",
+            "Value": "d9f8b75b-2b8c-4c5a-bfc6-6363ad4705ee",
+            "DisplayValue": "My applications"
+          },
+          {
+            "SchemaColumnUId": "991cf5ef-ffb8-49a5-add3-074a595f6c43",
+            "Value": "f5c17d6d-c955-465c-bcdb-5a7783797c7b",
+            "DisplayValue": "Dashboard"
+          }
+        ]
+      }
+    ]
+  }

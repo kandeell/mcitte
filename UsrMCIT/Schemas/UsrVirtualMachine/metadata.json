@@ -185,6 +185,46 @@
   "E17": "UsrTargetVMId",
   "E18": "UsrTargetVMUsrName"
 }
++ MetaData.Schema.D2 {
+  "UId": "b5a5eff8-c804-b65f-bf76-bf90538ad36a",
+  "A2": "UsrAllocatedPoints",
+  "A3": "bb0a0edf-846d-46bf-ba31-423845b89fe4",
+  "A4": "bb0a0edf-846d-46bf-ba31-423845b89fe4",
+  "A5": "bcbc6655-9946-47b7-a72b-d27573f98e2e",
+  "S2": "5cc8060d-6d10-4773-89fc-8c12d6f659a6"
+}
++ MetaData.Schema.D2 {
+  "UId": "ccc6a5c4-138f-cbad-bd25-06856cbb8670",
+  "A2": "UsrZone",
+  "A3": "bb0a0edf-846d-46bf-ba31-423845b89fe4",
+  "A4": "bb0a0edf-846d-46bf-ba31-423845b89fe4",
+  "A5": "bcbc6655-9946-47b7-a72b-d27573f98e2e",
+  "S2": "325a73b8-0f47-44a0-8412-7606f78003ac"
+}
++ MetaData.Schema.D2 {
+  "UId": "3b738c1e-9d19-3f48-c639-a482a48ec77c",
+  "A2": "UsrEnvironment",
+  "A3": "bb0a0edf-846d-46bf-ba31-423845b89fe4",
+  "A4": "bb0a0edf-846d-46bf-ba31-423845b89fe4",
+  "A5": "bcbc6655-9946-47b7-a72b-d27573f98e2e",
+  "S2": "325a73b8-0f47-44a0-8412-7606f78003ac"
+}
++ MetaData.Schema.D2 {
+  "UId": "41864960-eecb-833f-ff21-955838ae828b",
+  "A2": "UsrVIP",
+  "A3": "bb0a0edf-846d-46bf-ba31-423845b89fe4",
+  "A4": "bb0a0edf-846d-46bf-ba31-423845b89fe4",
+  "A5": "bcbc6655-9946-47b7-a72b-d27573f98e2e",
+  "S2": "325a73b8-0f47-44a0-8412-7606f78003ac"
+}
++ MetaData.Schema.D2 {
+  "UId": "d510312b-3b9e-040e-4ab6-ee51c38c5b7a",
+  "A2": "UsrVMCode",
+  "A3": "bb0a0edf-846d-46bf-ba31-423845b89fe4",
+  "A4": "bb0a0edf-846d-46bf-ba31-423845b89fe4",
+  "A5": "bcbc6655-9946-47b7-a72b-d27573f98e2e",
+  "S2": "325a73b8-0f47-44a0-8412-7606f78003ac"
+}
 ~ MetaData.Schema.D2 [
   "ae0e45ca-c495-4fe7-a39d-3ab7278e1617",
   "e80190a5-03b2-4095-90f7-a193a960adee",
@@ -207,7 +247,12 @@
   "a9da6e48-2a13-1bc1-27d7-0c81dc3654e8",
   "bfdd6851-eed5-fc8f-27f0-f1e13ac003ca",
   "c2fc379e-ca43-9c41-dff2-60d22dca98e2",
-  "a2a4915a-c24a-5e54-0b09-3f1a5cc72baf"
+  "a2a4915a-c24a-5e54-0b09-3f1a5cc72baf",
+  "b5a5eff8-c804-b65f-bf76-bf90538ad36a",
+  "ccc6a5c4-138f-cbad-bd25-06856cbb8670",
+  "3b738c1e-9d19-3f48-c639-a482a48ec77c",
+  "41864960-eecb-833f-ff21-955838ae828b",
+  "d510312b-3b9e-040e-4ab6-ee51c38c5b7a"
 ]
 = MetaData.Schema.D20.A2 "UsrVirtualMachineEvents"
 + MetaData.Schema.D20.FA1 false

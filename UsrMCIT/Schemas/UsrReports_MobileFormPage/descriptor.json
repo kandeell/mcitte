@@ -1,0 +1,14 @@
+﻿{
+  "Descriptor": {
+    "UId": "9159ee94-c7d2-42b7-881f-8e29a9ba4217",
+    "Name": "UsrReports_MobileFormPage",
+    "ModifiedOnUtc": "\/Date(1794148832000)\/",
+    "Parent": {
+      "UId": "019c694a-1a3b-4812-b2e5-219b326061ae",
+      "Name": "MobilePageWithTabsFreedomTemplate"
+    },
+    "ManagerName": "ClientUnitSchemaManager",
+    "Caption": "Reports mobile form page",
+    "DependsOn": []
+  }
+}

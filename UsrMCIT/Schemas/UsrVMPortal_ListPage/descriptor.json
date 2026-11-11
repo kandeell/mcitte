@@ -1,0 +1,13 @@
+﻿{
+  "Descriptor": {
+    "UId": "bdb0b50b-9a17-4739-b49f-5e0087c23f25",
+    "Name": "UsrVMPortal_ListPage",
+    "ModifiedOnUtc": "\/Date(1794317863000)\/",
+    "Parent": {
+      "UId": "b7b898d0-8c77-4953-c097-23fa6800da02",
+      "Name": "ListPageV3Template"
+    },
+    "ManagerName": "ClientUnitSchemaManager",
+    "Caption": "List page"
+  }
+}
