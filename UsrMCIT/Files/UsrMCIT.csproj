@@ -864,6 +864,8 @@
 		<Compile Remove="$(RelativePkgFolderPath)/UsrMCIT/Schemas/UsrMCIT/UsrMCIT.cs" Condition="Exists('$(RelativePkgFolderPath)/UsrMCIT/Schemas/UsrMCIT/UsrMCIT.cs')" />
 		<Compile Remove="$(RelativePkgFolderPath)/UsrMCIT/Schemas/UsrMCITApprovalDecision/UsrMCITApprovalDecision.cs" Condition="Exists('$(RelativePkgFolderPath)/UsrMCIT/Schemas/UsrMCITApprovalDecision/UsrMCITApprovalDecision.cs')" />
 		<Compile Remove="$(RelativePkgFolderPath)/UsrMCIT/Schemas/UsrMCITApprovalStage/UsrMCITApprovalStage.cs" Condition="Exists('$(RelativePkgFolderPath)/UsrMCIT/Schemas/UsrMCITApprovalStage/UsrMCITApprovalStage.cs')" />
+		<Compile Remove="$(RelativePkgFolderPath)/UsrMCIT/Schemas/UsrMCITAuditLog/UsrMCITAuditLog.cs" Condition="Exists('$(RelativePkgFolderPath)/UsrMCIT/Schemas/UsrMCITAuditLog/UsrMCITAuditLog.cs')" />
+		<Compile Remove="$(RelativePkgFolderPath)/UsrMCIT/Schemas/UsrMCITBusinessAuditEvent/UsrMCITBusinessAuditEvent.cs" Condition="Exists('$(RelativePkgFolderPath)/UsrMCIT/Schemas/UsrMCITBusinessAuditEvent/UsrMCITBusinessAuditEvent.cs')" />
 		<Compile Remove="$(RelativePkgFolderPath)/UsrMCIT/Schemas/UsrMCITContract/UsrMCITContract.cs" Condition="Exists('$(RelativePkgFolderPath)/UsrMCIT/Schemas/UsrMCITContract/UsrMCITContract.cs')" />
 		<Compile Remove="$(RelativePkgFolderPath)/UsrMCIT/Schemas/UsrMCITContractStatus/UsrMCITContractStatus.cs" Condition="Exists('$(RelativePkgFolderPath)/UsrMCIT/Schemas/UsrMCITContractStatus/UsrMCITContractStatus.cs')" />
 		<Compile Remove="$(RelativePkgFolderPath)/UsrMCIT/Schemas/UsrMCITOperatingSystem/UsrMCITOperatingSystem.cs" Condition="Exists('$(RelativePkgFolderPath)/UsrMCIT/Schemas/UsrMCITOperatingSystem/UsrMCITOperatingSystem.cs')" />
@@ -872,6 +874,8 @@
 		<Compile Remove="$(RelativePkgFolderPath)/UsrMCIT/Schemas/UsrMCITPermissionScreen/UsrMCITPermissionScreen.cs" Condition="Exists('$(RelativePkgFolderPath)/UsrMCIT/Schemas/UsrMCITPermissionScreen/UsrMCITPermissionScreen.cs')" />
 		<Compile Remove="$(RelativePkgFolderPath)/UsrMCIT/Schemas/UsrMCITPortalUserAccess/UsrMCITPortalUserAccess.cs" Condition="Exists('$(RelativePkgFolderPath)/UsrMCIT/Schemas/UsrMCITPortalUserAccess/UsrMCITPortalUserAccess.cs')" />
 		<Compile Remove="$(RelativePkgFolderPath)/UsrMCIT/Schemas/UsrMCITQueueRoleMapping/UsrMCITQueueRoleMapping.cs" Condition="Exists('$(RelativePkgFolderPath)/UsrMCIT/Schemas/UsrMCITQueueRoleMapping/UsrMCITQueueRoleMapping.cs')" />
+		<Compile Remove="$(RelativePkgFolderPath)/UsrMCIT/Schemas/UsrMCITReportCatalog/UsrMCITReportCatalog.cs" Condition="Exists('$(RelativePkgFolderPath)/UsrMCIT/Schemas/UsrMCITReportCatalog/UsrMCITReportCatalog.cs')" />
+		<Compile Remove="$(RelativePkgFolderPath)/UsrMCIT/Schemas/UsrMCITReportSavedFilter/UsrMCITReportSavedFilter.cs" Condition="Exists('$(RelativePkgFolderPath)/UsrMCIT/Schemas/UsrMCITReportSavedFilter/UsrMCITReportSavedFilter.cs')" />
 		<Compile Remove="$(RelativePkgFolderPath)/UsrMCIT/Schemas/UsrMCITRequestStatus/UsrMCITRequestStatus.cs" Condition="Exists('$(RelativePkgFolderPath)/UsrMCIT/Schemas/UsrMCITRequestStatus/UsrMCITRequestStatus.cs')" />
 		<Compile Remove="$(RelativePkgFolderPath)/UsrMCIT/Schemas/UsrMCITRequestType/UsrMCITRequestType.cs" Condition="Exists('$(RelativePkgFolderPath)/UsrMCIT/Schemas/UsrMCITRequestType/UsrMCITRequestType.cs')" />
 		<Compile Remove="$(RelativePkgFolderPath)/UsrMCIT/Schemas/UsrMCITResourceCategory/UsrMCITResourceCategory.cs" Condition="Exists('$(RelativePkgFolderPath)/UsrMCIT/Schemas/UsrMCITResourceCategory/UsrMCITResourceCategory.cs')" />

@@ -1,6 +1,62 @@
 = MetaData.Schema.UId "6a41ae5e-ef1b-415f-820c-f3e10f67db34"
 = MetaData.Schema.A2 "UsrReports_ListPage"
 = MetaData.Schema.A5 "6f71e54c-1960-40c9-94f6-073fd67699ab"
++ MetaData.Schema.B2 {
+  "UId": "a0b6d5a3-ad8b-1b9d-cf48-fc73667cfeb6",
+  "A2": "RequestsByStatus_series_0",
+  "A3": "6a41ae5e-ef1b-415f-820c-f3e10f67db34",
+  "A4": "6a41ae5e-ef1b-415f-820c-f3e10f67db34",
+  "A5": "cbbd7438-b447-42f9-8427-acbb085822f7"
+}
++ MetaData.Schema.B2 {
+  "UId": "82ac4d03-4792-a055-8856-275caed01c35",
+  "A2": "RequestsByStatus_title",
+  "A3": "6a41ae5e-ef1b-415f-820c-f3e10f67db34",
+  "A4": "6a41ae5e-ef1b-415f-820c-f3e10f67db34",
+  "A5": "cbbd7438-b447-42f9-8427-acbb085822f7"
+}
++ MetaData.Schema.B2 {
+  "UId": "1c15456a-073f-e939-07b3-aba9ad3a861a",
+  "A2": "SummaryRequestsByProject_series_0",
+  "A3": "6a41ae5e-ef1b-415f-820c-f3e10f67db34",
+  "A4": "6a41ae5e-ef1b-415f-820c-f3e10f67db34",
+  "A5": "cbbd7438-b447-42f9-8427-acbb085822f7"
+}
++ MetaData.Schema.B2 {
+  "UId": "991fb2d5-7b80-c46c-6d41-3d27fb0d9ba5",
+  "A2": "SummaryRequestsByProject_title",
+  "A3": "6a41ae5e-ef1b-415f-820c-f3e10f67db34",
+  "A4": "6a41ae5e-ef1b-415f-820c-f3e10f67db34",
+  "A5": "cbbd7438-b447-42f9-8427-acbb085822f7"
+}
++ MetaData.Schema.B2 {
+  "UId": "2f8448ca-d155-fe87-b95c-13f434d9a5e0",
+  "A2": "SummaryRequestsByContract_series_0",
+  "A3": "6a41ae5e-ef1b-415f-820c-f3e10f67db34",
+  "A4": "6a41ae5e-ef1b-415f-820c-f3e10f67db34",
+  "A5": "cbbd7438-b447-42f9-8427-acbb085822f7"
+}
++ MetaData.Schema.B2 {
+  "UId": "27b092e8-4533-d5ac-2ce2-07a3c80c3f60",
+  "A2": "SummaryRequestsByContract_title",
+  "A3": "6a41ae5e-ef1b-415f-820c-f3e10f67db34",
+  "A4": "6a41ae5e-ef1b-415f-820c-f3e10f67db34",
+  "A5": "cbbd7438-b447-42f9-8427-acbb085822f7"
+}
++ MetaData.Schema.B2 {
+  "UId": "69f6e029-e63c-4f9f-2041-5fe2d6f92ee7",
+  "A2": "VmsByContract_series_0",
+  "A3": "6a41ae5e-ef1b-415f-820c-f3e10f67db34",
+  "A4": "6a41ae5e-ef1b-415f-820c-f3e10f67db34",
+  "A5": "cbbd7438-b447-42f9-8427-acbb085822f7"
+}
++ MetaData.Schema.B2 {
+  "UId": "05d1c140-aacd-fa02-4a8d-aad5f0c03b59",
+  "A2": "VmsByContract_title",
+  "A3": "6a41ae5e-ef1b-415f-820c-f3e10f67db34",
+  "A4": "6a41ae5e-ef1b-415f-820c-f3e10f67db34",
+  "A5": "cbbd7438-b447-42f9-8427-acbb085822f7"
+}
 = MetaData.Schema.B2.["dad6907c-fd30-c781-3680-4546c3fd73f9"].A4 "6a41ae5e-ef1b-415f-820c-f3e10f67db34"
 = MetaData.Schema.B2.["e7ae710e-6562-fbc2-ba24-ac93d8e2c076"].A4 "6a41ae5e-ef1b-415f-820c-f3e10f67db34"
 = MetaData.Schema.B2.["31e1cae9-bf6b-bb43-e922-ac61fdc10520"].A4 "6a41ae5e-ef1b-415f-820c-f3e10f67db34"
@@ -20,6 +76,14 @@
 = MetaData.Schema.B2.["5ffa1509-5337-5131-c81d-62c2b05764f8"].A4 "6a41ae5e-ef1b-415f-820c-f3e10f67db34"
 = MetaData.Schema.B2.["e4787142-5b79-ba75-8318-a0b4cefc3a6a"].A4 "6a41ae5e-ef1b-415f-820c-f3e10f67db34"
 ~ MetaData.Schema.B2 [
+  "a0b6d5a3-ad8b-1b9d-cf48-fc73667cfeb6",
+  "82ac4d03-4792-a055-8856-275caed01c35",
+  "1c15456a-073f-e939-07b3-aba9ad3a861a",
+  "991fb2d5-7b80-c46c-6d41-3d27fb0d9ba5",
+  "2f8448ca-d155-fe87-b95c-13f434d9a5e0",
+  "27b092e8-4533-d5ac-2ce2-07a3c80c3f60",
+  "69f6e029-e63c-4f9f-2041-5fe2d6f92ee7",
+  "05d1c140-aacd-fa02-4a8d-aad5f0c03b59",
   "dad6907c-fd30-c781-3680-4546c3fd73f9",
   "e7ae710e-6562-fbc2-ba24-ac93d8e2c076",
   "31e1cae9-bf6b-bb43-e922-ac61fdc10520",

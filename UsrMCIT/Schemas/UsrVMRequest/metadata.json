@@ -190,6 +190,8 @@
   "A4": "1a5174ac-e00c-4185-b9af-9fdedc2caa82",
   "A5": "bcbc6655-9946-47b7-a72b-d27573f98e2e",
   "S2": "325a73b8-0f47-44a0-8412-7606f78003ac"
+}
++ MetaData.Schema.D2 {
   "UId": "f1ed45c4-0f8b-cbea-84ca-84b8b11d5356",
   "A2": "UsrIsArchived",
   "A3": "1a5174ac-e00c-4185-b9af-9fdedc2caa82",
@@ -224,7 +226,7 @@
   "6d848cb6-fbdb-1ead-c50d-ef25be934854",
   "0182d17a-b381-40aa-53bd-249481471fa4",
   "4bf3f680-5134-7987-b1bf-d362297f9a45",
-  "a7d5e411-1e34-1379-331f-858ef6c85301"
+  "a7d5e411-1e34-1379-331f-858ef6c85301",
   "f1ed45c4-0f8b-cbea-84ca-84b8b11d5356"
 ]
 = MetaData.Schema.D20.A2 "UsrVMRequestEvents"
