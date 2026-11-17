@@ -39,8 +39,205 @@
 			<Item Name="BaseElements.ActivityUserTask1.Parameters.ShowInScheduler.Caption" Value="แสดงในปฏิทิน" />
 			<Item Name="BaseElements.ActivityUserTask1.Parameters.StartIn.Caption" Value="เริ่มดำเนินการใน" />
 			<Item Name="BaseElements.ActivityUserTask1.Parameters.StartInPeriod.Caption" Value="เริ่มการดำเนินการใน (ระยะเวลา)" />
-			<Item Name="BaseElements.LinkEntityToProcessUserTask1.Parameters.EntityId.Caption" Value="ออบเจ็กต์" />
-			<Item Name="BaseElements.LinkEntityToProcessUserTask1.Parameters.EntitySchemaId.Caption" Value="โครงสร้างข้อมูลออบเจ็กต์" />
+			<Item Name="BaseElements.AddDataUserTask1.Parameters.ConsiderTimeInFilter.Caption" Value="พิจารณาเวลาที่ใช้ในการกรอง" />
+			<Item Name="BaseElements.AddDataUserTask1.Parameters.DataSourceFilters.Caption" Value="ตัวกรองแหล่งข้อมูล" />
+			<Item Name="BaseElements.AddDataUserTask1.Parameters.EntitySchemaId.Caption" Value="ออบเจ็กต์" />
+			<Item Name="BaseElements.AddDataUserTask1.Parameters.FilterEntitySchemaId.Caption" Value="ออบเจ็กต์" />
+			<Item Name="BaseElements.AddDataUserTask1.Parameters.RecordAddMode.Caption" Value="โหมดการเพิ่มบันทึก" />
+			<Item Name="BaseElements.AddDataUserTask1.Parameters.RecordDefValues.Caption" Value="สร้างค่าของคอลัมน์" />
+			<Item Name="BaseElements.AddDataUserTask1.Parameters.RecordId.Caption" Value="ไอดีของบันทึกที่สร้าง" />
+			<Item Name="BaseElements.ChangeDataUserTask6.Parameters.ConsiderTimeInFilter.Caption" Value="พิจารณาเวลาที่ใช้ในการกรอง" />
+			<Item Name="BaseElements.ChangeDataUserTask6.Parameters.DataSourceFilters.Caption" Value="ตัวกรองแหล่งข้อมูล" />
+			<Item Name="BaseElements.ChangeDataUserTask6.Parameters.EntitySchemaUId.Caption" Value="ออบเจ็กต์" />
+			<Item Name="BaseElements.ChangeDataUserTask6.Parameters.IgnoreErrors.Caption" Value="Continue execution on errors" />
+			<Item Name="BaseElements.ChangeDataUserTask6.Parameters.IsMatchConditions.Caption" Value="ถ้าออบเจ็กต์ตรงกับเงื่อนไขต่อไปนี้" />
+			<Item Name="BaseElements.ChangeDataUserTask6.Parameters.RecordColumnValues.Caption" Value="สร้างค่าของคอลัมน์" />
+			<Item Name="BaseElements.ChangeDataUserTask7.Parameters.ConsiderTimeInFilter.Caption" Value="พิจารณาเวลาที่ใช้ในการกรอง" />
+			<Item Name="BaseElements.ChangeDataUserTask7.Parameters.DataSourceFilters.Caption" Value="ตัวกรองแหล่งข้อมูล" />
+			<Item Name="BaseElements.ChangeDataUserTask7.Parameters.EntitySchemaUId.Caption" Value="ออบเจ็กต์" />
+			<Item Name="BaseElements.ChangeDataUserTask7.Parameters.IgnoreErrors.Caption" Value="Continue execution on errors" />
+			<Item Name="BaseElements.ChangeDataUserTask7.Parameters.IsMatchConditions.Caption" Value="ถ้าออบเจ็กต์ตรงกับเงื่อนไขต่อไปนี้" />
+			<Item Name="BaseElements.ChangeDataUserTask7.Parameters.RecordColumnValues.Caption" Value="สร้างค่าของคอลัมน์" />
+			<Item Name="BaseElements.ChangeDataUserTask8.Parameters.ConsiderTimeInFilter.Caption" Value="พิจารณาเวลาที่ใช้ในการกรอง" />
+			<Item Name="BaseElements.ChangeDataUserTask8.Parameters.DataSourceFilters.Caption" Value="ตัวกรองแหล่งข้อมูล" />
+			<Item Name="BaseElements.ChangeDataUserTask8.Parameters.EntitySchemaUId.Caption" Value="ออบเจ็กต์" />
+			<Item Name="BaseElements.ChangeDataUserTask8.Parameters.IgnoreErrors.Caption" Value="Continue execution on errors" />
+			<Item Name="BaseElements.ChangeDataUserTask8.Parameters.IsMatchConditions.Caption" Value="ถ้าออบเจ็กต์ตรงกับเงื่อนไขต่อไปนี้" />
+			<Item Name="BaseElements.ChangeDataUserTask8.Parameters.RecordColumnValues.Caption" Value="สร้างค่าของคอลัมน์" />
+			<Item Name="BaseElements.ChangeDataUserTask9.Parameters.ConsiderTimeInFilter.Caption" Value="พิจารณาเวลาที่ใช้ในการกรอง" />
+			<Item Name="BaseElements.ChangeDataUserTask9.Parameters.DataSourceFilters.Caption" Value="ตัวกรองแหล่งข้อมูล" />
+			<Item Name="BaseElements.ChangeDataUserTask9.Parameters.EntitySchemaUId.Caption" Value="ออบเจ็กต์" />
+			<Item Name="BaseElements.ChangeDataUserTask9.Parameters.IgnoreErrors.Caption" Value="Continue execution on errors" />
+			<Item Name="BaseElements.ChangeDataUserTask9.Parameters.IsMatchConditions.Caption" Value="ถ้าออบเจ็กต์ตรงกับเงื่อนไขต่อไปนี้" />
+			<Item Name="BaseElements.ChangeDataUserTask9.Parameters.RecordColumnValues.Caption" Value="สร้างค่าของคอลัมน์" />
+			<Item Name="BaseElements.EmailTemplateUserTask1.Parameters.Account.Caption" Value="ลูกค้า (บริษัท)" />
+			<Item Name="BaseElements.EmailTemplateUserTask1.Parameters.ActivityCategory.Caption" Value="หมวดหมู่" />
+			<Item Name="BaseElements.EmailTemplateUserTask1.Parameters.ActivityId.Caption" Value="ไอดีของงาน" />
+			<Item Name="BaseElements.EmailTemplateUserTask1.Parameters.ActivityResult.Caption" Value="ผลลัพธ์ของกิจกรรม" />
+			<Item Name="BaseElements.EmailTemplateUserTask1.Parameters.Body.Caption" Value="เนื้อหา" />
+			<Item Name="BaseElements.EmailTemplateUserTask1.Parameters.BodyConfig.Caption" Value="การกำหนดค่าส่วนใจความสำหรับตัวสร้างเนื้อหา" />
+			<Item Name="BaseElements.EmailTemplateUserTask1.Parameters.BodyTemplateType.Caption" Value="อีเมล์ชนิดอะไรที่จะส่ง?" />
+			<Item Name="BaseElements.EmailTemplateUserTask1.Parameters.Case.Caption" Value="เคส" />
+			<Item Name="BaseElements.EmailTemplateUserTask1.Parameters.Change.Caption" Value="เปลี่ยน" />
+			<Item Name="BaseElements.EmailTemplateUserTask1.Parameters.Contact.Caption" Value="ผู้ติดต่อ" />
+			<Item Name="BaseElements.EmailTemplateUserTask1.Parameters.Contract.Caption" Value="สัญญา" />
+			<Item Name="BaseElements.EmailTemplateUserTask1.Parameters.CreateActivity.Caption" Value="สร้างกิจกรรม" />
+			<Item Name="BaseElements.EmailTemplateUserTask1.Parameters.CustomEmailHeaders.Caption" Value="Custom email headers" />
+			<Item Name="BaseElements.EmailTemplateUserTask1.Parameters.Document.Caption" Value="เอกสาร" />
+			<Item Name="BaseElements.EmailTemplateUserTask1.Parameters.Duration.Caption" Value="ระยะเวลา" />
+			<Item Name="BaseElements.EmailTemplateUserTask1.Parameters.DurationPeriod.Caption" Value="ระยะเวลา (ช่วงเวลา)" />
+			<Item Name="BaseElements.EmailTemplateUserTask1.Parameters.EmailTemplateEntityId.Caption" Value="บันทึกสำหรับมาโคร" />
+			<Item Name="BaseElements.EmailTemplateUserTask1.Parameters.EmailTemplateId.Caption" Value="ข้อความเทมเพลต" />
+			<Item Name="BaseElements.EmailTemplateUserTask1.Parameters.ExecutionContext.Caption" Value="บริบทการดำเนินการ" />
+			<Item Name="BaseElements.EmailTemplateUserTask1.Parameters.IgnoreErrors.Caption" Value="ไม่ต้องสนใจข้อผิดพลาดอีเมล" />
+			<Item Name="BaseElements.EmailTemplateUserTask1.Parameters.Importance.Caption" Value="ความสำคัญ" />
+			<Item Name="BaseElements.EmailTemplateUserTask1.Parameters.Incident.Caption" Value="อุบัติการณ์" />
+			<Item Name="BaseElements.EmailTemplateUserTask1.Parameters.InformationOnStep.Caption" Value="ข้อมูลข่าวสารเกี่ยวกับขั้นตอน" />
+			<Item Name="BaseElements.EmailTemplateUserTask1.Parameters.Invoice.Caption" Value="ใบแจ้งหนี้" />
+			<Item Name="BaseElements.EmailTemplateUserTask1.Parameters.IsActivityCompleted.Caption" Value="กิจกรรมแล้วเสร็จ" />
+			<Item Name="BaseElements.EmailTemplateUserTask1.Parameters.Lead.Caption" Value="Lead" />
+			<Item Name="BaseElements.EmailTemplateUserTask1.Parameters.Listing.Caption" Value="การทำรายการ" />
+			<Item Name="BaseElements.EmailTemplateUserTask1.Parameters.Opportunity.Caption" Value="Opportunity" />
+			<Item Name="BaseElements.EmailTemplateUserTask1.Parameters.Order.Caption" Value="คำสั่งซื้อ" />
+			<Item Name="BaseElements.EmailTemplateUserTask1.Parameters.OwnerId.Caption" Value="เจ้าของ" />
+			<Item Name="BaseElements.EmailTemplateUserTask1.Parameters.Problem.Caption" Value="ปัญหา" />
+			<Item Name="BaseElements.EmailTemplateUserTask1.Parameters.Project.Caption" Value="โครงการ" />
+			<Item Name="BaseElements.EmailTemplateUserTask1.Parameters.Property.Caption" Value="คุณสมบัติ" />
+			<Item Name="BaseElements.EmailTemplateUserTask1.Parameters.QueueItem.Caption" Value="รายการที่อยู่ในคิว" />
+			<Item Name="BaseElements.EmailTemplateUserTask1.Parameters.Recommendation.Caption" Value="การเสนอแนะ" />
+			<Item Name="BaseElements.EmailTemplateUserTask1.Parameters.Release.Caption" Value="รีลีส" />
+			<Item Name="BaseElements.EmailTemplateUserTask1.Parameters.RemindBefore.Caption" Value="เตือนเจ้าของล่วงหน้า" />
+			<Item Name="BaseElements.EmailTemplateUserTask1.Parameters.RemindBeforePeriod.Caption" Value="เตือนความจำเจ้าของล่วงหน้า (ระยะเวลา)" />
+			<Item Name="BaseElements.EmailTemplateUserTask1.Parameters.Requests.Caption" Value="ร้องขอ" />
+			<Item Name="BaseElements.EmailTemplateUserTask1.Parameters.SendEmailType.Caption" Value="ข้อความถูกส่งอย่างไร?" />
+			<Item Name="BaseElements.EmailTemplateUserTask1.Parameters.Sender.Caption" Value="จาก" />
+			<Item Name="BaseElements.EmailTemplateUserTask1.Parameters.ShowExecutionPage.Caption" Value="แสดงหน้าการดำเนินการโดยอัตโนมัติ" />
+			<Item Name="BaseElements.EmailTemplateUserTask1.Parameters.ShowInScheduler.Caption" Value="แสดงในปฏิทิน" />
+			<Item Name="BaseElements.EmailTemplateUserTask1.Parameters.StartIn.Caption" Value="เริ่มดำเนินการใน" />
+			<Item Name="BaseElements.EmailTemplateUserTask1.Parameters.StartInPeriod.Caption" Value="เริ่มการดำเนินการใน (ระยะเวลา)" />
+			<Item Name="BaseElements.EmailTemplateUserTask1.Parameters.Subject.Caption" Value="เรื่อง" />
+			<Item Name="BaseElements.EmailTemplateUserTask2.Parameters.Account.Caption" Value="ลูกค้า (บริษัท)" />
+			<Item Name="BaseElements.EmailTemplateUserTask2.Parameters.ActivityCategory.Caption" Value="หมวดหมู่" />
+			<Item Name="BaseElements.EmailTemplateUserTask2.Parameters.ActivityId.Caption" Value="ไอดีของงาน" />
+			<Item Name="BaseElements.EmailTemplateUserTask2.Parameters.ActivityResult.Caption" Value="ผลลัพธ์ของกิจกรรม" />
+			<Item Name="BaseElements.EmailTemplateUserTask2.Parameters.Body.Caption" Value="เนื้อหา" />
+			<Item Name="BaseElements.EmailTemplateUserTask2.Parameters.BodyConfig.Caption" Value="การกำหนดค่าส่วนใจความสำหรับตัวสร้างเนื้อหา" />
+			<Item Name="BaseElements.EmailTemplateUserTask2.Parameters.BodyTemplateType.Caption" Value="อีเมล์ชนิดอะไรที่จะส่ง?" />
+			<Item Name="BaseElements.EmailTemplateUserTask2.Parameters.Case.Caption" Value="เคส" />
+			<Item Name="BaseElements.EmailTemplateUserTask2.Parameters.Change.Caption" Value="เปลี่ยน" />
+			<Item Name="BaseElements.EmailTemplateUserTask2.Parameters.Contact.Caption" Value="ผู้ติดต่อ" />
+			<Item Name="BaseElements.EmailTemplateUserTask2.Parameters.Contract.Caption" Value="สัญญา" />
+			<Item Name="BaseElements.EmailTemplateUserTask2.Parameters.CreateActivity.Caption" Value="สร้างกิจกรรม" />
+			<Item Name="BaseElements.EmailTemplateUserTask2.Parameters.CustomEmailHeaders.Caption" Value="Custom email headers" />
+			<Item Name="BaseElements.EmailTemplateUserTask2.Parameters.Document.Caption" Value="เอกสาร" />
+			<Item Name="BaseElements.EmailTemplateUserTask2.Parameters.Duration.Caption" Value="ระยะเวลา" />
+			<Item Name="BaseElements.EmailTemplateUserTask2.Parameters.DurationPeriod.Caption" Value="ระยะเวลา (ช่วงเวลา)" />
+			<Item Name="BaseElements.EmailTemplateUserTask2.Parameters.EmailTemplateEntityId.Caption" Value="บันทึกสำหรับมาโคร" />
+			<Item Name="BaseElements.EmailTemplateUserTask2.Parameters.EmailTemplateId.Caption" Value="ข้อความเทมเพลต" />
+			<Item Name="BaseElements.EmailTemplateUserTask2.Parameters.ExecutionContext.Caption" Value="บริบทการดำเนินการ" />
+			<Item Name="BaseElements.EmailTemplateUserTask2.Parameters.IgnoreErrors.Caption" Value="ไม่ต้องสนใจข้อผิดพลาดอีเมล" />
+			<Item Name="BaseElements.EmailTemplateUserTask2.Parameters.Importance.Caption" Value="ความสำคัญ" />
+			<Item Name="BaseElements.EmailTemplateUserTask2.Parameters.Incident.Caption" Value="อุบัติการณ์" />
+			<Item Name="BaseElements.EmailTemplateUserTask2.Parameters.InformationOnStep.Caption" Value="ข้อมูลข่าวสารเกี่ยวกับขั้นตอน" />
+			<Item Name="BaseElements.EmailTemplateUserTask2.Parameters.Invoice.Caption" Value="ใบแจ้งหนี้" />
+			<Item Name="BaseElements.EmailTemplateUserTask2.Parameters.IsActivityCompleted.Caption" Value="กิจกรรมแล้วเสร็จ" />
+			<Item Name="BaseElements.EmailTemplateUserTask2.Parameters.Lead.Caption" Value="Lead" />
+			<Item Name="BaseElements.EmailTemplateUserTask2.Parameters.Listing.Caption" Value="การทำรายการ" />
+			<Item Name="BaseElements.EmailTemplateUserTask2.Parameters.Opportunity.Caption" Value="Opportunity" />
+			<Item Name="BaseElements.EmailTemplateUserTask2.Parameters.Order.Caption" Value="คำสั่งซื้อ" />
+			<Item Name="BaseElements.EmailTemplateUserTask2.Parameters.OwnerId.Caption" Value="เจ้าของ" />
+			<Item Name="BaseElements.EmailTemplateUserTask2.Parameters.Problem.Caption" Value="ปัญหา" />
+			<Item Name="BaseElements.EmailTemplateUserTask2.Parameters.Project.Caption" Value="โครงการ" />
+			<Item Name="BaseElements.EmailTemplateUserTask2.Parameters.Property.Caption" Value="คุณสมบัติ" />
+			<Item Name="BaseElements.EmailTemplateUserTask2.Parameters.QueueItem.Caption" Value="รายการที่อยู่ในคิว" />
+			<Item Name="BaseElements.EmailTemplateUserTask2.Parameters.Recommendation.Caption" Value="การเสนอแนะ" />
+			<Item Name="BaseElements.EmailTemplateUserTask2.Parameters.Release.Caption" Value="รีลีส" />
+			<Item Name="BaseElements.EmailTemplateUserTask2.Parameters.RemindBefore.Caption" Value="เตือนเจ้าของล่วงหน้า" />
+			<Item Name="BaseElements.EmailTemplateUserTask2.Parameters.RemindBeforePeriod.Caption" Value="เตือนความจำเจ้าของล่วงหน้า (ระยะเวลา)" />
+			<Item Name="BaseElements.EmailTemplateUserTask2.Parameters.Requests.Caption" Value="ร้องขอ" />
+			<Item Name="BaseElements.EmailTemplateUserTask2.Parameters.SendEmailType.Caption" Value="ข้อความถูกส่งอย่างไร?" />
+			<Item Name="BaseElements.EmailTemplateUserTask2.Parameters.Sender.Caption" Value="จาก" />
+			<Item Name="BaseElements.EmailTemplateUserTask2.Parameters.ShowExecutionPage.Caption" Value="แสดงหน้าการดำเนินการโดยอัตโนมัติ" />
+			<Item Name="BaseElements.EmailTemplateUserTask2.Parameters.ShowInScheduler.Caption" Value="แสดงในปฏิทิน" />
+			<Item Name="BaseElements.EmailTemplateUserTask2.Parameters.StartIn.Caption" Value="เริ่มดำเนินการใน" />
+			<Item Name="BaseElements.EmailTemplateUserTask2.Parameters.StartInPeriod.Caption" Value="เริ่มการดำเนินการใน (ระยะเวลา)" />
+			<Item Name="BaseElements.EmailTemplateUserTask2.Parameters.Subject.Caption" Value="เรื่อง" />
+			<Item Name="BaseElements.ReadDataUserTask2.Parameters.AggregationColumnName.Caption" Value="ชื่อของคอลัมน์ฟังชั่นรวม" />
+			<Item Name="BaseElements.ReadDataUserTask2.Parameters.CanReadUncommitedData.Caption" Value="อ่านข้อมูลที่ไม่มีข้อผูกมัด" />
+			<Item Name="BaseElements.ReadDataUserTask2.Parameters.ConsiderTimeInFilter.Caption" Value="พิจารณาเวลาที่ใช้ในการกรอง" />
+			<Item Name="BaseElements.ReadDataUserTask2.Parameters.DataSourceFilters.Caption" Value="แหล่งข้อมูลของตัวกรอง" />
+			<Item Name="BaseElements.ReadDataUserTask2.Parameters.EntityColumnMetaPathes.Caption" Value="คอลัมน์ที่จะอ่าน" />
+			<Item Name="BaseElements.ReadDataUserTask2.Parameters.FunctionType.Caption" Value="ประเภทฟังชั่นราวม" />
+			<Item Name="BaseElements.ReadDataUserTask2.Parameters.IgnoreDisplayValues.Caption" Value="อย่าอ่านค่าที่แสดงของคอลัมน์การค้นหา" />
+			<Item Name="BaseElements.ReadDataUserTask2.Parameters.NumberOfRecords.Caption" Value="จำนวนของบันทึกที่จะอ่าน" />
+			<Item Name="BaseElements.ReadDataUserTask2.Parameters.OrderInfo.Caption" Value="ลำดับของคอลัมน์" />
+			<Item Name="BaseElements.ReadDataUserTask2.Parameters.ReadSomeTopRecords.Caption" Value="อ่านก่อน" />
+			<Item Name="BaseElements.ReadDataUserTask2.Parameters.ResultCompositeObjectList.Caption" Value="การรวบรวมบันทึก" />
+			<Item Name="BaseElements.ReadDataUserTask2.Parameters.ResultCount.Caption" Value="จำนวนของบันทึก" />
+			<Item Name="BaseElements.ReadDataUserTask2.Parameters.ResultDateTimeFunction.Caption" Value="Function result (Date/Time)" />
+			<Item Name="BaseElements.ReadDataUserTask2.Parameters.ResultEntity.Caption" Value="รายการแรกของคอลเลคชั่นที่ส่งผล" />
+			<Item Name="BaseElements.ReadDataUserTask2.Parameters.ResultEntityCollection.Caption" Value="คอลเลกชั่นที่ส่งผล" />
+			<Item Name="BaseElements.ReadDataUserTask2.Parameters.ResultFloatFunction.Caption" Value="Function result (Decimal)" />
+			<Item Name="BaseElements.ReadDataUserTask2.Parameters.ResultIntegerFunction.Caption" Value="Function result (Integer)" />
+			<Item Name="BaseElements.ReadDataUserTask2.Parameters.ResultRowsCount.Caption" Value="จำนวนของบันทึกที่อ่านแล้ว" />
+			<Item Name="BaseElements.ReadDataUserTask2.Parameters.ResultType.Caption" Value="ประเภทของผลลัพธ์" />
+			<Item Name="BaseElements.ReadDataUserTask3.Parameters.AggregationColumnName.Caption" Value="ชื่อของคอลัมน์ฟังชั่นรวม" />
+			<Item Name="BaseElements.ReadDataUserTask3.Parameters.CanReadUncommitedData.Caption" Value="อ่านข้อมูลที่ไม่มีข้อผูกมัด" />
+			<Item Name="BaseElements.ReadDataUserTask3.Parameters.ConsiderTimeInFilter.Caption" Value="พิจารณาเวลาที่ใช้ในการกรอง" />
+			<Item Name="BaseElements.ReadDataUserTask3.Parameters.DataSourceFilters.Caption" Value="แหล่งข้อมูลของตัวกรอง" />
+			<Item Name="BaseElements.ReadDataUserTask3.Parameters.EntityColumnMetaPathes.Caption" Value="คอลัมน์ที่จะอ่าน" />
+			<Item Name="BaseElements.ReadDataUserTask3.Parameters.FunctionType.Caption" Value="ประเภทฟังชั่นราวม" />
+			<Item Name="BaseElements.ReadDataUserTask3.Parameters.IgnoreDisplayValues.Caption" Value="อย่าอ่านค่าที่แสดงของคอลัมน์การค้นหา" />
+			<Item Name="BaseElements.ReadDataUserTask3.Parameters.NumberOfRecords.Caption" Value="จำนวนของบันทึกที่จะอ่าน" />
+			<Item Name="BaseElements.ReadDataUserTask3.Parameters.OrderInfo.Caption" Value="ลำดับของคอลัมน์" />
+			<Item Name="BaseElements.ReadDataUserTask3.Parameters.ReadSomeTopRecords.Caption" Value="อ่านก่อน" />
+			<Item Name="BaseElements.ReadDataUserTask3.Parameters.ResultCompositeObjectList.Caption" Value="การรวบรวมบันทึก" />
+			<Item Name="BaseElements.ReadDataUserTask3.Parameters.ResultCount.Caption" Value="จำนวนของบันทึก" />
+			<Item Name="BaseElements.ReadDataUserTask3.Parameters.ResultDateTimeFunction.Caption" Value="Function result (Date/Time)" />
+			<Item Name="BaseElements.ReadDataUserTask3.Parameters.ResultEntity.Caption" Value="รายการแรกของคอลเลคชั่นที่ส่งผล" />
+			<Item Name="BaseElements.ReadDataUserTask3.Parameters.ResultEntityCollection.Caption" Value="คอลเลกชั่นที่ส่งผล" />
+			<Item Name="BaseElements.ReadDataUserTask3.Parameters.ResultFloatFunction.Caption" Value="Function result (Decimal)" />
+			<Item Name="BaseElements.ReadDataUserTask3.Parameters.ResultIntegerFunction.Caption" Value="Function result (Integer)" />
+			<Item Name="BaseElements.ReadDataUserTask3.Parameters.ResultRowsCount.Caption" Value="จำนวนของบันทึกที่อ่านแล้ว" />
+			<Item Name="BaseElements.ReadDataUserTask3.Parameters.ResultType.Caption" Value="ประเภทของผลลัพธ์" />
+			<Item Name="BaseElements.ReadDataUserTask4.Parameters.AggregationColumnName.Caption" Value="ชื่อของคอลัมน์ฟังชั่นรวม" />
+			<Item Name="BaseElements.ReadDataUserTask4.Parameters.CanReadUncommitedData.Caption" Value="อ่านข้อมูลที่ไม่มีข้อผูกมัด" />
+			<Item Name="BaseElements.ReadDataUserTask4.Parameters.ConsiderTimeInFilter.Caption" Value="พิจารณาเวลาที่ใช้ในการกรอง" />
+			<Item Name="BaseElements.ReadDataUserTask4.Parameters.DataSourceFilters.Caption" Value="แหล่งข้อมูลของตัวกรอง" />
+			<Item Name="BaseElements.ReadDataUserTask4.Parameters.EntityColumnMetaPathes.Caption" Value="คอลัมน์ที่จะอ่าน" />
+			<Item Name="BaseElements.ReadDataUserTask4.Parameters.FunctionType.Caption" Value="ประเภทฟังชั่นราวม" />
+			<Item Name="BaseElements.ReadDataUserTask4.Parameters.IgnoreDisplayValues.Caption" Value="อย่าอ่านค่าที่แสดงของคอลัมน์การค้นหา" />
+			<Item Name="BaseElements.ReadDataUserTask4.Parameters.NumberOfRecords.Caption" Value="จำนวนของบันทึกที่จะอ่าน" />
+			<Item Name="BaseElements.ReadDataUserTask4.Parameters.OrderInfo.Caption" Value="ลำดับของคอลัมน์" />
+			<Item Name="BaseElements.ReadDataUserTask4.Parameters.ReadSomeTopRecords.Caption" Value="อ่านก่อน" />
+			<Item Name="BaseElements.ReadDataUserTask4.Parameters.ResultCompositeObjectList.Caption" Value="การรวบรวมบันทึก" />
+			<Item Name="BaseElements.ReadDataUserTask4.Parameters.ResultCount.Caption" Value="จำนวนของบันทึก" />
+			<Item Name="BaseElements.ReadDataUserTask4.Parameters.ResultDateTimeFunction.Caption" Value="Function result (Date/Time)" />
+			<Item Name="BaseElements.ReadDataUserTask4.Parameters.ResultEntity.Caption" Value="รายการแรกของคอลเลคชั่นที่ส่งผล" />
+			<Item Name="BaseElements.ReadDataUserTask4.Parameters.ResultEntityCollection.Caption" Value="คอลเลกชั่นที่ส่งผล" />
+			<Item Name="BaseElements.ReadDataUserTask4.Parameters.ResultFloatFunction.Caption" Value="Function result (Decimal)" />
+			<Item Name="BaseElements.ReadDataUserTask4.Parameters.ResultIntegerFunction.Caption" Value="Function result (Integer)" />
+			<Item Name="BaseElements.ReadDataUserTask4.Parameters.ResultRowsCount.Caption" Value="จำนวนของบันทึกที่อ่านแล้ว" />
+			<Item Name="BaseElements.ReadDataUserTask4.Parameters.ResultType.Caption" Value="ประเภทของผลลัพธ์" />
+			<Item Name="BaseElements.ReadDataUserTask5.Parameters.AggregationColumnName.Caption" Value="ชื่อของคอลัมน์ฟังชั่นรวม" />
+			<Item Name="BaseElements.ReadDataUserTask5.Parameters.CanReadUncommitedData.Caption" Value="อ่านข้อมูลที่ไม่มีข้อผูกมัด" />
+			<Item Name="BaseElements.ReadDataUserTask5.Parameters.ConsiderTimeInFilter.Caption" Value="พิจารณาเวลาที่ใช้ในการกรอง" />
+			<Item Name="BaseElements.ReadDataUserTask5.Parameters.DataSourceFilters.Caption" Value="แหล่งข้อมูลของตัวกรอง" />
+			<Item Name="BaseElements.ReadDataUserTask5.Parameters.EntityColumnMetaPathes.Caption" Value="คอลัมน์ที่จะอ่าน" />
+			<Item Name="BaseElements.ReadDataUserTask5.Parameters.FunctionType.Caption" Value="ประเภทฟังชั่นราวม" />
+			<Item Name="BaseElements.ReadDataUserTask5.Parameters.IgnoreDisplayValues.Caption" Value="อย่าอ่านค่าที่แสดงของคอลัมน์การค้นหา" />
+			<Item Name="BaseElements.ReadDataUserTask5.Parameters.NumberOfRecords.Caption" Value="จำนวนของบันทึกที่จะอ่าน" />
+			<Item Name="BaseElements.ReadDataUserTask5.Parameters.OrderInfo.Caption" Value="ลำดับของคอลัมน์" />
+			<Item Name="BaseElements.ReadDataUserTask5.Parameters.ReadSomeTopRecords.Caption" Value="อ่านก่อน" />
+			<Item Name="BaseElements.ReadDataUserTask5.Parameters.ResultCompositeObjectList.Caption" Value="การรวบรวมบันทึก" />
+			<Item Name="BaseElements.ReadDataUserTask5.Parameters.ResultCount.Caption" Value="จำนวนของบันทึก" />
+			<Item Name="BaseElements.ReadDataUserTask5.Parameters.ResultDateTimeFunction.Caption" Value="Function result (Date/Time)" />
+			<Item Name="BaseElements.ReadDataUserTask5.Parameters.ResultEntity.Caption" Value="รายการแรกของคอลเลคชั่นที่ส่งผล" />
+			<Item Name="BaseElements.ReadDataUserTask5.Parameters.ResultEntityCollection.Caption" Value="คอลเลกชั่นที่ส่งผล" />
+			<Item Name="BaseElements.ReadDataUserTask5.Parameters.ResultFloatFunction.Caption" Value="Function result (Decimal)" />
+			<Item Name="BaseElements.ReadDataUserTask5.Parameters.ResultIntegerFunction.Caption" Value="Function result (Integer)" />
+			<Item Name="BaseElements.ReadDataUserTask5.Parameters.ResultRowsCount.Caption" Value="จำนวนของบันทึกที่อ่านแล้ว" />
+			<Item Name="BaseElements.ReadDataUserTask5.Parameters.ResultType.Caption" Value="ประเภทของผลลัพธ์" />
 			<Item Name="Caption" Value="MCIT VM Request Submission" />
 		</Items>
 	</Group>

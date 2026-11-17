@@ -58,6 +58,28 @@
 			<Item Name="BaseElements.ActivityUserTask1.Parameters.StartInPeriod.DisplayValue" Value="0" />
 			<Item Name="BaseElements.ActivityUserTask1.Parameters.UsrUsrContractConfigVersion.Caption" Value="Contract Configuration Version" />
 			<Item Name="BaseElements.ActivityUserTask1.Parameters.UsrUsrVirtualMachine.Caption" Value="Virtual Machine" />
+			<Item Name="BaseElements.AddDataUserTask1.Caption" Value="Create Technical Review Task" />
+			<Item Name="BaseElements.AddDataUserTask1.Parameters.ConsiderTimeInFilter.Caption" Value="Consider time in the filter" />
+			<Item Name="BaseElements.AddDataUserTask1.Parameters.ConsiderTimeInFilter.DisplayValue" Value="true" />
+			<Item Name="BaseElements.AddDataUserTask1.Parameters.DataSourceFilters.Caption" Value="Data source filters" />
+			<Item Name="BaseElements.AddDataUserTask1.Parameters.EntitySchemaId.Caption" Value="Object" />
+			<Item Name="BaseElements.AddDataUserTask1.Parameters.FilterEntitySchemaId.Caption" Value="Object" />
+			<Item Name="BaseElements.AddDataUserTask1.Parameters.RecordAddMode.Caption" Value="Record adding mode" />
+			<Item Name="BaseElements.AddDataUserTask1.Parameters.RecordDefValues.Caption" Value="Set column values" />
+			<Item Name="BaseElements.AddDataUserTask1.Parameters.RecordDefValues.Value.d90ac787-e76f-4cd9-b8c6-1881a6a39a8d.displayValue" Value="Technical Review 1" />
+			<Item Name="BaseElements.AddDataUserTask1.Parameters.RecordDefValues.Value.d90ac787-e76f-4cd9-b8c6-1881a6a39a8d.value" Value="Technical Review 1" />
+			<Item Name="BaseElements.AddDataUserTask1.Parameters.RecordId.Caption" Value="Created record Id" />
+			<Item Name="BaseElements.AddDataUserTask2.Caption" Value="Create Financial Review Task" />
+			<Item Name="BaseElements.AddDataUserTask2.Parameters.ConsiderTimeInFilter.Caption" Value="Consider time in the filter" />
+			<Item Name="BaseElements.AddDataUserTask2.Parameters.ConsiderTimeInFilter.DisplayValue" Value="true" />
+			<Item Name="BaseElements.AddDataUserTask2.Parameters.DataSourceFilters.Caption" Value="Data source filters" />
+			<Item Name="BaseElements.AddDataUserTask2.Parameters.EntitySchemaId.Caption" Value="Object" />
+			<Item Name="BaseElements.AddDataUserTask2.Parameters.FilterEntitySchemaId.Caption" Value="Object" />
+			<Item Name="BaseElements.AddDataUserTask2.Parameters.RecordAddMode.Caption" Value="Record adding mode" />
+			<Item Name="BaseElements.AddDataUserTask2.Parameters.RecordDefValues.Caption" Value="Set column values" />
+			<Item Name="BaseElements.AddDataUserTask2.Parameters.RecordDefValues.Value.d3ec0007-87b2-4ad2-ad91-866d9cd59cc9.displayValue" Value="Financial Review" />
+			<Item Name="BaseElements.AddDataUserTask2.Parameters.RecordDefValues.Value.d3ec0007-87b2-4ad2-ad91-866d9cd59cc9.value" Value="Financial Review" />
+			<Item Name="BaseElements.AddDataUserTask2.Parameters.RecordId.Caption" Value="Created record Id" />
 			<Item Name="BaseElements.ApprovalUserTask1.Caption" Value="Financial Approval" />
 			<Item Name="BaseElements.ApprovalUserTask1.Parameters.ApprovalSchemaUId.Caption" Value="Approval object" />
 			<Item Name="BaseElements.ApprovalUserTask1.Parameters.ApproverEmailTemplate.Caption" Value="Email template for the approver" />
@@ -80,8 +102,8 @@
 			<Item Name="BaseElements.ApprovalUserTask1.Parameters.IsSendEmailToAuthor.DisplayValue" Value="false" />
 			<Item Name="BaseElements.ApprovalUserTask1.Parameters.MasterColumnUId.Caption" Value="Master column" />
 			<Item Name="BaseElements.ApprovalUserTask1.Parameters.Purpose.Caption" Value="Approval purpose" />
-			<Item Name="BaseElements.ApprovalUserTask1.Parameters.Purpose.DisplayValue" Value="Approval required" />
-			<Item Name="BaseElements.ApprovalUserTask1.Parameters.Purpose.Value" Value="Approval required" />
+			<Item Name="BaseElements.ApprovalUserTask1.Parameters.Purpose.DisplayValue" Value="MCIT Financial Review" />
+			<Item Name="BaseElements.ApprovalUserTask1.Parameters.Purpose.Value" Value="MCIT Financial Review" />
 			<Item Name="BaseElements.ApprovalUserTask1.Parameters.RecordId.Caption" Value="Record Id" />
 			<Item Name="BaseElements.ApprovalUserTask1.Parameters.RecordId.DisplayValue" Value="[#StartSignal1.Unique identifier of record#]" />
 			<Item Name="BaseElements.ApprovalUserTask1.Parameters.ResultParameter.Caption" Value="Result parameter" />
@@ -111,8 +133,8 @@
 			<Item Name="BaseElements.ApprovalUserTask2.Parameters.IsSendEmailToAuthor.DisplayValue" Value="false" />
 			<Item Name="BaseElements.ApprovalUserTask2.Parameters.MasterColumnUId.Caption" Value="Master column" />
 			<Item Name="BaseElements.ApprovalUserTask2.Parameters.Purpose.Caption" Value="Approval purpose" />
-			<Item Name="BaseElements.ApprovalUserTask2.Parameters.Purpose.DisplayValue" Value="Approval required" />
-			<Item Name="BaseElements.ApprovalUserTask2.Parameters.Purpose.Value" Value="Approval required" />
+			<Item Name="BaseElements.ApprovalUserTask2.Parameters.Purpose.DisplayValue" Value="MCIT Technical Review" />
+			<Item Name="BaseElements.ApprovalUserTask2.Parameters.Purpose.Value" Value="MCIT Technical Review" />
 			<Item Name="BaseElements.ApprovalUserTask2.Parameters.RecordId.Caption" Value="Record Id" />
 			<Item Name="BaseElements.ApprovalUserTask2.Parameters.RecordId.DisplayValue" Value="[#StartSignal1.Unique identifier of record#]" />
 			<Item Name="BaseElements.ApprovalUserTask2.Parameters.ResultParameter.Caption" Value="Result parameter" />
@@ -170,13 +192,206 @@
 			<Item Name="BaseElements.ChangeDataUserTask5.Parameters.IsMatchConditions.Caption" Value="If object meets the following conditions" />
 			<Item Name="BaseElements.ChangeDataUserTask5.Parameters.IsMatchConditions.DisplayValue" Value="true" />
 			<Item Name="BaseElements.ChangeDataUserTask5.Parameters.RecordColumnValues.Caption" Value="Set column values" />
+			<Item Name="BaseElements.ChangeDataUserTask6.Caption" Value="Complete Financial Review" />
+			<Item Name="BaseElements.ChangeDataUserTask6.Parameters.ConsiderTimeInFilter.Caption" Value="Consider time in the filter" />
+			<Item Name="BaseElements.ChangeDataUserTask6.Parameters.ConsiderTimeInFilter.DisplayValue" Value="true" />
+			<Item Name="BaseElements.ChangeDataUserTask6.Parameters.DataSourceFilters.Caption" Value="Data source filters" />
+			<Item Name="BaseElements.ChangeDataUserTask6.Parameters.EntitySchemaUId.Caption" Value="Object" />
+			<Item Name="BaseElements.ChangeDataUserTask6.Parameters.IgnoreErrors.Caption" Value="Continue execution on errors" />
+			<Item Name="BaseElements.ChangeDataUserTask6.Parameters.IgnoreErrors.DisplayValue" Value="false" />
+			<Item Name="BaseElements.ChangeDataUserTask6.Parameters.IsMatchConditions.Caption" Value="If object meets the following conditions" />
+			<Item Name="BaseElements.ChangeDataUserTask6.Parameters.IsMatchConditions.DisplayValue" Value="true" />
+			<Item Name="BaseElements.ChangeDataUserTask6.Parameters.RecordColumnValues.Caption" Value="Set column values" />
+			<Item Name="BaseElements.ChangeDataUserTask7.Caption" Value="Complete Financial Review - Rejected" />
+			<Item Name="BaseElements.ChangeDataUserTask7.Parameters.ConsiderTimeInFilter.Caption" Value="Consider time in the filter" />
+			<Item Name="BaseElements.ChangeDataUserTask7.Parameters.ConsiderTimeInFilter.DisplayValue" Value="true" />
+			<Item Name="BaseElements.ChangeDataUserTask7.Parameters.DataSourceFilters.Caption" Value="Data source filters" />
+			<Item Name="BaseElements.ChangeDataUserTask7.Parameters.EntitySchemaUId.Caption" Value="Object" />
+			<Item Name="BaseElements.ChangeDataUserTask7.Parameters.IgnoreErrors.Caption" Value="Continue execution on errors" />
+			<Item Name="BaseElements.ChangeDataUserTask7.Parameters.IgnoreErrors.DisplayValue" Value="false" />
+			<Item Name="BaseElements.ChangeDataUserTask7.Parameters.IsMatchConditions.Caption" Value="If object meets the following conditions" />
+			<Item Name="BaseElements.ChangeDataUserTask7.Parameters.IsMatchConditions.DisplayValue" Value="true" />
+			<Item Name="BaseElements.ChangeDataUserTask7.Parameters.RecordColumnValues.Caption" Value="Set column values" />
+			<Item Name="BaseElements.ChangeDataUserTask8.Caption" Value="Complete Technical Review" />
+			<Item Name="BaseElements.ChangeDataUserTask8.Parameters.ConsiderTimeInFilter.Caption" Value="Consider time in the filter" />
+			<Item Name="BaseElements.ChangeDataUserTask8.Parameters.ConsiderTimeInFilter.DisplayValue" Value="true" />
+			<Item Name="BaseElements.ChangeDataUserTask8.Parameters.DataSourceFilters.Caption" Value="Data source filters" />
+			<Item Name="BaseElements.ChangeDataUserTask8.Parameters.EntitySchemaUId.Caption" Value="Object" />
+			<Item Name="BaseElements.ChangeDataUserTask8.Parameters.IgnoreErrors.Caption" Value="Continue execution on errors" />
+			<Item Name="BaseElements.ChangeDataUserTask8.Parameters.IgnoreErrors.DisplayValue" Value="false" />
+			<Item Name="BaseElements.ChangeDataUserTask8.Parameters.IsMatchConditions.Caption" Value="If object meets the following conditions" />
+			<Item Name="BaseElements.ChangeDataUserTask8.Parameters.IsMatchConditions.DisplayValue" Value="true" />
+			<Item Name="BaseElements.ChangeDataUserTask8.Parameters.RecordColumnValues.Caption" Value="Set column values" />
+			<Item Name="BaseElements.ChangeDataUserTask9.Caption" Value="	Complete Technical Review - Rejected" />
+			<Item Name="BaseElements.ChangeDataUserTask9.Parameters.ConsiderTimeInFilter.Caption" Value="Consider time in the filter" />
+			<Item Name="BaseElements.ChangeDataUserTask9.Parameters.ConsiderTimeInFilter.DisplayValue" Value="true" />
+			<Item Name="BaseElements.ChangeDataUserTask9.Parameters.DataSourceFilters.Caption" Value="Data source filters" />
+			<Item Name="BaseElements.ChangeDataUserTask9.Parameters.EntitySchemaUId.Caption" Value="Object" />
+			<Item Name="BaseElements.ChangeDataUserTask9.Parameters.IgnoreErrors.Caption" Value="Continue execution on errors" />
+			<Item Name="BaseElements.ChangeDataUserTask9.Parameters.IgnoreErrors.DisplayValue" Value="false" />
+			<Item Name="BaseElements.ChangeDataUserTask9.Parameters.IsMatchConditions.Caption" Value="If object meets the following conditions" />
+			<Item Name="BaseElements.ChangeDataUserTask9.Parameters.IsMatchConditions.DisplayValue" Value="true" />
+			<Item Name="BaseElements.ChangeDataUserTask9.Parameters.RecordColumnValues.Caption" Value="Set column values" />
 			<Item Name="BaseElements.ConditionalSequenceFlow1.Caption" Value="Submitted" />
+			<Item Name="BaseElements.ConditionalSequenceFlow12.Caption" Value="Technical Approval Record Found" />
+			<Item Name="BaseElements.ConditionalSequenceFlow14.Caption" Value="Technical Rejection Record Found" />
 			<Item Name="BaseElements.ConditionalSequenceFlow2.Caption" Value="Positive" />
 			<Item Name="BaseElements.ConditionalSequenceFlow3.Caption" Value="Negative" />
 			<Item Name="BaseElements.ConditionalSequenceFlow4.Caption" Value="Negative" />
 			<Item Name="BaseElements.ConditionalSequenceFlow5.Caption" Value="Positive" />
+			<Item Name="BaseElements.ConditionalSequenceFlow7.Caption" Value=" Financial Rejection Record Found?." />
+			<Item Name="BaseElements.ConditionalSequenceFlow9.Caption" Value="Financial Approval Record Found?" />
+			<Item Name="BaseElements.DefaultSequenceFlow1.Caption" Value="Approval Record Not Found" />
 			<Item Name="BaseElements.DefaultSequenceFlow2.Caption" Value="Not Submitted" />
+			<Item Name="BaseElements.DefaultSequenceFlow3.Caption" Value="Financial Approval Record Not Found" />
+			<Item Name="BaseElements.DefaultSequenceFlow4.Caption" Value="Technical Approval Record Not Found." />
+			<Item Name="BaseElements.DefaultSequenceFlow5.Caption" Value="Technical Rejection Record Not Found" />
+			<Item Name="BaseElements.EmailTemplateUserTask1.Caption" Value="Notify Requester - Financial Rejected" />
+			<Item Name="BaseElements.EmailTemplateUserTask1.Parameters.Account.Caption" Value="Account" />
+			<Item Name="BaseElements.EmailTemplateUserTask1.Parameters.ActivityCategory.Caption" Value="Category" />
+			<Item Name="BaseElements.EmailTemplateUserTask1.Parameters.ActivityCategory.DisplayValue" Value="[#Lookup.Activity category.Email.8038a396-7825-e011-8165-00155d043204#]" />
+			<Item Name="BaseElements.EmailTemplateUserTask1.Parameters.ActivityId.Caption" Value="Task Id" />
+			<Item Name="BaseElements.EmailTemplateUserTask1.Parameters.ActivityResult.Caption" Value="Result of activity" />
+			<Item Name="BaseElements.EmailTemplateUserTask1.Parameters.Body.Caption" Value="Body" />
+			<Item Name="BaseElements.EmailTemplateUserTask1.Parameters.BodyConfig.Caption" Value="Body config for content builder" />
+			<Item Name="BaseElements.EmailTemplateUserTask1.Parameters.BodyTemplateType.Caption" Value="What kind of email to send?" />
+			<Item Name="BaseElements.EmailTemplateUserTask1.Parameters.BodyTemplateType.DisplayValue" Value="Custom message" />
+			<Item Name="BaseElements.EmailTemplateUserTask1.Parameters.Case.Caption" Value="Case" />
+			<Item Name="BaseElements.EmailTemplateUserTask1.Parameters.Change.Caption" Value="Change" />
+			<Item Name="BaseElements.EmailTemplateUserTask1.Parameters.Contact.Caption" Value="Contact" />
+			<Item Name="BaseElements.EmailTemplateUserTask1.Parameters.Contract.Caption" Value="Contract" />
+			<Item Name="BaseElements.EmailTemplateUserTask1.Parameters.CreateActivity.Caption" Value="Create activity" />
+			<Item Name="BaseElements.EmailTemplateUserTask1.Parameters.CreateActivity.DisplayValue" Value="true" />
+			<Item Name="BaseElements.EmailTemplateUserTask1.Parameters.CustomEmailHeaders.Caption" Value="Custom email headers" />
+			<Item Name="BaseElements.EmailTemplateUserTask1.Parameters.Document.Caption" Value="Document" />
+			<Item Name="BaseElements.EmailTemplateUserTask1.Parameters.Duration.Caption" Value="Duration" />
+			<Item Name="BaseElements.EmailTemplateUserTask1.Parameters.Duration.DisplayValue" Value="5" />
+			<Item Name="BaseElements.EmailTemplateUserTask1.Parameters.DurationPeriod.Caption" Value="Duration (period)" />
+			<Item Name="BaseElements.EmailTemplateUserTask1.Parameters.DurationPeriod.DisplayValue" Value="0" />
+			<Item Name="BaseElements.EmailTemplateUserTask1.Parameters.EmailTemplateEntityId.Caption" Value="Record for macros" />
+			<Item Name="BaseElements.EmailTemplateUserTask1.Parameters.EmailTemplateId.Caption" Value="Template message" />
+			<Item Name="BaseElements.EmailTemplateUserTask1.Parameters.ExecutionContext.Caption" Value="Execution context" />
+			<Item Name="BaseElements.EmailTemplateUserTask1.Parameters.IgnoreErrors.Caption" Value="Ignore email errors" />
+			<Item Name="BaseElements.EmailTemplateUserTask1.Parameters.IgnoreErrors.DisplayValue" Value="true" />
+			<Item Name="BaseElements.EmailTemplateUserTask1.Parameters.Importance.Caption" Value="Importance" />
+			<Item Name="BaseElements.EmailTemplateUserTask1.Parameters.Importance.DisplayValue" Value="Medium" />
+			<Item Name="BaseElements.EmailTemplateUserTask1.Parameters.Incident.Caption" Value="Incident" />
+			<Item Name="BaseElements.EmailTemplateUserTask1.Parameters.InformationOnStep.Caption" Value="Information on step" />
+			<Item Name="BaseElements.EmailTemplateUserTask1.Parameters.Invoice.Caption" Value="Invoice" />
+			<Item Name="BaseElements.EmailTemplateUserTask1.Parameters.IsActivityCompleted.Caption" Value="Activity completed" />
+			<Item Name="BaseElements.EmailTemplateUserTask1.Parameters.Lead.Caption" Value="Lead" />
+			<Item Name="BaseElements.EmailTemplateUserTask1.Parameters.Listing.Caption" Value="Listing" />
+			<Item Name="BaseElements.EmailTemplateUserTask1.Parameters.OmniChat.Caption" Value="Chat" />
+			<Item Name="BaseElements.EmailTemplateUserTask1.Parameters.Opportunity.Caption" Value="Opportunity" />
+			<Item Name="BaseElements.EmailTemplateUserTask1.Parameters.Order.Caption" Value="Order" />
+			<Item Name="BaseElements.EmailTemplateUserTask1.Parameters.OwnerId.Caption" Value="Owner" />
+			<Item Name="BaseElements.EmailTemplateUserTask1.Parameters.Problem.Caption" Value="Problem" />
+			<Item Name="BaseElements.EmailTemplateUserTask1.Parameters.Project.Caption" Value="Project" />
+			<Item Name="BaseElements.EmailTemplateUserTask1.Parameters.Property.Caption" Value="Property" />
+			<Item Name="BaseElements.EmailTemplateUserTask1.Parameters.QueueItem.Caption" Value="Queue item" />
+			<Item Name="BaseElements.EmailTemplateUserTask1.Parameters.Recipient1.Caption" Value="To 1" />
+			<Item Name="BaseElements.EmailTemplateUserTask1.Parameters.Recipient1.DisplayValue" Value="[#Read VM Request.First item of resulting collection.Requester#]" />
+			<Item Name="BaseElements.EmailTemplateUserTask1.Parameters.Recommendation.Caption" Value="Recommendation" />
+			<Item Name="BaseElements.EmailTemplateUserTask1.Parameters.Recommendation.DisplayValue" Value="Notify Requester - Financial Rejected." />
+			<Item Name="BaseElements.EmailTemplateUserTask1.Parameters.Recommendation.Value" Value="Notify Requester - Financial Rejected." />
+			<Item Name="BaseElements.EmailTemplateUserTask1.Parameters.Release.Caption" Value="Release" />
+			<Item Name="BaseElements.EmailTemplateUserTask1.Parameters.RemindBefore.Caption" Value="Remind owner in advance" />
+			<Item Name="BaseElements.EmailTemplateUserTask1.Parameters.RemindBefore.DisplayValue" Value="0" />
+			<Item Name="BaseElements.EmailTemplateUserTask1.Parameters.RemindBeforePeriod.Caption" Value="Remind owner in advance (period)" />
+			<Item Name="BaseElements.EmailTemplateUserTask1.Parameters.RemindBeforePeriod.DisplayValue" Value="0" />
+			<Item Name="BaseElements.EmailTemplateUserTask1.Parameters.Requests.Caption" Value="Request" />
+			<Item Name="BaseElements.EmailTemplateUserTask1.Parameters.SendEmailType.Caption" Value="How is the message sent?" />
+			<Item Name="BaseElements.EmailTemplateUserTask1.Parameters.SendEmailType.DisplayValue" Value="Send email automatically" />
+			<Item Name="BaseElements.EmailTemplateUserTask1.Parameters.Sender.Caption" Value="From" />
+			<Item Name="BaseElements.EmailTemplateUserTask1.Parameters.Sender.DisplayValue" Value="[#Lookup.Contact.Supervisor.410006e1-ca4e-4502-a9ec-e54d922d2c00#]" />
+			<Item Name="BaseElements.EmailTemplateUserTask1.Parameters.ShowExecutionPage.Caption" Value="Show execution page automatically" />
+			<Item Name="BaseElements.EmailTemplateUserTask1.Parameters.ShowExecutionPage.DisplayValue" Value="true" />
+			<Item Name="BaseElements.EmailTemplateUserTask1.Parameters.ShowInScheduler.Caption" Value="Show in calendar" />
+			<Item Name="BaseElements.EmailTemplateUserTask1.Parameters.ShowInScheduler.DisplayValue" Value="False" />
+			<Item Name="BaseElements.EmailTemplateUserTask1.Parameters.StartIn.Caption" Value="Start executing in" />
+			<Item Name="BaseElements.EmailTemplateUserTask1.Parameters.StartIn.DisplayValue" Value="0" />
+			<Item Name="BaseElements.EmailTemplateUserTask1.Parameters.StartInPeriod.Caption" Value="Start executing in (period)" />
+			<Item Name="BaseElements.EmailTemplateUserTask1.Parameters.StartInPeriod.DisplayValue" Value="0" />
+			<Item Name="BaseElements.EmailTemplateUserTask1.Parameters.Subject.Caption" Value="Subject" />
+			<Item Name="BaseElements.EmailTemplateUserTask1.Parameters.Subject.DisplayValue" Value="MCIT Portal — VM Request Rejected" />
+			<Item Name="BaseElements.EmailTemplateUserTask1.Parameters.Subject.Value" Value="MCIT Portal — VM Request Rejected" />
+			<Item Name="BaseElements.EmailTemplateUserTask1.Parameters.UsrUsrContractConfigVersion.Caption" Value="Contract Configuration Version" />
+			<Item Name="BaseElements.EmailTemplateUserTask1.Parameters.UsrUsrVirtualMachine.Caption" Value="Virtual Machine" />
+			<Item Name="BaseElements.EmailTemplateUserTask2.Caption" Value="Notify Requester - Technical Rejected" />
+			<Item Name="BaseElements.EmailTemplateUserTask2.Parameters.Account.Caption" Value="Account" />
+			<Item Name="BaseElements.EmailTemplateUserTask2.Parameters.ActivityCategory.Caption" Value="Category" />
+			<Item Name="BaseElements.EmailTemplateUserTask2.Parameters.ActivityCategory.DisplayValue" Value="[#Lookup.Activity category.Email.8038a396-7825-e011-8165-00155d043204#]" />
+			<Item Name="BaseElements.EmailTemplateUserTask2.Parameters.ActivityId.Caption" Value="Task Id" />
+			<Item Name="BaseElements.EmailTemplateUserTask2.Parameters.ActivityResult.Caption" Value="Result of activity" />
+			<Item Name="BaseElements.EmailTemplateUserTask2.Parameters.Body.Caption" Value="Body" />
+			<Item Name="BaseElements.EmailTemplateUserTask2.Parameters.BodyConfig.Caption" Value="Body config for content builder" />
+			<Item Name="BaseElements.EmailTemplateUserTask2.Parameters.BodyTemplateType.Caption" Value="What kind of email to send?" />
+			<Item Name="BaseElements.EmailTemplateUserTask2.Parameters.BodyTemplateType.DisplayValue" Value="Custom message" />
+			<Item Name="BaseElements.EmailTemplateUserTask2.Parameters.Case.Caption" Value="Case" />
+			<Item Name="BaseElements.EmailTemplateUserTask2.Parameters.Change.Caption" Value="Change" />
+			<Item Name="BaseElements.EmailTemplateUserTask2.Parameters.Contact.Caption" Value="Contact" />
+			<Item Name="BaseElements.EmailTemplateUserTask2.Parameters.Contract.Caption" Value="Contract" />
+			<Item Name="BaseElements.EmailTemplateUserTask2.Parameters.CreateActivity.Caption" Value="Create activity" />
+			<Item Name="BaseElements.EmailTemplateUserTask2.Parameters.CreateActivity.DisplayValue" Value="true" />
+			<Item Name="BaseElements.EmailTemplateUserTask2.Parameters.CustomEmailHeaders.Caption" Value="Custom email headers" />
+			<Item Name="BaseElements.EmailTemplateUserTask2.Parameters.Document.Caption" Value="Document" />
+			<Item Name="BaseElements.EmailTemplateUserTask2.Parameters.Duration.Caption" Value="Duration" />
+			<Item Name="BaseElements.EmailTemplateUserTask2.Parameters.Duration.DisplayValue" Value="5" />
+			<Item Name="BaseElements.EmailTemplateUserTask2.Parameters.DurationPeriod.Caption" Value="Duration (period)" />
+			<Item Name="BaseElements.EmailTemplateUserTask2.Parameters.DurationPeriod.DisplayValue" Value="0" />
+			<Item Name="BaseElements.EmailTemplateUserTask2.Parameters.EmailTemplateEntityId.Caption" Value="Record for macros" />
+			<Item Name="BaseElements.EmailTemplateUserTask2.Parameters.EmailTemplateId.Caption" Value="Template message" />
+			<Item Name="BaseElements.EmailTemplateUserTask2.Parameters.ExecutionContext.Caption" Value="Execution context" />
+			<Item Name="BaseElements.EmailTemplateUserTask2.Parameters.IgnoreErrors.Caption" Value="Ignore email errors" />
+			<Item Name="BaseElements.EmailTemplateUserTask2.Parameters.IgnoreErrors.DisplayValue" Value="true" />
+			<Item Name="BaseElements.EmailTemplateUserTask2.Parameters.Importance.Caption" Value="Importance" />
+			<Item Name="BaseElements.EmailTemplateUserTask2.Parameters.Importance.DisplayValue" Value="Medium" />
+			<Item Name="BaseElements.EmailTemplateUserTask2.Parameters.Incident.Caption" Value="Incident" />
+			<Item Name="BaseElements.EmailTemplateUserTask2.Parameters.InformationOnStep.Caption" Value="Information on step" />
+			<Item Name="BaseElements.EmailTemplateUserTask2.Parameters.Invoice.Caption" Value="Invoice" />
+			<Item Name="BaseElements.EmailTemplateUserTask2.Parameters.IsActivityCompleted.Caption" Value="Activity completed" />
+			<Item Name="BaseElements.EmailTemplateUserTask2.Parameters.Lead.Caption" Value="Lead" />
+			<Item Name="BaseElements.EmailTemplateUserTask2.Parameters.Listing.Caption" Value="Listing" />
+			<Item Name="BaseElements.EmailTemplateUserTask2.Parameters.OmniChat.Caption" Value="Chat" />
+			<Item Name="BaseElements.EmailTemplateUserTask2.Parameters.Opportunity.Caption" Value="Opportunity" />
+			<Item Name="BaseElements.EmailTemplateUserTask2.Parameters.Order.Caption" Value="Order" />
+			<Item Name="BaseElements.EmailTemplateUserTask2.Parameters.OwnerId.Caption" Value="Owner" />
+			<Item Name="BaseElements.EmailTemplateUserTask2.Parameters.Problem.Caption" Value="Problem" />
+			<Item Name="BaseElements.EmailTemplateUserTask2.Parameters.Project.Caption" Value="Project" />
+			<Item Name="BaseElements.EmailTemplateUserTask2.Parameters.Property.Caption" Value="Property" />
+			<Item Name="BaseElements.EmailTemplateUserTask2.Parameters.QueueItem.Caption" Value="Queue item" />
+			<Item Name="BaseElements.EmailTemplateUserTask2.Parameters.Recipient1.Caption" Value="To 1" />
+			<Item Name="BaseElements.EmailTemplateUserTask2.Parameters.Recipient1.DisplayValue" Value="[#Read VM Request.First item of resulting collection.Requester#]" />
+			<Item Name="BaseElements.EmailTemplateUserTask2.Parameters.Recommendation.Caption" Value="Recommendation" />
+			<Item Name="BaseElements.EmailTemplateUserTask2.Parameters.Recommendation.DisplayValue" Value="Notify Requester - Technical Rejected" />
+			<Item Name="BaseElements.EmailTemplateUserTask2.Parameters.Recommendation.Value" Value="Notify Requester - Technical Rejected" />
+			<Item Name="BaseElements.EmailTemplateUserTask2.Parameters.Release.Caption" Value="Release" />
+			<Item Name="BaseElements.EmailTemplateUserTask2.Parameters.RemindBefore.Caption" Value="Remind owner in advance" />
+			<Item Name="BaseElements.EmailTemplateUserTask2.Parameters.RemindBefore.DisplayValue" Value="0" />
+			<Item Name="BaseElements.EmailTemplateUserTask2.Parameters.RemindBeforePeriod.Caption" Value="Remind owner in advance (period)" />
+			<Item Name="BaseElements.EmailTemplateUserTask2.Parameters.RemindBeforePeriod.DisplayValue" Value="0" />
+			<Item Name="BaseElements.EmailTemplateUserTask2.Parameters.Requests.Caption" Value="Request" />
+			<Item Name="BaseElements.EmailTemplateUserTask2.Parameters.SendEmailType.Caption" Value="How is the message sent?" />
+			<Item Name="BaseElements.EmailTemplateUserTask2.Parameters.SendEmailType.DisplayValue" Value="Send email automatically" />
+			<Item Name="BaseElements.EmailTemplateUserTask2.Parameters.Sender.Caption" Value="From" />
+			<Item Name="BaseElements.EmailTemplateUserTask2.Parameters.Sender.DisplayValue" Value="[#Lookup.Contact.Supervisor.410006e1-ca4e-4502-a9ec-e54d922d2c00#]" />
+			<Item Name="BaseElements.EmailTemplateUserTask2.Parameters.ShowExecutionPage.Caption" Value="Show execution page automatically" />
+			<Item Name="BaseElements.EmailTemplateUserTask2.Parameters.ShowExecutionPage.DisplayValue" Value="true" />
+			<Item Name="BaseElements.EmailTemplateUserTask2.Parameters.ShowInScheduler.Caption" Value="Show in calendar" />
+			<Item Name="BaseElements.EmailTemplateUserTask2.Parameters.ShowInScheduler.DisplayValue" Value="False" />
+			<Item Name="BaseElements.EmailTemplateUserTask2.Parameters.StartIn.Caption" Value="Start executing in" />
+			<Item Name="BaseElements.EmailTemplateUserTask2.Parameters.StartIn.DisplayValue" Value="0" />
+			<Item Name="BaseElements.EmailTemplateUserTask2.Parameters.StartInPeriod.Caption" Value="Start executing in (period)" />
+			<Item Name="BaseElements.EmailTemplateUserTask2.Parameters.StartInPeriod.DisplayValue" Value="0" />
+			<Item Name="BaseElements.EmailTemplateUserTask2.Parameters.Subject.Caption" Value="Subject" />
+			<Item Name="BaseElements.EmailTemplateUserTask2.Parameters.Subject.DisplayValue" Value="MCIT Portal — VM Request Rejected (Technical Review)" />
+			<Item Name="BaseElements.EmailTemplateUserTask2.Parameters.Subject.Value" Value="MCIT Portal — VM Request Rejected (Technical Review)" />
+			<Item Name="BaseElements.EmailTemplateUserTask2.Parameters.UsrUsrContractConfigVersion.Caption" Value="Contract Configuration Version" />
+			<Item Name="BaseElements.EmailTemplateUserTask2.Parameters.UsrUsrVirtualMachine.Caption" Value="Virtual Machine" />
 			<Item Name="BaseElements.ExclusiveGateway1.Caption" Value="Validate Request Status" />
+			<Item Name="BaseElements.ExclusiveGateway4.Caption" Value="Financial Approval Record Found?" />
+			<Item Name="BaseElements.ExclusiveGateway5.Caption" Value="Technical Approval Record Found?" />
+			<Item Name="BaseElements.ExclusiveGateway6.Caption" Value="Technical Rejection Record Found?" />
 			<Item Name="BaseElements.LinkEntityToProcessUserTask1.Caption" Value="Link Submission to VM Request" />
 			<Item Name="BaseElements.LinkEntityToProcessUserTask1.Parameters.EntityId.Caption" Value="Object" />
 			<Item Name="BaseElements.LinkEntityToProcessUserTask1.Parameters.EntityId.DisplayValue" Value="[#StartSignal1.Unique identifier of record#]" />
@@ -203,6 +418,90 @@
 			<Item Name="BaseElements.ReadDataUserTask1.Parameters.ResultIntegerFunction.Caption" Value="Function result (Integer)" />
 			<Item Name="BaseElements.ReadDataUserTask1.Parameters.ResultRowsCount.Caption" Value="Number of records read" />
 			<Item Name="BaseElements.ReadDataUserTask1.Parameters.ResultType.Caption" Value="Type of result" />
+			<Item Name="BaseElements.ReadDataUserTask2.Caption" Value="Read Financial Approval Decision" />
+			<Item Name="BaseElements.ReadDataUserTask2.Parameters.AggregationColumnName.Caption" Value="Name of aggregate function column" />
+			<Item Name="BaseElements.ReadDataUserTask2.Parameters.CanReadUncommitedData.Caption" Value="Read uncommitted data" />
+			<Item Name="BaseElements.ReadDataUserTask2.Parameters.ConsiderTimeInFilter.Caption" Value="Consider time in the filter" />
+			<Item Name="BaseElements.ReadDataUserTask2.Parameters.ConsiderTimeInFilter.DisplayValue" Value="true" />
+			<Item Name="BaseElements.ReadDataUserTask2.Parameters.DataSourceFilters.Caption" Value="Data source of filters" />
+			<Item Name="BaseElements.ReadDataUserTask2.Parameters.EntityColumnMetaPathes.Caption" Value="Columns to read" />
+			<Item Name="BaseElements.ReadDataUserTask2.Parameters.FunctionType.Caption" Value="Aggregate function type" />
+			<Item Name="BaseElements.ReadDataUserTask2.Parameters.IgnoreDisplayValues.Caption" Value="Do not read displayed values of lookup columns" />
+			<Item Name="BaseElements.ReadDataUserTask2.Parameters.NumberOfRecords.Caption" Value="Number of records to read" />
+			<Item Name="BaseElements.ReadDataUserTask2.Parameters.OrderInfo.Caption" Value="Columns order" />
+			<Item Name="BaseElements.ReadDataUserTask2.Parameters.ReadSomeTopRecords.Caption" Value="Read first" />
+			<Item Name="BaseElements.ReadDataUserTask2.Parameters.ResultCompositeObjectList.Caption" Value="Collection of records" />
+			<Item Name="BaseElements.ReadDataUserTask2.Parameters.ResultCount.Caption" Value="Number of records" />
+			<Item Name="BaseElements.ReadDataUserTask2.Parameters.ResultDateTimeFunction.Caption" Value="Function result (Date/Time)" />
+			<Item Name="BaseElements.ReadDataUserTask2.Parameters.ResultEntity.Caption" Value="First item of resulting collection" />
+			<Item Name="BaseElements.ReadDataUserTask2.Parameters.ResultEntityCollection.Caption" Value="Resulting collection" />
+			<Item Name="BaseElements.ReadDataUserTask2.Parameters.ResultFloatFunction.Caption" Value="Function result (Decimal)" />
+			<Item Name="BaseElements.ReadDataUserTask2.Parameters.ResultIntegerFunction.Caption" Value="Function result (Integer)" />
+			<Item Name="BaseElements.ReadDataUserTask2.Parameters.ResultRowsCount.Caption" Value="Number of records read" />
+			<Item Name="BaseElements.ReadDataUserTask2.Parameters.ResultType.Caption" Value="Type of result" />
+			<Item Name="BaseElements.ReadDataUserTask3.Caption" Value="Read Financial Rejection Decision" />
+			<Item Name="BaseElements.ReadDataUserTask3.Parameters.AggregationColumnName.Caption" Value="Name of aggregate function column" />
+			<Item Name="BaseElements.ReadDataUserTask3.Parameters.CanReadUncommitedData.Caption" Value="Read uncommitted data" />
+			<Item Name="BaseElements.ReadDataUserTask3.Parameters.ConsiderTimeInFilter.Caption" Value="Consider time in the filter" />
+			<Item Name="BaseElements.ReadDataUserTask3.Parameters.ConsiderTimeInFilter.DisplayValue" Value="true" />
+			<Item Name="BaseElements.ReadDataUserTask3.Parameters.DataSourceFilters.Caption" Value="Data source of filters" />
+			<Item Name="BaseElements.ReadDataUserTask3.Parameters.EntityColumnMetaPathes.Caption" Value="Columns to read" />
+			<Item Name="BaseElements.ReadDataUserTask3.Parameters.FunctionType.Caption" Value="Aggregate function type" />
+			<Item Name="BaseElements.ReadDataUserTask3.Parameters.IgnoreDisplayValues.Caption" Value="Do not read displayed values of lookup columns" />
+			<Item Name="BaseElements.ReadDataUserTask3.Parameters.NumberOfRecords.Caption" Value="Number of records to read" />
+			<Item Name="BaseElements.ReadDataUserTask3.Parameters.OrderInfo.Caption" Value="Columns order" />
+			<Item Name="BaseElements.ReadDataUserTask3.Parameters.ReadSomeTopRecords.Caption" Value="Read first" />
+			<Item Name="BaseElements.ReadDataUserTask3.Parameters.ResultCompositeObjectList.Caption" Value="Collection of records" />
+			<Item Name="BaseElements.ReadDataUserTask3.Parameters.ResultCount.Caption" Value="Number of records" />
+			<Item Name="BaseElements.ReadDataUserTask3.Parameters.ResultDateTimeFunction.Caption" Value="Function result (Date/Time)" />
+			<Item Name="BaseElements.ReadDataUserTask3.Parameters.ResultEntity.Caption" Value="First item of resulting collection" />
+			<Item Name="BaseElements.ReadDataUserTask3.Parameters.ResultEntityCollection.Caption" Value="Resulting collection" />
+			<Item Name="BaseElements.ReadDataUserTask3.Parameters.ResultFloatFunction.Caption" Value="Function result (Decimal)" />
+			<Item Name="BaseElements.ReadDataUserTask3.Parameters.ResultIntegerFunction.Caption" Value="Function result (Integer)" />
+			<Item Name="BaseElements.ReadDataUserTask3.Parameters.ResultRowsCount.Caption" Value="Number of records read" />
+			<Item Name="BaseElements.ReadDataUserTask3.Parameters.ResultType.Caption" Value="Type of result" />
+			<Item Name="BaseElements.ReadDataUserTask4.Caption" Value="Read Technical Approval Decision" />
+			<Item Name="BaseElements.ReadDataUserTask4.Parameters.AggregationColumnName.Caption" Value="Name of aggregate function column" />
+			<Item Name="BaseElements.ReadDataUserTask4.Parameters.CanReadUncommitedData.Caption" Value="Read uncommitted data" />
+			<Item Name="BaseElements.ReadDataUserTask4.Parameters.ConsiderTimeInFilter.Caption" Value="Consider time in the filter" />
+			<Item Name="BaseElements.ReadDataUserTask4.Parameters.ConsiderTimeInFilter.DisplayValue" Value="true" />
+			<Item Name="BaseElements.ReadDataUserTask4.Parameters.DataSourceFilters.Caption" Value="Data source of filters" />
+			<Item Name="BaseElements.ReadDataUserTask4.Parameters.EntityColumnMetaPathes.Caption" Value="Columns to read" />
+			<Item Name="BaseElements.ReadDataUserTask4.Parameters.FunctionType.Caption" Value="Aggregate function type" />
+			<Item Name="BaseElements.ReadDataUserTask4.Parameters.IgnoreDisplayValues.Caption" Value="Do not read displayed values of lookup columns" />
+			<Item Name="BaseElements.ReadDataUserTask4.Parameters.NumberOfRecords.Caption" Value="Number of records to read" />
+			<Item Name="BaseElements.ReadDataUserTask4.Parameters.OrderInfo.Caption" Value="Columns order" />
+			<Item Name="BaseElements.ReadDataUserTask4.Parameters.ReadSomeTopRecords.Caption" Value="Read first" />
+			<Item Name="BaseElements.ReadDataUserTask4.Parameters.ResultCompositeObjectList.Caption" Value="Collection of records" />
+			<Item Name="BaseElements.ReadDataUserTask4.Parameters.ResultCount.Caption" Value="Number of records" />
+			<Item Name="BaseElements.ReadDataUserTask4.Parameters.ResultDateTimeFunction.Caption" Value="Function result (Date/Time)" />
+			<Item Name="BaseElements.ReadDataUserTask4.Parameters.ResultEntity.Caption" Value="First item of resulting collection" />
+			<Item Name="BaseElements.ReadDataUserTask4.Parameters.ResultEntityCollection.Caption" Value="Resulting collection" />
+			<Item Name="BaseElements.ReadDataUserTask4.Parameters.ResultFloatFunction.Caption" Value="Function result (Decimal)" />
+			<Item Name="BaseElements.ReadDataUserTask4.Parameters.ResultIntegerFunction.Caption" Value="Function result (Integer)" />
+			<Item Name="BaseElements.ReadDataUserTask4.Parameters.ResultRowsCount.Caption" Value="Number of records read" />
+			<Item Name="BaseElements.ReadDataUserTask4.Parameters.ResultType.Caption" Value="Type of result" />
+			<Item Name="BaseElements.ReadDataUserTask5.Caption" Value="Read Technical Rejection Decision" />
+			<Item Name="BaseElements.ReadDataUserTask5.Parameters.AggregationColumnName.Caption" Value="Name of aggregate function column" />
+			<Item Name="BaseElements.ReadDataUserTask5.Parameters.CanReadUncommitedData.Caption" Value="Read uncommitted data" />
+			<Item Name="BaseElements.ReadDataUserTask5.Parameters.ConsiderTimeInFilter.Caption" Value="Consider time in the filter" />
+			<Item Name="BaseElements.ReadDataUserTask5.Parameters.ConsiderTimeInFilter.DisplayValue" Value="true" />
+			<Item Name="BaseElements.ReadDataUserTask5.Parameters.DataSourceFilters.Caption" Value="Data source of filters" />
+			<Item Name="BaseElements.ReadDataUserTask5.Parameters.EntityColumnMetaPathes.Caption" Value="Columns to read" />
+			<Item Name="BaseElements.ReadDataUserTask5.Parameters.FunctionType.Caption" Value="Aggregate function type" />
+			<Item Name="BaseElements.ReadDataUserTask5.Parameters.IgnoreDisplayValues.Caption" Value="Do not read displayed values of lookup columns" />
+			<Item Name="BaseElements.ReadDataUserTask5.Parameters.NumberOfRecords.Caption" Value="Number of records to read" />
+			<Item Name="BaseElements.ReadDataUserTask5.Parameters.OrderInfo.Caption" Value="Columns order" />
+			<Item Name="BaseElements.ReadDataUserTask5.Parameters.ReadSomeTopRecords.Caption" Value="Read first" />
+			<Item Name="BaseElements.ReadDataUserTask5.Parameters.ResultCompositeObjectList.Caption" Value="Collection of records" />
+			<Item Name="BaseElements.ReadDataUserTask5.Parameters.ResultCount.Caption" Value="Number of records" />
+			<Item Name="BaseElements.ReadDataUserTask5.Parameters.ResultDateTimeFunction.Caption" Value="Function result (Date/Time)" />
+			<Item Name="BaseElements.ReadDataUserTask5.Parameters.ResultEntity.Caption" Value="First item of resulting collection" />
+			<Item Name="BaseElements.ReadDataUserTask5.Parameters.ResultEntityCollection.Caption" Value="Resulting collection" />
+			<Item Name="BaseElements.ReadDataUserTask5.Parameters.ResultFloatFunction.Caption" Value="Function result (Decimal)" />
+			<Item Name="BaseElements.ReadDataUserTask5.Parameters.ResultIntegerFunction.Caption" Value="Function result (Integer)" />
+			<Item Name="BaseElements.ReadDataUserTask5.Parameters.ResultRowsCount.Caption" Value="Number of records read" />
+			<Item Name="BaseElements.ReadDataUserTask5.Parameters.ResultType.Caption" Value="Type of result" />
 			<Item Name="BaseElements.StartSignal1.Parameters.RecordId.Caption" Value="Unique identifier of record" />
 			<Item Name="Caption" Value="MCIT VM Request Submission" />
 			<Item Name="LaneSets.LaneSet1.Caption" Value="LaneSet 1" />

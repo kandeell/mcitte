@@ -1,0 +1,13 @@
+﻿{
+  "Descriptor": {
+    "UId": "78eef896-01d7-4473-be38-e6337cc1b086",
+    "Name": "UsrTechnicalReview_ListPage",
+    "ModifiedOnUtc": "\/Date(1794840754000)\/",
+    "Parent": {
+      "UId": "b7b898d0-8c77-4953-c097-23fa6800da02",
+      "Name": "ListPageV3Template"
+    },
+    "ManagerName": "ClientUnitSchemaManager",
+    "Caption": "Technical Review list page"
+  }
+}

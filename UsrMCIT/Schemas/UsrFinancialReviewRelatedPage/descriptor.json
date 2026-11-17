@@ -1,0 +1,10 @@
+﻿{
+  "Descriptor": {
+    "UId": "f1cf8402-c979-4279-935c-95602277f1d2",
+    "Name": "UsrFinancialReviewRelatedPage",
+    "ModifiedOnUtc": "\/Date(1794729148000)\/",
+    "ManagerName": "AddonSchemaManager",
+    "Caption": "Financial Review (Page settings)",
+    "DependsOn": []
+  }
+}
