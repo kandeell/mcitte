@@ -1,0 +1,11 @@
+﻿{
+  "SqlScript": {
+    "UId": "96782510-4b0b-8167-18b1-25028bc026f1",
+    "Name": "NewResourceCatalogPage",
+    "DBEngineType": 0,
+    "InstallType": 1,
+    "ModifiedOnUtc": "\/Date(1793540474000)\/",
+    "BackwardCompatibilityConfirmed": false,
+    "DependsOn": []
+  }
+}

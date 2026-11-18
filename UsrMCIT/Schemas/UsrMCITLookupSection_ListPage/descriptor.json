@@ -1,0 +1,13 @@
+﻿{
+  "Descriptor": {
+    "UId": "aaeb53ab-b931-47bc-9178-37dce8795049",
+    "Name": "UsrMCITLookupSection_ListPage",
+    "ModifiedOnUtc": "\/Date(1793579177000)\/",
+    "Parent": {
+      "UId": "b7b898d0-8c77-4953-c097-23fa6800da02",
+      "Name": "ListPageV3Template"
+    },
+    "ManagerName": "ClientUnitSchemaManager",
+    "Caption": "Lookup Data list page"
+  }
+}

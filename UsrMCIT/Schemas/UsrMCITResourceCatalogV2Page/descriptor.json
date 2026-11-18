@@ -1,0 +1,13 @@
+﻿{
+  "Descriptor": {
+    "UId": "0617b99d-93b5-40ec-8e91-2ab767bd974a",
+    "Name": "UsrMCITResourceCatalogV2Page",
+    "ModifiedOnUtc": "\/Date(1793561824000)\/",
+    "Parent": {
+      "UId": "f691e828-0b36-42a7-898f-c337e9af67d0",
+      "Name": "BlankPageTemplate"
+    },
+    "ManagerName": "ClientUnitSchemaManager",
+    "Caption": "MCIT Resource Catalog V2"
+  }
+}
