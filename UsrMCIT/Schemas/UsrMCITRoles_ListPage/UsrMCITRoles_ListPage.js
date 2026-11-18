@@ -4,612 +4,635 @@ define("UsrMCITRoles_ListPage",
         "css!UsrMCITRolesPageCSS"
     ]/**SCHEMA_DEPS*/,
     function/**SCHEMA_ARGS*/(sdk)/**SCHEMA_ARGS*/ {
-        return {
+    // A client-side guard prevents concurrent scans on this Roles page.
+    // The server independently validates administrator permissions.
+    let mcitScreenSyncInFlight = false;
+    let mcitScreenSyncLastStarted = 0;
+    return {
 		viewConfigDiff: /**SCHEMA_VIEW_CONFIG_DIFF*/[
-			{
-				"operation": "remove",
-				"name": "MainHeader"
-			},
-			{
-				"operation": "remove",
-				"name": "TitleContainer"
-			},
-			{
-				"operation": "remove",
-				"name": "PageTitle"
-			},
-			{
-				"operation": "remove",
-				"name": "ActionButtonsContainer"
-			},
-			{
-				"operation": "remove",
-				"name": "AddButton"
-			},
-			{
-				"operation": "remove",
-				"name": "DataImportButton"
-			},
-			{
-				"operation": "remove",
-				"name": "MenuItem_ImportFromExcel"
-			},
-			{
-				"operation": "remove",
-				"name": "OpenLandingDesigner"
-			},
-			{
-				"operation": "remove",
-				"name": "ActionButton"
-			},
-			{
-				"operation": "remove",
-				"name": "MenuItem_ExportToExcel"
-			},
-			{
-				"operation": "remove",
-				"name": "MainContainer"
-			},
-			{
-				"operation": "remove",
-				"name": "MainFilterContainer"
-			},
-			{
-				"operation": "remove",
-				"name": "LeftFilterContainer"
-			},
-			{
-				"operation": "remove",
-				"name": "LeftFilterContainerInner"
-			},
-			{
-				"operation": "remove",
-				"name": "FolderTreeActions"
-			},
-			{
-				"operation": "remove",
-				"name": "FiltersMenu"
-			},
-			{
-				"operation": "remove",
-				"name": "LookupQuickFilterByTag"
-			},
-			{
-				"operation": "remove",
-				"name": "SearchFilter"
-			},
-			{
-				"operation": "remove",
-				"name": "RightFilterContainer"
-			},
-			{
-				"operation": "remove",
-				"name": "DataTable_Summaries"
-			},
-			{
-				"operation": "remove",
-				"name": "RefreshButton"
-			},
-			{
-				"operation": "remove",
-				"name": "MainButtonToggleGroup"
-			},
-			{
-				"operation": "remove",
-				"name": "ContentContainer"
-			},
-			{
-				"operation": "remove",
-				"name": "FolderTree"
-			},
-			{
-				"operation": "remove",
-				"name": "Filters"
-			},
-			{
-				"operation": "remove",
-				"name": "SectionContentWrapper"
-			},
-			{
-				"operation": "remove",
-				"name": "MainTabPanel"
-			},
-			{
-				"operation": "remove",
-				"name": "ListTabContainer"
-			},
-			{
-				"operation": "remove",
-				"name": "ListContainer"
-			},
-			{
-				"operation": "remove",
-				"name": "DataTable"
-			},
-			{
-				"operation": "remove",
-				"name": "DashboardsTabContainer"
-			},
-			{
-				"operation": "remove",
-				"name": "DashboardsContainer"
-			},
-			{
-				"operation": "remove",
-				"name": "Dashboards"
-			},
-			{
-				"operation": "insert",
-				"name": "FlexContainer_5xu0pyy",
-				"values": {
-					"type": "crt.FlexContainer",
-					"direction": "column",
-					"wrap": "nowrap",
-					"items": [],
-					"fitContent": false,
-					"alignItems": "stretch",
-					"classes": [
-						"mcit-roles-page"
-					]
-				},
-				"parentName": "Main",
-				"propertyName": "items",
-				"index": 0
-			},
-			{
-				"operation": "insert",
-				"name": "FlexContainer_7jn50m4",
-				"values": {
-					"type": "crt.FlexContainer",
-					"direction": "row",
-					"wrap": "wrap",
-					"items": [],
-					"fitContent": false,
-					"justifyContent": "space-between",
-					"alignItems": "center",
-					"gap": "small",
-					"classes": [
-						"mcit-roles-header"
-					]
-				},
-				"parentName": "FlexContainer_5xu0pyy",
-				"propertyName": "items",
-				"index": 0
-			},
-			{
-				"operation": "insert",
-				"name": "FlexContainer_alakd18",
-				"values": {
-					"type": "crt.FlexContainer",
-					"direction": "column",
-					"wrap": "nowrap",
-					"items": [],
-					"fitContent": true
-				},
-				"parentName": "FlexContainer_7jn50m4",
-				"propertyName": "items",
-				"index": 0
-			},
-			{
-				"operation": "insert",
-				"name": "Label_xa4l2d7",
-				"values": {
-					"type": "crt.Label",
-					"caption": "Role Management",
-					"labelType": "headline-1",
-					"labelColor": "#0F172A",
-					"headingLevel": "label",
-					"visible": true
-				},
-				"parentName": "FlexContainer_alakd18",
-				"propertyName": "items",
-				"index": 0
-			},
-			{
-				"operation": "insert",
-				"name": "Label_n5j0lca",
-				"values": {
-					"type": "crt.Label",
-					"caption": "Dynamic, configuration-driven roles and permissions",
-					"labelType": "body",
-					"labelColor": "#64748B",
-					"visible": true
-				},
-				"parentName": "FlexContainer_alakd18",
-				"propertyName": "items",
-				"index": 1
-			},
-			{
-				"operation": "insert",
-				"name": "Button_zce85wm",
-				"values": {
-					"type": "crt.Button",
-					"caption": "#ResourceString(Button_zce85wm_caption)#",
-					"color": "primary",
-					"size": "large",
-					"disabled": false,
-					"icon": "add-button-icon",
-					"iconPosition": "left-icon",
-					"visible": true,
-					"clicked": {
-						"request": "crt.CreateRecordRequest",
-						"params": {
-							"entityName": "UsrMCITRole"
-						}
-					},
-					"classes": [
-						"mcit-create-role"
-					],
-					"clickMode": "default"
-				},
-				"parentName": "FlexContainer_7jn50m4",
-				"propertyName": "items",
-				"index": 1
-			},
-			{
-				"operation": "insert",
-				"name": "GridContainer_99tsw8a",
-				"values": {
-					"type": "crt.GridContainer",
-					"columns": [
-						"minmax(32px, 1fr)"
-					],
-					"rows": "auto auto",
-					"items": [],
-					"fitContent": false,
-					"visible": true,
-					"borderRadius": "medium",
-					"color": "primary",
-					"classes": [
-						"mcit-role-filter-card"
-					],
-					"gap": {
-						"columnGap": "small",
-						"rowGap": "small"
-					},
-					"padding": {
-						"top": "medium",
-						"right": "medium",
-						"bottom": "medium",
-						"left": "medium"
-					}
-				},
-				"parentName": "FlexContainer_5xu0pyy",
-				"propertyName": "items",
-				"index": 1
-			},
-			{
-				"operation": "insert",
-				"name": "FlexContainer_ar0u90b",
-				"values": {
-					"type": "crt.FlexContainer",
-					"direction": "row",
-					"wrap": "nowrap",
-					"items": [],
-					"fitContent": false,
-					"visible": true,
-					"justifyContent": "space-between",
-					"alignItems": "center",
-					"gap": "small",
-					"classes": [
-						"mcit-roles-filter-row"
-					],
-					"layoutConfig": {
-						"column": 1,
-						"colSpan": 1,
-						"row": 1,
-						"rowSpan": 1
-					}
-				},
-				"parentName": "GridContainer_99tsw8a",
-				"propertyName": "items",
-				"index": 0
-			},
-			{
-				"operation": "insert",
-				"name": "SearchFilter_7irptcm",
-				"values": {
-					"type": "crt.SearchFilter",
-					"placeholder": "Search roles...",
-					"iconOnly": false,
-					"classes": [
-						"mcit-role-search"
-					],
-					"_filterOptions": {
-						"expose": [
-							{
-								"attribute": "SearchFilter_7irptcm_DataGrid_l3ofv19",
-								"converters": [
-									{
-										"converter": "crt.SearchFilterAttributeConverter",
-										"args": [
-											"DataGrid_l3ofv19"
-										]
-									}
-								]
-							}
-						],
-						"from": [
-							"SearchFilter_7irptcm_SearchValue",
-							"SearchFilter_7irptcm_FilteredColumnsGroups"
-						]
-					}
-				},
-				"parentName": "FlexContainer_ar0u90b",
-				"propertyName": "items",
-				"index": 0
-			},
-			{
-				"operation": "insert",
-				"name": "QuickFilter_4d1u24e",
-				"values": {
-					"type": "crt.QuickFilter",
-					"filterType": "lookup",
-					"classes": [
-						"mcit-role-type-filter"
-					],
-					"config": {
-						"caption": "All Types",
-						"hint": "",
-						"icon": "filter-column-icon",
-						"iconPosition": "left-icon",
-						"defaultValue": [],
-						"entitySchemaName": "UsrMCITRoleCategory",
-						"recordsFilter": null,
-						"defaultValueListSorting": null
-					},
-					"_filterOptions": {
-						"expose": [
-							{
-								"attribute": "QuickFilter_4d1u24e_DataGrid_l3ofv19",
-								"converters": [
-									{
-										"converter": "crt.QuickFilterAttributeConverter",
-										"args": [
-											{
-												"target": {
-													"viewAttributeName": "DataGrid_l3ofv19",
-													"filterColumn": "UsrRoleCategory"
-												},
-												"quickFilterType": "lookup"
-											}
-										]
-									}
-								]
-							}
-						],
-						"from": "QuickFilter_4d1u24e_Value"
-					}
-				},
-				"parentName": "FlexContainer_ar0u90b",
-				"propertyName": "items",
-				"index": 1
-			},
-			{
-				"operation": "insert",
-				"name": "FlexContainer_aau8th3",
-				"values": {
-					"type": "crt.FlexContainer",
-					"direction": "row",
-					"wrap": "wrap",
-					"items": [],
-					"fitContent": true,
-					"visible": true,
-					"justifyContent": "flex-start",
-					"gap": "small",
-					"classes": "$UsrRoleStatusCssClasses",
-					"layoutConfig": {
-						"column": 1,
-						"colSpan": 1,
-						"row": 2,
-						"rowSpan": 1
-					}
-				},
-				"parentName": "GridContainer_99tsw8a",
-				"propertyName": "items",
-				"index": 1
-			},
-			{
-				"operation": "insert",
-				"name": "Button_51m9doe",
-				"values": {
-					"type": "crt.Button",
-					"caption": "All",
-					"color": "default",
-					"size": "large",
-					"disabled": false,
-					"iconPosition": "only-text",
-					"visible": true,
-					"classes": [
-						"mcit-status-chip",
-						"mcit-chip-all"
-					],
-					"clicked": {
-						"request": "usr.SetRoleStatusFilter",
-						"params": {
-							"status": "All"
-						}
-					}
-				},
-				"parentName": "FlexContainer_aau8th3",
-				"propertyName": "items",
-				"index": 0
-			},
-			{
-				"operation": "insert",
-				"name": "Button_3utviwt",
-				"values": {
-					"type": "crt.Button",
-					"caption": "Active",
-					"color": "default",
-					"size": "large",
-					"disabled": false,
-					"iconPosition": "only-text",
-					"visible": true,
-					"classes": [
-						"mcit-status-chip",
-						"mcit-chip-active"
-					],
-					"clicked": {
-						"request": "usr.SetRoleStatusFilter",
-						"params": {
-							"status": "Active"
-						}
-					}
-				},
-				"parentName": "FlexContainer_aau8th3",
-				"propertyName": "items",
-				"index": 1
-			},
-			{
-				"operation": "insert",
-				"name": "Button_2urezgq",
-				"values": {
-					"type": "crt.Button",
-					"caption": "Inactive",
-					"color": "default",
-					"size": "large",
-					"disabled": false,
-					"iconPosition": "only-text",
-					"visible": true,
-					"classes": [
-						"mcit-status-chip",
-						"mcit-chip-inactive"
-					],
-					"clicked": {
-						"request": "usr.SetRoleStatusFilter",
-						"params": {
-							"status": "Inactive"
-						}
-					}
-				},
-				"parentName": "FlexContainer_aau8th3",
-				"propertyName": "items",
-				"index": 2
-			},
-			{
-				"operation": "insert",
-				"name": "Button_1od23cq",
-				"values": {
-					"type": "crt.Button",
-					"caption": "Draft",
-					"color": "default",
-					"size": "large",
-					"disabled": false,
-					"iconPosition": "only-text",
-					"visible": true,
-					"classes": [
-						"mcit-status-chip",
-						"mcit-chip-draft"
-					],
-					"clicked": {
-						"request": "usr.SetRoleStatusFilter",
-						"params": {
-							"status": "Draft"
-						}
-					}
-				},
-				"parentName": "FlexContainer_aau8th3",
-				"propertyName": "items",
-				"index": 3
-			},
-			{
-				"operation": "insert",
-				"name": "DataGrid_l3ofv19",
-				"values": {
-					"type": "crt.DataGrid",
-					"items": "$DataGrid_l3ofv19",
-					"visible": true,
-					"fitContent": false,
-					"primaryColumnName": "DataGrid_l3ofv19DS_Id",
-					"classes": [
-						"mcit-roles-list"
-					],
-					"features": {
-						"rows": {
-							"selection": {
-								"enable": true,
-								"multiple": true
-							}
-						},
-						"header": {
-							"visible": true
-						},
-						"editable": {
-							"enable": true,
-							"itemsCreation": true,
-							"floatingEditPanel": true
-						},
-						"columns": {
-							"dragAndDrop": false,
-							"resizing": true,
-							"sorting": true
-						}
-					},
-					"columns": [
-						{
-							"id": "6e653b44-66ea-106d-1ad0-05bf95a93879",
-							"code": "DataGrid_l3ofv19DS_UsrName",
-							"caption": "Role Name",
-							"dataValueType": 28
-						},
-						{
-							"id": "0c7114cd-258f-fdb9-1416-2f63fd369d9f",
-							"code": "DataGrid_l3ofv19DS_UsrRoleCategory",
-							"caption": "Type",
-							"dataValueType": 10
-						},
-						{
-							"id": "4b48dd53-34b3-ad1f-baac-71acadf0a9e5",
-							"code": "DataGrid_l3ofv19DS_UsrDescription",
-							"caption": "Description",
-							"dataValueType": 29
-						},
-						{
-							"id": "6b65bc58-3f98-489f-9d90-fcbca95dc001",
-							"code": "DataGrid_l3ofv19DS_ModifiedOn",
-							"caption": "Last updated",
-							"dataValueType": 7,
-							"width": 190
-						},
-						{
-							"id": "84853964-5199-5069-e83d-b19441037b9a",
-							"code": "DataGrid_l3ofv19DS_UsrMCITRoleStatuses",
-							"caption": "Status",
-							"dataValueType": 10
-						},
-						{
-							"id": "517991b1-3a82-a222-cf73-cc77f50c25ce",
-							"code": "DataGrid_l3ofv19DS_UsrScopeBehavior",
-							"caption": "#ResourceString(DataGrid_l3ofv19DS_UsrScopeBehavior)#",
-							"dataValueType": 10
-						},
-						{
-							"id": "560420f6-76da-96cf-55ac-49889af5c247",
-							"code": "DataGrid_l3ofv19DS_UsrUsersCount",
-							"caption": "#ResourceString(DataGrid_l3ofv19DS_UsrUsersCount)#",
-							"dataValueType": 4
-						},
-						{
-							"id": "f1da5183-6a82-7180-1db9-bcb9275b8fa5",
-							"code": "DataGrid_l3ofv19DS_UsrPermissionsCount",
-							"caption": "#ResourceString(DataGrid_l3ofv19DS_UsrPermissionsCount)#",
-							"dataValueType": 4
-						},
-						{
-							"id": "de7abc1f-4beb-43ff-50f4-dff3078d72dc",
-							"code": "DataGrid_l3ofv19DS_CreatedBy",
-							"caption": "#ResourceString(DataGrid_l3ofv19DS_CreatedBy)#",
-							"dataValueType": 10
-						}
-					],
-					"placeholder": false
-				},
-				"parentName": "FlexContainer_5xu0pyy",
-				"propertyName": "items",
-				"index": 2
-			}
-		]/**SCHEMA_VIEW_CONFIG_DIFF*/,
+  {
+    "operation": "remove",
+    "name": "MainHeader"
+  },
+  {
+    "operation": "remove",
+    "name": "TitleContainer"
+  },
+  {
+    "operation": "remove",
+    "name": "PageTitle"
+  },
+  {
+    "operation": "remove",
+    "name": "ActionButtonsContainer"
+  },
+  {
+    "operation": "remove",
+    "name": "AddButton"
+  },
+  {
+    "operation": "remove",
+    "name": "DataImportButton"
+  },
+  {
+    "operation": "remove",
+    "name": "MenuItem_ImportFromExcel"
+  },
+  {
+    "operation": "remove",
+    "name": "OpenLandingDesigner"
+  },
+  {
+    "operation": "remove",
+    "name": "ActionButton"
+  },
+  {
+    "operation": "remove",
+    "name": "MenuItem_ExportToExcel"
+  },
+  {
+    "operation": "remove",
+    "name": "MainContainer"
+  },
+  {
+    "operation": "remove",
+    "name": "MainFilterContainer"
+  },
+  {
+    "operation": "remove",
+    "name": "LeftFilterContainer"
+  },
+  {
+    "operation": "remove",
+    "name": "LeftFilterContainerInner"
+  },
+  {
+    "operation": "remove",
+    "name": "FolderTreeActions"
+  },
+  {
+    "operation": "remove",
+    "name": "FiltersMenu"
+  },
+  {
+    "operation": "remove",
+    "name": "LookupQuickFilterByTag"
+  },
+  {
+    "operation": "remove",
+    "name": "SearchFilter"
+  },
+  {
+    "operation": "remove",
+    "name": "RightFilterContainer"
+  },
+  {
+    "operation": "remove",
+    "name": "DataTable_Summaries"
+  },
+  {
+    "operation": "remove",
+    "name": "RefreshButton"
+  },
+  {
+    "operation": "remove",
+    "name": "MainButtonToggleGroup"
+  },
+  {
+    "operation": "remove",
+    "name": "ContentContainer"
+  },
+  {
+    "operation": "remove",
+    "name": "FolderTree"
+  },
+  {
+    "operation": "remove",
+    "name": "Filters"
+  },
+  {
+    "operation": "remove",
+    "name": "SectionContentWrapper"
+  },
+  {
+    "operation": "remove",
+    "name": "MainTabPanel"
+  },
+  {
+    "operation": "remove",
+    "name": "ListTabContainer"
+  },
+  {
+    "operation": "remove",
+    "name": "ListContainer"
+  },
+  {
+    "operation": "remove",
+    "name": "DataTable"
+  },
+  {
+    "operation": "remove",
+    "name": "DashboardsTabContainer"
+  },
+  {
+    "operation": "remove",
+    "name": "DashboardsContainer"
+  },
+  {
+    "operation": "remove",
+    "name": "Dashboards"
+  },
+  {
+    "operation": "insert",
+    "name": "FlexContainer_5xu0pyy",
+    "values": {
+      "type": "crt.FlexContainer",
+      "direction": "column",
+      "wrap": "nowrap",
+      "items": [],
+      "fitContent": true,
+      "alignItems": "stretch",
+      "classes": [
+        "mcit-roles-page"
+      ]
+    },
+    "parentName": "Main",
+    "propertyName": "items",
+    "index": 0
+  },
+  {
+    "operation": "insert",
+    "name": "FlexContainer_7jn50m4",
+    "values": {
+      "type": "crt.FlexContainer",
+      "direction": "row",
+      "wrap": "wrap",
+      "items": [],
+      "fitContent": true,
+      "justifyContent": "space-between",
+      "alignItems": "center",
+      "gap": "small",
+      "classes": [
+        "mcit-roles-header"
+      ]
+    },
+    "parentName": "FlexContainer_5xu0pyy",
+    "propertyName": "items",
+    "index": 0
+  },
+  {
+    "operation": "insert",
+    "name": "FlexContainer_alakd18",
+    "values": {
+      "type": "crt.FlexContainer",
+      "direction": "column",
+      "wrap": "nowrap",
+      "items": [],
+      "fitContent": true
+    },
+    "parentName": "FlexContainer_7jn50m4",
+    "propertyName": "items",
+    "index": 0
+  },
+  {
+    "operation": "insert",
+    "name": "Label_xa4l2d7",
+    "values": {
+      "type": "crt.Label",
+      "caption": "Roles Management",
+      "labelType": "headline-1",
+      "labelColor": "#0F172A",
+      "headingLevel": "label",
+      "visible": true
+    },
+    "parentName": "FlexContainer_alakd18",
+    "propertyName": "items",
+    "index": 0
+  },
+  {
+    "operation": "insert",
+    "name": "Label_n5j0lca",
+    "values": {
+      "type": "crt.Label",
+      "caption": "Manage roles, permissions, and access controls",
+      "labelType": "body",
+      "labelColor": "#64748B",
+      "visible": true
+    },
+    "parentName": "FlexContainer_alakd18",
+    "propertyName": "items",
+    "index": 1
+  },
+  {
+    "operation": "insert",
+    "name": "UsrRolesHeaderActions",
+    "values": {
+      "type": "crt.FlexContainer",
+      "direction": "row",
+      "wrap": "wrap",
+      "items": [],
+      "fitContent": true,
+      "alignItems": "center",
+      "justifyContent": "flex-end",
+      "gap": "small",
+      "classes": ["mcit-roles-actions"]
+    },
+    "parentName": "FlexContainer_7jn50m4",
+    "propertyName": "items",
+    "index": 1
+  },
+  {
+    "operation": "insert",
+    "name": "Button_zce85wm",
+    "values": {
+      "type": "crt.Button",
+      "caption": "#ResourceString(Button_zce85wm_caption)#",
+      "color": "primary",
+      "size": "large",
+      "disabled": false,
+      "icon": "add-button-icon",
+      "iconPosition": "left-icon",
+      "visible": true,
+      "clicked": {
+        "request": "crt.CreateRecordRequest",
+        "params": {
+          "entityName": "UsrMCITRole"
+        }
+      },
+      "classes": [
+        "mcit-create-role"
+      ],
+      "clickMode": "default"
+    },
+    "parentName": "UsrRolesHeaderActions",
+    "propertyName": "items",
+    "index": 0
+  },
+  {
+    "operation": "insert",
+    "name": "GridContainer_99tsw8a",
+    "values": {
+      "type": "crt.GridContainer",
+      "columns": [
+        "minmax(32px, 1fr)"
+      ],
+      "rows": "auto auto",
+      "items": [],
+      "fitContent": false,
+      "visible": true,
+      "borderRadius": "medium",
+      "color": "primary",
+      "classes": [
+        "mcit-role-filter-card"
+      ],
+      "gap": {
+        "columnGap": "small",
+        "rowGap": "small"
+      },
+      "padding": {
+        "top": "medium",
+        "right": "medium",
+        "bottom": "medium",
+        "left": "medium"
+      }
+    },
+    "parentName": "FlexContainer_5xu0pyy",
+    "propertyName": "items",
+    "index": 1
+  },
+  {
+    "operation": "insert",
+    "name": "FlexContainer_ar0u90b",
+    "values": {
+      "type": "crt.FlexContainer",
+      "direction": "row",
+      "wrap": "nowrap",
+      "items": [],
+      "fitContent": false,
+      "visible": true,
+      "justifyContent": "space-between",
+      "alignItems": "center",
+      "gap": "small",
+      "classes": [
+        "mcit-roles-filter-row"
+      ],
+      "layoutConfig": {
+        "column": 1,
+        "colSpan": 1,
+        "row": 1,
+        "rowSpan": 1
+      }
+    },
+    "parentName": "GridContainer_99tsw8a",
+    "propertyName": "items",
+    "index": 0
+  },
+  {
+    "operation": "insert",
+    "name": "SearchFilter_7irptcm",
+    "values": {
+      "type": "crt.SearchFilter",
+      "placeholder": "Search roles...",
+      "iconOnly": false,
+      "classes": [
+        "mcit-role-search"
+      ],
+      "_filterOptions": {
+        "expose": [
+          {
+            "attribute": "SearchFilter_7irptcm_DataGrid_l3ofv19",
+            "converters": [
+              {
+                "converter": "crt.SearchFilterAttributeConverter",
+                "args": [
+                  "DataGrid_l3ofv19"
+                ]
+              }
+            ]
+          }
+        ],
+        "from": [
+          "SearchFilter_7irptcm_SearchValue",
+          "SearchFilter_7irptcm_FilteredColumnsGroups"
+        ]
+      }
+    },
+    "parentName": "FlexContainer_ar0u90b",
+    "propertyName": "items",
+    "index": 0
+  },
+  {
+    "operation": "insert",
+    "name": "QuickFilter_4d1u24e",
+    "values": {
+      "type": "crt.QuickFilter",
+      "filterType": "lookup",
+      "classes": [
+        "mcit-role-type-filter"
+      ],
+      "config": {
+        "caption": "All Types",
+        "hint": "",
+        "icon": "filter-column-icon",
+        "iconPosition": "left-icon",
+        "defaultValue": [],
+        "entitySchemaName": "UsrMCITRoleCategory",
+        "recordsFilter": null,
+        "defaultValueListSorting": null
+      },
+      "_filterOptions": {
+        "expose": [
+          {
+            "attribute": "QuickFilter_4d1u24e_DataGrid_l3ofv19",
+            "converters": [
+              {
+                "converter": "crt.QuickFilterAttributeConverter",
+                "args": [
+                  {
+                    "target": {
+                      "viewAttributeName": "DataGrid_l3ofv19",
+                      "filterColumn": "UsrRoleCategory"
+                    },
+                    "quickFilterType": "lookup"
+                  }
+                ]
+              }
+            ]
+          }
+        ],
+        "from": "QuickFilter_4d1u24e_Value"
+      }
+    },
+    "parentName": "FlexContainer_ar0u90b",
+    "propertyName": "items",
+    "index": 1
+  },
+  {
+    "operation": "insert",
+    "name": "FlexContainer_aau8th3",
+    "values": {
+      "type": "crt.FlexContainer",
+      "direction": "row",
+      "wrap": "wrap",
+      "items": [],
+      "fitContent": true,
+      "visible": true,
+      "justifyContent": "flex-start",
+      "gap": "small",
+      "classes": "$UsrRoleStatusCssClasses",
+      "layoutConfig": {
+        "column": 1,
+        "colSpan": 1,
+        "row": 2,
+        "rowSpan": 1
+      }
+    },
+    "parentName": "GridContainer_99tsw8a",
+    "propertyName": "items",
+    "index": 1
+  },
+  {
+    "operation": "insert",
+    "name": "Button_51m9doe",
+    "values": {
+      "type": "crt.Button",
+      "caption": "All",
+      "color": "default",
+      "size": "large",
+      "disabled": false,
+      "iconPosition": "only-text",
+      "visible": true,
+      "classes": [
+        "mcit-status-chip",
+        "mcit-chip-all"
+      ],
+      "clicked": {
+        "request": "usr.SetRoleStatusFilter",
+        "params": {
+          "status": "All"
+        }
+      }
+    },
+    "parentName": "FlexContainer_aau8th3",
+    "propertyName": "items",
+    "index": 0
+  },
+  {
+    "operation": "insert",
+    "name": "Button_3utviwt",
+    "values": {
+      "type": "crt.Button",
+      "caption": "Active",
+      "color": "default",
+      "size": "large",
+      "disabled": false,
+      "iconPosition": "only-text",
+      "visible": true,
+      "classes": [
+        "mcit-status-chip",
+        "mcit-chip-active"
+      ],
+      "clicked": {
+        "request": "usr.SetRoleStatusFilter",
+        "params": {
+          "status": "Active"
+        }
+      }
+    },
+    "parentName": "FlexContainer_aau8th3",
+    "propertyName": "items",
+    "index": 1
+  },
+  {
+    "operation": "insert",
+    "name": "Button_2urezgq",
+    "values": {
+      "type": "crt.Button",
+      "caption": "Inactive",
+      "color": "default",
+      "size": "large",
+      "disabled": false,
+      "iconPosition": "only-text",
+      "visible": true,
+      "classes": [
+        "mcit-status-chip",
+        "mcit-chip-inactive"
+      ],
+      "clicked": {
+        "request": "usr.SetRoleStatusFilter",
+        "params": {
+          "status": "Inactive"
+        }
+      }
+    },
+    "parentName": "FlexContainer_aau8th3",
+    "propertyName": "items",
+    "index": 2
+  },
+  {
+    "operation": "insert",
+    "name": "Button_1od23cq",
+    "values": {
+      "type": "crt.Button",
+      "caption": "Draft",
+      "color": "default",
+      "size": "large",
+      "disabled": false,
+      "iconPosition": "only-text",
+      "visible": true,
+      "classes": [
+        "mcit-status-chip",
+        "mcit-chip-draft"
+      ],
+      "clicked": {
+        "request": "usr.SetRoleStatusFilter",
+        "params": {
+          "status": "Draft"
+        }
+      }
+    },
+    "parentName": "FlexContainer_aau8th3",
+    "propertyName": "items",
+    "index": 3
+  },
+  {
+    "operation": "insert",
+    "name": "DataGrid_l3ofv19",
+    "values": {
+      "type": "crt.DataGrid",
+      "items": "$DataGrid_l3ofv19",
+      "visible": true,
+      "fitContent": false,
+      "primaryColumnName": "DataGrid_l3ofv19DS_Id",
+      "selectionState": "$DataGrid_l3ofv19_SelectionState",
+      "classes": [
+        "mcit-roles-list"
+      ],
+      "features": {
+        "rows": {
+          "selection": {
+            "enable": true,
+            "multiple": true
+          }
+        },
+        "header": {
+          "visible": true
+        },
+        "editable": {
+          "enable": true,
+          "itemsCreation": true,
+          "floatingEditPanel": true
+        },
+        "columns": {
+          "dragAndDrop": false,
+          "resizing": true,
+          "sorting": true
+        }
+      },
+      "columns": [
+        {
+          "id": "6e653b44-66ea-106d-1ad0-05bf95a93879",
+          "code": "DataGrid_l3ofv19DS_UsrName",
+          "caption": "Role Name",
+          "dataValueType": 28
+        },
+        {
+          "id": "0c7114cd-258f-fdb9-1416-2f63fd369d9f",
+          "code": "DataGrid_l3ofv19DS_UsrRoleCategory",
+          "caption": "Role Category",
+          "dataValueType": 10
+        },
+        {
+          "id": "4b48dd53-34b3-ad1f-baac-71acadf0a9e5",
+          "code": "DataGrid_l3ofv19DS_UsrDescription",
+          "caption": "Description",
+          "dataValueType": 29
+        },
+        {
+          "id": "6b65bc58-3f98-489f-9d90-fcbca95dc001",
+          "code": "DataGrid_l3ofv19DS_ModifiedOn",
+          "caption": "Last Modified",
+          "dataValueType": 7,
+          "width": 190
+        },
+        {
+          "id": "84853964-5199-5069-e83d-b19441037b9a",
+          "code": "DataGrid_l3ofv19DS_UsrMCITRoleStatuses",
+          "caption": "Status",
+          "dataValueType": 10
+        },
+        {
+          "id": "517991b1-3a82-a222-cf73-cc77f50c25ce",
+          "code": "DataGrid_l3ofv19DS_UsrScopeBehavior",
+          "caption": "#ResourceString(DataGrid_l3ofv19DS_UsrScopeBehavior)#",
+          "dataValueType": 10
+        },
+        {
+          "id": "560420f6-76da-96cf-55ac-49889af5c247",
+          "code": "DataGrid_l3ofv19DS_UsrUsersCount",
+          "caption": "#ResourceString(DataGrid_l3ofv19DS_UsrUsersCount)#",
+          "dataValueType": 4
+        },
+        {
+          "id": "f1da5183-6a82-7180-1db9-bcb9275b8fa5",
+          "code": "DataGrid_l3ofv19DS_UsrPermissionsCount",
+          "caption": "#ResourceString(DataGrid_l3ofv19DS_UsrPermissionsCount)#",
+          "dataValueType": 4
+        },
+        {
+          "id": "de7abc1f-4beb-43ff-50f4-dff3078d72dc",
+          "code": "DataGrid_l3ofv19DS_CreatedBy",
+          "caption": "#ResourceString(DataGrid_l3ofv19DS_CreatedBy)#",
+          "dataValueType": 10
+        }
+      ],
+      "placeholder": false
+    },
+    "parentName": "FlexContainer_5xu0pyy",
+    "propertyName": "items",
+    "index": 2
+  }
+]/**SCHEMA_VIEW_CONFIG_DIFF*/,
 		viewModelConfigDiff: /**SCHEMA_VIEW_MODEL_CONFIG_DIFF*/[
 			{
 				"operation": "merge",
@@ -699,6 +722,7 @@ define("UsrMCITRoles_ListPage",
 							}
 						}
 					},
+					"DataGrid_l3ofv19_SelectionState": { "value": null },
 					"UsrRoleStatusFilter": {
 						"value": null
 					},
@@ -768,6 +792,146 @@ define("UsrMCITRoles_ListPage",
 			}
 		]/**SCHEMA_MODEL_CONFIG_DIFF*/,
 		handlers: /**SCHEMA_HANDLERS*/[
+            {
+                request: "crt.HandleViewModelInitRequest",
+                handler: async (request, next) => {
+                    // Do not block the page: the sync service may be slow during startup.
+                    const initialized = await next?.handle(request);
+                    const now = Date.now();
+                    // Limit repeated calls caused by navigating between modules.
+                    if (mcitScreenSyncInFlight || now - mcitScreenSyncLastStarted < 120000) {
+                        return initialized;
+                    }
+                    mcitScreenSyncInFlight = true;
+                    mcitScreenSyncLastStarted = now;
+                    (async () => {
+                        try {
+                            const http = new sdk.HttpClientService();
+                            const response = await http.post(
+                                "rest/UsrMCITRoleFormService/Execute",
+                                {
+                                    action: "SyncScreens",
+                                    roleId: "00000000-0000-0000-0000-000000000000",
+                                    userId: "00000000-0000-0000-0000-000000000000"
+                                }
+                            );
+                            const sync = response?.body?.ExecuteResult ?? response?.body;
+                            if (sync?.Success === true) {
+                                console.info("MCIT screen auto-sync:", sync.Message);
+                            } else {
+                                // Non-managers may be able to open this page; the server
+                                // denies them modification. The page should still load.
+                                console.warn("MCIT screen auto-sync skipped:", sync?.Message || "No success response");
+                            }
+                        } catch (error) {
+                            console.warn("MCIT screen auto-sync unavailable:", error?.message || error);
+                        } finally {
+                            mcitScreenSyncInFlight = false;
+                        }
+                    })();
+                    return initialized;
+                }
+            },
+            {
+                request: "crt.DeleteRecordsRequest",
+                handler: async (request, next) => {
+                    // Creatio calls this request for both the native bottom toolbar
+                    // and the row action menu. Do NOT call next for this grid:
+                    // generic deletion would hit UsrMCITRoleFormRoleGuard.
+                    const dataSource = request.dataSourceName;
+                    if (dataSource && dataSource !== "DataGrid_l3ofv19DS") {
+                        return next?.handle(request);
+                    }
+                    const ctx = request.$context;
+                    const dialog = (title, message, actions = [
+                        {key: "OK", config: {color: "primary", caption: "OK"}}
+                    ]) => ctx.executeRequest({
+                        type: "crt.ShowDialogRequest",
+                        $context: ctx,
+                        dialogConfig: {data: {title, message, actions}}
+                    });
+                    if (await ctx.UsrMCITDeleteBusy) return false;
+                    ctx.UsrMCITDeleteBusy = true;
+                    try {
+                        const selection = await ctx.DataGrid_l3ofv19_SelectionState;
+                        const directIds = Array.isArray(request.recordIds) ? request.recordIds : [];
+                        const selectionType = String(selection?.type ?? selection?.Type ?? "").toLowerCase();
+                        if (!directIds.length && (selectionType === "all" ||
+                                selection?.selectAll === true || selection?.allSelected === true)) {
+                            await dialog("Choose individual roles",
+                                "Bulk Select All is not supported for permanent role deletion. Please tick individual rows.");
+                            return false;
+                        }
+                        // Bulk native requests supply filters; use the grid's explicitly selected IDs,
+                        // never execute a generic/unbounded filter delete.
+                        const selected = directIds.length ? directIds :
+                            (Array.isArray(selection?.selected) ? selection.selected : []);
+                        const roleIds = [...new Set(selected.map(item => {
+                            const value = String(item?.value ?? item?.Id ?? item?.id ?? item ?? "").trim().toLowerCase();
+                            return /^[0-9a-f]{8}(?:-[0-9a-f]{4}){3}-[0-9a-f]{12}$/.test(value) ? value : "";
+                        }).filter(Boolean))];
+                        if (!roleIds.length) {
+                            await dialog("No explicit roles found",
+                                "Select individual roles in the list. No records were deleted; the native request did not provide readable selected IDs.");
+                            return false;
+                        }
+                        if (roleIds.length > 10) {
+                            await dialog("Too many roles",
+                                "Select no more than 10 roles per deletion operation.");
+                            return false;
+                        }
+                        // The built-in delete request fires before its default confirmation,
+                        // so show this explicit confirmation instead of forwarding the request.
+                        const choice = await dialog("Delete selected roles?",
+                            `Permanently delete ${roleIds.length} selected MCIT role(s), their custom permission rows and change history? ` +
+                            "Active or dependent roles will be blocked. Linked native Creatio functional roles will be kept. " +
+                            "This operation cannot be undone.", [
+                                {key: "CANCEL", config: {color: "default", caption: "Cancel"}},
+                                {key: "DELETE", config: {color: "warn", caption: "Delete"}}
+                            ]);
+                        const action = typeof choice === "string" ? choice :
+                            (choice?.key ?? choice?.actionKey ?? choice?.action ?? "");
+                        if (String(action).toUpperCase() !== "DELETE") return false;
+                        const http = new sdk.HttpClientService();
+                        let succeeded = 0;
+                        const failures = [];
+                        for (const roleId of roleIds) {
+                            try {
+                                const response = await http.post("rest/UsrMCITRoleFormService/Execute", {
+                                    action: "DeleteRole",
+                                    roleId,
+                                    userId: "00000000-0000-0000-0000-000000000000"
+                                });
+                                const result = response?.body?.ExecuteResult ?? response?.body;
+                                if (result?.Success !== true) {
+                                    throw new Error(result?.Message || "Delete service did not confirm success.");
+                                }
+                                succeeded++;
+                            } catch (error) {
+                                failures.push(`${roleId}: ${String(error?.message || error)}`);
+                            }
+                        }
+                        if (succeeded > 0) {
+                            ctx.DataGrid_l3ofv19_SelectionState = null;
+                            await ctx.executeRequest({
+                                type: "crt.LoadDataRequest", $context: ctx,
+                                dataSourceName: "DataGrid_l3ofv19DS", config: {loadType: "reload"}
+                            });
+                        }
+                        await dialog("Role deletion result",
+                            `${succeeded} of ${roleIds.length} role(s) deleted.` +
+                            (failures.length ? "\nBlocked or failed:\n" + failures.join("\n") :
+                                "\nThe linked Creatio functional roles were preserved."));
+                        return succeeded > 0;
+                    } catch (error) {
+                        await dialog("Role deletion failed", String(error?.message || error));
+                        return false;
+                    } finally {
+                        ctx.UsrMCITDeleteBusy = false;
+                    }
+                }
+            },
+
             {
                 request: "usr.SetRoleStatusFilter",
                 handler: async (request, next) => {

@@ -16,6 +16,7 @@
 			<Item Name="LocalizableStrings.DataGrid_1yq715aDS_UsrCanExport.Value" Value="Export" />
 			<Item Name="LocalizableStrings.DataGrid_1yq715aDS_UsrCanView.Value" Value="View" />
 			<Item Name="LocalizableStrings.ExpansionPanel_qovsgf3_title.Value" Value="Expansion panel" />
+			<Item Name="LocalizableStrings.Label_n1h2a2j_caption.Value" Value="Queue Permissions" />
 			<Item Name="LocalizableStrings.TabContainer_0wqwdih_caption.Value" Value="ASSIGNED USERS" />
 			<Item Name="LocalizableStrings.TabContainer_5194hoo_caption.Value" Value="Administrative Permissions " />
 			<Item Name="LocalizableStrings.TabContainer_8h8i8hs_caption.Value" Value="Screen Permissions" />
@@ -23,7 +24,72 @@
 			<Item Name="LocalizableStrings.TabContainer_w4rpe7i_caption.Value" Value="Queue Permissions" />
 			<Item Name="LocalizableStrings.TabContainer_wsi30mm_caption.Value" Value="Change summary" />
 			<Item Name="LocalizableStrings.TabContainer_ymxsxk9_caption.Value" Value="DATA SCOPE RULES" />
+			<Item Name="LocalizableStrings.UsrAdminPermissionsGrid_UsrCanExportAuditLog_caption.Value" Value="Export audit log" />
+			<Item Name="LocalizableStrings.UsrAdminPermissionsGrid_UsrCanManageRoles_caption.Value" Value="Manage roles" />
+			<Item Name="LocalizableStrings.UsrAdminPermissionsGrid_UsrCanManageSLAPolicies_caption.Value" Value="Manage SLA policies" />
+			<Item Name="LocalizableStrings.UsrAdminPermissionsGrid_UsrCanManageUsers_caption.Value" Value="Manage users" />
+			<Item Name="LocalizableStrings.UsrAdminPermissionsGrid_UsrCanManageWorkflows_caption.Value" Value="Manage workflows" />
+			<Item Name="LocalizableStrings.UsrAdminPermissionsGrid_UsrCanSystemConfigure_caption.Value" Value="System configuration" />
+			<Item Name="LocalizableStrings.UsrAdminPermissionsGrid_UsrCanViewAuditLog_caption.Value" Value="View audit log" />
 			<Item Name="LocalizableStrings.UsrMCITRoleActiveWarning_caption.Value" Value="Active role: changes require a new draft version." />
+			<Item Name="LocalizableStrings.UsrMigration_Checkbox_2tqb4tx_label.Value" Value="System Configuration" />
+			<Item Name="LocalizableStrings.UsrMigration_Checkbox_5vq3dxo_label.Value" Value="Manage SLA Policies" />
+			<Item Name="LocalizableStrings.UsrMigration_Checkbox_edrjb6y_label.Value" Value="Export Audit Log" />
+			<Item Name="LocalizableStrings.UsrMigration_Checkbox_f4pcuoi_label.Value" Value="View Audit Log" />
+			<Item Name="LocalizableStrings.UsrMigration_Checkbox_ifeszmp_label.Value" Value="Manage Users" />
+			<Item Name="LocalizableStrings.UsrMigration_Checkbox_jrowwuy_label.Value" Value="Manage Roles" />
+			<Item Name="LocalizableStrings.UsrMigration_Checkbox_vi64gwc_label.Value" Value="Manage Workflows" />
+			<Item Name="LocalizableStrings.UsrMigration_DataGrid_1yq715a_columns_0_caption.Value" Value="Screen" />
+			<Item Name="LocalizableStrings.UsrMigration_DataGrid_1yq715a_columns_1_caption.Value" Value="View" />
+			<Item Name="LocalizableStrings.UsrMigration_DataGrid_1yq715a_columns_2_caption.Value" Value="Create" />
+			<Item Name="LocalizableStrings.UsrMigration_DataGrid_1yq715a_columns_3_caption.Value" Value="Edit" />
+			<Item Name="LocalizableStrings.UsrMigration_DataGrid_1yq715a_columns_4_caption.Value" Value="Approve" />
+			<Item Name="LocalizableStrings.UsrMigration_DataGrid_1yq715a_columns_5_caption.Value" Value="Assign" />
+			<Item Name="LocalizableStrings.UsrMigration_DataGrid_1yq715a_columns_6_caption.Value" Value="Export" />
+			<Item Name="LocalizableStrings.UsrMigration_DataGrid_1yq715a_columns_7_caption.Value" Value="Configure" />
+			<Item Name="LocalizableStrings.UsrMigration_DataGrid_1yq715a_columns_8_caption.Value" Value="Activate" />
+			<Item Name="LocalizableStrings.UsrMigration_DataGrid_6bdu0ha_columns_0_caption.Value" Value="Created By" />
+			<Item Name="LocalizableStrings.UsrMigration_DataGrid_6bdu0ha_columns_1_caption.Value" Value="User" />
+			<Item Name="LocalizableStrings.UsrMigration_DataGrid_6bdu0ha_columns_2_caption.Value" Value="Email" />
+			<Item Name="LocalizableStrings.UsrMigration_DataGrid_6bdu0ha_columns_3_caption.Value" Value="Role" />
+			<Item Name="LocalizableStrings.UsrMigration_DataGrid_cjsl4aj_columns_0_caption.Value" Value="Queue Name" />
+			<Item Name="LocalizableStrings.UsrMigration_DataGrid_cjsl4aj_columns_1_caption.Value" Value="Description" />
+			<Item Name="LocalizableStrings.UsrMigration_DataGrid_cjsl4aj_columns_2_caption.Value" Value="Access" />
+			<Item Name="LocalizableStrings.UsrMigration_GeneralInfoTab_caption.Value" Value="ROLE INFORMATION" />
+			<Item Name="LocalizableStrings.UsrMigration_ListAction_1mfa21i_caption.Value" Value="ComboBox.AddNewRecord" />
+			<Item Name="LocalizableStrings.UsrMigration_ListAction_9txzb86_caption.Value" Value="ComboBox.AddNewRecord" />
+			<Item Name="LocalizableStrings.UsrMigration_TabContainer_0wqwdih_caption.Value" Value="ASSIGNED USERS" />
+			<Item Name="LocalizableStrings.UsrMigration_TabContainer_5194hoo_caption.Value" Value="ADMINISTRATIVE PERMISSIONS" />
+			<Item Name="LocalizableStrings.UsrMigration_TabContainer_8h8i8hs_caption.Value" Value="SCREEN PERMISSIONS" />
+			<Item Name="LocalizableStrings.UsrMigration_TabContainer_mdfdx0c_caption.Value" Value="REPORTING PERMISSIONS" />
+			<Item Name="LocalizableStrings.UsrMigration_TabContainer_w4rpe7i_caption.Value" Value="QUEUE PERMISSIONS" />
+			<Item Name="LocalizableStrings.UsrMigration_TabContainer_wsi30mm_caption.Value" Value="CHANGE SUMMARY" />
+			<Item Name="LocalizableStrings.UsrMigration_UsrDataScopeGrid_columns_0_caption.Value" Value="Scope Type" />
+			<Item Name="LocalizableStrings.UsrMigration_UsrDataScopeGrid_columns_1_caption.Value" Value="Allowed Values" />
+			<Item Name="LocalizableStrings.UsrMigration_UsrDataScopeGrid_columns_2_caption.Value" Value="Description" />
+			<Item Name="LocalizableStrings.UsrMigration_UsrDataScopePanel_title.Value" Value="Data Scope Rules" />
+			<Item Name="LocalizableStrings.UsrMigration_UsrDataScopeTab_caption.Value" Value="DATA SCOPE RULES" />
+			<Item Name="LocalizableStrings.UsrMigration_UsrMCITAdminPanel_title.Value" Value="Administrative Permissions" />
+			<Item Name="LocalizableStrings.UsrMigration_UsrMCITChangeEmptyDescription_caption.Value" Value="Change history will appear after the MCIT role change-log data source is configured." />
+			<Item Name="LocalizableStrings.UsrMigration_UsrMCITChangeEmptyTitle_caption.Value" Value="No change summary connected" />
+			<Item Name="LocalizableStrings.UsrMigration_UsrMCITChangeSummaryPanel_title.Value" Value="Change Summary" />
+			<Item Name="LocalizableStrings.UsrMigration_UsrMCITQueuePanel_title.Value" Value="Queue Permissions" />
+			<Item Name="LocalizableStrings.UsrMigration_UsrMCITReportPreview1_caption.Value" Value="☐  Financial Reports" />
+			<Item Name="LocalizableStrings.UsrMigration_UsrMCITReportPreview2_caption.Value" Value="☐  Technical Reports" />
+			<Item Name="LocalizableStrings.UsrMigration_UsrMCITReportPreview3_caption.Value" Value="☐  VM Lifecycle Reports" />
+			<Item Name="LocalizableStrings.UsrMigration_UsrMCITReportPreview4_caption.Value" Value="☐  Audit Reports" />
+			<Item Name="LocalizableStrings.UsrMigration_UsrMCITReportPreview5_caption.Value" Value="☐  SLA Performance Reports" />
+			<Item Name="LocalizableStrings.UsrMigration_UsrMCITReportPreview6_caption.Value" Value="☐  Contract Summary Reports" />
+			<Item Name="LocalizableStrings.UsrMigration_UsrMCITReportingNote_caption.Value" Value="Preview only — reporting permissions are not connected to saved records yet." />
+			<Item Name="LocalizableStrings.UsrMigration_UsrMCITReportingPanel_title.Value" Value="Reporting Permissions" />
+			<Item Name="LocalizableStrings.UsrMigration_UsrMCITRoleActiveWarning_caption.Value" Value="Active role: changes require a new draft version." />
+			<Item Name="LocalizableStrings.UsrMigration_UsrMCITScreenNote_caption.Value" Value="Save the role first. Screen flags configure MCIT actions; native object and record permissions remain independent." />
+			<Item Name="LocalizableStrings.UsrMigration_UsrMCITScreenPanel_title.Value" Value="Screen Permissions" />
+			<Item Name="LocalizableStrings.UsrPermissionExport.Value" Value="Export permissions" />
+			<Item Name="LocalizableStrings.UsrPermissionImport.Value" Value="Import permissions" />
+			<Item Name="LocalizableStrings.UsrPermissionSearch.Value" Value="Search permissions" />
+			<Item Name="LocalizableStrings.UsrReportingPermissionsGrid_UsrCanView_caption.Value" Value="Allow viewing" />
+			<Item Name="LocalizableStrings.UsrReportingPermissionsGrid_UsrReport_caption.Value" Value="Report" />
 			<Item Name="LocalizableStrings.addRecord_1i1shkh_caption.Value" Value="Add new" />
 			<Item Name="LocalizableStrings.addRecord_dzs0x8m_caption.Value" Value="Add new" />
 			<Item Name="LocalizableStrings.addRecord_ftyzwdd_caption.Value" Value="Add new" />

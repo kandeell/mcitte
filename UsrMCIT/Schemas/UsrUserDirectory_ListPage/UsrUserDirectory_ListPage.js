@@ -1,4 +1,4 @@
-/* V32: Keep V30 search/filter + live data, reserve KPI height and scroll whole directory.
+/* V37: viewport-aware User Directory gap correction (adapts to full-height desktop); live native KPI data, search/filter, and full-page scroll.
    Preserves Cairo timestamps, system roles, status workflows and filters.
    V22 MCITLU safe fix: live Functional Roles + nonempty/empty Organization label.
    Based on user's V21; same page design, metric widgets, filters, actions, CSS.
@@ -270,6 +270,7 @@ define("UsrUserDirectory_ListPage", /**SCHEMA_DEPS*/["@creatio-devkit/common"]/*
 						"rowSpan": 1
 					},
 					"type": "crt.FlexContainer",
+                    "classes": ["usr-dir-kpi-native-row"],
 					"direction": "row",
 					"wrap": "nowrap",
 					"items": [],
@@ -1307,7 +1308,10 @@ define("UsrUserDirectory_ListPage", /**SCHEMA_DEPS*/["@creatio-devkit/common"]/*
                             orgRoleListPromise: null,
                             // Verified native Functional Role memberships for the displayed user.
                             functionalNamesByUser: new Map(), functionalPending: new Set(),
-                            functionalRoleDefsPromise: null
+                            functionalRoleDefsPromise: null,
+                            stack: null, tableOriginalParent: null,
+                            tableOriginalNext: null, tableOriginalHost: null,
+                            compactMountedLogged: false
                         };
                         document[key] = runtime;
                         const guid = (x) => String(x?.value ?? x?.Id ?? x?.id ?? x ?? "").toLowerCase();
@@ -1363,8 +1367,78 @@ define("UsrUserDirectory_ListPage", /**SCHEMA_DEPS*/["@creatio-devkit/common"]/*
                             }
                             return result;
                         };
+                        // V33: Draw compact Figma-style status chips from the THREE existing
+                        // native indicator widgets. The native widgets still execute all
+                        // Creatio data providers; we never replace, hardcode, or recalculate
+                        // their server-side counts. If they cannot be read, keep them visible.
+                        runtime.metricBar = null;
                         runtime.metricsOverride = null;
                         runtime.metricObserver = null;
+                        let metricSyncFrame = 0;
+                        const syncMetricBar = () => {
+                            if (runtime.disposed || !runtime.metricBar?.isConnected) return;
+                            const root = document.querySelector('.usr-dir-view-layout');
+                            const values = runtime.metricsOverride || readNativeMetrics();
+                            if (!root || !values) {
+                                root?.classList.remove('usr-dir-metrics-ready');
+                                return;
+                            }
+                            for (const status of metricKeys) {
+                                const node = runtime.metricBar.querySelector(
+                                    '.usr-dir-metric-card-' + status + ' .usr-dir-metric-number');
+                                const value = String(values[status]);
+                                if (node && node.textContent !== value) node.textContent = value;
+                            }
+                            const becameReady = !root.classList.contains('usr-dir-metrics-ready');
+                            root.classList.add('usr-dir-metrics-ready');
+                            if (becameReady) requestAnimationFrame(() => {
+                                if (!runtime.disposed) scheduleCompact();
+                            });
+                        };
+                        runtime.syncMetricBar = syncMetricBar;
+                        const scheduleMetricSync = () => {
+                            if (runtime.disposed || metricSyncFrame) return;
+                            metricSyncFrame = requestAnimationFrame(() => {
+                                metricSyncFrame = 0;
+                                syncMetricBar();
+                            });
+                        };
+                        const mountMetricBar = () => {
+                            const root = document.querySelector('.usr-dir-view-layout');
+                            const native = root?.querySelector('.usr-dir-kpi-layout');
+                            if (!root || !native) return;
+                            if (!runtime.metricBar) {
+                                const bar = document.createElement('div');
+                                bar.className = 'usr-dir-metric-bar';
+                                bar.setAttribute('role', 'group');
+                                bar.setAttribute('aria-label', 'User status totals');
+                                for (const status of metricKeys) {
+                                    const chip = document.createElement('div');
+                                    chip.className = 'usr-dir-metric-card usr-dir-metric-card-' + status;
+                                    const amount = document.createElement('span');
+                                    amount.className = 'usr-dir-metric-number';
+                                    amount.textContent = '—';
+                                    const label = document.createElement('span');
+                                    label.className = 'usr-dir-metric-label';
+                                    label.textContent = status[0].toUpperCase() + status.slice(1);
+                                    chip.append(amount, label);
+                                    bar.appendChild(chip);
+                                }
+                                runtime.metricBar = bar;
+                            }
+                            // Place the compact metric bar at the actual view-root level,
+                            // even if Creatio adds an internal Angular/Flex wrapper.
+                            let visualNative = native;
+                            while (visualNative.parentElement && visualNative.parentElement !== root) {
+                                visualNative = visualNative.parentElement;
+                            }
+                            if (visualNative.parentElement !== root) return;
+                            if (runtime.metricBar.parentElement !== root ||
+                                    runtime.metricBar.nextElementSibling !== visualNative) {
+                                root.insertBefore(runtime.metricBar, visualNative);
+                            }
+                            scheduleMetricSync();
+                        };
                         let metricApplying = false;
                         const repaintMetrics = () => {
                             if (runtime.disposed || !runtime.metricsOverride || metricApplying) return;
@@ -1396,6 +1470,7 @@ define("UsrUserDirectory_ListPage", /**SCHEMA_DEPS*/["@creatio-devkit/common"]/*
                             repaintMetrics();
                             // Creatio may redraw a widget asynchronously after the grid
                             // refresh; keep the confirmed updated count visible.
+                            scheduleMetricSync();
                             return true;
                         };
                         // Organization is a SysAdminUnit ORGANIZATION/DIVISION, not Contact.Account.
@@ -1466,7 +1541,13 @@ define("UsrUserDirectory_ListPage", /**SCHEMA_DEPS*/["@creatio-devkit/common"]/*
                         const setNotice = (message, error=false) => {
                             if (!runtime.panel) return;
                             const el = runtime.panel.querySelector(".usr-dir-feedback");
-                            if (el) { el.textContent = message; el.classList.toggle("has-error", error); }
+                            if (el) {
+                                el.textContent = message;
+                                el.classList.toggle('has-error', error);
+                                // Feedback is accessible but only shown for errors/exports;
+                                // routine loaded-user counts do not increase panel height.
+                                el.classList.toggle('is-notice', error || /^Exported|^No matching/i.test(message));
+                            }
                         };
                         const activeRows = () => rowsNow().filter(row => row.style.display !== "none");
                         const apply = () => {
@@ -1851,37 +1932,64 @@ define("UsrUserDirectory_ListPage", /**SCHEMA_DEPS*/["@creatio-devkit/common"]/*
                             loadRoles(select);
                             return host;
                         };
-                        // Keep the native KPI cards; fix the *real* measured gap
-                        // between those cards and the search panel, on any viewport.
-                        // The layout is measured after the widgets paint, not guessed
-                        // from Figma pixel positions or based on the number of users.
+                        // V37: viewport-aware correction for the real full-height issue.
+                        // V36's stack can be absent in some Freedom UI DOM layouts.
+                        // Work directly with the EXISTING KPI, toolbar and native table
+                        // no matter which Creatio parent container rendered them.
+                        // This changes layout presentation only; data and actions remain intact.
                         let compactFrame = 0;
+                        let lastAppliedShift = 0;
+                        let lastTransformedTable = null;
                         const compactDirectory = () => {
-                            // V32: fixed-height measurements made the KPI widget collapse
-                            // before the native indicators had painted. This caused the
-                            // Search/Filters panel to overlap the cards. NEVER set an
-                            // explicit KPI height from the previous layout pass.
                             if (runtime.disposed || !runtime.panel?.isConnected) return;
-                            const root=document.querySelector('.usr-dir-view-layout');
-                            const kpi=root?.querySelector('.usr-dir-kpi-layout');
-                            if (!kpi?.isConnected) return;
-                            kpi.style.removeProperty('height');
-                            kpi.style.removeProperty('max-height');
-                            const holderTop=kpi.getBoundingClientRect().top;
-                            const cards=[...kpi.querySelectorAll('.usr-mcit-native-kpi')]
-                                .map(el=>el.getBoundingClientRect())
-                                .filter(rect=>rect.width>0 && rect.height>0);
-                            // Reserve at least a complete native KPI row (and some air),
-                            // including when indicators paint asynchronously.
-                            const bottom=cards.length?Math.max(...cards.map(r=>r.bottom)):holderTop;
-                            const natural=Math.ceil(bottom-holderTop+10);
-                            const reserved=Math.max(82, Math.min(220, natural));
-                            kpi.style.setProperty('min-height',reserved+'px','important');
-                            kpi.style.setProperty('flex-shrink','0','important');
-                            runtime.panel.style.setProperty('margin-top','10px','important');
+                            const kpi = document.querySelector('.usr-dir-kpi-layout');
+                            const table = document.querySelector('.usr-dir-table-viewport');
+                            if (!kpi?.isConnected || !table?.isConnected) return;
+
+                            // Use the visible custom bar if native widgets have been
+                            // mirrored successfully; otherwise preserve native KPI cards.
+                            const bar=document.querySelector('.usr-dir-metric-bar');
+                            const barVisible=bar && getComputedStyle(bar).display !== 'none' &&
+                                bar.getBoundingClientRect().height > 10;
+                            const metrics = barVisible ? bar : kpi;
+                            const metricsBottom = metrics.getBoundingClientRect().bottom;
+                            const panelRect = runtime.panel.getBoundingClientRect();
+
+                            // The panel's current transform was applied by us. Add it
+                            // back to measure its natural, unshifted position; otherwise
+                            // a re-measure would cancel the correction on every resize.
+                            const naturalGap = panelRect.top + lastAppliedShift - metricsBottom;
+                            if (!Number.isFinite(naturalGap)) return;
+                            const targetGap = 12;
+                            const nextShift = naturalGap > 24
+                                ? Math.max(0, Math.min(900, Math.round(naturalGap - targetGap)))
+                                : 0;
+                            const tableChanged = table !== lastTransformedTable;
+                            if (tableChanged && lastTransformedTable?.isConnected) {
+                                lastTransformedTable.style.removeProperty('transform');
+                            }
+                            if (tableChanged || Math.abs(nextShift-lastAppliedShift)>1) {
+                                const transform = nextShift ? `translateY(-${nextShift}px)` : 'none';
+                                runtime.panel.style.setProperty('transform', transform, 'important');
+                                table.style.setProperty('transform', transform, 'important');
+                                // Keep transformed elements visible and clickable while
+                                // they traverse any empty section layout track.
+                                runtime.panel.style.setProperty('position','relative','important');
+                                runtime.panel.style.setProperty('z-index','4','important');
+                                table.style.setProperty('position','relative','important');
+                                table.style.setProperty('z-index','3','important');
+                                lastTransformedTable=table;
+                                lastAppliedShift=nextShift;
+                                console.info('MCIT User Directory V37 viewport gap adjusted', {
+                                    viewportHeight:window.innerHeight,
+                                    originalGap:Math.round(naturalGap),
+                                    appliedShift:nextShift,
+                                    resultingGap:Math.round(naturalGap-nextShift)
+                                });
+                            }
                         };
-                        const scheduleCompact = () => {
-                            if (runtime.disposed || compactFrame) return;
+                        const scheduleCompact=()=>{
+                            if(runtime.disposed || compactFrame) return;
                             compactFrame=requestAnimationFrame(()=>{
                                 compactFrame=0;
                                 compactDirectory();
@@ -1889,7 +1997,7 @@ define("UsrUserDirectory_ListPage", /**SCHEMA_DEPS*/["@creatio-devkit/common"]/*
                         };
                         const onDirectoryResize=()=>scheduleCompact();
                         window.addEventListener('resize',onDirectoryResize);
-                        const compactTimers=[140,550,1250].map(delay=>
+                        const compactTimers=[140,550,1250,2400].map(delay=>
                             window.setTimeout(()=>{
                                 if (!runtime.disposed) {
                                     mount();
@@ -1898,25 +2006,65 @@ define("UsrUserDirectory_ListPage", /**SCHEMA_DEPS*/["@creatio-devkit/common"]/*
                             },delay));
                         const mount=()=>{
                             if (runtime.disposed) return;
-                            const tableHost=document.querySelector(".usr-dir-table-viewport");
-                            const header=tableHost?.querySelector(".usr-directory-header") ||
-                                document.querySelector(".usr-directory-header");
-                            const list=document.querySelector(".usr-dir-row-list");
+                            const tableHost=document.querySelector('.usr-dir-table-viewport');
+                            const header=tableHost?.querySelector('.usr-directory-header') ||
+                                document.querySelector('.usr-directory-header');
+                            const list=document.querySelector('.usr-dir-row-list');
                             const beforeNode=tableHost || header;
                             const host=beforeNode?.parentElement;
                             if (!header || !list || !host) return;
-                            // Toolbar must be outside the scrolling viewport: never clip Search/Filters.
                             if (!runtime.panel) runtime.panel=createPanel();
-                            if (runtime.panel.parentElement!==host || runtime.panel.nextElementSibling!==beforeNode) {
-                                host.insertBefore(runtime.panel,beforeNode);
+                            const root=document.querySelector('.usr-dir-view-layout');
+                            const native=root?.querySelector('.usr-dir-kpi-layout');
+                            // Move the two EXISTING live components into a compact stack.
+                            // They remain full Creatio UI objects, not rewritten HTML.
+                            if (root && native && tableHost && root.contains(native)) {
+                                let nativeTop=native;
+                                while(nativeTop.parentElement && nativeTop.parentElement!==root) {
+                                    nativeTop=nativeTop.parentElement;
+                                }
+                                if (nativeTop.parentElement===root) {
+                                    if (!runtime.stack) {
+                                        runtime.stack=document.createElement('div');
+                                        runtime.stack.className='usr-dir-dense-stack';
+                                    }
+                                    if (runtime.stack.parentElement!==root ||
+                                            runtime.stack.previousElementSibling!==nativeTop) {
+                                        root.insertBefore(runtime.stack,nativeTop.nextSibling);
+                                    }
+                                    if (tableHost.parentElement!==runtime.stack) {
+                                        // Remember native parent for clean navigation away.
+                                        if (!runtime.tableOriginalHost) {
+                                            runtime.tableOriginalHost=tableHost;
+                                            runtime.tableOriginalParent=tableHost.parentElement;
+                                            runtime.tableOriginalNext=tableHost.nextSibling;
+                                        }
+                                        runtime.stack.appendChild(tableHost);
+                                    }
+                                    if (runtime.panel.parentElement!==runtime.stack ||
+                                            runtime.panel.nextElementSibling!==tableHost) {
+                                        runtime.stack.insertBefore(runtime.panel,tableHost);
+                                    }
+                                    if (!runtime.compactMountedLogged) {
+                                        console.info('MCIT User Directory V36 compact layout activated');
+                                        runtime.compactMountedLogged=true;
+                                    }
+                                }
                             }
-                            const title=document.querySelector(".usr-directory-title");
+                            // Fallback for nonstandard Designer structures, with the native
+                            // table left fully functional if the row cannot be relocated.
+                            if (runtime.panel.parentElement!==tableHost.parentElement ||
+                                    runtime.panel.nextElementSibling!==tableHost) {
+                                tableHost.parentElement.insertBefore(runtime.panel,tableHost);
+                            }
+                            mountMetricBar();
+                            const title=document.querySelector('.usr-directory-title');
                             if (title && (!runtime.exportButton || !runtime.exportButton.isConnected)) {
-                                const exp=document.createElement("button");
-                                exp.type="button";exp.className="usr-dir-export";
-                                exp.textContent="⇩ Export";
-                                exp.title="Export currently loaded, filtered users as CSV";
-                                exp.addEventListener("click",exportVisible);
+                                const exp=document.createElement('button');
+                                exp.type='button';exp.className='usr-dir-export';
+                                exp.textContent='⇩ Export';
+                                exp.title='Export currently loaded, filtered users as CSV';
+                                exp.addEventListener('click',exportVisible);
                                 title.appendChild(exp);runtime.exportButton=exp;
                             }
                             apply();
@@ -2487,6 +2635,250 @@ define("UsrUserDirectory_ListPage", /**SCHEMA_DEPS*/["@creatio-devkit/common"]/*
                             content:none!important;
                             display:none!important;
                           }
+/* V33 Figma reference — status metrics, filters and grid spacing.
+   Values are mirrored from the original live crt.IndicatorWidgets. */
+body .usr-dir-page-frame { padding-top:14px!important; }
+body .usr-directory-title { margin-bottom:0!important; }
+body .usr-dir-view-layout {
+  position:relative!important;
+  display:flex!important;
+  flex-direction:column!important;
+  align-items:stretch!important;
+  justify-content:flex-start!important;
+  gap:0!important;
+  border:0!important;
+  min-height:0!important;
+}
+body .usr-dir-view-layout > .usr-dir-kpi-layout {
+  display:flex!important;
+  flex-direction:row!important;
+  align-items:flex-start!important;
+  justify-content:flex-start!important;
+  grid-template-rows:none!important;
+  grid-auto-rows:max-content!important;
+  min-height:0!important;
+  height:auto!important;
+  margin:0 0 18px!important;
+  padding:0!important;
+  overflow:visible!important;
+}
+/* The compact row is introduced only after real widget values load.
+   Original indicators stay mounted for live refreshes. */
+body .usr-dir-view-layout > .usr-dir-metric-bar {
+  display:none;
+  order:0!important;
+  flex:0 0 auto!important;
+  flex-wrap:wrap!important;
+  gap:14px!important;
+  align-items:center!important;
+  margin:0 0 18px!important;
+  padding:0!important;
+  width:100%!important;
+  box-sizing:border-box!important;
+}
+body .usr-dir-view-layout.usr-dir-metrics-ready > .usr-dir-metric-bar {
+  display:flex!important;
+}
+body .usr-dir-view-layout.usr-dir-metrics-ready > .usr-dir-kpi-layout {
+  position:absolute!important;
+  top:0!important;
+  left:0!important;
+  width:430px!important;
+  max-width:430px!important;
+  height:72px!important;
+  min-height:0!important;
+  margin:0!important;
+  padding:0!important;
+  visibility:hidden!important;
+  pointer-events:none!important;
+  overflow:hidden!important;
+  z-index:-1!important;
+}
+body .usr-dir-metric-card {
+  display:inline-flex!important;
+  align-items:center!important;
+  justify-content:center!important;
+  gap:9px!important;
+  height:48px!important;
+  padding:0 15px!important;
+  border:1px solid #dde4ed!important;
+  border-radius:8px!important;
+  background:#fff!important;
+  box-shadow:none!important;
+  box-sizing:border-box!important;
+  white-space:nowrap!important;
+}
+body .usr-dir-metric-number {font-size:20px!important;line-height:1!important;font-weight:750!important;}
+body .usr-dir-metric-label {font-size:12px!important;line-height:1.2!important;color:#71819a!important;font-weight:500!important;}
+body .usr-dir-metric-card-active .usr-dir-metric-number {color:#0ca45b!important;}
+body .usr-dir-metric-card-inactive .usr-dir-metric-number {color:#f18708!important;}
+body .usr-dir-metric-card-deactivated .usr-dir-metric-number {color:#e5263a!important;}
+/* Search/filter panel follows KPI row directly; no extra spacer. */
+body .usr-dir-view-layout > .usr-dir-toolbar {
+  order:1!important;
+  position:relative!important;
+  height:auto!important;
+  flex:0 0 auto!important;
+  width:100%!important;
+  margin:0 0 16px!important;
+  padding:14px 17px!important;
+  border:1px solid #e0e6f0!important;
+  border-radius:10px!important;
+  box-sizing:border-box!important;
+  background:#fff!important;
+}
+body .usr-dir-filter-line {gap:12px!important;align-items:center!important;}
+body .usr-dir-search,body .usr-dir-role-select {
+  height:35px!important;
+  min-height:35px!important;
+  border-radius:9px!important;
+  font-size:12px!important;
+}
+body .usr-dir-role-select {width:185px!important;flex:0 0 185px!important;}
+body .usr-dir-chips {gap:7px!important;margin-top:9px!important;}
+body .usr-dir-chips button {
+  height:28px!important;min-height:28px!important;
+  padding:4px 13px!important;
+  font-size:12px!important;
+  background:#f8fafc!important;
+  border:1px solid #dce4ef!important;
+}
+body .usr-dir-chips button.is-current {
+  color:#6920e8!important;background:#f7efff!important;border-color:#8639ff!important;
+}
+body .usr-dir-feedback {display:none!important;margin:0!important;min-height:0!important;height:auto!important;}
+body .usr-dir-feedback.has-error,body .usr-dir-feedback.is-notice {
+  display:block!important;margin-top:7px!important;font-size:11px!important;
+}
+body .usr-dir-view-layout > .usr-dir-table-viewport {
+  order:2!important;margin:0!important;padding:0!important;
+}
+body .usr-dir-view-layout .usr-directory-header {
+  min-height:36px!important;
+  padding-top:5px!important;
+  padding-bottom:5px!important;
+  border-radius:9px 9px 0 0!important;
+}
+body .usr-dir-view-layout .usr-directory-row {
+  min-height:62px!important;
+}
+@media(max-width:800px) {
+  body .usr-dir-metric-bar {gap:8px!important;}
+  body .usr-dir-metric-card {height:43px!important;padding:0 10px!important;gap:6px!important;}
+  body .usr-dir-filter-line {flex-direction:column!important;align-items:stretch!important;}
+  body .usr-dir-role-select {width:100%!important;flex:auto!important;}
+}
+
+/* V34: FORCE the KPI ROW height, not just the cards (the real gap cause). */
+body .usr-dir-view-layout > .usr-dir-kpi-layout,
+body .usr-dir-view-layout:not(.usr-dir-metrics-ready) > .usr-dir-kpi-layout {
+  box-sizing:border-box!important;
+  flex:0 0 72px!important;
+  height:72px!important;
+  min-height:72px!important;
+  max-height:72px!important;
+  grid-template-rows:72px!important;
+  grid-auto-rows:72px!important;
+  align-content:start!important;
+  overflow:visible!important;
+  margin:0!important;
+  padding:0!important;
+}
+body .usr-dir-view-layout > .usr-dir-kpi-layout .usr-dir-kpi-native-row {
+  box-sizing:border-box!important;
+  height:72px!important;
+  min-height:0!important;
+  max-height:72px!important;
+  flex:0 0 72px!important;
+  align-items:flex-start!important;
+  overflow:visible!important;
+  margin:0!important;
+  padding:0!important;
+}
+/* The compact bar is the sole visible row once the native counts are readable. */
+body .usr-dir-view-layout.usr-dir-metrics-ready > .usr-dir-kpi-layout {
+  position:absolute!important;
+  flex:0 0 auto!important;
+  height:0!important;
+  min-height:0!important;
+  max-height:0!important;
+  visibility:hidden!important;
+  pointer-events:none!important;
+  overflow:hidden!important;
+}
+body .usr-dir-view-layout > .usr-dir-toolbar {
+  box-sizing:border-box!important;
+  flex:0 0 auto!important;
+  margin:14px 0 16px!important;
+  padding:14px 17px!important;
+}
+body .usr-dir-view-layout.usr-dir-metrics-ready > .usr-dir-toolbar {
+  margin-top:0!important;
+}
+body .usr-dir-view-layout > .usr-dir-table-viewport {
+  margin:0!important;
+}
+
+/* V37 — Viewport-aware offset; V36 structural styles retained as fallback.
+   V36 — STRUCTURAL GAP REMOVAL.
+   One shared flow for search/filter and actual native table. The leftover
+   MainContainer/SectionContentWrapper spacer no longer separates them. */
+body .usr-dir-view-layout > .usr-dir-dense-stack {
+  order:1!important;
+  display:flex!important;
+  flex-direction:column!important;
+  flex-wrap:nowrap!important;
+  justify-content:flex-start!important;
+  align-items:stretch!important;
+  flex:0 0 auto!important;
+  width:100%!important;
+  max-width:100%!important;
+  min-width:0!important;
+  height:auto!important;
+  min-height:0!important;
+  margin:0!important;
+  padding:0!important;
+  gap:0!important;
+  row-gap:0!important;
+  border:0!important;
+  background:transparent!important;
+  position:relative!important;
+}
+body .usr-dir-view-layout > .usr-dir-metric-bar {
+  order:0!important;
+  margin:0 0 12px!important;
+  padding:0!important;
+}
+body .usr-dir-view-layout > .usr-dir-kpi-layout {
+  order:0!important;
+}
+body .usr-dir-view-layout > .usr-dir-dense-stack > .usr-dir-toolbar {
+  width:100%!important;
+  margin:0 0 12px!important;
+  padding:14px 17px!important;
+  transform:none!important;
+  position:relative!important;
+  flex:0 0 auto!important;
+  box-sizing:border-box!important;
+}
+body .usr-dir-view-layout > .usr-dir-dense-stack > .usr-dir-table-viewport {
+  width:100%!important;
+  margin:0!important;
+  padding:0!important;
+  height:auto!important;
+  min-height:0!important;
+  flex:0 0 auto!important;
+  position:relative!important;
+  box-sizing:border-box!important;
+}
+body .usr-dir-view-layout.usr-dir-metrics-ready > .usr-dir-kpi-layout {
+  height:0!important;
+  min-height:0!important;
+  max-height:0!important;
+  position:absolute!important;
+  visibility:hidden!important;
+  overflow:hidden!important;
+}
                         `;
                         document.head.appendChild(sheet);runtime.style=sheet;
                         // V24: a page-bottom scrollbar, not a second scrollable row list.
@@ -2572,6 +2964,19 @@ define("UsrUserDirectory_ListPage", /**SCHEMA_DEPS*/["@creatio-devkit/common"]/*
                             runtime.observer?.disconnect();
                             runtime.metricObserver?.disconnect();
                             if (compactFrame) cancelAnimationFrame(compactFrame);
+                            if (metricSyncFrame) cancelAnimationFrame(metricSyncFrame);
+                            runtime.panel?.style.removeProperty('transform');
+                            lastTransformedTable?.style.removeProperty('transform');
+                            runtime.metricBar?.remove();
+                            if (runtime.tableOriginalHost?.parentElement===runtime.stack &&
+                                    runtime.tableOriginalParent?.isConnected) {
+                                const sibling=(runtime.tableOriginalNext?.parentElement===runtime.tableOriginalParent)
+                                    ? runtime.tableOriginalNext : null;
+                                runtime.tableOriginalParent.insertBefore(runtime.tableOriginalHost,sibling);
+                            }
+                            runtime.stack?.remove();
+                            runtime.stack=null;
+                            document.querySelector('.usr-dir-view-layout')?.classList.remove('usr-dir-metrics-ready');
                             window.removeEventListener('resize',onDirectoryResize);
                             window.removeEventListener('resize',schedulePageRail);
                             if (railFrame) cancelAnimationFrame(railFrame);
@@ -2615,7 +3020,7 @@ define("UsrUserDirectory_ListPage", /**SCHEMA_DEPS*/["@creatio-devkit/common"]/*
                         runtime.observer.observe(document.body,{childList:true,subtree:true});
                         // Re-apply confirmed count if a native widget redraws.
                         runtime.metricObserver = new MutationObserver(mutations => {
-                            if (!runtime.metricsOverride || runtime.disposed || metricApplying) return;
+                            if (runtime.disposed || metricApplying) return;
                             const relevant = mutations.some(m => {
                                 if (m.type === 'characterData') {
                                     return Boolean(m.target.parentElement?.closest('.usr-mcit-native-kpi'));
@@ -2624,7 +3029,11 @@ define("UsrUserDirectory_ListPage", /**SCHEMA_DEPS*/["@creatio-devkit/common"]/*
                                     n.nodeType === 1 && (n.matches?.('.usr-mcit-native-kpi, crt-indicator-widget') ||
                                         n.querySelector?.('.usr-mcit-native-kpi, crt-indicator-widget')));
                             });
-                            if (relevant) repaintMetrics();
+                            if (relevant) {
+                                if (runtime.metricsOverride) repaintMetrics();
+                                scheduleMetricSync();
+                                scheduleCompact();
+                            }
                         });
                         runtime.metricObserver.observe(document.body, {childList:true, characterData:true, subtree:true});
                         getCurrentUser().then(id=>{if (!runtime.disposed){runtime.currentUserId=id;apply();}});

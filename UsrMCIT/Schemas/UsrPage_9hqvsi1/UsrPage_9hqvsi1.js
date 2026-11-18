@@ -6,7 +6,7 @@ define("UsrPage_9hqvsi1", /**SCHEMA_DEPS*/[]/**SCHEMA_DEPS*/, function/**SCHEMA_
 				"name": "IndicatorWidget_afshmjl",
 				"values": {
 					"layoutConfig": {
-						"column": 1,
+						"column": 3,
 						"colSpan": 2,
 						"row": 1,
 						"rowSpan": 3
@@ -61,8 +61,7 @@ define("UsrPage_9hqvsi1", /**SCHEMA_DEPS*/[]/**SCHEMA_DEPS*/, function/**SCHEMA_
 							"text": ""
 						},
 						"hint": "#ResourceString(IndicatorWidget_afshmjl_hint)#"
-					},
-					"visible": true
+					}
 				},
 				"parentName": "Main",
 				"propertyName": "items",
@@ -73,7 +72,7 @@ define("UsrPage_9hqvsi1", /**SCHEMA_DEPS*/[]/**SCHEMA_DEPS*/, function/**SCHEMA_
 				"name": "IndicatorWidget_a4tohl1",
 				"values": {
 					"layoutConfig": {
-						"column": 3,
+						"column": 6,
 						"colSpan": 2,
 						"row": 1,
 						"rowSpan": 3
@@ -128,8 +127,7 @@ define("UsrPage_9hqvsi1", /**SCHEMA_DEPS*/[]/**SCHEMA_DEPS*/, function/**SCHEMA_
 							"text": ""
 						},
 						"hint": "#ResourceString(IndicatorWidget_a4tohl1_hint)#"
-					},
-					"visible": true
+					}
 				},
 				"parentName": "Main",
 				"propertyName": "items",
@@ -140,7 +138,7 @@ define("UsrPage_9hqvsi1", /**SCHEMA_DEPS*/[]/**SCHEMA_DEPS*/, function/**SCHEMA_
 				"name": "IndicatorWidget_zxw8gfj",
 				"values": {
 					"layoutConfig": {
-						"column": 5,
+						"column": 9,
 						"colSpan": 2,
 						"row": 1,
 						"rowSpan": 3
@@ -173,8 +171,7 @@ define("UsrPage_9hqvsi1", /**SCHEMA_DEPS*/[]/**SCHEMA_DEPS*/, function/**SCHEMA_
 							"text": ""
 						},
 						"hint": "#ResourceString(IndicatorWidget_zxw8gfj_hint)#"
-					},
-					"visible": true
+					}
 				},
 				"parentName": "Main",
 				"propertyName": "items",

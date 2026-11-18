@@ -2,6 +2,18 @@ define("UsrMCITAddOnSection_ListPage", /**SCHEMA_DEPS*/[
     "@creatio-devkit/common",
     "css!UsrMCITAddOnStyles"
 ]/**SCHEMA_DEPS*/, function/**SCHEMA_ARGS*/(sdk)/**SCHEMA_ARGS*/ {
+    // UI guard only: the server-side entity listener remains authoritative.
+    // Resolve the CURRENT authenticated user's active MCIT role on each action.
+    async function mcitRequireAction(action) {
+        const response = await new sdk.HttpClientService().post(
+            "rest/UsrMCITScreenAccessService/Get", {screenCode: "ADDON_CONFIGURATION"});
+        const access = response?.body?.GetResult ?? response?.body;
+        if (access?.Success !== true || access?.["Can" + action] !== true) {
+            throw new Error("MCIT Add-on Configuration " + action + " permission is required.");
+        }
+        return access;
+    }
+
 	return {
 		viewConfigDiff: /**SCHEMA_VIEW_CONFIG_DIFF*/[
 			{
@@ -1238,6 +1250,16 @@ define("UsrMCITAddOnSection_ListPage", /**SCHEMA_DEPS*/[
             request: "usr.AddOn_OpenAdd",
             handler: async (request) => {
                 const ctx = request.$context;
+                try {
+                    await mcitRequireAction("Create");
+                } catch (error) {
+                    ctx.UsrAddOn_EditorVisible = false;
+                    ctx.UsrAddOn_EditorMode = "none";
+                    ctx.UsrAddOn_EditorMessage = error.message;
+                    ctx.UsrAddOn_MessageVisible = true;
+                    console.warn("[MCIT Add-on] Create denied", error.message);
+                    return;
+                }
                 // The form retains Designer-generated object bindings.
                 ctx.UsrAddOn_EditorVisible = false;
                 ctx.UsrAddOn_EditorRecordId = null;
@@ -1279,6 +1301,7 @@ define("UsrMCITAddOnSection_ListPage", /**SCHEMA_DEPS*/[
                 const id = typeof raw === "string" ? raw : (raw?.value ?? raw?.Id ?? raw?.id);
                 const valid = /^[0-9a-f]{8}(?:-[0-9a-f]{4}){3}-[0-9a-f]{12}$/i.test(id || "");
                 try {
+                    await mcitRequireAction("Edit");
                     if (!valid) throw new Error("The row did not supply a valid Add-on ID.");
                     const model = await sdk.Model.create("UsrMCITAddOn");
                     const rows = await model.load({
@@ -1309,7 +1332,8 @@ define("UsrMCITAddOnSection_ListPage", /**SCHEMA_DEPS*/[
                     console.error("[MCIT Add-on] Edit failed", err);
                     ctx.UsrAddOn_EditorMessage = err?.message || "Could not edit the Add-on.";
                     ctx.UsrAddOn_MessageVisible = true;
-                    ctx.UsrAddOn_EditorVisible = true;
+                    // Do not open a populated editing panel after an access denial.
+                    ctx.UsrAddOn_EditorVisible = !String(err?.message || "").startsWith("MCIT Add-on Configuration");
                 }
             }
         },
@@ -1333,6 +1357,8 @@ define("UsrMCITAddOnSection_ListPage", /**SCHEMA_DEPS*/[
                 try {
                     const mode = await get("UsrAddOn_EditorMode");
                     if (mode !== "add" && mode !== "edit") throw new Error("Use Add Add-on or Edit first.");
+                    // Validate permission again immediately before SDK mutation.
+                    await mcitRequireAction(mode === "add" ? "Create" : "Edit");
                     const code = await asText("UsrMCITAddOnDS_UsrCode_fs72rg2");
                     const name = await asText("UsrMCITAddOnDS_UsrName_6mh994e");
                     const unit = await asText("UsrMCITAddOnDS_UsrUnit_7ahy72e");

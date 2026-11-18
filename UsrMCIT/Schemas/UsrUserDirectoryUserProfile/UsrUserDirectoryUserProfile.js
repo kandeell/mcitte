@@ -2117,6 +2117,13 @@ define("UsrUserDirectoryUserProfile", /**SCHEMA_DEPS*/["@creatio-devkit/common"]
             // V11: approval warning lives ONLY in the Edit Scopes dialog.
             // The read-only Access Scopes tab itself never shows a warning.
             scopeStyle.textContent += "\nbody .usr-pv11-flow-banner {display:flex;gap:10px;align-items:flex-start;box-sizing:border-box;border:1px solid #fbd46c;background:#fffae9;border-radius:9px;padding:13px;color:#92531a;margin:12px 0}\nbody .usr-pv11-flow-banner strong {color:#8d460e}\nbody .usr-pv11-flow-state {margin-top:12px;border:1px solid #dee6f2;border-radius:8px;padding:10px;color:#4b6587;background:#f7f9fd}\nbody .usr-pv11-fieldhelp {font-size:11px;color:#788da9;margin-top:7px}\nbody .usr-pv11-dialog-status {font-weight:700;color:#5e2bc0}\nbody .usr-pv11-dialog-actions .usr-pv11-primary {background:#6d28d9;border-color:#6d28d9;color:#fff}\nbody .usr-pv11-dialog-actions button:disabled {opacity:.5;cursor:wait}\n";
+            scopeStyle.textContent += `
+body .usr-pv19-assignment-help{display:flex;flex-direction:column;gap:6px;margin:0 0 16px;padding:12px 14px;border:1px solid #e6dafa;border-radius:10px;background:#fbf8ff;color:#40516b;line-height:1.55;font-size:12px}
+body .usr-pv19-assignment-help strong{color:#57219b;font-size:12px}
+body .usr-pv19-user-note{padding:10px 12px;border:1px solid #e0e6f0;border-radius:9px;background:#f8f9fc;color:#273a5a;margin-top:12px;font-size:12px}
+body .usr-pv19-contract-picker{width:100%;max-width:100%;box-sizing:border-box;padding:9px;border:1px solid #d7dfec;border-radius:8px;background:white;color:#213958;font-size:13px}
+body .usr-pv19-contract-picker:disabled{opacity:.6}
+`;
             document.head.appendChild(scopeStyle);
             // Scoped Role card stylesheet; only one copy per page.
             document.getElementById("usr-mcit-userprofile-v8-roles-style")?.remove();
@@ -2975,6 +2982,11 @@ body .usr-pv17-audit-note{font-size:10px;color:#8291a6;line-height:1.6;padding:1
                 head.appendChild(edit);
                 card.appendChild(head);
                 const body=make('div','usr-pv10-body');
+                const assignmentHelp=make('div','usr-pv19-assignment-help');
+                assignmentHelp.appendChild(make('strong','','Contract assignments'));
+                assignmentHelp.appendChild(make('span','',
+                    'To add a contract, click Edit Scopes, select the exact contract, then request Security Administrator approval. The approved addition is applied only by the protected server workflow; existing assignments are preserved.'));
+                body.appendChild(assignmentHelp);
                 // Do not render approval warning on this read-only tab.
                 // It is presented when the user actually presses Edit Scopes.
                 const rows=[
@@ -3019,22 +3031,39 @@ body .usr-pv17-audit-note{font-size:10px;color:#8291a6;line-height:1.6;padding:1
                 card.appendChild(body);
                 mount.replaceChildren(card);
             };
-            // V11 approval integration CONTRACT (object/process must be published on the server):
-            // - UsrMCITScopeEditRequest (BaseEntity) with:
-            //   UsrUser Lookup(SysAdminUnit), UsrReason Text, UsrStatus Text
-            //   allowed status names: Pending, Approved, Rejected, Applied.
-            // - UsrMCITScopeApprovalProcess with GUID input ScopeRequestId,
-            //   responsible for Security Administrator approval and updating UsrStatus.
-            // - UsrMCITApplyApprovedScopes with GUID input ScopeRequestId,
-            //   Text inputs ScopeType, AssignedValues, ChangeReason.
-            //   This SERVER process MUST revalidate Approved status, requester/expiry,
-            //   lock/consume approval and apply scoped changes transactionally.
-            // The UI cannot grant permission or claim a local click is approval.
+            // V21 security contract: require exact contract selected BEFORE approval.
+            // UsrMCITScopeEditRequest stores UsrUser (SysAdminUnit lookup), UsrReason,
+            // UsrStatus, UsrScopeType='Contract Scope', UsrRequestedValues=<contract GUID>.
+            // No previously approved generic edit request may authorize a new grant.
+            // The backend must verify saved approval and authenticated caller,
+            // atomically consume the request and preserve all existing contracts.
+            // Install and test both V22 C# schemas before activating this page.
             const scopeWorkflow = Object.freeze({
                 object:'UsrMCITScopeEditRequest',
                 approvalProcess:'UsrMCITScopeApprovalProcess',
-                applyProcess:'UsrMCITApplyApprovedScopes'
+                applyService:'rest/UsrMCITScopeApplyService/ApplyApprovedContract',
+                applyReady:true
             });
+            // V20: surface concrete insert/process errors without bypassing approval.
+            const scopeFailureDetail = (response) => {
+                const extract = (value) => {
+                    if (typeof value === 'string') return value.trim();
+                    return String(value?.message || value?.Message ||
+                        value?.errorMessage || value?.ErrorMessage || value?.description || '').trim();
+                };
+                const candidates = [response?.errorInfo, response?.error, response?.errors?.[0],
+                    response?.validationErrors?.[0], response?.message, response?.errorMessage,
+                    response?.response?.errorInfo, response?.response?.message];
+                return candidates.map(extract).find(Boolean) || '';
+            };
+            const scopeInsertId = (result) => {
+                const attrs = result?.primaryAttributes;
+                const id = result?.Id ?? result?.id ?? result?.identifier ??
+                    (Array.isArray(attrs) ? attrs.find(x => x?.Id || x?.id)?.Id ??
+                        attrs.find(x => x?.Id || x?.id)?.id : attrs?.Id ?? attrs?.id);
+                const normalized = guid(id);
+                return valid(normalized) ? normalized : '';
+            };
             const scopeDialog = (title, label) => {
                 const make=makeRolesEl;
                 const shade=make('div','usr-pv10-dialog-shade');
@@ -3065,7 +3094,7 @@ body .usr-pv17-audit-note{font-size:10px;color:#8291a6;line-height:1.6;padding:1
                 // Filtering on BOTH request ID and selected user prevents another
                 // user's approval being accidentally used by this UI.
                 const rows=await load(scopeWorkflow.object,
-                    ['Id','UsrUser','UsrStatus'],
+                    ['Id','UsrUser','UsrStatus','UsrScopeType','UsrRequestedValues','UsrReason'],
                     await asFilter('Id',requestId,['UsrUser',userId]),1);
                 return rows?.[0]||null;
             };
@@ -3075,173 +3104,284 @@ body .usr-pv17-audit-note{font-size:10px;color:#8291a6;line-height:1.6;padding:1
                 const service=new sdk.ProcessEngineService();
                 const response=await service.executeProcessByName(processCode,parameters,[]);
                 if(response?.success===false || response?.isSuccess===false)
-                    throw Error('Business process did not start successfully');
+                    throw Error('Process '+processCode+' failed to start: '+
+                        (scopeFailureDetail(response) || 'inspect the business process log'));
                 return response;
             };
-            runtime.openApprovedScopeEditor = async (requestId) => {
+            // V22: A saved single-contract approval is consumed by the trusted
+            // REST service; the UI cannot grant access or choose another target.
+            const scopeApprovedContractId = row => {
+                if(visible(row?.UsrScopeType).trim()!=='Contract Scope') return '';
+                const id=guid(visible(row?.UsrRequestedValues).trim());
+                return valid(id)?id:'';
+            };
+            runtime.openApprovedScopeEditor = async requestId => {
                 if(runtime.disposed || !valid(runtime.scopesUserId)) return;
-                // Always verify with Creatio, including when opening the editor again.
-                const currentUser=runtime.scopesUserId;
+                const selectedUser=runtime.scopesUserId;
                 let approval;
-                try {approval=await readScopeApproval(requestId,currentUser);}
-                catch(e){console.warn('Scope approval read failed',e);return;}
-                if(runtime.disposed || runtime.scopesUserId!==currentUser ||
-                   visible(approval?.UsrStatus).toLowerCase()!=='approved') return;
+                try { approval=await readScopeApproval(requestId,selectedUser); }
+                catch(err){ console.warn('MCIT approved scope lookup failed',err); return; }
+                if(runtime.disposed || runtime.scopesUserId!==selectedUser ||
+                   visible(approval?.UsrStatus).trim().toLowerCase()!=='approved') return;
+                const contractId=scopeApprovedContractId(approval);
+                if(!valid(contractId)) {
+                    console.warn('An old generic scope approval does not authorize contract access',requestId);
+                    return;
+                }
                 runtime.scopeApproval.verifiedId=requestId;
                 runtime.scopeDialogClose?.();
-                const {make,modal,actions,close}=scopeDialog('Edit Access Scopes','Approved Access Scope Editor');
+                const {make,modal,actions,close}=scopeDialog(
+                    'Review Approved Contract Change','Review Approved Contract Change');
                 modal.appendChild(make('p','',
-                    'Security Administrator approval verified in Creatio. Select the scope and enter the requested values.'));
-                const scopeLabel=make('label','','Scope Type');
-                const scopeType=make('select','');
-                for(const name of ['Contract Scope','Authority Scope']){
-                    const option=make('option','',name);option.value=name;scopeType.appendChild(option);
-                }
-                modal.appendChild(scopeLabel);modal.appendChild(scopeType);
-                const help=make('p','usr-pv11-fieldhelp',
-                    'Project Scope and Team / Queue are not editable here until their backend mappings are configured.');
-                modal.appendChild(help);
-                const valuesLabel=make('label','','Assigned Values');
-                const assigned=make('textarea','');
-                const fill=()=>{assigned.value=(scopeType.value==='Contract Scope'
-                    ?runtime.scopeContracts:runtime.scopeAuthorities).join(', ');};
-                scopeType.addEventListener('change',fill);fill();
-                assigned.placeholder='Comma-separated contract or authority values';
-                modal.appendChild(valuesLabel);modal.appendChild(assigned);
-                modal.appendChild(make('label','','Change reason'));
-                const reason=make('textarea','');reason.placeholder='Explain the approved change';
+                    'The approved contract is fixed. Only this addition can be submitted. Existing contract assignments are preserved.'));
+                const info=make('div','usr-pv19-user-note','Selected user: '+selectedUser);
+                modal.appendChild(info);
+                modal.appendChild(make('label','','Approved scope type'));
+                const type=make('input','');type.value='Contract Scope';type.readOnly=true;
+                modal.appendChild(type);
+                modal.appendChild(make('label','','Approved contract'));
+                const selectedContract=make('input','');
+                selectedContract.value=contractId;selectedContract.readOnly=true;
+                modal.appendChild(selectedContract);
+                (async()=>{
+                    try{
+                        const users=await load('SysAdminUnit',['Id','Name'],await asFilter('Id',selectedUser),1);
+                        const found=await load('UsrMCITContract',['Id','UsrName'],await asFilter('Id',contractId),1);
+                        if(runtime.disposed||!modal.isConnected||runtime.scopesUserId!==selectedUser)return;
+                        info.textContent='Selected user: '+(visible(users?.[0]?.Name)||selectedUser);
+                        selectedContract.value=visible(found?.[0]?.UsrName)||contractId;
+                    }catch(err){console.warn('MCIT approved contract caption unavailable',err);}
+                })();
+                modal.appendChild(make('label','','Approved request reason'));
+                const reason=make('textarea','');
+                reason.value=visible(approval.UsrReason);reason.readOnly=true;
                 modal.appendChild(reason);
                 const state=make('div','usr-pv11-flow-state',
-                    'Saving calls a server-side process. It must check approval again and enforce object permissions.');
+                    scopeWorkflow.applyReady
+                        ?'A protected server workflow will validate this exact approval before applying it.'
+                        :'The contract addition is approved, but the protected apply backend is not configured yet. No access has been granted.');
                 modal.appendChild(state);
-                const cancel=make('button','','Cancel');cancel.type='button';cancel.addEventListener('click',close);
-                const save=make('button','usr-pv11-primary','Save Scope Changes');save.type='button';
-                save.addEventListener('click',async()=>{
-                    if(!reason.value.trim()){
-                        state.textContent='Please enter a reason before saving.';return;
-                    }
-                    save.disabled=true;
-                    state.textContent='Verifying approval and submitting changes...';
+                const cancel=make('button','','Close');cancel.type='button';cancel.addEventListener('click',close);
+                const apply=make('button','usr-pv11-primary','Apply Approved Contract');
+                apply.type='button';apply.disabled=!scopeWorkflow.applyReady;
+                apply.addEventListener('click',async()=>{
+                    if(!scopeWorkflow.applyReady)return;
+                    apply.disabled=true;
                     try {
-                        const check=await readScopeApproval(requestId,currentUser);
-                        if(runtime.disposed || runtime.scopesUserId!==currentUser ||
-                           visible(check?.UsrStatus).toLowerCase()!=='approved')
-                            throw Error('Approval is missing, expired, revoked, or already used');
-                        await runScopeProcess(scopeWorkflow.applyProcess,{
-                            ScopeRequestId:requestId, ScopeType:scopeType.value,
-                            AssignedValues:assigned.value.trim(), ChangeReason:reason.value.trim()
-                        });
-                        // Starting a process does not prove that its asynchronous
-                        // write has completed. Do not claim permission changed.
-                        state.textContent='Apply workflow started. Refresh this tab after the process completes to verify saved data.';
+                        const latest=await readScopeApproval(requestId,selectedUser);
+                        if(runtime.disposed||runtime.scopesUserId!==selectedUser||
+                            visible(latest?.UsrStatus).trim().toLowerCase()!=='approved'||
+                            scopeApprovedContractId(latest)!==contractId){
+                            throw Error('Approval is no longer valid for this exact contract');
+                        }
+                        // Authenticated WCF request: target user and contract come
+                        // exclusively from the saved Approved request on the server.
+                        if(typeof sdk.HttpClientService!=='function')
+                            throw Error('Creatio HttpClientService is unavailable');
+                        const http=new sdk.HttpClientService();
+                        const response=await http.post(
+                            scopeWorkflow.applyService,
+                            {requestId}
+                        );
+                        const body=response?.body||{};
+                        const result=body?.ApplyApprovedContractResult||body;
+                        if(!result?.Success)
+                            throw Error(result?.Message||'Server rejected the approved contract change');
+                        // Server returns actual applied IDs. Match both again before
+                        // displaying success; never trust a mere HTTP 200 response.
+                        if(guid(result.UserId)!==guid(selectedUser) ||
+                           guid(result.ContractId)!==guid(contractId))
+                            throw Error('Unexpected target in server apply response');
+                        state.textContent='Contract assignment applied and native Read right verified. Refresh Access Scopes to see the new assignment.';
                         runtime.scopeApproval.verifiedId='';
-                        runtime.scopeApproval.requestId='';
-                        save.disabled=true;
-                    } catch(e) {
-                        console.warn('MCIT scope apply was not completed',e);
-                        state.textContent='Unable to apply: '+(e?.message||'Approval process or server validation unavailable');
-                        save.disabled=false;
+                    }catch(err){
+                        state.textContent='Unable to apply approved contract: '+
+                            (err?.message||'check server service and permissions');
+                        apply.disabled=false;
+                        console.warn('MCIT approved contract apply failed',err);
                     }
                 });
-                actions.appendChild(cancel);actions.appendChild(save);modal.appendChild(actions);
-                scopeType.focus();
+                actions.appendChild(cancel);actions.appendChild(apply);modal.appendChild(actions);
             };
             runtime.openScopeEditor = async () => {
                 if(runtime.disposed || document.querySelector('.usr-pv10-dialog-shade')) return;
-                const userId=runtime.scopesUserId;
-                if(!valid(userId)) return;
-                // Never show the warning until the Edit Scopes button is clicked.
-                const {make,modal,actions,close}=scopeDialog('Scope change approval','Scope Approval Required');
-                const warning=make('div','usr-pv11-flow-banner');
-                warning.appendChild(make('span','','⚠'));
-                const warningText=make('span','');
-                warningText.appendChild(make('strong','','Approval Required: '));
-                warningText.appendChild(document.createTextNode(
-                    'Scope changes require Security Administrator approval before editing.'));
-                warning.appendChild(warningText); modal.appendChild(warning);
-                const state=make('div','usr-pv11-flow-state','No approval has been requested for this session.');
-                const reasonLabel=make('label','','Reason for access change');
+                const selectedUser=runtime.scopesUserId;
+                if(!valid(selectedUser)) return;
+                const {make,modal,actions,close}=scopeDialog(
+                    'Request Contract Access','Request Approved Contract Access');
+                const banner=make('div','usr-pv11-flow-banner');
+                banner.appendChild(make('span','','⚠'));
+                banner.appendChild(make('span','',
+                    'Select the exact contract first. Security Administrator approval is required before access can change.'));
+                modal.appendChild(banner);
+                const selectedUserLabel=make('div','usr-pv19-user-note',
+                    'Selected user: loading…  |  Requested action: Add contract');
+                modal.appendChild(selectedUserLabel);
+                modal.appendChild(make('label','','Scope Type'));
+                const scopeType=make('input','');
+                scopeType.value='Contract Scope';scopeType.readOnly=true;
+                modal.appendChild(scopeType);
+                modal.appendChild(make('label','','Contract to add'));
+                const contractPicker=make('select','usr-pv19-contract-picker');
+                const placeholder=make('option','','Select a contract…');
+                placeholder.value='';contractPicker.appendChild(placeholder);
+                contractPicker.disabled=true;modal.appendChild(contractPicker);
+                const contractInfo=make('p','usr-pv11-fieldhelp','Loading contracts from Creatio…');
+                modal.appendChild(contractInfo);
+                modal.appendChild(make('p','usr-pv11-fieldhelp',
+                    'This is an ADD-ONLY request. Existing contracts, including Test audit, remain assigned. Authority and Project Scope need separate approved workflows.'));
+                modal.appendChild(make('label','','Reason for access change'));
                 const reason=make('textarea','');
-                reason.placeholder='Why does this user need their scope updated?';
-                modal.appendChild(reasonLabel);modal.appendChild(reason);modal.appendChild(state);
-                const cancel=make('button','','Close');cancel.type='button';cancel.addEventListener('click',close);
-                const requestBtn=make('button','usr-pv11-primary','Request Approval');requestBtn.type='button';
+                reason.placeholder='Explain why this user needs this specific contract';
+                modal.appendChild(reason);
+                const state=make('div','usr-pv11-flow-state',
+                    'Choose a contract, enter a reason, and request administrator approval.');
+                modal.appendChild(state);
+                const cancel=make('button','','Close');
+                cancel.type='button';cancel.addEventListener('click',close);
                 const checkBtn=make('button','','Check Approval');checkBtn.type='button';
+                const requestBtn=make('button','usr-pv11-primary','Request Approval');
+                requestBtn.type='button';
                 actions.appendChild(cancel);actions.appendChild(checkBtn);actions.appendChild(requestBtn);
                 modal.appendChild(actions);
                 const approval=runtime.scopeApproval;
-                const check=async (silent=false) => {
-                    if(!approval.requestId || approval.userId!==userId) {
-                        if(!silent)state.textContent='No request has been submitted for this user.';
+                // The picker and reason are bound to the persisted payload when a
+                // request is saved. Never silently substitute a different contract.
+                const bindSavedRequest=()=>{
+                    if(approval.requestId && approval.userId===selectedUser){
+                        contractPicker.disabled=true;reason.readOnly=true;
+                    }
+                };
+                (async()=>{
+                    try{
+                        const [users,contracts]=await Promise.all([
+                            load('SysAdminUnit',['Id','Name'],await asFilter('Id',selectedUser),1),
+                            load('UsrMCITContract',['Id','UsrName'],null,501)
+                        ]);
+                        if(runtime.disposed||runtime.scopesUserId!==selectedUser||!modal.isConnected)return;
+                        if((contracts||[]).length>=501)
+                            throw Error('More than 500 contracts. A paginated selector is required.');
+                        selectedUserLabel.textContent='Selected user: '+
+                            (visible(users?.[0]?.Name)||selectedUser)+'  |  Requested action: Add contract';
+                        const unique=new Map();
+                        for(const row of contracts||[]){
+                            const id=guid(row.Id),name=visible(row.UsrName);
+                            if(valid(id)&&name)unique.set(id,name);
+                        }
+                        for(const [id,name] of [...unique.entries()].sort((a,b)=>a[1].localeCompare(b[1]))){
+                            const opt=make('option','',name);opt.value=id;contractPicker.appendChild(opt);
+                        }
+                        contractPicker.disabled=unique.size===0;
+                        contractInfo.textContent=unique.size?
+                            'The administrator will approve this exact contract.':
+                            'No contracts were found.';
+                        if(valid(approval.requestId)&&approval.userId===selectedUser){
+                            const saved=await readScopeApproval(approval.requestId,selectedUser);
+                            const id=scopeApprovedContractId(saved);
+                            if(valid(id)) contractPicker.value=id;
+                            if(saved?.UsrReason)reason.value=visible(saved.UsrReason);
+                            bindSavedRequest();
+                        }
+                    }catch(err){
+                        console.warn('MCIT exact contract selector unavailable',err);
+                        contractInfo.textContent='Cannot load contracts: '+(err?.message||'check Read rights');
+                        contractPicker.disabled=true;
+                    }
+                })();
+                const check=async (silent=false)=>{
+                    if(!valid(approval.requestId)||approval.userId!==selectedUser){
+                        if(!silent)state.textContent='No approval request has been submitted for this user in this session.';
                         return;
                     }
                     if(approval.checking)return;
                     approval.checking=true;checkBtn.disabled=true;
-                    try {
-                        const row=await readScopeApproval(approval.requestId,userId);
-                        if(runtime.disposed||runtime.scopesUserId!==userId) return;
+                    try{
+                        const row=await readScopeApproval(approval.requestId,selectedUser);
+                        if(runtime.disposed||runtime.scopesUserId!==selectedUser)return;
+                        const approvedContract=scopeApprovedContractId(row);
+                        if(!valid(approvedContract)){
+                            state.textContent='This is a legacy approval without a specific contract. It cannot authorize a grant.';
+                            return;
+                        }
                         const status=visible(row?.UsrStatus).trim().toLowerCase();
                         if(status==='approved'){
-                            close();
-                            await runtime.openApprovedScopeEditor(approval.requestId);
-                        }else if(status==='rejected'){
-                            state.textContent='Request rejected by Security Administrator. Editing remains locked.';
+                            close();await runtime.openApprovedScopeEditor(approval.requestId);
+                        }else if(status==='rejected'||status==='applied'){
+                            state.textContent=status==='rejected'?
+                                'The Security Administrator rejected this specific contract request.':
+                                'This approval was already used; request a new approval for another change.';
                             if(runtime.scopeApprovalTimer){window.clearInterval(runtime.scopeApprovalTimer);runtime.scopeApprovalTimer=null;}
-                        }else if(status==='applied'){
-                            state.textContent='This approval has already been used. Request a new approval to edit again.';
-                            if(runtime.scopeApprovalTimer){window.clearInterval(runtime.scopeApprovalTimer);runtime.scopeApprovalTimer=null;}
-                        }else{
-                            state.textContent='Request status: '+(status||'Pending')+'. Waiting for Security Administrator decision.';
-                        }
-                    }catch(e){
-                        if(!silent)state.textContent='Cannot check approval status. Check that the scope approval object is published.';
-                        console.warn('MCIT scope approval check failed',e);
+                        }else state.textContent='Request for '+
+                            (contractPicker.selectedOptions[0]?.textContent||approvedContract)+
+                            ' is '+(status||'Pending')+'. Awaiting Security Administrator decision.';
+                    }catch(err){
+                        if(!silent)state.textContent='Unable to verify approval: '+
+                            (err?.message||'check approval Read rights');
+                        console.warn('MCIT contract approval check failed',err);
                     }finally{approval.checking=false;checkBtn.disabled=false;}
                 };
                 checkBtn.addEventListener('click',()=>{void check(false);});
                 requestBtn.addEventListener('click',async()=>{
-                    if(!reason.value.trim()){
-                        state.textContent='Enter the reason for the Security Administrator.';return;
+                    const contractId=guid(contractPicker.value);
+                    if(!valid(contractId)&&!valid(approval.requestId)){
+                        state.textContent='Select the exact contract before requesting approval.';return;
                     }
-                    if(approval.requestId && approval.userId===userId && approval.started){
-                        state.textContent='Request already submitted. Use Check Approval.';return;
+                    if(reason.value.trim().replace(/[^\p{L}\p{N}]/gu,'').length<8 &&
+                       !valid(approval.requestId)){
+                        state.textContent='Enter a meaningful reason (at least eight letters or numbers).';return;
+                    }
+                    if(valid(approval.requestId)&&approval.userId===selectedUser&&approval.started){
+                        state.textContent='This exact request was already submitted. Use Check Approval.';
+                        return;
                     }
                     requestBtn.disabled=true;
-                    state.textContent='Creating approval request in Creatio...';
-                    try {
-                        const model=await sdk.Model.create(scopeWorkflow.object);
-                        const proposedId=(typeof crypto!=='undefined' && typeof crypto.randomUUID==='function')
-                            ? crypto.randomUUID() : '';
-                        const dto={UsrUser:userId,UsrReason:reason.value.trim(),UsrStatus:'Pending'};
-                        if(valid(proposedId)) dto.Id=proposedId;
-                        const result=await model.insert(dto);
-                        if(result?.success===false || result?.isSuccess===false)
-                            throw Error('Could not save the approval request');
-                        const requestId=guid(result?.Id??result?.id??result?.identifier??proposedId);
-                        if(!valid(requestId)) throw Error('Creatio did not return a valid request ID');
-                        approval.requestId=requestId;approval.userId=userId;approval.started=false;
+                    try{
+                        let requestId=approval.requestId&&approval.userId===selectedUser?
+                            approval.requestId:'';
+                        if(!valid(requestId)){
+                            const model=await sdk.Model.create(scopeWorkflow.object);
+                            const dto={
+                                UsrName:('Contract access: '+
+                                    (contractPicker.selectedOptions[0]?.textContent?.trim()||contractId)).slice(0,245),
+                                UsrUser:selectedUser,
+                                UsrReason:reason.value.trim(),
+                                UsrStatus:'Pending',
+                                UsrScopeType:'Contract Scope',
+                                UsrRequestedValues:contractId
+                            };
+                            const result=await model.insert(dto);
+                            if(!result||result?.success===false||result?.isSuccess===false)
+                                throw Error('Cannot save exact-contract approval: '+
+                                    (scopeFailureDetail(result)||'check Add rights and object publication'));
+                            requestId=scopeInsertId(result);
+                            if(!valid(requestId))
+                                throw Error('Approval may have been saved but did not return its ID. Inspect records before retrying.');
+                            approval.requestId=requestId;
+                            approval.userId=selectedUser;
+                            approval.started=false;
+                            approval.contractId=contractId;
+                            bindSavedRequest();
+                        }
+                        state.textContent='Approval record saved. Starting Security Administrator workflow…';
                         await runScopeProcess(scopeWorkflow.approvalProcess,{ScopeRequestId:requestId});
                         approval.started=true;
-                        state.textContent='Approval submitted. Editor stays locked until Security Administrator approves.';
-                        reason.readOnly=true;
+                        state.textContent='Approval requested for the exact selected contract. No access has been changed.';
                         if(!runtime.scopeApprovalTimer)runtime.scopeApprovalTimer=window.setInterval(()=>{
-                            if(!runtime.disposed && document.body.contains(modal)) void check(true);
+                            if(!runtime.disposed && document.body.contains(modal))void check(true);
                         },15000);
                         void check(true);
-                    }catch(e){
-                        console.warn('MCIT scope approval request failed',e);
-                        state.textContent='Approval is not available yet: '+(e?.message||'configure approval object and BPMN process');
-                        requestBtn.disabled=false;
-                    }
+                    }catch(err){
+                        console.warn('MCIT exact-contract approval request failed',err);
+                        state.textContent=valid(approval.requestId)?
+                            'Request saved, but workflow did not start: '+
+                              (err?.message||'check process publication')+
+                              '. Retry Request Approval to start this saved request.':
+                            'Cannot request approval: '+(err?.message||'check configuration');
+                    }finally{requestBtn.disabled=false;}
                 });
-                if(approval.requestId && approval.userId===userId){
-                    state.textContent='Existing request in this session. Check whether it has been approved.';
-                    if(approval.started && !runtime.scopeApprovalTimer)runtime.scopeApprovalTimer=window.setInterval(()=>{
-                        if(!runtime.disposed && document.body.contains(modal))void check(true);
-                    },15000);
-                    void check(false);
+                if(valid(approval.requestId)&&approval.userId===selectedUser){
+                    bindSavedRequest();void check(false);
                 }
-                reason.focus();
             };
             // V18 audit reader. Own DOM mount is an isolated child of the ACTIVITY tab.
             // This is the same native view-config pattern already used by V14's

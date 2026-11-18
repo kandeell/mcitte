@@ -5,12 +5,12 @@
 			<Item Name="Caption" Value="MCIT Contract form page" />
 			<Item Name="LocalizableStrings.Button_spbhdwfCaption.Value" Value="Refresh" />
 			<Item Name="LocalizableStrings.Button_tbioevjCaption.Value" Value="Upload" />
+			<Item Name="LocalizableStrings.Button_z7p7714_caption.Value" Value="Recalculate Expiry Preview" />
 			<Item Name="LocalizableStrings.ExpansionPanel_c4o5u6o_title.Value" Value="VM Request" />
-			<Item Name="LocalizableStrings.ExpansionPanel_pburjeo_title.Value" Value="Contract configuration versions" />
 			<Item Name="LocalizableStrings.ExpansionPanel_ylyirfv_title.Value" Value="Virtual Machine" />
 			<Item Name="LocalizableStrings.ExpansionPanel_zrdtks4_title.Value" Value="Point Transaction" />
 			<Item Name="LocalizableStrings.GridDetailAddBtn_ce2j3rh_caption.Value" Value="New" />
-			<Item Name="LocalizableStrings.GridDetailAddBtn_opvbbzb_caption.Value" Value="New" />
+			<Item Name="LocalizableStrings.GridDetailAddBtn_opvbbzb_caption.Value" Value="Add version" />
 			<Item Name="LocalizableStrings.GridDetailAddBtn_so8ylrh_caption.Value" Value="New" />
 			<Item Name="LocalizableStrings.GridDetailAddBtn_xhib4wg_caption.Value" Value="New" />
 			<Item Name="LocalizableStrings.GridDetailExportDataBtn_2mu5j6j_caption.Value" Value="Export to Excel" />
@@ -52,11 +52,15 @@
 			<Item Name="LocalizableStrings.IndicatorWidget_wk1kcsw_hint.Value" Value="Components.IndicatorWidget.Hint" />
 			<Item Name="LocalizableStrings.IndicatorWidget_wk1kcsw_title.Value" Value="Total Financial Commitment" />
 			<Item Name="LocalizableStrings.Label_9j2qyrf_caption.Value" Value="Contract Description" />
+			<Item Name="LocalizableStrings.Label_q7xvr29_caption.Value" Value="Contract configuration versions" />
 			<Item Name="LocalizableStrings.Label_vvaeqvy_caption.Value" Value="Financial Summary" />
 			<Item Name="LocalizableStrings.TabContainer_91fz9dg_caption.Value" Value="Point Balances" />
 			<Item Name="LocalizableStrings.TabContainer_h354xra_caption.Value" Value="Configuration Versions" />
 			<Item Name="LocalizableStrings.addRecord_05o2u1d_caption.Value" Value="Add new" />
 			<Item Name="LocalizableStrings.addRecord_b6lsl8b_caption.Value" Value="Add new" />
+			<Item Name="Parameters.1a6fbf13-8403-c106-a4e8-a191ad71292c.Caption" Value="Restored Points Expiring in 30 Days" />
+			<Item Name="Parameters.5f1f5685-c8cb-7b81-bfd6-7f618c90719b.Caption" Value="Restored Points Expiring in 90 Days" />
+			<Item Name="Parameters.93ff052c-a481-5a0d-1d4b-413fdbcdfd85.Caption" Value="Restored Points Expiring in 30 Days" />
 			<Item Name="Parameters.da1fba5d-0acf-a95a-e7c0-10e066249e52.Caption" Value="IsBalancesInfoVisible" />
 		</Items>
 	</Group>

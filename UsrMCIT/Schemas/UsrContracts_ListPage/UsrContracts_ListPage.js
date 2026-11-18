@@ -3,14 +3,28 @@ define("UsrContracts_ListPage", /**SCHEMA_DEPS*/[]/**SCHEMA_DEPS*/, function/**S
 		viewConfigDiff: /**SCHEMA_VIEW_CONFIG_DIFF*/[
 			{
 				"operation": "merge",
+				"name": "MainHeader",
+				"values": {
+					"color": "#F8FAFC",
+					"padding": {
+						"top": "large",
+						"right": "large",
+						"bottom": "large",
+						"left": "large"
+					}
+				}
+			},
+			{
+				"operation": "merge",
 				"name": "AddButton",
 				"values": {
-					"color": "accent",
+					"caption": "#ResourceString(AddButton_caption)#",
 					"size": "large",
 					"styles": {
 						"background-color": "#5B21A5",
 						"color": "#FFFFFF"
-					}
+					},
+					"clickMode": "default"
 				}
 			},
 			{
@@ -30,16 +44,6 @@ define("UsrContracts_ListPage", /**SCHEMA_DEPS*/[]/**SCHEMA_DEPS*/, function/**S
 				"name": "MainContainer",
 				"values": {
 					"color": "#F8FAFC",
-					"visible": true,
-					"padding": {
-						"top": "none",
-						"right": "none",
-						"bottom": "none",
-						"left": "none"
-					},
-					"borderRadius": "none",
-					"alignItems": "stretch",
-					"justifyContent": "start",
 					"wrap": "nowrap"
 				}
 			},
@@ -47,7 +51,7 @@ define("UsrContracts_ListPage", /**SCHEMA_DEPS*/[]/**SCHEMA_DEPS*/, function/**S
 				"operation": "merge",
 				"name": "MainFilterContainer",
 				"values": {
-					"alignItems": "stretch"
+					"color": "transparent"
 				}
 			},
 			{
@@ -130,8 +134,6 @@ define("UsrContracts_ListPage", /**SCHEMA_DEPS*/[]/**SCHEMA_DEPS*/, function/**S
 					"direction": "row",
 					"wrap": "nowrap",
 					"items": [],
-					"fitContent": true,
-					"visible": true,
 					"padding": {
 						"top": "small",
 						"right": "small",
@@ -139,14 +141,13 @@ define("UsrContracts_ListPage", /**SCHEMA_DEPS*/[]/**SCHEMA_DEPS*/, function/**S
 						"left": "small"
 					},
 					"color": "#F8FAFC",
-					"borderRadius": "none",
 					"alignItems": "flex-end",
 					"justifyContent": "center",
 					"gap": "extra-small"
 				},
 				"parentName": "MainContainer",
 				"propertyName": "items",
-				"index": 1
+				"index": 0
 			},
 			{
 				"operation": "insert",
@@ -157,16 +158,8 @@ define("UsrContracts_ListPage", /**SCHEMA_DEPS*/[]/**SCHEMA_DEPS*/, function/**S
 						"minmax(32px, 1fr)"
 					],
 					"rows": "minmax(max-content, 32px)",
-					"gap": {
-						"columnGap": "large",
-						"rowGap": "none"
-					},
 					"items": [],
-					"fitContent": true,
-					"visible": true,
-					"alignItems": "stretch",
 					"color": "#F8FAFC",
-					"borderRadius": "none",
 					"padding": {
 						"top": "medium",
 						"bottom": "medium",
@@ -180,23 +173,23 @@ define("UsrContracts_ListPage", /**SCHEMA_DEPS*/[]/**SCHEMA_DEPS*/, function/**S
 			},
 			{
 				"operation": "insert",
-				"name": "IndicatorWidget_rs0tsr7",
+				"name": "IndicatorWidget_18t1d6x",
 				"values": {
 					"layoutConfig": {
 						"column": 1,
 						"colSpan": 1,
-						"row": 1,
-						"rowSpan": 4
+						"rowSpan": 4,
+						"row": 1
 					},
 					"type": "crt.IndicatorWidget",
 					"config": {
-						"title": "#ResourceString(IndicatorWidget_rs0tsr7_title)#",
+						"title": "#ResourceString(IndicatorWidget_18t1d6x_title)#",
 						"theme": "without-fill",
 						"layout": {
 							"color": "violet"
 						},
 						"text": {
-							"template": "#ResourceString(IndicatorWidget_rs0tsr7_config_text_template)#",
+							"template": "#ResourceString(IndicatorWidget_18t1d6x_config_text_template)#",
 							"metricMacros": "{0}",
 							"labelPosition": "above-under",
 							"fontSizeMode": "medium"
@@ -210,7 +203,7 @@ define("UsrContracts_ListPage", /**SCHEMA_DEPS*/[]/**SCHEMA_DEPS*/, function/**S
 							},
 							"comparisonProviding": null,
 							"providing": {
-								"attribute": "IndicatorWidget_rs0tsr7_Data",
+								"attribute": "IndicatorWidget_18t1d6x_Data",
 								"schemaName": "UsrMCITContract",
 								"filters": {
 									"filter": {
@@ -274,9 +267,8 @@ define("UsrContracts_ListPage", /**SCHEMA_DEPS*/[]/**SCHEMA_DEPS*/, function/**S
 							"type": null,
 							"text": ""
 						},
-						"hint": "#ResourceString(IndicatorWidget_rs0tsr7_hint)#"
-					},
-					"visible": true
+						"hint": "#ResourceString(IndicatorWidget_18t1d6x_hint)#"
+					}
 				},
 				"parentName": "GridContainer_gy2ok74",
 				"propertyName": "items",
@@ -291,16 +283,8 @@ define("UsrContracts_ListPage", /**SCHEMA_DEPS*/[]/**SCHEMA_DEPS*/, function/**S
 						"minmax(32px, 1fr)"
 					],
 					"rows": "minmax(max-content, 32px)",
-					"gap": {
-						"columnGap": "large",
-						"rowGap": "none"
-					},
 					"items": [],
-					"fitContent": true,
-					"visible": true,
-					"alignItems": "stretch",
 					"color": "#F8FAFC",
-					"borderRadius": "none",
 					"padding": {
 						"top": "medium",
 						"bottom": "medium",
@@ -350,8 +334,7 @@ define("UsrContracts_ListPage", /**SCHEMA_DEPS*/[]/**SCHEMA_DEPS*/, function/**S
 							"text": ""
 						},
 						"hint": "#ResourceString(IndicatorWidget_42xyo1n_hint)#"
-					},
-					"visible": true
+					}
 				},
 				"parentName": "GridContainer_9bgkwq9",
 				"propertyName": "items",
@@ -366,16 +349,8 @@ define("UsrContracts_ListPage", /**SCHEMA_DEPS*/[]/**SCHEMA_DEPS*/, function/**S
 						"minmax(32px, 1fr)"
 					],
 					"rows": "minmax(max-content, 32px)",
-					"gap": {
-						"columnGap": "large",
-						"rowGap": "none"
-					},
 					"items": [],
-					"fitContent": true,
-					"visible": true,
-					"alignItems": "stretch",
 					"color": "#F8FAFC",
-					"borderRadius": "none",
 					"padding": {
 						"top": "medium",
 						"bottom": "medium",
@@ -425,8 +400,7 @@ define("UsrContracts_ListPage", /**SCHEMA_DEPS*/[]/**SCHEMA_DEPS*/, function/**S
 							"text": ""
 						},
 						"hint": "#ResourceString(IndicatorWidget_g7hve3d_hint)#"
-					},
-					"visible": true
+					}
 				},
 				"parentName": "GridContainer_6q2q6nh",
 				"propertyName": "items",
@@ -441,16 +415,8 @@ define("UsrContracts_ListPage", /**SCHEMA_DEPS*/[]/**SCHEMA_DEPS*/, function/**S
 						"minmax(32px, 1fr)"
 					],
 					"rows": "minmax(max-content, 32px)",
-					"gap": {
-						"columnGap": "large",
-						"rowGap": "none"
-					},
 					"items": [],
-					"fitContent": true,
-					"visible": true,
-					"alignItems": "stretch",
 					"color": "#F8FAFC",
-					"borderRadius": "none",
 					"padding": {
 						"top": "medium",
 						"bottom": "medium",
@@ -500,8 +466,7 @@ define("UsrContracts_ListPage", /**SCHEMA_DEPS*/[]/**SCHEMA_DEPS*/, function/**S
 							"text": ""
 						},
 						"hint": "#ResourceString(IndicatorWidget_vk3knbn_hint)#"
-					},
-					"visible": true
+					}
 				},
 				"parentName": "GridContainer_7aqks71",
 				"propertyName": "items",
@@ -516,16 +481,8 @@ define("UsrContracts_ListPage", /**SCHEMA_DEPS*/[]/**SCHEMA_DEPS*/, function/**S
 						"minmax(32px, 1fr)"
 					],
 					"rows": "minmax(max-content, 32px)",
-					"gap": {
-						"columnGap": "large",
-						"rowGap": "none"
-					},
 					"items": [],
-					"fitContent": true,
-					"visible": true,
-					"alignItems": "stretch",
 					"color": "#F8FAFC",
-					"borderRadius": "none",
 					"padding": {
 						"top": "medium",
 						"bottom": "medium",
@@ -575,10 +532,134 @@ define("UsrContracts_ListPage", /**SCHEMA_DEPS*/[]/**SCHEMA_DEPS*/, function/**S
 							"text": ""
 						},
 						"hint": "#ResourceString(IndicatorWidget_utpntv2_hint)#"
-					},
-					"visible": true
+					}
 				},
 				"parentName": "GridContainer_qpgc0ek",
+				"propertyName": "items",
+				"index": 0
+			},
+			{
+				"operation": "insert",
+				"name": "GridContainer_vcfx6cz",
+				"values": {
+					"type": "crt.GridContainer",
+					"columns": [
+						"minmax(32px, 1fr)"
+					],
+					"rows": "minmax(max-content, 32px)",
+					"items": [],
+					"color": "#F8FAFC",
+					"padding": {
+						"top": "medium",
+						"bottom": "medium",
+						"right": "medium",
+						"left": "medium"
+					}
+				},
+				"parentName": "FlexContainer_9ruea39",
+				"propertyName": "items",
+				"index": 5
+			},
+			{
+				"operation": "insert",
+				"name": "IndicatorWidget_efonh4t",
+				"values": {
+					"layoutConfig": {
+						"column": 1,
+						"colSpan": 1,
+						"rowSpan": 4,
+						"row": 1
+					},
+					"type": "crt.IndicatorWidget",
+					"config": {
+						"title": "#ResourceString(IndicatorWidget_efonh4t_title)#",
+						"theme": "without-fill",
+						"layout": {
+							"color": "violet"
+						},
+						"text": {
+							"template": "#ResourceString(IndicatorWidget_efonh4t_config_text_template)#",
+							"metricMacros": "{0}",
+							"labelPosition": "above-under",
+							"fontSizeMode": "medium"
+						},
+						"data": {
+							"formatting": {
+								"type": "number",
+								"decimalPrecision": 0,
+								"decimalSeparator": ".",
+								"thousandSeparator": ","
+							},
+							"comparisonProviding": null,
+							"providing": {
+								"attribute": "IndicatorWidget_efonh4t_Data",
+								"schemaName": "UsrMCITContract",
+								"filters": {
+									"filter": {
+										"items": {
+											"09792579-5232-47e6-a7ee-7fda18cee2ba": {
+												"filterType": 4,
+												"comparisonType": 4,
+												"isEnabled": true,
+												"trimDateTimeParameterToDate": false,
+												"leftExpression": {
+													"expressionType": 0,
+													"columnPath": "UsrStatus"
+												},
+												"isAggregative": false,
+												"dataValueType": 10,
+												"referenceSchemaName": "UsrMCITContractStatus",
+												"rightExpressions": [
+													{
+														"expressionType": 2,
+														"parameter": {
+															"dataValueType": 10,
+															"value": {
+																"Name": "Closed",
+																"Id": "4808d6f7-6a63-421c-bd32-751535f0b029",
+																"value": "4808d6f7-6a63-421c-bd32-751535f0b029",
+																"displayValue": "Closed"
+															}
+														}
+													}
+												]
+											}
+										},
+										"logicalOperation": 0,
+										"isEnabled": true,
+										"filterType": 6,
+										"rootSchemaName": "UsrMCITContract"
+									},
+									"filterAttributes": []
+								},
+								"aggregation": {
+									"column": {
+										"orderDirection": 0,
+										"orderPosition": -1,
+										"isVisible": true,
+										"expression": {
+											"expressionType": 1,
+											"functionArgument": {
+												"expressionType": 0,
+												"columnPath": "Id"
+											},
+											"functionType": 2,
+											"aggregationType": 1,
+											"aggregationEvalType": 2
+										}
+									}
+								},
+								"dependencies": []
+							}
+						},
+						"comparison": {
+							"type": null,
+							"text": ""
+						},
+						"hint": "#ResourceString(IndicatorWidget_efonh4t_hint)#"
+					}
+				},
+				"parentName": "GridContainer_vcfx6cz",
 				"propertyName": "items",
 				"index": 0
 			}

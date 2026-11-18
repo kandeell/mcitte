@@ -1,0 +1,14 @@
+﻿{
+  "Descriptor": {
+    "UId": "c7c9ebec-663f-43ab-9a7c-f20c96769c3e",
+    "Name": "BaseEntity",
+    "ModifiedOnUtc": "\/Date(1794439676000)\/",
+    "Parent": {
+      "UId": "1bab9dcf-17d5-49f8-9536-8e0064f1dce0",
+      "Name": "BaseEntity"
+    },
+    "ExtendParent": true,
+    "ManagerName": "EntitySchemaManager",
+    "Caption": "MCIT Scope Edit Request"
+  }
+}

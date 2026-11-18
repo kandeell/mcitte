@@ -1,0 +1,10 @@
+﻿{
+  "Descriptor": {
+    "UId": "2a2b007a-68a1-4d9b-8251-8acd6273120c",
+    "Name": "UsrMCITRepairTechnicalRole",
+    "ModifiedOnUtc": "\/Date(1793870250000)\/",
+    "ManagerName": "ProcessSchemaManager",
+    "Caption": "MCITRepairTechnicalRole",
+    "DependsOn": []
+  }
+}

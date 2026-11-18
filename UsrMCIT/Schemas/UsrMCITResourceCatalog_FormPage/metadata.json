@@ -1,8 +1,32 @@
 = MetaData.Schema.UId "be63aabb-fe6b-4362-bf83-312a34bbdb37"
 = MetaData.Schema.A2 "UsrMCITResourceCatalog_FormPage"
 = MetaData.Schema.A5 "6f71e54c-1960-40c9-94f6-073fd67699ab"
-~ MetaData.Schema.B2 ["bac72348-5bf6-4a41-9343-88c6065b28a4","d1a95b6d-8ee5-4414-b19a-3a7c316af6fc","3c8b9513-87c5-4c09-8de5-c994b8aac07c","4d9f1759-b4ab-466e-9825-895c15131f02"]
+~ MetaData.Schema.B2 ["bac72348-5bf6-4a41-9343-88c6065b28a4","d1a95b6d-8ee5-4414-b19a-3a7c316af6fc","3c8b9513-87c5-4c09-8de5-c994b8aac07c","4d9f1759-b4ab-466e-9825-895c15131f02","a400a03f-eaca-5b19-10df-e9bcf3bb44de","4bb1497e-67dc-d631-cd1a-341f4b07c7cd","515b59d3-8101-2d9a-4408-a0654fd3da1c","063ce3cd-6958-78e9-7281-5ea167168acb","1fd70a0b-e198-aa6c-30e6-c20fb654976b","913b0e96-d87d-f704-8428-3c522ca9b01b","a0cfd562-00ae-a790-e9f0-29afaf692811","f2878c3b-5c0f-d99c-c81e-762da9a68c4a","a6d6906d-a978-4b72-9ea3-3b42069aea9c","aeb8b0a4-3201-7dbc-8eb3-c613986ee296","dc07bcf4-ee24-d2d4-200f-20eec7d74524","6b7b964e-9abf-aeee-eca1-56db5d52dc02"]
 = MetaData.Schema.B6 "5530927f-22ea-e7c9-4ccf-506d3a6c2ed2"
 = MetaData.Schema.HD1 "3b2e117f-8c6b-4ca5-80a2-7ebb497cddf9"
 - MetaData.Schema.B7
 + MetaData.Schema.B7 false
+
++ MetaData.Schema.B2 {"UId":"a400a03f-eaca-5b19-10df-e9bcf3bb44de","A2":"UsrMigration_UsrMigrationUsrCode_label","A3":"be63aabb-fe6b-4362-bf83-312a34bbdb37","A4":"be63aabb-fe6b-4362-bf83-312a34bbdb37","A5":"6f71e54c-1960-40c9-94f6-073fd67699ab"}
+
++ MetaData.Schema.B2 {"UId":"4bb1497e-67dc-d631-cd1a-341f4b07c7cd","A2":"UsrMigration_UsrMigrationUsrUnit_label","A3":"be63aabb-fe6b-4362-bf83-312a34bbdb37","A4":"be63aabb-fe6b-4362-bf83-312a34bbdb37","A5":"6f71e54c-1960-40c9-94f6-073fd67699ab"}
+
++ MetaData.Schema.B2 {"UId":"515b59d3-8101-2d9a-4408-a0654fd3da1c","A2":"UsrMigration_UsrMigrationUsrActive_label","A3":"be63aabb-fe6b-4362-bf83-312a34bbdb37","A4":"be63aabb-fe6b-4362-bf83-312a34bbdb37","A5":"6f71e54c-1960-40c9-94f6-073fd67699ab"}
+
++ MetaData.Schema.B2 {"UId":"063ce3cd-6958-78e9-7281-5ea167168acb","A2":"UsrMigration_UsrMigrationUsrCategory_label","A3":"be63aabb-fe6b-4362-bf83-312a34bbdb37","A4":"be63aabb-fe6b-4362-bf83-312a34bbdb37","A5":"6f71e54c-1960-40c9-94f6-073fd67699ab"}
+
++ MetaData.Schema.B2 {"UId":"1fd70a0b-e198-aa6c-30e6-c20fb654976b","A2":"UsrMigration_UsrMigrationUsrArabicName_label","A3":"be63aabb-fe6b-4362-bf83-312a34bbdb37","A4":"be63aabb-fe6b-4362-bf83-312a34bbdb37","A5":"6f71e54c-1960-40c9-94f6-073fd67699ab"}
+
++ MetaData.Schema.B2 {"UId":"913b0e96-d87d-f704-8428-3c522ca9b01b","A2":"UsrMigration_UsrMigrationDescription_label","A3":"be63aabb-fe6b-4362-bf83-312a34bbdb37","A4":"be63aabb-fe6b-4362-bf83-312a34bbdb37","A5":"6f71e54c-1960-40c9-94f6-073fd67699ab"}
+
++ MetaData.Schema.B2 {"UId":"a0cfd562-00ae-a790-e9f0-29afaf692811","A2":"UsrMigration_UsrMigrationUsrMinValue_label","A3":"be63aabb-fe6b-4362-bf83-312a34bbdb37","A4":"be63aabb-fe6b-4362-bf83-312a34bbdb37","A5":"6f71e54c-1960-40c9-94f6-073fd67699ab"}
+
++ MetaData.Schema.B2 {"UId":"f2878c3b-5c0f-d99c-c81e-762da9a68c4a","A2":"UsrMigration_UsrMigrationUsrMaxValue_label","A3":"be63aabb-fe6b-4362-bf83-312a34bbdb37","A4":"be63aabb-fe6b-4362-bf83-312a34bbdb37","A5":"6f71e54c-1960-40c9-94f6-073fd67699ab"}
+
++ MetaData.Schema.B2 {"UId":"a6d6906d-a978-4b72-9ea3-3b42069aea9c","A2":"UsrMigration_UsrMigrationUsrIncrement_label","A3":"be63aabb-fe6b-4362-bf83-312a34bbdb37","A4":"be63aabb-fe6b-4362-bf83-312a34bbdb37","A5":"6f71e54c-1960-40c9-94f6-073fd67699ab"}
+
++ MetaData.Schema.B2 {"UId":"aeb8b0a4-3201-7dbc-8eb3-c613986ee296","A2":"UsrMigration_UsrMigrationUsrAllContracts_label","A3":"be63aabb-fe6b-4362-bf83-312a34bbdb37","A4":"be63aabb-fe6b-4362-bf83-312a34bbdb37","A5":"6f71e54c-1960-40c9-94f6-073fd67699ab"}
+
++ MetaData.Schema.B2 {"UId":"dc07bcf4-ee24-d2d4-200f-20eec7d74524","A2":"UsrMigration_UsrMigrationUsrStartDate_label","A3":"be63aabb-fe6b-4362-bf83-312a34bbdb37","A4":"be63aabb-fe6b-4362-bf83-312a34bbdb37","A5":"6f71e54c-1960-40c9-94f6-073fd67699ab"}
+
++ MetaData.Schema.B2 {"UId":"6b7b964e-9abf-aeee-eca1-56db5d52dc02","A2":"UsrMigration_UsrMigrationUsrEndDate_label","A3":"be63aabb-fe6b-4362-bf83-312a34bbdb37","A4":"be63aabb-fe6b-4362-bf83-312a34bbdb37","A5":"6f71e54c-1960-40c9-94f6-073fd67699ab"}

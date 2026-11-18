@@ -1,0 +1,9 @@
+﻿{
+  "Descriptor": {
+    "UId": "c0b3ab29-f6ae-42f1-81c2-04020e67dc59",
+    "Name": "UsrMCITDailyRestoredPointsExpiryReset",
+    "ModifiedOnUtc": "\/Date(1795017928000)\/",
+    "ManagerName": "ProcessSchemaManager",
+    "Caption": "MCIT Daily Restored Points Expiry Reset"
+  }
+}

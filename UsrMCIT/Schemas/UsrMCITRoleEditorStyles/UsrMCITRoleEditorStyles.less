@@ -1362,3 +1362,349 @@ Styles are visual only; they do not enforce permissions.
     background: #6928be;
     color: #ffffff;
 }
+/* MCIT Role Editor V2 — ADD to the END of existing UsrMCITRoleEditorStyles.LESS.
+   Scoped to classes from UsrPage_k837yjw. No global DOM injection or UI Designer interference. */
+.usr-mcit-role-tabs {
+  --mcit-primary: #5b21a5;
+  --mcit-accent: #7027f5;
+  --mcit-border: #e5deef;
+  --mcit-muted: #697084;
+  width: 100%;
+  max-width: 100%;
+  min-width: 0;
+}
+.usr-mcit-role-tabs .crt-tab-container, .usr-mcit-role-tabs .crt-tabs {
+  min-width: 0;
+}
+.usr-mcit-role-tabs .crt-tab-container__header,
+.usr-mcit-role-tabs [role="tablist"] { overflow-x: auto; scrollbar-width: thin; }
+.usr-mcit-role-tabs [role="tab"] { white-space: nowrap; font-weight: 650; letter-spacing: .012em; }
+.usr-mcit-role-overview, .usr-mcit-role-info-tab { min-width: 0; }
+.usr-mcit-table, .usr-mcit-permissions-table {
+  max-width: 100%;
+  min-width: 0;
+  overflow-x: auto;
+  border: 1px solid #e5deef;
+  border-radius: 12px;
+  background: #fff;
+}
+.usr-mcit-card { border-radius: 14px; overflow: hidden; }
+.usr-mcit-role-history-grid { margin: 12px 0 18px; }
+.usr-mcit-audit-note, .usr-mcit-note {
+  display: block;
+  border: 1px solid #d5e5fa;
+  background: #edf6ff;
+  color: #335a89;
+  border-radius: 9px;
+  padding: 10px 13px;
+  margin-bottom: 12px;
+  font-size: 12px;
+}
+.usr-mcit-mini-heading { color: #2b2040; font-size: 14px; font-weight: 700; margin: 16px 0 6px; }
+@media(max-width:900px){
+  .usr-mcit-role-tabs [role="tab"] { font-size: 12px; }
+}
+/* SCREEN PERMISSIONS — increase spacing inside the list */
+.usr-mcit-permissions-table {
+    
+    /* overall grid look */
+    background: #fff;
+    border-radius: 12px;
+    overflow: hidden;
+}
+
+.usr-mcit-permissions-table .crt-data-grid,
+.usr-mcit-permissions-table .crt-data-grid-content {
+    background: #fff;
+}
+
+/* header row */
+.usr-mcit-permissions-table .crt-data-grid-head,
+.usr-mcit-permissions-table .crt-data-grid-header {
+    min-height: 46px;
+}
+
+.usr-mcit-permissions-table .crt-data-grid-head-cell,
+.usr-mcit-permissions-table .crt-data-grid-header-cell {
+    padding-top: 12px !important;
+    padding-bottom: 12px !important;
+    padding-left: 16px !important;
+    padding-right: 16px !important;
+    font-size: 13px;
+    font-weight: 600;
+    white-space: nowrap;
+}
+
+/* body rows */
+.usr-mcit-permissions-table .crt-data-grid-row {
+    min-height: 54px !important;
+}
+
+/* body cells */
+.usr-mcit-permissions-table .crt-data-grid-cell {
+    padding-top: 12px !important;
+    padding-bottom: 12px !important;
+    padding-left: 16px !important;
+    padding-right: 16px !important;
+    vertical-align: middle;
+}
+
+/* keep content centered nicely */
+.usr-mcit-permissions-table .crt-data-grid-cell-content,
+.usr-mcit-permissions-table .crt-content-container {
+    display: flex;
+    align-items: center;
+    min-height: 30px;
+}
+
+/* first column text a bit more readable */
+.usr-mcit-permissions-table .crt-data-grid-cell:first-child {
+    font-size: 14px;
+}
+
+/* checkbox cells */
+.usr-mcit-permissions-table input[type="checkbox"] {
+    transform: scale(1.08);
+    cursor: pointer;
+}
+/* MCIT Role Editor — TAB WRAP FIX (append at END of UsrMCITRoleEditorStyles.less)
+   Removes the horizontal tab-navigation slider while keeping every tab visible.
+   Scoped to the Role Editor; no DOM manipulation, no changes to other tabs/grids.
+   Angular Material and Creatio tab header variants are both covered.
+*/
+
+#Tabs.usr-mcit-role-tabs-wrap,
+.usr-mcit-role-tabs-wrap {
+  min-width: 0 !important;
+  max-width: 100% !important;
+  box-sizing: border-box !important;
+  overflow: visible !important;
+}
+
+/* Let the navigation occupy the available line, and grow vertically when needed. */
+#Tabs.usr-mcit-role-tabs-wrap .mat-mdc-tab-header,
+#Tabs.usr-mcit-role-tabs-wrap .crt-tab-panel-header,
+.usr-mcit-role-tabs-wrap .mat-mdc-tab-header,
+.usr-mcit-role-tabs-wrap .crt-tab-panel-header {
+  width: 100% !important;
+  min-width: 0 !important;
+  height: auto !important;
+  max-width: 100% !important;
+  box-sizing: border-box !important;
+  overflow: visible !important;
+  scrollbar-width: none;
+}
+
+/* Angular Material's default tab pagination moves the entire strip horizontally.
+   Switch to a wrapped strip instead, so no tabs disappear behind the arrows. */
+#Tabs.usr-mcit-role-tabs-wrap .mat-mdc-tab-header-pagination,
+.usr-mcit-role-tabs-wrap .mat-mdc-tab-header-pagination {
+  display: none !important;
+}
+
+#Tabs.usr-mcit-role-tabs-wrap .mat-mdc-tab-label-container,
+.usr-mcit-role-tabs-wrap .mat-mdc-tab-label-container {
+  min-width: 0 !important;
+  max-width: 100% !important;
+  width: 100% !important;
+  height: auto !important;
+  overflow: visible !important;
+}
+
+#Tabs.usr-mcit-role-tabs-wrap .mat-mdc-tab-list,
+.usr-mcit-role-tabs-wrap .mat-mdc-tab-list {
+  width: 100% !important;
+  min-width: 0 !important;
+  transform: none !important;
+}
+
+#Tabs.usr-mcit-role-tabs-wrap .mat-mdc-tab-labels,
+.usr-mcit-role-tabs-wrap .mat-mdc-tab-labels,
+#Tabs.usr-mcit-role-tabs-wrap .crt-tab-panel-header [role="tablist"],
+.usr-mcit-role-tabs-wrap .crt-tab-panel-header [role="tablist"] {
+  display: flex !important;
+  flex-wrap: wrap !important;
+  justify-content: flex-start !important;
+  align-items: center !important;
+  align-content: start !important;
+  width: 100% !important;
+  min-width: 0 !important;
+  height: auto !important;
+  column-gap: 4px !important;
+  row-gap: 3px !important;
+  white-space: normal !important;
+  transform: none !important;
+}
+
+#Tabs.usr-mcit-role-tabs-wrap .mat-mdc-tab,
+.usr-mcit-role-tabs-wrap .mat-mdc-tab,
+#Tabs.usr-mcit-role-tabs-wrap .crt-tab-panel-header [role="tab"],
+.usr-mcit-role-tabs-wrap .crt-tab-panel-header [role="tab"] {
+  flex: 0 0 auto !important;
+  min-width: 0 !important;
+  max-width: 100% !important;
+  height: 38px !important;
+  padding: 0 8px !important;
+  box-sizing: border-box !important;
+}
+
+#Tabs.usr-mcit-role-tabs-wrap .mdc-tab__text-label,
+.usr-mcit-role-tabs-wrap .mdc-tab__text-label {
+  font-family: Rubik, Inter, Arial, sans-serif !important;
+  font-size: 11.5px !important;
+  white-space: nowrap !important;
+}
+
+/* Keep vertical selected-tab indicator intact on every wrapped row. */
+#Tabs.usr-mcit-role-tabs-wrap .mdc-tab-indicator__content--underline,
+.usr-mcit-role-tabs-wrap .mdc-tab-indicator__content--underline {
+  border-color: #6424b9 !important;
+  border-top-width: 2px !important;
+}
+
+/* No scrollbars on the navigation itself (tab content is not hidden). */
+#Tabs.usr-mcit-role-tabs-wrap .mat-mdc-tab-header::-webkit-scrollbar,
+#Tabs.usr-mcit-role-tabs-wrap .crt-tab-panel-header::-webkit-scrollbar,
+.usr-mcit-role-tabs-wrap .mat-mdc-tab-header::-webkit-scrollbar,
+.usr-mcit-role-tabs-wrap .crt-tab-panel-header::-webkit-scrollbar {
+  display: none;
+}
+
+@media (max-width: 900px) {
+  #Tabs.usr-mcit-role-tabs-wrap,
+  .usr-mcit-role-tabs-wrap {
+    padding-left: 12px !important;
+    padding-right: 12px !important;
+  }
+  #Tabs.usr-mcit-role-tabs-wrap .mat-mdc-tab,
+  .usr-mcit-role-tabs-wrap .mat-mdc-tab {
+    height: 36px !important;
+    padding: 0 6px !important;
+  }
+}
+/* MCIT Role Editor — static panels and readable Change Summary
+   Append ONCE to the end of the existing UsrMCITRoleEditorStyles.less.
+   Uses native Freedom UI FlexContainer, Label, Button, DataGrid; no DOM changes.
+*/
+
+/* Normal cards: no expansion arrows, accordion height limits or nested panels. */
+#UsrMCITQueuePanel.usr-mcit-static-panel,
+#UsrMCITReportingPanel.usr-mcit-static-panel,
+#UsrMCITAdminPanel.usr-mcit-static-panel,
+#UsrMCITChangeSummaryPanel.usr-mcit-static-panel,
+#UsrMCITFieldHistoryPanel.usr-mcit-static-panel,
+.usr-mcit-static-panel {
+  box-sizing: border-box !important;
+  width: 100% !important;
+  max-width: 100% !important;
+  min-width: 0 !important;
+  height: auto !important;
+  max-height: none !important;
+  padding: 18px 18px 20px !important;
+  margin: 16px 0 18px !important;
+  background: #fff !important;
+  border: 1px solid #e2e6ef !important;
+  border-radius: 12px !important;
+  box-shadow: 0 1px 2px rgba(32, 24, 62, .035) !important;
+  overflow: visible !important;
+  gap: 12px;
+}
+
+/* Fixed panel header; editable grid tools remain native. */
+.usr-mcit-static-panel-header {
+  display: flex !important;
+  flex-direction: row !important;
+  flex-wrap: wrap !important;
+  align-items: center !important;
+  justify-content: space-between !important;
+  gap: 8px 16px !important;
+  min-height: 28px;
+  width: 100%;
+  min-width: 0;
+}
+.usr-mcit-static-panel-title {
+  color: #1e2c43 !important;
+  font-family: Rubik, Inter, Arial, sans-serif !important;
+  font-size: 15px !important;
+  line-height: 1.4 !important;
+  font-weight: 700 !important;
+  margin: 0 !important;
+  flex: 1 1 auto;
+}
+.usr-mcit-static-panel-toolbar {
+  width: auto !important;
+  max-width: 100%;
+  min-width: 0;
+  flex: 0 1 auto;
+  justify-self: end;
+}
+
+/* Replace the highlighted accordion-style note with an ordinary card description. */
+.usr-mcit-static-panel .usr-mcit-note,
+.usr-mcit-static-panel .usr-mcit-audit-note,
+.usr-mcit-static-panel-note {
+  background: transparent !important;
+  border: 0 !important;
+  border-radius: 0 !important;
+  box-shadow: none !important;
+  color: #58657b !important;
+  font-size: 12px !important;
+  line-height: 1.6 !important;
+  padding: 0 !important;
+  margin: 0 0 4px !important;
+}
+
+/* Change Summary: two distinct cards rather than one scrolling expansion panel. */
+#UsrMCITChangeSummaryPanel,
+#UsrMCITFieldHistoryPanel {
+  display: flex;
+  flex-direction: column;
+}
+#UsrMCITChangeSummaryPanel .usr-mcit-history-grid,
+#UsrMCITFieldHistoryPanel .usr-mcit-history-grid,
+.usr-mcit-history-grid {
+  display: block;
+  width: 100% !important;
+  min-width: 0 !important;
+  max-width: 100% !important;
+  height: auto !important;
+  max-height: none !important;
+  margin: 4px 0 0 !important;
+  border: 1px solid #e1e6ef !important;
+  border-radius: 9px !important;
+  background: #fff !important;
+  box-sizing: border-box !important;
+}
+/* Do not disable the native DataGrid's internal scrolling/virtualization. */
+.usr-mcit-history-grid .crt-header-cell-caption,
+.usr-mcit-history-grid .crt-data-table-header-cell-container {
+  color: #344054 !important;
+  font-size: 12px !important;
+  font-weight: 600 !important;
+}
+.usr-mcit-history-grid .crt-data-table-cell {
+  color: #344054 !important;
+  font-size: 12px !important;
+  padding-top: 9px !important;
+  padding-bottom: 9px !important;
+}
+.usr-mcit-history-refresh {
+  margin-left: auto;
+}
+#UsrMCITRoleChangeGrid .crt-data-table-header-cell-container,
+#UsrMCITRoleChangeGrid .crt-header-cell-caption {
+  white-space: normal !important;
+}
+
+/* Keep the tabs and cards aligned even if parent widths change. */
+#Tabs.usr-mcit-role-tabs,
+.usr-mcit-role-tabs,
+.usr-mcit-role-tabs [role="tabpanel"] {
+  min-width: 0 !important;
+  box-sizing: border-box !important;
+}
+
+@media (max-width: 900px) {
+  .usr-mcit-static-panel {padding: 14px 12px !important;}
+  .usr-mcit-static-panel-header {align-items: flex-start !important;}
+}

@@ -565,7 +565,7 @@ function/**SCHEMA_ARGS*/(sdk)/**SCHEMA_ARGS*/ {
     renderResult(runtime);
     const metrics=runtime.root.querySelector(".usr-rv-metrics");
     if(metrics) metrics.insertAdjacentHTML("beforebegin",
-      '<div class="usr-rv-notice"><span class="usr-rv-info-icon" aria-hidden="true">i</span>'+
+      '<div class="usr-rv-notice"><span class="usr-rv-info-icon" aria-hidden="true">i</span>'+ 
       '<span>No matching VM Requests in Realese. The totals are zero; adjust your filters or create a test request.</span></div>');
   }
   function renderError(runtime,error) {
