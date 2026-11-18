@@ -1,0 +1,14 @@
+﻿{
+  "Descriptor": {
+    "UId": "f04f0a21-1c2d-4625-816c-5c27e68ca74b",
+    "Name": "UsrVirtualMachineInven",
+    "ModifiedOnUtc": "\/Date(1794906006000)\/",
+    "Parent": {
+      "UId": "1bab9dcf-17d5-49f8-9536-8e0064f1dce0",
+      "Name": "BaseEntity"
+    },
+    "ManagerName": "EntitySchemaManager",
+    "Caption": "virtual machine inventory",
+    "DependsOn": []
+  }
+}
