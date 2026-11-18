@@ -1,0 +1,14 @@
+﻿{
+  "Descriptor": {
+    "UId": "2553fe7b-4132-4dab-9adb-eae854703270",
+    "Name": "UsrProvisioning_FormPage",
+    "ModifiedOnUtc": "\/Date(1794769455000)\/",
+    "Parent": {
+      "UId": "3b2e117f-8c6b-4ca5-80a2-7ebb497cddf9",
+      "Name": "PageWithTabsFreedomTemplate"
+    },
+    "ManagerName": "ClientUnitSchemaManager",
+    "Caption": "Provisioning form page",
+    "DependsOn": []
+  }
+}

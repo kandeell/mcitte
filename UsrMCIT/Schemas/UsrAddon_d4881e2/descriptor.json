@@ -1,0 +1,10 @@
+﻿{
+  "Descriptor": {
+    "UId": "89a7ee06-a493-43e0-a7a4-c6ef8ef4d496",
+    "Name": "UsrAddon_d4881e2",
+    "ModifiedOnUtc": "\/Date(1792400955000)\/",
+    "ManagerName": "AddonSchemaManager",
+    "Caption": "VM Request Item modal page (AppearanceSettings)",
+    "DependsOn": []
+  }
+}

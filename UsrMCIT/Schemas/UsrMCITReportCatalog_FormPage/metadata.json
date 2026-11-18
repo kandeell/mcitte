@@ -1,0 +1,8 @@
+= MetaData.Schema.UId "460bdffc-a019-4644-9100-b34d16bf62b7"
+= MetaData.Schema.A2 "UsrMCITReportCatalog_FormPage"
+= MetaData.Schema.A5 "6f71e54c-1960-40c9-94f6-073fd67699ab"
+~ MetaData.Schema.B2 ["547562dc-52c6-4ba9-a02e-ed0d35facacb","edb0f06e-1e2a-4a6c-be23-4026626398b8","d8d505c4-629c-4590-9ccf-59930153f04a","d0bd7463-f411-48e3-8f54-b277ab48c42b"]
+= MetaData.Schema.B6 "5530927f-22ea-e7c9-4ccf-506d3a6c2ed2"
+= MetaData.Schema.HD1 "3b2e117f-8c6b-4ca5-80a2-7ebb497cddf9"
+- MetaData.Schema.B7
++ MetaData.Schema.B7 false

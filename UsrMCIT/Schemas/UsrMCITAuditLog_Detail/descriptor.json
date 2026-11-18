@@ -1,0 +1,14 @@
+﻿{
+  "Descriptor": {
+    "UId": "cc064000-dca4-4521-8594-1a09449201f7",
+    "Name": "UsrMCITAuditLog_Detail",
+    "ModifiedOnUtc": "\/Date(1793762960000)\/",
+    "Parent": {
+      "UId": "01eb38ee-668a-42f0-999d-c2534f979089",
+      "Name": "BaseGridDetailV2"
+    },
+    "ManagerName": "ClientUnitSchemaManager",
+    "Caption": "Audit Log detail",
+    "DependsOn": []
+  }
+}

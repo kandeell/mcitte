@@ -1,0 +1,14 @@
+﻿{
+  "Descriptor": {
+    "UId": "797d1bbe-01af-4f14-94ab-03c19c37f275",
+    "Name": "UsrMCITPortalUserAccess",
+    "ModifiedOnUtc": "\/Date(1792844733000)\/",
+    "Parent": {
+      "UId": "1bab9dcf-17d5-49f8-9536-8e0064f1dce0",
+      "Name": "BaseEntity"
+    },
+    "ManagerName": "EntitySchemaManager",
+    "Caption": "MCIT Portal User Access",
+    "DependsOn": []
+  }
+}

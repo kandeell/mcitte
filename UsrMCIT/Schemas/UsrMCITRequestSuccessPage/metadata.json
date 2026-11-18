@@ -1,0 +1,43 @@
+= MetaData.Schema.UId "4d573150-0628-497f-807b-025039f47b99"
+= MetaData.Schema.A2 "UsrMCITRequestSuccessPage"
+= MetaData.Schema.A5 "742d6898-a0fa-4d2e-ae5a-84dc21971c5e"
++ MetaData.Schema.B2 {
+  "UId": "b8bc5f0e-92b8-6ca5-93a2-e56dce74e011",
+  "A2": "Button_sbwy3ve_caption",
+  "A3": "4d573150-0628-497f-807b-025039f47b99",
+  "A4": "4d573150-0628-497f-807b-025039f47b99",
+  "A5": "742d6898-a0fa-4d2e-ae5a-84dc21971c5e"
+}
++ MetaData.Schema.B2 {
+  "UId": "0b5e4fb0-a5b9-f412-3cf9-ea09a91356b3",
+  "A2": "Button_15lz1yf_caption",
+  "A3": "4d573150-0628-497f-807b-025039f47b99",
+  "A4": "4d573150-0628-497f-807b-025039f47b99",
+  "A5": "742d6898-a0fa-4d2e-ae5a-84dc21971c5e"
+}
++ MetaData.Schema.B2 {
+  "UId": "e1032b55-c6d4-32d1-66f9-22c698aef347",
+  "A2": "Label_g0nrwd9_caption",
+  "A3": "4d573150-0628-497f-807b-025039f47b99",
+  "A4": "4d573150-0628-497f-807b-025039f47b99",
+  "A5": "742d6898-a0fa-4d2e-ae5a-84dc21971c5e"
+}
++ MetaData.Schema.B2 {
+  "UId": "fe894da0-990b-dd5e-c812-d4e10bff97dd",
+  "A2": "Label_uneed8v_caption",
+  "A3": "4d573150-0628-497f-807b-025039f47b99",
+  "A4": "4d573150-0628-497f-807b-025039f47b99",
+  "A5": "742d6898-a0fa-4d2e-ae5a-84dc21971c5e"
+}
+~ MetaData.Schema.B2 [
+  "b8bc5f0e-92b8-6ca5-93a2-e56dce74e011",
+  "0b5e4fb0-a5b9-f412-3cf9-ea09a91356b3",
+  "e1032b55-c6d4-32d1-66f9-22c698aef347",
+  "fe894da0-990b-dd5e-c812-d4e10bff97dd"
+]
+= MetaData.Schema.B6 "5dcca910-bc4c-42b7-bfe0-2ad5c8cc3965"
+= MetaData.Schema.B8 "10.0.0.858"
+= MetaData.Schema.HD1 "f691e828-0b36-42a7-898f-c337e9af67d0"
++ MetaData.Schema.HD15 1
+= MetaData.Schema.HD6 "define('{0}Structure', ['{0}Resources'], function(resources) {{return {{schemaUId:'{2}',schemaName:'{3}',parentSchemaUId:'{4}',extendParent:{5},type:Terrasoft.SchemaType.ANGULAR_SCHEMA,entitySchema:'',name:'',extend:'Terrasoft.model.BaseViewModel',schema:{{leftPanel:[],rightPanel:[],actions:[],analytics:[]}},methods:{{}},controlsConfig:{{}},customBindings:{{}},bindings:{{}},parameters:{{}},schemaVersion:1,optionalProperties:{{}},schemaDifferences:function(){{\n{1}\n}}}};}});"
++ MetaData.Schema.B7 false

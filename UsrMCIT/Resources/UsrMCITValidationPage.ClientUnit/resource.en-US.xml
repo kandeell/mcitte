@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Resources Culture="en-US">
+	<Group Type="String">
+		<Items>
+			<Item Name="Caption" Value="MCIT Validation Page" />
+			<Item Name="LocalizableStrings.Button_086gu0s_caption.Value" Value="Run Validation" />
+			<Item Name="LocalizableStrings.Button_azpt0zg_caption.Value" Value="Run again" />
+			<Item Name="LocalizableStrings.Button_c5wpk9e_caption.Value" Value="Back" />
+			<Item Name="LocalizableStrings.Button_cm1pfc2_caption.Value" Value="Save as Draft" />
+			<Item Name="LocalizableStrings.Button_nu37gyn_caption.Value" Value="Continue to Review" />
+			<Item Name="LocalizableStrings.Label_5bq1hs4_caption.Value" Value="Label" />
+			<Item Name="LocalizableStrings.Label_5fzwc9b_caption.Value" Value="New VM Provisioning Request – Validation" />
+			<Item Name="LocalizableStrings.Label_8nzz5ct_caption.Value" Value="Label" />
+			<Item Name="LocalizableStrings.Label_9fsv5uo_caption.Value" Value="Validation" />
+			<Item Name="LocalizableStrings.Label_j4n92l5_caption.Value" Value="Checks request, items, contract balance, and documents before submission.  Run Validation" />
+			<Item Name="LocalizableStrings.Label_minxvi6_caption.Value" Value="Ready to run validation" />
+			<Item Name="LocalizableStrings.Label_t3r8s0r_caption.Value" Value="Create New Request · طلب جديد" />
+			<Item Name="LocalizableStrings.Label_utryyvx_caption.Value" Value="Label" />
+		</Items>
+	</Group>
+</Resources>

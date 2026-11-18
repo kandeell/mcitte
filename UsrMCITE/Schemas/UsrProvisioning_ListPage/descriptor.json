@@ -1,0 +1,14 @@
+﻿{
+  "Descriptor": {
+    "UId": "678d522d-78f9-4d6c-b11d-f8860997906b",
+    "Name": "UsrProvisioning_ListPage",
+    "ModifiedOnUtc": "\/Date(1794769631000)\/",
+    "Parent": {
+      "UId": "b7b898d0-8c77-4953-c097-23fa6800da02",
+      "Name": "ListPageV3Template"
+    },
+    "ManagerName": "ClientUnitSchemaManager",
+    "Caption": "Provisioning list page",
+    "DependsOn": []
+  }
+}

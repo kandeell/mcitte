@@ -1,0 +1,14 @@
+﻿{
+  "Descriptor": {
+    "UId": "8d6415b9-177c-467a-a8c9-b89f735f1a26",
+    "Name": "UsrDashboard_FormPage",
+    "ModifiedOnUtc": "\/Date(1794131459000)\/",
+    "Parent": {
+      "UId": "3b2e117f-8c6b-4ca5-80a2-7ebb497cddf9",
+      "Name": "PageWithTabsFreedomTemplate"
+    },
+    "ManagerName": "ClientUnitSchemaManager",
+    "Caption": "Dashboard form page",
+    "DependsOn": []
+  }
+}

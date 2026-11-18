@@ -1,0 +1,10 @@
+﻿{
+  "Descriptor": {
+    "UId": "4dddd1b2-2479-42a6-9da5-e539b90dbbcd",
+    "Name": "UsrProcess_35b6004",
+    "ModifiedOnUtc": "\/Date(1792845486000)\/",
+    "ManagerName": "ProcessSchemaManager",
+    "Caption": "Change MCIT Portal User Status",
+    "DependsOn": []
+  }
+}

@@ -1,0 +1,10 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Resources Culture="en-US">
+	<Group Type="String">
+		<Items>
+			<Item Name="Caption" Value="Virtual Machines list page" />
+			<Item Name="LocalizableStrings.Label_80khigr_caption.Value" Value="Showing VMs within your authorised scope · " />
+			<Item Name="LocalizableStrings.Label_l7lywgt_caption.Value" Value="Virtual Machines" />
+		</Items>
+	</Group>
+</Resources>

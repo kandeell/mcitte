@@ -1,0 +1,14 @@
+﻿{
+  "Descriptor": {
+    "UId": "23ef366c-e710-4d83-959c-bce27fa41492",
+    "Name": "UsrReports",
+    "ModifiedOnUtc": "\/Date(1794148832000)\/",
+    "Parent": {
+      "UId": "1bab9dcf-17d5-49f8-9536-8e0064f1dce0",
+      "Name": "BaseEntity"
+    },
+    "ManagerName": "EntitySchemaManager",
+    "Caption": "Reports",
+    "DependsOn": []
+  }
+}

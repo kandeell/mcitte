@@ -1,0 +1,67 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Resources Culture="en-US">
+	<Group Type="String">
+		<Items>
+			<Item Name="Caption" Value="VM Request Item modal page" />
+			<Item Name="LocalizableStrings.Button_2w8bqsv_caption.Value" Value="+" />
+			<Item Name="LocalizableStrings.Button_410c4xe_caption.Value" Value="+" />
+			<Item Name="LocalizableStrings.Button_4vyym5i_caption.Value" Value="Explain Calculation" />
+			<Item Name="LocalizableStrings.Button_8ygq0fy_caption.Value" Value="+" />
+			<Item Name="LocalizableStrings.Button_cnuss0y_caption.Value" Value="-" />
+			<Item Name="LocalizableStrings.Button_f4chm4k_caption.Value" Value="-" />
+			<Item Name="LocalizableStrings.Button_h0sy14z_caption.Value" Value="-" />
+			<Item Name="LocalizableStrings.Button_hq21o1u_caption.Value" Value="+" />
+			<Item Name="LocalizableStrings.Button_sh1xp6s_caption.Value" Value="-" />
+			<Item Name="LocalizableStrings.ComboBox_e5ojd34_placeholder.Value" Value="Select OS" />
+			<Item Name="LocalizableStrings.ComboBox_om38irt_placeholder.Value" Value="Select enviroment" />
+			<Item Name="LocalizableStrings.ComboBox_r070era_placeholder.Value" Value="Select Zone" />
+			<Item Name="LocalizableStrings.ExpansionPanel_3ji2gxd_title.Value" Value="Dedicated Internet - إنترنت مخصص" />
+			<Item Name="LocalizableStrings.ExpansionPanel_9jpa5hp_title.Value" Value="Additional Storage - مساحة تخزين إضافية" />
+			<Item Name="LocalizableStrings.ExpansionPanel_u0nipef_title.Value" Value="Additional RAM - ذاكرة إضافية" />
+			<Item Name="LocalizableStrings.ExpansionPanel_xdnbhmy_title.Value" Value="VPN Connection - اتصال VPN" />
+			<Item Name="LocalizableStrings.Input_1rr9nv8_placeholder.Value" Value="e.g web application server" />
+			<Item Name="LocalizableStrings.Label_0bgrz75_caption.Value" Value="- Remaining After" />
+			<Item Name="LocalizableStrings.Label_0ws9s2y_caption.Value" Value="Select service points — resources are calculated automatically from the contract configuration" />
+			<Item Name="LocalizableStrings.Label_1nacxji_caption.Value" Value="Extra RAM beyond the included allocation" />
+			<Item Name="LocalizableStrings.Label_21dnt12_caption.Value" Value="Service points and financial charges are calculated and tracked separately. يتم احتساب وتتبع نقاط الخدمة والتكاليف المالية بشكل منفصل." />
+			<Item Name="LocalizableStrings.Label_2fk6c61_caption.Value" Value="Unit price" />
+			<Item Name="LocalizableStrings.Label_2u8uulp_caption.Value" Value="Available Before" />
+			<Item Name="LocalizableStrings.Label_4dqhojg_caption.Value" Value="Quantity (Mbps)" />
+			<Item Name="LocalizableStrings.Label_556pfq1_caption.Value" Value="unit price" />
+			<Item Name="LocalizableStrings.Label_59n33m9_caption.Value" Value="Subtotal" />
+			<Item Name="LocalizableStrings.Label_7exbkcz_caption.Value" Value="Required Service Points · عدد نقاط الخدمة المطلوبة" />
+			<Item Name="LocalizableStrings.Label_90ksvi6_caption.Value" Value="FINAL VM CONFIG - التكوين النهائي" />
+			<Item Name="LocalizableStrings.Label_cgk5hpx_caption.Value" Value="Quantity (Mbps)" />
+			<Item Name="LocalizableStrings.Label_cl4yqo1_caption.Value" Value="Quantity (GB)" />
+			<Item Name="LocalizableStrings.Label_cn9r5mh_caption.Value" Value="Add-ons increase the VM configuration and create financial charges. They do not consume additional service points unless the selected contract explicitly defines otherwise." />
+			<Item Name="LocalizableStrings.Label_criardi_caption.Value" Value="unit price" />
+			<Item Name="LocalizableStrings.Label_dezafb8_caption.Value" Value="Dedicated VPN bandwidth for secure connectivity" />
+			<Item Name="LocalizableStrings.Label_dm5e3ok_caption.Value" Value="Unit price" />
+			<Item Name="LocalizableStrings.Label_gcbiu60_caption.Value" Value="Resources are calculated automatically using the selected contract's point configuration.  يتم احتساب الموارد تلقائياً وفقاً لإعدادات النقاط الخاصة بالعقد المحدد." />
+			<Item Name="LocalizableStrings.Label_hb2q7zg_caption.Value" Value="Included RAM" />
+			<Item Name="LocalizableStrings.Label_hj679z8_caption.Value" Value="Extra block storage beyond the included allocation" />
+			<Item Name="LocalizableStrings.Label_j7gy67g_caption.Value" Value="BASIC RESOURCES - الموارد الأساسية" />
+			<Item Name="LocalizableStrings.Label_jy3nckw_caption.Value" Value="Subtotal" />
+			<Item Name="LocalizableStrings.Label_lp3cp4p_caption.Value" Value="Selected Points" />
+			<Item Name="LocalizableStrings.Label_mabw5le_caption.Value" Value="Included Storage" />
+			<Item Name="LocalizableStrings.Label_ow86fn2_caption.Value" Value="OPTIONAL ADD-ONS - الإضافات الاختيارية" />
+			<Item Name="LocalizableStrings.Label_pddomln_caption.Value" Value="Min 1 · Max 20 · Balance 12,600−" />
+			<Item Name="LocalizableStrings.Label_pyim869_caption.Value" Value="POINT SUMMARY - ملخص النقاط" />
+			<Item Name="LocalizableStrings.Label_qh6jt5l_caption.Value" Value="Restored Before" />
+			<Item Name="LocalizableStrings.Label_uj0z0gr_caption.Value" Value="🟢 Remaining after:" />
+			<Item Name="LocalizableStrings.Label_v3pxknm_caption.Value" Value="Quantity (GB)" />
+			<Item Name="LocalizableStrings.Label_vqafwvw_caption.Value" Value="Subtotal" />
+			<Item Name="LocalizableStrings.Label_zlrxj9a_caption.Value" Value="12,599 pts" />
+			<Item Name="LocalizableStrings.Label_zq4ghmx_caption.Value" Value="Dedicated internet bandwidth allocation" />
+			<Item Name="LocalizableStrings.Label_zq75fbr_caption.Value" Value="Subtotal" />
+			<Item Name="LocalizableStrings.Label_zx1fa65_caption.Value" Value="Included CPU" />
+			<Item Name="LocalizableStrings.Label_zz8d3ag_caption.Value" Value="VM Purpose &amp; Configuration" />
+			<Item Name="LocalizableStrings.NumberInput_y7a47kr_label.Value" Value="ي" />
+			<Item Name="LocalizableStrings.PageTitle_caption.Value" Value="Add VM Item - إضافة الخادم للطلب" />
+			<Item Name="LocalizableStrings.SaveButton_caption.Value" Value="Add VM Item - إضافة الخادم للطلب" />
+			<Item Name="LocalizableStrings.addRecord_hmijvxs_caption.Value" Value="Add new" />
+			<Item Name="LocalizableStrings.addRecord_i25cg3x_caption.Value" Value="Add new" />
+			<Item Name="LocalizableStrings.addRecord_m2h72cg_caption.Value" Value="Add new" />
+		</Items>
+	</Group>
+</Resources>

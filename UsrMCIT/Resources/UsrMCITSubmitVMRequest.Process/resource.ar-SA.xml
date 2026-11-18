@@ -1,0 +1,47 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Resources Culture="ar-SA">
+	<Group Type="String">
+		<Items>
+			<Item Name="BaseElements.ActivityUserTask1.Parameters.Account.Caption" Value="الحساب" />
+			<Item Name="BaseElements.ActivityUserTask1.Parameters.ActivityCategory.Caption" Value="الفئة" />
+			<Item Name="BaseElements.ActivityUserTask1.Parameters.ActivityPriority.Caption" Value="الأولوية" />
+			<Item Name="BaseElements.ActivityUserTask1.Parameters.ActivityResult.Caption" Value="حصيلة النشاط" />
+			<Item Name="BaseElements.ActivityUserTask1.Parameters.Application.Caption" Value="تطبيق" />
+			<Item Name="BaseElements.ActivityUserTask1.Parameters.Case.Caption" Value="حالة" />
+			<Item Name="BaseElements.ActivityUserTask1.Parameters.Change.Caption" Value="تغيير" />
+			<Item Name="BaseElements.ActivityUserTask1.Parameters.Contact.Caption" Value="جهة الاتصال" />
+			<Item Name="BaseElements.ActivityUserTask1.Parameters.Contract.Caption" Value="عقد" />
+			<Item Name="BaseElements.ActivityUserTask1.Parameters.CurrentActivityId.Caption" Value="معرف المهمة" />
+			<Item Name="BaseElements.ActivityUserTask1.Parameters.Document.Caption" Value="وثيقة" />
+			<Item Name="BaseElements.ActivityUserTask1.Parameters.Duration.Caption" Value="المدة" />
+			<Item Name="BaseElements.ActivityUserTask1.Parameters.DurationPeriod.Caption" Value="المدة (الفترة)" />
+			<Item Name="BaseElements.ActivityUserTask1.Parameters.ExecutionContext.Caption" Value="سياق التنفيذ" />
+			<Item Name="BaseElements.ActivityUserTask1.Parameters.FinApplication.Caption" Value="تطبيق" />
+			<Item Name="BaseElements.ActivityUserTask1.Parameters.Incident.Caption" Value="عارض" />
+			<Item Name="BaseElements.ActivityUserTask1.Parameters.InformationOnStep.Caption" Value="معلومات عن الخطوة" />
+			<Item Name="BaseElements.ActivityUserTask1.Parameters.Invoice.Caption" Value="الفاتورة" />
+			<Item Name="BaseElements.ActivityUserTask1.Parameters.IsActivityCompleted.Caption" Value="النشاط مكتمل" />
+			<Item Name="BaseElements.ActivityUserTask1.Parameters.Lead.Caption" Value="قيادة" />
+			<Item Name="BaseElements.ActivityUserTask1.Parameters.Listing.Caption" Value="قوائم" />
+			<Item Name="BaseElements.ActivityUserTask1.Parameters.Opportunity.Caption" Value="فرصة" />
+			<Item Name="BaseElements.ActivityUserTask1.Parameters.Order.Caption" Value="طلب" />
+			<Item Name="BaseElements.ActivityUserTask1.Parameters.OwnerId.Caption" Value="المالك" />
+			<Item Name="BaseElements.ActivityUserTask1.Parameters.Problem.Caption" Value="المشكلة" />
+			<Item Name="BaseElements.ActivityUserTask1.Parameters.Project.Caption" Value="مشروع" />
+			<Item Name="BaseElements.ActivityUserTask1.Parameters.Property.Caption" Value="خصائص" />
+			<Item Name="BaseElements.ActivityUserTask1.Parameters.QueueItem.Caption" Value="عنصر قائمة انتظار" />
+			<Item Name="BaseElements.ActivityUserTask1.Parameters.Recommendation.Caption" Value="توصية" />
+			<Item Name="BaseElements.ActivityUserTask1.Parameters.Release.Caption" Value="تحرير" />
+			<Item Name="BaseElements.ActivityUserTask1.Parameters.RemindBefore.Caption" Value="تذكير المالك مقدما" />
+			<Item Name="BaseElements.ActivityUserTask1.Parameters.RemindBeforePeriod.Caption" Value="قم بتذكير المالك مقدما (الفترة)" />
+			<Item Name="BaseElements.ActivityUserTask1.Parameters.Requests.Caption" Value="طلب" />
+			<Item Name="BaseElements.ActivityUserTask1.Parameters.ShowExecutionPage.Caption" Value="إظهار صفحة التنفيذ تلقائياً" />
+			<Item Name="BaseElements.ActivityUserTask1.Parameters.ShowInScheduler.Caption" Value="أدرج في جدول الأعمال" />
+			<Item Name="BaseElements.ActivityUserTask1.Parameters.StartIn.Caption" Value="بدء التنفيذ في" />
+			<Item Name="BaseElements.ActivityUserTask1.Parameters.StartInPeriod.Caption" Value="بدء التنفيذ في (فترة)" />
+			<Item Name="BaseElements.LinkEntityToProcessUserTask1.Parameters.EntityId.Caption" Value="الكائن" />
+			<Item Name="BaseElements.LinkEntityToProcessUserTask1.Parameters.EntitySchemaId.Caption" Value="مخطط الكائن" />
+			<Item Name="Caption" Value="MCIT VM Request Submission" />
+		</Items>
+	</Group>
+</Resources>

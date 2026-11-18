@@ -1,0 +1,46 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Resources Culture="en-US">
+	<Group Type="String">
+		<Items>
+			<Item Name="Caption" Value="MCIT Dashboard Page" />
+			<Item Name="LocalizableStrings.Button_10jnoef_caption.Value" Value="1.Notifications" />
+			<Item Name="LocalizableStrings.Button_58p1fy7_caption.Value" Value="VM Inventory" />
+			<Item Name="LocalizableStrings.Button_cwl3a5k_caption.Value" Value="Create New Request" />
+			<Item Name="LocalizableStrings.Button_g52zqtm_caption.Value" Value="Download Report" />
+			<Item Name="LocalizableStrings.Button_jnkidpe_caption.Value" Value="Create New VM Request" />
+			<Item Name="LocalizableStrings.Button_mhxx4wf_caption.Value" Value="View All Requests" />
+			<Item Name="LocalizableStrings.Button_xbn9a29_caption.Value" Value="View My Requests" />
+			<Item Name="LocalizableStrings.ChartWidget_uunh7ei_title.Value" Value="New chart" />
+			<Item Name="LocalizableStrings.IndicatorWidget_21ie3mb_hint.Value" Value="Components.IndicatorWidget.Hint" />
+			<Item Name="LocalizableStrings.IndicatorWidget_21ie3mb_title.Value" Value="New metric" />
+			<Item Name="LocalizableStrings.IndicatorWidget_2deae6n_hint.Value" Value="Components.IndicatorWidget.Hint" />
+			<Item Name="LocalizableStrings.IndicatorWidget_2deae6n_title.Value" Value="New metric" />
+			<Item Name="LocalizableStrings.IndicatorWidget_2qag9s9_hint.Value" Value="Components.IndicatorWidget.Hint" />
+			<Item Name="LocalizableStrings.IndicatorWidget_2qag9s9_title.Value" Value="New metric" />
+			<Item Name="LocalizableStrings.IndicatorWidget_6y33pz0_hint.Value" Value="Components.IndicatorWidget.Hint" />
+			<Item Name="LocalizableStrings.IndicatorWidget_6y33pz0_title.Value" Value="New metric" />
+			<Item Name="LocalizableStrings.IndicatorWidget_bikimy9_hint.Value" Value="Components.IndicatorWidget.Hint" />
+			<Item Name="LocalizableStrings.IndicatorWidget_bikimy9_title.Value" Value="New metric" />
+			<Item Name="LocalizableStrings.IndicatorWidget_d2pmpjz_hint.Value" Value="Components.IndicatorWidget.Hint" />
+			<Item Name="LocalizableStrings.IndicatorWidget_d2pmpjz_title.Value" Value="New metric" />
+			<Item Name="LocalizableStrings.IndicatorWidget_m4ini6n_hint.Value" Value="Components.IndicatorWidget.Hint" />
+			<Item Name="LocalizableStrings.IndicatorWidget_m4ini6n_title.Value" Value="New metric" />
+			<Item Name="LocalizableStrings.IndicatorWidget_mywhd95_hint.Value" Value="Components.IndicatorWidget.Hint" />
+			<Item Name="LocalizableStrings.IndicatorWidget_mywhd95_title.Value" Value="New metric" />
+			<Item Name="LocalizableStrings.IndicatorWidget_uv7nsq9_hint.Value" Value="Components.IndicatorWidget.Hint" />
+			<Item Name="LocalizableStrings.IndicatorWidget_uv7nsq9_title.Value" Value="New metric" />
+			<Item Name="LocalizableStrings.IndicatorWidget_uzmusix_hint.Value" Value="Components.IndicatorWidget.Hint" />
+			<Item Name="LocalizableStrings.IndicatorWidget_uzmusix_title.Value" Value="New metric" />
+			<Item Name="LocalizableStrings.IndicatorWidget_w5wtvza_hint.Value" Value="Components.IndicatorWidget.Hint" />
+			<Item Name="LocalizableStrings.IndicatorWidget_w5wtvza_title.Value" Value="New metric" />
+			<Item Name="LocalizableStrings.Label_9pxpkh6_caption.Value" Value="Action Required: 1 request require correction. Please review and resubmit before the deadline." />
+			<Item Name="LocalizableStrings.Label_eeu90av_caption.Value" Value="Welcome" />
+			<Item Name="LocalizableStrings.Label_gjocyzg_caption.Value" Value="Recent Requests" />
+			<Item Name="LocalizableStrings.Label_hakc153_caption.Value" Value="Quick Actions" />
+			<Item Name="LocalizableStrings.Label_jmay2us_caption.Value" Value="Contract Point Balance" />
+			<Item Name="LocalizableStrings.Label_m7t18sx_caption.Value" Value="MCIT Service Portal" />
+			<Item Name="LocalizableStrings.Label_p8twp1e_caption.Value" Value="Status Distribution" />
+			<Item Name="LocalizableStrings.Label_qvbpyxb_caption.Value" Value="Notifications" />
+		</Items>
+	</Group>
+</Resources>

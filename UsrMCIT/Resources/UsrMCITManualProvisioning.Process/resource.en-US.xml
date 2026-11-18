@@ -1,0 +1,282 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Resources Culture="en-US">
+	<Group Type="String">
+		<Items>
+			<Item Name="BaseElements.ActivityUserTask1.Caption" Value="Manual VM Provisioning" />
+			<Item Name="BaseElements.ActivityUserTask1.Parameters.Account.Caption" Value="Account" />
+			<Item Name="BaseElements.ActivityUserTask1.Parameters.ActivityCategory.Caption" Value="Category" />
+			<Item Name="BaseElements.ActivityUserTask1.Parameters.ActivityCategory.DisplayValue" Value="To do" />
+			<Item Name="BaseElements.ActivityUserTask1.Parameters.ActivityPriority.Caption" Value="Priority" />
+			<Item Name="BaseElements.ActivityUserTask1.Parameters.ActivityPriority.DisplayValue" Value="ab96fa02-7fe6-df11-971b-001d60e938c6" />
+			<Item Name="BaseElements.ActivityUserTask1.Parameters.ActivityResult.Caption" Value="Result of activity" />
+			<Item Name="BaseElements.ActivityUserTask1.Parameters.Application.Caption" Value="Application" />
+			<Item Name="BaseElements.ActivityUserTask1.Parameters.Case.Caption" Value="Case" />
+			<Item Name="BaseElements.ActivityUserTask1.Parameters.Change.Caption" Value="Change" />
+			<Item Name="BaseElements.ActivityUserTask1.Parameters.Contact.Caption" Value="Contact" />
+			<Item Name="BaseElements.ActivityUserTask1.Parameters.Contract.Caption" Value="Contract" />
+			<Item Name="BaseElements.ActivityUserTask1.Parameters.CurrentActivityId.Caption" Value="Task Id" />
+			<Item Name="BaseElements.ActivityUserTask1.Parameters.Document.Caption" Value="Document" />
+			<Item Name="BaseElements.ActivityUserTask1.Parameters.Duration.Caption" Value="Duration" />
+			<Item Name="BaseElements.ActivityUserTask1.Parameters.Duration.DisplayValue" Value="1" />
+			<Item Name="BaseElements.ActivityUserTask1.Parameters.DurationPeriod.Caption" Value="Duration (period)" />
+			<Item Name="BaseElements.ActivityUserTask1.Parameters.DurationPeriod.DisplayValue" Value="days" />
+			<Item Name="BaseElements.ActivityUserTask1.Parameters.ExecutionContext.Caption" Value="Execution context" />
+			<Item Name="BaseElements.ActivityUserTask1.Parameters.FinApplication.Caption" Value="Application" />
+			<Item Name="BaseElements.ActivityUserTask1.Parameters.Incident.Caption" Value="Incident" />
+			<Item Name="BaseElements.ActivityUserTask1.Parameters.InformationOnStep.Caption" Value="Information on step" />
+			<Item Name="BaseElements.ActivityUserTask1.Parameters.Invoice.Caption" Value="Invoice" />
+			<Item Name="BaseElements.ActivityUserTask1.Parameters.IsActivityCompleted.Caption" Value="Activity completed" />
+			<Item Name="BaseElements.ActivityUserTask1.Parameters.IsActivityCompleted.DisplayValue" Value="false" />
+			<Item Name="BaseElements.ActivityUserTask1.Parameters.Lead.Caption" Value="Lead" />
+			<Item Name="BaseElements.ActivityUserTask1.Parameters.Listing.Caption" Value="Listings" />
+			<Item Name="BaseElements.ActivityUserTask1.Parameters.OmniChat.Caption" Value="Chat" />
+			<Item Name="BaseElements.ActivityUserTask1.Parameters.Opportunity.Caption" Value="Opportunity" />
+			<Item Name="BaseElements.ActivityUserTask1.Parameters.Order.Caption" Value="Order" />
+			<Item Name="BaseElements.ActivityUserTask1.Parameters.OwnerId.Caption" Value="Owner" />
+			<Item Name="BaseElements.ActivityUserTask1.Parameters.Problem.Caption" Value="Problem" />
+			<Item Name="BaseElements.ActivityUserTask1.Parameters.Project.Caption" Value="Project" />
+			<Item Name="BaseElements.ActivityUserTask1.Parameters.Property.Caption" Value="Properties" />
+			<Item Name="BaseElements.ActivityUserTask1.Parameters.QueueItem.Caption" Value="Queue item" />
+			<Item Name="BaseElements.ActivityUserTask1.Parameters.Recommendation.Caption" Value="Recommendation" />
+			<Item Name="BaseElements.ActivityUserTask1.Parameters.Recommendation.DisplayValue" Value="Provision VM Request" />
+			<Item Name="BaseElements.ActivityUserTask1.Parameters.Recommendation.Value" Value="Provision VM Request" />
+			<Item Name="BaseElements.ActivityUserTask1.Parameters.Release.Caption" Value="Release" />
+			<Item Name="BaseElements.ActivityUserTask1.Parameters.RemindBefore.Caption" Value="Remind owner in advance" />
+			<Item Name="BaseElements.ActivityUserTask1.Parameters.RemindBefore.DisplayValue" Value="0" />
+			<Item Name="BaseElements.ActivityUserTask1.Parameters.RemindBeforePeriod.Caption" Value="Remind owner in advance (period)" />
+			<Item Name="BaseElements.ActivityUserTask1.Parameters.RemindBeforePeriod.DisplayValue" Value="0" />
+			<Item Name="BaseElements.ActivityUserTask1.Parameters.Requests.Caption" Value="Request" />
+			<Item Name="BaseElements.ActivityUserTask1.Parameters.RoleId.Caption" Value="Role" />
+			<Item Name="BaseElements.ActivityUserTask1.Parameters.RoleId.DisplayValue" Value="[#Lookup.Roles (view).TE VM Lifecycle Operator.a2c5bbb3-76cc-45ad-9bb5-9d11668f4b18#]" />
+			<Item Name="BaseElements.ActivityUserTask1.Parameters.ShowExecutionPage.Caption" Value="Show execution page automatically" />
+			<Item Name="BaseElements.ActivityUserTask1.Parameters.ShowExecutionPage.DisplayValue" Value="false" />
+			<Item Name="BaseElements.ActivityUserTask1.Parameters.ShowInScheduler.Caption" Value="Show in calendar" />
+			<Item Name="BaseElements.ActivityUserTask1.Parameters.ShowInScheduler.DisplayValue" Value="false" />
+			<Item Name="BaseElements.ActivityUserTask1.Parameters.StartIn.Caption" Value="Start executing in" />
+			<Item Name="BaseElements.ActivityUserTask1.Parameters.StartIn.DisplayValue" Value="0" />
+			<Item Name="BaseElements.ActivityUserTask1.Parameters.StartInPeriod.Caption" Value="Start executing in (period)" />
+			<Item Name="BaseElements.ActivityUserTask1.Parameters.StartInPeriod.DisplayValue" Value="0" />
+			<Item Name="BaseElements.ActivityUserTask1.Parameters.UsrUsrContractConfigVersion.Caption" Value="Contract Configuration Version" />
+			<Item Name="BaseElements.ActivityUserTask1.Parameters.UsrUsrVirtualMachine.Caption" Value="Virtual Machine" />
+			<Item Name="BaseElements.AddDataUserTask1.Caption" Value="Record Provisioning Success" />
+			<Item Name="BaseElements.AddDataUserTask1.Parameters.ConsiderTimeInFilter.Caption" Value="Consider time in the filter" />
+			<Item Name="BaseElements.AddDataUserTask1.Parameters.ConsiderTimeInFilter.DisplayValue" Value="true" />
+			<Item Name="BaseElements.AddDataUserTask1.Parameters.DataSourceFilters.Caption" Value="Data source filters" />
+			<Item Name="BaseElements.AddDataUserTask1.Parameters.EntitySchemaId.Caption" Value="Object" />
+			<Item Name="BaseElements.AddDataUserTask1.Parameters.FilterEntitySchemaId.Caption" Value="Object" />
+			<Item Name="BaseElements.AddDataUserTask1.Parameters.RecordAddMode.Caption" Value="Record adding mode" />
+			<Item Name="BaseElements.AddDataUserTask1.Parameters.RecordDefValues.Caption" Value="Set column values" />
+			<Item Name="BaseElements.AddDataUserTask1.Parameters.RecordId.Caption" Value="Created record Id" />
+			<Item Name="BaseElements.AutoGeneratedPageUserTask1.Caption" Value="Record Provisioning Outcome" />
+			<Item Name="BaseElements.AutoGeneratedPageUserTask1.Parameters.Account.Caption" Value="Account" />
+			<Item Name="BaseElements.AutoGeneratedPageUserTask1.Parameters.ActivityPriority.Caption" Value="Priority" />
+			<Item Name="BaseElements.AutoGeneratedPageUserTask1.Parameters.ActivityPriority.DisplayValue" Value="ab96fa02-7fe6-df11-971b-001d60e938c6" />
+			<Item Name="BaseElements.AutoGeneratedPageUserTask1.Parameters.ActivityResult.Caption" Value="Result of activity" />
+			<Item Name="BaseElements.AutoGeneratedPageUserTask1.Parameters.Buttons.Caption" Value="Buttons" />
+			<Item Name="BaseElements.AutoGeneratedPageUserTask1.Parameters.Buttons.DisplayValue" Value="{&quot;$type&quot;:&quot;System.Collections.Generic.List`1[[System.Collections.Generic.Dictionary`2[[System.String, mscorlib],[System.Object, mscorlib]], mscorlib]], mscorlib&quot;,&quot;$values&quot;:[{&quot;$type&quot;:&quot;System.Collections.Generic.Dictionary`2[[System.String, mscorlib],[System.Object, mscorlib]], mscorlib&quot;,&quot;Id&quot;:&quot;62793970-a3eb-439c-ada9-eaa9c989117b&quot;,&quot;isEnabled&quot;:true,&quot;performValidation&quot;:true,&quot;caption&quot;:&quot;Provisioned&quot;,&quot;name&quot;:&quot;ProvisionSuccess&quot;,&quot;style&quot;:&quot;green&quot;,&quot;generateSignal&quot;:&quot;&quot;},{&quot;$type&quot;:&quot;System.Collections.Generic.Dictionary`2[[System.String, mscorlib],[System.Object, mscorlib]], mscorlib&quot;,&quot;Id&quot;:&quot;4c0f1ee7-35a4-421f-9c55-e9fc75e4f830&quot;,&quot;isEnabled&quot;:true,&quot;performValidation&quot;:true,&quot;caption&quot;:&quot;Provisioning Failed&quot;,&quot;name&quot;:&quot;ProvisionFailed&quot;,&quot;style&quot;:&quot;red&quot;,&quot;generateSignal&quot;:&quot;&quot;}]}" />
+			<Item Name="BaseElements.AutoGeneratedPageUserTask1.Parameters.Buttons.Value" Value="{&quot;$type&quot;:&quot;System.Collections.Generic.List`1[[System.Collections.Generic.Dictionary`2[[System.String, mscorlib],[System.Object, mscorlib]], mscorlib]], mscorlib&quot;,&quot;$values&quot;:[{&quot;$type&quot;:&quot;System.Collections.Generic.Dictionary`2[[System.String, mscorlib],[System.Object, mscorlib]], mscorlib&quot;,&quot;Id&quot;:&quot;62793970-a3eb-439c-ada9-eaa9c989117b&quot;,&quot;isEnabled&quot;:true,&quot;performValidation&quot;:true,&quot;caption&quot;:&quot;Provisioned&quot;,&quot;name&quot;:&quot;ProvisionSuccess&quot;,&quot;style&quot;:&quot;green&quot;,&quot;generateSignal&quot;:&quot;&quot;},{&quot;$type&quot;:&quot;System.Collections.Generic.Dictionary`2[[System.String, mscorlib],[System.Object, mscorlib]], mscorlib&quot;,&quot;Id&quot;:&quot;4c0f1ee7-35a4-421f-9c55-e9fc75e4f830&quot;,&quot;isEnabled&quot;:true,&quot;performValidation&quot;:true,&quot;caption&quot;:&quot;Provisioning Failed&quot;,&quot;name&quot;:&quot;ProvisionFailed&quot;,&quot;style&quot;:&quot;red&quot;,&quot;generateSignal&quot;:&quot;&quot;}]}" />
+			<Item Name="BaseElements.AutoGeneratedPageUserTask1.Parameters.Contact.Caption" Value="Contact" />
+			<Item Name="BaseElements.AutoGeneratedPageUserTask1.Parameters.CreateActivity.Caption" Value="Create activity" />
+			<Item Name="BaseElements.AutoGeneratedPageUserTask1.Parameters.CreateActivity.DisplayValue" Value="false" />
+			<Item Name="BaseElements.AutoGeneratedPageUserTask1.Parameters.CurrentActivityId.Caption" Value="Task Id" />
+			<Item Name="BaseElements.AutoGeneratedPageUserTask1.Parameters.Duration.Caption" Value="Duration" />
+			<Item Name="BaseElements.AutoGeneratedPageUserTask1.Parameters.Duration.DisplayValue" Value="5" />
+			<Item Name="BaseElements.AutoGeneratedPageUserTask1.Parameters.DurationPeriod.Caption" Value="Duration (period)" />
+			<Item Name="BaseElements.AutoGeneratedPageUserTask1.Parameters.DurationPeriod.DisplayValue" Value="0" />
+			<Item Name="BaseElements.AutoGeneratedPageUserTask1.Parameters.Elements.Caption" Value="Items" />
+			<Item Name="BaseElements.AutoGeneratedPageUserTask1.Parameters.Elements.DisplayValue" Value="{&quot;$type&quot;:&quot;System.Collections.Generic.List`1[[System.Collections.Generic.Dictionary`2[[System.String, mscorlib],[System.Object, mscorlib]], mscorlib]], mscorlib&quot;,&quot;$values&quot;:[{&quot;$type&quot;:&quot;System.Collections.Generic.Dictionary`2[[System.String, mscorlib],[System.Object, mscorlib]], mscorlib&quot;,&quot;Id&quot;:&quot;5120bb99-b56a-4a05-a648-acd607936265&quot;,&quot;controlEditType&quot;:&quot;1&quot;,&quot;caption&quot;:&quot;VM Identifier&quot;,&quot;name&quot;:&quot;VMIdentifier&quot;,&quot;text&quot;:&quot;&quot;,&quot;isMultiline&quot;:false,&quot;isRequired&quot;:false,&quot;canBeMinimized&quot;:true,&quot;minimized&quot;:false,&quot;dataSource&quot;:null,&quot;dataFilter&quot;:&quot;&quot;,&quot;controlDataValueType&quot;:&quot;10&quot;,&quot;dateTimeFormat&quot;:&quot;7&quot;},{&quot;$type&quot;:&quot;System.Collections.Generic.Dictionary`2[[System.String, mscorlib],[System.Object, mscorlib]], mscorlib&quot;,&quot;Id&quot;:&quot;03089ec4-922e-4823-a73c-1c87fe3fabc6&quot;,&quot;controlEditType&quot;:&quot;1&quot;,&quot;caption&quot;:&quot;Hostname&quot;,&quot;name&quot;:&quot;VMHostname&quot;,&quot;text&quot;:&quot;&quot;,&quot;isMultiline&quot;:false,&quot;isRequired&quot;:false,&quot;canBeMinimized&quot;:true,&quot;minimized&quot;:false,&quot;dataSource&quot;:null,&quot;dataFilter&quot;:&quot;&quot;,&quot;controlDataValueType&quot;:&quot;10&quot;,&quot;dateTimeFormat&quot;:&quot;7&quot;},{&quot;$type&quot;:&quot;System.Collections.Generic.Dictionary`2[[System.String, mscorlib],[System.Object, mscorlib]], mscorlib&quot;,&quot;Id&quot;:&quot;f964ce83-c94e-4e77-9886-76f13d6b4080&quot;,&quot;controlEditType&quot;:&quot;1&quot;,&quot;caption&quot;:&quot;IP Address&quot;,&quot;name&quot;:&quot;VMIPAddress&quot;,&quot;text&quot;:&quot;&quot;,&quot;isMultiline&quot;:false,&quot;isRequired&quot;:false,&quot;canBeMinimized&quot;:true,&quot;minimized&quot;:false,&quot;dataSource&quot;:null,&quot;dataFilter&quot;:&quot;&quot;,&quot;controlDataValueType&quot;:&quot;10&quot;,&quot;dateTimeFormat&quot;:&quot;7&quot;},{&quot;$type&quot;:&quot;System.Collections.Generic.Dictionary`2[[System.String, mscorlib],[System.Object, mscorlib]], mscorlib&quot;,&quot;Id&quot;:&quot;4738784f-4a13-4dae-acf1-6396a191f6f9&quot;,&quot;controlEditType&quot;:&quot;1&quot;,&quot;caption&quot;:&quot;Provisioning Notes&quot;,&quot;name&quot;:&quot;ProvisioningNotes&quot;,&quot;text&quot;:&quot;&quot;,&quot;isMultiline&quot;:true,&quot;isRequired&quot;:false,&quot;canBeMinimized&quot;:true,&quot;minimized&quot;:false,&quot;dataSource&quot;:null,&quot;dataFilter&quot;:&quot;&quot;,&quot;controlDataValueType&quot;:&quot;10&quot;,&quot;dateTimeFormat&quot;:&quot;7&quot;},{&quot;$type&quot;:&quot;System.Collections.Generic.Dictionary`2[[System.String, mscorlib],[System.Object, mscorlib]], mscorlib&quot;,&quot;Id&quot;:&quot;8e26c233-9dce-4899-8c82-5bf6a286a8a6&quot;,&quot;controlEditType&quot;:&quot;1&quot;,&quot;caption&quot;:&quot;Failure Reason&quot;,&quot;name&quot;:&quot;FailureReason&quot;,&quot;text&quot;:&quot;&quot;,&quot;isMultiline&quot;:true,&quot;isRequired&quot;:false,&quot;canBeMinimized&quot;:true,&quot;minimized&quot;:false,&quot;dataSource&quot;:null,&quot;dataFilter&quot;:&quot;&quot;,&quot;controlDataValueType&quot;:&quot;10&quot;,&quot;dateTimeFormat&quot;:&quot;7&quot;}]}" />
+			<Item Name="BaseElements.AutoGeneratedPageUserTask1.Parameters.Elements.Value" Value="{&quot;$type&quot;:&quot;System.Collections.Generic.List`1[[System.Collections.Generic.Dictionary`2[[System.String, mscorlib],[System.Object, mscorlib]], mscorlib]], mscorlib&quot;,&quot;$values&quot;:[{&quot;$type&quot;:&quot;System.Collections.Generic.Dictionary`2[[System.String, mscorlib],[System.Object, mscorlib]], mscorlib&quot;,&quot;Id&quot;:&quot;5120bb99-b56a-4a05-a648-acd607936265&quot;,&quot;controlEditType&quot;:&quot;1&quot;,&quot;caption&quot;:&quot;VM Identifier&quot;,&quot;name&quot;:&quot;VMIdentifier&quot;,&quot;text&quot;:&quot;&quot;,&quot;isMultiline&quot;:false,&quot;isRequired&quot;:false,&quot;canBeMinimized&quot;:true,&quot;minimized&quot;:false,&quot;dataSource&quot;:null,&quot;dataFilter&quot;:&quot;&quot;,&quot;controlDataValueType&quot;:&quot;10&quot;,&quot;dateTimeFormat&quot;:&quot;7&quot;},{&quot;$type&quot;:&quot;System.Collections.Generic.Dictionary`2[[System.String, mscorlib],[System.Object, mscorlib]], mscorlib&quot;,&quot;Id&quot;:&quot;03089ec4-922e-4823-a73c-1c87fe3fabc6&quot;,&quot;controlEditType&quot;:&quot;1&quot;,&quot;caption&quot;:&quot;Hostname&quot;,&quot;name&quot;:&quot;VMHostname&quot;,&quot;text&quot;:&quot;&quot;,&quot;isMultiline&quot;:false,&quot;isRequired&quot;:false,&quot;canBeMinimized&quot;:true,&quot;minimized&quot;:false,&quot;dataSource&quot;:null,&quot;dataFilter&quot;:&quot;&quot;,&quot;controlDataValueType&quot;:&quot;10&quot;,&quot;dateTimeFormat&quot;:&quot;7&quot;},{&quot;$type&quot;:&quot;System.Collections.Generic.Dictionary`2[[System.String, mscorlib],[System.Object, mscorlib]], mscorlib&quot;,&quot;Id&quot;:&quot;f964ce83-c94e-4e77-9886-76f13d6b4080&quot;,&quot;controlEditType&quot;:&quot;1&quot;,&quot;caption&quot;:&quot;IP Address&quot;,&quot;name&quot;:&quot;VMIPAddress&quot;,&quot;text&quot;:&quot;&quot;,&quot;isMultiline&quot;:false,&quot;isRequired&quot;:false,&quot;canBeMinimized&quot;:true,&quot;minimized&quot;:false,&quot;dataSource&quot;:null,&quot;dataFilter&quot;:&quot;&quot;,&quot;controlDataValueType&quot;:&quot;10&quot;,&quot;dateTimeFormat&quot;:&quot;7&quot;},{&quot;$type&quot;:&quot;System.Collections.Generic.Dictionary`2[[System.String, mscorlib],[System.Object, mscorlib]], mscorlib&quot;,&quot;Id&quot;:&quot;4738784f-4a13-4dae-acf1-6396a191f6f9&quot;,&quot;controlEditType&quot;:&quot;1&quot;,&quot;caption&quot;:&quot;Provisioning Notes&quot;,&quot;name&quot;:&quot;ProvisioningNotes&quot;,&quot;text&quot;:&quot;&quot;,&quot;isMultiline&quot;:true,&quot;isRequired&quot;:false,&quot;canBeMinimized&quot;:true,&quot;minimized&quot;:false,&quot;dataSource&quot;:null,&quot;dataFilter&quot;:&quot;&quot;,&quot;controlDataValueType&quot;:&quot;10&quot;,&quot;dateTimeFormat&quot;:&quot;7&quot;},{&quot;$type&quot;:&quot;System.Collections.Generic.Dictionary`2[[System.String, mscorlib],[System.Object, mscorlib]], mscorlib&quot;,&quot;Id&quot;:&quot;8e26c233-9dce-4899-8c82-5bf6a286a8a6&quot;,&quot;controlEditType&quot;:&quot;1&quot;,&quot;caption&quot;:&quot;Failure Reason&quot;,&quot;name&quot;:&quot;FailureReason&quot;,&quot;text&quot;:&quot;&quot;,&quot;isMultiline&quot;:true,&quot;isRequired&quot;:false,&quot;canBeMinimized&quot;:true,&quot;minimized&quot;:false,&quot;dataSource&quot;:null,&quot;dataFilter&quot;:&quot;&quot;,&quot;controlDataValueType&quot;:&quot;10&quot;,&quot;dateTimeFormat&quot;:&quot;7&quot;}]}" />
+			<Item Name="BaseElements.AutoGeneratedPageUserTask1.Parameters.EntityId.Caption" Value="Object" />
+			<Item Name="BaseElements.AutoGeneratedPageUserTask1.Parameters.EntityId.DisplayValue" Value="[#StartSignal1.Unique identifier of record#]" />
+			<Item Name="BaseElements.AutoGeneratedPageUserTask1.Parameters.EntitySchemaUId.Caption" Value="Object schema" />
+			<Item Name="BaseElements.AutoGeneratedPageUserTask1.Parameters.EntitySchemaUId.DisplayValue" Value="VM Request" />
+			<Item Name="BaseElements.AutoGeneratedPageUserTask1.Parameters.EntryPointId.Caption" Value="Entry point" />
+			<Item Name="BaseElements.AutoGeneratedPageUserTask1.Parameters.ExtendedClientModule.Caption" Value="Extending custom module" />
+			<Item Name="BaseElements.AutoGeneratedPageUserTask1.Parameters.FailureReason.Caption" Value="Failure Reason" />
+			<Item Name="BaseElements.AutoGeneratedPageUserTask1.Parameters.InformationOnStep.Caption" Value="Information on step" />
+			<Item Name="BaseElements.AutoGeneratedPageUserTask1.Parameters.IsActivityCompleted.Caption" Value="Activity completed" />
+			<Item Name="BaseElements.AutoGeneratedPageUserTask1.Parameters.IsActivityCompleted.DisplayValue" Value="false" />
+			<Item Name="BaseElements.AutoGeneratedPageUserTask1.Parameters.IsRunning.Caption" Value="Running" />
+			<Item Name="BaseElements.AutoGeneratedPageUserTask1.Parameters.OmniChat.Caption" Value="Chat" />
+			<Item Name="BaseElements.AutoGeneratedPageUserTask1.Parameters.OwnerId.Caption" Value="Owner" />
+			<Item Name="BaseElements.AutoGeneratedPageUserTask1.Parameters.PressedButtonCode.Caption" Value="Code of the button that the user clicked" />
+			<Item Name="BaseElements.AutoGeneratedPageUserTask1.Parameters.ProvisioningNotes.Caption" Value="Provisioning Notes" />
+			<Item Name="BaseElements.AutoGeneratedPageUserTask1.Parameters.Recommendation.Caption" Value="Recommendation" />
+			<Item Name="BaseElements.AutoGeneratedPageUserTask1.Parameters.RemindBefore.Caption" Value="Remind owner in advance" />
+			<Item Name="BaseElements.AutoGeneratedPageUserTask1.Parameters.RemindBefore.DisplayValue" Value="0" />
+			<Item Name="BaseElements.AutoGeneratedPageUserTask1.Parameters.RemindBeforePeriod.Caption" Value="Remind owner in advance (period)" />
+			<Item Name="BaseElements.AutoGeneratedPageUserTask1.Parameters.RemindBeforePeriod.DisplayValue" Value="0" />
+			<Item Name="BaseElements.AutoGeneratedPageUserTask1.Parameters.RoleId.Caption" Value="Role" />
+			<Item Name="BaseElements.AutoGeneratedPageUserTask1.Parameters.RoleId.DisplayValue" Value="[#Lookup.Roles (view).TE VM Lifecycle Operator.a2c5bbb3-76cc-45ad-9bb5-9d11668f4b18#]" />
+			<Item Name="BaseElements.AutoGeneratedPageUserTask1.Parameters.ShowExecutionPage.Caption" Value="Show execution page automatically" />
+			<Item Name="BaseElements.AutoGeneratedPageUserTask1.Parameters.ShowExecutionPage.DisplayValue" Value="false" />
+			<Item Name="BaseElements.AutoGeneratedPageUserTask1.Parameters.ShowInScheduler.Caption" Value="Show in calendar" />
+			<Item Name="BaseElements.AutoGeneratedPageUserTask1.Parameters.ShowInScheduler.DisplayValue" Value="false" />
+			<Item Name="BaseElements.AutoGeneratedPageUserTask1.Parameters.StartIn.Caption" Value="Start executing in" />
+			<Item Name="BaseElements.AutoGeneratedPageUserTask1.Parameters.StartIn.DisplayValue" Value="0" />
+			<Item Name="BaseElements.AutoGeneratedPageUserTask1.Parameters.StartInPeriod.Caption" Value="Start executing in (period)" />
+			<Item Name="BaseElements.AutoGeneratedPageUserTask1.Parameters.StartInPeriod.DisplayValue" Value="0" />
+			<Item Name="BaseElements.AutoGeneratedPageUserTask1.Parameters.Title.Caption" Value="Title" />
+			<Item Name="BaseElements.AutoGeneratedPageUserTask1.Parameters.Title.DisplayValue" Value="Record Provisioning Outcome" />
+			<Item Name="BaseElements.AutoGeneratedPageUserTask1.Parameters.Title.Value" Value="Record Provisioning Outcome" />
+			<Item Name="BaseElements.AutoGeneratedPageUserTask1.Parameters.UsrUsrContractConfigVersion.Caption" Value="Contract Configuration Version" />
+			<Item Name="BaseElements.AutoGeneratedPageUserTask1.Parameters.UsrUsrVirtualMachine.Caption" Value="Virtual Machine" />
+			<Item Name="BaseElements.AutoGeneratedPageUserTask1.Parameters.VMHostname.Caption" Value="Hostname" />
+			<Item Name="BaseElements.AutoGeneratedPageUserTask1.Parameters.VMIPAddress.Caption" Value="IP Address" />
+			<Item Name="BaseElements.AutoGeneratedPageUserTask1.Parameters.VMIdentifier.Caption" Value="VM Identifier" />
+			<Item Name="BaseElements.ChangeDataUserTask1.Caption" Value="Record Provisioning Failure" />
+			<Item Name="BaseElements.ChangeDataUserTask1.Parameters.ConsiderTimeInFilter.Caption" Value="Consider time in the filter" />
+			<Item Name="BaseElements.ChangeDataUserTask1.Parameters.ConsiderTimeInFilter.DisplayValue" Value="true" />
+			<Item Name="BaseElements.ChangeDataUserTask1.Parameters.DataSourceFilters.Caption" Value="Data source filters" />
+			<Item Name="BaseElements.ChangeDataUserTask1.Parameters.EntitySchemaUId.Caption" Value="Object" />
+			<Item Name="BaseElements.ChangeDataUserTask1.Parameters.IgnoreErrors.Caption" Value="Continue execution on errors" />
+			<Item Name="BaseElements.ChangeDataUserTask1.Parameters.IgnoreErrors.DisplayValue" Value="false" />
+			<Item Name="BaseElements.ChangeDataUserTask1.Parameters.IsMatchConditions.Caption" Value="If object meets the following conditions" />
+			<Item Name="BaseElements.ChangeDataUserTask1.Parameters.IsMatchConditions.DisplayValue" Value="true" />
+			<Item Name="BaseElements.ChangeDataUserTask1.Parameters.RecordColumnValues.Caption" Value="Set column values" />
+			<Item Name="BaseElements.ChangeDataUserTask2.Caption" Value="Mark Request Completed" />
+			<Item Name="BaseElements.ChangeDataUserTask2.Parameters.ConsiderTimeInFilter.Caption" Value="Consider time in the filter" />
+			<Item Name="BaseElements.ChangeDataUserTask2.Parameters.ConsiderTimeInFilter.DisplayValue" Value="true" />
+			<Item Name="BaseElements.ChangeDataUserTask2.Parameters.DataSourceFilters.Caption" Value="Data source filters" />
+			<Item Name="BaseElements.ChangeDataUserTask2.Parameters.EntitySchemaUId.Caption" Value="Object" />
+			<Item Name="BaseElements.ChangeDataUserTask2.Parameters.IgnoreErrors.Caption" Value="Continue execution on errors" />
+			<Item Name="BaseElements.ChangeDataUserTask2.Parameters.IgnoreErrors.DisplayValue" Value="false" />
+			<Item Name="BaseElements.ChangeDataUserTask2.Parameters.IsMatchConditions.Caption" Value="If object meets the following conditions" />
+			<Item Name="BaseElements.ChangeDataUserTask2.Parameters.IsMatchConditions.DisplayValue" Value="true" />
+			<Item Name="BaseElements.ChangeDataUserTask2.Parameters.RecordColumnValues.Caption" Value="Set column values" />
+			<Item Name="BaseElements.ChangeDataUserTask3.Caption" Value="Keep Request In Provisioning" />
+			<Item Name="BaseElements.ChangeDataUserTask3.Parameters.ConsiderTimeInFilter.Caption" Value="Consider time in the filter" />
+			<Item Name="BaseElements.ChangeDataUserTask3.Parameters.ConsiderTimeInFilter.DisplayValue" Value="true" />
+			<Item Name="BaseElements.ChangeDataUserTask3.Parameters.DataSourceFilters.Caption" Value="Data source filters" />
+			<Item Name="BaseElements.ChangeDataUserTask3.Parameters.EntitySchemaUId.Caption" Value="Object" />
+			<Item Name="BaseElements.ChangeDataUserTask3.Parameters.IgnoreErrors.Caption" Value="Continue execution on errors" />
+			<Item Name="BaseElements.ChangeDataUserTask3.Parameters.IgnoreErrors.DisplayValue" Value="false" />
+			<Item Name="BaseElements.ChangeDataUserTask3.Parameters.IsMatchConditions.Caption" Value="If object meets the following conditions" />
+			<Item Name="BaseElements.ChangeDataUserTask3.Parameters.IsMatchConditions.DisplayValue" Value="true" />
+			<Item Name="BaseElements.ChangeDataUserTask3.Parameters.RecordColumnValues.Caption" Value="Set column values" />
+			<Item Name="BaseElements.ConditionalSequenceFlow1.Caption" Value="Provisioned" />
+			<Item Name="BaseElements.ConditionalSequenceFlow2.Caption" Value="Provisioning Failed" />
+			<Item Name="BaseElements.ConditionalSequenceFlow3.Caption" Value="All Provisioned" />
+			<Item Name="BaseElements.DefaultSequenceFlow1.Caption" Value="Not All Provisioned" />
+			<Item Name="BaseElements.ExclusiveGateway1.Caption" Value="All VMs Provisioned?" />
+			<Item Name="BaseElements.LinkEntityToProcessUserTask1.Caption" Value="Link VM Manual Provisioning to Request" />
+			<Item Name="BaseElements.LinkEntityToProcessUserTask1.Parameters.EntityId.Caption" Value="Object" />
+			<Item Name="BaseElements.LinkEntityToProcessUserTask1.Parameters.EntityId.DisplayValue" Value="[#Read VM Request.First item of resulting collection.Id#]" />
+			<Item Name="BaseElements.LinkEntityToProcessUserTask1.Parameters.EntitySchemaId.Caption" Value="Object schema" />
+			<Item Name="BaseElements.LinkEntityToProcessUserTask1.Parameters.EntitySchemaId.DisplayValue" Value="VM Request" />
+			<Item Name="BaseElements.ReadDataUserTask1.Caption" Value="Read VM Request" />
+			<Item Name="BaseElements.ReadDataUserTask1.Parameters.AggregationColumnName.Caption" Value="Name of aggregate function column" />
+			<Item Name="BaseElements.ReadDataUserTask1.Parameters.CanReadUncommitedData.Caption" Value="Read uncommitted data" />
+			<Item Name="BaseElements.ReadDataUserTask1.Parameters.ConsiderTimeInFilter.Caption" Value="Consider time in the filter" />
+			<Item Name="BaseElements.ReadDataUserTask1.Parameters.ConsiderTimeInFilter.DisplayValue" Value="true" />
+			<Item Name="BaseElements.ReadDataUserTask1.Parameters.DataSourceFilters.Caption" Value="Data source of filters" />
+			<Item Name="BaseElements.ReadDataUserTask1.Parameters.EntityColumnMetaPathes.Caption" Value="Columns to read" />
+			<Item Name="BaseElements.ReadDataUserTask1.Parameters.FunctionType.Caption" Value="Aggregate function type" />
+			<Item Name="BaseElements.ReadDataUserTask1.Parameters.IgnoreDisplayValues.Caption" Value="Do not read displayed values of lookup columns" />
+			<Item Name="BaseElements.ReadDataUserTask1.Parameters.NumberOfRecords.Caption" Value="Number of records to read" />
+			<Item Name="BaseElements.ReadDataUserTask1.Parameters.OrderInfo.Caption" Value="Columns order" />
+			<Item Name="BaseElements.ReadDataUserTask1.Parameters.ReadSomeTopRecords.Caption" Value="Read first" />
+			<Item Name="BaseElements.ReadDataUserTask1.Parameters.ResultCompositeObjectList.Caption" Value="Collection of records" />
+			<Item Name="BaseElements.ReadDataUserTask1.Parameters.ResultCount.Caption" Value="Number of records" />
+			<Item Name="BaseElements.ReadDataUserTask1.Parameters.ResultDateTimeFunction.Caption" Value="Function result (Date/Time)" />
+			<Item Name="BaseElements.ReadDataUserTask1.Parameters.ResultEntity.Caption" Value="First item of resulting collection" />
+			<Item Name="BaseElements.ReadDataUserTask1.Parameters.ResultEntityCollection.Caption" Value="Resulting collection" />
+			<Item Name="BaseElements.ReadDataUserTask1.Parameters.ResultFloatFunction.Caption" Value="Function result (Decimal)" />
+			<Item Name="BaseElements.ReadDataUserTask1.Parameters.ResultIntegerFunction.Caption" Value="Function result (Integer)" />
+			<Item Name="BaseElements.ReadDataUserTask1.Parameters.ResultRowsCount.Caption" Value="Number of records read" />
+			<Item Name="BaseElements.ReadDataUserTask1.Parameters.ResultType.Caption" Value="Type of result" />
+			<Item Name="BaseElements.ReadDataUserTask2.Caption" Value="Read VM Request Items" />
+			<Item Name="BaseElements.ReadDataUserTask2.Parameters.AggregationColumnName.Caption" Value="Name of aggregate function column" />
+			<Item Name="BaseElements.ReadDataUserTask2.Parameters.CanReadUncommitedData.Caption" Value="Read uncommitted data" />
+			<Item Name="BaseElements.ReadDataUserTask2.Parameters.ConsiderTimeInFilter.Caption" Value="Consider time in the filter" />
+			<Item Name="BaseElements.ReadDataUserTask2.Parameters.ConsiderTimeInFilter.DisplayValue" Value="true" />
+			<Item Name="BaseElements.ReadDataUserTask2.Parameters.DataSourceFilters.Caption" Value="Data source of filters" />
+			<Item Name="BaseElements.ReadDataUserTask2.Parameters.EntityColumnMetaPathes.Caption" Value="Columns to read" />
+			<Item Name="BaseElements.ReadDataUserTask2.Parameters.FunctionType.Caption" Value="Aggregate function type" />
+			<Item Name="BaseElements.ReadDataUserTask2.Parameters.IgnoreDisplayValues.Caption" Value="Do not read displayed values of lookup columns" />
+			<Item Name="BaseElements.ReadDataUserTask2.Parameters.NumberOfRecords.Caption" Value="Number of records to read" />
+			<Item Name="BaseElements.ReadDataUserTask2.Parameters.OrderInfo.Caption" Value="Columns order" />
+			<Item Name="BaseElements.ReadDataUserTask2.Parameters.ReadSomeTopRecords.Caption" Value="Read first" />
+			<Item Name="BaseElements.ReadDataUserTask2.Parameters.ResultCompositeObjectList.Caption" Value="Collection of records" />
+			<Item Name="BaseElements.ReadDataUserTask2.Parameters.ResultCompositeObjectList.Id.Caption" Value="Id" />
+			<Item Name="BaseElements.ReadDataUserTask2.Parameters.ResultCompositeObjectList.UsrAdditionalRAMGB.Caption" Value="AdditionalRAMGB" />
+			<Item Name="BaseElements.ReadDataUserTask2.Parameters.ResultCompositeObjectList.UsrAdditionalStorageGB.Caption" Value="AdditionalStorageGB" />
+			<Item Name="BaseElements.ReadDataUserTask2.Parameters.ResultCompositeObjectList.UsrAmountPerUnitSnapshot.Caption" Value="Amount per unit at submission" />
+			<Item Name="BaseElements.ReadDataUserTask2.Parameters.ResultCompositeObjectList.UsrCPU.Caption" Value="vCPU count" />
+			<Item Name="BaseElements.ReadDataUserTask2.Parameters.ResultCompositeObjectList.UsrName.Caption" Value="VM name" />
+			<Item Name="BaseElements.ReadDataUserTask2.Parameters.ResultCompositeObjectList.UsrOperatingSystem.Caption" Value="Operating system" />
+			<Item Name="BaseElements.ReadDataUserTask2.Parameters.ResultCompositeObjectList.UsrProvisioningStatus.Caption" Value="Provisioning Status" />
+			<Item Name="BaseElements.ReadDataUserTask2.Parameters.ResultCompositeObjectList.UsrRAMGB.Caption" Value="RAM (GB)" />
+			<Item Name="BaseElements.ReadDataUserTask2.Parameters.ResultCompositeObjectList.UsrRequest.Caption" Value="VM request" />
+			<Item Name="BaseElements.ReadDataUserTask2.Parameters.ResultCompositeObjectList.UsrStorageGB.Caption" Value="Storage (GB)" />
+			<Item Name="BaseElements.ReadDataUserTask2.Parameters.ResultCount.Caption" Value="Number of records" />
+			<Item Name="BaseElements.ReadDataUserTask2.Parameters.ResultDateTimeFunction.Caption" Value="Function result (Date/Time)" />
+			<Item Name="BaseElements.ReadDataUserTask2.Parameters.ResultEntity.Caption" Value="First item of resulting collection" />
+			<Item Name="BaseElements.ReadDataUserTask2.Parameters.ResultEntityCollection.Caption" Value="Resulting collection" />
+			<Item Name="BaseElements.ReadDataUserTask2.Parameters.ResultFloatFunction.Caption" Value="Function result (Decimal)" />
+			<Item Name="BaseElements.ReadDataUserTask2.Parameters.ResultIntegerFunction.Caption" Value="Function result (Integer)" />
+			<Item Name="BaseElements.ReadDataUserTask2.Parameters.ResultRowsCount.Caption" Value="Number of records read" />
+			<Item Name="BaseElements.ReadDataUserTask2.Parameters.ResultType.Caption" Value="Type of result" />
+			<Item Name="BaseElements.ReadDataUserTask3.Caption" Value="Count All VM Items" />
+			<Item Name="BaseElements.ReadDataUserTask3.Parameters.AggregationColumnName.Caption" Value="Name of aggregate function column" />
+			<Item Name="BaseElements.ReadDataUserTask3.Parameters.CanReadUncommitedData.Caption" Value="Read uncommitted data" />
+			<Item Name="BaseElements.ReadDataUserTask3.Parameters.ConsiderTimeInFilter.Caption" Value="Consider time in the filter" />
+			<Item Name="BaseElements.ReadDataUserTask3.Parameters.ConsiderTimeInFilter.DisplayValue" Value="true" />
+			<Item Name="BaseElements.ReadDataUserTask3.Parameters.DataSourceFilters.Caption" Value="Data source of filters" />
+			<Item Name="BaseElements.ReadDataUserTask3.Parameters.EntityColumnMetaPathes.Caption" Value="Columns to read" />
+			<Item Name="BaseElements.ReadDataUserTask3.Parameters.FunctionType.Caption" Value="Aggregate function type" />
+			<Item Name="BaseElements.ReadDataUserTask3.Parameters.IgnoreDisplayValues.Caption" Value="Do not read displayed values of lookup columns" />
+			<Item Name="BaseElements.ReadDataUserTask3.Parameters.NumberOfRecords.Caption" Value="Number of records to read" />
+			<Item Name="BaseElements.ReadDataUserTask3.Parameters.OrderInfo.Caption" Value="Columns order" />
+			<Item Name="BaseElements.ReadDataUserTask3.Parameters.ReadSomeTopRecords.Caption" Value="Read first" />
+			<Item Name="BaseElements.ReadDataUserTask3.Parameters.ResultCompositeObjectList.Caption" Value="Collection of records" />
+			<Item Name="BaseElements.ReadDataUserTask3.Parameters.ResultCount.Caption" Value="Number of records" />
+			<Item Name="BaseElements.ReadDataUserTask3.Parameters.ResultDateTimeFunction.Caption" Value="Function result (Date/Time)" />
+			<Item Name="BaseElements.ReadDataUserTask3.Parameters.ResultEntity.Caption" Value="First item of resulting collection" />
+			<Item Name="BaseElements.ReadDataUserTask3.Parameters.ResultEntityCollection.Caption" Value="Resulting collection" />
+			<Item Name="BaseElements.ReadDataUserTask3.Parameters.ResultFloatFunction.Caption" Value="Function result (Decimal)" />
+			<Item Name="BaseElements.ReadDataUserTask3.Parameters.ResultIntegerFunction.Caption" Value="Function result (Integer)" />
+			<Item Name="BaseElements.ReadDataUserTask3.Parameters.ResultRowsCount.Caption" Value="Number of records read" />
+			<Item Name="BaseElements.ReadDataUserTask3.Parameters.ResultType.Caption" Value="Type of result" />
+			<Item Name="BaseElements.ReadDataUserTask4.Caption" Value="Count Provisioned Items" />
+			<Item Name="BaseElements.ReadDataUserTask4.Parameters.AggregationColumnName.Caption" Value="Name of aggregate function column" />
+			<Item Name="BaseElements.ReadDataUserTask4.Parameters.CanReadUncommitedData.Caption" Value="Read uncommitted data" />
+			<Item Name="BaseElements.ReadDataUserTask4.Parameters.ConsiderTimeInFilter.Caption" Value="Consider time in the filter" />
+			<Item Name="BaseElements.ReadDataUserTask4.Parameters.ConsiderTimeInFilter.DisplayValue" Value="true" />
+			<Item Name="BaseElements.ReadDataUserTask4.Parameters.DataSourceFilters.Caption" Value="Data source of filters" />
+			<Item Name="BaseElements.ReadDataUserTask4.Parameters.EntityColumnMetaPathes.Caption" Value="Columns to read" />
+			<Item Name="BaseElements.ReadDataUserTask4.Parameters.FunctionType.Caption" Value="Aggregate function type" />
+			<Item Name="BaseElements.ReadDataUserTask4.Parameters.IgnoreDisplayValues.Caption" Value="Do not read displayed values of lookup columns" />
+			<Item Name="BaseElements.ReadDataUserTask4.Parameters.NumberOfRecords.Caption" Value="Number of records to read" />
+			<Item Name="BaseElements.ReadDataUserTask4.Parameters.OrderInfo.Caption" Value="Columns order" />
+			<Item Name="BaseElements.ReadDataUserTask4.Parameters.ReadSomeTopRecords.Caption" Value="Read first" />
+			<Item Name="BaseElements.ReadDataUserTask4.Parameters.ResultCompositeObjectList.Caption" Value="Collection of records" />
+			<Item Name="BaseElements.ReadDataUserTask4.Parameters.ResultCount.Caption" Value="Number of records" />
+			<Item Name="BaseElements.ReadDataUserTask4.Parameters.ResultDateTimeFunction.Caption" Value="Function result (Date/Time)" />
+			<Item Name="BaseElements.ReadDataUserTask4.Parameters.ResultEntity.Caption" Value="First item of resulting collection" />
+			<Item Name="BaseElements.ReadDataUserTask4.Parameters.ResultEntityCollection.Caption" Value="Resulting collection" />
+			<Item Name="BaseElements.ReadDataUserTask4.Parameters.ResultFloatFunction.Caption" Value="Function result (Decimal)" />
+			<Item Name="BaseElements.ReadDataUserTask4.Parameters.ResultIntegerFunction.Caption" Value="Function result (Integer)" />
+			<Item Name="BaseElements.ReadDataUserTask4.Parameters.ResultRowsCount.Caption" Value="Number of records read" />
+			<Item Name="BaseElements.ReadDataUserTask4.Parameters.ResultType.Caption" Value="Type of result" />
+			<Item Name="BaseElements.StartSignal1.Parameters.RecordId.Caption" Value="Unique identifier of record" />
+			<Item Name="BaseElements.SubProcess1.Caption" Value="MCIT Provision One VM Item 1" />
+			<Item Name="BaseElements.SubProcess1.Parameters.CompletedIterationsCount.Caption" Value="Number of completed instances" />
+			<Item Name="BaseElements.SubProcess1.Parameters.InputRecordCollection.Caption" Value="Input record collection" />
+			<Item Name="BaseElements.SubProcess1.Parameters.InputRecordCollection.DisplayValue" Value="[#Read VM Request Items.Collection of records#]" />
+			<Item Name="BaseElements.SubProcess1.Parameters.InputRecordCollection.VMRequestId.Caption" Value="VMRequestId" />
+			<Item Name="BaseElements.SubProcess1.Parameters.InputRecordCollection.VMRequestId.DisplayValue" Value="[#StartSignal1.Unique identifier of record#]" />
+			<Item Name="BaseElements.SubProcess1.Parameters.InputRecordCollection.VMRequestItemId.Caption" Value="VMRequestItemId" />
+			<Item Name="BaseElements.SubProcess1.Parameters.InputRecordCollection.VMRequestItemId.DisplayValue" Value="[#Read VM Request Items.Collection of records:Id#]" />
+			<Item Name="BaseElements.SubProcess1.Parameters.OutputRecordCollection.Caption" Value="Output record collection" />
+			<Item Name="BaseElements.SubProcess1.Parameters.OutputRecordCollection.ProvisioningSucceeded.Caption" Value="ProvisioningSucceeded" />
+			<Item Name="BaseElements.SubProcess1.Parameters.TerminatedIterationsCount.Caption" Value="Number of terminated instances" />
+			<Item Name="BaseElements.SubProcess1.Parameters.TotalIterationsCount.Caption" Value="Total number of instances" />
+			<Item Name="Caption" Value="MCIT VM Manual Provisioning" />
+			<Item Name="LaneSets.LaneSet1.Caption" Value="LaneSet 1" />
+			<Item Name="LaneSets.LaneSet1.Lanes.Lane1.Caption" Value="Lane 1" />
+			<Item Name="NotificationCaption.Caption" Value="Process instance caption" />
+			<Item Name="NotificationCaption.DisplayValue" Value="[#Process name#]" />
+		</Items>
+	</Group>
+</Resources>

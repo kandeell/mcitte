@@ -1,0 +1,14 @@
+﻿{
+  "Descriptor": {
+    "UId": "e6412140-9714-4bdd-afc4-3dfd19d4d648",
+    "Name": "UsrPage_yqmw231",
+    "ModifiedOnUtc": "\/Date(1792578451000)\/",
+    "Parent": {
+      "UId": "ecdcc8ff-272c-4957-9381-7d74ce17e140",
+      "Name": "BaseMiniPageTemplate"
+    },
+    "ManagerName": "ClientUnitSchemaManager",
+    "Caption": "VM Request Item modal page",
+    "DependsOn": []
+  }
+}

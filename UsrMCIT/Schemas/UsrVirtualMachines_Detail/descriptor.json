@@ -1,0 +1,14 @@
+﻿{
+  "Descriptor": {
+    "UId": "63b3d136-fade-4ba2-8ef0-bfb0f385ecc0",
+    "Name": "UsrVirtualMachines_Detail",
+    "ModifiedOnUtc": "\/Date(1792511003000)\/",
+    "Parent": {
+      "UId": "01eb38ee-668a-42f0-999d-c2534f979089",
+      "Name": "BaseGridDetailV2"
+    },
+    "ManagerName": "ClientUnitSchemaManager",
+    "Caption": "Virtual Machines detail",
+    "DependsOn": []
+  }
+}

@@ -1,0 +1,10 @@
+﻿{
+  "Descriptor": {
+    "UId": "b1ebad2a-f5b0-494a-bc1b-65a3b21e824b",
+    "Name": "UsrAdministrationHomeRelatedPage",
+    "ModifiedOnUtc": "\/Date(1792930221000)\/",
+    "ManagerName": "AddonSchemaManager",
+    "Caption": "Administration Home (Page settings)",
+    "DependsOn": []
+  }
+}

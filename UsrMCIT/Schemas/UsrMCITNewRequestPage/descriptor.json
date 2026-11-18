@@ -1,0 +1,14 @@
+﻿{
+  "Descriptor": {
+    "UId": "e9a3d545-97a6-4635-be7a-740407763ae6",
+    "Name": "UsrMCITNewRequestPage",
+    "ModifiedOnUtc": "\/Date(1792577375000)\/",
+    "Parent": {
+      "UId": "7ed23be6-71df-4ad3-b56a-caa77b9881ce",
+      "Name": "PageWithTabsAndProgressBarTemplate"
+    },
+    "ManagerName": "ClientUnitSchemaManager",
+    "Caption": "MCIT New Request Page",
+    "DependsOn": []
+  }
+}
