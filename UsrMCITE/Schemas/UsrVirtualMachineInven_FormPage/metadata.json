@@ -1,0 +1,8 @@
+= MetaData.Schema.UId "285db044-cda9-4410-82af-2ff9ab138970"
+= MetaData.Schema.A2 "UsrVirtualMachineInven_FormPage"
+= MetaData.Schema.A5 "6f71e54c-1960-40c9-94f6-073fd67699ab"
+~ MetaData.Schema.B2 ["a810ae03-a394-4fb9-b765-41ef1c172e59","11fa9478-7898-4d97-bf04-53a2b1687797","7d41536b-b3df-4504-91ab-1bc0cf92f5c6","d556b05a-8c00-41e0-bdd1-6fca084b5fec"]
+= MetaData.Schema.B6 "5530927f-22ea-e7c9-4ccf-506d3a6c2ed2"
+= MetaData.Schema.HD1 "3b2e117f-8c6b-4ca5-80a2-7ebb497cddf9"
+- MetaData.Schema.B7
++ MetaData.Schema.B7 false

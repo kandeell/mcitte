@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Resources Culture="en-US">
+	<Group Type="String">
+		<Items>
+			<Item Name="Caption" Value="virtual machine inventory list page" />
+			<Item Name="LocalizableStrings.InventoryAuthorityFilterControl_config_caption.Value" Value="All authorities" />
+			<Item Name="LocalizableStrings.InventoryContractFilterControl_config_caption.Value" Value="All contracts" />
+			<Item Name="LocalizableStrings.InventoryOSFilterControl_config_caption.Value" Value="All OS" />
+		</Items>
+	</Group>
+</Resources>

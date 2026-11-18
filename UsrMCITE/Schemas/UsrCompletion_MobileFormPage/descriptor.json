@@ -1,0 +1,14 @@
+﻿{
+  "Descriptor": {
+    "UId": "59633ce4-318d-4786-97c7-4ca60cca5d54",
+    "Name": "UsrCompletion_MobileFormPage",
+    "ModifiedOnUtc": "\/Date(1794770733000)\/",
+    "Parent": {
+      "UId": "019c694a-1a3b-4812-b2e5-219b326061ae",
+      "Name": "MobilePageWithTabsFreedomTemplate"
+    },
+    "ManagerName": "ClientUnitSchemaManager",
+    "Caption": "Completion mobile form page",
+    "DependsOn": []
+  }
+}

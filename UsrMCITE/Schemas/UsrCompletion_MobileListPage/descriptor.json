@@ -1,0 +1,14 @@
+﻿{
+  "Descriptor": {
+    "UId": "2b69d19c-9428-4962-acfc-278cd8e3d644",
+    "Name": "UsrCompletion_MobileListPage",
+    "ModifiedOnUtc": "\/Date(1794770733000)\/",
+    "Parent": {
+      "UId": "011e7dda-a763-4535-9b9a-e09eddd047be",
+      "Name": "BaseMobileListTemplate"
+    },
+    "ManagerName": "ClientUnitSchemaManager",
+    "Caption": "Completion mobile list page",
+    "DependsOn": []
+  }
+}

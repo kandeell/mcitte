@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Resources Culture="en-US">
+	<Group Type="String">
+		<Items>
+			<Item Name="Caption" Value="Academy URL" />
+			<Item Name="Columns.CreatedBy.Caption" Value="Created by" />
+			<Item Name="Columns.CreatedOn.Caption" Value="Created on" />
+			<Item Name="Columns.Description.Caption" Value="Description" />
+			<Item Name="Columns.Id.Caption" Value="Id" />
+			<Item Name="Columns.ModifiedBy.Caption" Value="Modified by" />
+			<Item Name="Columns.ModifiedOn.Caption" Value="Modified on" />
+			<Item Name="Columns.Name.Caption" Value="Name" />
+			<Item Name="Columns.ProcessListeners.Caption" Value="Active processes" />
+			<Item Name="EventsProcessSchema.Caption" Value="Business process" />
+		</Items>
+	</Group>
+</Resources>

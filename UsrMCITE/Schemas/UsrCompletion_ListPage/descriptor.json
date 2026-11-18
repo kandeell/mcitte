@@ -1,0 +1,14 @@
+﻿{
+  "Descriptor": {
+    "UId": "43012090-6973-49a3-9822-37aec4c38b2e",
+    "Name": "UsrCompletion_ListPage",
+    "ModifiedOnUtc": "\/Date(1794825463000)\/",
+    "Parent": {
+      "UId": "b7b898d0-8c77-4953-c097-23fa6800da02",
+      "Name": "ListPageV3Template"
+    },
+    "ManagerName": "ClientUnitSchemaManager",
+    "Caption": "Completion list page",
+    "DependsOn": []
+  }
+}
