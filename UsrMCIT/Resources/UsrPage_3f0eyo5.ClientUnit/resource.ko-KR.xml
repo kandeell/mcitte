@@ -1,9 +1,0 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
-<Resources Culture="ko-KR">
-	<Group Type="String">
-		<Items>
-			<Item Name="LocalizableStrings.AddButton_caption.Value" Value="새로운" />
-			<Item Name="LocalizableStrings.DataImportButton_caption.Value" Value="수입품" />
-		</Items>
-	</Group>
-</Resources>

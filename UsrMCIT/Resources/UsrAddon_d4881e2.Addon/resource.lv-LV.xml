@@ -1,8 +1,0 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
-<Resources Culture="lv-LV">
-	<Group Type="String">
-		<Items>
-			<Item Name="Caption" Value="VM Request Item modal page (AppearanceSettings)" />
-		</Items>
-	</Group>
-</Resources>

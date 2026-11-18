@@ -1,8 +1,0 @@
-<Project>
-	<ItemGroup Label="Entity Files" Condition="'$(PkgPath)' != ''">
-		<Compile Include="$(PkgPath)/UsrMCITE/Schemas/AcademyURL/AcademyURL.cs" Condition="Exists('$(PkgPath)/UsrMCITE/Schemas/AcademyURL/AcademyURL.cs')" />
-		<Compile Include="$(PkgPath)/UsrMCITE/Schemas/UsrCompletion/UsrCompletion.cs" Condition="Exists('$(PkgPath)/UsrMCITE/Schemas/UsrCompletion/UsrCompletion.cs')" />
-		<Compile Include="$(PkgPath)/UsrMCITE/Schemas/UsrProvisioning/UsrProvisioning.cs" Condition="Exists('$(PkgPath)/UsrMCITE/Schemas/UsrProvisioning/UsrProvisioning.cs')" />
-		<Compile Include="$(PkgPath)/UsrMCITE/Schemas/UsrVirtualMachineInven/UsrVirtualMachineInven.cs" Condition="Exists('$(PkgPath)/UsrMCITE/Schemas/UsrVirtualMachineInven/UsrVirtualMachineInven.cs')" />
-	</ItemGroup>
-</Project>
