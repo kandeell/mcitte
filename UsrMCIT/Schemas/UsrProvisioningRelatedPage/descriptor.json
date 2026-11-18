@@ -1,0 +1,10 @@
+﻿{
+  "Descriptor": {
+    "UId": "cde19702-dede-4a32-be2f-7462f01a8f07",
+    "Name": "UsrProvisioningRelatedPage",
+    "ModifiedOnUtc": "\/Date(1794769455000)\/",
+    "ManagerName": "AddonSchemaManager",
+    "Caption": "Provisioning (Page settings)",
+    "DependsOn": []
+  }
+}

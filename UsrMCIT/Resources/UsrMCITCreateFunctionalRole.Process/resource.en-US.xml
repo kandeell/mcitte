@@ -33,6 +33,7 @@
 			<Item Name="BaseElements.ChangeDataUserTask3.Parameters.IsMatchConditions.DisplayValue" Value="true" />
 			<Item Name="BaseElements.ChangeDataUserTask3.Parameters.RecordColumnValues.Caption" Value="Set column values" />
 			<Item Name="BaseElements.ConditionalSequenceFlow1.Caption" Value="yes" />
+			<Item Name="BaseElements.ConditionalSequenceFlow2.Caption" Value="Conditional flow 2" />
 			<Item Name="BaseElements.ConditionalSequenceFlow5.Caption" Value="yes" />
 			<Item Name="BaseElements.DefaultSequenceFlow1.Caption" Value="no" />
 			<Item Name="BaseElements.DefaultSequenceFlow2.Caption" Value="no" />
@@ -103,6 +104,10 @@
 			<Item Name="BaseElements.StartSignal1.Parameters.RecordId.Caption" Value="Unique identifier of record" />
 			<Item Name="BaseElements.StartSignal2.Caption" Value="MCIT role update" />
 			<Item Name="BaseElements.StartSignal2.Parameters.RecordId.Caption" Value="Unique identifier of record" />
+			<Item Name="BaseElements.StartSignal3.Caption" Value="New MCIT Role Created v" />
+			<Item Name="BaseElements.StartSignal3.Parameters.RecordId.Caption" Value="Unique identifier of record" />
+			<Item Name="BaseElements.StartSignal4.Caption" Value="mod" />
+			<Item Name="BaseElements.StartSignal4.Parameters.RecordId.Caption" Value="Unique identifier of record" />
 			<Item Name="Caption" Value="MCIT Create Functional Role" />
 			<Item Name="LaneSets.LaneSet1.Caption" Value="LaneSet 1" />
 			<Item Name="LaneSets.LaneSet1.Lanes.Lane1.Caption" Value="Lane 1" />
@@ -112,7 +117,7 @@
 			<Item Name="Parameters.AllEmployeesRoleId.DisplayValue" Value="[#Read All Employees Role.First item of resulting collection.Id#]" />
 			<Item Name="Parameters.CreatedRoleId.Caption" Value="Created Functional Role ID" />
 			<Item Name="Parameters.MCITRoleId.Caption" Value="MCIT Role ID" />
-			<Item Name="Parameters.MCITRoleId.DisplayValue" Value="[#New MCIT Role Created.Unique identifier of record#]" />
+			<Item Name="Parameters.MCITRoleId.DisplayValue" Value="[#New MCIT Role Created v.Unique identifier of record#]" />
 			<Item Name="Parameters.ProvisioningError.Caption" Value="Provisioning Error" />
 			<Item Name="Parameters.ProvisioningSuccess.Caption" Value="Provisioning Successful" />
 			<Item Name="Parameters.RoleName.Caption" Value="Role Name" />

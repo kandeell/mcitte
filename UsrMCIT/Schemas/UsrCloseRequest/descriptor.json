@@ -1,0 +1,14 @@
+﻿{
+  "Descriptor": {
+    "UId": "c09acad0-2013-4344-9a87-d92272b8f0d6",
+    "Name": "UsrCloseRequest",
+    "ModifiedOnUtc": "\/Date(1794835613000)\/",
+    "Parent": {
+      "UId": "ecdcc8ff-272c-4957-9381-7d74ce17e140",
+      "Name": "BaseMiniPageTemplate"
+    },
+    "ManagerName": "ClientUnitSchemaManager",
+    "Caption": "Close Request",
+    "DependsOn": []
+  }
+}

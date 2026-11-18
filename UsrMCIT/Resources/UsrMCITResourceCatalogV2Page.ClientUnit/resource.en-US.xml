@@ -29,6 +29,16 @@
 			<Item Name="LocalizableStrings.MultiSelect_23gwcxu_placeholder.Value" Value="Select contracts..." />
 			<Item Name="LocalizableStrings.MultiSelect_cogxzpi_label.Value" Value="Multi-select" />
 			<Item Name="LocalizableStrings.QuickFilter_q95mlw2_caption.Value" Value="Quick filter" />
+			<Item Name="LocalizableStrings.UsrMigration_Button_gvadutu_caption.Value" Value="Add Resource" />
+			<Item Name="LocalizableStrings.UsrMigration_Button_hurxkhe_caption.Value" Value="Close editor" />
+			<Item Name="LocalizableStrings.UsrMigration_Button_thuz20z_caption.Value" Value="Save Resource" />
+			<Item Name="LocalizableStrings.UsrMigration_DataGrid_zjad730_caption.Value" Value="Edit Resource" />
+			<Item Name="LocalizableStrings.UsrMigration_Label_32b9p2b_caption.Value" Value="— active resource types" />
+			<Item Name="LocalizableStrings.UsrMigration_Label_pwspa1o_caption.Value" Value="#MacrosTemplateString(#ResourceString(Label_pwspa1o_caption)#)#" />
+			<Item Name="LocalizableStrings.UsrMigration_Label_s64k5jx_caption.Value" Value="— used in point rules" />
+			<Item Name="LocalizableStrings.UsrMigration_Label_yf5tsi7_caption.Value" Value="#MacrosTemplateString(#ResourceString(Label_yf5tsi7_caption)#)#" />
+			<Item Name="LocalizableStrings.UsrMigration_Label_yg95ir5_caption.Value" Value="#MacrosTemplateString(#ResourceString(Label_yg95ir5_caption)#)#" />
+			<Item Name="LocalizableStrings.UsrMigration_UsrRCV2CategoryQuickFilter_caption.Value" Value="All categories" />
 			<Item Name="LocalizableStrings.UsrRCV2Search_placeholder.Value" Value="Search" />
 			<Item Name="LocalizableStrings.addRecord_0b4tzp5_caption.Value" Value="Add new" />
 		</Items>

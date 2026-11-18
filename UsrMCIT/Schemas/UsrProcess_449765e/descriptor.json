@@ -1,0 +1,10 @@
+﻿{
+  "Descriptor": {
+    "UId": "539e3c24-35bb-4492-bd5e-7be86b031b6a",
+    "Name": "UsrProcess_449765e",
+    "ModifiedOnUtc": "\/Date(1793780876000)\/",
+    "ManagerName": "ProcessSchemaManager",
+    "Caption": "MCIT Test VM Request Audit",
+    "DependsOn": []
+  }
+}

@@ -1,0 +1,13 @@
+﻿{
+  "Descriptor": {
+    "UId": "565b9273-c71b-4140-86da-3925bcaef1c2",
+    "Name": "UsrDashboard_ListPage",
+    "ModifiedOnUtc": "\/Date(1794385220000)\/",
+    "Parent": {
+      "UId": "b7b898d0-8c77-4953-c097-23fa6800da02",
+      "Name": "ListPageV3Template"
+    },
+    "ManagerName": "ClientUnitSchemaManager",
+    "Caption": "Dashboard list page"
+  }
+}

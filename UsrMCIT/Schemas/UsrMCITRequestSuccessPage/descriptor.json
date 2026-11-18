@@ -1,0 +1,14 @@
+﻿{
+  "Descriptor": {
+    "UId": "4d573150-0628-497f-807b-025039f47b99",
+    "Name": "UsrMCITRequestSuccessPage",
+    "ModifiedOnUtc": "\/Date(1792664918000)\/",
+    "Parent": {
+      "UId": "f691e828-0b36-42a7-898f-c337e9af67d0",
+      "Name": "BlankPageTemplate"
+    },
+    "ManagerName": "ClientUnitSchemaManager",
+    "Caption": "MCIT Request Success Page",
+    "DependsOn": []
+  }
+}

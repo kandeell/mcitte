@@ -1,0 +1,10 @@
+﻿{
+  "Descriptor": {
+    "UId": "401881dc-b358-4eef-859a-a06ff915c1fd",
+    "Name": "UsrUserDirectoryRelatedPage",
+    "ModifiedOnUtc": "\/Date(1792741324000)\/",
+    "ManagerName": "AddonSchemaManager",
+    "Caption": "User Directory (Page settings)",
+    "DependsOn": []
+  }
+}

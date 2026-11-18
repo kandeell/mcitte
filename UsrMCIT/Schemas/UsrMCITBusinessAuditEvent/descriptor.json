@@ -1,0 +1,14 @@
+﻿{
+  "Descriptor": {
+    "UId": "dad4d983-8440-4aa6-8e60-ef9be415ac16",
+    "Name": "UsrMCITBusinessAuditEvent",
+    "ModifiedOnUtc": "\/Date(1793765726000)\/",
+    "Parent": {
+      "UId": "1bab9dcf-17d5-49f8-9536-8e0064f1dce0",
+      "Name": "BaseEntity"
+    },
+    "ManagerName": "EntitySchemaManager",
+    "Caption": "MCIT Business Audit Event",
+    "DependsOn": []
+  }
+}

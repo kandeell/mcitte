@@ -6,6 +6,7 @@
 			<Item Name="Columns.UsrActor.Caption" Value="Actor" />
 			<Item Name="Columns.UsrConfigVersion.Caption" Value="Configuration version" />
 			<Item Name="Columns.UsrContract.Caption" Value="Contract" />
+			<Item Name="Columns.UsrExpirationDate.Caption" Value="Expiration date" />
 			<Item Name="Columns.UsrName.Caption" Value="Transaction reference" />
 			<Item Name="Columns.UsrOriginTransaction.Caption" Value="Originating transaction" />
 			<Item Name="Columns.UsrQuantity.Caption" Value="Points quantity" />

@@ -3,31 +3,62 @@ define("UsrPage_1fdg3ul", /**SCHEMA_DEPS*/[]/**SCHEMA_DEPS*/, function/**SCHEMA_
 		viewConfigDiff: /**SCHEMA_VIEW_CONFIG_DIFF*/[
 			{
 				"operation": "merge",
-				"name": "SideAreaProfileContainer",
+				"name": "MainHeader",
 				"values": {
-					"gap": {
-						"columnGap": "large",
-						"rowGap": "none"
+					"padding": {
+						"top": "large",
+						"right": "large",
+						"bottom": "large",
+						"left": "large"
 					},
-					"visible": true,
-					"alignItems": "stretch"
+					"wrap": "nowrap"
+				}
+			},
+			{
+				"operation": "merge",
+				"name": "MainContainer",
+				"values": {
+					"gap": "large",
+					"wrap": "nowrap"
+				}
+			},
+			{
+				"operation": "remove",
+				"name": "SideContainer"
+			},
+			{
+				"operation": "remove",
+				"name": "SideAreaProfileContainer"
+			},
+			{
+				"operation": "merge",
+				"name": "CenterContainer",
+				"values": {
+					"layoutConfig": {
+						"column": 1,
+						"row": 1,
+						"colSpan": 2,
+						"rowSpan": 1
+					}
 				}
 			},
 			{
 				"operation": "merge",
 				"name": "Tabs",
 				"values": {
-					"visible": true,
 					"styleType": "default",
 					"mode": "tab",
-					"bodyBackgroundColor": "#F8FAFC",
+					"bodyBackgroundColor": "#FFFFFF",
 					"selectedTabTitleColor": "#000000",
 					"tabTitleColor": "#757575",
 					"underlineSelectedTabColor": "crt-color-purple",
 					"headerBackgroundColor": "crt-color-violet",
 					"stretch": true,
 					"allowToggleClose": true,
-					"selectedTabIndex": "$MCITSelectedTabIndex"
+					"selectedTabIndex": "$MCITSelectedTabIndex",
+					"selectedTab": {
+						"value": "GeneralInfoTab"
+					}
 				}
 			},
 			{
@@ -89,116 +120,61 @@ define("UsrPage_1fdg3ul", /**SCHEMA_DEPS*/[]/**SCHEMA_DEPS*/, function/**SCHEMA_
 			},
 			{
 				"operation": "insert",
-				"name": "MCITContractName",
-				"values": {
-					"type": "crt.Input",
-					"label": "Contract name",
-					"control": "$MCITContractName",
-					"labelPosition": "above",
-					"multiline": false,
-					"layoutConfig": {
-						"column": 1,
-						"row": 1,
-						"colSpan": 1,
-						"rowSpan": 1
-					}
-				},
-				"parentName": "SideAreaProfileContainer",
-				"propertyName": "items",
-				"index": 0
-			},
-			{
-				"operation": "insert",
-				"name": "MCITContractNumber",
-				"values": {
-					"type": "crt.Input",
-					"label": "Contract number",
-					"control": "$MCITContractNumber",
-					"labelPosition": "above",
-					"multiline": false,
-					"layoutConfig": {
-						"column": 1,
-						"row": 2,
-						"colSpan": 1,
-						"rowSpan": 1
-					}
-				},
-				"parentName": "SideAreaProfileContainer",
-				"propertyName": "items",
-				"index": 1
-			},
-			{
-				"operation": "insert",
-				"name": "MCITContractStatus",
-				"values": {
-					"type": "crt.ComboBox",
-					"label": "Status",
-					"control": "$MCITContractStatus",
-					"labelPosition": "above",
-					"isAddAllowed": false,
-					"showValueAsLink": false,
-					"controlActions": [],
-					"listActions": [],
-					"layoutConfig": {
-						"column": 1,
-						"row": 3,
-						"colSpan": 1,
-						"rowSpan": 1
-					}
-				},
-				"parentName": "SideAreaProfileContainer",
-				"propertyName": "items",
-				"index": 2
-			},
-			{
-				"operation": "insert",
-				"name": "MCITAuditCreatedOn",
-				"values": {
-					"type": "crt.DateTimePicker",
-					"label": "Created on",
-					"control": "$MCITAuditCreatedOn",
-					"labelPosition": "above",
-					"pickerType": "datetime",
-					"readonly": true,
-					"layoutConfig": {
-						"column": 1,
-						"colSpan": 1,
-						"row": 4,
-						"rowSpan": 1
-					}
-				},
-				"parentName": "SideAreaProfileContainer",
-				"propertyName": "items",
-				"index": 3
-			},
-			{
-				"operation": "insert",
-				"name": "MCITOverviewLayout",
+				"name": "GridContainer_s5q5rok",
 				"values": {
 					"type": "crt.GridContainer",
-					"items": [],
-					"rows": "minmax(32px, max-content)",
 					"columns": [
-						"repeat(auto-fit, minmax(280px, 1fr))"
+						"minmax(32px, 1fr)"
 					],
-					"gap": {
-						"columnGap": "large",
-						"rowGap": "medium"
-					},
-					"padding": {
-						"top": "small",
-						"right": "small",
-						"bottom": "small",
-						"left": "small"
-					},
-					"color": "#F8FAFC",
-					"borderRadius": "large",
-					"alignItems": "start",
-					"visible": true
+					"rows": "minmax(max-content, 32px)",
+					"items": []
 				},
 				"parentName": "GeneralInfoTab",
 				"propertyName": "items",
 				"index": 0
+			},
+			{
+				"operation": "insert",
+				"name": "GridContainer_3gchadl",
+				"values": {
+					"layoutConfig": {
+						"column": 1,
+						"colSpan": 1,
+						"row": 1,
+						"rowSpan": 1
+					},
+					"type": "crt.GridContainer",
+					"columns": [
+						"minmax(32px, 1fr)"
+					],
+					"rows": "minmax(max-content, 32px)",
+					"items": []
+				},
+				"parentName": "GridContainer_s5q5rok",
+				"propertyName": "items",
+				"index": 0
+			},
+			{
+				"operation": "insert",
+				"name": "GridContainer_v0a7kkc",
+				"values": {
+					"type": "crt.GridContainer",
+					"columns": [
+						"minmax(32px, 1fr)",
+						"minmax(32px, 1fr)",
+						"minmax(32px, 1fr)",
+						"minmax(32px, 1fr)"
+					],
+					"rows": "minmax(max-content, 32px)",
+					"items": [],
+					"gap": {
+						"columnGap": "large",
+						"rowGap": "medium"
+					}
+				},
+				"parentName": "GeneralInfoTab",
+				"propertyName": "items",
+				"index": 1
 			},
 			{
 				"operation": "insert",
@@ -215,15 +191,13 @@ define("UsrPage_1fdg3ul", /**SCHEMA_DEPS*/[]/**SCHEMA_DEPS*/, function/**SCHEMA_
 						"rowGap": "medium"
 					},
 					"padding": {
-						"top": "medium",
-						"right": "medium",
+						"top": "large",
+						"right": "large",
 						"bottom": "medium",
-						"left": "medium"
+						"left": "large"
 					},
-					"color": "#FFFFFF",
+					"color": "primary",
 					"borderRadius": "large",
-					"alignItems": "start",
-					"visible": true,
 					"layoutConfig": {
 						"column": 1,
 						"colSpan": 2,
@@ -231,7 +205,7 @@ define("UsrPage_1fdg3ul", /**SCHEMA_DEPS*/[]/**SCHEMA_DEPS*/, function/**SCHEMA_
 						"rowSpan": 1
 					}
 				},
-				"parentName": "MCITOverviewLayout",
+				"parentName": "GridContainer_v0a7kkc",
 				"propertyName": "items",
 				"index": 0
 			},
@@ -247,7 +221,6 @@ define("UsrPage_1fdg3ul", /**SCHEMA_DEPS*/[]/**SCHEMA_DEPS*/, function/**SCHEMA_
 					"labelColor": "#5B21A5",
 					"labelBackgroundColor": "transparent",
 					"labelTextAlign": "start",
-					"visible": true,
 					"layoutConfig": {
 						"column": 1,
 						"row": 1,
@@ -273,16 +246,6 @@ define("UsrPage_1fdg3ul", /**SCHEMA_DEPS*/[]/**SCHEMA_DEPS*/, function/**SCHEMA_
 						"columnGap": "large",
 						"rowGap": "small"
 					},
-					"visible": true,
-					"padding": {
-						"top": "none",
-						"right": "none",
-						"bottom": "none",
-						"left": "none"
-					},
-					"color": "transparent",
-					"borderRadius": "none",
-					"alignItems": "stretch",
 					"layoutConfig": {
 						"column": 1,
 						"row": 2,
@@ -293,6 +256,90 @@ define("UsrPage_1fdg3ul", /**SCHEMA_DEPS*/[]/**SCHEMA_DEPS*/, function/**SCHEMA_
 				"parentName": "MCITDetailsCard",
 				"propertyName": "items",
 				"index": 1
+			},
+			{
+				"operation": "insert",
+				"name": "MCITContractName",
+				"values": {
+					"type": "crt.Input",
+					"label": "Contract name",
+					"control": "$MCITContractName",
+					"labelPosition": "above",
+					"multiline": false,
+					"layoutConfig": {
+						"column": 1,
+						"colSpan": 1,
+						"row": 1,
+						"rowSpan": 1
+					}
+				},
+				"parentName": "MCITContractFields",
+				"propertyName": "items",
+				"index": 0
+			},
+			{
+				"operation": "insert",
+				"name": "MCITContractNumber",
+				"values": {
+					"type": "crt.Input",
+					"label": "Contract number",
+					"control": "$MCITContractNumber",
+					"labelPosition": "above",
+					"multiline": false,
+					"layoutConfig": {
+						"column": 2,
+						"colSpan": 1,
+						"row": 1,
+						"rowSpan": 1
+					}
+				},
+				"parentName": "MCITContractFields",
+				"propertyName": "items",
+				"index": 1
+			},
+			{
+				"operation": "insert",
+				"name": "MCITContractStatus",
+				"values": {
+					"type": "crt.ComboBox",
+					"label": "Status",
+					"control": "$MCITContractStatus",
+					"labelPosition": "above",
+					"isAddAllowed": false,
+					"showValueAsLink": false,
+					"controlActions": [],
+					"listActions": [],
+					"layoutConfig": {
+						"column": 1,
+						"colSpan": 1,
+						"row": 2,
+						"rowSpan": 1
+					}
+				},
+				"parentName": "MCITContractFields",
+				"propertyName": "items",
+				"index": 2
+			},
+			{
+				"operation": "insert",
+				"name": "MCITAuditCreatedOn",
+				"values": {
+					"type": "crt.DateTimePicker",
+					"label": "Created on",
+					"control": "$MCITAuditCreatedOn",
+					"labelPosition": "above",
+					"pickerType": "datetime",
+					"readonly": true,
+					"layoutConfig": {
+						"column": 2,
+						"colSpan": 1,
+						"row": 2,
+						"rowSpan": 1
+					}
+				},
+				"parentName": "MCITContractFields",
+				"propertyName": "items",
+				"index": 3
 			},
 			{
 				"operation": "insert",
@@ -309,13 +356,13 @@ define("UsrPage_1fdg3ul", /**SCHEMA_DEPS*/[]/**SCHEMA_DEPS*/, function/**SCHEMA_
 					"layoutConfig": {
 						"column": 1,
 						"colSpan": 1,
-						"row": 1,
+						"row": 3,
 						"rowSpan": 1
 					}
 				},
 				"parentName": "MCITContractFields",
 				"propertyName": "items",
-				"index": 0
+				"index": 4
 			},
 			{
 				"operation": "insert",
@@ -329,33 +376,13 @@ define("UsrPage_1fdg3ul", /**SCHEMA_DEPS*/[]/**SCHEMA_DEPS*/, function/**SCHEMA_
 					"layoutConfig": {
 						"column": 2,
 						"colSpan": 1,
-						"row": 1,
+						"row": 3,
 						"rowSpan": 1
 					}
 				},
 				"parentName": "MCITContractFields",
 				"propertyName": "items",
-				"index": 1
-			},
-			{
-				"operation": "insert",
-				"name": "MCITContractEndDate",
-				"values": {
-					"type": "crt.DateTimePicker",
-					"label": "End date",
-					"control": "$MCITContractEndDate",
-					"labelPosition": "above",
-					"pickerType": "date",
-					"layoutConfig": {
-						"column": 2,
-						"colSpan": 1,
-						"row": 2,
-						"rowSpan": 1
-					}
-				},
-				"parentName": "MCITContractFields",
-				"propertyName": "items",
-				"index": 2
+				"index": 5
 			},
 			{
 				"operation": "insert",
@@ -369,13 +396,33 @@ define("UsrPage_1fdg3ul", /**SCHEMA_DEPS*/[]/**SCHEMA_DEPS*/, function/**SCHEMA_
 					"layoutConfig": {
 						"column": 1,
 						"colSpan": 1,
-						"row": 2,
+						"row": 4,
 						"rowSpan": 1
 					}
 				},
 				"parentName": "MCITContractFields",
 				"propertyName": "items",
-				"index": 3
+				"index": 6
+			},
+			{
+				"operation": "insert",
+				"name": "MCITContractEndDate",
+				"values": {
+					"type": "crt.DateTimePicker",
+					"label": "End date",
+					"control": "$MCITContractEndDate",
+					"labelPosition": "above",
+					"pickerType": "date",
+					"layoutConfig": {
+						"column": 2,
+						"colSpan": 1,
+						"row": 4,
+						"rowSpan": 1
+					}
+				},
+				"parentName": "MCITContractFields",
+				"propertyName": "items",
+				"index": 7
 			},
 			{
 				"operation": "insert",
@@ -392,13 +439,13 @@ define("UsrPage_1fdg3ul", /**SCHEMA_DEPS*/[]/**SCHEMA_DEPS*/, function/**SCHEMA_
 					"layoutConfig": {
 						"column": 1,
 						"colSpan": 1,
-						"row": 3,
+						"row": 5,
 						"rowSpan": 1
 					}
 				},
 				"parentName": "MCITContractFields",
 				"propertyName": "items",
-				"index": 4
+				"index": 8
 			},
 			{
 				"operation": "insert",
@@ -411,13 +458,13 @@ define("UsrPage_1fdg3ul", /**SCHEMA_DEPS*/[]/**SCHEMA_DEPS*/, function/**SCHEMA_
 					"layoutConfig": {
 						"column": 2,
 						"colSpan": 1,
-						"row": 3,
+						"row": 5,
 						"rowSpan": 1
 					}
 				},
 				"parentName": "MCITContractFields",
 				"propertyName": "items",
-				"index": 5
+				"index": 9
 			},
 			{
 				"operation": "insert",
@@ -430,13 +477,13 @@ define("UsrPage_1fdg3ul", /**SCHEMA_DEPS*/[]/**SCHEMA_DEPS*/, function/**SCHEMA_
 					"layoutConfig": {
 						"column": 1,
 						"colSpan": 1,
-						"row": 4,
+						"row": 6,
 						"rowSpan": 1
 					}
 				},
 				"parentName": "MCITContractFields",
 				"propertyName": "items",
-				"index": 6
+				"index": 10
 			},
 			{
 				"operation": "insert",
@@ -445,7 +492,7 @@ define("UsrPage_1fdg3ul", /**SCHEMA_DEPS*/[]/**SCHEMA_DEPS*/, function/**SCHEMA_
 					"layoutConfig": {
 						"column": 1,
 						"colSpan": 2,
-						"row": 5,
+						"row": 7,
 						"rowSpan": 1
 					},
 					"type": "crt.GridContainer",
@@ -453,14 +500,7 @@ define("UsrPage_1fdg3ul", /**SCHEMA_DEPS*/[]/**SCHEMA_DEPS*/, function/**SCHEMA_
 						"minmax(32px, 1fr)"
 					],
 					"rows": "minmax(max-content, 32px)",
-					"gap": {
-						"columnGap": "large",
-						"rowGap": "none"
-					},
 					"items": [],
-					"fitContent": true,
-					"visible": true,
-					"alignItems": "stretch",
 					"color": "primary",
 					"borderRadius": "medium",
 					"padding": {
@@ -472,7 +512,7 @@ define("UsrPage_1fdg3ul", /**SCHEMA_DEPS*/[]/**SCHEMA_DEPS*/, function/**SCHEMA_
 				},
 				"parentName": "MCITContractFields",
 				"propertyName": "items",
-				"index": 7
+				"index": 11
 			},
 			{
 				"operation": "insert",
@@ -492,8 +532,7 @@ define("UsrPage_1fdg3ul", /**SCHEMA_DEPS*/[]/**SCHEMA_DEPS*/, function/**SCHEMA_
 					"labelColor": "#5B21A5",
 					"labelBackgroundColor": "transparent",
 					"labelTextAlign": "start",
-					"headingLevel": "label",
-					"visible": true
+					"headingLevel": "label"
 				},
 				"parentName": "GridContainer_m5nge9n",
 				"propertyName": "items",
@@ -544,16 +583,14 @@ define("UsrPage_1fdg3ul", /**SCHEMA_DEPS*/[]/**SCHEMA_DEPS*/, function/**SCHEMA_
 					},
 					"color": "primary",
 					"borderRadius": "large",
-					"alignItems": null,
-					"visible": true,
 					"layoutConfig": {
 						"column": 3,
-						"colSpan": 1,
+						"colSpan": 2,
 						"row": 1,
 						"rowSpan": 1
 					}
 				},
-				"parentName": "MCITOverviewLayout",
+				"parentName": "GridContainer_v0a7kkc",
 				"propertyName": "items",
 				"index": 1
 			},
@@ -569,7 +606,6 @@ define("UsrPage_1fdg3ul", /**SCHEMA_DEPS*/[]/**SCHEMA_DEPS*/, function/**SCHEMA_
 					"labelColor": "#5B21A5",
 					"labelBackgroundColor": "transparent",
 					"labelTextAlign": "start",
-					"visible": true,
 					"layoutConfig": {
 						"column": 1,
 						"row": 1,
@@ -629,6 +665,28 @@ define("UsrPage_1fdg3ul", /**SCHEMA_DEPS*/[]/**SCHEMA_DEPS*/, function/**SCHEMA_
 			},
 			{
 				"operation": "insert",
+				"name": "GridContainer_4z1pxo7",
+				"values": {
+					"layoutConfig": {
+						"column": 1,
+						"colSpan": 1,
+						"row": 4,
+						"rowSpan": 1
+					},
+					"type": "crt.GridContainer",
+					"columns": [
+						"minmax(32px, 1fr)",
+						"minmax(32px, 1fr)"
+					],
+					"rows": "minmax(max-content, 32px)",
+					"items": []
+				},
+				"parentName": "MCITContactsCard",
+				"propertyName": "items",
+				"index": 3
+			},
+			{
+				"operation": "insert",
 				"name": "MCITExpiryTitle",
 				"values": {
 					"type": "crt.Label",
@@ -639,37 +697,34 @@ define("UsrPage_1fdg3ul", /**SCHEMA_DEPS*/[]/**SCHEMA_DEPS*/, function/**SCHEMA_
 					"labelColor": "#5B21A5",
 					"labelBackgroundColor": "transparent",
 					"labelTextAlign": "start",
-					"visible": true,
 					"layoutConfig": {
 						"column": 1,
-						"row": 4,
 						"colSpan": 1,
+						"row": 1,
 						"rowSpan": 1
 					}
 				},
-				"parentName": "MCITContactsCard",
+				"parentName": "GridContainer_4z1pxo7",
 				"propertyName": "items",
-				"index": 3
+				"index": 0
 			},
 			{
 				"operation": "insert",
-				"name": "MCITExpiry30Caption",
+				"name": "NumberInput_k3fsl00",
 				"values": {
-					"type": "crt.Label",
-					"caption": "Restored points expiring in 30 days",
-					"labelType": "body",
-					"labelThickness": "default",
-					"labelEllipsis": false,
-					"labelColor": "#64748B",
-					"labelBackgroundColor": "transparent",
-					"labelTextAlign": "start",
-					"visible": true,
 					"layoutConfig": {
 						"column": 1,
-						"row": 5,
 						"colSpan": 1,
+						"row": 5,
 						"rowSpan": 1
-					}
+					},
+					"type": "crt.NumberInput",
+					"label": "$Resources.Strings.UsrMCITContractDS_UsrRestoredPointsExpiring30Days_kozd0ln",
+					"control": "$UsrMCITContractDS_UsrRestoredPointsExpiring30Days_kozd0ln",
+					"readonly": true,
+					"placeholder": "",
+					"labelPosition": "above",
+					"tooltip": ""
 				},
 				"parentName": "MCITContactsCard",
 				"propertyName": "items",
@@ -677,27 +732,77 @@ define("UsrPage_1fdg3ul", /**SCHEMA_DEPS*/[]/**SCHEMA_DEPS*/, function/**SCHEMA_
 			},
 			{
 				"operation": "insert",
-				"name": "MCITExpiry90Caption",
+				"name": "NumberInput_bohwb7q",
 				"values": {
-					"type": "crt.Label",
-					"caption": "Restored points expiring in 90 days",
-					"labelType": "body",
-					"labelThickness": "default",
-					"labelEllipsis": false,
-					"labelColor": "#64748B",
-					"labelBackgroundColor": "transparent",
-					"labelTextAlign": "start",
-					"visible": true,
 					"layoutConfig": {
 						"column": 1,
-						"row": 6,
 						"colSpan": 1,
+						"row": 6,
+						"rowSpan": 1
+					},
+					"type": "crt.NumberInput",
+					"label": "$Resources.Strings.UsrMCITContractDS_UsrRestoredPointsExpiring90Days_laf51xp",
+					"control": "$UsrMCITContractDS_UsrRestoredPointsExpiring90Days_laf51xp",
+					"readonly": true,
+					"placeholder": "",
+					"labelPosition": "above",
+					"tooltip": ""
+				},
+				"parentName": "MCITContactsCard",
+				"propertyName": "items",
+				"index": 5
+			},
+			{
+				"operation": "insert",
+				"name": "Button_z7p7714",
+				"values": {
+					"type": "crt.Button",
+					"caption": "#ResourceString(Button_z7p7714_caption)#",
+					"color": "primary",
+					"size": "large",
+					"iconPosition": "only-text",
+					"clicked": {
+						"request": "crt.RunBusinessProcessRequest",
+						"params": {
+							"processName": "UsrMCITRestorationExpiryPreview",
+							"processRunType": "ForTheSelectedPage",
+							"saveAtProcessStart": true,
+							"showNotification": true,
+							"recordIdProcessParameterName": "ContractID"
+						}
+					},
+					"clickMode": "default",
+					"layoutConfig": {
+						"column": 1,
+						"colSpan": 1,
+						"row": 7,
 						"rowSpan": 1
 					}
 				},
 				"parentName": "MCITContactsCard",
 				"propertyName": "items",
-				"index": 5
+				"index": 6
+			},
+			{
+				"operation": "insert",
+				"name": "GridContainer_3mow0v5",
+				"values": {
+					"layoutConfig": {
+						"column": 1,
+						"colSpan": 4,
+						"row": 2,
+						"rowSpan": 1
+					},
+					"type": "crt.GridContainer",
+					"columns": [
+						"minmax(32px, 1fr)"
+					],
+					"rows": "minmax(max-content, 32px)",
+					"items": []
+				},
+				"parentName": "GridContainer_v0a7kkc",
+				"propertyName": "items",
+				"index": 2
 			},
 			{
 				"operation": "insert",
@@ -708,30 +813,17 @@ define("UsrPage_1fdg3ul", /**SCHEMA_DEPS*/[]/**SCHEMA_DEPS*/, function/**SCHEMA_
 						"minmax(32px, 1fr)"
 					],
 					"rows": "minmax(max-content, 32px)",
-					"gap": {
-						"columnGap": "large",
-						"rowGap": "none"
-					},
 					"items": [],
-					"fitContent": true,
-					"visible": true,
-					"alignItems": "stretch",
 					"color": "primary",
 					"borderRadius": "medium",
 					"padding": {
-						"top": "medium",
+						"top": "small",
 						"bottom": "medium",
 						"right": "medium",
 						"left": "medium"
-					},
-					"layoutConfig": {
-						"column": 1,
-						"colSpan": 3,
-						"row": 2,
-						"rowSpan": 2
 					}
 				},
-				"parentName": "MCITOverviewLayout",
+				"parentName": "GeneralInfoTab",
 				"propertyName": "items",
 				"index": 2
 			},
@@ -753,8 +845,7 @@ define("UsrPage_1fdg3ul", /**SCHEMA_DEPS*/[]/**SCHEMA_DEPS*/, function/**SCHEMA_
 					"labelColor": "#5B21A5",
 					"labelBackgroundColor": "transparent",
 					"labelTextAlign": "start",
-					"headingLevel": "label",
-					"visible": true
+					"headingLevel": "label"
 				},
 				"parentName": "GridContainer_hasnfno",
 				"propertyName": "items",
@@ -793,8 +884,7 @@ define("UsrPage_1fdg3ul", /**SCHEMA_DEPS*/[]/**SCHEMA_DEPS*/, function/**SCHEMA_
 					"type": "crt.TabContainer",
 					"items": [],
 					"caption": "Configuration Versions",
-					"iconPosition": "only-text",
-					"visible": true
+					"iconPosition": "only-text"
 				},
 				"parentName": "Tabs",
 				"propertyName": "items",
@@ -802,27 +892,21 @@ define("UsrPage_1fdg3ul", /**SCHEMA_DEPS*/[]/**SCHEMA_DEPS*/, function/**SCHEMA_
 			},
 			{
 				"operation": "insert",
-				"name": "ExpansionPanel_pburjeo",
+				"name": "FlexContainer_aspnfn9",
 				"values": {
-					"type": "crt.ExpansionPanel",
-					"tools": [],
+					"type": "crt.FlexContainer",
+					"direction": "row",
 					"items": [],
-					"title": "#ResourceString(ExpansionPanel_pburjeo_title)#",
-					"toggleType": "material",
-					"togglePosition": "before",
-					"expanded": true,
-					"labelColor": "#5B21A5",
-					"fullWidthHeader": false,
-					"titleWidth": 20,
+					"justifyContent": "space-between",
+					"gap": "none",
 					"padding": {
-						"top": "small",
-						"bottom": "small",
-						"left": "none",
-						"right": "none"
+						"top": "large",
+						"right": "none",
+						"bottom": "large",
+						"left": "large"
 					},
-					"fitContent": true,
-					"visible": true,
-					"alignItems": "stretch"
+					"alignItems": "flex-start",
+					"wrap": "nowrap"
 				},
 				"parentName": "TabContainer_h354xra",
 				"propertyName": "items",
@@ -830,98 +914,43 @@ define("UsrPage_1fdg3ul", /**SCHEMA_DEPS*/[]/**SCHEMA_DEPS*/, function/**SCHEMA_
 			},
 			{
 				"operation": "insert",
-				"name": "GridContainer_k6pqi6g",
+				"name": "GridContainer_b6b1a7x",
 				"values": {
 					"type": "crt.GridContainer",
-					"rows": "minmax(max-content, 24px)",
 					"columns": [
+						"minmax(32px, 1fr)",
 						"minmax(32px, 1fr)"
 					],
-					"gap": {
-						"columnGap": "large",
-						"rowGap": 0
-					},
-					"styles": {
-						"overflow-x": "hidden"
-					},
+					"rows": "minmax(max-content, 32px)",
 					"items": []
 				},
-				"parentName": "ExpansionPanel_pburjeo",
-				"propertyName": "tools",
+				"parentName": "FlexContainer_aspnfn9",
+				"propertyName": "items",
 				"index": 0
 			},
 			{
 				"operation": "insert",
-				"name": "FlexContainer_pdacv8i",
+				"name": "Label_q7xvr29",
 				"values": {
-					"type": "crt.FlexContainer",
-					"direction": "row",
-					"gap": "none",
-					"alignItems": "center",
-					"items": [],
+					"type": "crt.Label",
+					"caption": "#MacrosTemplateString(#ResourceString(Label_q7xvr29_caption)#)#",
+					"labelType": "body-large",
+					"labelThickness": "default",
+					"labelEllipsis": false,
+					"labelColor": "#5B21A5",
+					"labelBackgroundColor": "transparent",
+					"labelTextAlign": "start",
+					"headingLevel": "label",
 					"layoutConfig": {
 						"column": 1,
-						"row": 1,
 						"colSpan": 1,
+						"row": 1,
 						"rowSpan": 1
 					}
 				},
-				"parentName": "GridContainer_k6pqi6g",
+				"parentName": "GridContainer_b6b1a7x",
 				"propertyName": "items",
 				"index": 0
-			},
-			{
-				"operation": "insert",
-				"name": "GridDetailAddBtn_opvbbzb",
-				"values": {
-					"type": "crt.Button",
-					"caption": "Add version",
-					"icon": "add-button-icon",
-					"iconPosition": "left-icon",
-					"color": "default",
-					"size": "medium",
-					"clicked": {
-						"request": "crt.CreateRecordRequest",
-						"params": {
-							"entityName": "UsrContractConfigVersion",
-							"defaultValues": [
-								{
-									"attributeName": "UsrContract",
-									"value": "$Id"
-								}
-							]
-						}
-					},
-					"visible": true,
-					"clickMode": "default"
-				},
-				"parentName": "FlexContainer_pdacv8i",
-				"propertyName": "items",
-				"index": 0
-			},
-			{
-				"operation": "insert",
-				"name": "GridDetailRefreshBtn_kx4zxdd",
-				"values": {
-					"type": "crt.Button",
-					"caption": "#ResourceString(GridDetailRefreshBtn_kx4zxdd_caption)#",
-					"icon": "reload-icon",
-					"iconPosition": "only-icon",
-					"color": "default",
-					"size": "medium",
-					"clicked": {
-						"request": "crt.LoadDataRequest",
-						"params": {
-							"config": {
-								"loadType": "reload"
-							},
-							"dataSourceName": "GridDetail_va48qvxDS"
-						}
-					}
-				},
-				"parentName": "FlexContainer_pdacv8i",
-				"propertyName": "items",
-				"index": 1
 			},
 			{
 				"operation": "insert",
@@ -934,11 +963,17 @@ define("UsrPage_1fdg3ul", /**SCHEMA_DEPS*/[]/**SCHEMA_DEPS*/, function/**SCHEMA_
 					"color": "default",
 					"size": "medium",
 					"clickMode": "menu",
-					"menuItems": []
+					"menuItems": [],
+					"layoutConfig": {
+						"column": 2,
+						"colSpan": 1,
+						"row": 1,
+						"rowSpan": 1
+					}
 				},
-				"parentName": "FlexContainer_pdacv8i",
+				"parentName": "GridContainer_b6b1a7x",
 				"propertyName": "items",
-				"index": 2
+				"index": 1
 			},
 			{
 				"operation": "insert",
@@ -982,6 +1017,41 @@ define("UsrPage_1fdg3ul", /**SCHEMA_DEPS*/[]/**SCHEMA_DEPS*/, function/**SCHEMA_
 			},
 			{
 				"operation": "insert",
+				"name": "GridContainer_g2kausl",
+				"values": {
+					"type": "crt.GridContainer",
+					"columns": [
+						"minmax(32px, 1fr)"
+					],
+					"rows": "minmax(max-content, 32px)",
+					"items": []
+				},
+				"parentName": "FlexContainer_aspnfn9",
+				"propertyName": "items",
+				"index": 1
+			},
+			{
+				"operation": "insert",
+				"name": "GridContainer_7icojul",
+				"values": {
+					"type": "crt.GridContainer",
+					"columns": [
+						"minmax(32px, 1fr)",
+						"minmax(32px, 1fr)"
+					],
+					"rows": "minmax(max-content, 32px)",
+					"gap": {
+						"columnGap": "none",
+						"rowGap": "none"
+					},
+					"items": []
+				},
+				"parentName": "FlexContainer_aspnfn9",
+				"propertyName": "items",
+				"index": 2
+			},
+			{
+				"operation": "insert",
 				"name": "GridDetailSearchFilter_6m356c3",
 				"values": {
 					"type": "crt.SearchFilter",
@@ -1005,46 +1075,109 @@ define("UsrPage_1fdg3ul", /**SCHEMA_DEPS*/[]/**SCHEMA_DEPS*/, function/**SCHEMA_
 							"GridDetailSearchFilter_6m356c3_SearchValue",
 							"GridDetailSearchFilter_6m356c3_FilteredColumnsGroups"
 						]
+					},
+					"layoutConfig": {
+						"column": 1,
+						"colSpan": 1,
+						"row": 1,
+						"rowSpan": 1
 					}
 				},
-				"parentName": "FlexContainer_pdacv8i",
+				"parentName": "GridContainer_7icojul",
 				"propertyName": "items",
-				"index": 3
+				"index": 0
 			},
 			{
 				"operation": "insert",
-				"name": "GridContainer_yd45tjn",
+				"name": "GridContainer_j7ln7pj",
 				"values": {
+					"layoutConfig": {
+						"column": 2,
+						"colSpan": 1,
+						"row": 1,
+						"rowSpan": 1
+					},
 					"type": "crt.GridContainer",
-					"rows": "minmax(max-content, 32px)",
 					"columns": [
 						"minmax(32px, 1fr)",
 						"minmax(32px, 1fr)"
 					],
-					"gap": {
-						"columnGap": "large",
-						"rowGap": 0
-					},
-					"styles": {
-						"overflow-x": "hidden"
-					},
+					"rows": "minmax(max-content, 32px)",
 					"items": []
 				},
-				"parentName": "ExpansionPanel_pburjeo",
+				"parentName": "GridContainer_7icojul",
+				"propertyName": "items",
+				"index": 1
+			},
+			{
+				"operation": "insert",
+				"name": "GridDetailAddBtn_opvbbzb",
+				"values": {
+					"type": "crt.Button",
+					"caption": "#ResourceString(GridDetailAddBtn_opvbbzb_caption)#",
+					"icon": "add-button-icon",
+					"iconPosition": "only-icon",
+					"color": "default",
+					"size": "medium",
+					"clicked": {
+						"request": "crt.CreateRecordRequest",
+						"params": {
+							"entityName": "UsrContractConfigVersion",
+							"defaultValues": [
+								{
+									"attributeName": "UsrContract",
+									"value": "$Id"
+								}
+							]
+						}
+					},
+					"clickMode": "default",
+					"layoutConfig": {
+						"column": 1,
+						"colSpan": 1,
+						"row": 1,
+						"rowSpan": 1
+					}
+				},
+				"parentName": "GridContainer_j7ln7pj",
 				"propertyName": "items",
 				"index": 0
+			},
+			{
+				"operation": "insert",
+				"name": "GridDetailRefreshBtn_kx4zxdd",
+				"values": {
+					"type": "crt.Button",
+					"caption": "#ResourceString(GridDetailRefreshBtn_kx4zxdd_caption)#",
+					"icon": "reload-icon",
+					"iconPosition": "only-icon",
+					"color": "default",
+					"size": "medium",
+					"clicked": {
+						"request": "crt.LoadDataRequest",
+						"params": {
+							"config": {
+								"loadType": "reload"
+							},
+							"dataSourceName": "GridDetail_va48qvxDS"
+						}
+					},
+					"layoutConfig": {
+						"column": 2,
+						"colSpan": 1,
+						"row": 1,
+						"rowSpan": 1
+					}
+				},
+				"parentName": "GridContainer_j7ln7pj",
+				"propertyName": "items",
+				"index": 1
 			},
 			{
 				"operation": "insert",
 				"name": "GridDetail_va48qvx",
 				"values": {
 					"type": "crt.DataGrid",
-					"layoutConfig": {
-						"column": 1,
-						"row": 1,
-						"colSpan": 2,
-						"rowSpan": 6
-					},
 					"features": {
 						"rows": {
 							"selection": {
@@ -1096,9 +1229,9 @@ define("UsrPage_1fdg3ul", /**SCHEMA_DEPS*/[]/**SCHEMA_DEPS*/, function/**SCHEMA_
 					],
 					"placeholder": false
 				},
-				"parentName": "GridContainer_yd45tjn",
+				"parentName": "TabContainer_h354xra",
 				"propertyName": "items",
-				"index": 0
+				"index": 1
 			},
 			{
 				"operation": "insert",
@@ -1107,8 +1240,7 @@ define("UsrPage_1fdg3ul", /**SCHEMA_DEPS*/[]/**SCHEMA_DEPS*/, function/**SCHEMA_
 					"type": "crt.TabContainer",
 					"items": [],
 					"caption": "#ResourceString(TabContainer_91fz9dg_caption)#",
-					"iconPosition": "only-text",
-					"visible": true
+					"iconPosition": "only-text"
 				},
 				"parentName": "Tabs",
 				"propertyName": "items",
@@ -1142,7 +1274,6 @@ define("UsrPage_1fdg3ul", /**SCHEMA_DEPS*/[]/**SCHEMA_DEPS*/, function/**SCHEMA_
 					"type": "crt.FlexContainer",
 					"direction": "row",
 					"items": [],
-					"gap": "small",
 					"alignItems": "center",
 					"color": "#EFF6FF",
 					"borderRadius": "large",
@@ -1207,17 +1338,7 @@ define("UsrPage_1fdg3ul", /**SCHEMA_DEPS*/[]/**SCHEMA_DEPS*/, function/**SCHEMA_
 					"gap": {
 						"columnGap": "medium",
 						"rowGap": "medium"
-					},
-					"visible": true,
-					"padding": {
-						"top": "none",
-						"right": "none",
-						"bottom": "none",
-						"left": "none"
-					},
-					"color": "transparent",
-					"borderRadius": "none",
-					"alignItems": "stretch"
+					}
 				},
 				"parentName": "MCITBalancesContent",
 				"propertyName": "items",
@@ -1230,7 +1351,6 @@ define("UsrPage_1fdg3ul", /**SCHEMA_DEPS*/[]/**SCHEMA_DEPS*/, function/**SCHEMA_
 					"type": "crt.FlexContainer",
 					"direction": "column",
 					"items": [],
-					"gap": "small",
 					"color": "#F0FDF4",
 					"borderRadius": "large",
 					"padding": {
@@ -1322,8 +1442,7 @@ define("UsrPage_1fdg3ul", /**SCHEMA_DEPS*/[]/**SCHEMA_DEPS*/, function/**SCHEMA_
 						},
 						"hint": "#ResourceString(IndicatorWidget_lqmx8vv_hint)#",
 						"hideTitle": true
-					},
-					"visible": true
+					}
 				},
 				"parentName": "MCITAvailableCard",
 				"propertyName": "items",
@@ -1336,7 +1455,6 @@ define("UsrPage_1fdg3ul", /**SCHEMA_DEPS*/[]/**SCHEMA_DEPS*/, function/**SCHEMA_
 					"type": "crt.FlexContainer",
 					"direction": "column",
 					"items": [],
-					"gap": "small",
 					"color": "#FEF2F2",
 					"borderRadius": "large",
 					"padding": {
@@ -1428,8 +1546,7 @@ define("UsrPage_1fdg3ul", /**SCHEMA_DEPS*/[]/**SCHEMA_DEPS*/, function/**SCHEMA_
 						},
 						"hint": "#ResourceString(IndicatorWidget_47fbb88_hint)#",
 						"hideTitle": true
-					},
-					"visible": true
+					}
 				},
 				"parentName": "MCITConsumedCard",
 				"propertyName": "items",
@@ -1442,7 +1559,6 @@ define("UsrPage_1fdg3ul", /**SCHEMA_DEPS*/[]/**SCHEMA_DEPS*/, function/**SCHEMA_
 					"type": "crt.FlexContainer",
 					"direction": "column",
 					"items": [],
-					"gap": "small",
 					"color": "#EFF6FF",
 					"borderRadius": "large",
 					"padding": {
@@ -1534,8 +1650,7 @@ define("UsrPage_1fdg3ul", /**SCHEMA_DEPS*/[]/**SCHEMA_DEPS*/, function/**SCHEMA_
 						},
 						"hint": "#ResourceString(IndicatorWidget_v1hpa7j_hint)#",
 						"hideTitle": true
-					},
-					"visible": true
+					}
 				},
 				"parentName": "MCITRestoredCard",
 				"propertyName": "items",
@@ -1548,7 +1663,6 @@ define("UsrPage_1fdg3ul", /**SCHEMA_DEPS*/[]/**SCHEMA_DEPS*/, function/**SCHEMA_
 					"type": "crt.FlexContainer",
 					"direction": "column",
 					"items": [],
-					"gap": "small",
 					"color": "#F8FAFC",
 					"borderRadius": "large",
 					"padding": {
@@ -1581,19 +1695,7 @@ define("UsrPage_1fdg3ul", /**SCHEMA_DEPS*/[]/**SCHEMA_DEPS*/, function/**SCHEMA_
 				"values": {
 					"type": "crt.FlexContainer",
 					"direction": "row",
-					"wrap": "wrap",
 					"items": [],
-					"fitContent": true,
-					"visible": true,
-					"padding": {
-						"top": "none",
-						"right": "none",
-						"bottom": "none",
-						"left": "none"
-					},
-					"color": "transparent",
-					"borderRadius": "none",
-					"alignItems": "stretch",
 					"justifyContent": "center",
 					"gap": "large"
 				},
@@ -1660,8 +1762,7 @@ define("UsrPage_1fdg3ul", /**SCHEMA_DEPS*/[]/**SCHEMA_DEPS*/, function/**SCHEMA_
 						},
 						"hint": "#ResourceString(IndicatorWidget_pls0lz2_hint)#",
 						"hideTitle": false
-					},
-					"visible": true
+					}
 				},
 				"parentName": "FlexContainer_num6g01",
 				"propertyName": "items",
@@ -1726,8 +1827,7 @@ define("UsrPage_1fdg3ul", /**SCHEMA_DEPS*/[]/**SCHEMA_DEPS*/, function/**SCHEMA_
 						},
 						"hint": "#ResourceString(IndicatorWidget_c7lr18k_hint)#",
 						"hideTitle": false
-					},
-					"visible": true
+					}
 				},
 				"parentName": "FlexContainer_num6g01",
 				"propertyName": "items",
@@ -1793,7 +1893,6 @@ define("UsrPage_1fdg3ul", /**SCHEMA_DEPS*/[]/**SCHEMA_DEPS*/, function/**SCHEMA_
 						"hint": "#ResourceString(IndicatorWidget_wk1kcsw_hint)#",
 						"hideTitle": false
 					},
-					"visible": true,
 					"layoutConfig": {
 						"width": 162.96875
 					}
@@ -1835,8 +1934,6 @@ define("UsrPage_1fdg3ul", /**SCHEMA_DEPS*/[]/**SCHEMA_DEPS*/, function/**SCHEMA_
 						"left": "none",
 						"right": "none"
 					},
-					"fitContent": true,
-					"visible": true,
 					"alignItems": "stretch"
 				},
 				"parentName": "MCITLedgerTab",
@@ -2071,7 +2168,6 @@ define("UsrPage_1fdg3ul", /**SCHEMA_DEPS*/[]/**SCHEMA_DEPS*/, function/**SCHEMA_
 						}
 					],
 					"placeholder": false,
-					"visible": true,
 					"fitContent": true
 				},
 				"parentName": "GridContainer_99qcsyo",
@@ -2111,8 +2207,6 @@ define("UsrPage_1fdg3ul", /**SCHEMA_DEPS*/[]/**SCHEMA_DEPS*/, function/**SCHEMA_
 						"left": "none",
 						"right": "none"
 					},
-					"fitContent": true,
-					"visible": true,
 					"alignItems": "stretch"
 				},
 				"parentName": "MCITRequestsTab",
@@ -2177,7 +2271,6 @@ define("UsrPage_1fdg3ul", /**SCHEMA_DEPS*/[]/**SCHEMA_DEPS*/, function/**SCHEMA_
 							"entityName": "UsrVMRequest"
 						}
 					},
-					"visible": true,
 					"clickMode": "default"
 				},
 				"parentName": "FlexContainer_um43qn4",
@@ -2328,7 +2421,7 @@ define("UsrPage_1fdg3ul", /**SCHEMA_DEPS*/[]/**SCHEMA_DEPS*/, function/**SCHEMA_
 						"colSpan": 2,
 						"column": 1,
 						"row": 1,
-						"rowSpan": 6
+						"rowSpan": 21
 					},
 					"features": {
 						"rows": {
@@ -2339,7 +2432,6 @@ define("UsrPage_1fdg3ul", /**SCHEMA_DEPS*/[]/**SCHEMA_DEPS*/, function/**SCHEMA_
 						}
 					},
 					"items": "$GridDetail_a4btibx",
-					"visible": true,
 					"fitContent": true,
 					"primaryColumnName": "GridDetail_a4btibxDS_Id",
 					"columns": [
@@ -2413,8 +2505,6 @@ define("UsrPage_1fdg3ul", /**SCHEMA_DEPS*/[]/**SCHEMA_DEPS*/, function/**SCHEMA_
 						"left": "none",
 						"right": "none"
 					},
-					"fitContent": true,
-					"visible": true,
 					"alignItems": "stretch"
 				},
 				"parentName": "MCITMachinesTab",
@@ -2797,14 +2887,7 @@ define("UsrPage_1fdg3ul", /**SCHEMA_DEPS*/[]/**SCHEMA_DEPS*/, function/**SCHEMA_
 						"minmax(32px, 1fr)"
 					],
 					"rows": "minmax(max-content, 32px)",
-					"gap": {
-						"columnGap": "large",
-						"rowGap": "none"
-					},
 					"items": [],
-					"fitContent": true,
-					"visible": true,
-					"alignItems": "stretch",
 					"color": "primary",
 					"borderRadius": "medium",
 					"padding": {
@@ -3057,7 +3140,7 @@ define("UsrPage_1fdg3ul", /**SCHEMA_DEPS*/[]/**SCHEMA_DEPS*/, function/**SCHEMA_
 							"sortingConfig": {
 								"default": [
 									{
-										"direction": "desc",
+										"direction": "asc",
 										"columnName": "UsrEffectiveFrom"
 									}
 								]
@@ -3296,6 +3379,16 @@ define("UsrPage_1fdg3ul", /**SCHEMA_DEPS*/[]/**SCHEMA_DEPS*/, function/**SCHEMA_
 									}
 								}
 							}
+						}
+					},
+					"UsrMCITContractDS_UsrRestoredPointsExpiring30Days_kozd0ln": {
+						"modelConfig": {
+							"path": "UsrMCITContractDS.UsrRestoredPointsExpiring30Days"
+						}
+					},
+					"UsrMCITContractDS_UsrRestoredPointsExpiring90Days_laf51xp": {
+						"modelConfig": {
+							"path": "UsrMCITContractDS.UsrRestoredPointsExpiring90Days"
 						}
 					}
 				}

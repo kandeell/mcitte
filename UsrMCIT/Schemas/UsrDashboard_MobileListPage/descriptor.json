@@ -1,0 +1,14 @@
+﻿{
+  "Descriptor": {
+    "UId": "df6166d6-3a70-4695-9888-7a9b311a2ff7",
+    "Name": "UsrDashboard_MobileListPage",
+    "ModifiedOnUtc": "\/Date(1794131459000)\/",
+    "Parent": {
+      "UId": "011e7dda-a763-4535-9b9a-e09eddd047be",
+      "Name": "BaseMobileListTemplate"
+    },
+    "ManagerName": "ClientUnitSchemaManager",
+    "Caption": "Dashboard mobile list page",
+    "DependsOn": []
+  }
+}

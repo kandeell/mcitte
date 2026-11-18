@@ -1,0 +1,14 @@
+﻿{
+  "Descriptor": {
+    "UId": "1cb46938-2300-46fe-8b32-cac1f57fc691",
+    "Name": "UsrVMLifecycleSubmitUsrMCIT1",
+    "ModifiedOnUtc": "\/Date(1794304249000)\/",
+    "Parent": {
+      "UId": "93633811-768a-4fe7-bc13-3173d67bcf51",
+      "Name": "UsrVMLifecycleSubmit"
+    },
+    "ManagerName": "ProcessSchemaManager",
+    "Caption": "VM Lifecycle — Submit Change",
+    "DependsOn": []
+  }
+}

@@ -1,0 +1,10 @@
+﻿{
+  "Descriptor": {
+    "UId": "cb51982a-3ac9-42c2-a2e3-4456bb544bdc",
+    "Name": "UsrReportsMobileRelatedPage",
+    "ModifiedOnUtc": "\/Date(1794148832000)\/",
+    "ManagerName": "AddonSchemaManager",
+    "Caption": "Reports (Mobile page settings)",
+    "DependsOn": []
+  }
+}

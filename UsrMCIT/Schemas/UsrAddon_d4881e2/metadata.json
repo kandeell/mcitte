@@ -1,0 +1,24 @@
+﻿{
+  "MetaData": {
+    "Schema": {
+      "ManagerName": "AddonSchemaManager",
+      "UId": "89a7ee06-a493-43e0-a7a4-c6ef8ef4d496",
+      "A2": "UsrAddon_d4881e2",
+      "A5": "742d6898-a0fa-4d2e-ae5a-84dc21971c5e",
+      "B1": [],
+      "B2": [],
+      "B3": [],
+      "B6": "5dcca910-bc4c-42b7-bfe0-2ad5c8cc3965",
+      "B8": "10.0.0.858",
+      "AD1": "e6412140-9714-4bdd-afc4-3dfd19d4d648",
+      "AD2": "ClientUnitSchemaManager",
+      "AD3": "AppearanceSettings",
+      "AD5": "3a2d6f51-1bfc-4c17-aacb-b53de4866b7c",
+      "AD4": {
+  "modalSettings": {
+    "size": 4
+  }
+}
+    }
+  }
+}

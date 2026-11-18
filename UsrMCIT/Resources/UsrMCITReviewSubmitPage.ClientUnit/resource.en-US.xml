@@ -1,0 +1,35 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Resources Culture="en-US">
+	<Group Type="String">
+		<Items>
+			<Item Name="Caption" Value="MCIT Review &amp; Submit Page" />
+			<Item Name="LocalizableStrings.Button_1c6reqo_caption.Value" Value="Save as Draft" />
+			<Item Name="LocalizableStrings.Button_9iwkx4q_caption.Value" Value="Back" />
+			<Item Name="LocalizableStrings.Button_vqxd899_caption.Value" Value="Submit Request - متابعة" />
+			<Item Name="LocalizableStrings.ExpansionPanel_1vxwwlq_title.Value" Value="VM Request" />
+			<Item Name="LocalizableStrings.ExpansionPanel_85huzhl_title.Value" Value="Expanded list" />
+			<Item Name="LocalizableStrings.ExpansionPanel_l9h589s_title.Value" Value="VM Request Item" />
+			<Item Name="LocalizableStrings.GridDetailAddBtn_58ywjt2_caption.Value" Value="New" />
+			<Item Name="LocalizableStrings.GridDetailAddBtn_9qwq0u8_caption.Value" Value="New" />
+			<Item Name="LocalizableStrings.GridDetailAddBtn_loz4k7z_caption.Value" Value="New" />
+			<Item Name="LocalizableStrings.GridDetailExportDataBtn_3qiw1xp_caption.Value" Value="Export to Excel" />
+			<Item Name="LocalizableStrings.GridDetailExportDataBtn_5fs1zff_caption.Value" Value="Export to Excel" />
+			<Item Name="LocalizableStrings.GridDetailExportDataBtn_l6i4dpv_caption.Value" Value="Export to Excel" />
+			<Item Name="LocalizableStrings.GridDetailImportDataBtn_96fm7q5_caption.Value" Value="Data import" />
+			<Item Name="LocalizableStrings.GridDetailImportDataBtn_bhvf8sz_caption.Value" Value="Data import" />
+			<Item Name="LocalizableStrings.GridDetailImportDataBtn_tyck9ke_caption.Value" Value="Data import" />
+			<Item Name="LocalizableStrings.GridDetailRefreshBtn_vh4vi8i_caption.Value" Value="Refresh" />
+			<Item Name="LocalizableStrings.GridDetailRefreshBtn_wvir193_caption.Value" Value="Refresh" />
+			<Item Name="LocalizableStrings.GridDetailRefreshBtn_yez2n3n_caption.Value" Value="Refresh" />
+			<Item Name="LocalizableStrings.GridDetailSearchFilter_1a5ryz9_placeholder.Value" Value="Search" />
+			<Item Name="LocalizableStrings.GridDetailSearchFilter_357838y_placeholder.Value" Value="Search" />
+			<Item Name="LocalizableStrings.GridDetailSearchFilter_pi16f9u_placeholder.Value" Value="Search" />
+			<Item Name="LocalizableStrings.GridDetailSettingsBtn_0qyx9pi_caption.Value" Value="Actions" />
+			<Item Name="LocalizableStrings.GridDetailSettingsBtn_36dueo1_caption.Value" Value="Actions" />
+			<Item Name="LocalizableStrings.GridDetailSettingsBtn_n4x1iwd_caption.Value" Value="Actions" />
+			<Item Name="LocalizableStrings.Label_8bpcioc_caption.Value" Value="Create New Request · طلب جديد" />
+			<Item Name="LocalizableStrings.Label_qd3zgi4_caption.Value" Value="I confirm that the information provided is accurate and complete. I understand this request will be submitted to Telecom Egypt for review. I have the authority to submit on behalf of Ministry of Education." />
+			<Item Name="LocalizableStrings.Label_uztl0uu_caption.Value" Value="New VM Provisioning Request — Review &amp; Submit" />
+		</Items>
+	</Group>
+</Resources>

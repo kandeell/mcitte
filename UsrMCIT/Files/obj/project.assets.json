@@ -1,0 +1,65 @@
+{
+  "version": 4,
+  "targets": {
+    "net472": {}
+  },
+  "libraries": {},
+  "projectFileDependencyGroups": {
+    "net472": []
+  },
+  "packageFolders": {
+    "C:\\WINDOWS\\TEMP\\1\\IIS APPPOOL_Realese\\Default\\dotnet\\.nuget\\packages\\": {},
+    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
+  },
+  "project": {
+    "version": "10.1.796",
+    "restore": {
+      "projectUniqueName": "C:\\creatioprojects\\Realese\\Terrasoft.WebApp\\Terrasoft.Configuration\\Pkg\\UsrMCIT\\Files\\UsrMCIT.csproj",
+      "projectName": "UsrMCIT",
+      "projectPath": "C:\\creatioprojects\\Realese\\Terrasoft.WebApp\\Terrasoft.Configuration\\Pkg\\UsrMCIT\\Files\\UsrMCIT.csproj",
+      "packagesPath": "C:\\WINDOWS\\TEMP\\1\\IIS APPPOOL_Realese\\Default\\dotnet\\.nuget\\packages\\",
+      "outputPath": "C:\\creatioprojects\\Realese\\Terrasoft.WebApp\\Terrasoft.Configuration\\Pkg\\UsrMCIT\\Files\\obj\\",
+      "projectStyle": "PackageReference",
+      "fallbackFolders": [
+        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+      ],
+      "configFilePaths": [
+        "C:\\WINDOWS\\TEMP\\1\\IIS APPPOOL_Realese\\Default\\dotnet\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+      ],
+      "originalTargetFrameworks": [
+        "net472"
+      ],
+      "sources": {
+        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+        "https://api.nuget.org/v3/index.json": {}
+      },
+      "frameworks": {
+        "net472": {
+          "framework": "net472",
+          "targetAlias": "net472",
+          "projectReferences": {}
+        }
+      },
+      "warningProperties": {
+        "warnAsError": [
+          "NU1605"
+        ]
+      },
+      "restoreAuditProperties": {
+        "enableAudit": "true",
+        "auditLevel": "low",
+        "auditMode": "direct"
+      },
+      "SdkAnalysisLevel": "10.0.400"
+    },
+    "frameworks": {
+      "net472": {
+        "framework": "net472",
+        "targetAlias": "net472",
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\10.0.402\\RuntimeIdentifierGraph.json"
+      }
+    }
+  }
+}

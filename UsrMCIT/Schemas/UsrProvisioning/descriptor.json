@@ -1,0 +1,14 @@
+﻿{
+  "Descriptor": {
+    "UId": "bff9315d-2f83-4e7d-b1e4-0fdb2ac41ef5",
+    "Name": "UsrProvisioning",
+    "ModifiedOnUtc": "\/Date(1794769455000)\/",
+    "Parent": {
+      "UId": "1bab9dcf-17d5-49f8-9536-8e0064f1dce0",
+      "Name": "BaseEntity"
+    },
+    "ManagerName": "EntitySchemaManager",
+    "Caption": "Provisioning",
+    "DependsOn": []
+  }
+}

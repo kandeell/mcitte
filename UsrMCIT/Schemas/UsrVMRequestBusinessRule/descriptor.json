@@ -1,0 +1,10 @@
+﻿{
+  "Descriptor": {
+    "UId": "1ec59155-de23-444e-a8cc-47cf8351d0b9",
+    "Name": "UsrVMRequestBusinessRule",
+    "ModifiedOnUtc": "\/Date(1792338625000)\/",
+    "ManagerName": "AddonSchemaManager",
+    "Caption": "VM Request (Business rules)",
+    "DependsOn": []
+  }
+}

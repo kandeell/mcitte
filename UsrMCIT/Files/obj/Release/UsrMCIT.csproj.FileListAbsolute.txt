@@ -1,0 +1,10 @@
+C:\creatioprojects\Realese\Terrasoft.WebApp\Terrasoft.Configuration\Pkg\UsrMCIT\Files\Bin\UsrMCIT.dll
+C:\creatioprojects\Realese\Terrasoft.WebApp\Terrasoft.Configuration\Pkg\UsrMCIT\Files\Bin\UsrMCIT.pdb
+C:\creatioprojects\Realese\Terrasoft.WebApp\Terrasoft.Configuration\Pkg\UsrMCIT\Files\obj\Release\UsrMCIT.csproj.AssemblyReference.cache
+C:\creatioprojects\Realese\Terrasoft.WebApp\Terrasoft.Configuration\Pkg\UsrMCIT\Files\obj\Release\UsrMCIT.GeneratedMSBuildEditorConfig.editorconfig
+C:\creatioprojects\Realese\Terrasoft.WebApp\Terrasoft.Configuration\Pkg\UsrMCIT\Files\obj\Release\UsrMCIT.AssemblyInfoInputs.cache
+C:\creatioprojects\Realese\Terrasoft.WebApp\Terrasoft.Configuration\Pkg\UsrMCIT\Files\obj\Release\UsrMCIT.AssemblyInfo.cs
+C:\creatioprojects\Realese\Terrasoft.WebApp\Terrasoft.Configuration\Pkg\UsrMCIT\Files\obj\Release\UsrMCIT.csproj.CoreCompileInputs.cache
+C:\creatioprojects\Realese\Terrasoft.WebApp\Terrasoft.Configuration\Pkg\UsrMCIT\Files\obj\Release\UsrMCIT.sourcelink.json
+C:\creatioprojects\Realese\Terrasoft.WebApp\Terrasoft.Configuration\Pkg\UsrMCIT\Files\obj\Release\UsrMCIT.dll
+C:\creatioprojects\Realese\Terrasoft.WebApp\Terrasoft.Configuration\Pkg\UsrMCIT\Files\obj\Release\UsrMCIT.pdb

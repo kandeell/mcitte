@@ -170,6 +170,14 @@
   "E17": "UsrOriginTransactionId",
   "E18": "UsrOriginTransactionUsrName"
 }
++ MetaData.Schema.D2 {
+  "UId": "661d7867-cd7e-0ec9-4e02-122d2bac18ab",
+  "A2": "UsrExpirationDate",
+  "A3": "44d2cb04-f5b9-428b-9c23-c7cbb3cbb6ee",
+  "A4": "44d2cb04-f5b9-428b-9c23-c7cbb3cbb6ee",
+  "A5": "0a07faf7-f6e2-439e-ab7c-961d7c56566e",
+  "S2": "603d4960-a1a2-45e9-b232-206a54421b01"
+}
 ~ MetaData.Schema.D2 [
   "ae0e45ca-c495-4fe7-a39d-3ab7278e1617",
   "e80190a5-03b2-4095-90f7-a193a960adee",
@@ -189,7 +197,8 @@
   "52f1fc8c-eb5f-9ba0-e5db-b8d3db20db5e",
   "fa0b1e70-ad47-87b5-9a31-8fefaa48841b",
   "97a20900-d560-b2cf-1082-59ff0cb71d76",
-  "16bf4a0b-eff8-13f5-ac20-1f6015e1ac03"
+  "16bf4a0b-eff8-13f5-ac20-1f6015e1ac03",
+  "661d7867-cd7e-0ec9-4e02-122d2bac18ab"
 ]
 = MetaData.Schema.D20.A2 "UsrPointTransactionEvents"
 + MetaData.Schema.D20.FA1 false

@@ -1,0 +1,47 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Resources Culture="zh-TW">
+	<Group Type="String">
+		<Items>
+			<Item Name="BaseElements.ActivityUserTask1.Parameters.Account.Caption" Value="帳戶" />
+			<Item Name="BaseElements.ActivityUserTask1.Parameters.ActivityCategory.Caption" Value="類別" />
+			<Item Name="BaseElements.ActivityUserTask1.Parameters.ActivityPriority.Caption" Value="優先順序" />
+			<Item Name="BaseElements.ActivityUserTask1.Parameters.ActivityResult.Caption" Value="活動結果" />
+			<Item Name="BaseElements.ActivityUserTask1.Parameters.Application.Caption" Value="應用" />
+			<Item Name="BaseElements.ActivityUserTask1.Parameters.Case.Caption" Value="個案" />
+			<Item Name="BaseElements.ActivityUserTask1.Parameters.Change.Caption" Value="變更" />
+			<Item Name="BaseElements.ActivityUserTask1.Parameters.Contact.Caption" Value="聯絡人" />
+			<Item Name="BaseElements.ActivityUserTask1.Parameters.Contract.Caption" Value="合約" />
+			<Item Name="BaseElements.ActivityUserTask1.Parameters.CurrentActivityId.Caption" Value="任務編號" />
+			<Item Name="BaseElements.ActivityUserTask1.Parameters.Document.Caption" Value="文件" />
+			<Item Name="BaseElements.ActivityUserTask1.Parameters.Duration.Caption" Value="時間長度" />
+			<Item Name="BaseElements.ActivityUserTask1.Parameters.DurationPeriod.Caption" Value="持續時間（期間）" />
+			<Item Name="BaseElements.ActivityUserTask1.Parameters.ExecutionContext.Caption" Value="執行上下文" />
+			<Item Name="BaseElements.ActivityUserTask1.Parameters.FinApplication.Caption" Value="應用" />
+			<Item Name="BaseElements.ActivityUserTask1.Parameters.Incident.Caption" Value="事件" />
+			<Item Name="BaseElements.ActivityUserTask1.Parameters.InformationOnStep.Caption" Value="步驟資訊" />
+			<Item Name="BaseElements.ActivityUserTask1.Parameters.Invoice.Caption" Value="發票" />
+			<Item Name="BaseElements.ActivityUserTask1.Parameters.IsActivityCompleted.Caption" Value="活動已完成" />
+			<Item Name="BaseElements.ActivityUserTask1.Parameters.Lead.Caption" Value="潛在客戶" />
+			<Item Name="BaseElements.ActivityUserTask1.Parameters.Listing.Caption" Value="列表" />
+			<Item Name="BaseElements.ActivityUserTask1.Parameters.Opportunity.Caption" Value="機會" />
+			<Item Name="BaseElements.ActivityUserTask1.Parameters.Order.Caption" Value="訂購" />
+			<Item Name="BaseElements.ActivityUserTask1.Parameters.OwnerId.Caption" Value="擁有者" />
+			<Item Name="BaseElements.ActivityUserTask1.Parameters.Problem.Caption" Value="問題" />
+			<Item Name="BaseElements.ActivityUserTask1.Parameters.Project.Caption" Value="專案" />
+			<Item Name="BaseElements.ActivityUserTask1.Parameters.Property.Caption" Value="屬性" />
+			<Item Name="BaseElements.ActivityUserTask1.Parameters.QueueItem.Caption" Value="佇列項目" />
+			<Item Name="BaseElements.ActivityUserTask1.Parameters.Recommendation.Caption" Value="建議" />
+			<Item Name="BaseElements.ActivityUserTask1.Parameters.Release.Caption" Value="發佈" />
+			<Item Name="BaseElements.ActivityUserTask1.Parameters.RemindBefore.Caption" Value="提前提醒擁有者" />
+			<Item Name="BaseElements.ActivityUserTask1.Parameters.RemindBeforePeriod.Caption" Value="提前提醒擁有者（期間）" />
+			<Item Name="BaseElements.ActivityUserTask1.Parameters.Requests.Caption" Value="請求" />
+			<Item Name="BaseElements.ActivityUserTask1.Parameters.ShowExecutionPage.Caption" Value="自動顯示執行頁面" />
+			<Item Name="BaseElements.ActivityUserTask1.Parameters.ShowInScheduler.Caption" Value="在日曆中顯示" />
+			<Item Name="BaseElements.ActivityUserTask1.Parameters.StartIn.Caption" Value="開始執行於" />
+			<Item Name="BaseElements.ActivityUserTask1.Parameters.StartInPeriod.Caption" Value="在（期間）開始執行" />
+			<Item Name="BaseElements.LinkEntityToProcessUserTask1.Parameters.EntityId.Caption" Value="物件" />
+			<Item Name="BaseElements.LinkEntityToProcessUserTask1.Parameters.EntitySchemaId.Caption" Value="物件模式" />
+			<Item Name="Caption" Value="MCIT VM Request Submission" />
+		</Items>
+	</Group>
+</Resources>

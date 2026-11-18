@@ -1,0 +1,14 @@
+﻿{
+  "Descriptor": {
+    "UId": "29b3c3ef-972d-4f06-ae52-d557d8ba01e0",
+    "Name": "UsrProvisioning_Detail",
+    "ModifiedOnUtc": "\/Date(1794769455000)\/",
+    "Parent": {
+      "UId": "01eb38ee-668a-42f0-999d-c2534f979089",
+      "Name": "BaseGridDetailV2"
+    },
+    "ManagerName": "ClientUnitSchemaManager",
+    "Caption": "Provisioning detail",
+    "DependsOn": []
+  }
+}

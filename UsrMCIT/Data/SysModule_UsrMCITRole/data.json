@@ -25,7 +25,7 @@
         },
         {
           "SchemaColumnUId": "3f098e0d-6cbd-4e8f-bc3e-00709f2d8d82",
-          "Value": "e8ae2216-f914-41f9-a1aa-1b0952859969",
+          "Value": "92f3cd8d-613e-4de2-820f-cff478b87f4b",
           "DisplayValue": "null"
         },
         {
@@ -34,8 +34,8 @@
         },
         {
           "SchemaColumnUId": "63f1eb37-455a-4a53-ace2-fa5ef4c3d10f",
-          "Value": "8a356b94-050b-4d2c-890f-63bdd420adea",
-          "DisplayValue": "SectionIcon_UsrRoles.svg"
+          "Value": "null",
+          "DisplayValue": ""
         },
         {
           "SchemaColumnUId": "6d827ba7-a622-47cc-8f11-b40b91c7441a",
@@ -75,8 +75,8 @@
         },
         {
           "SchemaColumnUId": "d3afc924-2d21-4c0e-b2f3-9f8c180221f9",
-          "Value": "b659d704-3955-e011-981f-00155d043204",
-          "DisplayValue": "Включать запись в несколько групп"
+          "Value": "null",
+          "DisplayValue": ""
         },
         {
           "SchemaColumnUId": "d57c3c34-e293-4aed-bff6-91dc90408958",

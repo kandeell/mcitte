@@ -1,0 +1,9 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Resources Culture="en-US">
+	<Group Type="String">
+		<Items>
+			<Item Name="AddonConfig.Rules.b220ac83-5915-8cf4-5203-1ae08f75dfa6.Caption" Value="Contract Summary with contract" />
+			<Item Name="Caption" Value="MCIT New Request Page (Business rules)" />
+		</Items>
+	</Group>
+</Resources>

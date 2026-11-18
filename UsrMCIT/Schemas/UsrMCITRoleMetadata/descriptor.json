@@ -1,0 +1,14 @@
+﻿{
+  "Descriptor": {
+    "UId": "4b39e7cf-b0d9-4532-98c6-c6bcd7e6be0b",
+    "Name": "UsrMCITRoleMetadata",
+    "ModifiedOnUtc": "\/Date(1792847898000)\/",
+    "Parent": {
+      "UId": "1bab9dcf-17d5-49f8-9536-8e0064f1dce0",
+      "Name": "BaseEntity"
+    },
+    "ManagerName": "EntitySchemaManager",
+    "Caption": "MCITRoleMetadata",
+    "DependsOn": []
+  }
+}

@@ -1,0 +1,14 @@
+﻿{
+  "Descriptor": {
+    "UId": "c306fb1c-afdc-4a34-bd7c-ac91df582cb4",
+    "Name": "UsrMCITReportCatalog",
+    "ModifiedOnUtc": "\/Date(1793746746000)\/",
+    "Parent": {
+      "UId": "1bab9dcf-17d5-49f8-9536-8e0064f1dce0",
+      "Name": "BaseEntity"
+    },
+    "ManagerName": "EntitySchemaManager",
+    "Caption": "Report Catalog",
+    "DependsOn": []
+  }
+}

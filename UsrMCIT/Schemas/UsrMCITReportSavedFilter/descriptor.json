@@ -1,0 +1,14 @@
+﻿{
+  "Descriptor": {
+    "UId": "08ed798a-df3d-4525-b650-06a17f39123d",
+    "Name": "UsrMCITReportSavedFilter",
+    "ModifiedOnUtc": "\/Date(1793754050000)\/",
+    "Parent": {
+      "UId": "1bab9dcf-17d5-49f8-9536-8e0064f1dce0",
+      "Name": "BaseEntity"
+    },
+    "ManagerName": "EntitySchemaManager",
+    "Caption": "MCIT Report Saved Filter",
+    "DependsOn": []
+  }
+}

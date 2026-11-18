@@ -1,0 +1,14 @@
+﻿{
+  "Descriptor": {
+    "UId": "3971c8dc-dbfd-41e4-b21c-3c0a07760948",
+    "Name": "UsrMCITReviewSubmitPage",
+    "ModifiedOnUtc": "\/Date(1792431557000)\/",
+    "Parent": {
+      "UId": "f691e828-0b36-42a7-898f-c337e9af67d0",
+      "Name": "BlankPageTemplate"
+    },
+    "ManagerName": "ClientUnitSchemaManager",
+    "Caption": "MCIT Review & Submit Page",
+    "DependsOn": []
+  }
+}

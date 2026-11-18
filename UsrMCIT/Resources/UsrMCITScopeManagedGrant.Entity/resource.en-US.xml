@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Resources Culture="en-US">
+	<Group Type="String">
+		<Items>
+			<Item Name="Caption" Value="MCIT Scope Managed Grant" />
+			<Item Name="Columns.UsrName.Caption" Value="Name" />
+			<Item Name="Columns.UsrRecordId.Caption" Value="Record Id" />
+			<Item Name="Columns.UsrRightRecordId.Caption" Value="Right Record Id" />
+			<Item Name="Columns.UsrSchemaName.Caption" Value="Schema Name" />
+			<Item Name="Columns.UsrUser.Caption" Value="User" />
+			<Item Name="EventsProcessSchema.Caption" Value="Business process" />
+		</Items>
+	</Group>
+</Resources>
