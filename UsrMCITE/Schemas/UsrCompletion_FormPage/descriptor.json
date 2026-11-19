@@ -1,0 +1,14 @@
+﻿{
+  "Descriptor": {
+    "UId": "020a2a09-9fb1-4d9c-9098-9f7c1e437862",
+    "Name": "UsrCompletion_FormPage",
+    "ModifiedOnUtc": "\/Date(1794770733000)\/",
+    "Parent": {
+      "UId": "3b2e117f-8c6b-4ca5-80a2-7ebb497cddf9",
+      "Name": "PageWithTabsFreedomTemplate"
+    },
+    "ManagerName": "ClientUnitSchemaManager",
+    "Caption": "Completion form page",
+    "DependsOn": []
+  }
+}

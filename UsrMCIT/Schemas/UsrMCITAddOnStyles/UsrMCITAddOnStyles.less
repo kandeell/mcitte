@@ -1,0 +1,670 @@
+/* ===============================================================
+   MCIT — Add-on Configuration | Resource Catalog V2 visual match
+   Module: UsrMCITAddOnStyles (LESS)
+   Applies only to existing Designer-generated component classes.
+   No JavaScript, DOM injection, or hiding of Designer controls.
+   =============================================================== */
+
+/* MAIN PAGE: same spacing and colors as Resource Catalog V2 */
+.mcit-addon-page {
+  --addon-purple: #5b21a5;
+  --addon-purple-dark: #451681;
+  --addon-purple-soft: #f4effb;
+  --addon-ink: #273148;
+  --addon-muted: #70798b;
+  --addon-line: #e2e4ed;
+  --addon-bg: #f8f7fc;
+
+  box-sizing: border-box;
+  width: 100%;
+  min-width: 0;
+  margin: 0;
+  padding: 0 22px 30px !important;
+  background: var(--addon-bg) !important;
+  color: var(--addon-ink);
+  font-family: "Rubik", Arial, sans-serif;
+}
+
+/* SECTION HEADER: this component may live OUTSIDE .mcit-addon-page.
+   Therefore the class is also styled at root level. */
+.mcit-addon-header {
+  box-sizing: border-box;
+  width: 100%;
+  min-width: 0;
+  margin: 0 !important;
+  padding: 24px 22px 12px !important;
+  display: flex !important;
+  flex-direction: row !important;
+  flex-wrap: nowrap !important;
+  align-items: flex-start !important;
+  justify-content: space-between !important;
+  column-gap: 20px !important;
+  background: #f8f7fc !important;
+  border: 0 !important;
+}
+
+.mcit-addon-header .mcit-addon-title-column,
+.mcit-addon-title-column {
+  flex: 1 1 auto !important;
+  width: auto !important;
+  min-width: 0;
+  max-width: none !important;
+  padding: 0 !important;
+  margin: 0 !important;
+  align-items: flex-start !important;
+  justify-content: flex-start !important;
+  text-align: left !important;
+}
+
+.mcit-addon-header .mcit-addon-title,
+.mcit-addon-title {
+  display: block;
+  width: auto !important;
+  margin: 0 0 5px !important;
+  padding: 0 !important;
+  color: #263249 !important;
+  font: 700 22px/1.3 "Rubik", Arial, sans-serif !important;
+  text-align: left !important;
+}
+
+.mcit-addon-header .mcit-addon-subtitle,
+.mcit-addon-subtitle {
+  display: block;
+  max-width: 720px;
+  padding: 0 !important;
+  margin: 0 !important;
+  color: #737b8d !important;
+  font: 400 12px/1.6 "Rubik", Arial, sans-serif !important;
+  text-align: left !important;
+}
+
+/* Fallback for internal caption elements rendered by the theme */
+.mcit-addon-title *,
+.mcit-addon-subtitle * {
+  text-align: left !important;
+}
+
+/* Only the pre-existing empty header spacer is hidden. */
+.mcit-addon-empty-container { display: none !important; }
+
+/* PRIMARY BUTTON — style both Creatio host and internal button. */
+.mcit-addon-header .mcit-addon-primary,
+.mcit-addon-primary,
+.mcit-addon-primary button,
+.mcit-addon-primary .crt-button,
+button.mcit-addon-primary {
+  box-sizing: border-box;
+  min-height: 40px !important;
+  padding: 9px 18px !important;
+  border: 1px solid #5b21a5 !important;
+  border-radius: 11px !important;
+  background: #5b21a5 !important;
+  color: #fff !important;
+  font: 600 13px "Rubik", Arial, sans-serif !important;
+  text-transform: none !important;
+  box-shadow: 0 5px 14px rgba(91,33,165,.18) !important;
+  transition: background .15s ease, box-shadow .15s ease;
+}
+
+.mcit-addon-primary *,
+.mcit-addon-primary button *,
+.mcit-addon-primary .crt-button * { color: #fff !important; }
+
+.mcit-addon-primary:hover,
+.mcit-addon-primary button:hover,
+.mcit-addon-primary .crt-button:hover {
+  background: #451681 !important;
+  border-color: #451681 !important;
+  color: #fff !important;
+  box-shadow: 0 7px 17px rgba(91,33,165,.24) !important;
+}
+
+/* INFORMATION BANNER — blue Figma-style notice, not a plain label. */
+.mcit-addon-page .mcit-addon-banner,
+.mcit-addon-banner {
+  box-sizing: border-box;
+  display: block !important;
+  width: 100% !important;
+  min-width: 0;
+  min-height: 44px;
+  margin: 0 0 20px !important;
+  padding: 12px 16px !important;
+  border: 1px solid #c9dff7 !important;
+  border-radius: 11px !important;
+  background: #edf5ff !important;
+  color: #3563ac !important;
+  font: 500 12px/1.65 "Rubik", Arial, sans-serif !important;
+  box-shadow: none !important;
+}
+.mcit-addon-banner *,
+.mcit-addon-banner .crt-label { color: #3563ac !important; }
+
+/* The native Flex Container carries the banner background.
+   The Label remains a Designer-editable child of this container. */
+.mcit-addon-page .mcit-addon-banner-card,
+.mcit-addon-banner-card {
+  box-sizing: border-box;
+  display: flex !important;
+  align-items: center !important;
+  gap: 11px !important;
+  width: 100% !important;
+  min-width: 0;
+  margin: 0 0 18px !important;
+  padding: 10px 14px !important;
+  border: 1px solid #c7dcf6 !important;
+  border-radius: 10px !important;
+  background: #eef5ff !important;
+  box-shadow: none !important;
+}
+.mcit-addon-banner-card .mcit-addon-banner {
+  display: block !important;
+  width: auto !important;
+  flex: 1 1 auto !important;
+  min-height: 0 !important;
+  padding: 0 !important;
+  margin: 0 !important;
+  border: 0 !important;
+  border-radius: 0 !important;
+  background: transparent !important;
+  box-shadow: none !important;
+  color: #3563ac !important;
+  font: 400 12px/1.6 "Rubik", Arial, sans-serif !important;
+}
+.mcit-addon-banner-icon,
+.mcit-addon-banner-icon * {
+  color: #3563ac !important;
+  font-size: 17px !important;
+}
+
+/* Left-aligned title/subtitle; right-aligned Add button, on the same row. */
+.mcit-addon-header .mcit-addon-title-column {
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: flex-start !important;
+  flex: 1 1 auto !important;
+  min-width: 0 !important;
+}
+.mcit-addon-header .mcit-addon-top-add {
+  flex: 0 0 auto !important;
+  align-self: flex-start !important;
+  margin-left: auto !important;
+}
+
+/* NORMAL INLINE FORM: visibility remains controlled by JS/Designer. */
+.mcit-addon-page .mcit-addon-form-card,
+.mcit-addon-form-card {
+  box-sizing: border-box;
+  width: 100%;
+  min-width: 0;
+  margin: 0 0 18px !important;
+  padding: 18px 22px 22px !important;
+  border: 1px solid #e2e4ed !important;
+  border-radius: 15px !important;
+  background: #fff !important;
+  color: #273148 !important;
+  box-shadow: 0 5px 18px rgba(29,22,60,.045) !important;
+}
+
+.mcit-addon-form-header {
+  width: 100%;
+  min-width: 0;
+  margin: 0 0 14px !important;
+  padding: 0 0 15px !important;
+  border-bottom: 1px solid #edf0f5 !important;
+  align-items: center !important;
+  justify-content: space-between !important;
+}
+.mcit-addon-form-header crt-label,
+.mcit-addon-form-header .crt-label,
+.mcit-addon-form-header label {
+  color: #263249 !important;
+  font: 700 17px/1.4 "Rubik", Arial, sans-serif !important;
+}
+
+/* CLOSE button */
+.mcit-addon-close,
+.mcit-addon-close button,
+.mcit-addon-close .crt-button {
+  box-sizing: border-box;
+  min-width: 33px !important;
+  min-height: 33px !important;
+  padding: 5px !important;
+  border: 1px solid transparent !important;
+  border-radius: 9px !important;
+  background: #f5f3f9 !important;
+  color: #586276 !important;
+  box-shadow: none !important;
+}
+.mcit-addon-close:hover,
+.mcit-addon-close button:hover {
+  background: #ede7f7 !important;
+  color: #5b21a5 !important;
+}
+
+/* Two-column Designer Grid Container: don't replace its grid layout. */
+.mcit-addon-form-grid {
+  box-sizing: border-box;
+  width: 100%;
+  min-width: 0;
+  gap: 14px 24px !important;
+  padding: 2px 0 8px !important;
+}
+
+.mcit-addon-form-grid crt-input,
+.mcit-addon-form-grid crt-number-input,
+.mcit-addon-form-grid crt-combo-box,
+.mcit-addon-form-grid crt-checkbox {
+  min-width: 0;
+  font-family: "Rubik", Arial, sans-serif;
+}
+
+/* Figma/Resource Catalog-style field underline, NOT rectangular boxes. */
+.mcit-addon-page .mcit-addon-form-grid input:not([type="checkbox"]),
+.mcit-addon-page .mcit-addon-form-grid textarea,
+.mcit-addon-page .mcit-addon-form-grid select {
+  box-sizing: border-box;
+  width: 100%;
+  min-height: 35px;
+  padding: 6px 2px !important;
+  border: 0 !important;
+  border-bottom: 1px solid #e2e4eb !important;
+  border-radius: 0 !important;
+  background: transparent !important;
+  color: #273148 !important;
+  box-shadow: none !important;
+  outline: none !important;
+  font: 400 13px "Rubik", Arial, sans-serif !important;
+}
+.mcit-addon-page .mcit-addon-form-grid input:not([type="checkbox"]):focus,
+.mcit-addon-page .mcit-addon-form-grid textarea:focus,
+.mcit-addon-page .mcit-addon-form-grid select:focus {
+  border-bottom-color: #7027f5 !important;
+  box-shadow: none !important;
+}
+
+/* FOOTER: make Cancel outlined and Save solid violet. */
+.mcit-addon-form-footer {
+  box-sizing: border-box;
+  width: 100%;
+  margin-top: 18px !important;
+  padding: 16px 0 0 !important;
+  border-top: 1px solid #edf0f5 !important;
+  justify-content: flex-end !important;
+  align-items: center !important;
+  gap: 9px !important;
+}
+
+.mcit-addon-action,
+.mcit-addon-action button,
+.mcit-addon-action .crt-button {
+  box-sizing: border-box;
+  min-height: 40px !important;
+  padding: 9px 18px !important;
+  border-radius: 11px !important;
+  font: 600 13px "Rubik", Arial, sans-serif !important;
+  text-transform: none !important;
+  box-shadow: none !important;
+}
+
+.mcit-addon-cancel,
+.mcit-addon-cancel button,
+.mcit-addon-cancel .crt-button {
+  border: 1px solid #d9dce7 !important;
+  background: #fff !important;
+  color: #44516b !important;
+}
+.mcit-addon-cancel:hover,
+.mcit-addon-cancel button:hover,
+.mcit-addon-cancel .crt-button:hover {
+  border-color: #b394db !important;
+  background: #f7f2fe !important;
+  color: #5b21a5 !important;
+}
+
+.mcit-addon-save,
+.mcit-addon-save button,
+.mcit-addon-save .crt-button {
+  border: 1px solid #5b21a5 !important;
+  background: #5b21a5 !important;
+  color: #fff !important;
+  box-shadow: 0 4px 12px rgba(91,33,165,.12) !important;
+}
+.mcit-addon-save *,
+.mcit-addon-save button *,
+.mcit-addon-save .crt-button * { color: #fff !important; }
+.mcit-addon-save:hover,
+.mcit-addon-save button:hover:not(:disabled),
+.mcit-addon-save .crt-button:hover:not(:disabled) {
+  background: #451681 !important;
+  border-color: #451681 !important;
+}
+.mcit-addon-save:disabled,
+.mcit-addon-save button:disabled { opacity: .6 !important; cursor: not-allowed; }
+
+.mcit-addon-message,
+.mcit-addon-message * {
+  color: #b42335 !important;
+  font: 500 12px/1.5 "Rubik", Arial, sans-serif !important;
+}
+
+/* CONFIGURED ADD-ONS: a single white list card. */
+.mcit-addon-page .mcit-addon-list-heading,
+.mcit-addon-list-heading {
+  box-sizing: border-box;
+  display: block !important;
+  width: 100% !important;
+  margin: 0 !important;
+  padding: 16px 18px !important;
+  border: 1px solid #e2e4ed !important;
+  border-bottom: 0 !important;
+  border-radius: 14px 14px 0 0 !important;
+  background: #fff !important;
+  color: #273148 !important;
+  font: 700 13px "Rubik", Arial, sans-serif !important;
+}
+
+.mcit-addon-table {
+  box-sizing: border-box;
+  width: 100%;
+  min-width: 0;
+  margin: 0 !important;
+  border: 1px solid #e2e4ed !important;
+  border-radius: 0 0 14px 14px !important;
+  background: #fff !important;
+  /* Let native grid handle horizontal scrolling on narrower screens. */
+  overflow-x: auto;
+  overflow-y: hidden;
+  box-shadow: 0 3px 14px rgba(29,22,60,.03) !important;
+}
+.mcit-addon-table .crt-header-cell-caption,
+.mcit-addon-table .crt-data-table {
+  color: #5f6879;
+  font: 600 12px "Rubik", Arial, sans-serif !important;
+}
+.mcit-addon-table .crt-header-cell-caption { color: #5f6879 !important; }
+
+/* Keep CSS local to the Add-on page. No changes to Resource Catalog. */
+@media (max-width: 1100px) {
+  .mcit-addon-header {
+    padding: 18px 16px 12px !important;
+  }
+  .mcit-addon-page {
+    padding: 0 16px 22px !important;
+  }
+  .mcit-addon-form-card {
+    padding: 15px 16px 18px !important;
+  }
+  .mcit-addon-form-grid { gap: 12px 16px !important; }
+}
+
+@media (max-width: 700px) {
+  .mcit-addon-header {
+    flex-wrap: wrap !important;
+    row-gap: 12px !important;
+  }
+  .mcit-addon-header .mcit-addon-title-column { flex-basis: 100% !important; }
+  .mcit-addon-title { font-size: 19px !important; }
+  .mcit-addon-form-footer { flex-wrap: wrap; }
+}
+
+/* ==========================================
+   MCIT Add-on — Remove Double Underline
+   Keep Creatio's Native Underline
+   ========================================== */
+
+.mcit-addon-page .mcit-addon-form-grid
+input:not([type="checkbox"]),
+.mcit-addon-page .mcit-addon-form-grid textarea,
+.mcit-addon-page .mcit-addon-form-grid select {
+    border: none !important;
+    border-bottom: none !important;
+    box-shadow: none !important;
+    background: transparent !important;
+}
+
+.mcit-addon-page .mcit-addon-form-grid
+input:not([type="checkbox"]):focus,
+.mcit-addon-page .mcit-addon-form-grid textarea:focus,
+.mcit-addon-page .mcit-addon-form-grid select:focus {
+    border-bottom: none !important;
+    box-shadow: none !important;
+}
+/* ==========================================
+   MCIT Add-on - shrink bottom empty space
+   Make configured add-ons section fit content
+   ========================================== */
+
+.mcit-addon-page .mcit-addon-grid,
+.mcit-addon-page .mcit-addon-grid-card,
+.mcit-addon-page .mcit-addon-grid-wrapper {
+    min-height: auto !important;
+    height: auto !important;
+    max-height: none !important;
+    flex: 0 0 auto !important;
+    align-self: stretch !important;
+}
+
+.mcit-addon-page .mcit-addon-grid .crt-data-table,
+.mcit-addon-page .mcit-addon-grid .crt-data-table-container,
+.mcit-addon-page .mcit-addon-grid .crt-data-table-content,
+.mcit-addon-page .mcit-addon-grid .crt-content-wrapper,
+.mcit-addon-page .mcit-addon-grid .crt-grid-container {
+    min-height: auto !important;
+    height: auto !important;
+    max-height: none !important;
+}
+
+.mcit-addon-page .mcit-addon-grid .crt-empty-state {
+    min-height: 0 !important;
+    height: auto !important;
+    padding: 16px 0 12px !important;
+}
+
+.mcit-addon-page .mcit-addon-grid {
+    overflow: hidden !important;
+    padding-bottom: 0 !important;
+    margin-bottom: 0 !important;
+}
+
+.mcit-addon-page .mcit-addon-grid-card {
+    padding-bottom: 0 !important;
+}
+
+/* optional: tighter card look like figma */
+.mcit-addon-page .mcit-addon-grid .crt-data-table-header {
+    margin-bottom: 0 !important;
+}
+
+/* =====================================================================
+   MCIT ADD-ON LIST — FIGMA TABLE FINISH
+   Native crt.DataGrid, single Designer Area, no DOM injection.
+   Added after earlier overrides intentionally.
+   ===================================================================== */
+
+/* One white card for the section heading and table */
+.mcit-addon-page .mcit-addon-list-card {
+  box-sizing: border-box;
+  width: 100% !important;
+  min-width: 0 !important;
+  height: auto !important;
+  min-height: 0 !important;
+  align-self: stretch !important;
+  padding: 0 !important;
+  margin: 0 0 20px !important;
+  gap: 0 !important;
+  background: #ffffff !important;
+  border: 1px solid #e3e5ed !important;
+  border-radius: 15px !important;
+  box-shadow: 0 2px 9px rgba(31, 28, 59, .028) !important;
+  overflow: hidden !important;
+}
+
+/* Heading is INSIDE the card, not a separate border/card. */
+.mcit-addon-page .mcit-addon-list-card .mcit-addon-list-heading {
+  box-sizing: border-box;
+  display: flex !important;
+  align-items: center !important;
+  width: 100% !important;
+  min-height: 48px !important;
+  margin: 0 !important;
+  padding: 13px 18px !important;
+  border: 0 !important;
+  border-bottom: 1px solid #e9eaf0 !important;
+  border-radius: 0 !important;
+  background: #ffffff !important;
+  color: #222c3e !important;
+  font: 700 13px/1.5 "Rubik", Arial, sans-serif !important;
+  text-transform: none !important;
+}
+.mcit-addon-page .mcit-addon-list-heading * {
+  color: #222c3e !important;
+  font: inherit !important;
+  text-transform: none !important;
+}
+
+/* Remove the nested border and shadow that creates a double-card effect. */
+.mcit-addon-page .mcit-addon-list-card .mcit-addon-table {
+  box-sizing: border-box;
+  width: 100% !important;
+  min-width: 0 !important;
+  height: auto !important;
+  min-height: 0 !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  border: 0 !important;
+  border-radius: 0 !important;
+  box-shadow: none !important;
+  background: #ffffff !important;
+  overflow-x: auto !important;
+  overflow-y: hidden !important;
+}
+
+/* Figma header background: very pale gray-blue, compact and flat. */
+.mcit-addon-page .mcit-addon-list-card .mcit-addon-table .crt-data-table-header,
+.mcit-addon-page .mcit-addon-list-card .mcit-addon-table .crt-data-table-header-row,
+.mcit-addon-page .mcit-addon-list-card .mcit-addon-table .crt-header-row,
+.mcit-addon-page .mcit-addon-list-card .mcit-addon-table .crt-grid-header,
+.mcit-addon-page .mcit-addon-list-card .mcit-addon-table .ag-header,
+.mcit-addon-page .mcit-addon-list-card .mcit-addon-table thead,
+.mcit-addon-page .mcit-addon-list-card .mcit-addon-table thead tr {
+  background: #f7f8fb !important;
+  box-shadow: none !important;
+}
+
+.mcit-addon-page .mcit-addon-list-card .mcit-addon-table .crt-header-cell,
+.mcit-addon-page .mcit-addon-list-card .mcit-addon-table .crt-header-cell-caption,
+.mcit-addon-page .mcit-addon-list-card .mcit-addon-table .ag-header-cell,
+.mcit-addon-page .mcit-addon-list-card .mcit-addon-table [role="columnheader"],
+.mcit-addon-page .mcit-addon-list-card .mcit-addon-table thead th {
+  background: #f7f8fb !important;
+  color: #6e7686 !important;
+  font: 600 11.5px/1.5 "Rubik", Arial, sans-serif !important;
+  border-bottom: 1px solid #edeef2 !important;
+  text-transform: none !important;
+}
+
+.mcit-addon-page .mcit-addon-list-card .mcit-addon-table .crt-header-cell-caption *,
+.mcit-addon-page .mcit-addon-list-card .mcit-addon-table [role="columnheader"] * {
+  color: #6e7686 !important;
+}
+
+/* White data rows and subtle separators, like the Figma sample. */
+.mcit-addon-page .mcit-addon-list-card .mcit-addon-table tbody tr,
+.mcit-addon-page .mcit-addon-list-card .mcit-addon-table .crt-data-table-row,
+.mcit-addon-page .mcit-addon-list-card .mcit-addon-table .ag-row {
+  background: #ffffff !important;
+  border-bottom: 1px solid #f0f1f4 !important;
+}
+.mcit-addon-page .mcit-addon-list-card .mcit-addon-table tbody tr:hover,
+.mcit-addon-page .mcit-addon-list-card .mcit-addon-table .crt-data-table-row:hover,
+.mcit-addon-page .mcit-addon-list-card .mcit-addon-table .ag-row:hover {
+  background: #faf8ff !important;
+}
+.mcit-addon-page .mcit-addon-list-card .mcit-addon-table tbody td,
+.mcit-addon-page .mcit-addon-list-card .mcit-addon-table .crt-data-table-cell,
+.mcit-addon-page .mcit-addon-list-card .mcit-addon-table .ag-cell {
+  padding-top: 11px !important;
+  padding-bottom: 11px !important;
+  color: #394354;
+  font: 400 12px/1.5 "Rubik", Arial, sans-serif;
+}
+
+/* Existing name links stay clickable; match the Figma dark-violet accent. */
+.mcit-addon-page .mcit-addon-list-card .mcit-addon-table a {
+  color: #57239f !important;
+  font-weight: 600 !important;
+  text-decoration: none !important;
+}
+.mcit-addon-page .mcit-addon-list-card .mcit-addon-table a:hover {
+  color: #451681 !important;
+  text-decoration: underline !important;
+}
+
+/* Native checkbox retained: use a green check accent matching the status color. */
+.mcit-addon-page .mcit-addon-list-card .mcit-addon-table input[type="checkbox"] {
+  accent-color: #168552;
+}
+
+/* Keep the heading/card compact as row count changes. Avoid hiding data rows. */
+@media (max-width: 1000px) {
+  .mcit-addon-page .mcit-addon-list-card .mcit-addon-list-heading {
+    min-height: 42px !important;
+    padding: 10px 13px !important;
+  }
+}
+
+/* ==========================================
+   MCIT Add-on — List spacing adjustments
+   ========================================== */
+
+/* Move Configured Add-ons slightly lower */
+.mcit-addon-page .mcit-addon-list-card {
+    margin-top: 12px !important;
+    margin-bottom: 20px !important;
+}
+
+/* Compact list header */
+.mcit-addon-page
+.mcit-addon-list-card
+.mcit-addon-list-heading {
+    min-height: 42px !important;
+    padding: 10px 16px !important;
+}
+
+/* Reduce vertical spacing inside table rows */
+.mcit-addon-page
+.mcit-addon-list-card
+.mcit-addon-table .crt-data-table-cell,
+.mcit-addon-page
+.mcit-addon-list-card
+.mcit-addon-table tbody td,
+.mcit-addon-page
+.mcit-addon-list-card
+.mcit-addon-table .ag-cell {
+    padding-top: 7px !important;
+    padding-bottom: 7px !important;
+}
+
+/* Tighter cell text */
+.mcit-addon-page
+.mcit-addon-list-card
+.mcit-addon-table {
+    font-size: 12px !important;
+}
+/* Move CONFIGURED ADD-ONS down inside the white area */
+.mcit-addon-page .mcit-addon-list-card {
+    padding-top: 14px !important;
+
+	
+}
+
+.mcit-addon-page .mcit-addon-list-card .mcit-addon-list-heading {
+    margin-top: 6px !important;
+    margin-bottom: 12px !important;
+}
+
+/* Move Configured Add-ons label slightly right */
+.mcit-addon-page .mcit-addon-list-heading {
+    padding-left: 20px !important;
+    box-sizing: border-box !important;
+}

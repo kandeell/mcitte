@@ -3,7 +3,6 @@
 	<Group Type="String">
 		<Items>
 			<Item Name="Caption" Value="Objek" />
-			<Item Name="EventsProcessSchema.Caption" Value="Objek dasar" />
 		</Items>
 	</Group>
 </Resources>

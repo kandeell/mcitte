@@ -1,0 +1,10 @@
+﻿{
+  "Descriptor": {
+    "UId": "09c1f9d8-bebc-46f4-8f9b-22f365acfe68",
+    "Name": "UsrVirtualMachineInvenRelatedPage",
+    "ModifiedOnUtc": "\/Date(1794906006000)\/",
+    "ManagerName": "AddonSchemaManager",
+    "Caption": "virtual machine inventory (Page settings)",
+    "DependsOn": []
+  }
+}

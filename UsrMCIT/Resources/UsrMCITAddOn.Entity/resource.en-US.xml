@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Resources Culture="en-US">
+	<Group Type="String">
+		<Items>
+			<Item Name="Caption" Value="MCIT Add-on" />
+			<Item Name="Columns.UsrActive.Caption" Value="Status" />
+			<Item Name="Columns.UsrArabicName.Caption" Value="Arabic Name" />
+			<Item Name="Columns.UsrCode.Caption" Value="Code" />
+			<Item Name="Columns.UsrDescription.Caption" Value="Description" />
+			<Item Name="Columns.UsrIncrement.Caption" Value="Increment" />
+			<Item Name="Columns.UsrMaxQuantity.Caption" Value="Maximum Quantity" />
+			<Item Name="Columns.UsrMinQuantity.Caption" Value="Minimum Quantity" />
+			<Item Name="Columns.UsrName.Caption" Value="English Name" />
+			<Item Name="Columns.UsrResourceEffect.Caption" Value="Resource Effect" />
+			<Item Name="Columns.UsrUnit.Caption" Value="Unit" />
+			<Item Name="Columns.UsrUnitPrice.Caption" Value="Unit Price" />
+		</Items>
+	</Group>
+</Resources>

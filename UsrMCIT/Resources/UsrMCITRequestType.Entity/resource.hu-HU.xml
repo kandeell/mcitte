@@ -3,7 +3,6 @@
 	<Group Type="String">
 		<Items>
 			<Item Name="Caption" Value="Tárgy" />
-			<Item Name="EventsProcessSchema.Caption" Value="Alapobjektum" />
 		</Items>
 	</Group>
 </Resources>
