@@ -39,8 +39,205 @@
 			<Item Name="BaseElements.ActivityUserTask1.Parameters.ShowInScheduler.Caption" Value="Takvimde göster" />
 			<Item Name="BaseElements.ActivityUserTask1.Parameters.StartIn.Caption" Value="Yürütme başlangıcı" />
 			<Item Name="BaseElements.ActivityUserTask1.Parameters.StartInPeriod.Caption" Value="Yürütme başlangıcı (dönem)" />
-			<Item Name="BaseElements.LinkEntityToProcessUserTask1.Parameters.EntityId.Caption" Value="Nesne" />
-			<Item Name="BaseElements.LinkEntityToProcessUserTask1.Parameters.EntitySchemaId.Caption" Value="Nesne şeması" />
+			<Item Name="BaseElements.AddDataUserTask1.Parameters.ConsiderTimeInFilter.Caption" Value="Filtrede zamanı dikkate al" />
+			<Item Name="BaseElements.AddDataUserTask1.Parameters.DataSourceFilters.Caption" Value="Veri kaynağı filtreleri" />
+			<Item Name="BaseElements.AddDataUserTask1.Parameters.EntitySchemaId.Caption" Value="Nesne" />
+			<Item Name="BaseElements.AddDataUserTask1.Parameters.FilterEntitySchemaId.Caption" Value="Nesne" />
+			<Item Name="BaseElements.AddDataUserTask1.Parameters.RecordAddMode.Caption" Value="Kayıt ekleme modu" />
+			<Item Name="BaseElements.AddDataUserTask1.Parameters.RecordDefValues.Caption" Value="Sütun değerlerini ayarla" />
+			<Item Name="BaseElements.AddDataUserTask1.Parameters.RecordId.Caption" Value="Oluşturulan kayıt kimliği" />
+			<Item Name="BaseElements.ChangeDataUserTask6.Parameters.ConsiderTimeInFilter.Caption" Value="Filtrede zamanı dikkate al" />
+			<Item Name="BaseElements.ChangeDataUserTask6.Parameters.DataSourceFilters.Caption" Value="Veri kaynağı filtreleri" />
+			<Item Name="BaseElements.ChangeDataUserTask6.Parameters.EntitySchemaUId.Caption" Value="Nesne" />
+			<Item Name="BaseElements.ChangeDataUserTask6.Parameters.IgnoreErrors.Caption" Value="Hatalarda yürütmeye devam et" />
+			<Item Name="BaseElements.ChangeDataUserTask6.Parameters.IsMatchConditions.Caption" Value="Nesne aşağıdaki koşulları karşılıyorsa" />
+			<Item Name="BaseElements.ChangeDataUserTask6.Parameters.RecordColumnValues.Caption" Value="Sütun değerlerini ayarla" />
+			<Item Name="BaseElements.ChangeDataUserTask7.Parameters.ConsiderTimeInFilter.Caption" Value="Filtrede zamanı dikkate al" />
+			<Item Name="BaseElements.ChangeDataUserTask7.Parameters.DataSourceFilters.Caption" Value="Veri kaynağı filtreleri" />
+			<Item Name="BaseElements.ChangeDataUserTask7.Parameters.EntitySchemaUId.Caption" Value="Nesne" />
+			<Item Name="BaseElements.ChangeDataUserTask7.Parameters.IgnoreErrors.Caption" Value="Hatalarda yürütmeye devam et" />
+			<Item Name="BaseElements.ChangeDataUserTask7.Parameters.IsMatchConditions.Caption" Value="Nesne aşağıdaki koşulları karşılıyorsa" />
+			<Item Name="BaseElements.ChangeDataUserTask7.Parameters.RecordColumnValues.Caption" Value="Sütun değerlerini ayarla" />
+			<Item Name="BaseElements.ChangeDataUserTask8.Parameters.ConsiderTimeInFilter.Caption" Value="Filtrede zamanı dikkate al" />
+			<Item Name="BaseElements.ChangeDataUserTask8.Parameters.DataSourceFilters.Caption" Value="Veri kaynağı filtreleri" />
+			<Item Name="BaseElements.ChangeDataUserTask8.Parameters.EntitySchemaUId.Caption" Value="Nesne" />
+			<Item Name="BaseElements.ChangeDataUserTask8.Parameters.IgnoreErrors.Caption" Value="Hatalarda yürütmeye devam et" />
+			<Item Name="BaseElements.ChangeDataUserTask8.Parameters.IsMatchConditions.Caption" Value="Nesne aşağıdaki koşulları karşılıyorsa" />
+			<Item Name="BaseElements.ChangeDataUserTask8.Parameters.RecordColumnValues.Caption" Value="Sütun değerlerini ayarla" />
+			<Item Name="BaseElements.ChangeDataUserTask9.Parameters.ConsiderTimeInFilter.Caption" Value="Filtrede zamanı dikkate al" />
+			<Item Name="BaseElements.ChangeDataUserTask9.Parameters.DataSourceFilters.Caption" Value="Veri kaynağı filtreleri" />
+			<Item Name="BaseElements.ChangeDataUserTask9.Parameters.EntitySchemaUId.Caption" Value="Nesne" />
+			<Item Name="BaseElements.ChangeDataUserTask9.Parameters.IgnoreErrors.Caption" Value="Hatalarda yürütmeye devam et" />
+			<Item Name="BaseElements.ChangeDataUserTask9.Parameters.IsMatchConditions.Caption" Value="Nesne aşağıdaki koşulları karşılıyorsa" />
+			<Item Name="BaseElements.ChangeDataUserTask9.Parameters.RecordColumnValues.Caption" Value="Sütun değerlerini ayarla" />
+			<Item Name="BaseElements.EmailTemplateUserTask1.Parameters.Account.Caption" Value="Müşteri" />
+			<Item Name="BaseElements.EmailTemplateUserTask1.Parameters.ActivityCategory.Caption" Value="Kategori" />
+			<Item Name="BaseElements.EmailTemplateUserTask1.Parameters.ActivityId.Caption" Value="Görev Kimliği" />
+			<Item Name="BaseElements.EmailTemplateUserTask1.Parameters.ActivityResult.Caption" Value="Aktivite sonucu" />
+			<Item Name="BaseElements.EmailTemplateUserTask1.Parameters.Body.Caption" Value="Gövde" />
+			<Item Name="BaseElements.EmailTemplateUserTask1.Parameters.BodyConfig.Caption" Value="İçerik oluşturucu için gövde yapılandırması" />
+			<Item Name="BaseElements.EmailTemplateUserTask1.Parameters.BodyTemplateType.Caption" Value="Ne tür e-posta gönderilecek?" />
+			<Item Name="BaseElements.EmailTemplateUserTask1.Parameters.Case.Caption" Value="Vaka" />
+			<Item Name="BaseElements.EmailTemplateUserTask1.Parameters.Change.Caption" Value="Değiştir" />
+			<Item Name="BaseElements.EmailTemplateUserTask1.Parameters.Contact.Caption" Value="Kişi" />
+			<Item Name="BaseElements.EmailTemplateUserTask1.Parameters.Contract.Caption" Value="Sözleşme" />
+			<Item Name="BaseElements.EmailTemplateUserTask1.Parameters.CreateActivity.Caption" Value="Aktivite oluştur" />
+			<Item Name="BaseElements.EmailTemplateUserTask1.Parameters.CustomEmailHeaders.Caption" Value="Özel e-posta başlıkları" />
+			<Item Name="BaseElements.EmailTemplateUserTask1.Parameters.Document.Caption" Value="Belge" />
+			<Item Name="BaseElements.EmailTemplateUserTask1.Parameters.Duration.Caption" Value="Süre" />
+			<Item Name="BaseElements.EmailTemplateUserTask1.Parameters.DurationPeriod.Caption" Value="Süre (dönem)" />
+			<Item Name="BaseElements.EmailTemplateUserTask1.Parameters.EmailTemplateEntityId.Caption" Value="Makrolar için kayıt" />
+			<Item Name="BaseElements.EmailTemplateUserTask1.Parameters.EmailTemplateId.Caption" Value="Mesaj şablonu" />
+			<Item Name="BaseElements.EmailTemplateUserTask1.Parameters.ExecutionContext.Caption" Value="Yürütme bağlamı" />
+			<Item Name="BaseElements.EmailTemplateUserTask1.Parameters.IgnoreErrors.Caption" Value="E-posta hatalarını yoksay" />
+			<Item Name="BaseElements.EmailTemplateUserTask1.Parameters.Importance.Caption" Value="Önem" />
+			<Item Name="BaseElements.EmailTemplateUserTask1.Parameters.Incident.Caption" Value="Olay" />
+			<Item Name="BaseElements.EmailTemplateUserTask1.Parameters.InformationOnStep.Caption" Value="Adım bilgileri" />
+			<Item Name="BaseElements.EmailTemplateUserTask1.Parameters.Invoice.Caption" Value="Fatura" />
+			<Item Name="BaseElements.EmailTemplateUserTask1.Parameters.IsActivityCompleted.Caption" Value="Aktivite tamamlandı" />
+			<Item Name="BaseElements.EmailTemplateUserTask1.Parameters.Lead.Caption" Value="Potansiyel fırsat" />
+			<Item Name="BaseElements.EmailTemplateUserTask1.Parameters.Listing.Caption" Value="Liste" />
+			<Item Name="BaseElements.EmailTemplateUserTask1.Parameters.Opportunity.Caption" Value="Fırsat" />
+			<Item Name="BaseElements.EmailTemplateUserTask1.Parameters.Order.Caption" Value="Sipariş" />
+			<Item Name="BaseElements.EmailTemplateUserTask1.Parameters.OwnerId.Caption" Value="Sahip" />
+			<Item Name="BaseElements.EmailTemplateUserTask1.Parameters.Problem.Caption" Value="Sorun" />
+			<Item Name="BaseElements.EmailTemplateUserTask1.Parameters.Project.Caption" Value="Proje" />
+			<Item Name="BaseElements.EmailTemplateUserTask1.Parameters.Property.Caption" Value="Özellik" />
+			<Item Name="BaseElements.EmailTemplateUserTask1.Parameters.QueueItem.Caption" Value="Kuyruk öğesi" />
+			<Item Name="BaseElements.EmailTemplateUserTask1.Parameters.Recommendation.Caption" Value="Öneri" />
+			<Item Name="BaseElements.EmailTemplateUserTask1.Parameters.Release.Caption" Value="Sürüm" />
+			<Item Name="BaseElements.EmailTemplateUserTask1.Parameters.RemindBefore.Caption" Value="Sorumluya önceden hatırlatma" />
+			<Item Name="BaseElements.EmailTemplateUserTask1.Parameters.RemindBeforePeriod.Caption" Value="Sorumluya önceden hatırlatma (dönem)" />
+			<Item Name="BaseElements.EmailTemplateUserTask1.Parameters.Requests.Caption" Value="Talep" />
+			<Item Name="BaseElements.EmailTemplateUserTask1.Parameters.SendEmailType.Caption" Value="Mesaj nasıl gönderilir?" />
+			<Item Name="BaseElements.EmailTemplateUserTask1.Parameters.Sender.Caption" Value="Kimden" />
+			<Item Name="BaseElements.EmailTemplateUserTask1.Parameters.ShowExecutionPage.Caption" Value="Yürütme sayfasını otomatik olarak göster" />
+			<Item Name="BaseElements.EmailTemplateUserTask1.Parameters.ShowInScheduler.Caption" Value="Takvimde göster" />
+			<Item Name="BaseElements.EmailTemplateUserTask1.Parameters.StartIn.Caption" Value="Yürütme başlangıcı" />
+			<Item Name="BaseElements.EmailTemplateUserTask1.Parameters.StartInPeriod.Caption" Value="Yürütme başlangıcı (dönem)" />
+			<Item Name="BaseElements.EmailTemplateUserTask1.Parameters.Subject.Caption" Value="Konu" />
+			<Item Name="BaseElements.EmailTemplateUserTask2.Parameters.Account.Caption" Value="Müşteri" />
+			<Item Name="BaseElements.EmailTemplateUserTask2.Parameters.ActivityCategory.Caption" Value="Kategori" />
+			<Item Name="BaseElements.EmailTemplateUserTask2.Parameters.ActivityId.Caption" Value="Görev Kimliği" />
+			<Item Name="BaseElements.EmailTemplateUserTask2.Parameters.ActivityResult.Caption" Value="Aktivite sonucu" />
+			<Item Name="BaseElements.EmailTemplateUserTask2.Parameters.Body.Caption" Value="Gövde" />
+			<Item Name="BaseElements.EmailTemplateUserTask2.Parameters.BodyConfig.Caption" Value="İçerik oluşturucu için gövde yapılandırması" />
+			<Item Name="BaseElements.EmailTemplateUserTask2.Parameters.BodyTemplateType.Caption" Value="Ne tür e-posta gönderilecek?" />
+			<Item Name="BaseElements.EmailTemplateUserTask2.Parameters.Case.Caption" Value="Vaka" />
+			<Item Name="BaseElements.EmailTemplateUserTask2.Parameters.Change.Caption" Value="Değiştir" />
+			<Item Name="BaseElements.EmailTemplateUserTask2.Parameters.Contact.Caption" Value="Kişi" />
+			<Item Name="BaseElements.EmailTemplateUserTask2.Parameters.Contract.Caption" Value="Sözleşme" />
+			<Item Name="BaseElements.EmailTemplateUserTask2.Parameters.CreateActivity.Caption" Value="Aktivite oluştur" />
+			<Item Name="BaseElements.EmailTemplateUserTask2.Parameters.CustomEmailHeaders.Caption" Value="Özel e-posta başlıkları" />
+			<Item Name="BaseElements.EmailTemplateUserTask2.Parameters.Document.Caption" Value="Belge" />
+			<Item Name="BaseElements.EmailTemplateUserTask2.Parameters.Duration.Caption" Value="Süre" />
+			<Item Name="BaseElements.EmailTemplateUserTask2.Parameters.DurationPeriod.Caption" Value="Süre (dönem)" />
+			<Item Name="BaseElements.EmailTemplateUserTask2.Parameters.EmailTemplateEntityId.Caption" Value="Makrolar için kayıt" />
+			<Item Name="BaseElements.EmailTemplateUserTask2.Parameters.EmailTemplateId.Caption" Value="Mesaj şablonu" />
+			<Item Name="BaseElements.EmailTemplateUserTask2.Parameters.ExecutionContext.Caption" Value="Yürütme bağlamı" />
+			<Item Name="BaseElements.EmailTemplateUserTask2.Parameters.IgnoreErrors.Caption" Value="E-posta hatalarını yoksay" />
+			<Item Name="BaseElements.EmailTemplateUserTask2.Parameters.Importance.Caption" Value="Önem" />
+			<Item Name="BaseElements.EmailTemplateUserTask2.Parameters.Incident.Caption" Value="Olay" />
+			<Item Name="BaseElements.EmailTemplateUserTask2.Parameters.InformationOnStep.Caption" Value="Adım bilgileri" />
+			<Item Name="BaseElements.EmailTemplateUserTask2.Parameters.Invoice.Caption" Value="Fatura" />
+			<Item Name="BaseElements.EmailTemplateUserTask2.Parameters.IsActivityCompleted.Caption" Value="Aktivite tamamlandı" />
+			<Item Name="BaseElements.EmailTemplateUserTask2.Parameters.Lead.Caption" Value="Potansiyel fırsat" />
+			<Item Name="BaseElements.EmailTemplateUserTask2.Parameters.Listing.Caption" Value="Liste" />
+			<Item Name="BaseElements.EmailTemplateUserTask2.Parameters.Opportunity.Caption" Value="Fırsat" />
+			<Item Name="BaseElements.EmailTemplateUserTask2.Parameters.Order.Caption" Value="Sipariş" />
+			<Item Name="BaseElements.EmailTemplateUserTask2.Parameters.OwnerId.Caption" Value="Sahip" />
+			<Item Name="BaseElements.EmailTemplateUserTask2.Parameters.Problem.Caption" Value="Sorun" />
+			<Item Name="BaseElements.EmailTemplateUserTask2.Parameters.Project.Caption" Value="Proje" />
+			<Item Name="BaseElements.EmailTemplateUserTask2.Parameters.Property.Caption" Value="Özellik" />
+			<Item Name="BaseElements.EmailTemplateUserTask2.Parameters.QueueItem.Caption" Value="Kuyruk öğesi" />
+			<Item Name="BaseElements.EmailTemplateUserTask2.Parameters.Recommendation.Caption" Value="Öneri" />
+			<Item Name="BaseElements.EmailTemplateUserTask2.Parameters.Release.Caption" Value="Sürüm" />
+			<Item Name="BaseElements.EmailTemplateUserTask2.Parameters.RemindBefore.Caption" Value="Sorumluya önceden hatırlatma" />
+			<Item Name="BaseElements.EmailTemplateUserTask2.Parameters.RemindBeforePeriod.Caption" Value="Sorumluya önceden hatırlatma (dönem)" />
+			<Item Name="BaseElements.EmailTemplateUserTask2.Parameters.Requests.Caption" Value="Talep" />
+			<Item Name="BaseElements.EmailTemplateUserTask2.Parameters.SendEmailType.Caption" Value="Mesaj nasıl gönderilir?" />
+			<Item Name="BaseElements.EmailTemplateUserTask2.Parameters.Sender.Caption" Value="Kimden" />
+			<Item Name="BaseElements.EmailTemplateUserTask2.Parameters.ShowExecutionPage.Caption" Value="Yürütme sayfasını otomatik olarak göster" />
+			<Item Name="BaseElements.EmailTemplateUserTask2.Parameters.ShowInScheduler.Caption" Value="Takvimde göster" />
+			<Item Name="BaseElements.EmailTemplateUserTask2.Parameters.StartIn.Caption" Value="Yürütme başlangıcı" />
+			<Item Name="BaseElements.EmailTemplateUserTask2.Parameters.StartInPeriod.Caption" Value="Yürütme başlangıcı (dönem)" />
+			<Item Name="BaseElements.EmailTemplateUserTask2.Parameters.Subject.Caption" Value="Konu" />
+			<Item Name="BaseElements.ReadDataUserTask2.Parameters.AggregationColumnName.Caption" Value="Toplama fonksiyonu sütununun adı" />
+			<Item Name="BaseElements.ReadDataUserTask2.Parameters.CanReadUncommitedData.Caption" Value="İşlenmemiş veriyi oku" />
+			<Item Name="BaseElements.ReadDataUserTask2.Parameters.ConsiderTimeInFilter.Caption" Value="Filtrede zamanı dikkate al" />
+			<Item Name="BaseElements.ReadDataUserTask2.Parameters.DataSourceFilters.Caption" Value="Filtrelerin veri kaynağı" />
+			<Item Name="BaseElements.ReadDataUserTask2.Parameters.EntityColumnMetaPathes.Caption" Value="Okunacak sütunlar" />
+			<Item Name="BaseElements.ReadDataUserTask2.Parameters.FunctionType.Caption" Value="Toplama fonksiyonu tipi" />
+			<Item Name="BaseElements.ReadDataUserTask2.Parameters.IgnoreDisplayValues.Caption" Value="Arama sütunlarının görüntülenen değerlerini okuma" />
+			<Item Name="BaseElements.ReadDataUserTask2.Parameters.NumberOfRecords.Caption" Value="Okunacak kayıt sayısı" />
+			<Item Name="BaseElements.ReadDataUserTask2.Parameters.OrderInfo.Caption" Value="Sütunların sırası" />
+			<Item Name="BaseElements.ReadDataUserTask2.Parameters.ReadSomeTopRecords.Caption" Value="İlkini oku" />
+			<Item Name="BaseElements.ReadDataUserTask2.Parameters.ResultCompositeObjectList.Caption" Value="Kayıtlar koleksiyonu" />
+			<Item Name="BaseElements.ReadDataUserTask2.Parameters.ResultCount.Caption" Value="Kayıt sayısı" />
+			<Item Name="BaseElements.ReadDataUserTask2.Parameters.ResultDateTimeFunction.Caption" Value="Fonksiyon sonucu (Tarih/Saat)" />
+			<Item Name="BaseElements.ReadDataUserTask2.Parameters.ResultEntity.Caption" Value="Sonuç koleksiyonunun ilk öğesi" />
+			<Item Name="BaseElements.ReadDataUserTask2.Parameters.ResultEntityCollection.Caption" Value="Sonuç koleksiyonu" />
+			<Item Name="BaseElements.ReadDataUserTask2.Parameters.ResultFloatFunction.Caption" Value="Fonksiyon sonucu (Ondalık)" />
+			<Item Name="BaseElements.ReadDataUserTask2.Parameters.ResultIntegerFunction.Caption" Value="Fonksiyon sonucu (Tamsayı)" />
+			<Item Name="BaseElements.ReadDataUserTask2.Parameters.ResultRowsCount.Caption" Value="Okunan kayıt sayısı" />
+			<Item Name="BaseElements.ReadDataUserTask2.Parameters.ResultType.Caption" Value="Sonuç türü" />
+			<Item Name="BaseElements.ReadDataUserTask3.Parameters.AggregationColumnName.Caption" Value="Toplama fonksiyonu sütununun adı" />
+			<Item Name="BaseElements.ReadDataUserTask3.Parameters.CanReadUncommitedData.Caption" Value="İşlenmemiş veriyi oku" />
+			<Item Name="BaseElements.ReadDataUserTask3.Parameters.ConsiderTimeInFilter.Caption" Value="Filtrede zamanı dikkate al" />
+			<Item Name="BaseElements.ReadDataUserTask3.Parameters.DataSourceFilters.Caption" Value="Filtrelerin veri kaynağı" />
+			<Item Name="BaseElements.ReadDataUserTask3.Parameters.EntityColumnMetaPathes.Caption" Value="Okunacak sütunlar" />
+			<Item Name="BaseElements.ReadDataUserTask3.Parameters.FunctionType.Caption" Value="Toplama fonksiyonu tipi" />
+			<Item Name="BaseElements.ReadDataUserTask3.Parameters.IgnoreDisplayValues.Caption" Value="Arama sütunlarının görüntülenen değerlerini okuma" />
+			<Item Name="BaseElements.ReadDataUserTask3.Parameters.NumberOfRecords.Caption" Value="Okunacak kayıt sayısı" />
+			<Item Name="BaseElements.ReadDataUserTask3.Parameters.OrderInfo.Caption" Value="Sütunların sırası" />
+			<Item Name="BaseElements.ReadDataUserTask3.Parameters.ReadSomeTopRecords.Caption" Value="İlkini oku" />
+			<Item Name="BaseElements.ReadDataUserTask3.Parameters.ResultCompositeObjectList.Caption" Value="Kayıtlar koleksiyonu" />
+			<Item Name="BaseElements.ReadDataUserTask3.Parameters.ResultCount.Caption" Value="Kayıt sayısı" />
+			<Item Name="BaseElements.ReadDataUserTask3.Parameters.ResultDateTimeFunction.Caption" Value="Fonksiyon sonucu (Tarih/Saat)" />
+			<Item Name="BaseElements.ReadDataUserTask3.Parameters.ResultEntity.Caption" Value="Sonuç koleksiyonunun ilk öğesi" />
+			<Item Name="BaseElements.ReadDataUserTask3.Parameters.ResultEntityCollection.Caption" Value="Sonuç koleksiyonu" />
+			<Item Name="BaseElements.ReadDataUserTask3.Parameters.ResultFloatFunction.Caption" Value="Fonksiyon sonucu (Ondalık)" />
+			<Item Name="BaseElements.ReadDataUserTask3.Parameters.ResultIntegerFunction.Caption" Value="Fonksiyon sonucu (Tamsayı)" />
+			<Item Name="BaseElements.ReadDataUserTask3.Parameters.ResultRowsCount.Caption" Value="Okunan kayıt sayısı" />
+			<Item Name="BaseElements.ReadDataUserTask3.Parameters.ResultType.Caption" Value="Sonuç türü" />
+			<Item Name="BaseElements.ReadDataUserTask4.Parameters.AggregationColumnName.Caption" Value="Toplama fonksiyonu sütununun adı" />
+			<Item Name="BaseElements.ReadDataUserTask4.Parameters.CanReadUncommitedData.Caption" Value="İşlenmemiş veriyi oku" />
+			<Item Name="BaseElements.ReadDataUserTask4.Parameters.ConsiderTimeInFilter.Caption" Value="Filtrede zamanı dikkate al" />
+			<Item Name="BaseElements.ReadDataUserTask4.Parameters.DataSourceFilters.Caption" Value="Filtrelerin veri kaynağı" />
+			<Item Name="BaseElements.ReadDataUserTask4.Parameters.EntityColumnMetaPathes.Caption" Value="Okunacak sütunlar" />
+			<Item Name="BaseElements.ReadDataUserTask4.Parameters.FunctionType.Caption" Value="Toplama fonksiyonu tipi" />
+			<Item Name="BaseElements.ReadDataUserTask4.Parameters.IgnoreDisplayValues.Caption" Value="Arama sütunlarının görüntülenen değerlerini okuma" />
+			<Item Name="BaseElements.ReadDataUserTask4.Parameters.NumberOfRecords.Caption" Value="Okunacak kayıt sayısı" />
+			<Item Name="BaseElements.ReadDataUserTask4.Parameters.OrderInfo.Caption" Value="Sütunların sırası" />
+			<Item Name="BaseElements.ReadDataUserTask4.Parameters.ReadSomeTopRecords.Caption" Value="İlkini oku" />
+			<Item Name="BaseElements.ReadDataUserTask4.Parameters.ResultCompositeObjectList.Caption" Value="Kayıtlar koleksiyonu" />
+			<Item Name="BaseElements.ReadDataUserTask4.Parameters.ResultCount.Caption" Value="Kayıt sayısı" />
+			<Item Name="BaseElements.ReadDataUserTask4.Parameters.ResultDateTimeFunction.Caption" Value="Fonksiyon sonucu (Tarih/Saat)" />
+			<Item Name="BaseElements.ReadDataUserTask4.Parameters.ResultEntity.Caption" Value="Sonuç koleksiyonunun ilk öğesi" />
+			<Item Name="BaseElements.ReadDataUserTask4.Parameters.ResultEntityCollection.Caption" Value="Sonuç koleksiyonu" />
+			<Item Name="BaseElements.ReadDataUserTask4.Parameters.ResultFloatFunction.Caption" Value="Fonksiyon sonucu (Ondalık)" />
+			<Item Name="BaseElements.ReadDataUserTask4.Parameters.ResultIntegerFunction.Caption" Value="Fonksiyon sonucu (Tamsayı)" />
+			<Item Name="BaseElements.ReadDataUserTask4.Parameters.ResultRowsCount.Caption" Value="Okunan kayıt sayısı" />
+			<Item Name="BaseElements.ReadDataUserTask4.Parameters.ResultType.Caption" Value="Sonuç türü" />
+			<Item Name="BaseElements.ReadDataUserTask5.Parameters.AggregationColumnName.Caption" Value="Toplama fonksiyonu sütununun adı" />
+			<Item Name="BaseElements.ReadDataUserTask5.Parameters.CanReadUncommitedData.Caption" Value="İşlenmemiş veriyi oku" />
+			<Item Name="BaseElements.ReadDataUserTask5.Parameters.ConsiderTimeInFilter.Caption" Value="Filtrede zamanı dikkate al" />
+			<Item Name="BaseElements.ReadDataUserTask5.Parameters.DataSourceFilters.Caption" Value="Filtrelerin veri kaynağı" />
+			<Item Name="BaseElements.ReadDataUserTask5.Parameters.EntityColumnMetaPathes.Caption" Value="Okunacak sütunlar" />
+			<Item Name="BaseElements.ReadDataUserTask5.Parameters.FunctionType.Caption" Value="Toplama fonksiyonu tipi" />
+			<Item Name="BaseElements.ReadDataUserTask5.Parameters.IgnoreDisplayValues.Caption" Value="Arama sütunlarının görüntülenen değerlerini okuma" />
+			<Item Name="BaseElements.ReadDataUserTask5.Parameters.NumberOfRecords.Caption" Value="Okunacak kayıt sayısı" />
+			<Item Name="BaseElements.ReadDataUserTask5.Parameters.OrderInfo.Caption" Value="Sütunların sırası" />
+			<Item Name="BaseElements.ReadDataUserTask5.Parameters.ReadSomeTopRecords.Caption" Value="İlkini oku" />
+			<Item Name="BaseElements.ReadDataUserTask5.Parameters.ResultCompositeObjectList.Caption" Value="Kayıtlar koleksiyonu" />
+			<Item Name="BaseElements.ReadDataUserTask5.Parameters.ResultCount.Caption" Value="Kayıt sayısı" />
+			<Item Name="BaseElements.ReadDataUserTask5.Parameters.ResultDateTimeFunction.Caption" Value="Fonksiyon sonucu (Tarih/Saat)" />
+			<Item Name="BaseElements.ReadDataUserTask5.Parameters.ResultEntity.Caption" Value="Sonuç koleksiyonunun ilk öğesi" />
+			<Item Name="BaseElements.ReadDataUserTask5.Parameters.ResultEntityCollection.Caption" Value="Sonuç koleksiyonu" />
+			<Item Name="BaseElements.ReadDataUserTask5.Parameters.ResultFloatFunction.Caption" Value="Fonksiyon sonucu (Ondalık)" />
+			<Item Name="BaseElements.ReadDataUserTask5.Parameters.ResultIntegerFunction.Caption" Value="Fonksiyon sonucu (Tamsayı)" />
+			<Item Name="BaseElements.ReadDataUserTask5.Parameters.ResultRowsCount.Caption" Value="Okunan kayıt sayısı" />
+			<Item Name="BaseElements.ReadDataUserTask5.Parameters.ResultType.Caption" Value="Sonuç türü" />
 			<Item Name="Caption" Value="MCIT VM Request Submission" />
 		</Items>
 	</Group>
