@@ -14,8 +14,6 @@
 			<Item Name="Columns.UsrNumber.Caption" Value="Contract number" />
 			<Item Name="Columns.UsrOperationalContact.Caption" Value="Operational contact" />
 			<Item Name="Columns.UsrReference.Caption" Value="Contract reference" />
-			<Item Name="Columns.UsrRestoredPointsExpiring30Days.Caption" Value="Restored Points Expiring in 30 Days" />
-			<Item Name="Columns.UsrRestoredPointsExpiring90Days.Caption" Value="Restored Points Expiring in 90 Days" />
 			<Item Name="Columns.UsrStartDate.Caption" Value="Start date" />
 			<Item Name="Columns.UsrStatus.Caption" Value="Status" />
 		</Items>

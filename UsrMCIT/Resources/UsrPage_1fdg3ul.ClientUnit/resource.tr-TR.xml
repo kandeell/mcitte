@@ -2,7 +2,6 @@
 <Resources Culture="tr-TR">
 	<Group Type="String">
 		<Items>
-			<Item Name="Caption" Value="MCIT Contract form page" />
 			<Item Name="LocalizableStrings.Button_spbhdwfCaption.Value" Value="Yenile" />
 			<Item Name="LocalizableStrings.Button_tbioevjCaption.Value" Value="Upload" />
 		</Items>

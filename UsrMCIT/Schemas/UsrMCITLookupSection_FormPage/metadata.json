@@ -1,8 +1,0 @@
-= MetaData.Schema.UId "3a3f7045-bcd9-4c46-8ef9-82e83bb9602e"
-= MetaData.Schema.A2 "UsrMCITLookupSection_FormPage"
-= MetaData.Schema.A5 "6f71e54c-1960-40c9-94f6-073fd67699ab"
-~ MetaData.Schema.B2 ["5d481fb2-01cd-4fdf-9060-f9d275e8eda4","c7872980-0283-4874-ac2e-0116beaec0b7","5f2d4b0b-ccba-4274-b5df-52240d04d29d","107b4a7b-4be5-41d7-ab53-f4b8a83a325e"]
-= MetaData.Schema.B6 "5530927f-22ea-e7c9-4ccf-506d3a6c2ed2"
-= MetaData.Schema.HD1 "3b2e117f-8c6b-4ca5-80a2-7ebb497cddf9"
-- MetaData.Schema.B7
-+ MetaData.Schema.B7 false

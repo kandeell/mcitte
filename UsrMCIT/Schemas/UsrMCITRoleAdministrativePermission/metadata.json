@@ -135,23 +135,3 @@
 + MetaData.Schema.D2.["9928edec-4272-425a-93bb-48743fee4b04"].E16 false
 + MetaData.Schema.D2.["3015559e-cbc6-406a-88af-07f7930be832"].E16 false
 + MetaData.Schema.D2.["3fabd836-6a53-4d8d-9069-6df88d9dae1e"].E16 false
-+ MetaData.Schema.D6 {
-  "UId": "354eb9e9-f75a-c16c-8d40-b1115044f099",
-  "A2": "UsrMCITAdministrativeRoleUnique",
-  "A3": "0d6776cd-9cf3-4f4b-8af3-095c2b1ba42b",
-  "A4": "0d6776cd-9cf3-4f4b-8af3-095c2b1ba42b",
-  "A5": "5dcca910-bc4c-42b7-bfe0-2ad5c8cc3965",
-  "F1": false,
-  "F2": true,
-  "F4": [
-    {
-      "UId": "575ec965-9756-bf83-2c57-eea710406360",
-      "A2": "IndexColumn_UsrMCITRole",
-      "A3": "0d6776cd-9cf3-4f4b-8af3-095c2b1ba42b",
-      "A4": "0d6776cd-9cf3-4f4b-8af3-095c2b1ba42b",
-      "A5": "5dcca910-bc4c-42b7-bfe0-2ad5c8cc3965",
-      "G1": "eae9f400-2f8c-7763-dcaa-f0f617bdb8e5"
-    }
-  ]
-}
-~ MetaData.Schema.D6 ["354eb9e9-f75a-c16c-8d40-b1115044f099"]

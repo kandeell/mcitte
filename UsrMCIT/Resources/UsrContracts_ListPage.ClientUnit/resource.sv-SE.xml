@@ -3,7 +3,6 @@
 	<Group Type="String">
 		<Items>
 			<Item Name="Caption" Value="Contracts list page" />
-			<Item Name="LocalizableStrings.AddButton_caption.Value" Value="Ny" />
 		</Items>
 	</Group>
 </Resources>
