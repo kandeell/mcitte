@@ -1,0 +1,10 @@
+﻿{
+  "Descriptor": {
+    "UId": "e22962e3-e574-4276-b19e-e40a53e8fee3",
+    "Name": "UsrFinancialReviewFormRuntime",
+    "ModifiedOnUtc": "\/Date(1794840461000)\/",
+    "ManagerName": "ClientUnitSchemaManager",
+    "Caption": "UsrFinancialReviewFormRuntime",
+    "DependsOn": []
+  }
+}

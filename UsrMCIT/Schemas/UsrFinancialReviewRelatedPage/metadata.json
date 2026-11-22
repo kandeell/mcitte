@@ -1,0 +1,28 @@
+{
+  "MetaData": {
+    "Schema": {
+      "ManagerName": "AddonSchemaManager",
+      "UId": "f1cf8402-c979-4279-935c-95602277f1d2",
+      "A2": "UsrFinancialReviewRelatedPage",
+      "A5": "6f71e54c-1960-40c9-94f6-073fd67699ab",
+      "B1": [],
+      "B2": [],
+      "B3": [],
+      "B6": "5530927f-22ea-e7c9-4ccf-506d3a6c2ed2",
+      "B8": "0.0.0.0",
+      "AD1": "5409771a-4a5d-42c6-9027-bf3d9fcaf745",
+      "AD2": "EntitySchemaManager",
+      "AD3": "RelatedPage",
+      "AD5": "3a2d6f51-1bfc-4c17-aacb-b53de4866b7c",
+      "AD4": {
+        "Pages": [
+          {
+            "UId": "e1b8cf94-f98f-49d4-924a-559ff16079eb",
+            "PageSchemaUId": "8a83d9f7-2803-4282-8dac-e1a7063d4f53",
+            "IsDefault": true
+          }
+        ]
+      }
+    }
+  }
+}
