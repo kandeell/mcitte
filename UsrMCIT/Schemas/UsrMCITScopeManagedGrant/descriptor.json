@@ -1,0 +1,13 @@
+﻿{
+  "Descriptor": {
+    "UId": "6c1c913d-d4ab-460c-bbe7-46be72e09faa",
+    "Name": "UsrMCITScopeManagedGrant",
+    "ModifiedOnUtc": "\/Date(1794433992000)\/",
+    "Parent": {
+      "UId": "1bab9dcf-17d5-49f8-9536-8e0064f1dce0",
+      "Name": "BaseEntity"
+    },
+    "ManagerName": "EntitySchemaManager",
+    "Caption": "MCIT Scope Managed Grant"
+  }
+}

@@ -1,0 +1,13 @@
+﻿{
+  "Descriptor": {
+    "UId": "069c40ea-f8fc-4da0-b05b-090065d03611",
+    "Name": "UsrReportViewer",
+    "ModifiedOnUtc": "\/Date(1793762271000)\/",
+    "Parent": {
+      "UId": "f691e828-0b36-42a7-898f-c337e9af67d0",
+      "Name": "BlankPageTemplate"
+    },
+    "ManagerName": "ClientUnitSchemaManager",
+    "Caption": "Report Viewer"
+  }
+}

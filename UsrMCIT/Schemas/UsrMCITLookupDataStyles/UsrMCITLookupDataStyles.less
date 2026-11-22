@@ -1,0 +1,406 @@
+/* ======================================================================
+   MCIT LOOKUP DATA / FIGMA V2
+   Scoped to .mcit-lookup-page; native Freedom UI controls only.
+   Schema: UsrMCITLookupSection_ListPage
+   LESS client module: UsrMCITLookupDataStyles
+
+   No DOM injection, no business rules, no replacement HTML grid.
+   ====================================================================== */
+
+.mcit-lookup-page {
+  --lookup-purple: #6424b9;
+  --lookup-purple-soft: #f1eafa;
+  --lookup-text: #263248;
+  --lookup-muted: #778196;
+  --lookup-bg: #f8f7ff;
+  --lookup-line: #e8e7ef;
+
+  box-sizing: border-box;
+  width: 100%;
+  min-width: 0;
+  min-height: calc(100vh - 66px);
+  margin: 0 !important;
+  padding: 0 !important;
+  background: var(--lookup-bg) !important;
+  color: var(--lookup-text);
+  font-family: "Rubik", Arial, sans-serif;
+}
+
+/* Top breadcrumb, aligned with the designer's two-column layout */
+.mcit-lookup-page .mcit-lookup-breadcrumb {
+  display: block;
+  margin: 0 !important;
+  padding: 12px 22px !important;
+  width: 100%;
+  box-sizing: border-box;
+  border-bottom: 1px solid var(--lookup-line);
+  background: #fff !important;
+  color: #5c3b91 !important;
+  font: 500 12px/1.45 "Rubik", Arial, sans-serif !important;
+}
+
+.mcit-lookup-page .mcit-lookup-shell {
+  display: grid !important;
+  grid-template-columns: minmax(280px, 27%) minmax(0, 1fr) !important;
+  align-items: start !important;
+  gap: 0 !important;
+  width: 100%;
+  min-width: 0;
+  min-height: calc(100vh - 126px);
+  background: var(--lookup-bg) !important;
+}
+
+/* LEFT NAVIGATION: a Figma-style list made of ordinary Creatio buttons. */
+.mcit-lookup-page .mcit-lookup-left {
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: stretch !important;
+  min-width: 0;
+  width: 100%;
+  min-height: calc(100vh - 126px);
+  padding: 0 !important;
+  border-right: 1px solid #e3dfef !important;
+  background: #faf9ff !important;
+  box-sizing: border-box;
+}
+
+.mcit-lookup-page .mcit-lookup-groups-heading {
+  display: block;
+  width: 100%;
+  box-sizing: border-box;
+  margin: 0 !important;
+  padding: 15px 17px 13px !important;
+  color: #707b8a !important;
+  font: 700 11px/1.4 "Rubik", Arial, sans-serif !important;
+  letter-spacing: .045em;
+  text-transform: uppercase;
+}
+
+.mcit-lookup-page .mcit-lookup-menu {
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: stretch !important;
+  gap: 0 !important;
+  width: 100%;
+  min-width: 0;
+  margin: 0 !important;
+  padding: 0 !important;
+  box-sizing: border-box;
+}
+
+.mcit-lookup-page .mcit-lookup-group-row {
+  display: flex !important;
+  flex-direction: row !important;
+  align-items: center !important;
+  justify-content: space-between !important;
+  width: 100%;
+  min-width: 0;
+  min-height: 51px;
+  margin: 0 !important;
+  padding: 8px 16px !important;
+  background: transparent;
+  border-bottom: 1px solid #f0edf5;
+  box-sizing: border-box;
+  gap: 10px !important;
+}
+
+.mcit-lookup-page .mcit-lookup-group-row:hover {
+  background: #f5f1fb !important;
+}
+
+.mcit-lookup-page .mcit-lookup-group-content {
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: flex-start !important;
+  min-width: 0;
+  flex: 1 1 auto;
+  gap: 2px !important;
+}
+
+/* Side menu item: no regular button chrome. Selection uses pressed state. */
+.mcit-lookup-page .mcit-lookup-menu-button,
+.mcit-lookup-page .mcit-lookup-menu-button button,
+.mcit-lookup-page .mcit-lookup-menu-button .crt-button {
+  justify-content: flex-start !important;
+  text-align: left !important;
+  width: 100%;
+  min-height: 23px !important;
+  height: auto !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  border: 0 !important;
+  border-radius: 0 !important;
+  background: transparent !important;
+  box-shadow: none !important;
+  color: var(--lookup-text) !important;
+  font: 600 12px/1.35 "Rubik", Arial, sans-serif !important;
+  text-transform: none !important;
+  white-space: normal !important;
+}
+.mcit-lookup-page .mcit-lookup-menu-button *,
+.mcit-lookup-page .mcit-lookup-menu-button button * {
+  color: var(--lookup-text) !important;
+  text-align: left !important;
+}
+
+/* Creatio may place aria-pressed on either the host or the inner button. */
+.mcit-lookup-page .mcit-lookup-group-row:has(.mcit-lookup-menu-button[aria-pressed="true"]),
+.mcit-lookup-page .mcit-lookup-group-row:has(.mcit-lookup-menu-button button[aria-pressed="true"]) {
+  background: #f0ebfa !important;
+  box-shadow: inset 3px 0 0 var(--lookup-purple);
+}
+
+.mcit-lookup-page .mcit-lookup-menu-meta,
+.mcit-lookup-page .mcit-lookup-menu-meta * {
+  padding: 0 !important;
+  margin: 0 !important;
+  color: #8d96a7 !important;
+  font: 400 10px/1.4 "Rubik", Arial, sans-serif !important;
+}
+
+.mcit-lookup-page .mcit-lookup-req {
+  display: inline-flex;
+  flex: 0 0 auto;
+  justify-content: center;
+  align-items: center;
+  padding: 2px 6px !important;
+  margin: 0 !important;
+  border-radius: 4px;
+  background: #fff5bd !important;
+  color: #79551b !important;
+  font: 700 10px/1.2 "Rubik", Arial, sans-serif !important;
+}
+.mcit-lookup-page .mcit-lookup-req * { color: #79551b !important; }
+
+/* Retain the real LookupGroup DataGrid in the Designer tree, not the page UI. */
+/* Registry list is shown only when Manage groups is selected (native visible binding). */
+.mcit-lookup-page .mcit-lookup-registry-grid {
+  min-height: 0 !important;
+  height: auto !important;
+  background: #fff !important;
+  border: 1px solid #ece9f2;
+  border-radius: 8px;
+  overflow-x: auto;
+}
+
+/* RIGHT PANEL */
+.mcit-lookup-page .mcit-lookup-right {
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: stretch !important;
+  min-width: 0;
+  width: 100%;
+  margin: 0 !important;
+  padding: 22px 24px 40px !important;
+  box-sizing: border-box;
+  background: var(--lookup-bg) !important;
+}
+.mcit-lookup-page .mcit-lookup-right-top {
+  display: flex !important;
+  flex-direction: row !important;
+  flex-wrap: wrap !important;
+  align-items: flex-start !important;
+  justify-content: space-between !important;
+  gap: 14px 20px !important;
+  width: 100%;
+  margin: 0 0 15px !important;
+  padding: 0 !important;
+}
+.mcit-lookup-page .mcit-lookup-title-stack {
+  flex: 1 1 300px;
+  min-width: 0;
+  gap: 2px !important;
+  align-items: flex-start !important;
+}
+.mcit-lookup-page .mcit-lookup-title,
+.mcit-lookup-page .mcit-lookup-title * {
+  padding: 0 !important;
+  margin: 0 !important;
+  color: #202a40 !important;
+  font: 700 19px/1.35 "Rubik", Arial, sans-serif !important;
+}
+.mcit-lookup-page .mcit-lookup-description,
+.mcit-lookup-page .mcit-lookup-description * {
+  margin: 0 !important;
+  padding: 0 !important;
+  color: #758092 !important;
+  font: 400 12px/1.5 "Rubik", Arial, sans-serif !important;
+}
+.mcit-lookup-page .mcit-lookup-info {
+  margin: 4px 0 0 !important;
+  color: #79551b !important;
+  font: 500 11px/1.5 "Rubik", Arial, sans-serif !important;
+}
+.mcit-lookup-page .mcit-lookup-actions {
+  display: flex !important;
+  flex-direction: row !important;
+  flex-wrap: wrap !important;
+  align-items: center !important;
+  justify-content: flex-end !important;
+  flex: 0 0 auto;
+  gap: 8px !important;
+}
+.mcit-lookup-page .mcit-lookup-outline,
+.mcit-lookup-page .mcit-lookup-outline button,
+.mcit-lookup-page .mcit-lookup-outline .crt-button {
+  min-height: 33px !important;
+  padding: 6px 13px !important;
+  border: 1px solid #dfe3eb !important;
+  border-radius: 10px !important;
+  background: #fff !important;
+  color: #48546c !important;
+  box-shadow: none !important;
+  font: 600 12px "Rubik", Arial, sans-serif !important;
+}
+.mcit-lookup-page .mcit-lookup-add-value,
+.mcit-lookup-page .mcit-lookup-add-value button,
+.mcit-lookup-page .mcit-lookup-add-value .crt-button {
+  min-height: 34px !important;
+  padding: 7px 17px !important;
+  border: 1px solid var(--lookup-purple) !important;
+  border-radius: 10px !important;
+  background: var(--lookup-purple) !important;
+  color: #fff !important;
+  box-shadow: 0 5px 13px rgba(100,36,185,.16) !important;
+  font: 600 12px "Rubik", Arial, sans-serif !important;
+}
+.mcit-lookup-page .mcit-lookup-add-value * { color: #fff !important; }
+.mcit-lookup-page .mcit-lookup-add-value button:disabled,
+.mcit-lookup-page .mcit-lookup-add-value[disabled] {
+  opacity: .55 !important;
+}
+
+/* Information banner */
+.mcit-lookup-page .mcit-lookup-notice {
+  display: flex !important;
+  flex-direction: row !important;
+  align-items: center !important;
+  box-sizing: border-box;
+  width: 100%;
+  min-height: 42px;
+  padding: 10px 14px !important;
+  margin: 0 0 17px !important;
+  gap: 9px !important;
+  border: 1px solid #c7dbf5 !important;
+  border-radius: 10px !important;
+  background: #eef5fe !important;
+}
+.mcit-lookup-page .mcit-lookup-notice * {
+  color: #3564aa !important;
+  font: 400 12px/1.5 "Rubik", Arial, sans-serif !important;
+}
+.mcit-lookup-page .mcit-lookup-notice-icon * { font-size: 16px !important; }
+.mcit-lookup-page .mcit-lookup-empty {
+  margin: 12px 0 !important;
+  padding: 18px !important;
+  border: 1px dashed #dad4e7;
+  border-radius: 12px;
+  color: #778196 !important;
+  background: #fff;
+  font: 400 13px/1.6 "Rubik", Arial, sans-serif !important;
+}
+
+/* Native value tables: light gray Figma header, white data rows. */
+.mcit-lookup-page .mcit-lookup-values-grid {
+  /* The visible binding, not CSS, controls which of the four lists shows. */
+  box-sizing: border-box;
+  min-width: 0;
+  width: 100%;
+  height: auto !important;
+  min-height: 0 !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  border: 1px solid #e3e6ee !important;
+  border-radius: 13px !important;
+  background: #fff !important;
+  overflow-x: auto;
+  overflow-y: hidden;
+  box-shadow: 0 2px 10px rgba(28,22,66,.035);
+}
+.mcit-lookup-page .mcit-lookup-values-grid .crt-data-table-header,
+.mcit-lookup-page .mcit-lookup-values-grid .ag-header,
+.mcit-lookup-page .mcit-lookup-values-grid thead {
+  background: #f7f8fa !important;
+}
+.mcit-lookup-page .mcit-lookup-values-grid .crt-header-cell-caption,
+.mcit-lookup-page .mcit-lookup-values-grid th {
+  color: #667080 !important;
+  font: 600 11px/1.45 "Rubik", Arial, sans-serif !important;
+}
+.mcit-lookup-page .mcit-lookup-values-grid .crt-data-table-cell,
+.mcit-lookup-page .mcit-lookup-values-grid td,
+.mcit-lookup-page .mcit-lookup-values-grid .ag-cell {
+  padding-top: 12px !important;
+  padding-bottom: 12px !important;
+  border-bottom: 1px solid #eef0f5 !important;
+  color: #2f394b !important;
+  font: 400 12px/1.45 "Rubik", Arial, sans-serif !important;
+}
+.mcit-lookup-page .mcit-lookup-values-grid a,
+.mcit-lookup-page .mcit-lookup-values-grid [role="link"] {
+  color: var(--lookup-purple) !important;
+  font-weight: 600 !important;
+  text-decoration: none !important;
+}
+.mcit-lookup-page .mcit-lookup-values-grid tr:hover,
+.mcit-lookup-page .mcit-lookup-values-grid .ag-row-hover {
+  background: #faf8ff !important;
+}
+
+@media(max-width:1200px) {
+  .mcit-lookup-page .mcit-lookup-shell {
+    grid-template-columns: minmax(235px, 29%) minmax(0,1fr) !important;
+  }
+  .mcit-lookup-page .mcit-lookup-right { padding: 18px 16px 30px !important; }
+}
+@media(max-width:760px) {
+  .mcit-lookup-page .mcit-lookup-shell {
+    grid-template-columns: minmax(0,1fr) !important;
+    grid-template-rows: auto auto !important;
+  }
+  .mcit-lookup-page .mcit-lookup-left {
+    min-height: 0;
+    max-height: 330px;
+    overflow-y: auto;
+    border-right: 0 !important;
+    border-bottom: 1px solid var(--lookup-line) !important;
+  }
+  .mcit-lookup-page .mcit-lookup-right { padding: 15px !important; }
+}
+
+
+/* Full implementation V3 — registry controls and action feedback */
+.mcit-lookup-page .mcit-lookup-registry-actions {
+  display: flex !important;
+  flex-wrap: wrap !important;
+  gap: 7px !important;
+  align-items: center !important;
+  padding: 14px 15px !important;
+  border-top: 1px solid #ece8f4 !important;
+}
+.mcit-lookup-page .mcit-lookup-registry-action,
+.mcit-lookup-page .mcit-lookup-registry-action button,
+.mcit-lookup-page .mcit-lookup-registry-action .crt-button {
+  border: 1px solid #d9d1e9 !important;
+  background: #fff !important;
+  color: #5b21a5 !important;
+  border-radius: 9px !important;
+  min-height: 33px !important;
+  padding: 6px 11px !important;
+  font: 600 11px "Rubik", Arial, sans-serif !important;
+}
+.mcit-lookup-page .mcit-lookup-operation-message {
+  padding: 10px 14px !important;
+  margin: 0 0 12px !important;
+  background: #f8f4ff !important;
+  border: 1px solid #ded1f3 !important;
+  border-radius: 8px !important;
+  color: #5b21a5 !important;
+  font: 500 12px/1.5 "Rubik", Arial, sans-serif !important;
+}
+@media (max-width: 960px) {
+  .mcit-lookup-page .mcit-lookup-shell {
+    grid-template-columns: minmax(215px, 35%) minmax(0, 1fr) !important;
+  }
+  .mcit-lookup-page .mcit-lookup-right { padding: 15px !important; }
+}

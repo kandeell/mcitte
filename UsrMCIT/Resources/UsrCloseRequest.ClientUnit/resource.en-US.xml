@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Resources Culture="en-US">
+	<Group Type="String">
+		<Items>
+			<Item Name="Caption" Value="Close Request" />
+			<Item Name="LocalizableStrings.CancelButton_caption.Value" Value="Cancel" />
+			<Item Name="LocalizableStrings.PageTitle_caption.Value" Value="Close Request" />
+			<Item Name="LocalizableStrings.SaveButton_caption.Value" Value="Confirm" />
+			<Item Name="Parameters.714bda09-a6a8-7806-ea72-bef15e88ec85.Caption" Value="Completion Note" />
+		</Items>
+	</Group>
+</Resources>

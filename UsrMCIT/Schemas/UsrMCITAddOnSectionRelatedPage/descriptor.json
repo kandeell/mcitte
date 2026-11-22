@@ -1,0 +1,10 @@
+﻿{
+  "Descriptor": {
+    "UId": "344bb7d1-9f0c-45bd-ac6c-8005cd3a8871",
+    "Name": "UsrMCITAddOnSectionRelatedPage",
+    "ModifiedOnUtc": "\/Date(1793565342000)\/",
+    "ManagerName": "AddonSchemaManager",
+    "Caption": "Add-on Configuration (Page settings)",
+    "DependsOn": []
+  }
+}

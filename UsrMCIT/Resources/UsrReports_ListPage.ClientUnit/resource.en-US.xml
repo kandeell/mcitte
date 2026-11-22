@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Resources Culture="en-US">
+	<Group Type="String">
+		<Items>
+			<Item Name="Caption" Value="Reports list page" />
+			<Item Name="LocalizableStrings.RequestsByStatus_series_0.Value" Value="Records" />
+			<Item Name="LocalizableStrings.RequestsByStatus_title.Value" Value="Requests by status" />
+			<Item Name="LocalizableStrings.SummaryRequestsByContract_series_0.Value" Value="Records" />
+			<Item Name="LocalizableStrings.SummaryRequestsByContract_title.Value" Value="Requests by contract" />
+			<Item Name="LocalizableStrings.SummaryRequestsByProject_series_0.Value" Value="Records" />
+			<Item Name="LocalizableStrings.SummaryRequestsByProject_title.Value" Value="Requests by project" />
+			<Item Name="LocalizableStrings.VmsByContract_series_0.Value" Value="Records" />
+			<Item Name="LocalizableStrings.VmsByContract_title.Value" Value="VM records by contract" />
+		</Items>
+	</Group>
+</Resources>

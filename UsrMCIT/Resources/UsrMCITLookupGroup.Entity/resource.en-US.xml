@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Resources Culture="en-US">
+	<Group Type="String">
+		<Items>
+			<Item Name="Caption" Value="MCIT Lookup Group" />
+			<Item Name="Columns.UsrActive.Caption" Value="Active" />
+			<Item Name="Columns.UsrCode.Caption" Value="Group Code" />
+			<Item Name="Columns.UsrDescription.Caption" Value="Description" />
+			<Item Name="Columns.UsrDisplayOrder.Caption" Value="Display Order" />
+			<Item Name="Columns.UsrName.Caption" Value="Group Name" />
+			<Item Name="Columns.UsrRequired.Caption" Value="Mandatory" />
+			<Item Name="Columns.UsrSchemaName.Caption" Value="Object Schema Name" />
+		</Items>
+	</Group>
+</Resources>

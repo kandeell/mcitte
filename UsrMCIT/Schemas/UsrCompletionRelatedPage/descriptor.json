@@ -1,0 +1,10 @@
+﻿{
+  "Descriptor": {
+    "UId": "ed5c3ddb-d9b5-4bb0-aec7-09c35f1c9c6f",
+    "Name": "UsrCompletionRelatedPage",
+    "ModifiedOnUtc": "\/Date(1794770733000)\/",
+    "ManagerName": "AddonSchemaManager",
+    "Caption": "Completion (Page settings)",
+    "DependsOn": []
+  }
+}

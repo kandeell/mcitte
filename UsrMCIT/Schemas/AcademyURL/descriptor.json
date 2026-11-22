@@ -1,0 +1,15 @@
+﻿{
+  "Descriptor": {
+    "UId": "873b9d58-65d7-4e7a-b320-48d5a295d6b9",
+    "Name": "AcademyURL",
+    "ModifiedOnUtc": "\/Date(1794835596000)\/",
+    "Parent": {
+      "UId": "2db09028-bfa5-4314-929d-0f149f348452",
+      "Name": "AcademyURL"
+    },
+    "ExtendParent": true,
+    "ManagerName": "EntitySchemaManager",
+    "Caption": "Academy URL",
+    "DependsOn": []
+  }
+}

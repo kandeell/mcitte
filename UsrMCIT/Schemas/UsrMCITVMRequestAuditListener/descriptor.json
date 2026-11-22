@@ -1,0 +1,9 @@
+﻿{
+  "Descriptor": {
+    "UId": "a7de6edf-2966-4bb5-9580-2808250dc449",
+    "Name": "UsrMCITVMRequestAuditListener",
+    "ModifiedOnUtc": "\/Date(1793769277000)\/",
+    "ManagerName": "SourceCodeSchemaManager",
+    "Caption": "vm request audit listner"
+  }
+}

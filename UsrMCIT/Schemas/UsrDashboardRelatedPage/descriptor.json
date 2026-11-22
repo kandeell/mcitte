@@ -1,0 +1,10 @@
+﻿{
+  "Descriptor": {
+    "UId": "2afb0922-8994-4c27-973d-7ed2ef0a7dea",
+    "Name": "UsrDashboardRelatedPage",
+    "ModifiedOnUtc": "\/Date(1794131459000)\/",
+    "ManagerName": "AddonSchemaManager",
+    "Caption": "Dashboard (Page settings)",
+    "DependsOn": []
+  }
+}

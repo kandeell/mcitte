@@ -1,0 +1,10 @@
+﻿{
+  "Descriptor": {
+    "UId": "76452e7f-65b5-4f6e-806f-79e13d4867f2",
+    "Name": "UsrMCITAuditLogRelatedPage",
+    "ModifiedOnUtc": "\/Date(1793762960000)\/",
+    "ManagerName": "AddonSchemaManager",
+    "Caption": "Audit Log (Page settings)",
+    "DependsOn": []
+  }
+}

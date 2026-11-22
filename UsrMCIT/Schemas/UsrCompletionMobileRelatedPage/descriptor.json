@@ -1,0 +1,10 @@
+﻿{
+  "Descriptor": {
+    "UId": "1c7cf3ca-c1d7-4d2f-8984-ea574f02961c",
+    "Name": "UsrCompletionMobileRelatedPage",
+    "ModifiedOnUtc": "\/Date(1794770733000)\/",
+    "ManagerName": "AddonSchemaManager",
+    "Caption": "Completion (Mobile page settings)",
+    "DependsOn": []
+  }
+}
