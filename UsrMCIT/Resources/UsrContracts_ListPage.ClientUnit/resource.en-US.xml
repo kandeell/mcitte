@@ -3,16 +3,9 @@
 	<Group Type="String">
 		<Items>
 			<Item Name="Caption" Value="Contracts list page" />
-			<Item Name="LocalizableStrings.AddButton_caption.Value" Value="New" />
-			<Item Name="LocalizableStrings.IndicatorWidget_18t1d6x_config_text_template.Value" Value="{0}" />
-			<Item Name="LocalizableStrings.IndicatorWidget_18t1d6x_hint.Value" Value="Components.IndicatorWidget.Hint" />
-			<Item Name="LocalizableStrings.IndicatorWidget_18t1d6x_title.Value" Value="Active Contracts" />
 			<Item Name="LocalizableStrings.IndicatorWidget_42xyo1n_config_text_template.Value" Value="{0}" />
 			<Item Name="LocalizableStrings.IndicatorWidget_42xyo1n_hint.Value" Value="Components.IndicatorWidget.Hint" />
 			<Item Name="LocalizableStrings.IndicatorWidget_42xyo1n_title.Value" Value="Expiring Soon" />
-			<Item Name="LocalizableStrings.IndicatorWidget_efonh4t_config_text_template.Value" Value="{0}" />
-			<Item Name="LocalizableStrings.IndicatorWidget_efonh4t_hint.Value" Value="Components.IndicatorWidget.Hint" />
-			<Item Name="LocalizableStrings.IndicatorWidget_efonh4t_title.Value" Value="Expiring in 30 Days" />
 			<Item Name="LocalizableStrings.IndicatorWidget_g7hve3d_config_text_template.Value" Value="{0}" />
 			<Item Name="LocalizableStrings.IndicatorWidget_g7hve3d_hint.Value" Value="Components.IndicatorWidget.Hint" />
 			<Item Name="LocalizableStrings.IndicatorWidget_g7hve3d_title.Value" Value="Total Available" />

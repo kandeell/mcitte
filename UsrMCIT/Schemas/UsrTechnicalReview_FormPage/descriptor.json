@@ -1,0 +1,14 @@
+﻿{
+  "Descriptor": {
+    "UId": "11306447-d382-4a25-af55-2433278c7e50",
+    "Name": "UsrTechnicalReview_FormPage",
+    "ModifiedOnUtc": "\/Date(1794839932000)\/",
+    "Parent": {
+      "UId": "f691e828-0b36-42a7-898f-c337e9af67d0",
+      "Name": "BlankPageTemplate"
+    },
+    "ManagerName": "ClientUnitSchemaManager",
+    "Caption": "Technical Review Form Page",
+    "DependsOn": []
+  }
+}

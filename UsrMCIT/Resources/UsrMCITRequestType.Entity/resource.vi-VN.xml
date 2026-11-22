@@ -3,6 +3,7 @@
 	<Group Type="String">
 		<Items>
 			<Item Name="Caption" Value="Đối tượng" />
+			<Item Name="EventsProcessSchema.Caption" Value="Base object" />
 		</Items>
 	</Group>
 </Resources>

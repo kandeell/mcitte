@@ -1,0 +1,10 @@
+﻿{
+  "Descriptor": {
+    "UId": "d79e5122-623c-4b96-a723-1348494b8e79",
+    "Name": "UsrTechnicalReviewFormRuntime",
+    "ModifiedOnUtc": "\/Date(1794839908000)\/",
+    "ManagerName": "ClientUnitSchemaManager",
+    "Caption": "UsrTechnicalReviewFormRuntime",
+    "DependsOn": []
+  }
+}

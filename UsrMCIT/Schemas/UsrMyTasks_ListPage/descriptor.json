@@ -1,0 +1,14 @@
+﻿{
+  "Descriptor": {
+    "UId": "334300fe-4e44-4bba-9fbd-121b369cb73e",
+    "Name": "UsrMyTasks_ListPage",
+    "ModifiedOnUtc": "\/Date(1795074503000)\/",
+    "Parent": {
+      "UId": "b7b898d0-8c77-4953-c097-23fa6800da02",
+      "Name": "ListPageV3Template"
+    },
+    "ManagerName": "ClientUnitSchemaManager",
+    "Caption": "My Tasks list page",
+    "DependsOn": []
+  }
+}

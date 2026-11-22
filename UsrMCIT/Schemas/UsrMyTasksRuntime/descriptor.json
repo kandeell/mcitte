@@ -1,0 +1,10 @@
+﻿{
+  "Descriptor": {
+    "UId": "f115e0d9-c189-426c-a2d0-b2967dd0af7d",
+    "Name": "UsrMyTasksRuntime",
+    "ModifiedOnUtc": "\/Date(1795085928000)\/",
+    "ManagerName": "ClientUnitSchemaManager",
+    "Caption": "UsrMyTasksRuntime",
+    "DependsOn": []
+  }
+}

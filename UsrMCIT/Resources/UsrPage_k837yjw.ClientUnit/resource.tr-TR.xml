@@ -2,7 +2,6 @@
 <Resources Culture="tr-TR">
 	<Group Type="String">
 		<Items>
-			<Item Name="Caption" Value="MCIT Role form page" />
 			<Item Name="LocalizableStrings.BackButton_caption.Value" Value="Back" />
 		</Items>
 	</Group>

@@ -20,7 +20,7 @@
           "L1": "23018567-a13c-4320-8687-fd6f9e3699bd",
           "L8": {
             "GS1": 3,
-            "GS2": "[#[IsOwnerSchema:false].[IsSchema:false].[Element:{7a70676d-5d26-4248-9de9-561776958b08}].[Parameter:{ddd8a69d-d30d-4a57-885d-4bcc51e06047}]#]",
+            "GS2": "[#[IsOwnerSchema:false].[IsSchema:false].[Element:{f81d4d0f-2a43-4cfc-a8a4-b3c0ae6e81ea}].[Parameter:{47b9c2e4-c39f-4409-92da-f93dc10629e4}]#]",
             "GS5": "3553f8ed-90a5-4b04-8529-be12a64edbbb"
           },
           "L12": 0
@@ -105,8 +105,7 @@
           "GT4": "cb455b6f-78ff-4b1e-b241-c2bbc0b37e9f",
           "GT1": {
             "GS1": 1,
-            "GS2": "{\"className\":\"Terrasoft.FilterGroup\",\"serializedFilterEditData\":\"{\\\"className\\\":\\\"Terrasoft.FilterGroup\\\",\\\"items\\\":{\\\"49c4350d-5294-459b-b26e-8f3ad865e2e6\\\":{\\\"className\\\":\\\"Terrasoft.CompareFilter\\\",\\\"filterType\\\":1,\\\"comparisonType\\\":3,\\\"isEnabled\\\":true,\\\"trimDateTimeParameterToDate\\\":false,\\\"leftExpression\\\":{\\\"className\\\":\\\"Terrasoft.ColumnExpression\\\",\\\"expressionType\\\":0,\\\"columnPath\\\":\\\"Id\\\"},\\\"isAggregative\\\":false,\\\"key\\\":\\\"49c4350d-5294-459b-b26e-8f3ad865e2e6\\\",\\\"dataValueType\\\":0,\\\"leftExpressionCaption\\\":\\\"Id\\\",\\\"rightExpression\\\":{\\\"className\\\":\\\"Terrasoft.ParameterExpression\\\",\\\"expressionType\\\":2,\\\"parameter\\\":{\\\"className\\\":\\\"Terrasoft.Parameter\\\",\\\"dataValueType\\\":26,\\\"value\\\":{\\\"value\\\":\\\"[IsOwnerSchema:false].[IsSchema:false].[Element:{7a70676d-5d26-4248-9de9-561776958b08}].[Parameter:{ddd8a69d-d30d-4a57-885d-4bcc51e06047}]\\\",\\\"displayValue\\\":\\\"New MCIT Role Created v.Unique identifier of record\\\"}}}}},\\\"logicalOperation\\\":0,\\\"isEnabled\\\":true,\\\"filterType\\\":6,\\\"rootSchemaName\\\":\\\"UsrMCITRole\\\",\\\"key\\\":\\\"\\\"}\",\"dataSourceFilters\":\"{\\\"items\\\":{\\\"49c4350d-5294-459b-b26e-8f3ad865e2e6\\\":{\\\"filterType\\\":1,\\\"comparisonType\\\":3,\\\"isEnabled\\\":true,\\\"trimDateTimeParameterToDate\\\":false,\\\"leftExpression\\\":{\\\"expressionType\\\":0,\\\"columnPath\\\":\\\"Id\\\"},\\\"rightExpression\\\":{\\\"expressionType\\\":2,\\\"parameter\\\":{\\\"dataValueType\\\":26,\\\"value\\\":{\\\"value\\\":\\\"[IsOwnerSchema:false].[IsSchema:false].[Element:{7a70676d-5d26-4248-9de9-561776958b08}].[Parameter:{ddd8a69d-d30d-4a57-885d-4bcc51e06047}]\\\"}}}}},\\\"logicalOperation\\\":0,\\\"isEnabled\\\":true,\\\"filterType\\\":6,\\\"rootSchemaName\\\":\\\"UsrMCITRole\\\"}\"}",
-            "GS5": "3553f8ed-90a5-4b04-8529-be12a64edbbb"
+            "GS2": "{\"className\":\"Terrasoft.FilterGroup\",\"serializedFilterEditData\":\"{\\\"className\\\":\\\"Terrasoft.FilterGroup\\\",\\\"items\\\":{\\\"49c4350d-5294-459b-b26e-8f3ad865e2e6\\\":{\\\"className\\\":\\\"Terrasoft.CompareFilter\\\",\\\"filterType\\\":1,\\\"comparisonType\\\":3,\\\"isEnabled\\\":true,\\\"trimDateTimeParameterToDate\\\":false,\\\"leftExpression\\\":{\\\"className\\\":\\\"Terrasoft.ColumnExpression\\\",\\\"expressionType\\\":0,\\\"columnPath\\\":\\\"Id\\\"},\\\"isAggregative\\\":false,\\\"key\\\":\\\"49c4350d-5294-459b-b26e-8f3ad865e2e6\\\",\\\"dataValueType\\\":0,\\\"leftExpressionCaption\\\":\\\"Id\\\",\\\"rightExpression\\\":{\\\"className\\\":\\\"Terrasoft.ParameterExpression\\\",\\\"expressionType\\\":2,\\\"parameter\\\":{\\\"className\\\":\\\"Terrasoft.Parameter\\\",\\\"dataValueType\\\":26,\\\"value\\\":{\\\"value\\\":\\\"[IsOwnerSchema:false].[IsSchema:false].[Element:{f81d4d0f-2a43-4cfc-a8a4-b3c0ae6e81ea}].[Parameter:{47b9c2e4-c39f-4409-92da-f93dc10629e4}]\\\",\\\"displayValue\\\":\\\"New MCIT Role Created.Unique identifier of record\\\"}}}}},\\\"logicalOperation\\\":0,\\\"isEnabled\\\":true,\\\"filterType\\\":6,\\\"rootSchemaName\\\":\\\"UsrMCITRole\\\",\\\"key\\\":\\\"\\\"}\",\"dataSourceFilters\":\"{\\\"items\\\":{\\\"49c4350d-5294-459b-b26e-8f3ad865e2e6\\\":{\\\"filterType\\\":1,\\\"comparisonType\\\":3,\\\"isEnabled\\\":true,\\\"trimDateTimeParameterToDate\\\":false,\\\"leftExpression\\\":{\\\"expressionType\\\":0,\\\"columnPath\\\":\\\"Id\\\"},\\\"rightExpression\\\":{\\\"expressionType\\\":2,\\\"parameter\\\":{\\\"dataValueType\\\":26,\\\"value\\\":{\\\"value\\\":\\\"[IsOwnerSchema:false].[IsSchema:false].[Element:{f81d4d0f-2a43-4cfc-a8a4-b3c0ae6e81ea}].[Parameter:{47b9c2e4-c39f-4409-92da-f93dc10629e4}]\\\"}}}}},\\\"logicalOperation\\\":0,\\\"isEnabled\\\":true,\\\"filterType\\\":6,\\\"rootSchemaName\\\":\\\"UsrMCITRole\\\"}\"}"
           }
         },
         {
@@ -628,8 +627,7 @@
           "GT4": "cb455b6f-78ff-4b1e-b241-c2bbc0b37e9f",
           "GT1": {
             "GS1": 1,
-            "GS2": "{\"className\":\"Terrasoft.FilterGroup\",\"serializedFilterEditData\":\"{\\\"className\\\":\\\"Terrasoft.FilterGroup\\\",\\\"items\\\":{\\\"bba475e1-d3f8-4351-bca6-f6be39acba0a\\\":{\\\"className\\\":\\\"Terrasoft.CompareFilter\\\",\\\"filterType\\\":1,\\\"comparisonType\\\":3,\\\"isEnabled\\\":true,\\\"trimDateTimeParameterToDate\\\":false,\\\"leftExpression\\\":{\\\"className\\\":\\\"Terrasoft.ColumnExpression\\\",\\\"expressionType\\\":0,\\\"columnPath\\\":\\\"Id\\\"},\\\"isAggregative\\\":false,\\\"key\\\":\\\"bba475e1-d3f8-4351-bca6-f6be39acba0a\\\",\\\"dataValueType\\\":0,\\\"leftExpressionCaption\\\":\\\"Id\\\",\\\"rightExpression\\\":{\\\"className\\\":\\\"Terrasoft.ParameterExpression\\\",\\\"expressionType\\\":2,\\\"parameter\\\":{\\\"className\\\":\\\"Terrasoft.Parameter\\\",\\\"dataValueType\\\":0,\\\"value\\\":\\\"A29A3BA5-4B0D-DE11-9A51-005056C00008\\\"}}}},\\\"logicalOperation\\\":0,\\\"isEnabled\\\":true,\\\"filterType\\\":6,\\\"rootSchemaName\\\":\\\"SysAdminUnit\\\",\\\"key\\\":\\\"\\\"}\",\"dataSourceFilters\":\"{\\\"items\\\":{\\\"bba475e1-d3f8-4351-bca6-f6be39acba0a\\\":{\\\"filterType\\\":1,\\\"comparisonType\\\":3,\\\"isEnabled\\\":true,\\\"trimDateTimeParameterToDate\\\":false,\\\"leftExpression\\\":{\\\"expressionType\\\":0,\\\"columnPath\\\":\\\"Id\\\"},\\\"rightExpression\\\":{\\\"expressionType\\\":2,\\\"parameter\\\":{\\\"dataValueType\\\":0,\\\"value\\\":\\\"A29A3BA5-4B0D-DE11-9A51-005056C00008\\\"}}}},\\\"logicalOperation\\\":0,\\\"isEnabled\\\":true,\\\"filterType\\\":6,\\\"rootSchemaName\\\":\\\"SysAdminUnit\\\"}\"}",
-            "GS5": "3553f8ed-90a5-4b04-8529-be12a64edbbb"
+            "GS2": "{\"className\":\"Terrasoft.FilterGroup\",\"serializedFilterEditData\":\"{\\\"className\\\":\\\"Terrasoft.FilterGroup\\\",\\\"items\\\":{\\\"e5a84b69-5abd-42b4-be3a-7a05fe426b14\\\":{\\\"className\\\":\\\"Terrasoft.CompareFilter\\\",\\\"filterType\\\":1,\\\"comparisonType\\\":3,\\\"isEnabled\\\":true,\\\"trimDateTimeParameterToDate\\\":false,\\\"leftExpression\\\":{\\\"className\\\":\\\"Terrasoft.ColumnExpression\\\",\\\"expressionType\\\":0,\\\"columnPath\\\":\\\"Name\\\"},\\\"isAggregative\\\":false,\\\"key\\\":\\\"e5a84b69-5abd-42b4-be3a-7a05fe426b14\\\",\\\"dataValueType\\\":1,\\\"leftExpressionCaption\\\":\\\"Name\\\",\\\"rightExpression\\\":{\\\"className\\\":\\\"Terrasoft.ParameterExpression\\\",\\\"expressionType\\\":2,\\\"parameter\\\":{\\\"className\\\":\\\"Terrasoft.Parameter\\\",\\\"dataValueType\\\":1,\\\"value\\\":null}}},\\\"f5c397dd-2147-4057-b39b-dcbe94a6b197\\\":{\\\"className\\\":\\\"Terrasoft.CompareFilter\\\",\\\"filterType\\\":1,\\\"comparisonType\\\":3,\\\"isEnabled\\\":true,\\\"trimDateTimeParameterToDate\\\":false,\\\"leftExpression\\\":{\\\"className\\\":\\\"Terrasoft.ColumnExpression\\\",\\\"expressionType\\\":0,\\\"columnPath\\\":\\\"SysAdminUnitTypeValue\\\"},\\\"isAggregative\\\":false,\\\"key\\\":\\\"f5c397dd-2147-4057-b39b-dcbe94a6b197\\\",\\\"dataValueType\\\":4,\\\"leftExpressionCaption\\\":\\\"Type\\\",\\\"rightExpression\\\":{\\\"className\\\":\\\"Terrasoft.ParameterExpression\\\",\\\"expressionType\\\":2,\\\"parameter\\\":{\\\"className\\\":\\\"Terrasoft.Parameter\\\",\\\"dataValueType\\\":4,\\\"value\\\":0}}}},\\\"logicalOperation\\\":0,\\\"isEnabled\\\":true,\\\"filterType\\\":6,\\\"rootSchemaName\\\":\\\"SysAdminUnit\\\",\\\"key\\\":\\\"\\\"}\",\"dataSourceFilters\":\"{\\\"items\\\":{\\\"f5c397dd-2147-4057-b39b-dcbe94a6b197\\\":{\\\"filterType\\\":1,\\\"comparisonType\\\":3,\\\"isEnabled\\\":true,\\\"trimDateTimeParameterToDate\\\":false,\\\"leftExpression\\\":{\\\"expressionType\\\":0,\\\"columnPath\\\":\\\"SysAdminUnitTypeValue\\\"},\\\"rightExpression\\\":{\\\"expressionType\\\":2,\\\"parameter\\\":{\\\"dataValueType\\\":4,\\\"value\\\":0}}}},\\\"logicalOperation\\\":0,\\\"isEnabled\\\":true,\\\"filterType\\\":6,\\\"rootSchemaName\\\":\\\"SysAdminUnit\\\"}\"}"
           }
         },
         {
@@ -1229,6 +1227,45 @@
           "FC1": []
         },
         {
+          "BL1": "Terrasoft.Core.Process.ProcessSchemaStartSignalEvent",
+          "UId": "f81d4d0f-2a43-4cfc-a8a4-b3c0ae6e81ea",
+          "A2": "StartSignal1",
+          "A3": "3553f8ed-90a5-4b04-8529-be12a64edbbb",
+          "A4": "3553f8ed-90a5-4b04-8529-be12a64edbbb",
+          "A5": "5dcca910-bc4c-42b7-bfe0-2ad5c8cc3965",
+          "IL2": "9f599bb3-729b-4ca4-9d0e-ceadb2795703",
+          "IL3": true,
+          "BL3": "116;291",
+          "BL7": "1129e72f-0e8c-445a-b2ea-463517e86395",
+          "BL8": "3553f8ed-90a5-4b04-8529-be12a64edbbb",
+          "BN2": "31;31",
+          "BO3": true,
+          "FC1": [
+            {
+              "BL1": "Terrasoft.Core.Process.ProcessSchemaParameter",
+              "UId": "47b9c2e4-c39f-4409-92da-f93dc10629e4",
+              "A2": "RecordId",
+              "A3": "3553f8ed-90a5-4b04-8529-be12a64edbbb",
+              "A4": "3553f8ed-90a5-4b04-8529-be12a64edbbb",
+              "IL2": "f81d4d0f-2a43-4cfc-a8a4-b3c0ae6e81ea",
+              "L1": "23018567-a13c-4320-8687-fd6f9e3699bd",
+              "L8": {
+                "GS1": 1,
+                "GS2": ""
+              }
+            }
+          ],
+          "FC2": "a70ee6ad-69d4-4214-bcb5-f168b003ac64",
+          "ED1": false,
+          "DZ1": "null",
+          "DZ2": false,
+          "DZ3": true,
+          "DZ5": 1,
+          "DZ8": true,
+          "DZ12": "[]",
+          "DZ13": "{\"className\":\"Terrasoft.FilterGroup\",\"serializedFilterEditData\":\"{\\\"className\\\":\\\"Terrasoft.FilterGroup\\\",\\\"items\\\":{\\\"c6999224-39f8-4cb5-984b-0e5e4c5809e9\\\":{\\\"className\\\":\\\"Terrasoft.InFilter\\\",\\\"filterType\\\":4,\\\"comparisonType\\\":3,\\\"isEnabled\\\":true,\\\"trimDateTimeParameterToDate\\\":false,\\\"leftExpression\\\":{\\\"className\\\":\\\"Terrasoft.ColumnExpression\\\",\\\"expressionType\\\":0,\\\"columnPath\\\":\\\"UsrMCITRoleStatuses\\\"},\\\"isAggregative\\\":false,\\\"key\\\":\\\"c6999224-39f8-4cb5-984b-0e5e4c5809e9\\\",\\\"dataValueType\\\":10,\\\"leftExpressionCaption\\\":\\\"Status\\\",\\\"referenceSchemaName\\\":\\\"UsrMCITRoleStatus\\\",\\\"rightExpressions\\\":[{\\\"className\\\":\\\"Terrasoft.ParameterExpression\\\",\\\"expressionType\\\":2,\\\"parameter\\\":{\\\"className\\\":\\\"Terrasoft.Parameter\\\",\\\"dataValueType\\\":10,\\\"value\\\":{\\\"Name\\\":\\\"Draft\\\",\\\"Id\\\":\\\"f7ee6a81-08fe-4838-9faa-2432c066ae47\\\",\\\"value\\\":\\\"f7ee6a81-08fe-4838-9faa-2432c066ae47\\\",\\\"displayValue\\\":\\\"Draft\\\"}}}]},\\\"4c75fb62-38d0-4ad5-a6c5-ed0d13425cd6\\\":{\\\"className\\\":\\\"Terrasoft.IsNullFilter\\\",\\\"filterType\\\":2,\\\"comparisonType\\\":1,\\\"isEnabled\\\":true,\\\"trimDateTimeParameterToDate\\\":false,\\\"leftExpression\\\":{\\\"className\\\":\\\"Terrasoft.ColumnExpression\\\",\\\"expressionType\\\":0,\\\"columnPath\\\":\\\"UsrRole\\\"},\\\"isAggregative\\\":false,\\\"key\\\":\\\"4c75fb62-38d0-4ad5-a6c5-ed0d13425cd6\\\",\\\"dataValueType\\\":10,\\\"leftExpressionCaption\\\":\\\"Linked Creatio Role\\\",\\\"referenceSchemaName\\\":\\\"SysAdminUnit\\\",\\\"isNull\\\":true}},\\\"logicalOperation\\\":0,\\\"isEnabled\\\":true,\\\"filterType\\\":6,\\\"rootSchemaName\\\":\\\"UsrMCITRole\\\",\\\"key\\\":\\\"\\\"}\",\"dataSourceFilters\":\"{\\\"items\\\":{\\\"c6999224-39f8-4cb5-984b-0e5e4c5809e9\\\":{\\\"filterType\\\":4,\\\"comparisonType\\\":3,\\\"isEnabled\\\":true,\\\"trimDateTimeParameterToDate\\\":false,\\\"leftExpression\\\":{\\\"expressionType\\\":0,\\\"columnPath\\\":\\\"UsrMCITRoleStatuses\\\"},\\\"rightExpressions\\\":[{\\\"expressionType\\\":2,\\\"parameter\\\":{\\\"dataValueType\\\":10,\\\"value\\\":\\\"f7ee6a81-08fe-4838-9faa-2432c066ae47\\\"}}]},\\\"4c75fb62-38d0-4ad5-a6c5-ed0d13425cd6\\\":{\\\"filterType\\\":2,\\\"comparisonType\\\":1,\\\"isEnabled\\\":true,\\\"trimDateTimeParameterToDate\\\":false,\\\"leftExpression\\\":{\\\"expressionType\\\":0,\\\"columnPath\\\":\\\"UsrRole\\\"},\\\"isNull\\\":true}},\\\"logicalOperation\\\":0,\\\"isEnabled\\\":true,\\\"filterType\\\":6,\\\"rootSchemaName\\\":\\\"UsrMCITRole\\\"}\"}"
+        },
+        {
           "BL1": "Terrasoft.Core.Process.ProcessSchemaUserTask",
           "UId": "845f4df1-020a-47a1-b8ce-4811c71ae42b",
           "A2": "ReadDataUserTask1",
@@ -1254,7 +1291,7 @@
               "L1": "394e160f-c8e0-46fa-9c0d-75d97e9e9169",
               "L8": {
                 "GS1": 1,
-                "GS2": "{\"className\":\"Terrasoft.FilterGroup\",\"serializedFilterEditData\":\"{\\\"className\\\":\\\"Terrasoft.FilterGroup\\\",\\\"items\\\":{\\\"49c4350d-5294-459b-b26e-8f3ad865e2e6\\\":{\\\"className\\\":\\\"Terrasoft.CompareFilter\\\",\\\"filterType\\\":1,\\\"comparisonType\\\":3,\\\"isEnabled\\\":true,\\\"trimDateTimeParameterToDate\\\":false,\\\"leftExpression\\\":{\\\"className\\\":\\\"Terrasoft.ColumnExpression\\\",\\\"expressionType\\\":0,\\\"columnPath\\\":\\\"Id\\\"},\\\"isAggregative\\\":false,\\\"key\\\":\\\"49c4350d-5294-459b-b26e-8f3ad865e2e6\\\",\\\"dataValueType\\\":0,\\\"leftExpressionCaption\\\":\\\"Id\\\",\\\"rightExpression\\\":{\\\"className\\\":\\\"Terrasoft.ParameterExpression\\\",\\\"expressionType\\\":2,\\\"parameter\\\":{\\\"className\\\":\\\"Terrasoft.Parameter\\\",\\\"dataValueType\\\":26,\\\"value\\\":{\\\"value\\\":\\\"[IsOwnerSchema:false].[IsSchema:false].[Element:{7a70676d-5d26-4248-9de9-561776958b08}].[Parameter:{ddd8a69d-d30d-4a57-885d-4bcc51e06047}]\\\",\\\"displayValue\\\":\\\"New MCIT Role Created v.Unique identifier of record\\\"}}}}},\\\"logicalOperation\\\":0,\\\"isEnabled\\\":true,\\\"filterType\\\":6,\\\"rootSchemaName\\\":\\\"UsrMCITRole\\\",\\\"key\\\":\\\"\\\"}\",\"dataSourceFilters\":\"{\\\"items\\\":{\\\"49c4350d-5294-459b-b26e-8f3ad865e2e6\\\":{\\\"filterType\\\":1,\\\"comparisonType\\\":3,\\\"isEnabled\\\":true,\\\"trimDateTimeParameterToDate\\\":false,\\\"leftExpression\\\":{\\\"expressionType\\\":0,\\\"columnPath\\\":\\\"Id\\\"},\\\"rightExpression\\\":{\\\"expressionType\\\":2,\\\"parameter\\\":{\\\"dataValueType\\\":26,\\\"value\\\":{\\\"value\\\":\\\"[IsOwnerSchema:false].[IsSchema:false].[Element:{7a70676d-5d26-4248-9de9-561776958b08}].[Parameter:{ddd8a69d-d30d-4a57-885d-4bcc51e06047}]\\\"}}}}},\\\"logicalOperation\\\":0,\\\"isEnabled\\\":true,\\\"filterType\\\":6,\\\"rootSchemaName\\\":\\\"UsrMCITRole\\\"}\"}",
+                "GS2": "{\"className\":\"Terrasoft.FilterGroup\",\"serializedFilterEditData\":\"{\\\"className\\\":\\\"Terrasoft.FilterGroup\\\",\\\"items\\\":{\\\"49c4350d-5294-459b-b26e-8f3ad865e2e6\\\":{\\\"className\\\":\\\"Terrasoft.CompareFilter\\\",\\\"filterType\\\":1,\\\"comparisonType\\\":3,\\\"isEnabled\\\":true,\\\"trimDateTimeParameterToDate\\\":false,\\\"leftExpression\\\":{\\\"className\\\":\\\"Terrasoft.ColumnExpression\\\",\\\"expressionType\\\":0,\\\"columnPath\\\":\\\"Id\\\"},\\\"isAggregative\\\":false,\\\"key\\\":\\\"49c4350d-5294-459b-b26e-8f3ad865e2e6\\\",\\\"dataValueType\\\":0,\\\"leftExpressionCaption\\\":\\\"Id\\\",\\\"rightExpression\\\":{\\\"className\\\":\\\"Terrasoft.ParameterExpression\\\",\\\"expressionType\\\":2,\\\"parameter\\\":{\\\"className\\\":\\\"Terrasoft.Parameter\\\",\\\"dataValueType\\\":26,\\\"value\\\":{\\\"value\\\":\\\"[IsOwnerSchema:false].[IsSchema:false].[Element:{f81d4d0f-2a43-4cfc-a8a4-b3c0ae6e81ea}].[Parameter:{47b9c2e4-c39f-4409-92da-f93dc10629e4}]\\\",\\\"displayValue\\\":\\\"New MCIT Role Created.Unique identifier of record\\\"}}}}},\\\"logicalOperation\\\":0,\\\"isEnabled\\\":true,\\\"filterType\\\":6,\\\"rootSchemaName\\\":\\\"UsrMCITRole\\\",\\\"key\\\":\\\"\\\"}\",\"dataSourceFilters\":\"{\\\"items\\\":{\\\"49c4350d-5294-459b-b26e-8f3ad865e2e6\\\":{\\\"filterType\\\":1,\\\"comparisonType\\\":3,\\\"isEnabled\\\":true,\\\"trimDateTimeParameterToDate\\\":false,\\\"leftExpression\\\":{\\\"expressionType\\\":0,\\\"columnPath\\\":\\\"Id\\\"},\\\"rightExpression\\\":{\\\"expressionType\\\":2,\\\"parameter\\\":{\\\"dataValueType\\\":26,\\\"value\\\":{\\\"value\\\":\\\"[IsOwnerSchema:false].[IsSchema:false].[Element:{f81d4d0f-2a43-4cfc-a8a4-b3c0ae6e81ea}].[Parameter:{47b9c2e4-c39f-4409-92da-f93dc10629e4}]\\\"}}}}},\\\"logicalOperation\\\":0,\\\"isEnabled\\\":true,\\\"filterType\\\":6,\\\"rootSchemaName\\\":\\\"UsrMCITRole\\\"}\"}",
                 "GS5": "3553f8ed-90a5-4b04-8529-be12a64edbbb"
               }
             },
@@ -1775,7 +1812,7 @@
               "L1": "394e160f-c8e0-46fa-9c0d-75d97e9e9169",
               "L8": {
                 "GS1": 1,
-                "GS2": "{\"className\":\"Terrasoft.FilterGroup\",\"serializedFilterEditData\":\"{\\\"className\\\":\\\"Terrasoft.FilterGroup\\\",\\\"items\\\":{\\\"bba475e1-d3f8-4351-bca6-f6be39acba0a\\\":{\\\"className\\\":\\\"Terrasoft.CompareFilter\\\",\\\"filterType\\\":1,\\\"comparisonType\\\":3,\\\"isEnabled\\\":true,\\\"trimDateTimeParameterToDate\\\":false,\\\"leftExpression\\\":{\\\"className\\\":\\\"Terrasoft.ColumnExpression\\\",\\\"expressionType\\\":0,\\\"columnPath\\\":\\\"Id\\\"},\\\"isAggregative\\\":false,\\\"key\\\":\\\"bba475e1-d3f8-4351-bca6-f6be39acba0a\\\",\\\"dataValueType\\\":0,\\\"leftExpressionCaption\\\":\\\"Id\\\",\\\"rightExpression\\\":{\\\"className\\\":\\\"Terrasoft.ParameterExpression\\\",\\\"expressionType\\\":2,\\\"parameter\\\":{\\\"className\\\":\\\"Terrasoft.Parameter\\\",\\\"dataValueType\\\":0,\\\"value\\\":\\\"A29A3BA5-4B0D-DE11-9A51-005056C00008\\\"}}}},\\\"logicalOperation\\\":0,\\\"isEnabled\\\":true,\\\"filterType\\\":6,\\\"rootSchemaName\\\":\\\"SysAdminUnit\\\",\\\"key\\\":\\\"\\\"}\",\"dataSourceFilters\":\"{\\\"items\\\":{\\\"bba475e1-d3f8-4351-bca6-f6be39acba0a\\\":{\\\"filterType\\\":1,\\\"comparisonType\\\":3,\\\"isEnabled\\\":true,\\\"trimDateTimeParameterToDate\\\":false,\\\"leftExpression\\\":{\\\"expressionType\\\":0,\\\"columnPath\\\":\\\"Id\\\"},\\\"rightExpression\\\":{\\\"expressionType\\\":2,\\\"parameter\\\":{\\\"dataValueType\\\":0,\\\"value\\\":\\\"A29A3BA5-4B0D-DE11-9A51-005056C00008\\\"}}}},\\\"logicalOperation\\\":0,\\\"isEnabled\\\":true,\\\"filterType\\\":6,\\\"rootSchemaName\\\":\\\"SysAdminUnit\\\"}\"}",
+                "GS2": "{\"className\":\"Terrasoft.FilterGroup\",\"serializedFilterEditData\":\"{\\\"className\\\":\\\"Terrasoft.FilterGroup\\\",\\\"items\\\":{\\\"e5a84b69-5abd-42b4-be3a-7a05fe426b14\\\":{\\\"className\\\":\\\"Terrasoft.CompareFilter\\\",\\\"filterType\\\":1,\\\"comparisonType\\\":3,\\\"isEnabled\\\":true,\\\"trimDateTimeParameterToDate\\\":false,\\\"leftExpression\\\":{\\\"className\\\":\\\"Terrasoft.ColumnExpression\\\",\\\"expressionType\\\":0,\\\"columnPath\\\":\\\"Name\\\"},\\\"isAggregative\\\":false,\\\"key\\\":\\\"e5a84b69-5abd-42b4-be3a-7a05fe426b14\\\",\\\"dataValueType\\\":1,\\\"leftExpressionCaption\\\":\\\"Name\\\",\\\"rightExpression\\\":{\\\"className\\\":\\\"Terrasoft.ParameterExpression\\\",\\\"expressionType\\\":2,\\\"parameter\\\":{\\\"className\\\":\\\"Terrasoft.Parameter\\\",\\\"dataValueType\\\":1,\\\"value\\\":null}}},\\\"f5c397dd-2147-4057-b39b-dcbe94a6b197\\\":{\\\"className\\\":\\\"Terrasoft.CompareFilter\\\",\\\"filterType\\\":1,\\\"comparisonType\\\":3,\\\"isEnabled\\\":true,\\\"trimDateTimeParameterToDate\\\":false,\\\"leftExpression\\\":{\\\"className\\\":\\\"Terrasoft.ColumnExpression\\\",\\\"expressionType\\\":0,\\\"columnPath\\\":\\\"SysAdminUnitTypeValue\\\"},\\\"isAggregative\\\":false,\\\"key\\\":\\\"f5c397dd-2147-4057-b39b-dcbe94a6b197\\\",\\\"dataValueType\\\":4,\\\"leftExpressionCaption\\\":\\\"Type\\\",\\\"rightExpression\\\":{\\\"className\\\":\\\"Terrasoft.ParameterExpression\\\",\\\"expressionType\\\":2,\\\"parameter\\\":{\\\"className\\\":\\\"Terrasoft.Parameter\\\",\\\"dataValueType\\\":4,\\\"value\\\":0}}}},\\\"logicalOperation\\\":0,\\\"isEnabled\\\":true,\\\"filterType\\\":6,\\\"rootSchemaName\\\":\\\"SysAdminUnit\\\",\\\"key\\\":\\\"\\\"}\",\"dataSourceFilters\":\"{\\\"items\\\":{\\\"f5c397dd-2147-4057-b39b-dcbe94a6b197\\\":{\\\"filterType\\\":1,\\\"comparisonType\\\":3,\\\"isEnabled\\\":true,\\\"trimDateTimeParameterToDate\\\":false,\\\"leftExpression\\\":{\\\"expressionType\\\":0,\\\"columnPath\\\":\\\"SysAdminUnitTypeValue\\\"},\\\"rightExpression\\\":{\\\"expressionType\\\":2,\\\"parameter\\\":{\\\"dataValueType\\\":4,\\\"value\\\":0}}}},\\\"logicalOperation\\\":0,\\\"isEnabled\\\":true,\\\"filterType\\\":6,\\\"rootSchemaName\\\":\\\"SysAdminUnit\\\"}\"}",
                 "GS5": "3553f8ed-90a5-4b04-8529-be12a64edbbb"
               }
             },
@@ -2017,7 +2054,7 @@
           "BO3": true,
           "BP2": [],
           "CL2": "FFFFFFFF",
-          "CH1": "Set<bool>(\"ProvisioningSuccess\", false);\nSet<Guid>(\"CreatedRoleId\", Guid.Empty);\nSet<string>(\"ProvisioningError\", \"\");\ntry {\n    Guid roleId = Get<Guid>(\"MCITRoleId\");\n    Guid nativeId = Terrasoft.Configuration.UsrMCITRoleSynchronization.Synchronize(UserConnection, roleId);\n    Set<Guid>(\"CreatedRoleId\", nativeId);\n    Set<bool>(\"ProvisioningSuccess\", true);\n} catch (Exception error) {\n    string details = error.ToString();\n\n    Set<string>(\n        \"ProvisioningError\",\n        details.Length > 250\n            ? details.Substring(0, 250)\n            : details\n    );\n}\n\nreturn true;",
+          "CH1": "\r\nGuid mcitRoleId = Get<Guid>(\"MCITRoleId\");\r\nstring roleName = Get<string>(\"RoleName\");\r\nGuid parentRoleId = Get<Guid>(\"AllEmployeesRoleId\");\r\n\r\nSet<bool>(\"ProvisioningSuccess\", false);\r\nSet<Guid>(\"CreatedRoleId\", Guid.Empty);\r\nSet<string>(\"ProvisioningError\", \"\");\r\n\r\ntry\r\n{\r\n    if (mcitRoleId == Guid.Empty)\r\n        throw new Exception(\"MCIT Role ID is missing.\");\r\n\r\n    roleName = (roleName ?? \"\").Trim();\r\n    if (string.IsNullOrWhiteSpace(roleName))\r\n        throw new Exception(\"Role name is required.\");\r\n\r\n    if (parentRoleId == Guid.Empty)\r\n        throw new Exception(\"All employees role was not found.\");\r\n\r\n    // Check again to avoid reusing an existing functional role.\r\n    var query = new Terrasoft.Core.DB.Select(UserConnection)\r\n        .Top(1)\r\n        .Column(\"Id\")\r\n        .From(\"SysAdminUnit\")\r\n        .Where(\"Name\").IsEqual(\r\n            Terrasoft.Core.DB.Column.Parameter(roleName))\r\n        .And(\"SysAdminUnitTypeValue\").IsEqual(\r\n            Terrasoft.Core.DB.Column.Parameter(6))\r\n        as Terrasoft.Core.DB.Select;\r\n\r\n    Guid existingId = query.ExecuteScalar<Guid>();\r\n\r\n    if (existingId != Guid.Empty)\r\n        throw new Exception(\"Functional Role already exists.\");\r\n\r\n    // Create the native system administration unit.\r\n    var role = new Terrasoft.Core.Configuration.SysAdminUnit(\r\n        UserConnection\r\n    );\r\n\r\n    role.SetDefColumnValues();\r\n    role.Id = Guid.NewGuid();\r\n    role.Name = roleName;\r\n    role.SysAdminUnitTypeValue =\r\n        Terrasoft.Core.DB.SysAdminUnitType.FunctionalRole;\r\n    role.ConnectionType = Terrasoft.Core.UserType.General;\r\n    role.ParentRoleId = parentRoleId;\r\n    role.Active = true;\r\n\r\n    if (!role.Save())\r\n        throw new Exception(\"Unable to save Functional Role.\");\r\n\r\n    Set<Guid>(\"CreatedRoleId\", role.Id);\r\n    Set<bool>(\"ProvisioningSuccess\", true);\r\n}\r\ncatch (Exception ex)\r\n{\r\n    Set<string>(\"ProvisioningError\", ex.Message);\r\n    Set<bool>(\"ProvisioningSuccess\", false);\r\n}\r\n\r\nreturn true;\r\n",
           "CH2": true
         },
         {
@@ -2394,14 +2431,14 @@
         },
         {
           "BL1": "Terrasoft.Core.Process.ProcessSchemaStartSignalEvent",
-          "UId": "7a70676d-5d26-4248-9de9-561776958b08",
-          "A2": "StartSignal3",
+          "UId": "dc6a7654-b899-4b14-8361-c5e4889a39e6",
+          "A2": "StartSignal2",
           "A3": "3553f8ed-90a5-4b04-8529-be12a64edbbb",
           "A4": "3553f8ed-90a5-4b04-8529-be12a64edbbb",
           "A5": "5dcca910-bc4c-42b7-bfe0-2ad5c8cc3965",
           "IL2": "9f599bb3-729b-4ca4-9d0e-ceadb2795703",
           "IL3": true,
-          "BL3": "85;262",
+          "BL3": "116;58",
           "BL7": "1129e72f-0e8c-445a-b2ea-463517e86395",
           "BL8": "3553f8ed-90a5-4b04-8529-be12a64edbbb",
           "BN2": "31;31",
@@ -2409,11 +2446,11 @@
           "FC1": [
             {
               "BL1": "Terrasoft.Core.Process.ProcessSchemaParameter",
-              "UId": "ddd8a69d-d30d-4a57-885d-4bcc51e06047",
+              "UId": "8c896599-fc50-4505-8413-d8d10db6377c",
               "A2": "RecordId",
               "A3": "3553f8ed-90a5-4b04-8529-be12a64edbbb",
               "A4": "3553f8ed-90a5-4b04-8529-be12a64edbbb",
-              "IL2": "7a70676d-5d26-4248-9de9-561776958b08",
+              "IL2": "dc6a7654-b899-4b14-8361-c5e4889a39e6",
               "L1": "23018567-a13c-4320-8687-fd6f9e3699bd",
               "L8": {
                 "GS1": 1,
@@ -2426,9 +2463,32 @@
           "DZ1": "null",
           "DZ2": false,
           "DZ3": true,
-          "DZ5": 1,
+          "DZ5": 2,
+          "DZ8": true,
           "DZ12": "[]",
-          "DZ13": "{\"className\":\"Terrasoft.FilterGroup\",\"serializedFilterEditData\":\"{\\\"className\\\":\\\"Terrasoft.FilterGroup\\\",\\\"items\\\":{},\\\"logicalOperation\\\":0,\\\"isEnabled\\\":true,\\\"filterType\\\":6,\\\"rootSchemaName\\\":\\\"UsrMCITRole\\\",\\\"key\\\":\\\"\\\"}\",\"dataSourceFilters\":\"{\\\"items\\\":{},\\\"logicalOperation\\\":0,\\\"isEnabled\\\":true,\\\"filterType\\\":6,\\\"rootSchemaName\\\":\\\"UsrMCITRole\\\"}\"}"
+          "DZ13": "{\"className\":\"Terrasoft.FilterGroup\",\"serializedFilterEditData\":\"{\\\"className\\\":\\\"Terrasoft.FilterGroup\\\",\\\"items\\\":{\\\"3e3ff36f-04df-4956-baaf-338b05bb45de\\\":{\\\"className\\\":\\\"Terrasoft.IsNullFilter\\\",\\\"filterType\\\":2,\\\"comparisonType\\\":2,\\\"isEnabled\\\":true,\\\"trimDateTimeParameterToDate\\\":false,\\\"leftExpression\\\":{\\\"className\\\":\\\"Terrasoft.ColumnExpression\\\",\\\"expressionType\\\":0,\\\"columnPath\\\":\\\"UsrRole\\\"},\\\"isAggregative\\\":false,\\\"key\\\":\\\"3e3ff36f-04df-4956-baaf-338b05bb45de\\\",\\\"dataValueType\\\":10,\\\"leftExpressionCaption\\\":\\\"Linked Creatio Role\\\",\\\"referenceSchemaName\\\":\\\"SysAdminUnit\\\",\\\"isNull\\\":false}},\\\"logicalOperation\\\":0,\\\"isEnabled\\\":true,\\\"filterType\\\":6,\\\"rootSchemaName\\\":\\\"UsrMCITRole\\\",\\\"key\\\":\\\"\\\"}\",\"dataSourceFilters\":\"{\\\"items\\\":{\\\"3e3ff36f-04df-4956-baaf-338b05bb45de\\\":{\\\"filterType\\\":2,\\\"comparisonType\\\":2,\\\"isEnabled\\\":true,\\\"trimDateTimeParameterToDate\\\":false,\\\"leftExpression\\\":{\\\"expressionType\\\":0,\\\"columnPath\\\":\\\"UsrRole\\\"},\\\"isNull\\\":false}},\\\"logicalOperation\\\":0,\\\"isEnabled\\\":true,\\\"filterType\\\":6,\\\"rootSchemaName\\\":\\\"UsrMCITRole\\\"}\"}"
+        },
+        {
+          "BL1": "Terrasoft.Core.Process.ProcessSchemaSequenceFlow",
+          "UId": "9390b0c2-554e-470e-865b-636211b8077a",
+          "A2": "SequenceFlow1",
+          "A3": "3553f8ed-90a5-4b04-8529-be12a64edbbb",
+          "A4": "3553f8ed-90a5-4b04-8529-be12a64edbbb",
+          "A5": "a00051f4-cde3-4f3f-b08e-c5ad1a5c735a",
+          "BL7": "0d8351f6-c2f4-4737-bdd9-6fbfe0837fec",
+          "BL8": "3553f8ed-90a5-4b04-8529-be12a64edbbb",
+          "CI1": "f81d4d0f-2a43-4cfc-a8a4-b3c0ae6e81ea",
+          "CI2": "845f4df1-020a-47a1-b8ce-4811c71ae42b",
+          "CI3": "null",
+          "CI5": "FF939598",
+          "CI6": 1,
+          "CI7": "1;0",
+          "CI8": "0;-1",
+          "CI11": "147;307",
+          "CI12": "265;227",
+          "CI10": {
+            "Item0": "265;307"
+          }
         },
         {
           "BL1": "Terrasoft.Core.Process.ProcessSchemaSequenceFlow",
@@ -2446,6 +2506,26 @@
           "CI6": 1,
           "CI11": "452;200",
           "CI12": "525;200"
+        },
+        {
+          "BL1": "Terrasoft.Core.Process.ProcessSchemaConditionalFlow",
+          "UId": "1b89527e-3c94-45e4-bc81-c0e81b96b6c2",
+          "A2": "ConditionalSequenceFlow1",
+          "A3": "3553f8ed-90a5-4b04-8529-be12a64edbbb",
+          "A4": "3553f8ed-90a5-4b04-8529-be12a64edbbb",
+          "A5": "5dcca910-bc4c-42b7-bfe0-2ad5c8cc3965",
+          "BL7": "dac675d4-ea84-4e44-9056-38bf918618e9",
+          "BL8": "3553f8ed-90a5-4b04-8529-be12a64edbbb",
+          "CI1": "bf25ec07-d31a-4b3a-8fa2-c6a7ce79e9bb",
+          "CI2": "97283fcf-fa7a-4bd3-ac59-8d2f47137ecd",
+          "CI3": "[#[IsOwnerSchema:false].[IsSchema:false].[Element:{658dbe88-df34-4190-b59c-720f206c35b1}].[Parameter:{c6bf222c-3828-4712-a7d4-e35b17937df5}].[EntityColumn:{ae0e45ca-c495-4fe7-a39d-3ab7278e1617}]#]!= Guid.Empty",
+          "CI4": 2,
+          "CI5": "FF939598",
+          "CI6": 1,
+          "CI11": "580;200",
+          "CI12": "638;200",
+          "GV2": "{}",
+          "GV3": []
         },
         {
           "BL1": "Terrasoft.Core.Process.ProcessSchemaSequenceFlow",
@@ -2526,13 +2606,13 @@
           "BL7": "dac675d4-ea84-4e44-9056-38bf918618e9",
           "BL8": "3553f8ed-90a5-4b04-8529-be12a64edbbb",
           "CI1": "64abef3c-b9b2-4fba-8c6d-4e1d83a6b742",
-          "CI2": "dfe601ab-b938-45fe-8f88-82bcdaf159bc",
+          "CI2": "05ab8c76-92c1-49f6-a13d-a856e39ce58d",
           "CI3": "[#[IsOwnerSchema:false].[IsSchema:false].[Parameter:{df56378c-6ad6-4084-a41e-af368750748e}]#] == true && [#[IsOwnerSchema:false].[IsSchema:false].[Parameter:{ec3513e2-0eda-4c63-9b41-b5b496c0afa2}]#] != Guid.Empty",
           "CI4": 2,
           "CI5": "FF939598",
           "CI6": 1,
           "CI11": "720;-86",
-          "CI12": "871;-201",
+          "CI12": "720;-174",
           "GV2": "{}",
           "GV3": []
         },
@@ -2606,45 +2686,25 @@
           "CI12": "765;200"
         },
         {
-          "BL1": "Terrasoft.Core.Process.ProcessSchemaConditionalFlow",
-          "UId": "d296cf90-c98d-45ee-a503-1e7be4ba5fc1",
-          "A2": "ConditionalSequenceFlow2",
-          "A3": "3553f8ed-90a5-4b04-8529-be12a64edbbb",
-          "A4": "3553f8ed-90a5-4b04-8529-be12a64edbbb",
-          "A5": "5dcca910-bc4c-42b7-bfe0-2ad5c8cc3965",
-          "BL7": "dac675d4-ea84-4e44-9056-38bf918618e9",
-          "BL8": "3553f8ed-90a5-4b04-8529-be12a64edbbb",
-          "CI1": "bf25ec07-d31a-4b3a-8fa2-c6a7ce79e9bb",
-          "CI2": "97283fcf-fa7a-4bd3-ac59-8d2f47137ecd",
-          "CI3": "[#[IsOwnerSchema:false].[IsSchema:false].[Element:{658dbe88-df34-4190-b59c-720f206c35b1}].[Parameter:{c6bf222c-3828-4712-a7d4-e35b17937df5}].[EntityColumn:{ae0e45ca-c495-4fe7-a39d-3ab7278e1617}]#]!= Guid.Empty",
-          "CI4": 2,
-          "CI5": "FF939598",
-          "CI6": 1,
-          "CI11": "580;200",
-          "CI12": "638;200",
-          "GV2": "{}",
-          "GV3": []
-        },
-        {
           "BL1": "Terrasoft.Core.Process.ProcessSchemaSequenceFlow",
-          "UId": "ea315276-4f27-43b2-aeb9-95552814652e",
-          "A2": "SequenceFlow10",
+          "UId": "29e5bbf5-b632-4914-9118-ad69382b2692",
+          "A2": "SequenceFlow4",
           "A3": "3553f8ed-90a5-4b04-8529-be12a64edbbb",
           "A4": "3553f8ed-90a5-4b04-8529-be12a64edbbb",
           "A5": "5dcca910-bc4c-42b7-bfe0-2ad5c8cc3965",
           "BL7": "0d8351f6-c2f4-4737-bdd9-6fbfe0837fec",
           "BL8": "3553f8ed-90a5-4b04-8529-be12a64edbbb",
-          "CI1": "7a70676d-5d26-4248-9de9-561776958b08",
+          "CI1": "dc6a7654-b899-4b14-8361-c5e4889a39e6",
           "CI2": "845f4df1-020a-47a1-b8ce-4811c71ae42b",
           "CI3": "null",
           "CI5": "FF939598",
           "CI6": 1,
           "CI7": "1;0",
-          "CI8": "0;-1",
-          "CI11": "116;278",
-          "CI12": "265;227",
+          "CI8": "0;1",
+          "CI11": "147;74",
+          "CI12": "265;172",
           "CI10": {
-            "Item0": "265;278"
+            "Item0": "265;74"
           }
         }
       ],
@@ -2654,6 +2714,15 @@
       "BK30": true,
       "BK34": "en-US",
       "Labels": [
+        {
+          "BL1": "Terrasoft.Core.Process.ProcessSchemaLabel",
+          "UId": "741b0137-3749-7a11-22e3-8c05bbb2c5c8",
+          "A2": "ConditionalSequenceFlow1_label1",
+          "A3": "3553f8ed-90a5-4b04-8529-be12a64edbbb",
+          "A4": "3553f8ed-90a5-4b04-8529-be12a64edbbb",
+          "ParentUId": "1b89527e-3c94-45e4-bc81-c0e81b96b6c2",
+          "X": 75
+        },
         {
           "BL1": "Terrasoft.Core.Process.ProcessSchemaLabel",
           "UId": "339fbba7-6380-c2f3-3e73-3fd694ca7f2f",
@@ -2671,8 +2740,8 @@
           "A3": "3553f8ed-90a5-4b04-8529-be12a64edbbb",
           "A4": "3553f8ed-90a5-4b04-8529-be12a64edbbb",
           "ParentUId": "f495cd5d-b8ca-46e1-95c8-996d1f881d44",
-          "X": 42,
-          "Y": -51
+          "X": 21,
+          "Y": -42
         },
         {
           "BL1": "Terrasoft.Core.Process.ProcessSchemaLabel",
